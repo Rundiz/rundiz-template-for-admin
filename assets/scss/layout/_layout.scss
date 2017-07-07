@@ -99,8 +99,6 @@ body {
         flex-basis: 0;
         flex-grow: 1;
         flex-shrink: 1;
-        min-width: 0;// fix table push layout over screen.
-        page-break-after: always;// use with fix over screen above to push footer new line.
     }
 
     // .rd-page-wrapper .rd-sidebar
