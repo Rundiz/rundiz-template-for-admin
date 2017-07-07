@@ -1,0 +1,285 @@
+/*
+* ----------------------------------------------------------------------------------------------
+* rundiz template for admin - layout for styling grid, columns
+* ----------------------------------------------------------------------------------------------
+*/
+
+
+@import '_variables';
+
+
+html.rd-template-admin,
+body {
+    height: 100%;
+}
+
+
+.rd-template-admin {
+    body {
+        -webkit-text-size-adjust: 100%;// fix ios orientation bug ( https://stackoverflow.com/a/27311443/128761 ).
+        @media (min-width: $minimum-sidebar-breakpoint) {
+            padding-top: ($mobile-screen-navbar-height/2);
+        }
+    }
+}
+
+
+.rd-page-content {
+    margin-bottom: $block-element-margin-bottom;
+    margin-left: $block-element-margin-sides;
+    margin-right: $block-element-margin-sides;
+}
+
+
+@media (min-width: $minimum-sidebar-breakpoint) {
+    .rd-sidebar-back {
+        background-color: $navbar-sidebar-background-color;
+        bottom: 0;
+        display: block;
+        position: fixed;
+        top: 0;
+        transition: width $sidebar-transition-seconds;
+        width: $sidebar-expanded-width;
+        z-index: -1;
+    }
+    .rd-page-wrapper.is-collapsed .rd-sidebar-back {
+        transition: width $sidebar-transition-seconds;
+        width: $sidebar-collapsed-width;
+    }
+}
+
+
+.rd-page-wrapper {
+    align-items: stretch;
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    min-height: 100%;
+    position: relative;
+    &::after {
+        clear: both;
+        content: '';
+        display: table;
+    }
+
+    // .rd-page-wrapper > footer
+    > footer {
+        align-self: flex-end;
+        background-color: transparent;
+        color: #888;
+        display: none;// when visible, use flex
+        flex-basis: 100%;
+        font-size: 0.688em;
+        min-height: 1.250rem;
+        padding: 0.313rem $block-element-margin-sides;
+
+        // .rd-page-wrapper > footer a
+        a {
+            color: inherit;
+        }
+
+        // .rd-page-wrapper > footer .rd-page-footer-left
+        .rd-page-footer-left {
+            margin-left: 0;
+            margin-right: 0;
+            padding-right: $block-element-margin-sides;
+        }
+
+        // .rd-page-wrapper > footer .rd-page-footer-right
+        .rd-page-footer-right {
+            margin-left: auto;
+            margin-right: 0;
+            padding-left: $block-element-margin-sides;
+        }
+    }
+
+    // .rd-page-wrapper > main
+    > main {
+        align-self: flex-start;
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 1;
+        min-width: 0;// fix table push layout over screen.
+        page-break-after: always;// use with fix over screen above to push footer new line.
+    }
+
+    // .rd-page-wrapper .rd-sidebar
+    .rd-sidebar {
+        background-color: rgb(46, 46, 46);
+        color: #ccc;
+        display: none;
+        height: auto;
+        margin: 0;
+        min-height: 100%;
+        padding: 0;
+        position: absolute;
+        width: $sidebar-expanded-width;
+
+        // .rd-page-wrapper .rd-sidebar a
+        a {
+            // .rd-page-wrapper .rd-sidebar a > .fa
+            color: inherit;
+        }
+
+        // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list
+        ul.rd-sidebar-item-list {
+            > li {
+                // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list > li > a
+                >a {
+                    display: block;
+                    padding: 0.625rem 0.625rem 0.625rem 0.625rem;
+
+                    // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list > li > a > span.rd-sidebar-menu-text
+                    > span.rd-sidebar-menu-text {
+                        overflow-wrap: break-word;
+                        word-break: break-all;
+                        word-wrap: break-word;
+                    }
+
+                    // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list > li > a > .fa
+                    > .fa {
+                        font-size: 1.250rem;
+                        transition: font-size $sidebar-transition-seconds;
+                    }
+                }
+            }
+        }
+
+        // .rd-page-wrapper .rd-sidebar ul
+        ul {
+            list-style: none;
+            margin: 0;
+            li {
+                list-style: none;
+            }
+        }
+    }
+
+    // .rd-page-wrapper.mini-screen-sidebar-visible
+    &.mini-screen-sidebar-visible {
+        overflow-x: hidden;
+        // .rd-page-wrapper.mini-screen-sidebar-visible > footer,
+        // .rd-page-wrapper.mini-screen-sidebar-visible > main
+        > footer,
+        > main {
+            transform: translateX($sidebar-expanded-width);
+        }
+        // .rd-page-wrapper.mini-screen-sidebar-visible .rd-sidebar
+        .rd-sidebar {
+            display: block;
+        }
+        @media (min-width: $minimum-sidebar-breakpoint) {
+            // this is in on tapped sidebar menu toggler and resize to medium screen size.
+            // so, all the values for small screen should be reset.
+            overflow-x: visible;
+            // .rd-page-wrapper.mini-screen-sidebar-visible > main
+            > main {
+                transform: none;
+            }
+            // .rd-page-wrapper.mini-screen-sidebar-visible .rd-sidebar
+            .rd-sidebar {
+                background-color: transparent;
+                min-height: 0;
+                position: static;
+            }
+        }
+    }
+
+    // .rd-page-wrapper in @media query
+    @media (min-width: $minimum-sidebar-breakpoint) {
+        // .rd-page-wrapper > footer
+        > footer {
+            display: flex;
+            flex-basis: calc(100% - #{$sidebar-expanded-width});
+            transform: translateX($sidebar-expanded-width);
+            transition: flex-basis $sidebar-transition-seconds, transform $sidebar-transition-seconds;
+        }
+
+        // .rd-page-wrapper .rd-sidebar
+        .rd-sidebar {
+            align-self: self-start;
+            background-color: transparent;
+            display: block;
+            position: relative;
+            transition: width $sidebar-transition-seconds;
+            width: $sidebar-expanded-width;
+        }
+        // .rd-page-wrapper.is-collapsed
+        &.is-collapsed {
+            // .rd-page-wrapper.is-collapsed > footer
+            > footer {
+                flex-basis: calc(100% - #{$sidebar-collapsed-width});
+                transform: translateX($sidebar-collapsed-width);
+            }
+
+            // .rd-page-wrapper.is-collapsed .rd-sidebar
+            .rd-sidebar {
+                width: $sidebar-collapsed-width;
+                // .rd-page-wrapper.is-collapsed .rd-sidebar ul.rd-sidebar-item-list
+                ul.rd-sidebar-item-list {
+                    // .rd-page-wrapper.is-collapsed .rd-sidebar ul.rd-sidebar-item-list > li
+                    > li {
+                        // .rd-page-wrapper.is-collapsed .rd-sidebar ul.rd-sidebar-item-list > li > a
+                        > a {
+                            // .rd-page-wrapper.is-collapsed .rd-sidebar ul.rd-sidebar-item-list > li > a > span.rd-sidebar-menu-text
+                            > span.rd-sidebar-menu-text {
+                                display: none;
+                            }
+
+                            // .rd-page-wrapper.is-collapsed .rd-sidebar ul.rd-sidebar-item-list > li > a > .fa
+                            > .fa {
+                                font-size: 1.875rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // .rd-page-wrapper .rd-sidebar-inner
+        .rd-sidebar-inner {
+            z-index: ($z-index-sidebar + 1);// fix sticky menu cause the menu is under everything that contain `position: relative;`.
+        }
+    }
+}
+
+
+ul.rd-sidebar-expand-collapse-controls,
+.rd-sidebar-expand-collapse-controls {
+    display: none;
+    @media (min-width: $minimum-sidebar-breakpoint) {
+        display: block;
+        position: relative;
+
+        a {
+            background-color: $navbar-sidebar-background-color;
+            cursor: pointer;
+            margin-top: -2px;
+            position: absolute;
+            top: -1.250rem;// - hr margin top
+            .fa,
+            .icon {
+                color: #aaa;
+            }
+        }
+
+        hr {
+            border-top-color: #444;
+        }
+        @at-root {
+            // .rd-page-wrapper
+            .rd-page-wrapper {
+                // .rd-page-wrapper.is-collapsed
+                &.is-collapsed {
+                    // .rd-page-wrapper.is-collapsed ul.rd-sidebar-expand-collapse-controls
+                    .rd-sidebar-expand-collapse-controls {
+                        // .rd-page-wrapper.is-collapsed ul.rd-sidebar-expand-collapse-controls a
+                        a {
+                            box-shadow: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

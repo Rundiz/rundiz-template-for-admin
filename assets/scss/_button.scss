@@ -1,0 +1,125 @@
+/*
+* ----------------------------------------------------------------------------------------------
+* button
+* ----------------------------------------------------------------------------------------------
+*/
+
+
+@import 'typo-and-form/_variables';
+
+
+a.rd-button,
+.rd-button {
+    &.danger,
+    &.info,
+    &.primary,
+    &.success,
+    &.warning {
+        color: #FFF;
+        &[disabled],
+        &.disabled {
+            color: #FFF;
+        }
+    }
+
+    &.danger {
+        background-color: $danger-color;
+        border-color: darken($danger-color, 7);
+        box-shadow: 0 $button-3d-height 0 darken($danger-color, 5);
+        &:active,
+        &.active {
+            box-shadow: 0 $button-3d-pressed-height 0 darken($danger-color, 5);
+        }
+        &[disabled],
+        &.disabled {
+            background-color: $danger-disabled-color;
+            border-color: darken($danger-disabled-color, 7);
+            box-shadow: 0 $button-3d-height 0 darken($danger-disabled-color, 5);
+        }
+    }
+    &.info {
+        background-color: $info-color;
+        border-color: darken($info-color, 7);
+        box-shadow: 0 $button-3d-height 0 darken($info-color, 5);
+        &:active,
+        &.active {
+            box-shadow: 0 $button-3d-pressed-height 0 darken($info-color, 5);
+        }
+        &[disabled],
+        &.disabled {
+            background-color: $info-disabled-color;
+            border-color: darken($info-disabled-color, 7);
+            box-shadow: 0 $button-3d-height 0 darken($info-disabled-color, 5);
+        }
+    }
+    &.primary {
+        background-color: $primary-color;
+        border-color: darken($primary-color, 7);
+        box-shadow: 0 $button-3d-height 0 darken($primary-color, 5);
+        &:active,
+        &.active {
+            box-shadow: 0 $button-3d-pressed-height 0 darken($primary-color, 5);
+        }
+        &[disabled],
+        &.disabled {
+            background-color: $primary-disabled-color;
+            border-color: darken($primary-disabled-color, 7);
+            box-shadow: 0 $button-3d-height 0 darken($primary-disabled-color, 5);
+        }
+    }
+    &.success {
+        background-color: $success-color;
+        border-color: darken($success-color, 7);
+        box-shadow: 0 $button-3d-height 0 darken($success-color, 5);
+        &:active,
+        &.active {
+            box-shadow: 0 $button-3d-pressed-height 0 darken($success-color, 5);
+        }
+        &[disabled],
+        &.disabled {
+            background-color: $success-disabled-color;
+            border-color: darken($success-disabled-color, 7);
+            box-shadow: 0 $button-3d-height 0 darken($success-disabled-color, 5);
+        }
+    }
+    &.warning {
+        background-color: $warning-color;
+        border-color: darken($warning-color, 7);
+        box-shadow: 0 $button-3d-height 0 darken($warning-color, 5);
+        &:active,
+        &.active {
+            box-shadow: 0 $button-3d-pressed-height 0 darken($warning-color, 5);
+        }
+        &[disabled],
+        &.disabled {
+            background-color: $warning-disabled-color;
+            border-color: darken($warning-disabled-color, 7);
+            box-shadow: 0 $button-3d-height 0 darken($warning-disabled-color, 5);
+        }
+    }
+
+    // sizes (padding is no need due to its unit is em so font size changed it gonna be changed.)
+    &.large {
+        font-size: $form-large-font-size;
+    }
+    &.small {
+        font-size: $form-small-font-size;
+    }
+    &.tiny {
+        font-size: $form-tiny-font-size;
+    }
+}
+
+
+.rd-button-group {
+    display: inline-flex;
+    position: relative;
+    ul {
+        // it is dropdown within button
+        display: none;
+    }
+
+    .rd-button + .rd-button {
+        margin-left: -1px;
+    }
+}

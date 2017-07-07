@@ -1,0 +1,41 @@
+/*
+* ----------------------------------------------------------------------------------------------
+* breadcrumb
+* ----------------------------------------------------------------------------------------------
+*/
+
+
+.rd-breadcrumb {
+    background-color: $background-color;
+    color: #777;
+    display: flex;
+    font-size: 0.750em;
+    list-style: none;
+    margin: 0 0 0.625rem 0;
+    padding: 0.500rem $block-element-margin-sides;
+
+    li {
+        margin-right: 0.625rem;
+        // .rd-breadcrumb li::after
+        &::after {
+            content: '/';
+            margin-left: 0.625rem;
+        }
+        // .rd-breadcrumb li:last-child
+        &:last-child {
+            margin-right: 0;
+            // .rd-breadcrumb li:last-child::after
+            &::after {
+                content: '';
+            }
+        }
+        &.active,
+        &.current {
+            a,
+            span {
+                color: inherit;
+                cursor: default;
+            }
+        }
+    }
+}

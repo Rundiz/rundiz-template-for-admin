@@ -1,0 +1,104 @@
+/*
+* ----------------------------------------------------------------------------------------------
+* form > input[type="range"]
+*
+* Input range CSS generators:
+* http://danielstern.ca/range.css/
+* http://www.cssportal.com/style-input-range/
+* ----------------------------------------------------------------------------------------------
+*/
+
+
+input[type="range"] {
+    -webkit-appearance: none;
+    height: 37px;
+    margin: 10px 0;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);// remove white-blue background color on tap or on touch in chrome for android.
+
+    // thumb
+    &::-moz-range-thumb {
+        background: $background-color;
+        border: 1px solid $inputrange-thumb-border-color;
+        border-radius: 0px;
+        box-shadow: none;
+        cursor: pointer;
+        height: 30px;
+        width: 15px;
+    }
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        background: $background-color;
+        box-shadow: none;
+        border: 1px solid $inputrange-thumb-border-color;
+        border-radius: 0px;
+        cursor: pointer;
+        height: 30px;
+        margin-top: -14px;
+        width: 15px;
+    }
+
+    // track
+    &::-moz-range-track {
+        animate: 0.2s;
+        background: $border-color;
+        border: 0px solid #000000;
+        border-radius: 0px;
+        box-shadow: none;
+        cursor: pointer;
+        height: 3px;
+    }
+    &::-webkit-slider-runnable-track {
+        animate: 0.2s;
+        background: $border-color;
+        border: 0px solid #000000;
+        border-radius: 0px;
+        box-shadow: none;
+        cursor: pointer;
+        height: 3px;
+    }
+    &:focus::-webkit-slider-runnable-track {
+        background: $border-color;
+    }
+
+    // ms (works on Microsoft Edge only.)
+    &::-ms-track {
+        animate: 0.2s;
+        background: transparent;
+        border-color: transparent;
+        color: transparent;
+        cursor: pointer;
+        height: 3px;
+    }// track must stay before thumb.
+    &::-ms-thumb {
+        background: $background-color;
+        border: 1px solid $inputrange-thumb-border-color;
+        border-radius: 0px;
+        box-shadow: none;
+        cursor: pointer;
+        height: 30px;
+        margin-top: 1px;
+        top: 22px;
+        width: 15px;
+    }
+    &::-ms-fill-lower {
+        background: $border-color;
+        border: 0px solid #000000;
+        border-radius: 0px;
+        box-shadow: none;
+    }
+    &::-ms-fill-upper {
+        background: $border-color;
+        border: 0px solid #000000;
+        border-radius: 0px;
+        box-shadow: none;
+    }
+    // fill track on the left.
+    &:focus::-ms-fill-lower {
+        background: $border-color;
+    }
+    // fill track on the right.
+    &:focus::-ms-fill-upper {
+        background: $border-color;
+    }
+}
+

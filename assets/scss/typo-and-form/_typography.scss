@@ -1,0 +1,314 @@
+/*
+* ----------------------------------------------------------------------------------------------
+* typography
+* ----------------------------------------------------------------------------------------------
+*/
+
+
+html {
+    background-color: #fff;
+    cursor: auto;
+    font-size: 107%;
+    @media (min-width: $sm-min-width) {
+        font-size: 100%;
+    }
+}
+
+
+body {
+    color: $font-color;
+    cursor: auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid sans", "Helvetica Neue", "Helvetica", "Tahoma", "Arial", sans-serif;// from Smashing magazine. Warning! the font name "Segoe UI" cause quote mark italic and looks same for left and right quote.
+    font-size: 100%;
+    font-weight: normal;
+    line-height: 1.5;
+    padding: 0;
+}
+
+
+a {
+    color: $link-color;
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);// remove on touch and white blue background color appears.
+    &:active,
+    &:focus,
+    &:hover {
+        @include crossbrowser-no-select;
+    }
+    &:visited {
+        color: darken($link-color, 15);
+    }
+    &:focus,
+    &:hover {
+        color: lighten($link-color, 15);
+    }
+}
+
+
+abbr {
+    cursor: help;
+}
+
+
+blockquote {
+    border-left: 5px solid $border-color;
+    border-right: 0;
+    margin: 0 0 $content-block-element-margin-bottom 0;
+    padding: 0 0 0 0.625em;
+}
+
+
+code {
+    background-color: #f1f1f1;
+    color: #555;
+    font-family: "Consolas", "Lucida Console", "DejaVu Sans Mono", "Liberation Mono", "Courier New", monospace, sans-serif;
+    padding: 0.125em 0.188em;
+}
+
+
+details {
+    margin: 0 0 $content-block-element-margin-bottom 0;
+    details {
+        margin-left: 1.111em;
+        margin-right: 0;
+    }
+    summary {
+        cursor: pointer;
+    }
+}
+
+
+dl {
+    margin: 0 0 $content-block-element-margin-bottom 0;
+    dt {
+        margin: 0;
+    }
+    dd {
+        margin: 0 0 0 1.111em;
+    }
+}
+
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0 0 $content-block-element-margin-bottom 0;
+}
+@each $header, $font-size, $font-weight in (h1, 2.44em, 400),
+                                                                (h2, 2.05em, 400),
+                                                                (h3, 1.5em, 400),
+                                                                (h4, 1.27em, 400),
+                                                                (h5, 1em, 600),
+                                                                (h6, 0.75em, 700) {
+  #{$header} {
+    font-size: $font-size;
+    font-weight: $font-weight;
+  }
+}
+
+
+hr {
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: 1px solid $border-color;
+    margin: 1.250rem 0;// must be rem due to h1-h6, p use margin as rem. use this as em will cause a lot different with those elements if parent element use larger or smaller font size.
+}
+
+
+iframe {
+    border: 1px solid $border-color;
+}
+
+
+img {
+    &.fluid {
+        height: auto;
+        max-width: 100%;
+    }
+}
+
+
+kbd {
+    @extend code;
+    background-color: #f1f1f1;
+    border: 1px solid $border-color;
+    border-radius: 2px;
+}
+
+
+label {
+    cursor: pointer;
+    [disabled],
+    [readonly] {
+        cursor: not-allowed;
+    }
+}
+
+
+meter {
+    background-color: $background-color;// Firefox
+    background-image: none;// Firefox
+    box-shadow: none;
+    display: inline-block;
+    height: 1em;
+    outline: none;
+    width: 11.250em;
+    &:-moz-meter-optimum::-moz-meter-bar {
+        // Firefox
+        background-color: #77AA33;
+        background-image: none;
+    }
+    &:-moz-meter-sub-optimum::-moz-meter-bar {
+        // Firefox
+        background-color: #FFB900;
+        background-image: none;
+    }
+    &:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+        // Firefox
+        background-color: #D13438;
+        background-image: none;
+    }
+    &::-webkit-meter-optimum-value {
+        // Chrome, Opera, Edge
+        background-color: #77AA33;
+        background-image: none;
+    }
+    &::-webkit-meter-suboptimum-value {
+        // Chrome, Opera, Edge
+        background-color: #FFB900;
+        background-image: none;
+    }
+    &::-webkit-meter-even-less-good-value {
+        // Chrome, Opera, Edge.
+        background-color: #D13438;
+        background-image: none;
+    }
+    &::-webkit-meter-bar {
+        // Chrome, Edge
+        background-color: $background-color;
+        background-image: none;
+        border: none;// (in Edge, it has border by default).
+    }
+}
+
+
+pre {
+    @extend code;
+    margin: 0 0 $content-block-element-margin-bottom 0;
+    padding: 0.625em;
+}
+
+
+@keyframes progressbar-novalue-animations {
+    0% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+progress {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: $background-color;
+    border: none;
+    height: 1em;
+    width: 11.250em;
+    &:not([value]) {
+        // no value attribute.
+        animation: progressbar-novalue-animations 1s linear infinite alternate;
+        background-color: green;// Edge, IE
+        box-shadow: 0 1px 1px rgba(50, 250, 50, 0.8);
+        color: green;// fix progress with no value that have running dots in Edge, IE
+        opacity: 0.2;
+        &::-moz-progress-bar {
+            // no value attribute for mozilla.
+            background-color: green;
+        }
+        &::-webkit-progress-bar {
+            // no value attribute for webkit.
+            background-color: green;
+        }
+    }
+    &::-moz-progress-bar {
+        // Firefox don't have -moz-progress-value.
+        background-color: green;
+    }
+    &::-ms-fill {
+        background-color: green;
+    }
+    &::-webkit-progress-bar {
+        background-color: $background-color;
+    }
+    &::-webkit-progress-value {
+        background-color: green;
+    }
+}
+
+
+q {
+    &::after {
+        content: '”';
+    }
+    &::before {
+        content: '“';
+    }
+}
+
+
+samp {
+    @extend code;
+    background-color: $background-color;
+    border-bottom: 0;
+    border-left: 3px solid $border-color;
+    border-right: 0;
+    border-top: 0;
+}
+
+
+table {
+    border: 1px solid $border-color;
+    margin-bottom: $content-block-element-margin-bottom;
+    thead th,
+    thead td,
+    tfoot th,
+    tfoot td {
+        background-color: $background-color;
+        font-weight: 600;
+        text-align: left;
+    }
+    td, th {
+        border: 1px solid $border-color;
+        padding: 0.313em;
+    }
+}
+
+
+ul, ol {
+    line-height: 1.6;
+    margin: 0 0 $content-block-element-margin-bottom 1.111em;
+    padding: 0;
+    li {
+        margin: 0;
+        padding: 0;
+    }
+}
+ul li ul,
+ul li ol,
+ol li ol,
+ol li ul {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+ol {
+    list-style: decimal;
+}
+ul {
+    list-style: disc;
+}
+
+
+var {
+    border: 1px solid $border-color;
+    padding: 0.063em 0.375em 0.063em 0.188em;
+}

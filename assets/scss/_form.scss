@@ -1,0 +1,68 @@
+/*
+* ----------------------------------------------------------------------------------------------
+* form styles (horizontal form, vertical form, etc)
+* ----------------------------------------------------------------------------------------------
+*/
+
+
+@import 'typo-and-form/_variables';
+
+
+%input-large {
+    font-size: $form-large-font-size;
+}
+
+
+%input-small {
+    font-size: $form-small-font-size;
+}
+
+
+@include inputbox-like {
+    &.input-large {
+        @extend %input-large;
+    }
+    &.input-small {
+        @extend %input-small;
+    }
+}
+
+
+.rd-form {
+    .disabled {
+        color: $disabled-font-color;
+        cursor: not-allowed;
+    }
+    .form-group {
+        margin-bottom: $content-block-element-margin-bottom;
+        .control-label {
+            font-weight: 600;
+            &.large {
+                font-size: $form-large-font-size;
+            }
+            &.small {
+                font-size: $form-small-font-size;
+            }
+        }
+        .control-wrapper {
+            @include inputbox-like {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+
+    @media (min-width: $minimum-sidebar-breakpoint) {
+        &.horizontal {
+            .form-group {
+                display: flex;
+                .control-label {
+                    width: 180px;
+                }
+                .control-wrapper {
+                    flex-grow: 1;
+                }
+            }
+        }
+    }
+}

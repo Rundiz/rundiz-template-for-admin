@@ -1,0 +1,62 @@
+// these variables for set once and use in common components.
+
+
+// based colors and settings.
+$background-color: #eee !default;
+$border-color: #ddd !default;
+$disabled-font-color: #999 !default;
+$font-color: #333 !default;
+$link-color: #1280EF;
+$max-z-index: 10000 !default;
+
+// navbar settings.
+// header and sidebar (medium screen size up) background color
+$navbar-sidebar-background-color: #222 !default;
+// for mobile screen - the header (including navbar height).
+// unit must be rem because it is page top header and navbar init. so, it is root header and navbar then use rem.
+$mobile-screen-navbar-height: 6.250rem !default;
+
+
+// margin for block level element.
+$block-element-margin-bottom: 1.250rem !default;
+$block-element-margin-sides: 0.625rem !default;
+
+
+// form font sizes
+$form-large-font-size: 1.250em;
+$form-small-font-size: 0.75em;
+$form-tiny-font-size: 0.625em;// currently only available to button.
+
+
+// the z-indexes
+$z-index-sidebar: 2;
+$z-index-navbar: 8;
+
+
+// colors for alert box, buttons, badge
+$primary-color: #52A0E5 !default;
+$primary-disabled-color: #97c3ea !default;
+$danger-background-color: #f4d0d0;
+$danger-color: #bc0000;
+$danger-disabled-color: #cf6464;
+$info-background-color: #c4e3f2;
+$info-color: #2481ad;
+$info-disabled-color: #6da3bd;
+$success-background-color: #d1e6d1;
+$success-color: #007c00;
+$success-disabled-color: #65b065;
+$warning-background-color: #fbd38f;
+$warning-color: #e69200;
+$warning-disabled-color: #efb247;
+
+
+// common screen sizes. use pixel unit.
+$xs-max-width: 767px !default;
+$sm-min-width: ($xs-max-width+1);
+$sm-max-width: 999px !default;
+$md-min-width: ($sm-max-width+1);
+$md-max-width: 1199px !default;
+$lg-min-width: ($md-max-width+1);
+$lg-max-width: 1399px !default;
+$xl-min-width: ($lg-max-width+1);
+$minimum-sidebar-breakpoint: $md-min-width;

@@ -1,0 +1,20 @@
+//mixins for columns flex only.
+
+
+@mixin columns-flex-12($size) {
+    @for $i from 1 through 12 {
+        .col-#{$size}-#{$i} {
+            flex: 0 0 (100% / 12) * $i;
+            max-width: (100% / 12) * $i;
+        }
+    }
+}
+
+
+@mixin offset-flex-12($size) {
+    @for $i from 1 through 12 {
+        .offset-#{$size}-#{$i} {
+            margin-left: (100% / 12) * $i;
+        }
+    }
+}

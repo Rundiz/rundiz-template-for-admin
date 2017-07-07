@@ -1,0 +1,136 @@
+/*!
+* ----------------------------------------------------------------------------------------------
+* jQuery UI override style
+* ----------------------------------------------------------------------------------------------
+*/
+
+
+@import '../global-common/_common-variables';
+
+
+// tabs
+.ui-tabs {
+
+    // .ui-tabs .ui-tabs-nav
+    .ui-tabs-nav {
+        padding: 0;
+
+        // .ui-tabs .ui-tabs-nav
+        @media (min-width: $minimum-sidebar-breakpoint) {
+            padding-left: 0.188em;
+            padding-right: 0.188em;
+        }
+
+        // .ui-tabs .ui-tabs-nav li
+        li {
+            border-bottom-width: 1px;
+            float: none;
+            margin: 0 0 0.313rem;
+            white-space: normal;
+
+            // .ui-tabs .ui-tabs-nav li
+            @media (min-width: $minimum-sidebar-breakpoint) {
+                border-bottom-width: 0;
+                float: left;
+                margin: 0 0.188rem 0 0;
+            }
+
+            // .ui-tabs .ui-tabs-nav li.ui-tabs-active
+            &.ui-tabs-active {
+                cursor: default;
+                margin-bottom: 0.313rem;
+
+                // .ui-tabs .ui-tabs-nav li.ui-tabs-active
+                @media (min-width: $minimum-sidebar-breakpoint) {
+                    margin-bottom: -1px;
+                }
+
+                // .ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor
+                .ui-tabs-anchor {
+                    cursor: default;
+                }
+            }
+        }
+
+        // .ui-tabs .ui-tabs-nav .ui-tabs-anchor
+        .ui-tabs-anchor {
+            display: block;
+            float: none;
+            padding: 0.313em;
+        }
+    }
+
+    // .ui-tabs .ui-tabs-panel
+    .ui-tabs-panel {
+        padding: 0.625em;
+    }
+
+    // .ui-tabs.tabs-vertical
+    &.tabs-vertical {
+        @media (min-width: $minimum-sidebar-breakpoint) {
+            display: flex;
+
+            // .ui-tabs.tabs-vertical .ui-tabs-nav
+            .ui-tabs-nav {
+                border-bottom-width: 0;
+                border-right-width: 1px;
+                max-width: 160px;
+                min-width: 80px;
+                padding-left: 0;
+                padding-right: 0;
+                padding-top: 0.188em;
+                width: auto;
+
+                // .ui-tabs.tabs-vertical .ui-tabs-nav li
+                li {
+                    border-bottom-width: 1px;
+                    border-right-width: 0;
+                    clear: left;
+                    margin-bottom: .188rem;
+                    margin-right: -1px;
+                    width: 100%;
+
+                    // .ui-tabs.tabs-vertical .ui-tabs-nav li.ui-tabs-active
+                    &.ui-tabs-active {
+                        margin-bottom: .2rem;
+                    }
+                }
+
+                // .ui-tabs.tabs-vertical .ui-tabs-nav .ui-tabs-anchor
+                .ui-tabs-anchor {
+                    display: block;
+                    float: none;
+                }
+            }
+        }
+    }// .ui-tabs.tabs-vertical
+
+    // .ui-tabs.ui-widget-content
+    &.ui-widget-content {
+        border-bottom-width: 0;
+        border-left-width: 0;
+        border-right-width: 0;
+        border-top-width: 0;
+    }
+
+    // .ui-tabs .ui-widget-header
+    .ui-widget-header {
+        background-color: transparent;
+        background-image: none;
+        border-left-width: 0;
+        border-right-width: 0;
+        border-top-width: 0;
+    }
+}
+
+
+// all other ui widgets -----------------------------------------------------------------------
+.ui-widget {
+    font-family: inherit;// do not override my font and color.
+    font-size: inherit;
+    color: inherit;
+    line-height: inherit;
+}
+.ui-widget-content {
+    color: inherit;
+}

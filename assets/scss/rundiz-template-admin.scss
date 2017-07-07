@@ -1,0 +1,24 @@
+/*!
+ * Rundiz template for admin
+ *
+ * @version 0.1
+ */
+
+
+@import 'global-common/_common-variables';
+
+@import 'global-common/_common-mixins';
+
+@import 'layout/_layout';
+
+@import '_alert-box';
+@import '_badge';
+@import '_breadcrumb';
+@import '_button';
+@import '_data-table';
+@import '_dropdown';
+@import '_form';
+@import '_navbar';
+@import '_pagination';
+
+@import '_helpers';

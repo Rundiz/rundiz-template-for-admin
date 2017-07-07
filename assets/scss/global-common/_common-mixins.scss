@@ -1,0 +1,32 @@
+// mixins
+
+
+// touch or click but no select for cross browsers.
+@mixin crossbrowser-no-select {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
+
+// define input elements that looks like a box such as input text, textarea, select box, etc.
+@mixin inputbox-like {
+    input[type="date"],
+    input[type="datetime-local"],
+    input[type="email"],
+    input[type="month"],
+    input[type="number"],
+    input[type="password"],
+    input[type="range"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="text"],
+    input[type="time"],
+    input[type="url"],
+    input[type="week"],
+    select,
+    textarea {
+        @content;
+    }
+}

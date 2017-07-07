@@ -1,0 +1,39 @@
+/*
+* ----------------------------------------------------------------------------------------------
+* focusable elements
+*
+* What are focusable elements?
+* - https://www.deque.com/blog/give-site-focus-tips-designing-usable-focus-indicators/
+* - https://stackoverflow.com/questions/1599660/which-html-elements-can-receive-focus
+* ----------------------------------------------------------------------------------------------
+*/
+
+
+:focus {
+    outline: 2px dotted $other-focus-color;
+}
+
+
+button,
+input,
+select,
+textarea {
+    &:focus {
+        outline: 2px solid $form-focus-color;
+    }
+}
+
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    &:-moz-focusring {
+        outline: 2px solid $form-focus-color;// override focus on button in Firefox. this also override sanitize.css which is must begins with [type="xxx"].
+    }
+}
+
+
+input[type="color"]::-moz-focus-inner {
+    border: none;// remove focus dotted in Firefox.
+}

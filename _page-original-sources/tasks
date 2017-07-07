@@ -1,0 +1,12 @@
+To compile sass (or scss) to css use the following command line:
+For compile a single file: `sass assets/scss/file.scss assets/css/file.css`
+For compile the whole folders: `sass --update assets/scss:assets/css`
+
+For expand and nice syntax, append this command to the current command: `--style="expanded"`
+For minimum space, append this command to the current command: `--style="compressed"`
+
+For no source map, append this command to the current command: `--sourcemap=none`
+
+For emit comments about line number from source, append this command to the current command: `--line-numbers`
+
+For force compile even css file is newer, append this command to the current command: `--force`

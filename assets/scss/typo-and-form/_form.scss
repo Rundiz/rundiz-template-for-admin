@@ -1,0 +1,185 @@
+/*
+* ----------------------------------------------------------------------------------------------
+* form, fieldset, and all input controls.
+* ----------------------------------------------------------------------------------------------
+*/
+
+
+%button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: $background-color;
+    border: 1px solid $border-color;
+    border-radius: 0;
+    box-shadow: 0 $button-3d-height 0 rgba(0, 0, 0, 0.1);
+    color: $font-color;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: $button-3d-height;// must be the same value as box shadow bottom.
+    padding: 0.313em 0.625em;
+    position: relative;
+    top: 0;
+    @include crossbrowser-no-select;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);// remove white-blue background color on tap or on touch in chrome for android.
+    transition: box-shadow 0.1s, top 0.1s;
+    &:active,
+    &:focus {
+        color: inherit;
+    }
+    &:active,
+    &.active {
+        box-shadow: 0 $button-3d-pressed-height 0 rgba(0, 0, 0, 0.1);
+        top: ($button-3d-height - $button-3d-pressed-height);
+    }
+    &:hover {
+        color: inherit;
+    }
+    &[disabled],
+    &.disabled {
+        background-color: lighten($background-color, 2);
+        box-shadow: 0 $button-3d-height 0 lighten(rgba(0, 0, 0, 0.1), 15);
+        color: lighten($font-color, 40);
+        cursor: not-allowed;
+        opacity: 1;
+        &:active {
+            top: 0;
+        }
+    }
+}
+
+
+%inputbox {
+    border: 1px solid $border-color;// this also override active, focus in firefox.
+    border-radius: 0;
+    font-family: inherit;
+    font-size: 0.99em;
+    line-height: 1.4;
+    padding: 0.313em 0.188em;
+    &:active,
+    &:focus {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+    }
+    &[disabled],
+    &[readonly] {
+        background-color: $background-color;
+        color: $disabled-font-color;
+        cursor: not-allowed;
+    }
+}
+
+
+a.rd-button,
+.rd-button,
+button {
+    @extend %button;
+}
+
+
+fieldset {
+    border: 1px solid $border-color;
+    margin: 0 0 $content-block-element-margin-bottom 0;
+    padding: 0.625em;
+    legend {
+        border: 1px solid $border-color;
+        padding: 0.125em 0.313em;
+    }
+}
+
+
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"] {
+    @extend %inputbox;
+}
+
+
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    @extend %button
+}
+
+
+input[type="color"] {
+    cursor: pointer;
+    border: 1px solid $border-color;
+    height: 2em;
+    padding: 0;
+}
+input[type="color"],
+input[type="file"],
+input[type="range"] {
+    cursor: pointer;
+}
+
+
+input[type="checkbox"],
+input[type="radio"] {
+    cursor: pointer;
+    &[disabled],
+    &[readonly] {
+        cursor: not-allowed;
+    }
+}
+
+
+input[type="file"] {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);// remove white-blue background color on tap or on touch in chrome for android.
+}
+
+
+input[type="image"] {
+    border: none;
+    border-radius: 0;
+    color: $font-color;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    @include crossbrowser-no-select;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);// remove white-blue background color on tap or on touch in chrome for android.
+    &:disabled,
+    &[disabled] {
+        cursor: not-allowed;
+        opacity: 0.7;
+    }
+}
+
+
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid $border-color;// this also override active, focus in firefox.
+    border-radius: 0;
+    padding: 0 1.5em 0 0.188em;
+    &[disabled],
+    &[readonly] {
+        background-color: $background-color;
+        color: $disabled-font-color;
+        cursor: not-allowed;
+    }
+}
+select:not([multiple]) {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+");// from zurb foundation.
+    background-position: 100% center;
+    background-repeat: no-repeat;
+}
+
+
+textarea {
+    @extend %inputbox;
+}
+
+
+@import '_form-input-range';
