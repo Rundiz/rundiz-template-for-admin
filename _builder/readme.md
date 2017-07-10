@@ -20,7 +20,7 @@ Example:<br>
 * Move everything inside **_original-source-php** to the main working folder.
 * Make changes to the project and view it via web browser. Example: http://localhost/my-project
 
-##Commit
+## Commit
 
 Once you finished editing the project, open command line tool and go to working folder.
 
