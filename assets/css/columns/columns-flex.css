@@ -8,7 +8,7 @@
   display: flex;
   flex-wrap: wrap;
 }
-.rd-columns-flex-container.fix-column-edge-page-layout {
+.rd-columns-flex-container.fix-columns-container-edge {
   margin-left: -0.625rem;
   margin-right: -0.625rem;
 }
@@ -19,6 +19,10 @@
   flex-shrink: 1;
   min-width: 0;
   padding: 0 0.625rem;
+}
+.rd-columns-flex-container .column-break {
+  flex-basis: 100%;
+  page-break-after: always;
 }
 .rd-columns-flex-container [class*="col-"]:nth-child(12) {
   page-break-after: always;

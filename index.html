@@ -9,7 +9,26 @@
         <link rel="stylesheet" href="assets/css/smartmenus/sm-core-css.css?v=1477996652">
         <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?v=1499420239">
         <link rel="stylesheet" href="assets/css/typo-and-form/typo-and-form.css?v=1499420238">
-        <link rel="stylesheet" href="assets/css/rundiz-template-admin.css?v=1499420237"> 
+        <link rel="stylesheet" href="assets/css/rundiz-template-admin.css?v=1499422701"> 
+        <link rel="stylesheet" href="assets/css/columns/columns-flex.css?v=1499667281">
+        <style type="text/css">
+            .example-card {
+                border: 1px solid #ddd;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+                margin-bottom: 1.250rem;
+                padding: 0.625em;
+            }
+
+            .example-card.inverse {
+                background-color: #333;
+                border: none;
+                color: #eee;
+            }
+
+            .example-card.no-margin-bottom {
+                margin-bottom: 0;
+            }
+        </style>
     </head>
     <body ontouchstart="">
         <header class="rd-navbar">
@@ -213,17 +232,158 @@
 </nav>
  
                 <div class="rd-page-content">
-                    <h1>Rundiz template for admin</h1>
-                    <p>is the HTML template and CSS, JS set for admin page layout. It also come with essential components that mostly administrator application have to use.</p>
-                    <p><abbr title="Rundiz template for admin">RDTA</abbr> support modern browsers such as Firefox, Google Chrome, Microsoft Edge, Opera, Safari, Vivaldi in all OS.</p>
-                    <p>Almost all element (&gt; 90%) was reset the design to display the same way cross browsers and yes we do <a href="http://www.outlinenone.com/" target="outlinenone_com">support accessibility</a>.</p>
-                    <hr>
-                    <p>Check for the last update or fork me on <a href="https://github.com/Rundiz/rundiz-template-for-admin" target="rdta_on_github">Github</a></p>
+                    <div class="rd-columns-flex-container fix-columns-container-edge">
+                        <div class="column">
+                            <div class="example-card">
+                                <h1>Rundiz template for admin</h1>
+                                <p>is the HTML template and CSS, JS set for admin page layout. It also come with essential components that mostly administrator application have to use.</p>
+                                <p><abbr title="Rundiz template for admin">RDTA</abbr> support modern browsers such as Firefox, Google Chrome, Microsoft Edge, Opera, Safari, Vivaldi in all OS.</p>
+                                <p>Almost all element (&gt; 90%) was reset the design to display the same way cross browsers and yes we do <a href="http://www.outlinenone.com/" target="outlinenone_com">support accessibility</a>.</p>
+                                <hr>
+                                <p>Check for the last update or fork me on <a href="https://github.com/Rundiz/rundiz-template-for-admin" target="rdta_on_github">Github</a></p>
+                            </div>
+                        </div><!--.column-->
+
+                        <div class="column-break"></div>
+
+                        <div class="column col-lg-3 col-sm-6">
+                            <div class="example-card inverse">
+                                <h3>Users</h3>
+                                <p>Total <small class="rd-notification-badge tiny">14</small></p>
+                            </div>
+                        </div><!--.column-->
+                        <div class="column col-lg-3 col-sm-6">
+                            <div class="example-card inverse">
+                                <h3>Comments</h3>
+                                <p>New <small class="rd-notification-badge tiny badge-info">2</small></p>
+                            </div>
+                        </div><!--.column-->
+                        <div class="column col-lg-3 col-sm-6">
+                            <div class="example-card inverse">
+                                <h3>Posts</h3>
+                                <p>Pending <small class="rd-notification-badge tiny badge-warning">3</small></p>
+                            </div>
+                        </div><!--.column-->
+                        <div class="column col-lg-3 col-sm-6">
+                            <div class="example-card inverse">
+                                <h3>Contact</h3>
+                                <p>New <small class="rd-notification-badge tiny badge-info">1</small></p>
+                            </div>
+                        </div><!--.column-->
+
+                        <div class="column-break"></div>
+
+                        <div class="column">
+                            <div class="example-card no-margin-bottom">
+                                <h3>Customers</h3>
+                                <table class="rd-datatable responsive">
+                                    <thead>
+                                        <tr>
+                                            <th class="column-primary">Name</th>
+                                            <th>Address</th>
+                                            <th>Email</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th class="column-primary">Name</th>
+                                            <th>Address</th>
+                                            <th>Email</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        
+                                        <tr>
+                                            <td class="column-primary" data-colname="Name">
+                                                Gwendolyn Uphill
+                                                <button class="toggle-row" type="button"><i class="fa fa-caret-down fa-fw" data-toggle-icon="fa-caret-down fa-caret-up"></i><span class="screen-reader-only">Show more details</span></button>
+                                            </td>
+                                            <td data-colname="Address">282 Springview Street</td>
+                                            <td data-colname="Email">guphill0@upenn.edu</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="column-primary" data-colname="Name">
+                                                Reinhold Keneleyside
+                                                <button class="toggle-row" type="button"><i class="fa fa-caret-down fa-fw" data-toggle-icon="fa-caret-down fa-caret-up"></i><span class="screen-reader-only">Show more details</span></button>
+                                            </td>
+                                            <td data-colname="Address">820 Old Gate Parkway</td>
+                                            <td data-colname="Email">rkeneleyside1@de.vu</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="column-primary" data-colname="Name">
+                                                Leroy Orrah
+                                                <button class="toggle-row" type="button"><i class="fa fa-caret-down fa-fw" data-toggle-icon="fa-caret-down fa-caret-up"></i><span class="screen-reader-only">Show more details</span></button>
+                                            </td>
+                                            <td data-colname="Address">8 Charing Cross Avenue</td>
+                                            <td data-colname="Email">lorrah2@wikia.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="column-primary" data-colname="Name">
+                                                Rutherford Tarney
+                                                <button class="toggle-row" type="button"><i class="fa fa-caret-down fa-fw" data-toggle-icon="fa-caret-down fa-caret-up"></i><span class="screen-reader-only">Show more details</span></button>
+                                            </td>
+                                            <td data-colname="Address">10 Valley Edge Park</td>
+                                            <td data-colname="Email">rtarney3@cocolog-nifty.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="column-primary" data-colname="Name">
+                                                Perl Lancetter
+                                                <button class="toggle-row" type="button"><i class="fa fa-caret-down fa-fw" data-toggle-icon="fa-caret-down fa-caret-up"></i><span class="screen-reader-only">Show more details</span></button>
+                                            </td>
+                                            <td data-colname="Address">98697 Bultman Park</td>
+                                            <td data-colname="Email">plancetter4@fc2.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="column-primary" data-colname="Name">
+                                                Georgie Ballister
+                                                <button class="toggle-row" type="button"><i class="fa fa-caret-down fa-fw" data-toggle-icon="fa-caret-down fa-caret-up"></i><span class="screen-reader-only">Show more details</span></button>
+                                            </td>
+                                            <td data-colname="Address">91 Namekagon Road</td>
+                                            <td data-colname="Email">gballister5@mozilla.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="column-primary" data-colname="Name">
+                                                Gay Bill
+                                                <button class="toggle-row" type="button"><i class="fa fa-caret-down fa-fw" data-toggle-icon="fa-caret-down fa-caret-up"></i><span class="screen-reader-only">Show more details</span></button>
+                                            </td>
+                                            <td data-colname="Address">825 Reindahl Trail</td>
+                                            <td data-colname="Email">gbill6@chron.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="column-primary" data-colname="Name">
+                                                Leonid Berryann
+                                                <button class="toggle-row" type="button"><i class="fa fa-caret-down fa-fw" data-toggle-icon="fa-caret-down fa-caret-up"></i><span class="screen-reader-only">Show more details</span></button>
+                                            </td>
+                                            <td data-colname="Address">693 Roxbury Road</td>
+                                            <td data-colname="Email">lberryann7@cbc.ca</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="column-primary" data-colname="Name">
+                                                Robby Scotson
+                                                <button class="toggle-row" type="button"><i class="fa fa-caret-down fa-fw" data-toggle-icon="fa-caret-down fa-caret-up"></i><span class="screen-reader-only">Show more details</span></button>
+                                            </td>
+                                            <td data-colname="Address">74600 Loeprich Way</td>
+                                            <td data-colname="Email">rscotson8@skype.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="column-primary" data-colname="Name">
+                                                Valerie Tappor
+                                                <button class="toggle-row" type="button"><i class="fa fa-caret-down fa-fw" data-toggle-icon="fa-caret-down fa-caret-up"></i><span class="screen-reader-only">Show more details</span></button>
+                                            </td>
+                                            <td data-colname="Address">5 Welch Junction</td>
+                                            <td data-colname="Email">vtappor9@mac.com</td>
+                                        </tr>
+ 
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div><!--.column-->
+                    </div><!--.rd-columns-flex-container-->
                 </div><!--.rd-page-content-->
             </main>
             <footer>
                 <div class="rd-page-footer-left"><a href="http://rundiz.com" target="_blank">Rundiz</a> template for admin</div>
-                <div class="rd-page-footer-right">v.0.0</div>
+                <div class="rd-page-footer-right">My app version n.n.</div>
             </footer> 
         </div><!--.rd-page-wrapper-->
         

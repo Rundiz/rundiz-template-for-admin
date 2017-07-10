@@ -14,8 +14,8 @@
     display: flex;
     flex-wrap: wrap;
 
-    // .rd-columns-flex-container.fix-column-edge-page-layout
-    &.fix-column-edge-page-layout {
+    // .rd-columns-flex-container.fix-columns-container-edge
+    &.fix-columns-container-edge {
         margin-left: -$block-element-margin-sides;
         margin-right: -$block-element-margin-sides;
     }
@@ -28,6 +28,12 @@
         flex-shrink: 1;
         min-width: 0;// fix table push column over screen.
         padding: 0 $block-element-margin-sides;
+    }
+
+    // .rd-columns-flex-container .column-break
+    .column-break {
+        flex-basis: 100%;
+        page-break-after: always;
     }
 
     // fixed columns (12 max) --------------------------------------------------------------

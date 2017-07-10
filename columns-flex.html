@@ -9,8 +9,8 @@
         <link rel="stylesheet" href="assets/css/smartmenus/sm-core-css.css?v=1477996652">
         <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?v=1499420239">
         <link rel="stylesheet" href="assets/css/typo-and-form/typo-and-form.css?v=1499420238">
-        <link rel="stylesheet" href="assets/css/rundiz-template-admin.css?v=1499420237"> 
-        <link rel="stylesheet" href="assets/css/columns/columns-flex.css?v=1499420240">
+        <link rel="stylesheet" href="assets/css/rundiz-template-admin.css?v=1499422701"> 
+        <link rel="stylesheet" href="assets/css/columns/columns-flex.css?v=1499667281">
         <style type="text/css">
             .column {
                 background-color: #dee9f2;
@@ -249,8 +249,8 @@
                         <div class="column">column</div>
                         <div class="column">column</div>
                     </div>
-                    <p>If you feels like the left and right edge is too narrower than the page layout, fix with <code>.fix-column-edge-page-layout</code> class.</p>
-                    <div class="rd-columns-flex-container fix-column-edge-page-layout rd-block-level-margin-bottom">
+                    <p>If you feels like the left and right edge is too narrower than the page layout, fix with <code>.fix-columns-container-edge</code> class.</p>
+                    <div class="rd-columns-flex-container fix-columns-container-edge rd-block-level-margin-bottom">
                         <div class="column example-transparent">
                             <div class="example-outline">
                                 column
@@ -857,6 +857,24 @@
 
                     <div class="rd-block-level-margin-bottom"></div>
 
+                    <h2>Break columns</h2>
+                    <p>The columns can be force break into new line using <code>.column-break</code> class.</p>
+                    <div class="rd-columns-flex-container rd-block-level-margin-bottom">
+                        <div class="column">column</div>
+                        <div class="column">column</div>
+                        <div class="column">column</div>
+                        <div class="column-break"></div>
+                        <div class="column">column</div>
+                    </div>
+                    <p>It also works on both flexible or fixed columns.</p>
+                    <div class="rd-columns-flex-container rd-block-level-margin-bottom">
+                        <div class="column col-xs-3">col-xs-3</div>
+                        <div class="column col-xs-3">col-xs-3</div>
+                        <div class="column col-xs-3">col-xs-3</div>
+                        <div class="column-break"></div>
+                        <div class="column col-xs-3">col-xs-3</div>
+                    </div>
+
                     <h2>Nesting</h2>
                     <p>The columns can be nested.</p>
                     <div class="rd-columns-flex-container rd-block-level-margin-bottom">
@@ -869,14 +887,14 @@
                         </div>
                         <div class="column col-sm-3">col-sm-3</div>
                     </div>
-                    <p>You may feels that the left &amp; right edge of columns, even nested column was too narrower than page layout. This can be fixed by add <code>.fix-column-edge-page-layout</code> class to the container.</p>
-                    <div class="rd-columns-flex-container fix-column-edge-page-layout rd-block-level-margin-bottom">
+                    <p>You may feels that the left &amp; right edge of columns, even nested column was too narrower than page layout. This can be fixed by add <code>.fix-columns-container-edge</code> class to the container.</p>
+                    <div class="rd-columns-flex-container fix-columns-container-edge rd-block-level-margin-bottom">
                         <div class="column col-sm-9 example-transparent">
                             <div class="example-outline">col-sm-9</div>
-                            <div class="rd-columns-flex-container fix-column-edge-page-layout">
+                            <div class="rd-columns-flex-container fix-columns-container-edge">
                                 <div class="column col-md-6 example-transparent">
                                     <div class="example-outline">col-md-6</div>
-                                    <div class="rd-columns-flex-container fix-column-edge-page-layout">
+                                    <div class="rd-columns-flex-container fix-columns-container-edge">
                                         <div class="column col-xl-4 example-transparent">
                                             <div class="example-outline">col-xl-4</div>
                                         </div>
@@ -890,7 +908,7 @@
                                 </div>
                                 <div class="column col-md-6 example-transparent">
                                     <div class="example-outline">col-md-6</div>
-                                    <div class="rd-columns-flex-container fix-column-edge-page-layout">
+                                    <div class="rd-columns-flex-container fix-columns-container-edge">
                                         <div class="column col-lg-6 example-transparent">
                                             <div class="example-outline">col-lg-6</div>
                                         </div>
@@ -909,7 +927,7 @@
             </main>
             <footer>
                 <div class="rd-page-footer-left"><a href="http://rundiz.com" target="_blank">Rundiz</a> template for admin</div>
-                <div class="rd-page-footer-right">v.0.0</div>
+                <div class="rd-page-footer-right">My app version n.n.</div>
             </footer> 
         </div><!--.rd-page-wrapper-->
         
