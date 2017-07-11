@@ -15,12 +15,17 @@ class CompileScss
 
 
     /**
-     * Count files
+     * Count scss files
      * 
      * @param string $scssFolder
+     * @return integer
      */
     private function countFiles($scssFolder)
     {
+        if (!is_dir($scssFolder)) {
+            return 0;
+        }
+
         $files = new \RecursiveIteratorIterator(
                 new \RecursiveDirectoryIterator($scssFolder, \RecursiveDirectoryIterator::SKIP_DOTS), 
                 \RecursiveIteratorIterator::CHILD_FIRST
@@ -44,9 +49,14 @@ class CompileScss
      * Count sass cache.
      * 
      * @param string $sassCache
+     * @return integer
      */
     private function countSassCache($sassCache)
     {
+        if (!is_dir($sassCache)) {
+            return 0;
+        }
+
         $files = new \RecursiveIteratorIterator(
                 new \RecursiveDirectoryIterator($sassCache, \RecursiveDirectoryIterator::SKIP_DOTS), 
                 \RecursiveIteratorIterator::CHILD_FIRST
@@ -64,6 +74,10 @@ class CompileScss
      */
     private function recursiveDelete($targetDir, ProgressBar $Progress)
     {
+        if (!is_dir($targetDir)) {
+            return;
+        }
+
         $files = new \RecursiveIteratorIterator(
                 new \RecursiveDirectoryIterator($targetDir, \RecursiveDirectoryIterator::SKIP_DOTS), 
                 \RecursiveIteratorIterator::CHILD_FIRST

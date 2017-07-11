@@ -19,6 +19,7 @@ use Symfony\Component\Console\Application;
 
 
 $Application = new Application('Repo Builder');
-$Application->add(new \App\MainApp());
+$Application->add(new \App\Build());
+$Application->add(new \App\Modify());
 $Application->run();
 unset($Application);
