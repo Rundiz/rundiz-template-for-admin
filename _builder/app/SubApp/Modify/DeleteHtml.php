@@ -35,6 +35,7 @@ class DeleteHtml
                 }
             }// endwhile;
             unset($entry);
+            closedir($dh);
         }
 
         unset($searchArray);
@@ -75,6 +76,7 @@ class DeleteHtml
                 }
             }// endwhile;
             unset($entry);
+            closedir($dh);
         }
 
         unset($dh, $searchArray);

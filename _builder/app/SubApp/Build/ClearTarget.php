@@ -4,7 +4,7 @@
  */
 
 
-namespace App\SubApp;
+namespace App\SubApp\Build;
 
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Input\InputInterface;

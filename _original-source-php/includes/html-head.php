@@ -13,5 +13,5 @@
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/font-awesome.min.css'); ?>">
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/smartmenus/sm-core-css.css'); ?>">
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/smartmenus/sm-rdta/sm-rdta.css'); ?>">
-        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/typo-and-form/typo-and-form.css'); ?>">
-        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rundiz-template-admin.css'); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta/typo-and-form/typo-and-form.css'); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta/rundiz-template-admin.css'); ?>">

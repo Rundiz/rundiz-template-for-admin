@@ -5,11 +5,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Rundiz template for admin</title>
-        <link rel="stylesheet" href="assets/css/sanitize.css?v=<?php echo filemtime(ROOTDIR . '/assets/css/sanitize.css'); ?>">
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css?v=<?php echo filemtime(ROOTDIR . '/assets/css/font-awesome.css'); ?>">
-        <link rel="stylesheet" href="assets/css/smartmenus/sm-core-css.css?v=1477996652">
-        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?v=1499105656">
-        <link rel="stylesheet" href="assets/css/typo-and-form/typo-and-form.css?v=<?php echo filemtime(ROOTDIR . '/assets/css/typo-and-form/typo-and-form.css'); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/sanitize.css'); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/font-awesome.min.css'); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/smartmenus/sm-core-css.css'); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/smartmenus/sm-rdta/sm-rdta.css'); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta/typo-and-form/typo-and-form.css'); ?>">
 
         <style type="text/css">
             .rd-template-admin,
@@ -173,9 +173,9 @@
         </div><!--.rd-page-wrapper-->
 
 
-        <script src="assets/js/jquery.min.js?v=<?php echo filemtime(ROOTDIR . '/assets/js/jquery.min.js'); ?>"></script>
-        <script src="assets/js/smartmenus/jquery.smartmenus.min.js?v=1499062070"></script>
-        <script src="assets/js/sticky-sidebar/sticky-sidebar.min.js?v=1497720490"></script>
-        <script src="assets/js/rundiz-template-admin/rundiz-template-admin.js?v=1499108498"></script> 
+        <script src="<?php echo assetUrl('assets/js/jquery.min.js'); ?>"></script>
+        <script src="<?php echo assetUrl('assets/js/smartmenus/jquery.smartmenus.min.js'); ?>"></script>
+        <script src="<?php echo assetUrl('assets/js/sticky-sidebar/sticky-sidebar.min.js'); ?>"></script>
+        <script src="<?php echo assetUrl('assets/js/rdta/rundiz-template-admin.js'); ?>"></script> 
     </body>
 </html>

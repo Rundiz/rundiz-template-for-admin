@@ -80,7 +80,7 @@ class Build extends Command
         if ($this->isSelf === false) {
             // clear target folder. --------------------------------------------
             $Io->title('Clear target folder');
-            $ClearTarget = new SubApp\ClearTarget();
+            $ClearTarget = new SubApp\Build\ClearTarget();
             $result = $ClearTarget->run($this->fullTargetPath, $Input, $Output);
             unset($ClearTarget);
             $Output->writeln('');
@@ -89,7 +89,7 @@ class Build extends Command
             if (isset($result) && $result === true) {
                 // copy source to target. -------------------------------------
                 $Io->title('Copy source folder to target');
-                $CopySource = new SubApp\CopySource();
+                $CopySource = new SubApp\Build\CopySource();
                 $result2 = $CopySource->run($this->fullTargetPath, $Input, $Output);
                 unset($CopySource);
             } else {
@@ -103,11 +103,11 @@ class Build extends Command
         }
 
         if (isset($result2) && $result2 === true) {
-            // convert php source file to html ---------------------------
-            $Io->title('Convert PHP source files to HTML');
-            $ConvertPhp = new SubApp\ConvertPhp();
-            $result3 = $ConvertPhp->run($this->fullTargetPath, $Input, $Output);
-            unset($ConvertPhp);
+            // compile scss to css ----------------------------------------
+            $Io->title('Compile SCSS files to CSS');
+            $CompileScss = new SubApp\Build\CompileScss();
+            $result3 = $CompileScss->run($this->fullTargetPath, $Input, $Output);
+            unset($CompileScss);
         } elseif (isset($result2)) {
             $Io->error('Failed to copy source folder.');
         }
@@ -116,13 +116,13 @@ class Build extends Command
         $Output->writeln('');
 
         if (isset($result3) && $result3 === true) {
-            // compile scss to css ----------------------------------------
-            $Io->title('Compile SCSS files to CSS');
-            $CompileScss = new SubApp\CompileScss();
-            $result4 = $CompileScss->run($this->fullTargetPath, $Input, $Output);
-            unset($CompileScss);
+            // convert php source file to html ---------------------------
+            $Io->title('Convert PHP source files to HTML');
+            $ConvertPhp = new SubApp\Build\ConvertPhp();
+            $result4 = $ConvertPhp->run($this->fullTargetPath, $Input, $Output);
+            unset($ConvertPhp);
         } elseif (isset($result3)) {
-            $Io->error('Failed to convert PHP to HTML files.');
+            $Io->error('Failed to compile SCSS.');
         }
         unset($result3);
         $Output->writeln('');
@@ -131,7 +131,7 @@ class Build extends Command
         if (isset($result4) && $result4 === true) {
             $Io->success('Completed, you are ready to commit the repository.');
         } else {
-            $Io->error('Failed to compile SCSS.');
+            $Io->error('Failed to convert PHP to HTML files.');
         }
         unset($result4);
     }// execute

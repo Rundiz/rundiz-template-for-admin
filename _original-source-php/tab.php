@@ -7,7 +7,7 @@ $title = 'Tab';
 include 'includes/html-head.php'; 
 ?> 
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/jquery-ui/jquery-ui.min.css'); ?>">
-        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/jquery-ui-override/jquery-ui-override.css'); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta/jquery-ui-override/jquery-ui-override.css'); ?>">
     </head>
     <body ontouchstart="">
 <?php include 'includes/partials/page-header.php'; ?> 
@@ -21,7 +21,7 @@ include 'includes/html-head.php';
                     <h1>Tab</h1>
                     <p>
                         The tab content based on <a href="http://jqueryui.com/" target="jqueryui">jQuery UI</a><br>
-                        In order to make tab works, you have to add jquery-ui js file and css file and then add link to <strong>assets/css/jquery-ui-override/jquery-ui-override.css</strong>.
+                        In order to make tab works, you have to add jquery-ui js file and css file and then add link to <strong>assets/css/rdta/jquery-ui-override/jquery-ui-override.css</strong>.
                     </p>
                     <hr>
 

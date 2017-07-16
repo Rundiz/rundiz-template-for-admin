@@ -4,7 +4,7 @@
  */
 
 
-namespace App\SubApp;
+namespace App\SubApp\Build;
 
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Input\InputInterface;
@@ -61,6 +61,7 @@ class ConvertPhp
                 }// endif;
             }// endwhile;
             unset($entry);
+            closedir($dh);
         }
         unset($dh);
     }// convert
@@ -85,9 +86,12 @@ class ConvertPhp
         fclose($handle);
 
         // replace contents
-        $content = preg_replace('/href=("|\')([^"]*).php("|\')/iu', 'href=$1$2.html$3', $content);
-        $content = preg_replace('/src=("|\')([^"]*).php("|\')/iu', 'src=$1$2.html$3', $content);
-        $content = preg_replace('/=("|\')([^"]*).php("|\')/iu', 'src=$1$2.html$3', $content);
+        // (?!(https?|ftp|\/\/).*|.*(:\/\/).*) means NOT contain http, https, ftp, // and follow with string OR (| sign) not contain ://
+        // ([^\'|"]*) means anything that is not contain single quote (') or double quote (")
+        // @links https://regex101.com/r/XFfnok/1/
+        $content = preg_replace('/href *= *("|\')(?!(https?|ftp|\/\/).*|.*(:\/\/).*)([^\'|"]*).php("|\')/iu', 'href=$1$4.html$5', $content);
+        $content = preg_replace('/src *= *("|\')(?!(https?|ftp|\/\/).*|.*(:\/\/).*)([^\'|"]*).php("|\')/iu', 'src=$1$4.html$5', $content);
+        $content = preg_replace('/= *("|\')(?!(https?|ftp|\/\/).*|.*(:\/\/).*)([^\'|"]*).php("|\')/iu', 'src=$1$4.html$5', $content);
 
         // open file for write only.
         $handle = fopen($filePath, 'w');
@@ -107,14 +111,24 @@ class ConvertPhp
      */
     private function countTotalProgress($targetDir)
     {
-        $iterator = new \GlobIterator('*.php');
-        $totalPhpFiles = $iterator->count();// total files that will be converted.
+        try {
+            $iterator = new \GlobIterator('*.php');
+            $totalPhpFiles = $iterator->count();// total files that will be converted.
+        } catch (\Exception $e) {
+            $totalPhpFiles = 0;
+        }
+
         $totalHtmlFiles = ($totalPhpFiles + 1);// total converted files that will be moved to main folder. +1 for delete _converted-html folder progress.
-        $files = new \RecursiveIteratorIterator(
-                new \RecursiveDirectoryIterator($targetDir . DIRECTORY_SEPARATOR . 'includes', \RecursiveDirectoryIterator::SKIP_DOTS), 
-                \RecursiveIteratorIterator::CHILD_FIRST
-        );
-        $totalIncludesFiles = iterator_count($files);// total includes files and sub folders.
+        if (is_dir($targetDir . DIRECTORY_SEPARATOR . 'includes')) {
+            $files = new \RecursiveIteratorIterator(
+                    new \RecursiveDirectoryIterator($targetDir . DIRECTORY_SEPARATOR . 'includes', \RecursiveDirectoryIterator::SKIP_DOTS), 
+                    \RecursiveIteratorIterator::CHILD_FIRST
+            );
+            $totalIncludesFiles = iterator_count($files);// total includes files and sub folders.
+        } else {
+            $totalIncludesFiles = 0;
+        }
+
         $totalPhpMove = (($totalPhpFiles + 1) + $totalIncludesFiles);// total source file (php) that will be moved to _original-source-php folder. +1 for includes folder.
         unset($files, $iterator, $totalIncludesFiles);
 
@@ -155,6 +169,7 @@ class ConvertPhp
                 }// endif;
             }// endwhile;
             unset($entry);
+            closedir($dh);
         }
         unset($dh);
 
@@ -192,6 +207,7 @@ class ConvertPhp
                 }// endif;
             }// endwhile;
             unset($entry);
+            closedir($dh);
         }
         unset($dh);
     }// movePhp
@@ -205,6 +221,10 @@ class ConvertPhp
      */
     private function recursiveDelete($targetDir, ProgressBar $Progress)
     {
+        if (!is_dir($targetDir)) {
+            return ;
+        }
+
         $files = new \RecursiveIteratorIterator(
                 new \RecursiveDirectoryIterator($targetDir, \RecursiveDirectoryIterator::SKIP_DOTS), 
                 \RecursiveIteratorIterator::CHILD_FIRST
@@ -246,25 +266,29 @@ class ConvertPhp
      */
     private function recursiveMove($src, $dst, ProgressBar $Progress)
     {
-        $dir = opendir($src);
-
-        $old = umask(0);
-        @mkdir($dst, 0777, true);
-        umask($old);
-        $Progress->advance();
-
-        while (false !== ( $file = readdir($dir))) {
-            if (( $file != '.' ) && ( $file != '..' )) {
-                if (is_dir($src . '/' . $file)) {
-                    $this->recursiveMove($src . '/' . $file, $dst . '/' . $file, $Progress);
-                } else {
-                    rename($src . '/' . $file, $dst . '/' . $file);
-                    $Progress->advance();
-                }
-            }
+        if (!file_exists($src)) {
+            return ;
         }
 
-        closedir($dir);
+        if (false !== $dir = opendir($src)) {
+            $old = umask(0);
+            @mkdir($dst, 0777, true);
+            umask($old);
+            $Progress->advance();
+
+            while (false !== ( $file = readdir($dir))) {
+                if (( $file != '.' ) && ( $file != '..' )) {
+                    if (is_dir($src . '/' . $file)) {
+                        $this->recursiveMove($src . '/' . $file, $dst . '/' . $file, $Progress);
+                    } else {
+                        rename($src . '/' . $file, $dst . '/' . $file);
+                        $Progress->advance();
+                    }
+                }
+            }
+
+            closedir($dir);
+        }
     }// recursiveMove
 
 

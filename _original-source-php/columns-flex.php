@@ -6,7 +6,7 @@
 $title = 'Columns flex';
 include 'includes/html-head.php'; 
 ?> 
-        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/columns/columns-flex.css'); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta/columns/columns-flex.css'); ?>">
         <style type="text/css">
             .column {
                 background-color: #dee9f2;
@@ -36,7 +36,7 @@ include 'includes/html-head.php';
                     <h1>Columns flex</h1>
                     <p>
                         Display columns inside the main page layout. Please note that this is not the elements and classes style to use for admin page layout.<br>
-                        In order to use column flex, you have to add stylesheet link to <strong>assets/css/columns/columns-flex.css</strong>.
+                        In order to use column flex, you have to add stylesheet link to <strong>assets/css/rdta/columns/columns-flex.css</strong>.
                     </p>
                     <hr>
 

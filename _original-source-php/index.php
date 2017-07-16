@@ -26,7 +26,7 @@ $dummyData = '[{"id":1,"name":"Gwendolyn Uphill","address":"282 Springview Stree
 <html class="rd-template-admin">
     <head>
 <?php include 'includes/html-head.php'; ?> 
-        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/columns/columns-flex.css'); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta/columns/columns-flex.css'); ?>">
         <style type="text/css">
             .example-card {
                 border: 1px solid #ddd;

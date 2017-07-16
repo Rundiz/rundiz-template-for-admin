@@ -22,11 +22,16 @@ class RestorePhp
      */
     private function countTotalProgress($targetDir)
     {
-        $files = new \RecursiveIteratorIterator(
-                new \RecursiveDirectoryIterator($targetDir, \RecursiveDirectoryIterator::SKIP_DOTS), 
-                \RecursiveIteratorIterator::CHILD_FIRST
-        );
-        $totalPhp = iterator_count($files);// total includes files and sub folders.
+        if (is_dir($targetDir)) {
+            $files = new \RecursiveIteratorIterator(
+                    new \RecursiveDirectoryIterator($targetDir, \RecursiveDirectoryIterator::SKIP_DOTS), 
+                    \RecursiveIteratorIterator::CHILD_FIRST
+            );
+            $totalPhp = iterator_count($files);// total includes files and sub folders.
+            unset($files);
+        } else {
+            $totalPhp = 0;
+        }
 
         return ($totalPhp + 1);// +1 for delete php source folder.
     }// countTotalProgress
@@ -40,6 +45,10 @@ class RestorePhp
      */
     private function recursiveDelete($targetDir, ProgressBar $Progress)
     {
+        if (!file_exists($targetDir)) {
+            return ;
+        }
+
         $files = new \RecursiveIteratorIterator(
                 new \RecursiveDirectoryIterator($targetDir, \RecursiveDirectoryIterator::SKIP_DOTS), 
                 \RecursiveIteratorIterator::CHILD_FIRST
@@ -81,25 +90,29 @@ class RestorePhp
      */
     private function recursiveMove($src, $dst, ProgressBar $Progress)
     {
-        $dir = opendir($src);
-
-        $old = umask(0);
-        @mkdir($dst, 0777, true);
-        umask($old);
-        $Progress->advance();
-
-        while (false !== ( $file = readdir($dir))) {
-            if (( $file != '.' ) && ( $file != '..' )) {
-                if (is_dir($src . '/' . $file)) {
-                    $this->recursiveMove($src . '/' . $file, $dst . '/' . $file, $Progress);
-                } else {
-                    rename($src . '/' . $file, $dst . '/' . $file);
-                    $Progress->advance();
-                }
-            }
+        if (!is_dir($src)) {
+            return ;
         }
 
-        closedir($dir);
+        if (false !== $dir = opendir($src)) {
+            $old = umask(0);
+            @mkdir($dst, 0777, true);
+            umask($old);
+            $Progress->advance();
+
+            while (false !== ( $file = readdir($dir))) {
+                if (( $file != '.' ) && ( $file != '..' )) {
+                    if (is_dir($src . '/' . $file)) {
+                        $this->recursiveMove($src . '/' . $file, $dst . '/' . $file, $Progress);
+                    } else {
+                        rename($src . '/' . $file, $dst . '/' . $file);
+                        $Progress->advance();
+                    }
+                }
+            }
+
+            closedir($dir);
+        }
     }// recursiveMove
 
 
