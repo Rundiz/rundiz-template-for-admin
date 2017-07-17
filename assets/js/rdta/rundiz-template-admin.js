@@ -103,6 +103,46 @@ function rdtaDataTableToggleRow() {
 
 
 /**
+ * Activate custom input file.
+ * 
+ * @link http://demo.rundiz.com/nice-form-plugins/ Reference
+ * @returns {undefined}
+ */
+function rdtaInputFile() {
+    $ = jQuery.noConflict();
+
+    // reset form cached after reload. this always happen in Firefox.
+    $('.rd-inputfile input[type="file"]').each(function() {
+        $(this).wrap('<form>').closest('form').get(0).reset();
+        $(this).unwrap();
+    });
+
+    // for navigate thru web page using keyboard.
+    $('.rd-inputfile').each(function() {
+        $(this).on('keyup', function(e) {
+            if (e.keyCode === 13) {
+                $(this).find('input[type="file"]').focus();
+                $(this).find('input[type="file"]').click();// this maybe stuck at popup blocked in Firefox. allowed popup for certain site and this will be working fine.
+            }
+        });
+    });
+
+    $('.rd-inputfile input[type="file"]').change(function() {
+        var names = [];
+        for (var i = 0; i < $(this).get(0).files.length; ++i) {
+            names.push($(this).get(0).files[i].name);
+        }
+        $(this).closest('.rd-inputfile').siblings('.rd-input-files-queue').text(names.join(', '));
+
+        var resetButton = $(this).closest('.rd-inputfile').siblings('.rd-inputfile-reset-button').html();
+        if (typeof(resetButton) !== 'undefined' && resetButton != '') {
+            $(this).closest('.rd-inputfile').siblings('.rd-input-files-queue').append(' '+resetButton);
+        }
+    });
+}// rdtaInputFile
+
+
+/**
  * Activate navbar smart menus
  * 
  * @returns {undefined}
@@ -150,6 +190,26 @@ function rdtaNavbarSmartMenus() {
         subIndicators: false,
     });
 }// rdtaNavbarSmartMenus
+
+
+/**
+ * Reset input file.
+ * 
+ * @link http://demo.rundiz.com/nice-form-plugins/ Reference
+ * @param {jQuery} thisObj
+ * @returns {undefined}
+ */
+function rdtaResetInputFile(thisObj) {
+    $ = jQuery.noConflict();
+
+    var target = thisObj.closest('.rd-input-files-queue').siblings('.rd-inputfile').find('input[type="file"]');
+    target.wrap('<form>').closest('form').get(0).reset();
+    target.unwrap();
+
+    thisObj.closest('.rd-input-files-queue').text('');
+
+    return false;
+}// rdtaResetInputFile
 
 
 /**
@@ -254,4 +314,7 @@ jQuery(document).ready(function($) {
 
     // listen to data table responsive toggle collapse/expand.
     rdtaDataTableToggleRow();
+
+    // activate custom input file.
+    rdtaInputFile();
 });

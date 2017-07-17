@@ -134,7 +134,23 @@ input[type="radio"] {
 
 
 input[type="file"] {
+    max-width: 240px;
+    overflow: hidden;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);// remove white-blue background color on tap or on touch in chrome for android.
+
+    &::-webkit-file-upload-button {
+        background-color: $background-color;
+        border: 1px solid $border-color;
+        cursor: pointer;
+    }
+
+    &[disabled] {
+        cursor: not-allowed;
+
+        &::-webkit-file-upload-button {
+            cursor: not-allowed;
+        }
+    }
 }
 
 
@@ -182,4 +198,5 @@ textarea {
 }
 
 
+@import '_form-input-file';
 @import '_form-input-range';

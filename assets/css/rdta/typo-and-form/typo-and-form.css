@@ -520,7 +520,20 @@ input[type="radio"][readonly] {
 }
 
 input[type="file"] {
+  max-width: 240px;
+  overflow: hidden;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+input[type="file"]::-webkit-file-upload-button {
+  background-color: #eee;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+input[type="file"][disabled] {
+  cursor: not-allowed;
+}
+input[type="file"][disabled]::-webkit-file-upload-button {
+  cursor: not-allowed;
 }
 
 input[type="image"] {
@@ -560,6 +573,52 @@ select:not([multiple]) {
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+");
   background-position: 100% center;
   background-repeat: no-repeat;
+}
+
+/*
+* ----------------------------------------------------------------------------------------------
+* form > input[type="file"][class="rd-inputfile"]
+*
+* Reference:
+* http://demo.rundiz.com/nice-form-plugins/
+* https://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/
+* ----------------------------------------------------------------------------------------------
+*/
+.rd-inputfile {
+  overflow: hidden;
+  position: relative;
+  vertical-align: middle;
+}
+.rd-inputfile:active, .rd-inputfile:focus {
+  outline: 2px solid orange;
+}
+.rd-inputfile input[type="file"] {
+  display: block;
+  filter: alpha(opacity=0);
+  height: 100%;
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.rd-input-files-queue {
+  vertical-align: middle;
+  white-space: normal;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+.rd-input-files-queue > * {
+  vertical-align: middle;
+}
+.rd-input-files-queue > button,
+.rd-input-files-queue > input[type="button"],
+.rd-input-files-queue > .rd-button {
+  margin-top: -2px;
+  position: relative;
 }
 
 /*

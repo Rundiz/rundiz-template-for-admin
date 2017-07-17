@@ -8,7 +8,7 @@ include 'includes/html-head.php';
 ?> 
     </head>
     <body ontouchstart="">
-        <div style="margin: 0 auto; max-width: 1200px; overflow-x: hidden;">
+        <div style="margin: 0 auto; max-width: 1200px; overflow-x: hidden; padding-left: 0.313em; padding-right: 0.313em;">
             <h1>Typography & kitchen sink</h1>
             <hr>
 <?php include 'includes/partials/typography.php'; ?> 
