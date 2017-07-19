@@ -55,7 +55,7 @@ class CopySource
      */
     public function run($targetDir, InputInterface $Input, OutputInterface $Output)
     {
-        $sourceDir = dirname(dirname(dirname(__DIR__)));
+        $sourceDir = dirname(dirname(dirname(dirname(__DIR__))));
 
         $files = new \RecursiveIteratorIterator(
                 new \RecursiveDirectoryIterator($sourceDir, \RecursiveDirectoryIterator::SKIP_DOTS), 
