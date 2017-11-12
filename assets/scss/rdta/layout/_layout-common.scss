@@ -1,0 +1,41 @@
+// layout that have common use css rules.
+
+html.rd-template-admin,
+body {
+    height: 100%;
+}
+
+
+.rd-template-admin {
+    body {
+        -webkit-text-size-adjust: 100%;// fix ios orientation bug ( https://stackoverflow.com/a/27311443/128761 ).
+        @media (min-width: $minimum-sidebar-breakpoint) {
+            padding-top: ($mobile-screen-navbar-height/2);
+        }
+    }
+}
+
+
+.rd-page-content {
+    margin-bottom: $block-element-margin-bottom;
+    margin-left: $block-element-margin-sides;
+    margin-right: $block-element-margin-sides;
+}
+
+
+@media (min-width: $minimum-sidebar-breakpoint) {
+    .rd-sidebar-back {
+        background-color: $navbar-sidebar-background-color;
+        bottom: 0;
+        display: block;
+        position: fixed;
+        top: 0;
+        transition: width $sidebar-transition-seconds;
+        width: $sidebar-expanded-width;
+        z-index: -1;
+    }
+    .rd-page-wrapper.is-collapsed .rd-sidebar-back {
+        transition: width $sidebar-transition-seconds;
+        width: $sidebar-collapsed-width;
+    }
+}

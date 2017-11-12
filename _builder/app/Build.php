@@ -32,7 +32,7 @@ class Build extends Command
             ->setHelp(
                 'Run this command to copy and build source files into exists repository folder where it is ready to commit.'."\n".
                 'Example: php _builder/build.php build ../your-repo-folder'."\n".
-                'php _builder/builder.php build self'
+                'php _builder/build.php build self'
             );
 
         $this->addArgument('target', InputArgument::REQUIRED, 'Set the target repository folder that files will be copied to. Use full path or relative path. You can set this argument to "self" for build the source files here.');

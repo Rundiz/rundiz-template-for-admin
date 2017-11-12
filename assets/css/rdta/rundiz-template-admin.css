@@ -1,11 +1,11 @@
 /*!
  * Rundiz template for admin
  *
- * @version 0.4
+ * @version 1.0
  */
 /*
 * ----------------------------------------------------------------------------------------------
-* rundiz template for admin - layout for styling grid, columns
+* rundiz template for admin - layout that is using display:grid; for styling grid, columns
 * ----------------------------------------------------------------------------------------------
 */
 html.rd-template-admin,
@@ -46,24 +46,17 @@ body {
   }
 }
 .rd-page-wrapper {
-  align-items: stretch;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 0px auto;
+  grid-template-rows: auto;
   height: auto;
   min-height: 100%;
   position: relative;
 }
-.rd-page-wrapper::after {
-  clear: both;
-  content: '';
-  display: table;
-}
 .rd-page-wrapper > footer {
-  align-self: flex-end;
   background-color: transparent;
   color: #888;
   display: none;
-  flex-basis: 100%;
   font-size: 0.688em;
   min-height: 1.250rem;
   padding: 0.313rem 0.625rem;
@@ -82,10 +75,9 @@ body {
   padding-left: 0.625rem;
 }
 .rd-page-wrapper > main {
-  align-self: flex-start;
-  flex-basis: 0;
-  flex-grow: 1;
-  flex-shrink: 1;
+  align-self: start;
+  min-width: 0;
+  /* fix table push this element over screen width ( https://stackoverflow.com/questions/43311943/prevent-grid-items-from-stretching-in-css-grid-layout ) */
 }
 .rd-page-wrapper .rd-sidebar {
   background-color: #2e2e2e;
@@ -145,23 +137,35 @@ body {
   }
 }
 @media (min-width: 1000px) {
+  .rd-page-wrapper {
+    grid-template-columns: 10rem auto;
+    grid-template-rows: auto 1.656rem;
+  }
   .rd-page-wrapper > footer {
     display: flex;
-    flex-basis: calc(100% - 10rem);
-    transform: translateX(10rem);
-    transition: flex-basis 0s, transform 0s;
+    grid-column-start: 2;
+    grid-row-end: 3;
+    grid-row-start: 2;
+  }
+  .rd-page-wrapper > main {
+    grid-column-start: 2;
+    grid-row-end: 2;
+    grid-row-start: 1;
   }
   .rd-page-wrapper .rd-sidebar {
     align-self: self-start;
     background-color: transparent;
     display: block;
+    grid-column-end: 2;
+    grid-column-start: 1;
+    grid-row-end: 3;
+    grid-row-start: 1;
     position: relative;
     transition: width 0s;
     width: 10rem;
   }
-  .rd-page-wrapper.is-collapsed > footer {
-    flex-basis: calc(100% - 3.75rem);
-    transform: translateX(3.75rem);
+  .rd-page-wrapper.is-collapsed {
+    grid-template-columns: 3.75rem auto;
   }
   .rd-page-wrapper.is-collapsed .rd-sidebar {
     width: 3.75rem;

@@ -7,9 +7,9 @@
         <link rel="stylesheet" href="assets/css/sanitize.css?v=1499761596">
         <link rel="stylesheet" href="assets/css/font-awesome.min.css?v=1499761596">
         <link rel="stylesheet" href="assets/css/smartmenus/sm-core-css.css?v=1499761596">
-        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?v=1500280246">
-        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?v=1500280243">
-        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?v=1500280240"> 
+        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?v=1510476843">
+        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?v=1510476841">
+        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?v=1510476838"> 
     </head>
     <body ontouchstart="">
         <header class="rd-navbar">
@@ -70,7 +70,11 @@
                         Your content will be here inside <code>.rd-page-content</code> class.<br>
                         To begins design your page content, copy this page source code, remove these two paragraphs (&lt;p&gt;) and let's start.
                     </p>
-                    <p><em>For development only.</em> Let's see how <a href="basic-layout-cssgrid.html">CSS grid</a> works in Microsoft Edge.</p>
+                    <p><em>For development only.</em> This is a very simple demonstration of <a href="basic-layout-cssgrid.html">CSS grid</a>.</p>
+                    <p>The <abbr title="Rundiz template for admin">RDTA</abbr> use CSS grid by default since version 1.0.<br>
+                        To go back to use CSS flexbox as layout please modify the file <strong>assets/scss/rundiz-template-admin.scss</strong> and change the code from <code>@import 'layout/_layout-displaygrid';</code> to <code>@import 'layout/_layout';</code>
+                        and then compile the scss using this command <kbd>sass --update assets/scss:assets/css</kbd>.
+                    </p>
                 </div><!--.rd-page-content-->
             </main>
             <footer>

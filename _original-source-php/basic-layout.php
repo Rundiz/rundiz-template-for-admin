@@ -35,7 +35,11 @@ include 'includes/html-head.php';
                         Your content will be here inside <code>.rd-page-content</code> class.<br>
                         To begins design your page content, copy this page source code, remove these two paragraphs (&lt;p&gt;) and let's start.
                     </p>
-                    <p><em>For development only.</em> Let's see how <a href="basic-layout-cssgrid.php">CSS grid</a> works in Microsoft Edge.</p>
+                    <p><em>For development only.</em> This is a very simple demonstration of <a href="basic-layout-cssgrid.php">CSS grid</a>.</p>
+                    <p>The <abbr title="Rundiz template for admin">RDTA</abbr> use CSS grid by default since version 1.0.<br>
+                        To go back to use CSS flexbox as layout please modify the file <strong>assets/scss/rundiz-template-admin.scss</strong> and change the code from <code>@import 'layout/_layout-displaygrid';</code> to <code>@import 'layout/_layout';</code>
+                        and then compile the scss using this command <kbd>sass --update assets/scss:assets/css</kbd>.
+                    </p>
                 </div><!--.rd-page-content-->
             </main>
 <?php include 'includes/partials/page-footer.php'; ?> 

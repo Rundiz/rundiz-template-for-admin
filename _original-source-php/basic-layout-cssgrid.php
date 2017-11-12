@@ -116,7 +116,7 @@
                     <h1>Basic layout using CSS grid</h1>
                     <p>
                         Demonstrate how the page layout will be.<br>
-                        Open this page in Microsoft Edge to check the layout design with other browsers.
+                        This page should render correctly in all browsers including new version of Microsoft Edge.
                     </p>
                     <p>Test table cause overflow. (3 duplicate email columns is for test very wide table that will be over screen width shoud be wrapped inside <code>.wrap-table</code> class.</p>
                     <div class="wrap-table">

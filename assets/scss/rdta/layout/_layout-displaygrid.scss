@@ -1,6 +1,6 @@
 /*
 * ----------------------------------------------------------------------------------------------
-* rundiz template for admin - layout for styling grid, columns
+* rundiz template for admin - layout that is using display:grid; for styling grid, columns
 * ----------------------------------------------------------------------------------------------
 */
 
@@ -12,25 +12,18 @@
 
 
 .rd-page-wrapper {
-    align-items: stretch;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 0px auto;
+    grid-template-rows: auto;
     height: auto;
     min-height: 100%;
     position: relative;
-    &::after {
-        clear: both;
-        content: '';
-        display: table;
-    }
 
     // .rd-page-wrapper > footer
     > footer {
-        align-self: flex-end;
         background-color: transparent;
         color: #888;
         display: none;// when visible in the larger screen size, use flex
-        flex-basis: 100%;
         font-size: 0.688em;
         min-height: 1.250rem;
         padding: 0.313rem $block-element-margin-sides;
@@ -57,10 +50,8 @@
 
     // .rd-page-wrapper > main
     > main {
-        align-self: flex-start;
-        flex-basis: 0;
-        flex-grow: 1;
-        flex-shrink: 1;
+        align-self: start;
+        min-width: 0;/* fix table push this element over screen width ( https://stackoverflow.com/questions/43311943/prevent-grid-items-from-stretching-in-css-grid-layout ) */
     }
 
     // .rd-page-wrapper .rd-sidebar
@@ -147,12 +138,22 @@
 
     // .rd-page-wrapper in @media query
     @media (min-width: $minimum-sidebar-breakpoint) {
+        grid-template-columns: $sidebar-expanded-width auto;
+        grid-template-rows: auto 1.656rem;
+
         // .rd-page-wrapper > footer
         > footer {
             display: flex;
-            flex-basis: calc(100% - #{$sidebar-expanded-width});
-            transform: translateX($sidebar-expanded-width);
-            transition: flex-basis $sidebar-transition-seconds, transform $sidebar-transition-seconds;
+            grid-column-start: 2;
+            grid-row-end: 3;
+            grid-row-start: 2;
+        }
+
+        // .rd-page-wrapper > main
+        > main {
+            grid-column-start: 2;
+            grid-row-end: 2;
+            grid-row-start: 1;
         }
 
         // .rd-page-wrapper .rd-sidebar
@@ -160,17 +161,17 @@
             align-self: self-start;
             background-color: transparent;
             display: block;
+            grid-column-end: 2;
+            grid-column-start: 1;
+            grid-row-end: 3;
+            grid-row-start: 1;
             position: relative;
             transition: width $sidebar-transition-seconds;
             width: $sidebar-expanded-width;
         }
         // .rd-page-wrapper.is-collapsed
         &.is-collapsed {
-            // .rd-page-wrapper.is-collapsed > footer
-            > footer {
-                flex-basis: calc(100% - #{$sidebar-collapsed-width});
-                transform: translateX($sidebar-collapsed-width);
-            }
+            grid-template-columns: $sidebar-collapsed-width auto;
 
             // .rd-page-wrapper.is-collapsed .rd-sidebar
             .rd-sidebar {
