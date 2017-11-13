@@ -6,7 +6,7 @@ $background-color: #eee !default;
 $border-color: #ddd !default;
 $disabled-font-color: #999 !default;
 $font-color: #333 !default;
-$link-color: #1280EF;
+$link-color: #1280EF !default;
 $max-z-index: 10000 !default;
 
 // navbar settings.
@@ -23,31 +23,37 @@ $block-element-margin-sides: 0.625rem !default;
 
 
 // form font sizes
-$form-large-font-size: 1.250em;
-$form-small-font-size: 0.75em;
-$form-tiny-font-size: 0.625em;// currently only available to button.
+$form-large-font-size: 1.250em !default;
+$form-small-font-size: 0.75em !default;
+$form-tiny-font-size: 0.625em !default;// currently only available to button.
 
 
 // the z-indexes
-$z-index-sidebar: 2;
-$z-index-navbar: 8;
+$z-index-sidebar: 2 !default;
+$z-index-navbar: 8 !default;
 
 
-// colors for alert box, buttons, badge
+// colors for alert box, buttons, badge, table
+$primary-background-color: #a2ccf0 !default;
+$primary-hover-background-color: #91c2ed !default;
 $primary-color: #52A0E5 !default;
 $primary-disabled-color: #97c3ea !default;
-$danger-background-color: #f4d0d0;
-$danger-color: #bc0000;
-$danger-disabled-color: #cf6464;
-$info-background-color: #c4e3f2;
-$info-color: #2481ad;
-$info-disabled-color: #6da3bd;
-$success-background-color: #d1e6d1;
-$success-color: #007c00;
-$success-disabled-color: #65b065;
-$warning-background-color: #fbd38f;
-$warning-color: #e69200;
-$warning-disabled-color: #efb247;
+$danger-background-color: #f4d0d0 !default;
+$danger-hover-background-color: #eeb9b9 !default;
+$danger-color: #bc0000 !default;
+$danger-disabled-color: #cf6464 !default;
+$info-background-color: #c4e3f2 !default;
+$info-hover-background-color: #abd7ec !default;
+$info-color: #2481ad !default;
+$info-disabled-color: #6da3bd !default;
+$success-background-color: #d1e6d1 !default;
+$success-hover-background-color: #c0dcc0 !default;
+$success-color: #007c00 !default;
+$success-disabled-color: #65b065 !default;
+$warning-background-color: #fbd38f !default;
+$warning-hover-background-color: #fac875 !default;
+$warning-color: #e69200 !default;
+$warning-disabled-color: #efb247 !default;
 
 
 // common screen sizes. use pixel unit.

@@ -74,23 +74,23 @@ include 'includes/html-head.php';
                                     if (is_array($dummyDataArray)) {
                                         $i = 1;
                                         foreach ($dummyDataArray as $row) {
-                                            echo indent(7).'<tr>'."\n";
-                                            echo indent(8).'<td class="column-checkbox"><input type="checkbox" name="id[]" value="'.$row->id.'"></td>'."\n";
-                                            echo indent(8).'<td>'.$row->id.'</td>'."\n";
-                                            echo indent(8).'<td>'.$row->name.'</td>'."\n";
-                                            echo indent(8).'<td>'.$row->address.'</td>'."\n";
-                                            echo indent(8).'<td>'.$row->email.'</td>'."\n";
-                                            echo indent(8).'<td>'."\n";
-                                            echo indent(9).'<div class="rd-button-group">'."\n";
-                                            echo indent(10).'<button class="rd-button small"><i class="fa fa-pencil"></i> Edit</button>'."\n";
-                                            echo indent(10).'<button class="rd-button small dropdown-toggler"><i class="fa fa-caret-down"></i></button>'."\n";
-                                            echo indent(10).'<ul class="rd-dropdown">'."\n";
-                                            echo indent(11).'<li><a href="#" onclick="return false;"><i class="fa fa-key fa-fw"></i> Permissions</a></li>'."\n";
-                                            echo indent(11).'<li><a href="#" onclick="return false;"><i class="fa fa-times fa-fw"></i> Delete</a></li>'."\n";
-                                            echo indent(10).'</ul>'."\n";
-                                            echo indent(9).'</div>'."\n";
-                                            echo indent(8).'</td>'."\n";
-                                            echo indent(7).'</tr>'."\n";
+                                            echo indent(8).'<tr>'."\n";
+                                            echo indent(9).'<td class="column-checkbox"><input type="checkbox" name="id[]" value="'.$row->id.'"></td>'."\n";
+                                            echo indent(9).'<td>'.$row->id.'</td>'."\n";
+                                            echo indent(9).'<td>'.$row->name.'</td>'."\n";
+                                            echo indent(9).'<td>'.$row->address.'</td>'."\n";
+                                            echo indent(9).'<td>'.$row->email.'</td>'."\n";
+                                            echo indent(9).'<td>'."\n";
+                                            echo indent(10).'<div class="rd-button-group">'."\n";
+                                            echo indent(11).'<button class="rd-button small"><i class="fa fa-pencil"></i> Edit</button>'."\n";
+                                            echo indent(11).'<button class="rd-button small dropdown-toggler"><i class="fa fa-caret-down"></i></button>'."\n";
+                                            echo indent(11).'<ul class="rd-dropdown">'."\n";
+                                            echo indent(12).'<li><a href="#" onclick="return false;"><i class="fa fa-key fa-fw"></i> Permissions</a></li>'."\n";
+                                            echo indent(12).'<li><a href="#" onclick="return false;"><i class="fa fa-times fa-fw"></i> Delete</a></li>'."\n";
+                                            echo indent(11).'</ul>'."\n";
+                                            echo indent(10).'</div>'."\n";
+                                            echo indent(9).'</td>'."\n";
+                                            echo indent(8).'</tr>'."\n";
                                             $i++;
                                             if ($i > 5) {
                                                 break;
@@ -136,23 +136,23 @@ include 'includes/html-head.php';
                                     if (is_array($dummyDataArray)) {
                                         $i = 1;
                                         foreach ($dummyDataArray as $row) {
-                                            echo indent(7).'<tr>'."\n";
-                                            echo indent(8).'<td class="column-checkbox"><input type="checkbox" name="id[]" value="'.$row->id.'"></td>'."\n";
-                                            echo indent(8).'<td>'.$row->id.'</td>'."\n";
-                                            echo indent(8).'<td>'.$row->name.'</td>'."\n";
-                                            echo indent(8).'<td>'.$row->address.'</td>'."\n";
-                                            echo indent(8).'<td>'.$row->email.'</td>'."\n";
-                                            echo indent(8).'<td>'."\n";
-                                            echo indent(9).'<div class="rd-button-group">'."\n";
-                                            echo indent(10).'<button class="rd-button small"><i class="fa fa-pencil"></i> Edit</button>'."\n";
-                                            echo indent(10).'<button class="rd-button small dropdown-toggler"><i class="fa fa-caret-down"></i></button>'."\n";
-                                            echo indent(10).'<ul class="rd-dropdown">'."\n";
-                                            echo indent(11).'<li><a href="#" onclick="return false;"><i class="fa fa-key fa-fw"></i> Permissions</a></li>'."\n";
-                                            echo indent(11).'<li><a href="#" onclick="return false;"><i class="fa fa-times fa-fw"></i> Delete</a></li>'."\n";
-                                            echo indent(10).'</ul>'."\n";
-                                            echo indent(9).'</div>'."\n";
-                                            echo indent(8).'</td>'."\n";
-                                            echo indent(7).'</tr>'."\n";
+                                            echo indent(8).'<tr>'."\n";
+                                            echo indent(9).'<td class="column-checkbox"><input type="checkbox" name="id[]" value="'.$row->id.'"></td>'."\n";
+                                            echo indent(9).'<td>'.$row->id.'</td>'."\n";
+                                            echo indent(9).'<td>'.$row->name.'</td>'."\n";
+                                            echo indent(9).'<td>'.$row->address.'</td>'."\n";
+                                            echo indent(9).'<td>'.$row->email.'</td>'."\n";
+                                            echo indent(9).'<td>'."\n";
+                                            echo indent(10).'<div class="rd-button-group">'."\n";
+                                            echo indent(11).'<button class="rd-button small"><i class="fa fa-pencil"></i> Edit</button>'."\n";
+                                            echo indent(11).'<button class="rd-button small dropdown-toggler"><i class="fa fa-caret-down"></i></button>'."\n";
+                                            echo indent(11).'<ul class="rd-dropdown">'."\n";
+                                            echo indent(12).'<li><a href="#" onclick="return false;"><i class="fa fa-key fa-fw"></i> Permissions</a></li>'."\n";
+                                            echo indent(12).'<li><a href="#" onclick="return false;"><i class="fa fa-times fa-fw"></i> Delete</a></li>'."\n";
+                                            echo indent(11).'</ul>'."\n";
+                                            echo indent(10).'</div>'."\n";
+                                            echo indent(9).'</td>'."\n";
+                                            echo indent(8).'</tr>'."\n";
                                             $i++;
                                             if ($i > 5) {
                                                 break;
@@ -166,6 +166,131 @@ include 'includes/html-head.php';
                             </tbody>
                         </table>
                     </div><!--.rd-datatable-wrapper-->
+                    <?php
+                    $rowColors = [
+                        0 => ['name' => 'Default', 'class' => ''],
+                        1 => ['name' => 'Primary', 'class' => 'primary'],
+                        2 => ['name' => 'Info', 'class' => 'info'],
+                        3 => ['name' => 'Danger', 'class' => 'danger'],
+                        4 => ['name' => 'Warning', 'class' => 'warning'],
+                        5 => ['name' => 'Success', 'class' => 'success'],
+                    ];
+                    ?> 
+                    <h3>Row colors</h3>
+                    <div class="rd-datatable-wrapper">
+                        <table class="rd-datatable h-border">
+                            <thead>
+                                <tr>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></th>
+                                    <th>Type</th>
+                                    <th>Name</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></th>
+                                    <th>Type</th>
+                                    <th>Name</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <?php
+                                echo "\n";
+                                if (isset($dummyData)) {
+                                    $dummyDataArray = json_decode($dummyData);
+                                    if (is_array($dummyDataArray)) {
+                                        $i = 0;
+                                        foreach ($dummyDataArray as $row) {
+                                            echo indent(8).'<tr';
+                                            if (isset($rowColors[$i]['class']) && $rowColors[$i]['class'] != null && is_scalar($rowColors[$i]['class'])) {
+                                                echo ' class="table-row-'.$rowColors[$i]['class'].'"';
+                                            }
+                                            echo '>'."\n";
+                                            echo indent(9).'<td class="column-checkbox"><input type="checkbox" name="id[]" value="'.$row->id.'"></td>'."\n";
+                                            echo indent(9).'<td>'.(isset($rowColors[$i]['name']) && is_scalar($rowColors[$i]['name']) ? $rowColors[$i]['name'] : '').'</td>'."\n";
+                                            echo indent(9).'<td>'.$row->name.'</td>'."\n";
+                                            echo indent(9).'<td>'."\n";
+                                            echo indent(10).'<div class="rd-button-group">'."\n";
+                                            echo indent(11).'<button class="rd-button small"><i class="fa fa-pencil"></i> Edit</button>'."\n";
+                                            echo indent(11).'<button class="rd-button small dropdown-toggler"><i class="fa fa-caret-down"></i></button>'."\n";
+                                            echo indent(11).'<ul class="rd-dropdown">'."\n";
+                                            echo indent(12).'<li><a href="#" onclick="return false;"><i class="fa fa-key fa-fw"></i> Permissions</a></li>'."\n";
+                                            echo indent(12).'<li><a href="#" onclick="return false;"><i class="fa fa-times fa-fw"></i> Delete</a></li>'."\n";
+                                            echo indent(11).'</ul>'."\n";
+                                            echo indent(10).'</div>'."\n";
+                                            echo indent(9).'</td>'."\n";
+                                            echo indent(8).'</tr>'."\n";
+                                            $i++;
+                                            if ($i >= count($rowColors)) {
+                                                break;
+                                            }
+                                        }// endforeach;
+                                        unset($i, $row);
+                                    }
+                                    unset($dummyDataArray);
+                                }
+                                ?> 
+                            </tbody>
+                        </table>
+                    </div><!--.rd-datatable-wrapper-->
+                    <h4>Cell colors</h4>
+                    <div class="rd-datatable-wrapper">
+                        <table class="rd-datatable">
+                            <thead>
+                                <tr>
+                                    <?php
+                                    echo "\n";
+                                    if (isset($rowColors) && is_array($rowColors)) {
+                                        foreach ($rowColors as $colorItem) {
+                                            echo indent(9).'<th>'.(isset($colorItem['name']) && is_scalar($colorItem['name']) ? $colorItem['name'] : '').'</th>'."\n";
+                                        }// endforeach;
+                                        unset($colorItem);
+                                    }
+                                    ?> 
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <?php
+                                    echo "\n";
+                                    if (isset($rowColors) && is_array($rowColors)) {
+                                        foreach ($rowColors as $colorItem) {
+                                            echo indent(9).'<th>'.(isset($colorItem['name']) && is_scalar($colorItem['name']) ? $colorItem['name'] : '').'</th>'."\n";
+                                        }// endforeach;
+                                        unset($colorItem);
+                                    }
+                                    ?> 
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <tr>
+                                    <?php
+                                    echo "\n";
+                                    if (isset($rowColors) && is_array($rowColors)) {
+                                        foreach ($rowColors as $colorItem) {
+                                            echo indent(9).'<td';
+                                            if (isset($colorItem['class']) && is_scalar($colorItem['class']) && $colorItem['class'] != null) {
+                                                echo ' class="table-cell-'.$colorItem['class'].'"';
+                                            }
+                                            echo '>'.(isset($colorItem['name']) ? $colorItem['name'] : '').'</td>'."\n";
+                                        }// endforeach;
+                                        unset($colorItem);
+                                    }
+                                    ?> 
+                                </tr>
+                                <tr class="table-row-info">
+                                    <td colspan="<?php if (isset($rowColors) && is_array($rowColors)) {echo count($rowColors)-1;} else {echo 1;} ?>">Info row color</td>
+                                    <td class="table-cell-success">Success</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="<?php if (isset($rowColors) && is_array($rowColors)) {echo count($rowColors);} else {echo 1;} ?>">This row contain no cell or row color.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div><!--.rd-datatable-wrapper-->
+                    <?php unset($rowColors); ?> 
                     <h3>Data table with filters row</h3>
                     <div class="rd-datatable-wrapper">
                         <table class="rd-datatable">
@@ -211,23 +336,23 @@ include 'includes/html-head.php';
                                     if (is_array($dummyDataArray)) {
                                         $i = 1;
                                         foreach ($dummyDataArray as $row) {
-                                            echo indent(7).'<tr>'."\n";
-                                            echo indent(8).'<td class="column-checkbox"><input type="checkbox" name="id[]" value="'.$row->id.'"></td>'."\n";
-                                            echo indent(8).'<td>'.$row->id.'</td>'."\n";
-                                            echo indent(8).'<td>'.$row->name.'</td>'."\n";
-                                            echo indent(8).'<td>'.$row->address.'</td>'."\n";
-                                            echo indent(8).'<td>'.$row->email.'</td>'."\n";
-                                            echo indent(8).'<td>'."\n";
-                                            echo indent(9).'<div class="rd-button-group">'."\n";
-                                            echo indent(10).'<button class="rd-button small"><i class="fa fa-pencil"></i> Edit</button>'."\n";
-                                            echo indent(10).'<button class="rd-button small dropdown-toggler"><i class="fa fa-caret-down"></i></button>'."\n";
-                                            echo indent(10).'<ul class="rd-dropdown">'."\n";
-                                            echo indent(11).'<li><a href="#" onclick="return false;"><i class="fa fa-key fa-fw"></i> Permissions</a></li>'."\n";
-                                            echo indent(11).'<li><a href="#" onclick="return false;"><i class="fa fa-times fa-fw"></i> Delete</a></li>'."\n";
-                                            echo indent(10).'</ul>'."\n";
-                                            echo indent(9).'</div>'."\n";
-                                            echo indent(8).'</td>'."\n";
-                                            echo indent(7).'</tr>'."\n";
+                                            echo indent(8).'<tr>'."\n";
+                                            echo indent(9).'<td class="column-checkbox"><input type="checkbox" name="id[]" value="'.$row->id.'"></td>'."\n";
+                                            echo indent(9).'<td>'.$row->id.'</td>'."\n";
+                                            echo indent(9).'<td>'.$row->name.'</td>'."\n";
+                                            echo indent(9).'<td>'.$row->address.'</td>'."\n";
+                                            echo indent(9).'<td>'.$row->email.'</td>'."\n";
+                                            echo indent(9).'<td>'."\n";
+                                            echo indent(10).'<div class="rd-button-group">'."\n";
+                                            echo indent(11).'<button class="rd-button small"><i class="fa fa-pencil"></i> Edit</button>'."\n";
+                                            echo indent(11).'<button class="rd-button small dropdown-toggler"><i class="fa fa-caret-down"></i></button>'."\n";
+                                            echo indent(11).'<ul class="rd-dropdown">'."\n";
+                                            echo indent(12).'<li><a href="#" onclick="return false;"><i class="fa fa-key fa-fw"></i> Permissions</a></li>'."\n";
+                                            echo indent(12).'<li><a href="#" onclick="return false;"><i class="fa fa-times fa-fw"></i> Delete</a></li>'."\n";
+                                            echo indent(11).'</ul>'."\n";
+                                            echo indent(10).'</div>'."\n";
+                                            echo indent(9).'</td>'."\n";
+                                            echo indent(8).'</tr>'."\n";
                                             $i++;
                                             if ($i > 5) {
                                                 break;

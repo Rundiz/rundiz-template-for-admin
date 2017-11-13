@@ -15,7 +15,7 @@
         tr {
             // .rd-datatable tbody tr:hover
             &:hover {
-                background-color: #f3f3f3;
+                background-color: rgba(243, 243, 243, 0.5);
             }
         }
     }
@@ -90,6 +90,49 @@
             border-right-width: 0;
         }
     }// .rd-datatable.h-border
+
+    // .rd-datatable .table-cell-xxx,
+    // .rd-datatable .table-row-xxx
+    .table-cell-danger,
+    .table-row-danger {
+        background-color: $danger-background-color;
+        // .rd-datatable .table-cell-danger:hover
+        &:hover {
+            background-color: $danger-hover-background-color;
+        }
+    }
+    .table-cell-info,
+    .table-row-info {
+        background-color: $info-background-color;
+        // .rd-datatable .table-cell-info:hover
+        &:hover {
+            background-color: $info-hover-background-color;
+        }
+    }
+    .table-cell-primary,
+    .table-row-primary {
+        background-color: $primary-background-color;
+        // .rd-datatable .table-cell-primary:hover
+        &:hover {
+            background-color: $primary-hover-background-color;
+        }
+    }
+    .table-cell-success,
+    .table-row-success {
+        background-color: $success-background-color;
+        // .rd-datatable .table-cell-success:hover
+        &:hover {
+            background-color: $success-hover-background-color;
+        }
+    }
+    .table-cell-warning,
+    .table-row-warning {
+        background-color: $warning-background-color;
+        // .rd-datatable .table-cell-warning:hover
+        &:hover {
+            background-color: $warning-hover-background-color;
+        }
+    }
 
     // for fully responsive table or expand/collapse table. --------------------------------
     // this style use a lot of "~" selector. see more description at https://www.w3schools.com/cssref/sel_gen_sibling.asp web page.

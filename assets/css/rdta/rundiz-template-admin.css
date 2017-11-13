@@ -1,7 +1,7 @@
 /*!
  * Rundiz template for admin
  *
- * @version 1.0
+ * @version 1.0.1
  */
 /*
 * ----------------------------------------------------------------------------------------------
@@ -509,7 +509,7 @@ a.rd-button.tiny,
   width: 100%;
 }
 .rd-datatable tbody tr:hover {
-  background-color: #f3f3f3;
+  background-color: rgba(243, 243, 243, 0.5);
 }
 .rd-datatable td,
 .rd-datatable th {
@@ -579,6 +579,46 @@ a.rd-button.tiny,
 .rd-datatable.h-border th {
   border-left-width: 0;
   border-right-width: 0;
+}
+.rd-datatable .table-cell-danger,
+.rd-datatable .table-row-danger {
+  background-color: #f4d0d0;
+}
+.rd-datatable .table-cell-danger:hover,
+.rd-datatable .table-row-danger:hover {
+  background-color: #eeb9b9;
+}
+.rd-datatable .table-cell-info,
+.rd-datatable .table-row-info {
+  background-color: #c4e3f2;
+}
+.rd-datatable .table-cell-info:hover,
+.rd-datatable .table-row-info:hover {
+  background-color: #abd7ec;
+}
+.rd-datatable .table-cell-primary,
+.rd-datatable .table-row-primary {
+  background-color: #a2ccf0;
+}
+.rd-datatable .table-cell-primary:hover,
+.rd-datatable .table-row-primary:hover {
+  background-color: #91c2ed;
+}
+.rd-datatable .table-cell-success,
+.rd-datatable .table-row-success {
+  background-color: #d1e6d1;
+}
+.rd-datatable .table-cell-success:hover,
+.rd-datatable .table-row-success:hover {
+  background-color: #c0dcc0;
+}
+.rd-datatable .table-cell-warning,
+.rd-datatable .table-row-warning {
+  background-color: #fbd38f;
+}
+.rd-datatable .table-cell-warning:hover,
+.rd-datatable .table-row-warning:hover {
+  background-color: #fac875;
 }
 .rd-datatable.responsive td,
 .rd-datatable.responsive th {
