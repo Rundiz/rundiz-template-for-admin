@@ -77,6 +77,20 @@ for ($i = 1; $i <= 50; $i++) {
                                 <li><a href="#" onclick="return false;">6</a></li>
                                 <li><a href="#" onclick="return false;">7</a></li>
                                 <li><a href="#" onclick="return false;">8</a></li>
+                                <li class="divider"><a href="#" onclick="alert('Nothing works here!'); return false;">Nothing here will be display.</a></li>
+                                <li><a href="#" onclick="return false;">The above is <code>li.divider</code></a></li>
+                                <li><a href="#" onclick="return false;">9</a>
+                                    <ul>
+                                        <li><a href="#" onclick="return false;">1</a></li>
+                                        <li><a href="#" onclick="return false;">2</a></li>
+                                        <li><a href="#" onclick="return false;">3</a></li>
+                                        <li class="divider"><a href="#" onclick="alert('Nothing works here!'); return false;">Nothing here will be display.</a></li>
+                                        <li><a href="#" onclick="return false;">Divider in sub menus</a></li>
+                                        <li><a href="#" onclick="return false;">4</a></li>
+                                        <li><a href="#" onclick="return false;">5</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" onclick="return false;">10</a></li>
                             </ul>
                         </li>
                         <li><a href="#" onclick="return false;"><i class="fa fa-server fa-fw"></i> <span class="rd-sidebar-menu-text">Components</span></a>

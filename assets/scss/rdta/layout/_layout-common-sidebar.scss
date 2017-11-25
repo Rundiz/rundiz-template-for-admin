@@ -1,0 +1,133 @@
+// sidebar
+
+
+@mixin rd-sidebar {
+    // this will becomes .rd-page-wrapper .rd-sidebar
+    .rd-sidebar {
+        background-color: rgb(46, 46, 46);
+        color: #ccc;
+        display: none;
+        height: auto;
+        margin: 0;
+        min-height: 100%;
+        padding: 0;
+        position: absolute;
+        width: $sidebar-expanded-width;
+
+        // .rd-page-wrapper .rd-sidebar a
+        a {
+            // .rd-page-wrapper .rd-sidebar a > .fa
+            color: inherit;
+        }
+
+        // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list
+        ul.rd-sidebar-item-list {
+            > li {
+                // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list > li > a
+                >a {
+                    display: block;
+                    padding: 0.625rem 0.625rem 0.625rem 0.625rem;
+
+                    // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list > li > a > span.rd-sidebar-menu-text
+                    > span.rd-sidebar-menu-text {
+                        overflow-wrap: break-word;
+                        word-break: break-all;
+                        word-wrap: break-word;
+                    }
+
+                    // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list > li > a > .fa
+                    > .fa {
+                        font-size: 1.250rem;
+                        transition: font-size $sidebar-transition-seconds;
+                    }
+                }
+            }
+            // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list li.divider
+            li.divider {
+                border-bottom: 1px solid $border-color;
+                margin-bottom: 0.625rem;
+                margin-top: 0.625rem;
+                // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list li.divider a
+                a {
+                    display: none;
+                }
+            }
+        }
+
+        // .rd-page-wrapper .rd-sidebar ul
+        ul {
+            list-style: none;
+            margin: 0;
+            li {
+                list-style: none;
+            }
+        }
+    }
+}
+
+
+@mixin rd-page-wrapperMini-screen-sidebar-visible {
+    // this will becomes .rd-page-wrapper.mini-screen-sidebar-visible
+    &.mini-screen-sidebar-visible {
+        overflow-x: hidden;
+        // .rd-page-wrapper.mini-screen-sidebar-visible > footer,
+        // .rd-page-wrapper.mini-screen-sidebar-visible > main
+        > footer,
+        > main {
+            transform: translateX($sidebar-expanded-width);
+        }
+        // .rd-page-wrapper.mini-screen-sidebar-visible .rd-sidebar
+        .rd-sidebar {
+            display: block;
+        }
+        @media (min-width: $minimum-sidebar-breakpoint) {
+            // this is in on tapped sidebar menu toggler and resize to medium screen size.
+            // so, all the values for small screen should be reset.
+            overflow-x: visible;
+            // .rd-page-wrapper.mini-screen-sidebar-visible > main
+            > main {
+                transform: none;
+            }
+            // .rd-page-wrapper.mini-screen-sidebar-visible .rd-sidebar
+            .rd-sidebar {
+                background-color: transparent;
+                min-height: 0;
+                position: static;
+            }
+        }
+    }
+}
+
+
+@mixin rd-page-wrapperIs-collapsed_rd-sidebar {
+    // this will becomes .rd-page-wrapper.is-collapsed .rd-sidebar
+    .rd-sidebar {
+        width: $sidebar-collapsed-width;
+        // .rd-page-wrapper.is-collapsed .rd-sidebar ul.rd-sidebar-item-list
+        ul.rd-sidebar-item-list {
+            // .rd-page-wrapper.is-collapsed .rd-sidebar ul.rd-sidebar-item-list > li
+            > li {
+                // .rd-page-wrapper.is-collapsed .rd-sidebar ul.rd-sidebar-item-list > li > a
+                > a {
+                    // .rd-page-wrapper.is-collapsed .rd-sidebar ul.rd-sidebar-item-list > li > a > span.rd-sidebar-menu-text
+                    > span.rd-sidebar-menu-text {
+                        display: none;
+                    }
+
+                    // .rd-page-wrapper.is-collapsed .rd-sidebar ul.rd-sidebar-item-list > li > a > .fa
+                    > .fa {
+                        font-size: 1.875rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@mixin rd-sidebar-inner {
+    // this will becomes .rd-page-wrapper .rd-sidebar-inner inside @media (min-width: $minimum-sidebar-breakpoint)
+    .rd-sidebar-inner {
+        z-index: ($z-index-sidebar + 1);// fix sticky menu cause the menu is under everything that contain `position: relative;`.
+    }
+}
