@@ -166,6 +166,68 @@ include 'includes/html-head.php';
                             </tbody>
                         </table>
                     </div><!--.rd-datatable-wrapper-->
+                    <h3>Sortable columns</h3>
+                    <p>Example for sortable columns</p>
+                    <div class="rd-datatable-wrapper">
+                        <table class="rd-datatable h-border">
+                            <thead>
+                                <tr>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></th>
+                                    <th><a href="?sort=id" onclick="return false;">ID <i class="sort-asc sortable-icon"></i></a></th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Email</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></th>
+                                    <th><a href="?sort=id" onclick="return false;">ID <i class="sort-asc sortable-icon"></i></a></th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Email</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <?php
+                                echo "\n";
+                                if (isset($dummyData)) {
+                                    $dummyDataArray = json_decode($dummyData);
+                                    if (is_array($dummyDataArray)) {
+                                        $i = 1;
+                                        foreach ($dummyDataArray as $row) {
+                                            echo indent(8).'<tr>'."\n";
+                                            echo indent(9).'<td class="column-checkbox"><input type="checkbox" name="id[]" value="'.$row->id.'"></td>'."\n";
+                                            echo indent(9).'<td>'.$row->id.'</td>'."\n";
+                                            echo indent(9).'<td>'.$row->name.'</td>'."\n";
+                                            echo indent(9).'<td>'.$row->address.'</td>'."\n";
+                                            echo indent(9).'<td>'.$row->email.'</td>'."\n";
+                                            echo indent(9).'<td>'."\n";
+                                            echo indent(10).'<div class="rd-button-group">'."\n";
+                                            echo indent(11).'<button class="rd-button small"><i class="fa fa-pencil"></i> Edit</button>'."\n";
+                                            echo indent(11).'<button class="rd-button small dropdown-toggler"><i class="fa fa-caret-down"></i></button>'."\n";
+                                            echo indent(11).'<ul class="rd-dropdown">'."\n";
+                                            echo indent(12).'<li><a href="#" onclick="return false;"><i class="fa fa-key fa-fw"></i> Permissions</a></li>'."\n";
+                                            echo indent(12).'<li><a href="#" onclick="return false;"><i class="fa fa-times fa-fw"></i> Delete</a></li>'."\n";
+                                            echo indent(11).'</ul>'."\n";
+                                            echo indent(10).'</div>'."\n";
+                                            echo indent(9).'</td>'."\n";
+                                            echo indent(8).'</tr>'."\n";
+                                            $i++;
+                                            if ($i > 5) {
+                                                break;
+                                            }
+                                        }// endforeach;
+                                        unset($i, $row);
+                                    }
+                                    unset($dummyDataArray);
+                                }
+                                ?> 
+                            </tbody>
+                        </table>
+                    </div><!--.rd-datatable-wrapper-->
                     <?php
                     $rowColors = [
                         0 => ['name' => 'Default', 'class' => ''],
@@ -297,7 +359,7 @@ include 'includes/html-head.php';
                             <thead>
                                 <tr>
                                     <th class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></th>
-                                    <th>ID</th>
+                                    <th><a href="?sort=id" onclick="return false;">ID <i class="sort-desc sortable-icon"></i></a></th>
                                     <th>Name</th>
                                     <th>Address</th>
                                     <th>Email</th>
@@ -321,7 +383,7 @@ include 'includes/html-head.php';
                             <tfoot>
                                 <tr>
                                     <th class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></th>
-                                    <th>ID</th>
+                                    <th><a href="?sort=id" onclick="return false;">ID <i class="sort-desc sortable-icon"></i></a></th>
                                     <th>Name</th>
                                     <th>Address</th>
                                     <th>Email</th>
@@ -334,6 +396,7 @@ include 'includes/html-head.php';
                                 if (isset($dummyData)) {
                                     $dummyDataArray = json_decode($dummyData);
                                     if (is_array($dummyDataArray)) {
+                                        arsort($dummyDataArray, SORT_DESC);
                                         $i = 1;
                                         foreach ($dummyDataArray as $row) {
                                             echo indent(8).'<tr>'."\n";

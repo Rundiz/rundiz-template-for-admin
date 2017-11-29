@@ -7,9 +7,9 @@
         <link rel="stylesheet" href="assets/css/sanitize.css?v=1499761596">
         <link rel="stylesheet" href="assets/css/font-awesome.min.css?v=1506916181">
         <link rel="stylesheet" href="assets/css/smartmenus/sm-core-css.css?v=1499761596">
-        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?v=1511604579">
-        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?v=1511604577">
-        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?v=1511604575"> 
+        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?v=1511958343">
+        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?v=1511958341">
+        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?v=1511958339"> 
     </head>
     <body ontouchstart="">
         <header class="rd-navbar">
@@ -461,6 +461,121 @@
                             </tbody>
                         </table>
                     </div><!--.rd-datatable-wrapper-->
+                    <h3>Sortable columns</h3>
+                    <p>Example for sortable columns</p>
+                    <div class="rd-datatable-wrapper">
+                        <table class="rd-datatable h-border">
+                            <thead>
+                                <tr>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></th>
+                                    <th><a href="?sort=id" onclick="return false;">ID <i class="sort-asc sortable-icon"></i></a></th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Email</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></th>
+                                    <th><a href="?sort=id" onclick="return false;">ID <i class="sort-asc sortable-icon"></i></a></th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Email</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                
+                                <tr>
+                                    <td class="column-checkbox"><input type="checkbox" name="id[]" value="1"></td>
+                                    <td>1</td>
+                                    <td>Gwendolyn Uphill</td>
+                                    <td>282 Springview Street</td>
+                                    <td>guphill0@upenn.edu</td>
+                                    <td>
+                                        <div class="rd-button-group">
+                                            <button class="rd-button small"><i class="fa fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler"><i class="fa fa-caret-down"></i></button>
+                                            <ul class="rd-dropdown">
+                                                <li><a href="#" onclick="return false;"><i class="fa fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa fa-times fa-fw"></i> Delete</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="column-checkbox"><input type="checkbox" name="id[]" value="2"></td>
+                                    <td>2</td>
+                                    <td>Reinhold Keneleyside</td>
+                                    <td>820 Old Gate Parkway</td>
+                                    <td>rkeneleyside1@de.vu</td>
+                                    <td>
+                                        <div class="rd-button-group">
+                                            <button class="rd-button small"><i class="fa fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler"><i class="fa fa-caret-down"></i></button>
+                                            <ul class="rd-dropdown">
+                                                <li><a href="#" onclick="return false;"><i class="fa fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa fa-times fa-fw"></i> Delete</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="column-checkbox"><input type="checkbox" name="id[]" value="3"></td>
+                                    <td>3</td>
+                                    <td>Leroy Orrah</td>
+                                    <td>8 Charing Cross Avenue</td>
+                                    <td>lorrah2@wikia.com</td>
+                                    <td>
+                                        <div class="rd-button-group">
+                                            <button class="rd-button small"><i class="fa fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler"><i class="fa fa-caret-down"></i></button>
+                                            <ul class="rd-dropdown">
+                                                <li><a href="#" onclick="return false;"><i class="fa fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa fa-times fa-fw"></i> Delete</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="column-checkbox"><input type="checkbox" name="id[]" value="4"></td>
+                                    <td>4</td>
+                                    <td>Rutherford Tarney</td>
+                                    <td>10 Valley Edge Park</td>
+                                    <td>rtarney3@cocolog-nifty.com</td>
+                                    <td>
+                                        <div class="rd-button-group">
+                                            <button class="rd-button small"><i class="fa fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler"><i class="fa fa-caret-down"></i></button>
+                                            <ul class="rd-dropdown">
+                                                <li><a href="#" onclick="return false;"><i class="fa fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa fa-times fa-fw"></i> Delete</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="column-checkbox"><input type="checkbox" name="id[]" value="5"></td>
+                                    <td>5</td>
+                                    <td>Perl Lancetter</td>
+                                    <td>98697 Bultman Park</td>
+                                    <td>plancetter4@fc2.com</td>
+                                    <td>
+                                        <div class="rd-button-group">
+                                            <button class="rd-button small"><i class="fa fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler"><i class="fa fa-caret-down"></i></button>
+                                            <ul class="rd-dropdown">
+                                                <li><a href="#" onclick="return false;"><i class="fa fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa fa-times fa-fw"></i> Delete</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+ 
+                            </tbody>
+                        </table>
+                    </div><!--.rd-datatable-wrapper-->
                      
                     <h3>Row colors</h3>
                     <div class="rd-datatable-wrapper">
@@ -632,7 +747,7 @@
                             <thead>
                                 <tr>
                                     <th class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></th>
-                                    <th>ID</th>
+                                    <th><a href="?sort=id" onclick="return false;">ID <i class="sort-desc sortable-icon"></i></a></th>
                                     <th>Name</th>
                                     <th>Address</th>
                                     <th>Email</th>
@@ -656,7 +771,7 @@
                             <tfoot>
                                 <tr>
                                     <th class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></th>
-                                    <th>ID</th>
+                                    <th><a href="?sort=id" onclick="return false;">ID <i class="sort-desc sortable-icon"></i></a></th>
                                     <th>Name</th>
                                     <th>Address</th>
                                     <th>Email</th>
@@ -666,11 +781,11 @@
                             <tbody>
                                 
                                 <tr>
-                                    <td class="column-checkbox"><input type="checkbox" name="id[]" value="1"></td>
-                                    <td>1</td>
-                                    <td>Gwendolyn Uphill</td>
-                                    <td>282 Springview Street</td>
-                                    <td>guphill0@upenn.edu</td>
+                                    <td class="column-checkbox"><input type="checkbox" name="id[]" value="20"></td>
+                                    <td>20</td>
+                                    <td>Magnum Bernardo</td>
+                                    <td>140 Parkside Alley</td>
+                                    <td>mbernardoj@google.es</td>
                                     <td>
                                         <div class="rd-button-group">
                                             <button class="rd-button small"><i class="fa fa-pencil"></i> Edit</button>
@@ -683,11 +798,11 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="column-checkbox"><input type="checkbox" name="id[]" value="2"></td>
-                                    <td>2</td>
-                                    <td>Reinhold Keneleyside</td>
-                                    <td>820 Old Gate Parkway</td>
-                                    <td>rkeneleyside1@de.vu</td>
+                                    <td class="column-checkbox"><input type="checkbox" name="id[]" value="19"></td>
+                                    <td>19</td>
+                                    <td>Crysta MacNockater</td>
+                                    <td>7 Oakridge Way</td>
+                                    <td>cmacnockateri@illinois.edu</td>
                                     <td>
                                         <div class="rd-button-group">
                                             <button class="rd-button small"><i class="fa fa-pencil"></i> Edit</button>
@@ -700,11 +815,11 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="column-checkbox"><input type="checkbox" name="id[]" value="3"></td>
-                                    <td>3</td>
-                                    <td>Leroy Orrah</td>
-                                    <td>8 Charing Cross Avenue</td>
-                                    <td>lorrah2@wikia.com</td>
+                                    <td class="column-checkbox"><input type="checkbox" name="id[]" value="18"></td>
+                                    <td>18</td>
+                                    <td>Goraud Griggs</td>
+                                    <td>32679 Doe Crossing Circle</td>
+                                    <td>ggriggsh@stanford.edu</td>
                                     <td>
                                         <div class="rd-button-group">
                                             <button class="rd-button small"><i class="fa fa-pencil"></i> Edit</button>
@@ -717,11 +832,11 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="column-checkbox"><input type="checkbox" name="id[]" value="4"></td>
-                                    <td>4</td>
-                                    <td>Rutherford Tarney</td>
-                                    <td>10 Valley Edge Park</td>
-                                    <td>rtarney3@cocolog-nifty.com</td>
+                                    <td class="column-checkbox"><input type="checkbox" name="id[]" value="17"></td>
+                                    <td>17</td>
+                                    <td>Kaylyn Roubeix</td>
+                                    <td>77 Dovetail Road</td>
+                                    <td>kroubeixg@ning.com</td>
                                     <td>
                                         <div class="rd-button-group">
                                             <button class="rd-button small"><i class="fa fa-pencil"></i> Edit</button>
@@ -734,11 +849,11 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="column-checkbox"><input type="checkbox" name="id[]" value="5"></td>
-                                    <td>5</td>
-                                    <td>Perl Lancetter</td>
-                                    <td>98697 Bultman Park</td>
-                                    <td>plancetter4@fc2.com</td>
+                                    <td class="column-checkbox"><input type="checkbox" name="id[]" value="16"></td>
+                                    <td>16</td>
+                                    <td>Wake Caret</td>
+                                    <td>180 Shopko Parkway</td>
+                                    <td>wcaretf@soundcloud.com</td>
                                     <td>
                                         <div class="rd-button-group">
                                             <button class="rd-button small"><i class="fa fa-pencil"></i> Edit</button>

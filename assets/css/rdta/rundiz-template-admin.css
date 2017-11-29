@@ -1,7 +1,7 @@
 /*!
  * Rundiz template for admin
  *
- * @version 1.0.1
+ * @version 1.0.2
  */
 /*
 * ----------------------------------------------------------------------------------------------
@@ -519,6 +519,12 @@ a.rd-button.tiny,
 .rd-datatable tbody tr:hover {
   background-color: rgba(243, 243, 243, 0.5);
 }
+.rd-datatable tfoot td a,
+.rd-datatable tfoot th a,
+.rd-datatable thead td a,
+.rd-datatable thead th a {
+  color: inherit;
+}
 .rd-datatable td,
 .rd-datatable th {
   vertical-align: top;
@@ -729,6 +735,25 @@ a.rd-button.tiny,
   .rd-datatable.responsive .toggle-row {
     display: none;
   }
+}
+.rd-datatable .sortable-icon {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-size: 0.75rem;
+  font-style: normal;
+  line-height: 1;
+}
+.rd-datatable .sortable-icon.sort-desc {
+  transform: translateY(-29%);
+}
+.rd-datatable .sortable-icon.sort-desc::before {
+  content: '\f0dd';
+}
+.rd-datatable .sortable-icon.sort-asc {
+  transform: translateY(9%);
+}
+.rd-datatable .sortable-icon.sort-asc::before {
+  content: '\f0de';
 }
 
 .rd-datatable-wrapper {

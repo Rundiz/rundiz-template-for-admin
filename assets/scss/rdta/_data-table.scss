@@ -20,6 +20,18 @@
         }
     }
 
+    // .rd-datatable tfoot,
+    // .rd-datatable thead
+    tfoot,
+    thead {
+        td,
+        th {
+            a {
+                color: inherit;
+            }
+        }
+    }
+
     // .rd-datatable td,
     // .rd-datatable th
     td,
@@ -290,6 +302,27 @@
             }
         }
     }// .rd-datatable.responsive
+
+    // .rd-datatable .sortable-icon
+    .sortable-icon {
+        display: inline-block;
+        font-family: FontAwesome;
+        font-size: 0.75rem;
+        font-style: normal;
+        line-height: 1;
+        &.sort-desc {
+            transform: translateY(-29%);
+            &::before {
+                content: '\f0dd';
+            }
+        }
+        &.sort-asc {
+            transform: translateY(9%);
+            &::before {
+                content: '\f0de';
+            }
+        }
+    }
 }
 
 
