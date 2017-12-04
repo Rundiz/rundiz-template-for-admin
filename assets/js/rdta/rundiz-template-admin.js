@@ -9,7 +9,7 @@
  * @returns {undefined}
  */
 function rdtaButtonDropdown() {
-    $ = jQuery.noConflict();
+    var $ = jQuery.noConflict();
 
     $('.rd-button-group').each(function() {
         if (typeof($(this).find('ul')[0]) !== 'undefined' && $(this).find('.dropdown-toggler').length === 1) {
@@ -90,7 +90,7 @@ function rdtaDataTableCheckboxToggle(thisObj) {
  * @returns {Boolean}
  */
 function rdtaDataTableToggleRow() {
-    $ = jQuery.noConflict();
+    var $ = jQuery.noConflict();
 
     $('.toggle-row').click(function() {
         var toggleIcon = $(this).find('.fa').data('toggle-icon');
@@ -109,7 +109,7 @@ function rdtaDataTableToggleRow() {
  * @returns {undefined}
  */
 function rdtaInputFile() {
-    $ = jQuery.noConflict();
+    var $ = jQuery.noConflict();
 
     // reset form cached after reload. this always happen in Firefox.
     $('.rd-inputfile input[type="file"]').each(function() {
@@ -148,7 +148,7 @@ function rdtaInputFile() {
  * @returns {undefined}
  */
 function rdtaNavbarSmartMenus() {
-    $ = jQuery.noConflict();
+    var $ = jQuery.noConflict();
 
     // tweak to show only one menu at a time. ( https://www.smartmenus.org/forums/topic/accordion-failed/#post-2660 )
     $('.sm-rdta.navbar').bind('click.smapi', function (e, item) {
@@ -200,7 +200,7 @@ function rdtaNavbarSmartMenus() {
  * @returns {undefined}
  */
 function rdtaResetInputFile(thisObj) {
-    $ = jQuery.noConflict();
+    var $ = jQuery.noConflict();
 
     var target = thisObj.closest('.rd-input-files-queue').siblings('.rd-inputfile').find('input[type="file"]');
     target.wrap('<form>').closest('form').get(0).reset();
@@ -220,7 +220,7 @@ function rdtaResetInputFile(thisObj) {
  * @returns {Boolean}
  */
 function rdtaSidebarExpandToggler() {
-    $ = jQuery.noConflict();
+    var $ = jQuery.noConflict();
 
     var $togglerButton = $('.rd-sidebar-expand-collapse-controls').find('a');
     var $target = $togglerButton.data('target');
@@ -244,7 +244,7 @@ function rdtaSidebarExpandToggler() {
  * @returns {undefined}
  */
 function rdtaSidebarMenuSticky() {
-    $ = jQuery.noConflict();
+    var $ = jQuery.noConflict();
 
     $('.rd-sidebar').stickySidebar({
         containerSelector: '.rd-page-wrapper',
@@ -262,7 +262,7 @@ function rdtaSidebarMenuSticky() {
  * @returns {undefined}
  */
 function rdtaSidebarSmartMenus() {
-    $ = jQuery.noConflict();
+    var $ = jQuery.noConflict();
 
     $('.sm-vertical').smartmenus({
         markCurrentItem: true,
@@ -282,7 +282,7 @@ function rdtaSidebarSmartMenus() {
  * @returns {undefined}
  */
 function rdtaSidebarToggler() {
-    $ = jQuery.noConflict();
+    var $ = jQuery.noConflict();
 
     var $togglerButton = $('.rd-sidebar-toggler');
     var $target = $togglerButton.data('target');
