@@ -173,20 +173,20 @@ include 'includes/html-head.php';
                             <thead>
                                 <tr>
                                     <th class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></th>
-                                    <th><a href="?sort=id" onclick="return false;">ID <i class="sort-asc sortable-icon"></i></a></th>
-                                    <th>Name</th>
-                                    <th>Address</th>
-                                    <th>Email</th>
+                                    <th><a href="?sort=id" onclick="return false;">ID <i class="order-asc sortable-icon"></i></a></th>
+                                    <th class="sorted"><a href="?sort=name" onclick="return false;">Name <i class="order-asc sortable-icon"></i></a></th>
+                                    <th><a href="?sort=address" onclick="return false;">Address <i class="order-asc sortable-icon"></i></a></th>
+                                    <th><a href="?sort=email" onclick="return false;">Email <i class="order-asc sortable-icon"></i></a></th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tfoot>
                                 <tr>
                                     <th class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></th>
-                                    <th><a href="?sort=id" onclick="return false;">ID <i class="sort-asc sortable-icon"></i></a></th>
-                                    <th>Name</th>
-                                    <th>Address</th>
-                                    <th>Email</th>
+                                    <th><a href="?sort=id" onclick="return false;">ID <i class="order-asc sortable-icon"></i></a></th>
+                                    <th class="sorted"><a href="?sort=name" onclick="return false;">Name <i class="order-asc sortable-icon"></i></a></th>
+                                    <th><a href="?sort=address" onclick="return false;">Address <i class="order-asc sortable-icon"></i></a></th>
+                                    <th><a href="?sort=email" onclick="return false;">Email <i class="order-asc sortable-icon"></i></a></th>
                                     <th>Actions</th>
                                 </tr>
                             </tfoot>
@@ -359,7 +359,7 @@ include 'includes/html-head.php';
                             <thead>
                                 <tr>
                                     <th class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></th>
-                                    <th><a href="?sort=id" onclick="return false;">ID <i class="sort-desc sortable-icon"></i></a></th>
+                                    <th class="sorted"><a href="?sort=id" onclick="return false;">ID <i class="order-desc sortable-icon"></i></a></th>
                                     <th>Name</th>
                                     <th>Address</th>
                                     <th>Email</th>
@@ -383,7 +383,7 @@ include 'includes/html-head.php';
                             <tfoot>
                                 <tr>
                                     <th class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></th>
-                                    <th><a href="?sort=id" onclick="return false;">ID <i class="sort-desc sortable-icon"></i></a></th>
+                                    <th class="sorted"><a href="?sort=id" onclick="return false;">ID <i class="order-desc sortable-icon"></i></a></th>
                                     <th>Name</th>
                                     <th>Address</th>
                                     <th>Email</th>
@@ -435,17 +435,17 @@ include 'includes/html-head.php';
                         <thead>
                             <tr>
                                 <td class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></td>
-                                <th class="column-primary">Name</th>
-                                <th>Address</th>
-                                <th>Email</th>
+                                <th class="column-primary"><a href="?sort=name" onclick="return false;">Name <i class="order-asc sortable-icon"></i></a></th>
+                                <th><a href="?sort=address" onclick="return false;">Address <i class="order-asc sortable-icon"></i></a></th>
+                                <th><a href="?sort=email" onclick="return false;">Email <i class="order-asc sortable-icon"></i></a></th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
                                 <td class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></td>
-                                <th class="column-primary">Name</th>
-                                <th>Address</th>
-                                <th>Email</th>
+                                <th class="column-primary"><a href="?sort=name" onclick="return false;">Name <i class="order-asc sortable-icon"></i></a></th>
+                                <th><a href="?sort=address" onclick="return false;">Address <i class="order-asc sortable-icon"></i></a></th>
+                                <th><a href="?sort=email" onclick="return false;">Email <i class="order-asc sortable-icon"></i></a></th>
                             </tr>
                         </tfoot>
                         <tbody>

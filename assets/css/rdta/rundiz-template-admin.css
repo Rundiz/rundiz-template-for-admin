@@ -523,7 +523,7 @@ a.rd-button.tiny,
 .rd-datatable tfoot th a,
 .rd-datatable thead td a,
 .rd-datatable thead th a {
-  color: inherit;
+  color: #1280EF;
 }
 .rd-datatable td,
 .rd-datatable th {
@@ -742,18 +742,24 @@ a.rd-button.tiny,
   font-size: 0.75rem;
   font-style: normal;
   line-height: 1;
+  visibility: hidden;
 }
-.rd-datatable .sortable-icon.sort-desc {
+.rd-datatable .sortable-icon.order-desc {
   transform: translateY(-29%);
 }
-.rd-datatable .sortable-icon.sort-desc::before {
+.rd-datatable .sortable-icon.order-desc::before {
   content: '\f0dd';
 }
-.rd-datatable .sortable-icon.sort-asc {
+.rd-datatable .sortable-icon.order-asc {
   transform: translateY(9%);
 }
-.rd-datatable .sortable-icon.sort-asc::before {
+.rd-datatable .sortable-icon.order-asc::before {
   content: '\f0de';
+}
+.rd-datatable td.sorted .sortable-icon, .rd-datatable td:hover .sortable-icon,
+.rd-datatable th.sorted .sortable-icon,
+.rd-datatable th:hover .sortable-icon {
+  visibility: visible;
 }
 
 .rd-datatable-wrapper {
