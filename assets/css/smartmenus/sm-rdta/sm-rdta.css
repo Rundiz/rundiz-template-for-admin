@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
  * Smartmenus style in Rundiz template for admin
  * 
@@ -34,7 +35,7 @@
 }
 .sm-rdta a.highlighted span.sub-arrow::before {
   display: block;
-  content: '-';
+  content: "-";
 }
 @media (min-width: 1000px) {
   .sm-rdta a span.sub-arrow {
@@ -45,10 +46,10 @@
   }
   .sm-rdta a span.sub-arrow::before {
     display: block;
-    content: '\f0da';
+    content: "";
   }
   .sm-rdta a.highlighted span.sub-arrow::before {
-    content: '\f0da';
+    content: "";
   }
 }
 .sm-rdta ul {
@@ -96,7 +97,7 @@
 }
 @media (min-width: 1000px) {
   .sm-rdta span.scroll-up,
-  .sm-rdta span.scroll-down {
+.sm-rdta span.scroll-down {
     background-color: #FFF;
     display: none;
     height: 20px;
@@ -105,16 +106,16 @@
     visibility: hidden;
   }
   .sm-rdta span.scroll-up:hover,
-  .sm-rdta span.scroll-down:hover {
+.sm-rdta span.scroll-down:hover {
     background-color: #eee;
   }
-  .sm-rdta span.scroll-up:hover span.scroll-up-arrow, .sm-rdta span.scroll-up:hover span.scroll-down-arrow {
+  .sm-rdta span.scroll-up:hover span.scroll-up-arrow {
     border-color: transparent transparent #333 transparent;
   }
   .sm-rdta span.scroll-down:hover span.scroll-down-arrow {
     border-color: #333 transparent transparent transparent;
   }
-  .sm-rdta span.scroll-up-arrow, .sm-rdta span.scroll-down-arrow {
+  .sm-rdta span.scroll-down-arrow, .sm-rdta span.scroll-up-arrow {
     border-color: transparent transparent #ddd transparent;
     border-style: dashed dashed solid dashed;
     border-width: 6px;
@@ -153,7 +154,7 @@
 .sm-rdta.navbar ul a {
   color: inherit;
   font-size: inherit;
-  padding: 0.313rem;
+  padding: 0.625rem 0.313rem;
 }
 .sm-rdta.navbar ul a:hover, .sm-rdta.navbar ul a.highlighted {
   background-color: transparent;

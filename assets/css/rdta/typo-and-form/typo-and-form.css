@@ -19,17 +19,21 @@ button:focus,
 input:focus,
 select:focus,
 textarea:focus {
-  outline: 2px solid #ffcc33;
+  outline: 2px solid rgba(255, 182, 0, 0.5);
+}
+
+input[type=radio]:focus {
+  border-radius: 50%;
 }
 
 button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-  outline: 2px solid #ffcc33;
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 2px solid rgba(255, 182, 0, 0.5);
 }
 
-input[type="color"]::-moz-focus-inner {
+input[type=color]::-moz-focus-inner {
   border: none;
 }
 
@@ -88,7 +92,7 @@ blockquote {
   padding: 0 0 0 0.625em;
 }
 
-code, kbd, pre, samp {
+code, samp, pre, kbd {
   background-color: #f1f1f1;
   color: #555;
   font-family: "Consolas", "Lucida Console", "DejaVu Sans Mono", "Liberation Mono", "Courier New", monospace, sans-serif;
@@ -155,7 +159,7 @@ hr {
   border-left: 0;
   border-right: 0;
   border-top: 1px solid #ddd;
-  margin: 1.250rem 0;
+  margin: 1.25rem 0;
 }
 
 iframe {
@@ -188,7 +192,7 @@ meter {
   display: inline-block;
   height: 1em;
   outline: none;
-  width: 11.250em;
+  width: 11.25em;
 }
 meter:-moz-meter-optimum::-moz-meter-bar {
   background-color: #77AA33;
@@ -240,7 +244,7 @@ progress {
   background-color: #eee;
   border: none;
   height: 1em;
-  width: 11.250em;
+  width: 11.25em;
 }
 progress:not([value]) {
   animation: progressbar-novalue-animations 1s linear infinite alternate;
@@ -269,10 +273,10 @@ progress::-webkit-progress-value {
 }
 
 q::after {
-  content: '”';
+  content: "”";
 }
 q::before {
-  content: '“';
+  content: "“";
 }
 
 samp {
@@ -336,11 +340,11 @@ var {
 * form, fieldset, and all input controls.
 * ----------------------------------------------------------------------------------------------
 */
-a.rd-button,
+input[type=button],
+input[type=reset],
+input[type=submit], a.rd-button,
 .rd-button,
-button, input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+button {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -362,70 +366,75 @@ input[type="submit"] {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   transition: box-shadow 0.1s, top 0.1s;
 }
+input[type=button]:active,
+input[type=reset]:active,
+input[type=submit]:active,
 .rd-button:active,
-button:active, input[type="button"]:active,
-input[type="reset"]:active,
-input[type="submit"]:active,
+button:active, input[type=button]:focus,
+input[type=reset]:focus,
+input[type=submit]:focus,
 .rd-button:focus,
-button:focus, input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus {
+button:focus {
   color: inherit;
 }
+input[type=button]:active,
+input[type=reset]:active,
+input[type=submit]:active,
 .rd-button:active,
-button:active, input[type="button"]:active,
-input[type="reset"]:active,
-input[type="submit"]:active,
+button:active, input.active[type=button],
+input.active[type=reset],
+input.active[type=submit],
 .active.rd-button,
-button.active, input.active[type="button"],
-input.active[type="reset"],
-input.active[type="submit"] {
+button.active {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
   top: 1px;
 }
+input[type=button]:hover,
+input[type=reset]:hover,
+input[type=submit]:hover,
 .rd-button:hover,
-button:hover, input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
+button:hover {
   color: inherit;
 }
+input[disabled][type=button],
+input[disabled][type=reset],
+input[disabled][type=submit],
 [disabled].rd-button,
-button[disabled], input[disabled][type="button"],
-input[disabled][type="reset"],
-input[disabled][type="submit"],
+button[disabled], input.disabled[type=button],
+input.disabled[type=reset],
+input.disabled[type=submit],
 .disabled.rd-button,
-button.disabled, input.disabled[type="button"],
-input.disabled[type="reset"],
-input.disabled[type="submit"] {
+button.disabled {
   background-color: #f3f3f3;
   box-shadow: 0 2px 0 rgba(38, 38, 38, 0.1);
   color: #999999;
   cursor: not-allowed;
   opacity: 1;
 }
+input[disabled][type=button]:active,
+input[disabled][type=reset]:active,
+input[disabled][type=submit]:active,
 [disabled].rd-button:active,
-button[disabled]:active, input[disabled][type="button"]:active,
-input[disabled][type="reset"]:active,
-input[disabled][type="submit"]:active,
+button[disabled]:active, input.disabled[type=button]:active,
+input.disabled[type=reset]:active,
+input.disabled[type=submit]:active,
 .disabled.rd-button:active,
-button.disabled:active, input.disabled[type="button"]:active,
-input.disabled[type="reset"]:active,
-input.disabled[type="submit"]:active {
+button.disabled:active {
   top: 0;
 }
 
-input[type="date"],
-input[type="datetime-local"],
-input[type="email"],
-input[type="month"],
-input[type="number"],
-input[type="password"],
-input[type="search"],
-input[type="tel"],
-input[type="text"],
-input[type="time"],
-input[type="url"],
-input[type="week"], textarea {
+textarea, input[type=date],
+input[type=datetime-local],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week] {
   border: 1px solid #ddd;
   border-radius: 0;
   font-family: inherit;
@@ -433,54 +442,54 @@ input[type="week"], textarea {
   line-height: 1.4;
   padding: 0.313em 0.188em;
 }
-input[type="date"]:active,
-input[type="datetime-local"]:active,
-input[type="email"]:active,
-input[type="month"]:active,
-input[type="number"]:active,
-input[type="password"]:active,
-input[type="search"]:active,
-input[type="tel"]:active,
-input[type="text"]:active,
-input[type="time"]:active,
-input[type="url"]:active,
-input[type="week"]:active, textarea:active, input[type="date"]:focus,
-input[type="datetime-local"]:focus,
-input[type="email"]:focus,
-input[type="month"]:focus,
-input[type="number"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="text"]:focus,
-input[type="time"]:focus,
-input[type="url"]:focus,
-input[type="week"]:focus, textarea:focus {
+textarea:active, input[type=date]:active,
+input[type=datetime-local]:active,
+input[type=email]:active,
+input[type=month]:active,
+input[type=number]:active,
+input[type=password]:active,
+input[type=search]:active,
+input[type=tel]:active,
+input[type=text]:active,
+input[type=time]:active,
+input[type=url]:active,
+input[type=week]:active, textarea:focus, input[type=date]:focus,
+input[type=datetime-local]:focus,
+input[type=email]:focus,
+input[type=month]:focus,
+input[type=number]:focus,
+input[type=password]:focus,
+input[type=search]:focus,
+input[type=tel]:focus,
+input[type=text]:focus,
+input[type=time]:focus,
+input[type=url]:focus,
+input[type=week]:focus {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
 }
-input[disabled][type="date"],
-input[disabled][type="datetime-local"],
-input[disabled][type="email"],
-input[disabled][type="month"],
-input[disabled][type="number"],
-input[disabled][type="password"],
-input[disabled][type="search"],
-input[disabled][type="tel"],
-input[disabled][type="text"],
-input[disabled][type="time"],
-input[disabled][type="url"],
-input[disabled][type="week"], textarea[disabled], input[readonly][type="date"],
-input[readonly][type="datetime-local"],
-input[readonly][type="email"],
-input[readonly][type="month"],
-input[readonly][type="number"],
-input[readonly][type="password"],
-input[readonly][type="search"],
-input[readonly][type="tel"],
-input[readonly][type="text"],
-input[readonly][type="time"],
-input[readonly][type="url"],
-input[readonly][type="week"], textarea[readonly] {
+textarea[disabled], input[disabled][type=date],
+input[disabled][type=datetime-local],
+input[disabled][type=email],
+input[disabled][type=month],
+input[disabled][type=number],
+input[disabled][type=password],
+input[disabled][type=search],
+input[disabled][type=tel],
+input[disabled][type=text],
+input[disabled][type=time],
+input[disabled][type=url],
+input[disabled][type=week], textarea[readonly], input[readonly][type=date],
+input[readonly][type=datetime-local],
+input[readonly][type=email],
+input[readonly][type=month],
+input[readonly][type=number],
+input[readonly][type=password],
+input[readonly][type=search],
+input[readonly][type=tel],
+input[readonly][type=text],
+input[readonly][type=time],
+input[readonly][type=url],
+input[readonly][type=week] {
   background-color: #eee;
   color: #999;
   cursor: not-allowed;
@@ -496,47 +505,47 @@ fieldset legend {
   padding: 0.125em 0.313em;
 }
 
-input[type="color"] {
+input[type=color] {
   cursor: pointer;
   border: 1px solid #ddd;
   height: 2em;
   padding: 0;
 }
 
-input[type="color"],
-input[type="file"],
-input[type="range"] {
+input[type=color],
+input[type=file],
+input[type=range] {
   cursor: pointer;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
+input[type=checkbox],
+input[type=radio] {
   cursor: pointer;
 }
-input[type="checkbox"][disabled], input[type="checkbox"][readonly],
-input[type="radio"][disabled],
-input[type="radio"][readonly] {
+input[type=checkbox][disabled], input[type=checkbox][readonly],
+input[type=radio][disabled],
+input[type=radio][readonly] {
   cursor: not-allowed;
 }
 
-input[type="file"] {
+input[type=file] {
   max-width: 240px;
   overflow: hidden;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
-input[type="file"]::-webkit-file-upload-button {
+input[type=file]::-webkit-file-upload-button {
   background-color: #eee;
   border: 1px solid #ddd;
   cursor: pointer;
 }
-input[type="file"][disabled] {
+input[type=file][disabled] {
   cursor: not-allowed;
 }
-input[type="file"][disabled]::-webkit-file-upload-button {
+input[type=file][disabled]::-webkit-file-upload-button {
   cursor: not-allowed;
 }
 
-input[type="image"] {
+input[type=image] {
   border: none;
   border-radius: 0;
   color: #333;
@@ -550,7 +559,7 @@ input[type="image"] {
   -webkit-user-select: none;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
-input[type="image"]:disabled, input[type="image"][disabled] {
+input[type=image]:disabled, input[type=image][disabled] {
   cursor: not-allowed;
   opacity: 0.7;
 }
@@ -592,7 +601,7 @@ select:not([multiple]) {
 .rd-inputfile:active, .rd-inputfile:focus {
   outline: 2px solid orange;
 }
-.rd-inputfile input[type="file"] {
+.rd-inputfile input[type=file] {
   display: block;
   filter: alpha(opacity=0);
   height: 100%;
@@ -615,7 +624,7 @@ select:not([multiple]) {
   vertical-align: middle;
 }
 .rd-input-files-queue > button,
-.rd-input-files-queue > input[type="button"],
+.rd-input-files-queue > input[type=button],
 .rd-input-files-queue > .rd-button {
   margin-top: -2px;
   position: relative;
@@ -630,13 +639,13 @@ select:not([multiple]) {
 * http://www.cssportal.com/style-input-range/
 * ----------------------------------------------------------------------------------------------
 */
-input[type="range"] {
+input[type=range] {
   -webkit-appearance: none;
   height: 37px;
   margin: 10px 0;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
-input[type="range"]::-moz-range-thumb {
+input[type=range]::-moz-range-thumb {
   background: #eee;
   border: 1px solid #AAA;
   border-radius: 0px;
@@ -645,7 +654,7 @@ input[type="range"]::-moz-range-thumb {
   height: 30px;
   width: 15px;
 }
-input[type="range"]::-webkit-slider-thumb {
+input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   background: #eee;
   box-shadow: none;
@@ -656,7 +665,7 @@ input[type="range"]::-webkit-slider-thumb {
   margin-top: -14px;
   width: 15px;
 }
-input[type="range"]::-moz-range-track {
+input[type=range]::-moz-range-track {
   animate: 0.2s;
   background: #ddd;
   border: 0px solid #000000;
@@ -665,7 +674,7 @@ input[type="range"]::-moz-range-track {
   cursor: pointer;
   height: 3px;
 }
-input[type="range"]::-webkit-slider-runnable-track {
+input[type=range]::-webkit-slider-runnable-track {
   animate: 0.2s;
   background: #ddd;
   border: 0px solid #000000;
@@ -674,10 +683,10 @@ input[type="range"]::-webkit-slider-runnable-track {
   cursor: pointer;
   height: 3px;
 }
-input[type="range"]:focus::-webkit-slider-runnable-track {
+input[type=range]:focus::-webkit-slider-runnable-track {
   background: #ddd;
 }
-input[type="range"]::-ms-track {
+input[type=range]::-ms-track {
   animate: 0.2s;
   background: transparent;
   border-color: transparent;
@@ -685,7 +694,7 @@ input[type="range"]::-ms-track {
   cursor: pointer;
   height: 3px;
 }
-input[type="range"]::-ms-thumb {
+input[type=range]::-ms-thumb {
   background: #eee;
   border: 1px solid #AAA;
   border-radius: 0px;
@@ -696,22 +705,22 @@ input[type="range"]::-ms-thumb {
   top: 22px;
   width: 15px;
 }
-input[type="range"]::-ms-fill-lower {
+input[type=range]::-ms-fill-lower {
   background: #ddd;
   border: 0px solid #000000;
   border-radius: 0px;
   box-shadow: none;
 }
-input[type="range"]::-ms-fill-upper {
+input[type=range]::-ms-fill-upper {
   background: #ddd;
   border: 0px solid #000000;
   border-radius: 0px;
   box-shadow: none;
 }
-input[type="range"]:focus::-ms-fill-lower {
+input[type=range]:focus::-ms-fill-lower {
   background: #ddd;
 }
-input[type="range"]:focus::-ms-fill-upper {
+input[type=range]:focus::-ms-fill-upper {
   background: #ddd;
 }
 

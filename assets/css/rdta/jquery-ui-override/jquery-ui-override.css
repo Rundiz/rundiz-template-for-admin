@@ -63,12 +63,12 @@
     border-bottom-width: 1px;
     border-right-width: 0;
     clear: left;
-    margin-bottom: .188rem;
+    margin-bottom: 0.188rem;
     margin-right: -1px;
     width: 100%;
   }
   .ui-tabs.tabs-vertical .ui-tabs-nav li.ui-tabs-active {
-    margin-bottom: .2rem;
+    margin-bottom: 0.2rem;
   }
   .ui-tabs.tabs-vertical .ui-tabs-nav .ui-tabs-anchor {
     display: block;

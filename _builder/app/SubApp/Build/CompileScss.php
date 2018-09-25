@@ -236,13 +236,11 @@ class CompileScss
                                 'sass'
                                     . ' ' . $fileinfo->getRealPath() . ' ' . $cssFolder . $relativeParentFolder . DIRECTORY_SEPARATOR . $fileName . '.css'
                                     . ' --style="expanded"'
-                                    . ' --force'
                             );
                             $this->writeLog(
                                 'sass'
                                     . ' ' . $fileinfo->getRealPath() . ' ' . $cssFolder . $relativeParentFolder . DIRECTORY_SEPARATOR . $fileName . '.css'
                                     . ' --style="expanded"'
-                                    . ' --force'
                             );
 
                             // also compile minified .css
@@ -250,7 +248,6 @@ class CompileScss
                                 'sass'
                                     . ' ' . $fileinfo->getRealPath() . ' ' . $cssFolder . $relativeParentFolder . DIRECTORY_SEPARATOR . $fileName . '.min.css'
                                     . ' --style="compressed"'
-                                    . ' --force'
                             );
 
                             $Progress->advance();

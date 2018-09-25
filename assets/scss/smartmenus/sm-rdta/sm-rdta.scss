@@ -156,7 +156,7 @@
         span.scroll-down:hover span.scroll-down-arrow {
             border-color: $font-color transparent transparent transparent;
         }
-        span.scroll-up-arrow {
+        %scroll-up-arrow {
             border-color: transparent transparent $border-color transparent;
             border-style: dashed dashed solid dashed;
             border-width: 6px;
@@ -168,8 +168,11 @@
             top: 0;
             width: 0;
         }
+        span.scroll-up-arrow {
+            @extend %scroll-up-arrow;
+        }
         span.scroll-down-arrow {
-            @extend span.scroll-up-arrow;
+            @extend %scroll-up-arrow;
             border-color: $border-color transparent transparent transparent;
             border-style: solid dashed dashed dashed;
             top: 8px;
@@ -200,7 +203,7 @@
         a {
             color: inherit;
             font-size: inherit;
-            padding: 0.313rem;
+            padding: 0.625rem 0.313rem;
             &:hover,
             &.highlighted {
                 background-color: transparent;

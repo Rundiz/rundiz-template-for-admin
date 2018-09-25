@@ -23,6 +23,12 @@ textarea {
     }
 }
 
+input[type="radio"] {
+    &:focus {
+        border-radius: 50%;
+    }
+}
+
 
 button,
 [type="button"],
