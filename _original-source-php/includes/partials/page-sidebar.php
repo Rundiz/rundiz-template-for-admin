@@ -2,15 +2,15 @@
             <section class="rd-sidebar">
                 <div class="rd-sidebar-inner">
                     <ul class="rd-sidebar-item-list sm sm-vertical sm-rdta">
-                        <li><a href="#" onclick="return false;"><i class="fa fa-tachometer fa-fw"></i> <span class="rd-sidebar-menu-text">Admin home</span></a>
+                        <li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-tachometer-alt fa-fw"></i> <span class="rd-sidebar-menu-text">Admin home</span></a>
                             <ul>
                                 <li><a href="./">Admin dashboard</a></li>
                                 <li><a href="javascript:alert('link clicked');">Update</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" onclick="return false;"><i class="fa fa-home fa-fw"></i> <span class="rd-sidebar-menu-text">Front home</span></a></li>
-                        <li><a href="#" onclick="return false;"><i class="fa fa-cog fa-fw"></i> <span class="rd-sidebar-menu-text">Settings</span></a></li>
-                        <li><a href="#" onclick="return false;"><i class="fa fa-cubes fa-fw"></i> <span class="rd-sidebar-menu-text">Sub menus</span></a>
+                        <li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-home fa-fw"></i> <span class="rd-sidebar-menu-text">Front home</span></a></li>
+                        <li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-cog fa-fw"></i> <span class="rd-sidebar-menu-text">Settings</span></a></li>
+                        <li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-cubes fa-fw"></i> <span class="rd-sidebar-menu-text">Sub menus</span></a>
                             <ul>
                                 <li><a href="javascript:alert('link clicked');">1</a>
                                     <ul>
@@ -93,7 +93,7 @@ for ($i = 1; $i <= 50; $i++) {
                                 <li><a href="#" onclick="return false;">10</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" onclick="return false;"><i class="fa fa-server fa-fw"></i> <span class="rd-sidebar-menu-text">Components</span></a>
+                        <li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-server fa-fw"></i> <span class="rd-sidebar-menu-text">Components</span></a>
                             <ul>
                                 <li><a href="typography.php">Typography</a></li>
                                 <li><a href="basic-layout.php">Basic layout</a></li>
@@ -114,7 +114,12 @@ for ($i = 1; $i <= 50; $i++) {
                                 <li><a href="tab.php">Tab</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" onclick="return false;"><i class="fa fa-code fa-fw"></i> <span class="rd-sidebar-menu-text">Tools &amp; guide</span></a>
+                        <li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-laptop-code"></i> <span class="rd-sidebar-menu-text">Examples</span></a>
+                            <ul>
+                                <li><a href="example-login.php">Login page</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-code fa-fw"></i> <span class="rd-sidebar-menu-text">Tools &amp; guide</span></a>
                             <ul>
                                 <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="tools_cssgrid">CSS grid</a></li>
                                 <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="tools_cssflex">CSS flex box</a></li>
@@ -125,7 +130,7 @@ for ($i = 1; $i <= 50; $i++) {
                     </ul>
                     <ul class="rd-sidebar-item-list rd-sidebar-expand-collapse-controls">
                         <li>
-                            <a data-target=".rd-page-wrapper" title="Expane/collapse menu"><i class="fa fa-chevron-left fa-fw" data-toggle-icon="fa-chevron-left fa-chevron-right"></i> <span class="screen-reader-only" aria-hidden="true">Expane/collapse menu</span></a>
+                            <a data-target=".rd-page-wrapper" title="Expane/collapse menu"><i class="sidebar-icon faicon fas fa-chevron-left fa-fw" data-toggle-icon="fa-chevron-left fa-chevron-right"></i> <span class="screen-reader-only" aria-hidden="true">Expane/collapse menu</span></a>
                             <hr>
                         </li>
                     </ul>

@@ -41,11 +41,12 @@
   .sm-rdta a span.sub-arrow {
     background-color: transparent;
     color: #333;
-    font-family: FontAwesome;
     width: 12px;
   }
   .sm-rdta a span.sub-arrow::before {
     display: block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
     content: "";
   }
   .sm-rdta a.highlighted span.sub-arrow::before {

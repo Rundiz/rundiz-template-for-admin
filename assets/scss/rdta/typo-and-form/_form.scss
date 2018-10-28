@@ -49,26 +49,6 @@
 }
 
 
-%inputbox {
-    border: 1px solid $border-color;// this also override active, focus in firefox.
-    border-radius: 0;
-    font-family: inherit;
-    font-size: 0.99em;
-    line-height: 1.4;
-    padding: 0.313em 0.188em;
-    &:active,
-    &:focus {
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
-    }
-    &[disabled],
-    &[readonly] {
-        background-color: $background-color;
-        color: $disabled-font-color;
-        cursor: not-allowed;
-    }
-}
-
-
 a.rd-button,
 .rd-button,
 button {
@@ -99,7 +79,9 @@ input[type="text"],
 input[type="time"],
 input[type="url"],
 input[type="week"] {
-    @extend %inputbox;
+    @include form-inputbox {
+        height: 2.152em;
+    }
 }
 
 
@@ -178,7 +160,10 @@ select {
     appearance: none;
     border: 1px solid $border-color;// this also override active, focus in firefox.
     border-radius: 0;
-    padding: 0 1.5em 0 0.188em;
+    font-family: inherit;
+    font-size: 0.99em;
+    line-height: 1.4;
+    padding: 0.313em 0.188em;
     &[disabled],
     &[readonly] {
         background-color: $background-color;
@@ -190,11 +175,12 @@ select:not([multiple]) {
     background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+");// from zurb foundation.
     background-position: 100% center;
     background-repeat: no-repeat;
+    height: 2.152em;
 }
 
 
 textarea {
-    @extend %inputbox;
+    @include form-inputbox;
 }
 
 

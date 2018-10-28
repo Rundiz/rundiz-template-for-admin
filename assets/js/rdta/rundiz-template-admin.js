@@ -93,8 +93,8 @@ function rdtaDataTableToggleRow() {
     var $ = jQuery.noConflict();
 
     $('.toggle-row').click(function() {
-        var toggleIcon = $(this).find('.fa').data('toggle-icon');
-        $(this).find('.fa').toggleClass(toggleIcon);
+        var toggleIcon = $(this).find('.faicon').data('toggle-icon');
+        $(this).find('.faicon').toggleClass(toggleIcon);
         $(this).parents('tr').toggleClass('is-expanded');
     });
 
@@ -227,8 +227,8 @@ function rdtaSidebarExpandToggler() {
 
     $togglerButton.on('click', function(e) {
         e.preventDefault();
-        var toggleIcon = $(this).find('.fa').data('toggle-icon');
-        $(this).find('.fa').toggleClass(toggleIcon);
+        var toggleIcon = $(this).find('.faicon').data('toggle-icon');
+        $(this).find('.faicon').toggleClass(toggleIcon);
         $($target).toggleClass('is-collapsed');
         setTimeout(function() {$('.rd-sidebar').stickySidebar('updateSticky');}, 100);
     });

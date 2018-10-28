@@ -112,7 +112,7 @@ include 'includes/html-head.php';
                     <h2>Button with dropdown</h2>
                     <p>The dropdown button uses <a href="http://github.hubspot.com/drop/docs/welcome/" target="dropjs">Drop.js</a></p>
                     <div class="rd-button-group">
-                        <button class="rd-button dropdown-toggler">Dropdown <i class="fa fa-caret-down"></i></button>
+                        <button class="rd-button dropdown-toggler">Dropdown <i class="fas fa-caret-down"></i></button>
                         <ul class="rd-dropdown">
                             <li><a href="#" onclick="return false;">Save A</a></li>
                             <li><a href="#" onclick="return false;">Save &amp; Publish A</a></li>
@@ -121,7 +121,7 @@ include 'includes/html-head.php';
                     </div>
                     <div class="rd-button-group">
                         <button class="rd-button primary">Button</button>
-                        <button class="rd-button primary dropdown-toggler"><i class="fa fa-caret-down"></i></button>
+                        <button class="rd-button primary dropdown-toggler"><i class="fas fa-caret-down"></i></button>
                         <ul class="rd-dropdown">
                             <li><a href="#" onclick="return false;">Save B</a></li>
                             <li><a href="#" onclick="return false;">Save &amp; Publish B</a></li>
@@ -130,7 +130,7 @@ include 'includes/html-head.php';
                     </div>
                     <h3>Sizes</h3>
                     <div class="rd-button-group">
-                        <button class="rd-button danger tiny dropdown-toggler">Tiny <i class="fa fa-caret-down"></i></button>
+                        <button class="rd-button danger tiny dropdown-toggler">Tiny <i class="fas fa-caret-down"></i></button>
                         <ul class="rd-dropdown">
                             <li><a href="#" onclick="return false;">Save</a></li>
                             <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
@@ -139,7 +139,7 @@ include 'includes/html-head.php';
                     </div>
                     <div class="rd-button-group">
                         <button class="rd-button info small">Small</button>
-                        <button class="rd-button info small dropdown-toggler"><i class="fa fa-caret-down"></i></button>
+                        <button class="rd-button info small dropdown-toggler"><i class="fas fa-caret-down"></i></button>
                         <ul class="rd-dropdown">
                             <li><a href="#" onclick="return false;">Save 2</a></li>
                             <li><a href="#" onclick="return false;">Save &amp; Publish 2</a></li>
@@ -147,7 +147,7 @@ include 'includes/html-head.php';
                         </ul>
                     </div>
                     <div class="rd-button-group">
-                        <button class="rd-button warning dropdown-toggler">Normal <i class="fa fa-caret-down"></i></button>
+                        <button class="rd-button warning dropdown-toggler">Normal <i class="fas fa-caret-down"></i></button>
                         <ul class="rd-dropdown">
                             <li><a href="#" onclick="return false;">Save 3</a></li>
                             <li><a href="#" onclick="return false;">Save &amp; Publish 3</a></li>
@@ -156,7 +156,7 @@ include 'includes/html-head.php';
                     </div>
                     <div class="rd-button-group">
                         <button class="rd-button success large">Large</button>
-                        <button class="rd-button success large dropdown-toggler"><i class="fa fa-caret-down"></i></button>
+                        <button class="rd-button success large dropdown-toggler"><i class="fas fa-caret-down"></i></button>
                         <ul class="rd-dropdown">
                             <li><a href="#" onclick="return false;">Save 4</a></li>
                             <li><a href="#" onclick="return false;">Save &amp; Publish 4</a></li>

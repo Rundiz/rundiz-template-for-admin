@@ -15,11 +15,13 @@
 
 
 button,
+.rd-button,
+.rd-pagination a,
 input,
 select,
 textarea {
     &:focus {
-        outline: 2px solid $form-focus-color;
+        outline: 3px solid $form-focus-color;
     }
 }
 

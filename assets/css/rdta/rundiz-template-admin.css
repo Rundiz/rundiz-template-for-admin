@@ -2,7 +2,7 @@
 /*!
  * Rundiz template for admin
  *
- * @version 1.0.2
+ * @version 1.0.5
  */
 /*
 * ----------------------------------------------------------------------------------------------
@@ -103,7 +103,7 @@ body {
   word-break: break-all;
   word-wrap: break-word;
 }
-.rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list > li > a > .fa {
+.rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list > li > a > .sidebar-icon {
   font-size: 1.25rem;
   transition: font-size 0s;
 }
@@ -182,7 +182,7 @@ body {
   .rd-page-wrapper.is-collapsed .rd-sidebar ul.rd-sidebar-item-list > li > a > span.rd-sidebar-menu-text {
     display: none;
   }
-  .rd-page-wrapper.is-collapsed .rd-sidebar ul.rd-sidebar-item-list > li > a > .fa {
+  .rd-page-wrapper.is-collapsed .rd-sidebar ul.rd-sidebar-item-list > li > a > .sidebar-icon {
     font-size: 1.875rem;
   }
   .rd-page-wrapper .rd-sidebar-inner {
@@ -208,9 +208,9 @@ ul.rd-sidebar-expand-collapse-controls,
     position: absolute;
     top: -1.25rem;
   }
-  ul.rd-sidebar-expand-collapse-controls a .fa,
+  ul.rd-sidebar-expand-collapse-controls a .sidebar-icon,
 ul.rd-sidebar-expand-collapse-controls a .icon,
-.rd-sidebar-expand-collapse-controls a .fa,
+.rd-sidebar-expand-collapse-controls a .sidebar-icon,
 .rd-sidebar-expand-collapse-controls a .icon {
     color: #aaa;
   }
@@ -897,7 +897,7 @@ textarea.input-small {
   height: auto;
   max-height: none;
   min-height: 6.25rem;
-  z-index: 8;
+  z-index: 4;
 }
 @media (min-width: 1000px) {
   .rd-navbar {
@@ -927,7 +927,7 @@ textarea.input-small {
   height: 3.125rem;
   justify-content: space-around;
   margin: 0;
-  z-index: 8;
+  z-index: 4;
 }
 @media (min-width: 1000px) {
   .rd-navbar .nav-right > ul {

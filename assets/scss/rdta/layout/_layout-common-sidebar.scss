@@ -16,7 +16,6 @@
 
         // .rd-page-wrapper .rd-sidebar a
         a {
-            // .rd-page-wrapper .rd-sidebar a > .fa
             color: inherit;
         }
 
@@ -35,8 +34,8 @@
                         word-wrap: break-word;
                     }
 
-                    // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list > li > a > .fa
-                    > .fa {
+                    // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list > li > a > .sidebar-icon
+                    > .sidebar-icon {
                         font-size: 1.250rem;
                         transition: font-size $sidebar-transition-seconds;
                     }
@@ -114,8 +113,8 @@
                         display: none;
                     }
 
-                    // .rd-page-wrapper.is-collapsed .rd-sidebar ul.rd-sidebar-item-list > li > a > .fa
-                    > .fa {
+                    // .rd-page-wrapper.is-collapsed .rd-sidebar ul.rd-sidebar-item-list > li > a > .sidebar-icon
+                    > .sidebar-icon {
                         font-size: 1.875rem;
                     }
                 }

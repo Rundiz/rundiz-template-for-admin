@@ -10,7 +10,7 @@
         unset($titleAppend);
         ?></title>
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/sanitize.css'); ?>">
-        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/font-awesome.min.css'); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('assets/font-awesome/css/all.min.css'); ?>">
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/smartmenus/sm-core-css.css'); ?>">
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/smartmenus/sm-rdta/sm-rdta.css'); ?>">
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta/typo-and-form/typo-and-form.css'); ?>">

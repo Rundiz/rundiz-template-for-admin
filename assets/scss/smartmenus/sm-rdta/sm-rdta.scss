@@ -62,19 +62,20 @@
             span.sub-arrow {
                 background-color: transparent;
                 color: $font-color;
-                font-family: FontAwesome;
                 width: 12px;
                 // .sm-rdta a span.sub-arrow::before
                 &::before {
                     display: block;
-                    content: '\f0da';
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: 900;
+                    content: '\f0da';// right arrow.
                 }
             }
             // .sm-rdta a.highlighted
             &.highlighted {
                 // .sm-rdta a.highlighted span.sub-arrow::before
                 span.sub-arrow::before {
-                    content: '\f0da';
+                    content: '\f0da';// right arrow. required to prevent its content back to minus sign (-).
                 }
             }
         }
