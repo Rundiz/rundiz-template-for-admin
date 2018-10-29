@@ -6,10 +6,10 @@
         <title>Button | Rundiz template for admin</title>
         <link rel="stylesheet" href="assets/css/sanitize.css?v=1539013669">
         <link rel="stylesheet" href="assets/font-awesome/css/all.min.css?v=1540478312">
-        <link rel="stylesheet" href="assets/css/smartmenus/sm-core-css.css?v=1530630697">
-        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?v=1540739174">
-        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?v=1540739172">
-        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?v=1540739171"> 
+        <link rel="stylesheet" href="assets/css/smartmenus/sm-core-css.css?v=1505645906">
+        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?v=1540797530">
+        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?v=1540797529">
+        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?v=1540797528"> 
     </head>
     <body ontouchstart="">
         <header class="rd-navbar">
@@ -189,6 +189,7 @@
                                     <ul>
                                         <li><a href="stickymenu-long-content.html">Sticky menu (long content)</a></li>
                                         <li><a href="stickymenu-long-menu.html">Sticky menu (long menu)</a></li>
+                                        <li><a href="stickymenu-long-content-menu.html">Sticky menu (long content &amp; menu)</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="alert-box.html">Alert box</a></li>
@@ -327,7 +328,7 @@
                     <hr>
 
                     <h2>Button with dropdown</h2>
-                    <p>The dropdown button uses <a href="http://github.hubspot.com/drop/docs/welcome/" target="dropjs">Drop.js</a></p>
+                    <p>The dropdown button uses <a href="https://popper.js.org/" target="popper-js">Popper.js</a> to position the dropdown items.</p>
                     <div class="rd-button-group">
                         <button class="rd-button dropdown-toggler">Dropdown <i class="fas fa-caret-down"></i></button>
                         <ul class="rd-dropdown">
@@ -380,6 +381,115 @@
                             <li><a href="#" onclick="return false;">Cancel 4</a></li>
                         </ul>
                     </div>
+                    <h3>Placements</h3>
+                    <p>Add <code>data-placement</code> attribute into button that contain <code>class=&quot;dropdown-toggler&quot;</code>. Accept values please see <a href="https://popper.js.org/popper-documentation.html#Popper.placements" target="popper-js-doc">this document</a>.</p>
+                    <div class="rd-button-group">
+                        <button class="rd-button dropdown-toggler" data-placement="top left"><i class="fas fa-caret-up"></i> Top left</button>
+                        <ul class="rd-dropdown">
+                            <li><a href="#" onclick="return false;">Save</a></li>
+                            <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
+                            <li><a href="#" onclick="return false;">Cancel</a></li>
+                        </ul>
+                    </div>
+                    <div class="rd-button-group">
+                        <button class="rd-button dropdown-toggler" data-placement="top">Top center <i class="fas fa-caret-up"></i></button>
+                        <ul class="rd-dropdown">
+                            <li><a href="#" onclick="return false;">Save</a></li>
+                            <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
+                            <li><a href="#" onclick="return false;">Cancel</a></li>
+                        </ul>
+                    </div>
+                    <div class="rd-button-group">
+                        <button class="rd-button dropdown-toggler" data-placement="top right">Top right <i class="fas fa-caret-up"></i></button>
+                        <ul class="rd-dropdown">
+                            <li><a href="#" onclick="return false;">Save</a></li>
+                            <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
+                            <li><a href="#" onclick="return false;">Cancel</a></li>
+                        </ul>
+                    </div>
+                    <div class="rd-button-group">
+                        <button class="rd-button dropdown-toggler" data-placement="left top"><i class="fas fa-caret-left"></i> Left top</button>
+                        <ul class="rd-dropdown">
+                            <li><a href="#" onclick="return false;">Save</a></li>
+                            <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
+                            <li><a href="#" onclick="return false;">Cancel</a></li>
+                        </ul>
+                    </div>
+                    <div class="rd-button-group">
+                        <button class="rd-button dropdown-toggler" data-placement="left"><i class="fas fa-caret-left"></i> Left middle</button>
+                        <ul class="rd-dropdown">
+                            <li><a href="#" onclick="return false;">Save</a></li>
+                            <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
+                            <li><a href="#" onclick="return false;">Cancel</a></li>
+                        </ul>
+                    </div>
+                    <div class="rd-button-group">
+                        <button class="rd-button dropdown-toggler" data-placement="left bottom"><i class="fas fa-caret-left"></i> Left bottom</button>
+                        <ul class="rd-dropdown">
+                            <li><a href="#" onclick="return false;">Save</a></li>
+                            <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
+                            <li><a href="#" onclick="return false;">Cancel</a></li>
+                        </ul>
+                    </div>
+                    <div class="rd-block-level-margin-bottom"></div>
+                    <div class="rd-button-group">
+                        <button class="rd-button dropdown-toggler" data-placement="bottom left"><i class="fas fa-caret-down"></i> Bottom left</button>
+                        <ul class="rd-dropdown">
+                            <li><a href="#" onclick="return false;">Save</a></li>
+                            <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
+                            <li><a href="#" onclick="return false;">Cancel</a></li>
+                        </ul>
+                    </div>
+                    <div class="rd-button-group">
+                        <button class="rd-button dropdown-toggler" data-placement="bottom">Bottom center <i class="fas fa-caret-down"></i></button>
+                        <ul class="rd-dropdown">
+                            <li><a href="#" onclick="return false;">Save</a></li>
+                            <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
+                            <li><a href="#" onclick="return false;">Cancel</a></li>
+                        </ul>
+                    </div>
+                    <div class="rd-button-group">
+                        <button class="rd-button dropdown-toggler" data-placement="bottom right">Bottom right <i class="fas fa-caret-down"></i></button>
+                        <ul class="rd-dropdown">
+                            <li><a href="#" onclick="return false;">Save</a></li>
+                            <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
+                            <li><a href="#" onclick="return false;">Cancel</a></li>
+                        </ul>
+                    </div>
+                    <div class="rd-button-group">
+                        <button class="rd-button dropdown-toggler" data-placement="right top">Right top <i class="fas fa-caret-right"></i></button>
+                        <ul class="rd-dropdown">
+                            <li><a href="#" onclick="return false;">Save</a></li>
+                            <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
+                            <li><a href="#" onclick="return false;">Cancel</a></li>
+                        </ul>
+                    </div>
+                    <div class="rd-button-group">
+                        <button class="rd-button dropdown-toggler" data-placement="right">Right middle <i class="fas fa-caret-right"></i></button>
+                        <ul class="rd-dropdown">
+                            <li><a href="#" onclick="return false;">Save</a></li>
+                            <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
+                            <li><a href="#" onclick="return false;">Cancel</a></li>
+                        </ul>
+                    </div>
+                    <div class="rd-button-group">
+                        <button class="rd-button dropdown-toggler" data-placement="right bottom">Right bottom <i class="fas fa-caret-right"></i></button>
+                        <ul class="rd-dropdown">
+                            <li><a href="#" onclick="return false;">Save</a></li>
+                            <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
+                            <li><a href="#" onclick="return false;">Cancel</a></li>
+                        </ul>
+                    </div>
+                    <div class="rd-block-level-margin-bottom"></div>
+                    <div class="rd-button-group">
+                        <button class="rd-button">Button</button>
+                        <button class="rd-button dropdown-toggler" data-placement="right top"><i class="fas fa-caret-right"></i></button>
+                        <ul class="rd-dropdown">
+                            <li><a href="#" onclick="return false;">Save B</a></li>
+                            <li><a href="#" onclick="return false;">Save &amp; Publish B</a></li>
+                            <li><a href="#" onclick="return false;">Cancel B</a></li>
+                        </ul>
+                    </div>
                     <hr>
 
                     <h2>Button group</h2>
@@ -401,10 +511,10 @@
 
         <script src="assets/js/jquery.min.js?v=1530630697"></script>
         <script src="assets/font-awesome/js/all.min.js?v=1540478312"></script>
-        <script src="assets/js/smartmenus/jquery.smartmenus.min.js?v=1530630697"></script>
-        <script src="assets/js/tether.min.js?v=1530630697"></script>
-        <script src="assets/js/drop.min.js?v=1530630697"></script>
-        <script src="assets/js/sticky-sidebar/sticky-sidebar.min.js?v=1530630697"></script>
-        <script src="assets/js/rdta/rundiz-template-admin.js?v=1540734328"></script> 
+        <script src="assets/js/smartmenus/jquery.smartmenus.min.js?v=1505645906"></script>
+        <script src="assets/js/popper/umd/popper.min.js?v=1533282185"></script>
+        <script src="assets/js/sticky-sidebar/jquery.sticky-sidebar.min.js?v=1506620639"></script>
+        <script src="assets/js/sticky-sidebar/ResizeSensor.js?v=1540790284"></script><!-- use with sticky sidebar js. -->
+        <script src="assets/js/rdta/rundiz-template-admin.js?v=1540796316"></script> 
     </body>
 </html>

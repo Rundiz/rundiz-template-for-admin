@@ -311,16 +311,20 @@
         font-style: normal;
         line-height: 1;
         visibility: hidden;
+        &::before {
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;// required for font awesome 5.
+        }
         &.order-desc {
             transform: translateY(-29%);
             &::before {
-                content: '\f0dd';
+                content: '\f0dd';// down arrow.
             }
         }
         &.order-asc {
             transform: translateY(9%);
             &::before {
-                content: '\f0de';
+                content: '\f0de';// up arrow.
             }
         }
     }

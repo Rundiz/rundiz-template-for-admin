@@ -12,6 +12,7 @@ $max-z-index: 10000 !default;
 // navbar settings.
 // header and sidebar (medium screen size up) background color
 $navbar-sidebar-background-color: #222 !default;
+$navbar-height: 3.125rem !default;// must use rem because it should relate to the root only.
 // for mobile screen - the header (including navbar height).
 // unit must be rem because it is page top header and navbar init. so, it is root header and navbar then use rem.
 $mobile-screen-navbar-height: 6.250rem !default;

@@ -1,3 +1,1 @@
-- Change scroll menu JS ( This site appears to use a scroll-linked positioning effect. This may not work well with asynchronous panning; see https://developer.mozilla.org/docs/Mozilla/Performance/ScrollLinkedEffects ).
-- Fix sub menu that contain long list and the top of it disappear under top nav menu. ( Example in sub menus 3. )
-- Change dropdown JS.
+- Fix sub menu that contain long list and the top of it disappear under top nav menu. ( Example in sub menus 3. ).

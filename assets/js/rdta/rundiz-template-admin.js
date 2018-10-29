@@ -11,39 +11,46 @@
 function rdtaButtonDropdown() {
     var $ = jQuery.noConflict();
 
-    $('.rd-button-group').each(function() {
-        if (typeof($(this).find('ul')[0]) !== 'undefined' && $(this).find('.dropdown-toggler').length === 1) {
-            var $target = $(this).find('.dropdown-toggler');
-            var $content = $(this).find('ul')[0].outerHTML;
-            var drop;
-
-            drop = new Drop({
-                target: $target[0],
-                content: $content,
-                constrainToWindow: true,
-                constrainToScrollParent: false,
-                openOn: 'click',
-                position: 'bottom left',
-                remove: true,
-            });
-            drop.on('open', () => positionDrop(drop));
-        }
+    $(document).click(function(){
+        // hide all dropdown menus when click outside.
+        // @link https://stackoverflow.com/questions/6463486/jquery-drop-down-menu-closing-by-clicking-outside Reference.
+        $('.rd-dropdown').hide();
     });
 
-    /**
-     * Ensures drop is horizontally within viewport (vertical is already solved by drop.js).
-     * @link https://github.com/HubSpot/drop/issues/16 Fixed for horizontal overflow.
-     */
-    function positionDrop(drop) {
-       let dropWidth = drop.drop.getBoundingClientRect().width,
-           left = drop.target.getBoundingClientRect().left,
-           right = $(window).width() - left,
-           direction = dropWidth > right ? 'right' : 'left';
+    $('.rd-button-group').each(function() {
+        if (typeof($(this).find('ul')[0]) !== 'undefined' && $(this).find('.dropdown-toggler').length === 1) {
+            var $toggler = $(this).find('.dropdown-toggler');
+            var $content = $(this).find('ul')[0].outerHTML;
 
-       drop.tether.attachment.left = direction;
-       drop.tether.targetAttachment.left = direction;
-       drop.position();
-   }
+            var $popper = $(this).find('.rd-dropdown');
+
+            $toggler.on('click', function(e) {
+                e.stopPropagation();
+                // hide all other dropdown menus before activate current one.
+                $('.rd-dropdown').hide();
+                if (typeof($(this).data('placement')) !== 'undefined') {
+                    var $popperPlacement = $(this).data('placement');
+                    $popperPlacement = $popperPlacement.replace('top left', 'top start');
+                    $popperPlacement = $popperPlacement.replace('top right', 'top end');
+                    $popperPlacement = $popperPlacement.replace('bottom left', 'bottom start');
+                    $popperPlacement = $popperPlacement.replace('bottom right', 'bottom end');
+                    $popperPlacement = $popperPlacement.replace('left top', 'left start');
+                    $popperPlacement = $popperPlacement.replace('left bottom', 'left end');
+                    $popperPlacement = $popperPlacement.replace('right top', 'right start');
+                    $popperPlacement = $popperPlacement.replace('right bottom', 'right end');
+                    $popperPlacement = $popperPlacement.replace('auto left', 'auto start');
+                    $popperPlacement = $popperPlacement.replace('auto right', 'auto end');
+                    $popperPlacement = $popperPlacement.replace(' ', '-');
+                } else {
+                    var $popperPlacement = 'bottom-start';
+                }
+                $popper.show();
+                new Popper($toggler, $popper, {
+                    placement: $popperPlacement,
+                });
+            });
+        }// endif;
+    });
 }// rdtaButtonDropdown
 
 

@@ -101,6 +101,7 @@ for ($i = 1; $i <= 50; $i++) {
                                     <ul>
                                         <li><a href="stickymenu-long-content.php">Sticky menu (long content)</a></li>
                                         <li><a href="stickymenu-long-menu.php">Sticky menu (long menu)</a></li>
+                                        <li><a href="stickymenu-long-content-menu.php">Sticky menu (long content &amp; menu)</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="alert-box.php">Alert box</a></li>

@@ -27,6 +27,9 @@
   top: 50%;
   width: 30px;
 }
+.sm-rdta a span.sub-arrow::before {
+  content: "+";
+}
 .sm-rdta a:hover, .sm-rdta a.highlighted {
   background-color: rgba(0, 0, 0, 0.2);
 }

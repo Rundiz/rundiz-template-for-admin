@@ -127,6 +127,10 @@
 @mixin rd-sidebar-inner {
     // this will becomes .rd-page-wrapper .rd-sidebar-inner inside @media (min-width: $minimum-sidebar-breakpoint)
     .rd-sidebar-inner {
+        // to use css position sticky, enable these code but it is not recommended because in long content page the menu will still stick to top until it matches the bottom of content.
+        //bottom: 0;
+        //position: sticky;
+        //top: $navbar-height;
         z-index: ($z-index-sidebar + 1);// fix sticky menu cause the menu is under everything that contain `position: relative;`.
     }
 }

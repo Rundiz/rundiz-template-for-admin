@@ -9,7 +9,7 @@
 
 
 @import '_layout-common';
-@import '_layout-common-sidebar';
+@import '_mixins';
 
 
 .rd-page-wrapper {
@@ -52,7 +52,7 @@
     // .rd-page-wrapper > main
     > main {
         align-self: start;
-        min-width: 0;/* fix table push this element over screen width ( https://stackoverflow.com/questions/43311943/prevent-grid-items-from-stretching-in-css-grid-layout ) */
+        min-width: 0;// fix table push this element over screen width ( https://stackoverflow.com/questions/43311943/prevent-grid-items-from-stretching-in-css-grid-layout )
     }
 
     // .rd-page-wrapper .rd-sidebar

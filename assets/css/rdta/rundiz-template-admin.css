@@ -2,7 +2,7 @@
 /*!
  * Rundiz template for admin
  *
- * @version 1.0.5
+ * @version 1.0.6
  */
 /*
 * ----------------------------------------------------------------------------------------------
@@ -78,7 +78,6 @@ body {
 .rd-page-wrapper > main {
   align-self: start;
   min-width: 0;
-  /* fix table push this element over screen width ( https://stackoverflow.com/questions/43311943/prevent-grid-items-from-stretching-in-css-grid-layout ) */
 }
 .rd-page-wrapper .rd-sidebar {
   background-color: #2e2e2e;
@@ -745,6 +744,10 @@ a.rd-button.tiny,
   line-height: 1;
   visibility: hidden;
 }
+.rd-datatable .sortable-icon::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
 .rd-datatable .sortable-icon.order-desc {
   transform: translateY(-29%);
 }
@@ -785,6 +788,7 @@ a.rd-button.tiny,
   min-width: 150px;
   padding: 0;
   width: auto;
+  z-index: 1;
 }
 .rd-dropdown li:hover {
   background-color: rgba(0, 0, 0, 0.08);

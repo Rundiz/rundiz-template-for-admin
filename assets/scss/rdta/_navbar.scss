@@ -161,7 +161,7 @@
         }
         @media (min-width: $minimum-sidebar-breakpoint) {
             font-size: 1.188em;
-            height: 3.125rem;// must use rem because it should relate to the root only.
+            height: $navbar-height;
         }
     }
 }

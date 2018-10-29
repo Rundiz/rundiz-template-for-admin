@@ -37,7 +37,12 @@
             text-align: center;
             top: 50%;
             width: 30px;
+            // .sm-rdta a span.sub-arrow::before
+            &::before {
+                content: '+';
+            }
         }
+        // .sm-rdta a:hover, .sm-rdta a.highlighted
         &:hover,
         &.highlighted {
             background-color: rgba(0, 0, 0, 0.2);
@@ -67,7 +72,7 @@
                 &::before {
                     display: block;
                     font-family: 'Font Awesome 5 Free';
-                    font-weight: 900;
+                    font-weight: 900;// required for font awesome 5.
                     content: '\f0da';// right arrow.
                 }
             }
