@@ -1,2 +1,10 @@
 # Disable LF normalization for all files
 * -text
+
+# Export ignore folders, files.
+/_builder export-ingore
+/_original-source-php export-ingore
+/.gitattributes export-ingore
+/.gitignore export-ingore
+/tasks export-ingore
+/todos export-ingore
