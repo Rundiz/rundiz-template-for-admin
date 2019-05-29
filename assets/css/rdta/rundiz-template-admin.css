@@ -2,7 +2,7 @@
 /*!
  * Rundiz template for admin
  *
- * @version 1.0.6
+ * @version 1.0.6-20190529
  */
 /*
 * ----------------------------------------------------------------------------------------------
@@ -135,7 +135,8 @@ body {
   .rd-page-wrapper.mini-screen-sidebar-visible {
     overflow-x: visible;
   }
-  .rd-page-wrapper.mini-screen-sidebar-visible > main {
+  .rd-page-wrapper.mini-screen-sidebar-visible > footer,
+.rd-page-wrapper.mini-screen-sidebar-visible > main {
     transform: none;
   }
   .rd-page-wrapper.mini-screen-sidebar-visible .rd-sidebar {

@@ -58,7 +58,7 @@ html {
 body {
   color: #333;
   cursor: auto;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid sans", "Helvetica Neue", "Helvetica", "Tahoma", "Arial", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid sans", "Helvetica Neue", "Helvetica", "Tahoma", "Arial", sans-serif;
   font-size: 100%;
   font-weight: normal;
   line-height: 1.5;
@@ -338,6 +338,20 @@ var {
 }
 
 /*
+* ------------------------------------------------------------------------------------------------------------------------
+* Reset forms by overriding Sanitize's forms.css.
+* ------------------------------------------------------------------------------------------------------------------------
+*/
+button,
+input,
+select,
+textarea {
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+/*
 * ----------------------------------------------------------------------------------------------
 * form, fieldset, and all input controls.
 * ----------------------------------------------------------------------------------------------
@@ -449,6 +463,7 @@ input[type=url],
 input[type=week] {
   border: 1px solid #ddd;
   border-radius: 0;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
   font-family: inherit;
   font-size: 0.99em;
   line-height: 1.4;
@@ -514,6 +529,9 @@ input[type=color] {
   height: 2em;
   padding: 0;
 }
+input[type=color]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
 
 input[type=color],
 input[type=file],
@@ -576,7 +594,7 @@ select {
   font-family: inherit;
   font-size: 0.99em;
   line-height: 1.4;
-  padding: 0.313em 0.188em;
+  padding: 0.313em 1.5em 0.313em 0.188em;
 }
 select[disabled], select[readonly] {
   background-color: #eee;
@@ -594,6 +612,7 @@ select:not([multiple]) {
 textarea {
   border: 1px solid #ddd;
   border-radius: 0;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
   font-family: inherit;
   font-size: 0.99em;
   line-height: 1.4;

@@ -83,7 +83,9 @@
             // this is in on tapped sidebar menu toggler and resize to medium screen size.
             // so, all the values for small screen should be reset.
             overflow-x: visible;
+            // .rd-page-wrapper.mini-screen-sidebar-visible > footer,
             // .rd-page-wrapper.mini-screen-sidebar-visible > main
+            > footer,
             > main {
                 transform: none;
             }

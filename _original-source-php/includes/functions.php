@@ -14,26 +14,29 @@ if (!defined('ROOTDIR')) {
  */
 function assetUrl($assetUrl)
 {
-    $output = $assetUrl;
+    $urlParsed = parse_url($assetUrl);
+    $url = (isset($urlParsed['path']) ? $urlParsed['path'] : '');
+    $query = (isset($urlParsed['query']) ? $urlParsed['query'] : '');
+    unset($urlParsed);
 
-    $assetFullPath = realpath(ROOTDIR . '/' . $assetUrl);
-    if (is_file($assetFullPath)) {
-        $lastCharOfAssetUrl = mb_substr($assetUrl, -1);
-        $appendQuerystring = 'v=' . filemtime($assetFullPath);
+    parse_str($query, $queryArray);
+    unset($query);
 
-        if ($lastCharOfAssetUrl == '?' || $lastCharOfAssetUrl == '&' || mb_substr($assetUrl, -5) == '&amp;') {
-            $output .= $appendQuerystring;
-        } elseif ($assetUrl[0] == '?' && $lastCharOfAssetUrl != '?') {
-            $output .= '&amp;' . $appendQuerystring;
-        } else {
-            $output .= '?' . $appendQuerystring;
-        }
-
-        unset($appendQuerystring, $lastCharOfAssetUrl);
+    if (isset($queryArray['mt'])) {
+        $additionalQueryName = 'mt' . time();
+    } else {
+        $additionalQueryName = 'mt';
     }
 
-    unset($assetFullPath);
-    return $output;
+    $assetFullPath = realpath(ROOTDIR . '/' . $url);
+    $additionalQueryValue = filemtime($assetFullPath);
+    $queryArray[$additionalQueryName] = $additionalQueryValue;
+    unset($additionalQueryName, $additionalQueryValue);
+
+    $query = http_build_query($queryArray, '', '&amp;');
+    unset($queryArray);
+    
+    return $url . '?' . $query;
 }// assetUrl
 
 

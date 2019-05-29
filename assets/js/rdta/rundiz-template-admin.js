@@ -191,10 +191,21 @@ function rdtaNavbarSmartMenus() {
         keepHighlighted: false,
         markCurrentItem: false,
         markCurrentTree: false,
-        noMouseOver: false,
+        noMouseOver: true,
         showDuration: 0,
         showFunction: null,
         subIndicators: false,
+    });
+
+    $('.sm-rdta.navbar').on('show.smapi', function() {
+        // navbar submenu on show
+        // hide sidebar on small screen.
+        // see reference on `rdtaSidebarToggler()` function.
+        let $togglerButton = $('.rd-sidebar-toggler');
+        let $target = $togglerButton.data('target');
+
+        $togglerButton.removeClass('is-active');
+        $($target).removeClass('mini-screen-sidebar-visible');
     });
 }// rdtaNavbarSmartMenus
 
@@ -254,6 +265,7 @@ function rdtaSidebarMenuSticky() {
     var $ = jQuery.noConflict();
 
     $('.rd-sidebar').stickySidebar({
+        bottomSpacing: 50,// fix Firefox scroll down and auto jump to top.
         containerSelector: '.rd-page-wrapper',
         innerWrapperSelector: '.rd-sidebar-inner',
         minWidth: 999,// minimum sidebar breakpoint.
@@ -274,7 +286,7 @@ function rdtaSidebarSmartMenus() {
     $('.sm-vertical').smartmenus({
         markCurrentItem: true,
         markCurrentTree: true,
-        noMouseOver: false,
+        noMouseOver: true,
         subIndicatorsPos: 'append',
         subMenusSubOffsetY: -1,// border top contain 1 px
     });

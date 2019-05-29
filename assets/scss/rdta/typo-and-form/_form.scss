@@ -97,6 +97,11 @@ input[type="color"] {
     border: 1px solid $border-color;
     height: 2em;
     padding: 0;
+    &::-webkit-color-swatch-wrapper {
+        // remove space around input type color and its border.
+        // https://stackoverflow.com/a/47971607/128761
+        padding: 0;
+    }
 }
 input[type="color"],
 input[type="file"],
@@ -163,7 +168,7 @@ select {
     font-family: inherit;
     font-size: 0.99em;
     line-height: 1.4;
-    padding: 0.313em 0.188em;
+    padding: 0.313em 1.5em 0.313em 0.188em;
     &[disabled],
     &[readonly] {
         background-color: $background-color;

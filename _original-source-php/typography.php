@@ -21,7 +21,7 @@ include 'includes/html-head.php';
             <h5>Credits</h5>
             <p>
                 Icon uses <a href="https://fontawesome.com" target="fontawesome">FontAwesome 5</a>, 
-                Based CSS uses <a href="https://jonathantneal.github.io/sanitize.css/" target="sanizecss">Sanitize.css</a>.
+                Based CSS uses <a href="https://github.com/csstools/sanitize.css" target="sanizecss">Sanitize.css</a>.
                 All other credits is on each page that use certain plugin.
             </p>
             <hr>

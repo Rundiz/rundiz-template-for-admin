@@ -11,4 +11,4 @@ For no source map, append this command to the current command: `--sourcemap=none
 
 For emit comments about line number from source, append this command to the current command: `--line-numbers`
 
-For force compile even css file is newer, append this command to the current command: `--force`
+For force compile even css file is newer, append this command to the current command: `--force` (Old Scss)

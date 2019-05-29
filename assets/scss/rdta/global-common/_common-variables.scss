@@ -31,7 +31,7 @@ $form-tiny-font-size: 0.625em !default;// currently only available to button.
 
 // the z-indexes
 $z-index-sidebar: 2 !default;
-$z-index-navbar: 4 !default;// can not make it visible for sub menu (example in sub menu 3) and display long sidebar under top nav menu (example in sidebar long menu).
+$z-index-navbar: 4 !default;// navbar (top) must higher than sidebar to prevent scroll page and sidebar visible on top of navbar.
 
 
 // colors for alert box, buttons, badge, table
