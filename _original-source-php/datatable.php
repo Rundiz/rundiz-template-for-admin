@@ -465,7 +465,7 @@ include 'includes/html-head.php';
                                         echo indent(10).'<span class="action"><a href="#" onclick="return false;">Permissions</a></span>'."\n";
                                         echo indent(10).'<span class="action"><a href="#" onclick="return false;">Delete</a></span>'."\n";
                                         echo indent(9).'</div><!--.row-actions-->'."\n";
-                                        echo indent(9).'<button class="toggle-row" type="button"><i class="faicon fas fa-caret-down fa-fw" data-toggle-icon="fas fa-caret-down fa-caret-up"></i><span class="screen-reader-only">Show more details</span></button>'."\n";
+                                        echo indent(9).'<button class="toggle-row" type="button"><i class="faicon fas fa-caret-down fa-fw" data-toggle-icon="fa-caret-down fa-caret-up"></i><span class="screen-reader-only">Show more details</span></button>'."\n";
                                         echo indent(8).'</td>'."\n";
                                         echo indent(8).'<td data-colname="Address">'.$row->address.'</td>'."\n";
                                         echo indent(8).'<td data-colname="Email">'.$row->email.'</td>'."\n";
