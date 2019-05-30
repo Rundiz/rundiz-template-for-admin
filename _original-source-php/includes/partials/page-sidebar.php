@@ -93,6 +93,33 @@ for ($i = 1; $i <= 50; $i++) {
                                 <li><a href="#" onclick="return false;">10</a></li>
                             </ul>
                         </li>
+                        <li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-greater-than-equal fa-fw"></i> <span class="rd-sidebar-menu-text">Longggggggggg menu item text that is very long</span></a>
+                            <ul>
+                                <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 1</a>
+                                    <ul>
+                                        <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 1.1</a></li>
+                                        <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 1.2</a></li>
+                                        <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 1.3</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 2</a>
+                                    <ul>
+                                        <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 2.1</a>
+                                            <ul>
+                                                <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 2.1.1</a></li>
+                                                <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 2.1.2</a></li>
+                                                <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 2.1.3</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 2.2</a></li>
+                                        <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 2.3</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 3</a></li>
+                                <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 4</a></li>
+                                <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 5</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-server fa-fw"></i> <span class="rd-sidebar-menu-text">Components</span></a>
                             <ul>
                                 <li><a href="typography.php">Typography</a></li>

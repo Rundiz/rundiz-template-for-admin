@@ -18,7 +18,7 @@
             }
             // .sm-rdta > li > a > .sub-arrow
             > .sub-arrow {
-                display: none;
+                display: inline-block;
             }
         }
     }
@@ -66,7 +66,7 @@
             // .sm-rdta a span.sub-arrow
             span.sub-arrow {
                 background-color: transparent;
-                color: $font-color;
+                color: #888;
                 width: 12px;
                 // .sm-rdta a span.sub-arrow::before
                 &::before {

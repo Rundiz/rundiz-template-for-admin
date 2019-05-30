@@ -12,7 +12,7 @@
   color: #FFF;
 }
 .sm-rdta > li > a > .sub-arrow {
-  display: none;
+  display: inline-block;
 }
 .sm-rdta a span.sub-arrow {
   background-color: rgba(0, 0, 0, 0.08);
@@ -43,7 +43,7 @@
 @media (min-width: 1000px) {
   .sm-rdta a span.sub-arrow {
     background-color: transparent;
-    color: #333;
+    color: #888;
     width: 12px;
   }
   .sm-rdta a span.sub-arrow::before {

@@ -93,6 +93,16 @@
             position: relative;
             transition: width $sidebar-transition-seconds;
             width: $sidebar-expanded-width;
+
+            // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list
+            ul.rd-sidebar-item-list {
+                > li {
+                    // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list > li > a
+                    >a {
+                        padding: 0.625rem 1.125rem 0.625rem 0.625rem;
+                    }
+                }
+            }
         }
         // .rd-page-wrapper.is-collapsed
         &.is-collapsed {

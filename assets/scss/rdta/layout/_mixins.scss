@@ -25,13 +25,14 @@
                 // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list > li > a
                 >a {
                     display: block;
-                    padding: 0.625rem 0.625rem 0.625rem 0.625rem;
+                    overflow-wrap: break-word;
+                    padding: 0.625rem 2.125rem 0.625rem 0.625rem;
+                    word-break: break-all;
 
                     // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list > li > a > span.rd-sidebar-menu-text
                     > span.rd-sidebar-menu-text {
                         overflow-wrap: break-word;
                         word-break: break-all;
-                        word-wrap: break-word;
                     }
 
                     // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list > li > a > .sidebar-icon
@@ -117,7 +118,7 @@
 
                     // .rd-page-wrapper.is-collapsed .rd-sidebar ul.rd-sidebar-item-list > li > a > .sidebar-icon
                     > .sidebar-icon {
-                        font-size: 1.875rem;
+                        font-size: 1.563rem;
                     }
                 }
             }
