@@ -9,7 +9,7 @@
  * @returns {undefined}
  */
 function rdtaButtonDropdown() {
-    var $ = jQuery.noConflict();
+    let $ = jQuery.noConflict();
 
     $(document).click(function(){
         // hide all dropdown menus when click outside.
@@ -19,10 +19,8 @@ function rdtaButtonDropdown() {
 
     $('.rd-button-group').each(function() {
         if (typeof($(this).find('ul')[0]) !== 'undefined' && $(this).find('.dropdown-toggler').length === 1) {
-            var $toggler = $(this).find('.dropdown-toggler');
-            var $content = $(this).find('ul')[0].outerHTML;
-
-            var $popper = $(this).find('.rd-dropdown');
+            let $toggler = $(this).find('.dropdown-toggler');
+            let $popper = $(this).find('.rd-dropdown');
 
             $toggler.on('click', function(e) {
                 e.stopPropagation();
@@ -86,7 +84,7 @@ function rdtaCloseAlertbox(thisObj) {
  * @returns {undefined}
  */
 function rdtaDataTableCheckboxToggle(thisObj) {
-    var $table = thisObj.closest('table');
+    let $table = thisObj.closest('table');
     $table.find('input[type="checkbox"]').prop('checked', thisObj.is(':checked'));
 }// rdtaDataTableCheckboxToggle
 
@@ -97,10 +95,10 @@ function rdtaDataTableCheckboxToggle(thisObj) {
  * @returns {Boolean}
  */
 function rdtaDataTableToggleRow() {
-    var $ = jQuery.noConflict();
+    let $ = jQuery.noConflict();
 
     $('.toggle-row').click(function() {
-        var toggleIcon = $(this).find('.faicon').data('toggle-icon');
+        let toggleIcon = $(this).find('.faicon').data('toggle-icon');
         $(this).find('.faicon').toggleClass(toggleIcon);
         $(this).parents('tr').toggleClass('is-expanded');
     });
@@ -110,13 +108,42 @@ function rdtaDataTableToggleRow() {
 
 
 /**
+ * Hot fix long sidebar submenus is under top navbar.
+ * 
+ * @link https://github.com/vadikom/smartmenus/issues/95
+ * @return {undefined}
+ */
+function rdtaHotfixLongSidebarSubmenus() {
+    let $ = jQuery.noConflict();
+    let $navbar = $('.rd-navbar');
+
+    $('.rd-sidebar-item-list').on({
+        'show.smapi': function (e, menu) {
+            let obj = $(this).data('smartmenus');
+            if (!obj.isCollapsible()) {
+                if ($(menu).offset().top - $(window).scrollTop() < $navbar.outerHeight()) {
+                    $navbar.stop(true).animate({top: -100}, 250);
+                }
+            }
+        },
+        'hideAll.smapi': function (e, menu) {
+            let obj = $(this).data('smartmenus');
+            if (!obj.isCollapsible()) {
+                $navbar.stop(true).animate({top: 0}, 250);
+            }
+        }
+    });
+}// rdtaHotfixLongSidebarSubmenus
+
+
+/**
  * Activate custom input file.
  * 
  * @link http://demo.rundiz.com/nice-form-plugins/ Reference
  * @returns {undefined}
  */
 function rdtaInputFile() {
-    var $ = jQuery.noConflict();
+    let $ = jQuery.noConflict();
 
     // reset form cached after reload. this always happen in Firefox.
     $('.rd-inputfile input[type="file"]').each(function() {
@@ -134,14 +161,15 @@ function rdtaInputFile() {
         });
     });
 
+    // display selected file name and remove button.
     $('.rd-inputfile input[type="file"]').change(function() {
-        var names = [];
-        for (var i = 0; i < $(this).get(0).files.length; ++i) {
+        let names = [];
+        for (let i = 0; i < $(this).get(0).files.length; ++i) {
             names.push($(this).get(0).files[i].name);
         }
         $(this).closest('.rd-inputfile').siblings('.rd-input-files-queue').text(names.join(', '));
 
-        var resetButton = $(this).closest('.rd-inputfile').siblings('.rd-inputfile-reset-button').html();
+        let resetButton = $(this).closest('.rd-inputfile').siblings('.rd-inputfile-reset-button').html();
         if (typeof(resetButton) !== 'undefined' && resetButton != '') {
             $(this).closest('.rd-inputfile').siblings('.rd-input-files-queue').append(' '+resetButton);
         }
@@ -155,13 +183,14 @@ function rdtaInputFile() {
  * @returns {undefined}
  */
 function rdtaNavbarSmartMenus() {
-    var $ = jQuery.noConflict();
+    let $ = jQuery.noConflict();
 
     // tweak to show only one menu at a time. ( https://www.smartmenus.org/forums/topic/accordion-failed/#post-2660 )
+    // this problem occur on small screen navbar menu. so, this can fix it.
     $('.sm-rdta.navbar').bind('click.smapi', function (e, item) {
-        var obj = $(this).data('smartmenus');
+        let obj = $(this).data('smartmenus');
         if (obj.isCollapsible()) {
-            var $item = $(item),
+            let $item = $(item),
                 $sub = $item.dataSM('sub');
             if ($sub && !$sub.is(':visible')) {
                 obj.itemActivate($item, true);
@@ -181,6 +210,7 @@ function rdtaNavbarSmartMenus() {
         $(item).css('position', '');
     });
 
+    // activate smartmenus on navbar.
     $('.sm-rdta.navbar').smartmenus({
         collapsibleHideDuration: 0,
         collapsibleHideFunction: null,
@@ -218,9 +248,9 @@ function rdtaNavbarSmartMenus() {
  * @returns {undefined}
  */
 function rdtaResetInputFile(thisObj) {
-    var $ = jQuery.noConflict();
+    let $ = jQuery.noConflict();
 
-    var target = thisObj.closest('.rd-input-files-queue').siblings('.rd-inputfile').find('input[type="file"]');
+    let target = thisObj.closest('.rd-input-files-queue').siblings('.rd-inputfile').find('input[type="file"]');
     target.wrap('<form>').closest('form').get(0).reset();
     target.unwrap();
 
@@ -238,14 +268,14 @@ function rdtaResetInputFile(thisObj) {
  * @returns {Boolean}
  */
 function rdtaSidebarExpandToggler() {
-    var $ = jQuery.noConflict();
+    let $ = jQuery.noConflict();
 
-    var $togglerButton = $('.rd-sidebar-expand-collapse-controls').find('a');
-    var $target = $togglerButton.data('target');
+    let $togglerButton = $('.rd-sidebar-expand-collapse-controls').find('a');
+    let $target = $togglerButton.data('target');
 
     $togglerButton.on('click', function(e) {
         e.preventDefault();
-        var toggleIcon = $(this).find('.faicon').data('toggle-icon');
+        let toggleIcon = $(this).find('.faicon').data('toggle-icon');
         $(this).find('.faicon').toggleClass(toggleIcon);
         $($target).toggleClass('is-collapsed');
         setTimeout(function() {$('.rd-sidebar').stickySidebar('updateSticky');}, 100);
@@ -262,7 +292,7 @@ function rdtaSidebarExpandToggler() {
  * @returns {undefined}
  */
 function rdtaSidebarMenuSticky() {
-    var $ = jQuery.noConflict();
+    let $ = jQuery.noConflict();
 
     $('.rd-sidebar').stickySidebar({
         bottomSpacing: 50,// fix Firefox scroll down and auto jump to top.
@@ -281,7 +311,7 @@ function rdtaSidebarMenuSticky() {
  * @returns {undefined}
  */
 function rdtaSidebarSmartMenus() {
-    var $ = jQuery.noConflict();
+    let $ = jQuery.noConflict();
 
     $('.sm-vertical').smartmenus({
         markCurrentItem: true,
@@ -294,17 +324,17 @@ function rdtaSidebarSmartMenus() {
 
 
 /**
- * Listen to sidebar toggler button.
+ * Listen to sidebar toggler button (small screen).
  * 
  * This will toggle push/pull (or show/hide) sidebar menu in the small screen, not expand/collapse (shorten).
  * 
  * @returns {undefined}
  */
 function rdtaSidebarToggler() {
-    var $ = jQuery.noConflict();
+    let $ = jQuery.noConflict();
 
-    var $togglerButton = $('.rd-sidebar-toggler');
-    var $target = $togglerButton.data('target');
+    let $togglerButton = $('.rd-sidebar-toggler');
+    let $target = $togglerButton.data('target');
 
     $togglerButton.on('click', function(e) {
         e.preventDefault();
@@ -327,6 +357,8 @@ jQuery(document).ready(function($) {
     rdtaSidebarMenuSticky();
     // activate sidebar smart menus.
     rdtaSidebarSmartMenus();
+    // hotfix long sidebar sub menus.
+    rdtaHotfixLongSidebarSubmenus();
 
     // listen to button with dropdown.
     rdtaButtonDropdown();
