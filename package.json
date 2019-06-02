@@ -1,6 +1,6 @@
 {
   "name": "rundiz-template-for-admin",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "HTML, CSS, JS template for administrator application.",
   "main": "assets/js/rdta/rundiz-template-admin.js",
   "scripts": {
