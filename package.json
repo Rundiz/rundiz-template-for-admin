@@ -1,6 +1,6 @@
 {
   "name": "rundiz-template-for-admin",
-  "version": "1.2.0",
+  "version": "1.0.10",
   "description": "HTML, CSS, JS template for administrator application.",
   "main": "assets/js/rdta/rundiz-template-admin.js",
   "scripts": {
@@ -21,11 +21,5 @@
   "bugs": {
     "url": "https://github.com/Rundiz/rundiz-template-for-admin/issues"
   },
-  "homepage": "https://github.com/Rundiz/rundiz-template-for-admin#readme",
-  "devDependencies": {
-    "grunt": "^1.0.4",
-    "grunt-contrib-jshint": "^2.1.0",
-    "grunt-contrib-uglify-es": "github:gruntjs/grunt-contrib-uglify#harmony"
-  },
-  "dependencies": {}
+  "homepage": "https://github.com/Rundiz/rundiz-template-for-admin#readme"
 }

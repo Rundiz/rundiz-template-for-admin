@@ -1,9 +1,7 @@
 
 Start development ========================================
 To start development, please open the readme.md in _builder folder and follow instruction on clone section.
-
-Npm =================================================
-To start development, open the command line and run `npm install`. The node packages will be install in node_modules folder.
+Then run `npm install`. The node packages will be install in node_modules folder.
 
 SCSS =================================================
 To compile sass (or scss) to css use the following command line:
@@ -34,3 +32,5 @@ To publish this package to node package manager please follow instruction.
 2. Open readme.md in _builder folder and follow instruction on commit section.
 3. Commit and push to Github.
 4. run `npm publish` command.
+=======
+For force compile even css file is newer, append this command to the current command: `--force` (Old Scss)

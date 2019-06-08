@@ -39,23 +39,23 @@ include 'includes/html-head.php';
 
                     <h3>Dismissable</h3>
                     <div class="rd-alertbox is-dismissable">
-                        <button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(jQuery(this));"><span aria-hidden="true">&times;</span></button>
+                        <button class="close" type="button" aria-label="Close" onclick="return rdtaCloseAlertbox(jQuery(this));"><span aria-hidden="true">&times;</span></button>
                         Default alert box. Please follow <a href="#" onclick="return false">this link</a>.
                     </div>
                     <div class="rd-alertbox alert-info is-dismissable">
-                        <button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(jQuery(this));"><span aria-hidden="true">&times;</span></button>
+                        <button class="close" type="button" aria-label="Close" onclick="return rdtaCloseAlertbox(jQuery(this));"><span aria-hidden="true">&times;</span></button>
                         Info alert box. Please follow <a href="#" onclick="return false">this link</a>.
                     </div>
                     <div class="rd-alertbox alert-danger is-dismissable">
-                        <button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(jQuery(this));"><span aria-hidden="true">&times;</span></button>
+                        <button class="close" type="button" aria-label="Close" onclick="return rdtaCloseAlertbox(jQuery(this));"><span aria-hidden="true">&times;</span></button>
                         Danger alert box. Please follow <a href="#" onclick="return false">this link</a>.
                     </div>
                     <div class="rd-alertbox alert-warning is-dismissable">
-                        <button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(jQuery(this));"><span aria-hidden="true">&times;</span></button>
+                        <button class="close" type="button" aria-label="Close" onclick="return rdtaCloseAlertbox(jQuery(this));"><span aria-hidden="true">&times;</span></button>
                         Warning alert box. Please follow <a href="#" onclick="return false">this link</a>.
                     </div>
                     <div class="rd-alertbox alert-success is-dismissable">
-                        <button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(jQuery(this));"><span aria-hidden="true">&times;</span></button>
+                        <button class="close" type="button" aria-label="Close" onclick="return rdtaCloseAlertbox(jQuery(this));"><span aria-hidden="true">&times;</span></button>
                         Success alert box. Please follow <a href="#" onclick="return false">this link</a>.
                     </div>
                 </div><!--.rd-page-content-->
