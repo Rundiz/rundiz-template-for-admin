@@ -48,7 +48,7 @@ include 'includes/html-head.php';
                         <table class="rd-datatable">
                             <thead>
                                 <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></th>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Address</th>
@@ -58,7 +58,7 @@ include 'includes/html-head.php';
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></th>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Address</th>
@@ -110,7 +110,7 @@ include 'includes/html-head.php';
                         <table class="rd-datatable h-border">
                             <thead>
                                 <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></th>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Address</th>
@@ -120,7 +120,7 @@ include 'includes/html-head.php';
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></th>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Address</th>
@@ -172,7 +172,7 @@ include 'includes/html-head.php';
                         <table class="rd-datatable h-border">
                             <thead>
                                 <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></th>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
                                     <th><a href="?sort=id" onclick="return false;">ID <i class="order-asc sortable-icon"></i></a></th>
                                     <th class="sorted"><a href="?sort=name" onclick="return false;">Name <i class="order-asc sortable-icon"></i></a></th>
                                     <th><a href="?sort=address" onclick="return false;">Address <i class="order-asc sortable-icon"></i></a></th>
@@ -182,7 +182,7 @@ include 'includes/html-head.php';
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></th>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
                                     <th><a href="?sort=id" onclick="return false;">ID <i class="order-asc sortable-icon"></i></a></th>
                                     <th class="sorted"><a href="?sort=name" onclick="return false;">Name <i class="order-asc sortable-icon"></i></a></th>
                                     <th><a href="?sort=address" onclick="return false;">Address <i class="order-asc sortable-icon"></i></a></th>
@@ -243,7 +243,7 @@ include 'includes/html-head.php';
                         <table class="rd-datatable h-border">
                             <thead>
                                 <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></th>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
                                     <th>Type</th>
                                     <th>Name</th>
                                     <th>Actions</th>
@@ -251,7 +251,7 @@ include 'includes/html-head.php';
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></th>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
                                     <th>Type</th>
                                     <th>Name</th>
                                     <th>Actions</th>
@@ -358,7 +358,7 @@ include 'includes/html-head.php';
                         <table class="rd-datatable">
                             <thead>
                                 <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></th>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
                                     <th class="sorted"><a href="?sort=id" onclick="return false;">ID <i class="order-desc sortable-icon"></i></a></th>
                                     <th>Name</th>
                                     <th>Address</th>
@@ -382,7 +382,7 @@ include 'includes/html-head.php';
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></th>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
                                     <th class="sorted"><a href="?sort=id" onclick="return false;">ID <i class="order-desc sortable-icon"></i></a></th>
                                     <th>Name</th>
                                     <th>Address</th>
@@ -434,7 +434,7 @@ include 'includes/html-head.php';
                     <table class="rd-datatable responsive">
                         <thead>
                             <tr>
-                                <td class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></td>
+                                <td class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></td>
                                 <th class="column-primary"><a href="?sort=name" onclick="return false;">Name <i class="order-asc sortable-icon"></i></a></th>
                                 <th><a href="?sort=address" onclick="return false;">Address <i class="order-asc sortable-icon"></i></a></th>
                                 <th><a href="?sort=email" onclick="return false;">Email <i class="order-asc sortable-icon"></i></a></th>
@@ -442,7 +442,7 @@ include 'includes/html-head.php';
                         </thead>
                         <tfoot>
                             <tr>
-                                <td class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></td>
+                                <td class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></td>
                                 <th class="column-primary"><a href="?sort=name" onclick="return false;">Name <i class="order-asc sortable-icon"></i></a></th>
                                 <th><a href="?sort=address" onclick="return false;">Address <i class="order-asc sortable-icon"></i></a></th>
                                 <th><a href="?sort=email" onclick="return false;">Email <i class="order-asc sortable-icon"></i></a></th>
@@ -486,7 +486,7 @@ include 'includes/html-head.php';
                     <table class="rd-datatable responsive">
                         <thead>
                             <tr>
-                                <td class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></td>
+                                <td class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></td>
                                 <th class="column-primary">Name</th>
                                 <th>Address</th>
                                 <th>Email</th>
@@ -494,7 +494,7 @@ include 'includes/html-head.php';
                         </thead>
                         <tfoot>
                             <tr>
-                                <td class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></td>
+                                <td class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></td>
                                 <th class="column-primary">Name</th>
                                 <th>Address</th>
                                 <th>Email</th>

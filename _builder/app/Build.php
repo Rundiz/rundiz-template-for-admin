@@ -104,10 +104,12 @@ class Build extends Command
 
         if (isset($result2) && $result2 === true) {
             // compile scss to css ----------------------------------------
-            $Io->title('Compile SCSS files to CSS');
-            $CompileScss = new SubApp\Build\CompileScss();
-            $result3 = $CompileScss->run($this->fullTargetPath, $Input, $Output);
-            unset($CompileScss);
+            // comment the code below to use Grunt for compile SASS. keep these code when they have something not functional or deprecated or removed.
+            //$Io->title('Compile SCSS files to CSS');
+            //$CompileScss = new SubApp\Build\CompileScss();
+            //$result3 = $CompileScss->run($this->fullTargetPath, $Input, $Output);
+            //unset($CompileScss);
+            $result3 = true;
         } elseif (isset($result2)) {
             $Io->error('Failed to copy source folder.');
         }

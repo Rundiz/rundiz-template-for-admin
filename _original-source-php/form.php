@@ -61,7 +61,7 @@ include 'includes/html-head.php';
                                     </span>
                                     <span class="rd-input-files-queue"></span>
                                     <template class="rd-inputfile-reset-button">
-                                        <button class="rd-button tiny" type="button" onclick="return rdtaResetInputFile(jQuery(this));" title="Remove files"><i class="fas fa-times"></i><span class="screen-reader-only">Remove files</span></button>
+                                        <button class="rd-button tiny" type="button" onclick="return RundizTemplateAdmin.resetInputFile(jQuery(this));" title="Remove files"><i class="fas fa-times"></i><span class="screen-reader-only">Remove files</span></button>
                                     </template>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@ include 'includes/html-head.php';
                                     </span>
                                     <span class="rd-input-files-queue"></span>
                                     <template class="rd-inputfile-reset-button">
-                                        <button class="rd-button tiny" type="button" onclick="return rdtaResetInputFile(jQuery(this));" title="Remove files"><i class="fas fa-times"></i><span class="screen-reader-only">Remove files</span></button>
+                                        <button class="rd-button tiny" type="button" onclick="return RundizTemplateAdmin.resetInputFile(jQuery(this));" title="Remove files"><i class="fas fa-times"></i><span class="screen-reader-only">Remove files</span></button>
                                     </template>
                                 </div>
                             </div>
@@ -87,7 +87,7 @@ include 'includes/html-head.php';
                                     </span>
                                     <span class="rd-input-files-queue"></span>
                                     <template class="rd-inputfile-reset-button">
-                                        <button class="rd-button tiny" type="button" onclick="return rdtaResetInputFile(jQuery(this));" title="Remove files"><i class="fas fa-times"></i><span class="screen-reader-only">Remove files</span></button>
+                                        <button class="rd-button tiny" type="button" onclick="return RundizTemplateAdmin.resetInputFile(jQuery(this));" title="Remove files"><i class="fas fa-times"></i><span class="screen-reader-only">Remove files</span></button>
                                     </template>
                                 </div>
                             </div>

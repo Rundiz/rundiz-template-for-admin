@@ -1,7 +1,9 @@
 
 Start development ========================================
 To start development, please open the readme.md in _builder folder and follow instruction on clone section.
-Then run `npm install`. The node packages will be install in node_modules folder.
+
+If you don't have node_modules folder in the working project, then run `npm install`.
+The node packages will be install in node_modules folder.
 
 SCSS =================================================
 To compile sass (or scss) to css use the following command line:
@@ -17,14 +19,14 @@ For emit comments about line number from source, append this command to the curr
 
 For force compile even css file is newer, append this command to the current command: `--force` (Old Scss)
 
-Please note that the sass files will be automatically compile and minified with source maps once php builder command was called.
+Please note that the sass files will be automatically compile and minified with source maps once `grunt` command was called.
 
 Grunt =================================================
 Before running the command below, please make sure that you had run the npm command above.
 
 To minify js use the following command line:
 `grunt`
-Grunt will call GruntFile.js and create minified js file with source map.
+Grunt will call GruntFile.js and create minified js, css files with source map.
 
 Publish ================================================
 To publish this package to node package manager please follow instruction.
@@ -32,5 +34,3 @@ To publish this package to node package manager please follow instruction.
 2. Open readme.md in _builder folder and follow instruction on commit section.
 3. Commit and push to Github.
 4. run `npm publish` command.
-=======
-For force compile even css file is newer, append this command to the current command: `--force` (Old Scss)
