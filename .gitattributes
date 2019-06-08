@@ -49,3 +49,7 @@ _original-source-php export-ignore
 .dev-notes export-ignore
 .gitattributes export-ignore
 .gitignore export-ignore
+node_modules export-ignore
+GruntFile.js export-ignore
+package.json export-ignore
+package-lock.json export-ignore
