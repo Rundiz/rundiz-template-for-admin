@@ -1,4 +1,7 @@
 
+Npm =================================================
+To start development, open the command line and run `npm install`. The node packages will be install in node_modules folder.
+
 SCSS =================================================
 To compile sass (or scss) to css use the following command line:
 For compile a single file: `sass assets/scss/file.scss assets/css/file.css`
@@ -12,3 +15,12 @@ For no source map, append this command to the current command: `--sourcemap=none
 For emit comments about line number from source, append this command to the current command: `--line-numbers`
 
 For force compile even css file is newer, append this command to the current command: `--force` (Old Scss)
+
+Please note that the sass files will be automatically compile and minified with source maps once php builder command was called.
+
+Grunt =================================================
+Before running the command below, please make sure that you had run the npm command above.
+
+To minify js use the following command line:
+`grunt`
+Grunt will call GruntFile.js and create minified js file with source map.

@@ -14,6 +14,11 @@ if (!defined('ROOTDIR')) {
  */
 function assetUrl($assetUrl)
 {
+    if (stripos($assetUrl, '://') !== false || stripos($assetUrl, '//') === 0) {
+        // if asset url is full url then no need to get file mtime.
+        return $assetUrl;
+    }
+
     $urlParsed = parse_url($assetUrl);
     $url = (isset($urlParsed['path']) ? $urlParsed['path'] : '');
     $query = (isset($urlParsed['query']) ? $urlParsed['query'] : '');

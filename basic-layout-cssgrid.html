@@ -4,10 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Rundiz template for admin</title>
-        <link rel="stylesheet" href="assets/css/sanitize.css?mt=0">
+        <link rel="stylesheet" href="assets/css/sanitize/sanitize.css?v=8.0.0&amp;mt=1559123169">
+        <link rel="stylesheet" href="assets/css/sanitize/typography.css?v=8.0.0&amp;mt=1558074230">
+        <link rel="stylesheet" href="assets/css/sanitize/forms.css?v=8.0.0&amp;mt=1558074230">
+
+        <link rel="stylesheet" href="assets/font-awesome/css/all.min.css?v=5.8.2&amp;mt=1557221630">
         <link rel="stylesheet" href="assets/css/smartmenus/sm-core-css.css?mt=1559110074">
-        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?mt=1559200531">
-        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?mt=1559200530">
+        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?mt=1560006631">
+        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?mt=1560006629">
 
         <style type="text/css">
             .rd-template-admin,
@@ -331,7 +335,7 @@
                         <table class="rd-datatable">
                             <thead>
                                 <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></th>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Address</th>
@@ -376,15 +380,21 @@
             </main>
             <footer>
                 <div class="rd-page-footer-left"><a href="http://rundiz.com" target="_blank">Rundiz</a> template for admin</div>
-                <div class="rd-page-footer-right">v.0.0</div>
-            </footer>
+                <div class="rd-page-footer-right">My app version n.n.</div>
+            </footer> 
         </div><!--.rd-page-wrapper-->
 
 
-        <script src="assets/js/jquery.min.js?mt=1559128533"></script>
-        <script src="assets/font-awesome/js/all.min.js?mt=0"></script>
-        <script src="assets/js/smartmenus/jquery.smartmenus.min.js?mt=1559110074"></script>
-        <script src="assets/js/sticky-sidebar/sticky-sidebar.min.js?mt=0"></script>
-        <script src="assets/js/rdta/rundiz-template-admin.js?mt=1559194593"></script> 
+
+        <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+
+        <script src="assets/js/smartmenus/jquery.smartmenus.min.js?v=1.1.0&amp;mt=1559110074"></script>
+
+        <script src="assets/js/popper/umd/popper.min.js?v=1.15.0&amp;mt=1554384358"></script>
+
+        <script src="assets/js/sticky-sidebar/jquery.sticky-sidebar.min.js?v=3.2.0&amp;mt=1559110074"></script>
+        <script src="assets/js/sticky-sidebar/ResizeSensor.js?v=3.2.0&amp;mt=1559110074"></script><!-- use with sticky sidebar js. -->
+
+        <script src="assets/js/rdta/rundiz-template-admin.js?mt=1559990493"></script> 
     </body>
 </html>

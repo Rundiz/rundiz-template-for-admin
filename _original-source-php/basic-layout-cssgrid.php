@@ -5,7 +5,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Rundiz template for admin</title>
-        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/sanitize.css'); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/sanitize/sanitize.css?v=8.0.0'); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/sanitize/typography.css?v=8.0.0'); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/sanitize/forms.css?v=8.0.0'); ?>">
+
+        <link rel="stylesheet" href="<?php echo assetUrl('assets/font-awesome/css/all.min.css?v=5.8.2'); ?>">
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/smartmenus/sm-core-css.css'); ?>">
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/smartmenus/sm-rdta/sm-rdta.css'); ?>">
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta/typo-and-form/typo-and-form.css'); ?>">
@@ -122,7 +126,7 @@
                         <table class="rd-datatable">
                             <thead>
                                 <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="rdtaDataTableCheckboxToggle(jQuery(this));"></th>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Address</th>
@@ -165,17 +169,10 @@
                     </div>
                 </div><!--.rd-page-content-->
             </main>
-            <footer>
-                <div class="rd-page-footer-left"><a href="http://rundiz.com" target="_blank">Rundiz</a> template for admin</div>
-                <div class="rd-page-footer-right">v.0.0</div>
-            </footer>
+<?php include 'includes/partials/page-footer.php'; ?> 
         </div><!--.rd-page-wrapper-->
 
 
-        <script src="<?php echo assetUrl('assets/js/jquery.min.js'); ?>"></script>
-        <script src="<?php echo assetUrl('assets/font-awesome/js/all.min.js'); ?>"></script>
-        <script src="<?php echo assetUrl('assets/js/smartmenus/jquery.smartmenus.min.js'); ?>"></script>
-        <script src="<?php echo assetUrl('assets/js/sticky-sidebar/sticky-sidebar.min.js'); ?>"></script>
-        <script src="<?php echo assetUrl('assets/js/rdta/rundiz-template-admin.js'); ?>"></script> 
+<?php include 'includes/js-end-body.php'; ?> 
     </body>
 </html>
