@@ -1,4 +1,7 @@
 
+Start development ========================================
+To start development, please open the readme.md in _builder folder and follow instruction on clone section.
+
 Npm =================================================
 To start development, open the command line and run `npm install`. The node packages will be install in node_modules folder.
 
@@ -24,3 +27,10 @@ Before running the command below, please make sure that you had run the npm comm
 To minify js use the following command line:
 `grunt`
 Grunt will call GruntFile.js and create minified js file with source map.
+
+Publish ================================================
+To publish this package to node package manager please follow instruction.
+1. Update the version number in package.json.
+2. Open readme.md in _builder folder and follow instruction on commit section.
+3. Commit and push to Github.
+4. run `npm publish` command.
