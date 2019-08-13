@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Rundiz template for admin V.2.0.0
+ * Rundiz template for admin V.2.0.1
  */
 /*
 * ----------------------------------------------------------------------------------------------
@@ -298,6 +298,9 @@ ul.rd-sidebar-expand-collapse-controls a .icon,
   color: #333;
   opacity: 0.8;
   top: 0.1rem;
+}
+.rd-alertbox .rd-alert-list {
+  margin-bottom: 0;
 }
 
 /*

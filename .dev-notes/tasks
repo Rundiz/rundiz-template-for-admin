@@ -31,6 +31,7 @@ Grunt will call GruntFile.js and create minified js, css files with source map.
 Publish ================================================
 To publish this package to node package manager please follow instruction.
 1. Update the version number in package.json.
-2. Open readme.md in _builder folder and follow instruction on commit section.
-3. Commit and push to Github.
-4. run `npm publish` command.
+2. Run `grunt` command.
+3. Open readme.md in _builder folder and follow instruction on commit section.
+4. Commit and push to Github.
+5. run `npm publish` command.

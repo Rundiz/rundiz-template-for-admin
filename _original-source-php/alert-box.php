@@ -58,6 +58,25 @@ include 'includes/html-head.php';
                         <button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(jQuery(this));"><span aria-hidden="true">&times;</span></button>
                         Success alert box. Please follow <a href="#" onclick="return false">this link</a>.
                     </div>
+
+                    <h3>Alert with more content</h3>
+                    <div class="rd-alertbox alert-warning">
+                        <h4>Warning!</h4>
+                        <p>This is the warning text.</p>
+                    </div>
+                    <div class="rd-alertbox alert-danger">
+                        <ul class="rd-alert-list">
+                            <li>Username field is required.</li>
+                            <li>Email field is invalid.</li>
+                        </ul>
+                    </div>
+                    <div class="rd-alertbox alert-info">
+                        <p>Please follow instruction.</p>
+                        <ol class="rd-alert-list">
+                            <li>Press <kbd>F5</kbd></li>
+                            <li>Read this message</li>
+                        </ol>
+                    </div>
                 </div><!--.rd-page-content-->
             </main>
 <?php include 'includes/partials/page-footer.php'; ?> 
