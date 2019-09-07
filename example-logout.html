@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Example login page | Rundiz template for admin</title>
+        <title>Example logout page | Rundiz template for admin</title>
         <link rel="stylesheet" href="assets/css/sanitize/sanitize.css?v=8.0.0&amp;mt=1559123169">
         <link rel="stylesheet" href="assets/css/sanitize/typography.css?v=8.0.0&amp;mt=1558074230">
         <link rel="stylesheet" href="assets/css/sanitize/forms.css?v=8.0.0&amp;mt=1558074230">
@@ -20,30 +20,24 @@
     <body ontouchstart="">
         <main class="rd-columns-flex-container">
             <div class="col-xs-10 offset-xs-1 col-sm-6 offset-sm-3 col-md-4 offset-md-4">
-                <h1>Login page</h1>
+                <h1>Logout page</h1>
                 <form class="rd-form">
-                    <div class="form-group">
-                        <label class="control-label" for="user_login">Username or Email</label>
-                        <div class="control-wrapper">
-                            <input id="user_login" type="text">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label" for="user_password">Password</label>
-                        <div class="control-wrapper">
-                            <input id="user_password" type="password">
-                        </div>
+                    <div class="text-center">
+                        <span class="fa-stack fa-3x">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fas fa-user fa-stack-1x fa-inverse"></i>
+                        </span>
                     </div>
                     <div class="form-group">
                         <div class="control-wrapper">
                             <label>
-                                <input type="checkbox"> Remember my login
+                                <input type="checkbox"> Log me out on all devices
                             </label>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="control-wrapper">
-                            <button class="rd-button primary" type="button">Login</button>
+                            <button class="rd-button primary" type="button">Logout</button>
                         </div>
                     </div>
                 </form>

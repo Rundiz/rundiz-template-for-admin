@@ -145,6 +145,7 @@ for ($i = 1; $i <= 50; $i++) {
                         <li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-laptop-code"></i> <span class="rd-sidebar-menu-text">Examples</span></a>
                             <ul>
                                 <li><a href="example-login.php">Login page</a></li>
+                                <li><a href="example-logout.php">Logout page</a></li>
                             </ul>
                         </li>
                         <li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-code fa-fw"></i> <span class="rd-sidebar-menu-text">Tools &amp; guide</span></a>
