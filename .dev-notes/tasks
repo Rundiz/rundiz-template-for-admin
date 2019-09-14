@@ -19,19 +19,22 @@ For emit comments about line number from source, append this command to the curr
 
 For force compile even css file is newer, append this command to the current command: `--force` (Old Scss)
 
-Please note that the sass files will be automatically compile and minified with source maps once `grunt` command was called.
+Please note that the sass files will be automatically compile and minified with source maps once `gulp` command was called.
 
-Grunt =================================================
+Gulp =================================================
 Before running the command below, please make sure that you had run the npm command above.
 
 To minify js use the following command line:
-`grunt`
-Grunt will call GruntFile.js and create minified js, css files with source map.
+`gulp`
+Gulp will call gulpfile.js and create minified js, css files with source map.
+
+To watch scss files, use following command line:
+`gulp watch`
 
 Publish ================================================
 To publish this package to node package manager please follow instruction.
 1. Update the version number in package.json.
-2. Run `grunt` command.
+2. Run `gulp` command.
 3. Open readme.md in _builder folder and follow instruction on commit section.
 4. Commit and push to Github.
 5. run `npm publish` command.
