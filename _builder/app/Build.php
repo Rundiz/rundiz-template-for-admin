@@ -104,7 +104,7 @@ class Build extends Command
 
         if (isset($result2) && $result2 === true) {
             // compile scss to css ----------------------------------------
-            // comment the code below to use Grunt for compile SASS. keep these code when they have something not functional or deprecated or removed.
+            // comment the code below to use JS task runner for compile SASS. keep these code when they have something not functional or deprecated or removed.
             //$Io->title('Compile SCSS files to CSS');
             //$CompileScss = new SubApp\Build\CompileScss();
             //$result3 = $CompileScss->run($this->fullTargetPath, $Input, $Output);
