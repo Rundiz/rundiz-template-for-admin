@@ -150,6 +150,7 @@ for ($i = 1; $i <= 50; $i++) {
                         </li>
                         <li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-code fa-fw"></i> <span class="rd-sidebar-menu-text">Tools &amp; guide</span></a>
                             <ul>
+                                <li><a href="credits.php">Credits</a></li>
                                 <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="tools_cssgrid">CSS grid</a></li>
                                 <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="tools_cssflex">CSS flex box</a></li>
                                 <li><a href="https://www.w3.org/wiki/HTML_structural_elements" target="tools_html5structural">HTML 5 structural elements</a></li>
