@@ -13,3 +13,9 @@ textarea {
     box-shadow: none;
     padding: 0;
 }
+
+
+input[type="file"],
+input[type="range"] {
+    border: none;
+}
