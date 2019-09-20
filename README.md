@@ -1,6 +1,6 @@
 # Rundiz template for admin
 
-Rundiz template for admin is the HTML template and CSS, JS set for admin page layout. It also come with essential components that mostly administrator application have to use.
+Rundiz template for admin is the HTML template and CSS, JS set for admin page layout. It also come with essential components that administrator application have to use.
 
 <abbr title="Rundiz template for admin">RDTA</abbr> support modern browsers such as Firefox, Google Chrome, Microsoft Edge, Opera, Safari, Vivaldi in all OS.
 
