@@ -1,0 +1,59 @@
+/*!
+* ----------------------------------------------------------------------------------------------
+* Rundiz template tabs -- styling tabs elements.
+* ----------------------------------------------------------------------------------------------
+*/
+
+
+@import '../global-common/_common-variables';
+@import '../typo-and-form/_variables';
+
+
+.rd-tabs {
+    padding: 0.625rem;
+
+    // .rd-tabs .rd-tabs-nav
+    .rd-tabs-nav {
+        border-bottom: 1px solid $border-color;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        // .rd-tabs .rd-tabs-nav
+        @media (min-width: $minimum-sidebar-breakpoint) {
+            padding-left: 0.313em;
+            padding-right: 0.313em;
+        }
+
+        // .rd-tabs .rd-tabs-nav li
+        li {
+            background-color: $background-color;
+            border: 1px solid $border-color;
+            margin: 0 0 0.313rem 0;
+            padding: 0.313rem;
+
+            // .rd-tabs .rd-tabs-nav li.active
+            &.active {
+                background-color: #fff;
+            }
+
+            // .rd-tabs .rd-tabs-nav li > a 
+            > a {
+                color: $font-color;
+                cursor: pointer;
+                display: block;
+            }
+        }
+    }
+
+    // .rd-tabs .rd-tabs-content
+    .rd-tabs-content {
+        display: none;
+        padding: .625em;
+
+        // .rd-tabs .rd-tabs-content.active
+        &.active {
+            display: block;
+        }
+    }
+}

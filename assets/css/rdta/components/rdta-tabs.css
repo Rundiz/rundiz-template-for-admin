@@ -1,0 +1,42 @@
+/*!
+* ----------------------------------------------------------------------------------------------
+* Rundiz template tabs -- styling tabs elements.
+* ----------------------------------------------------------------------------------------------
+*/
+.rd-tabs {
+  padding: 0.625rem;
+}
+.rd-tabs .rd-tabs-nav {
+  border-bottom: 1px solid #ddd;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+@media (min-width: 1000px) {
+  .rd-tabs .rd-tabs-nav {
+    padding-left: 0.313em;
+    padding-right: 0.313em;
+  }
+}
+.rd-tabs .rd-tabs-nav li {
+  background-color: #eee;
+  border: 1px solid #ddd;
+  margin: 0 0 0.313rem 0;
+  padding: 0.313rem;
+}
+.rd-tabs .rd-tabs-nav li.active {
+  background-color: #fff;
+}
+.rd-tabs .rd-tabs-nav li > a {
+  color: #333;
+  cursor: pointer;
+  display: block;
+}
+.rd-tabs .rd-tabs-content {
+  display: none;
+  padding: 0.625em;
+}
+.rd-tabs .rd-tabs-content.active {
+  display: block;
+}
+/*# sourceMappingURL=rdta-tabs.css.map */
