@@ -380,8 +380,6 @@ class RundizTemplateAdmin {
      * @returns {undefined}
      */
     sidebarToggler() {
-        let $ = jQuery.noConflict();
-
         let togglerButton = document.querySelector('.rd-sidebar-toggler');
         let dataTarget = togglerButton.dataset.target;
 
