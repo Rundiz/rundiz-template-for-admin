@@ -1156,6 +1156,13 @@ textarea.input-small {
   display: none;
 }
 
+.rd-animation.fade {
+  transition: opacity 300ms;
+}
+.rd-animation.fade-out {
+  opacity: 0;
+}
+
 @media (min-width: 0) and (max-width: 767px) {
   .hidden-only-xs,
 .hidden-under-sm,
