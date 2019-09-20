@@ -190,13 +190,26 @@ class RundizTemplateAdmin {
      * <pre>
      * &lt;input type=&quot;checkbox&quot; onclick=&quot;RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));&quot;&gt;
      * </pre>
+     * Or you can use JS `this` object instead.
+     * <pre>
+     * &lt;input type=&quot;checkbox&quot; onclick=&quot;RundizTemplateAdmin.dataTableCheckboxToggler(this);&quot;&gt;
+     * </pre>
      * 
-     * @param {jQuery} thisObj
+     * @param {object} thisObj `jQuery(this)` or `this`.
      * @returns {undefined}
      */
     static dataTableCheckboxToggler(thisObj) {
-        let $table = thisObj.closest('table');
-        $table.find('input[type="checkbox"]').prop('checked', thisObj.is(':checked'));
+        if (thisObj instanceof jQuery) {
+            thisObj = thisObj[0];
+        }
+
+        if (typeof(thisObj) !== 'undefined') {
+            let table = thisObj.closest('table');
+            let thisChecked = thisObj.checked;
+            table.querySelectorAll('input[type="checkbox"]').forEach(function(item, index) {
+                item.checked = thisChecked;
+            });
+        }
     }// dataTableCheckboxToggler
 
 
