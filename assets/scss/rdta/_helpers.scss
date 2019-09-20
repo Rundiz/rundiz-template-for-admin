@@ -21,6 +21,17 @@
 }
 
 
+// animation helper -------------------------------------------------------------------------
+.rd-animation {
+    &.fade {
+        transition: opacity 300ms;
+    }
+    &.fade-out {
+        opacity: 0;
+    }
+}
+
+
 // responsive visibility helper ---------------------------------------------------------------
 // xs screen
 @media (min-width: 0) and (max-width: $xs-max-width) {
