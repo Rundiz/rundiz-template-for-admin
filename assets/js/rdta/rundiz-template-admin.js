@@ -221,10 +221,13 @@ class RundizTemplateAdmin {
     dataTableToggleRow() {
         let $ = jQuery.noConflict();
 
-        $('.toggle-row').click(function() {
-            let toggleIcon = $(this).find('.faicon').data('toggle-icon');
-            $(this).find('.faicon').toggleClass(toggleIcon);
-            $(this).parents('tr').toggleClass('is-expanded');
+        document.addEventListener('click', function(event) {
+            if (event.currentTarget.activeElement.classList.contains('toggle-row')) {
+                let thisElement = event.currentTarget.activeElement;
+                let toggleIcons = thisElement.querySelector('.faicon').dataset.toggleIcon;
+                $(thisElement.querySelectorAll('.faicon')).toggleClass(toggleIcons);// non jQuery cannot toggle multiple class names.
+                thisElement.closest('tr').classList.toggle('is-expanded');
+            }
         });
 
         return false;
