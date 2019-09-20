@@ -216,6 +216,8 @@ class RundizTemplateAdmin {
     /**
      * For data table responsive to toggle collapse/expand in mini screen.
      * 
+     * This method can work on dynamically insert/update elements.
+     * 
      * @returns {Boolean}
      */
     dataTableToggleRow() {
@@ -317,6 +319,7 @@ class RundizTemplateAdmin {
     /**
      * Listen to sidebar expand/collapse toggler button.
      * 
+     * This method can work on dynamically insert/update elements.<br>
      * This till toggle expand & collapse, not push/pull (or show/hide).
      * 
      * @returns {Boolean}
@@ -324,15 +327,25 @@ class RundizTemplateAdmin {
     sidebarExpandToggler() {
         let $ = jQuery.noConflict();
 
-        let $togglerButton = $('.rd-sidebar-expand-collapse-controls').find('a');
-        let $target = $togglerButton.data('target');
+        let togglerButton = document.querySelector('.rd-sidebar-expand-collapse-controls a');
+        let dataTarget = togglerButton.dataset.target;
 
-        $togglerButton.on('click', function(e) {
-            e.preventDefault();
-            let toggleIcon = $(this).find('.faicon').data('toggle-icon');
-            $(this).find('.faicon').toggleClass(toggleIcon);
-            $($target).toggleClass('is-collapsed');
-            setTimeout(function() {$('.rd-sidebar').stickySidebar('updateSticky');}, 100);
+        document.addEventListener('click', function(event) {
+            // match selector.
+            // @link https://stackoverflow.com/a/25248515/128761 Original source code.
+            for (let target= event.target; target && target != this; target = target.parentNode) {
+                // loop parent nodes from the target to the delegation node
+                if (target.matches('.rd-sidebar-expand-collapse-controls a')) {
+                    let toggleIcon = togglerButton.querySelector('.faicon').dataset.toggleIcon;
+                    $(togglerButton.querySelector('.faicon')).toggleClass(toggleIcon);// non jQuery cannot toggle multiple class names.
+
+                    document.querySelector(dataTarget).classList.toggle('is-collapsed');
+                    setTimeout(function() {
+                        $('.rd-sidebar').stickySidebar('updateSticky');// require jQuery.
+                    }, 100);
+                    break;
+                }
+            }
         });
 
         return false;
@@ -361,6 +374,7 @@ class RundizTemplateAdmin {
     /**
      * Listen to sidebar toggler button (small screen).
      * 
+     * This method can work on dynamically insert/update elements.<br>
      * This will toggle push/pull (or show/hide) sidebar menu in the small screen, not expand/collapse (shorten).
      * 
      * @returns {undefined}
@@ -368,13 +382,21 @@ class RundizTemplateAdmin {
     sidebarToggler() {
         let $ = jQuery.noConflict();
 
-        let $togglerButton = $('.rd-sidebar-toggler');
-        let $target = $togglerButton.data('target');
+        let togglerButton = document.querySelector('.rd-sidebar-toggler');
+        let dataTarget = togglerButton.dataset.target;
 
-        $togglerButton.on('click', function(e) {
-            e.preventDefault();
-            $(this).toggleClass('is-active');
-            $($target).toggleClass('mini-screen-sidebar-visible');
+        document.addEventListener('click', function(event) {
+            // match selector.
+            // @link https://stackoverflow.com/a/25248515/128761 Original source code.
+            for (let target= event.target; target && target != this; target = target.parentNode) {
+                // loop parent nodes from the target to the delegation node
+                if (target.matches('.rd-sidebar-toggler')) {
+                    target.classList.toggle('is-active');
+
+                    document.querySelector(dataTarget).classList.toggle('mini-screen-sidebar-visible');
+                    break;
+                }
+            }
         });
     }// sidebarToggler
 
