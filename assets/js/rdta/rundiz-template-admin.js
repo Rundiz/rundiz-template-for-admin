@@ -10,48 +10,65 @@ class RundizTemplateAdmin {
     /**
      * Listen to button dropdown or button group with dropdown.
      * 
+     * This method can work on dynamically insert/update elements.
+     * 
      * @return {undefined}
      */
     buttonDropdown() {
-        let $ = jQuery.noConflict();
-
-        $(document).click(function () {
-            // hide all dropdown menus when click outside.
-            // @link https://stackoverflow.com/questions/6463486/jquery-drop-down-menu-closing-by-clicking-outside Reference.
-            $('.rd-dropdown').hide();
+        // listen on click anywhere/outside to hide dropdown.
+        document.addEventListener('click', function(event) {
+            // on click anywhere in document.
+            // just hide dropdown (including click in dropdown and link worked).
+            // to hide only if click outside dropdown, add `if (!event.target.closest('.rd-dropdown')) {...}` condition.
+            let dropdownElements = document.querySelectorAll('.rd-dropdown');
+            let index = 0, length = dropdownElements.length;
+            for ( ; index < length; index++) {
+                dropdownElements[index].style.display = 'none';
+            }
+            //console.log('hide dropdown');
         });
 
-        $('.rd-button-group').each(function () {
-            if (typeof ($(this).find('ul')[0]) !== 'undefined' && $(this).find('.dropdown-toggler').length === 1) {
-                let $toggler = $(this).find('.dropdown-toggler');
-                let $popper = $(this).find('.rd-dropdown');
+        // listen on click dropdown toggler to activate it.
+        document.addEventListener('click', function(event) {
+            let thisTarget = event.currentTarget.activeElement;
+            let thisParent = (typeof(thisTarget.parentElement) !== 'undefined' ? thisTarget.parentElement : {});
+            if (
+                thisParent.classList.contains('rd-button-group') &&
+                thisTarget.classList.contains('dropdown-toggler')
+            ) {
+                // if parent of clicking button contain `.rd-button-group` class.
+                // and the clicking button contain `.dropdown-toggler` class.
+                let popperPlacement;
+                if (typeof(thisTarget.dataset.placement) !== 'undefined' && thisTarget.dataset.placement) {
+                    popperPlacement = thisTarget.dataset.placement;
+                    popperPlacement = popperPlacement.replace('top left', 'top start');
+                    popperPlacement = popperPlacement.replace('top right', 'top end');
+                    popperPlacement = popperPlacement.replace('bottom left', 'bottom start');
+                    popperPlacement = popperPlacement.replace('bottom right', 'bottom end');
+                    popperPlacement = popperPlacement.replace('left top', 'left start');
+                    popperPlacement = popperPlacement.replace('left bottom', 'left end');
+                    popperPlacement = popperPlacement.replace('right top', 'right start');
+                    popperPlacement = popperPlacement.replace('right bottom', 'right end');
+                    popperPlacement = popperPlacement.replace('auto left', 'auto start');
+                    popperPlacement = popperPlacement.replace('auto right', 'auto end');
+                    popperPlacement = popperPlacement.replace(' ', '-');
+                } else {
+                    popperPlacement = 'bottom-start';
+                }
 
-                $toggler.on('click', function (e) {
-                    e.stopPropagation();
-                    // hide all other dropdown menus before activate current one.
-                    $('.rd-dropdown').hide();
-                    if (typeof ($(this).data('placement')) !== 'undefined') {
-                        var $popperPlacement = $(this).data('placement');
-                        $popperPlacement = $popperPlacement.replace('top left', 'top start');
-                        $popperPlacement = $popperPlacement.replace('top right', 'top end');
-                        $popperPlacement = $popperPlacement.replace('bottom left', 'bottom start');
-                        $popperPlacement = $popperPlacement.replace('bottom right', 'bottom end');
-                        $popperPlacement = $popperPlacement.replace('left top', 'left start');
-                        $popperPlacement = $popperPlacement.replace('left bottom', 'left end');
-                        $popperPlacement = $popperPlacement.replace('right top', 'right start');
-                        $popperPlacement = $popperPlacement.replace('right bottom', 'right end');
-                        $popperPlacement = $popperPlacement.replace('auto left', 'auto start');
-                        $popperPlacement = $popperPlacement.replace('auto right', 'auto end');
-                        $popperPlacement = $popperPlacement.replace(' ', '-');
-                    } else {
-                        var $popperPlacement = 'bottom-start';
-                    }
-                    $popper.show();
-                    new Popper($toggler, $popper, {
-                        placement: $popperPlacement,
-                    });
-                });
-            }// endif;
+                let dropdownElement = thisParent.querySelector('.rd-dropdown');
+                if (dropdownElement !== null) {
+                    //console.log('activating dropdown');
+                    dropdownElement.style.display = 'block';
+                    new Popper(
+                        thisTarget,
+                        dropdownElement,
+                        {
+                            'placement': popperPlacement
+                        }
+                    );
+                }
+            }
         });
     }// buttonDropdown
 
@@ -63,57 +80,104 @@ class RundizTemplateAdmin {
      * <pre>
      * &lt;button type=&quot;button&quot; onclick=&quot;return RundizTemplateAdmin.closeAlertbox(jQuery(this));&quot;&gt;x&lt;/button&gt;
      * </pre>
+     * Or you can use JS `this` object instead.
+     * <pre>
+     * &lt;button type=&quot;button&quot; onclick=&quot;return RundizTemplateAdmin.closeAlertbox(this);&quot;&gt;x&lt;/button&gt;
+     * </pre>
      * 
-     * @param {jQuery} thisObj The jQuery object `jQuery(this)`.
+     * @param {object} thisObj `jQuery(this)` or `this`.
      * @returns {Boolean}
      */
     static closeAlertbox(thisObj) {
-        let $ = jQuery.noConflict();
+        if (thisObj instanceof jQuery) {
+            thisObj = thisObj[0];
+        }
 
-        thisObj.closest('.rd-alertbox').fadeOut(300, function() {
-            $(this).remove();
-        });
+        if (typeof(thisObj) !== 'undefined') {
+            let alertBox = thisObj.closest('.rd-alertbox');
+            alertBox.classList.add('rd-animation','fade', 'fade-out');
+            setTimeout(function() {
+                alertBox.parentNode.removeChild(alertBox);
+            }, 400);
+        }
 
         return false;
     }// closeAlertbox
 
 
     /**
-    * Activate custom input file.
-    * 
-    * @link http://demo.rundiz.com/nice-form-plugins/ Reference
-    * @returns {undefined}
-    */
+     * Activate custom input file.
+     * 
+     * This method can work on dynamically insert/update elements.
+     * 
+     * @link http://demo.rundiz.com/nice-form-plugins/ Reference
+     * @returns {undefined}
+     */
     customInputFile() {
-        let $ = jQuery.noConflict();
-
         // reset form cached after reload. this always happen in Firefox.
-        $('.rd-inputfile input[type="file"]').each(function() {
-            $(this).wrap('<form>').closest('form').get(0).reset();
-            $(this).unwrap();
+        document.querySelectorAll('.rd-inputfile input[type="file"]').forEach(function(item, index) {
+            // wrap with <form>
+            // @link https://stackoverflow.com/a/25488670/128761 Original source code.
+            let parent = item.parentElement;
+            let wrap = document.createElement('form');
+            wrap.appendChild(item);
+            parent.appendChild(wrap);
+            // reset form.
+            item.closest('form').reset();
+            // unwrap <form>
+            item.parentNode.replaceWith(item);
         });
 
         // for navigate thru web page using keyboard.
-        $('.rd-inputfile').each(function() {
-            $(this).on('keyup', function(e) {
-                if (e.keyCode === 13) {
-                    $(this).find('input[type="file"]').focus();
-                    $(this).find('input[type="file"]').click();// this maybe stuck at popup blocked in Firefox. allowed popup for certain site and this will be working fine.
+        // (press tab to custom input file and then press enter for browse file.)
+        document.addEventListener('keyup', function(event) {
+            if (
+                event.key.toLowerCase() === 'enter' &&
+                event.currentTarget.activeElement.classList.contains('rd-inputfile')
+            ) {
+                let thisTarget = event.currentTarget.activeElement;
+                let itsInputFile = thisTarget.querySelector('input[type="file"]');
+                if (typeof(itsInputFile) !== 'undefined' && itsInputFile) {
+                    itsInputFile.focus();
+                    itsInputFile.click();// this maybe stuck at popup blocked in Firefox. allowed popup for certain site and this will be working fine.
                 }
-            });
+            }
         });
 
         // display selected file name and remove button.
-        $('.rd-inputfile input[type="file"]').change(function() {
-            let names = [];
-            for (let i = 0; i < $(this).get(0).files.length; ++i) {
-                names.push($(this).get(0).files[i].name);
-            }
-            $(this).closest('.rd-inputfile').siblings('.rd-input-files-queue').text(names.join(', '));
+        document.addEventListener('change', function(event) {
+            if (
+                event.target.attributes.type.nodeValue === 'file' &&
+                event.target.parentElement.classList.contains('rd-inputfile')
+            ) {
+                let thisParent = event.target.parentElement;
+                let names = [];
+                for (let i = 0; i < event.target.files.length; ++i) {
+                    names.push(event.target.files[i].name);
+                }
 
-            let resetButton = $(this).closest('.rd-inputfile').siblings('.rd-inputfile-reset-button').html();
-            if (typeof(resetButton) !== 'undefined' && resetButton != '') {
-                $(this).closest('.rd-inputfile').siblings('.rd-input-files-queue').append(' '+resetButton);
+                // get input files queue element.
+                // get reset button template.
+                let elementSiblings = thisParent.parentNode.children;
+                for (let i = 0; i < elementSiblings.length; i++) {
+                    if (elementSiblings[i].classList.contains('rd-input-files-queue') && typeof(thisFilesQueue) === 'undefined') {
+                        var thisFilesQueue = elementSiblings[i];
+                    }
+                    if (elementSiblings[i].classList.contains('rd-inputfile-reset-button') && typeof(thisResetButton) === 'undefined') {
+                        var thisResetButton = elementSiblings[i].innerHTML;
+                    }
+                }
+
+                if (typeof(thisFilesQueue) !== 'undefined') {
+                    thisFilesQueue.innerText = names.join(', ');
+                    if (typeof(thisResetButton) !== 'undefined' && thisResetButton) {
+                        thisFilesQueue.insertAdjacentHTML('beforeend', ' ' + thisResetButton);
+                    }
+                }
+
+                thisFilesQueue = undefined;
+                thisResetButton = undefined;
+                elementSiblings = undefined;
             }
         });
     }// customInputFile
@@ -190,17 +254,45 @@ class RundizTemplateAdmin {
      * <pre>
      * &lt;button type=&quot;button&quot; onclick=&quot;return RundizTemplateAdmin.resetInputFile(jQuery(this));&quot;&gt;x&lt;/button&gt;
      * </pre>
+     * Or you can use JS `this` object instead.
+     * <pre>
+     * &lt;button type=&quot;button&quot; onclick=&quot;return RundizTemplateAdmin.resetInputFile(this);&quot;&gt;x&lt;/button&gt;
+     * </pre>
      * 
      * @link http://demo.rundiz.com/nice-form-plugins/ Reference
-     * @param {jQuery} thisObj
+     * @param {object} thisObj `jQuery(this)` or `this`.
      * @returns {undefined}
      */
     static resetInputFile(thisObj) {
-        let target = thisObj.closest('.rd-input-files-queue').siblings('.rd-inputfile').find('input[type="file"]');
-        target.wrap('<form>').closest('form').get(0).reset();
-        target.unwrap();
+        if (thisObj instanceof jQuery) {
+            thisObj = thisObj[0];
+        }
 
-        thisObj.closest('.rd-input-files-queue').text('');
+        if (typeof(thisObj) !== 'undefined') {
+            let thisFilesQueue = thisObj.closest('.rd-input-files-queue');
+            let thisSiblings = thisFilesQueue.parentElement.children;
+            let thisRdInputFile;
+            for (let i = 0; i < thisSiblings.length; i++) {
+                if (thisSiblings[i].classList.contains('rd-inputfile')) {
+                    thisRdInputFile = thisSiblings[i];
+                    break;
+                }
+            }
+
+            if (thisRdInputFile) {
+                let target = thisRdInputFile.querySelector('input[type="file"]');
+                let parent = target.parentElement;
+                let wrap = document.createElement('form');
+                wrap.appendChild(target);
+                parent.appendChild(wrap);
+                // reset form.
+                target.closest('form').reset();
+                // unwrap <form>
+                target.parentNode.replaceWith(target);
+            }
+        }
+
+        thisObj.closest('.rd-input-files-queue').innerHTML = '';
 
         return false;
     }// resetInputFile
