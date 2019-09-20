@@ -55,6 +55,7 @@ class RDTATabs {
     /**
      * Activate tab content.
      * 
+     * @private Do not call this, just call `init()`.
      * @param {object} selector Object of each tab main element.
      * @param {string} targetTabContent
      * @returns {undefined}
@@ -88,6 +89,7 @@ class RDTATabs {
     /**
      * Ajax and set content to target.
      * 
+     * @private Do not call this, just call `init()`.
      * @param {string} url
      * @param {object} selector Object of each tab main element.
      * @param {string} targetTabContent
