@@ -15,9 +15,9 @@ const {dest, parallel, series, src} = require('gulp');
 async function compileAndMinifyRDTA(cb) {
     const timeout = ms => new Promise(res => setTimeout(res, ms))
     await compileSass();
-    await timeout(500);
-    await cleanMinCss();
+    await timeout(600);
     await minRDTACss();
+    await timeout(600);
     await Promise.resolve();
 }// compileAndMinifyRDTA
 
@@ -32,7 +32,6 @@ function compileSass(cb) {
     const sass = require('gulp-sass');
     const Fiber = require('fibers');
     const sourcemaps = require('gulp-sourcemaps');
-    const cleanCSS = require('gulp-clean-css');
 
     sass.compiler = require('sass');
 
@@ -57,22 +56,6 @@ function compileSass(cb) {
 
 
 /**
- * Cleanup .min.css and .min.css.map.
- * 
- * This method was called from `compileAndMinifyRDTA()` function.<br>
- * This will be called after compiled Sass and before minify them.
- */
-async function cleanMinCss(cb) {
-    const del = require('del');
-
-    await del(['assets/css/rdta/**/*.min.*']);
-    await del(['assets/css/smartmenus/sm-rdta/**/*.min.*']);
-
-    await Promise.resolve();
-}// cleanMinCss
-
-
-/**
  * Minify RDTA css files.
  * 
  * This method was called from `compileAndMinifyRDTA()` function.<br>
@@ -87,7 +70,7 @@ function minRDTACss(cb) {
     console.log('Minifying RDTA css.');
 
     let tasks = folders.map(function(element) {
-        return src('assets/css/' + element + '/**/*.css')
+        return src(['assets/css/' + element + '/**/*.css', '!assets/css/' + element + '/**/*.min.css'])
             .pipe(sourcemaps.init({loadMaps: true}))
             .pipe(cleanCSS())
             .pipe(rename({extname: '.min.css'}))

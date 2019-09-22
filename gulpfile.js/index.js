@@ -7,6 +7,7 @@
 
 
 const {series, parallel, src, dest, watch} = require('gulp');
+const copyPackages = require('./copyPackages');
 const rdtaSass = require('./rdtaSass');
 const rdtaJs = require('./rdtaJs');
 
@@ -18,6 +19,7 @@ async function clean(cb) {
     const del = require('del');
 
     await del(['assets/js/rdta']);
+    await del(['assets/js/tooltip']);
     await del(['assets/css/rdta']);
     await del(['assets/css/smartmenus/sm-rdta']);
 
@@ -40,6 +42,7 @@ function replaceHeaders(cb) {
 
 exports.default = series(
     clean,
+    copyPackages.copyPackages,
     rdtaJs.bundleJs,
     rdtaSass.compileRdtaSass,
     replaceHeaders
