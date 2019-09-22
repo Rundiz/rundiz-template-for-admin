@@ -114,8 +114,8 @@ class RDTATabs {
     /**
      * Initialize RDTA tabs.
      * 
-     * @param {string}
-     * @param {object}
+     * @param {string} selector
+     * @param {object} options
      * @returns {undefined}
      */
     static init(selector, options) {

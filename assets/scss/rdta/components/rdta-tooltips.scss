@@ -1,0 +1,93 @@
+/*!
+* ----------------------------------------------------------------------------------------------
+* Rundiz template tooltips -- styling tooltips elements.
+* ----------------------------------------------------------------------------------------------
+*/
+
+
+@import '../global-common/_common-variables';
+@import '_variables';
+
+
+.rd-tooltips {
+    background-color: $tooltip-background-color;
+    padding: ($tooltip-arrow-size * 2);
+    z-index: $z-index-tooltips;
+
+    // .rd-tooltips[x-placement="top"]
+    &[x-placement="top"] {
+        margin-bottom: $tooltip-arrow-size;
+        // .rd-tooltips[x-placement="top"] .tooltip-arrow
+        .tooltip-arrow {
+            border-width: $tooltip-arrow-size $tooltip-arrow-size 0 $tooltip-arrow-size;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            bottom: -$tooltip-arrow-size;
+            left: calc(50% - #{$tooltip-arrow-size});
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    // .rd-tooltips[x-placement="right"]
+    &[x-placement="right"] {
+        margin-left: $tooltip-arrow-size;
+        // .rd-tooltips[x-placement="right"] .tooltip-arrow
+        .tooltip-arrow {
+            border-width: $tooltip-arrow-size $tooltip-arrow-size $tooltip-arrow-size 0;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            border-top-color: transparent;
+            left: -$tooltip-arrow-size;
+            top: calc(50% - #{$tooltip-arrow-size});
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    // .rd-tooltips[x-placement="bottom"]
+    &[x-placement="bottom"] {
+        margin-top: $tooltip-arrow-size;
+        // .rd-tooltips[x-placement="bottom"] .tooltip-arrow
+        .tooltip-arrow {
+            border-width: 0 $tooltip-arrow-size $tooltip-arrow-size $tooltip-arrow-size;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            border-top-color: transparent;
+            top: -$tooltip-arrow-size;
+            left: calc(50% - #{$tooltip-arrow-size});
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    // .rd-tooltips[x-placement="left"]
+    &[x-placement="left"] {
+        margin-right: $tooltip-arrow-size;
+        // .rd-tooltips[x-placement="left"] .tooltip-arrow
+        .tooltip-arrow {
+            border-width: $tooltip-arrow-size 0 $tooltip-arrow-size $tooltip-arrow-size;
+            border-bottom-color: transparent;
+            border-right-color: transparent;
+            border-top-color: transparent;
+            right: -$tooltip-arrow-size;
+            top: calc(50% - #{$tooltip-arrow-size});
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    // .rd-tooltips .tooltip-arrow,
+    .tooltip-arrow {
+        border-color: $tooltip-background-color;
+        border-style: solid;
+        margin: $tooltip-arrow-size;
+        position: absolute;
+    }
+
+    // .rd-tooltips .tooltip-inner
+    .tooltip-inner {
+        color: $tooltip-font-color;
+    }
+}
