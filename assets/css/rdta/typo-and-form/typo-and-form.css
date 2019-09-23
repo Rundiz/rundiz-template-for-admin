@@ -228,6 +228,7 @@ meter::-webkit-meter-bar {
 
 pre {
   margin: 0 0 0.625rem 0;
+  overflow: auto;
   padding: 0.625em;
 }
 

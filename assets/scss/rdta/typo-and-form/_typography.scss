@@ -194,6 +194,7 @@ meter {
 pre {
     @extend code;
     margin: 0 0 $content-block-element-margin-bottom 0;
+    overflow: auto;
     padding: 0.625em;
 }
 
