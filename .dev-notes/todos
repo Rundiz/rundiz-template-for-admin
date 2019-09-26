@@ -1,6 +1,3 @@
 - Fix sub menu that contain long list and the top of it disappear under top nav menu. ( Example in sub menus 3. )
     https://github.com/vadikom/smartmenus/issues/95
     @see rdtaHotfixLongSidebarSubmenus() function in rundiz-template-admin.js file.
-
-- Continue create new CSS & JS for tabs.
-- Add CSS & JS for dialog & modal dialog.
