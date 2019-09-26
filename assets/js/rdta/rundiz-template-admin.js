@@ -1,4 +1,4 @@
-/*! Rundiz template for admin v 2.0.6 
+/*! Rundiz template for admin v 2.0.7 
 License: MIT*//*! Rundiz template for admin
  * https://rundiz.com
  * @license MIT
@@ -34,6 +34,7 @@ class RundizTemplateAdmin {
             let thisTarget = event.currentTarget.activeElement;
             let thisParent = (typeof(thisTarget.parentElement) !== 'undefined' ? thisTarget.parentElement : {});
             if (
+                thisTarget &&
                 thisParent.classList.contains('rd-button-group') &&
                 thisTarget.classList.contains('dropdown-toggler')
             ) {
@@ -96,10 +97,12 @@ class RundizTemplateAdmin {
 
         if (typeof(thisObj) !== 'undefined') {
             let alertBox = thisObj.closest('.rd-alertbox');
-            alertBox.classList.add('rd-animation','fade', 'fade-out');
-            setTimeout(function() {
-                alertBox.parentNode.removeChild(alertBox);
-            }, 400);
+            if (alertBox) {
+                alertBox.classList.add('rd-animation','fade', 'fade-out');
+                setTimeout(function() {
+                    alertBox.parentNode.removeChild(alertBox);
+                }, 400);
+            }
         }
 
         return false;
@@ -382,7 +385,7 @@ class RundizTemplateAdmin {
      */
     sidebarToggler() {
         let togglerButton = document.querySelector('.rd-sidebar-toggler');
-        let dataTarget = togglerButton.dataset.target;
+        let dataTarget = (togglerButton ? togglerButton.dataset.target : '');
 
         document.addEventListener('click', function(event) {
             // match selector.
