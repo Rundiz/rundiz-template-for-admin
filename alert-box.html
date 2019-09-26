@@ -11,10 +11,10 @@
         <link rel="stylesheet" href="assets/font-awesome/css/all.min.css?v=5.10.2&amp;mt=1566477676">
 
         <link rel="stylesheet" href="assets/css/smartmenus/sm-core-css.css?v=1.1.0&amp;mt=1559110074">
-        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?mt=1568876955">
+        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?mt=1569462792">
 
-        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?mt=1568876955">
-        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?mt=1568876955"> 
+        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?mt=1569462793">
+        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?mt=1569462793"> 
     </head>
     <body ontouchstart="">
         <header class="rd-navbar">
@@ -224,15 +224,19 @@
                                         <li><a href="stickymenu-long-content-menu.html">Sticky menu (long content &amp; menu)</a></li>
                                     </ul>
                                 </li>
+                                <li class="divider"></li>
+                                <li><a href="accordion.html">Accordion</a></li>
                                 <li><a href="alert-box.html">Alert box</a></li>
                                 <li><a href="badge.html">Badge</a></li>
                                 <li><a href="button.html">Button</a></li>
                                 <li><a href="columns-flex.html">Columns flex</a></li>
                                 <li><a href="datatable.html">Data table</a></li>
+                                <li><a href="dialog.html">Dialog</a></li>
                                 <li><a href="form.html">Form</a></li>
                                 <li><a href="helpers.html">Helpers</a></li>
                                 <li><a href="pagination.html">Pagination</a></li>
-                                <li><a href="tab.html">Tab</a></li>
+                                <li><a href="tabs.html">Tabs</a></li>
+                                <li><a href="tooltips.html">Tooltips</a></li>
                             </ul>
                         </li>
                         <li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-laptop-code"></i> <span class="rd-sidebar-menu-text">Examples</span></a>
@@ -291,24 +295,29 @@
 
                     <h3>Dismissable</h3>
                     <div class="rd-alertbox is-dismissable">
-                        <button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(jQuery(this));"><span aria-hidden="true">&times;</span></button>
+                        <button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(this);"><span aria-hidden="true">&times;</span></button>
                         Default alert box. Please follow <a href="#" onclick="return false">this link</a>.
                     </div>
                     <div class="rd-alertbox alert-info is-dismissable">
-                        <button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(jQuery(this));"><span aria-hidden="true">&times;</span></button>
+                        <button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(this);"><span aria-hidden="true">&times;</span></button>
                         Info alert box. Please follow <a href="#" onclick="return false">this link</a>.
                     </div>
                     <div class="rd-alertbox alert-danger is-dismissable">
-                        <button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(jQuery(this));"><span aria-hidden="true">&times;</span></button>
+                        <button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(this);"><span aria-hidden="true">&times;</span></button>
                         Danger alert box. Please follow <a href="#" onclick="return false">this link</a>.
                     </div>
                     <div class="rd-alertbox alert-warning is-dismissable">
-                        <button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(jQuery(this));"><span aria-hidden="true">&times;</span></button>
+                        <button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(this);"><span aria-hidden="true">&times;</span></button>
                         Warning alert box. Please follow <a href="#" onclick="return false">this link</a>.
                     </div>
                     <div class="rd-alertbox alert-success is-dismissable">
-                        <button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(jQuery(this));"><span aria-hidden="true">&times;</span></button>
+                        <button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(this);"><span aria-hidden="true">&times;</span></button>
                         Success alert box. Please follow <a href="#" onclick="return false">this link</a>.
+                    </div>
+                    <h4>Using <code>jQuery(this)</code></h4>
+                    <div class="rd-alertbox is-dismissable">
+                        <button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(jQuery(this));"><span aria-hidden="true">&times;</span></button>
+                        Default alert box. Please follow <a href="#" onclick="return false">this link</a>.
                     </div>
 
                     <h3>Alert with more content</h3>
@@ -348,6 +357,6 @@
         <script src="assets/js/sticky-sidebar/jquery.sticky-sidebar.min.js?v=3.2.0&amp;mt=1560009256"></script>
         <script src="assets/js/sticky-sidebar/ResizeSensor.js?v=3.2.0&amp;mt=1560009256"></script><!-- use with sticky sidebar js. -->
 
-        <script src="assets/js/rdta/rundiz-template-admin.js?mt=1566464656"></script> 
+        <script src="assets/js/rdta/rundiz-template-admin.js?mt=1569462791"></script> 
     </body>
 </html>

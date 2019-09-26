@@ -1,0 +1,52 @@
+/*!
+* ----------------------------------------------------------------------------------------------
+* Rundiz template accordion -- styling accordion elements.
+* ----------------------------------------------------------------------------------------------
+*/
+.rd-accordion {
+  margin-left: 0;
+}
+.rd-accordion .rd-accordion-group {
+  border-color: #ddd;
+  border-style: solid;
+  border-bottom-width: 0;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-left-width: 1px;
+  margin: 0;
+  padding: 0;
+}
+.rd-accordion .rd-accordion-group:last-child {
+  border-bottom-width: 1px;
+}
+.rd-accordion .rd-accordion-group .rd-accordion-body {
+  padding: 0.625rem;
+}
+.rd-accordion .rd-accordion-group .rd-accordion-body.collapse {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 0;
+  padding-top: 0;
+  transition: height 0.3s, padding-bottom 0.3s, padding-top 0.3s;
+}
+.rd-accordion .rd-accordion-group .rd-accordion-body.collapse.expanded {
+  height: auto;
+  padding-bottom: 0.625rem;
+  padding-top: 0.625rem;
+}
+.rd-accordion .rd-accordion-group .rd-accordion-header {
+  background-color: #eee;
+  border-bottom: 1px solid #ddd;
+  margin: 0;
+  padding: 0.313rem 0.625rem;
+}
+.rd-accordion .rd-accordion-group .rd-accordion-header > * {
+  color: inherit;
+  display: block;
+}
+
+ul.rd-accordion,
+ol.rd-accordion {
+  list-style: none;
+}
+/*# sourceMappingURL=rdta-accordion.css.map */

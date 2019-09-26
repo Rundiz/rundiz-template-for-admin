@@ -1,0 +1,70 @@
+/*!
+* ----------------------------------------------------------------------------------------------
+* Rundiz template accordion -- styling accordion elements.
+* ----------------------------------------------------------------------------------------------
+*/
+
+
+@import '../global-common/_common-variables';
+
+
+.rd-accordion {
+    margin-left: 0;
+
+    // .rd-accordion .rd-accordion-group
+    .rd-accordion-group {
+        border-color: $border-color;
+        border-style: solid;
+        border-bottom-width: 0;
+        border-top-width: 1px;
+        border-right-width: 1px;
+        border-left-width: 1px;
+        margin: 0;
+        padding: 0;
+
+        // .rd-accordion .rd-accordion-group:last-child
+        &:last-child {
+            border-bottom-width: 1px;
+        }
+
+        // .rd-accordion .rd-accordion-group .rd-accordion-body
+        .rd-accordion-body {
+            padding: .625rem;
+
+            // .rd-accordion .rd-accordion-group .rd-accordion-body.collapse
+            &.collapse {
+                height: 0;
+                overflow: hidden;
+                padding-bottom: 0;
+                padding-top: 0;
+                transition: height 0.3s, padding-bottom 0.3s, padding-top 0.3s;
+
+                // .rd-accordion .rd-accordion-group .rd-accordion-body.collapse.expanded
+                &.expanded {
+                    height: auto;
+                    padding-bottom: .625rem;
+                    padding-top: .625rem;
+                }
+            }
+        }
+
+        // .rd-accordion .rd-accordion-group .rd-accordion-header
+        .rd-accordion-header {
+            background-color: $background-color;
+            border-bottom: 1px solid $border-color;
+            margin: 0;
+            padding: .313rem .625rem;
+
+            // .rd-accordion .rd-accordion-group .rd-accordion-header > *
+            > * {
+                color: inherit;
+                display: block;
+            }
+        }
+    }
+}
+
+ul.rd-accordion, 
+ol.rd-accordion {
+    list-style: none;
+}

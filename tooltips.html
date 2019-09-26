@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Tab | Rundiz template for admin</title>
+        <title>Tooltips | Rundiz template for admin</title>
         <link rel="stylesheet" href="assets/css/sanitize/sanitize.css?v=11.0.0&amp;mt=499162500">
         <link rel="stylesheet" href="assets/css/sanitize/typography.css?v=11.0.0&amp;mt=499162500">
         <link rel="stylesheet" href="assets/css/sanitize/forms.css?v=11.0.0&amp;mt=499162500">
@@ -11,12 +11,11 @@
         <link rel="stylesheet" href="assets/font-awesome/css/all.min.css?v=5.10.2&amp;mt=1566477676">
 
         <link rel="stylesheet" href="assets/css/smartmenus/sm-core-css.css?v=1.1.0&amp;mt=1559110074">
-        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?mt=1568876955">
+        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?mt=1569462792">
 
-        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?mt=1568876955">
-        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?mt=1568876955"> 
-        <link rel="stylesheet" href="assets/css/jquery-ui/jquery-ui.min.css?mt=1559110074">
-        <link rel="stylesheet" href="assets/css/rdta/jquery-ui-override/jquery-ui-override.css?mt=1568876955">
+        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?mt=1569462793">
+        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?mt=1569462793"> 
+        <link rel="stylesheet" href="assets/css/rdta/components/rdta-tooltips.css?mt=1569462793">
     </head>
     <body ontouchstart="">
         <header class="rd-navbar">
@@ -226,15 +225,19 @@
                                         <li><a href="stickymenu-long-content-menu.html">Sticky menu (long content &amp; menu)</a></li>
                                     </ul>
                                 </li>
+                                <li class="divider"></li>
+                                <li><a href="accordion.html">Accordion</a></li>
                                 <li><a href="alert-box.html">Alert box</a></li>
                                 <li><a href="badge.html">Badge</a></li>
                                 <li><a href="button.html">Button</a></li>
                                 <li><a href="columns-flex.html">Columns flex</a></li>
                                 <li><a href="datatable.html">Data table</a></li>
+                                <li><a href="dialog.html">Dialog</a></li>
                                 <li><a href="form.html">Form</a></li>
                                 <li><a href="helpers.html">Helpers</a></li>
                                 <li><a href="pagination.html">Pagination</a></li>
-                                <li><a href="tab.html">Tab</a></li>
+                                <li><a href="tabs.html">Tabs</a></li>
+                                <li><a href="tooltips.html">Tooltips</a></li>
                             </ul>
                         </li>
                         <li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-laptop-code"></i> <span class="rd-sidebar-menu-text">Examples</span></a>
@@ -265,64 +268,39 @@
                 <nav>
     <ul class="rd-breadcrumb">
         <li><a href="./">Home</a></li>
-        <li class="current"><a href="#" onclick="return false;">Tab</a></li>
+        <li class="current"><a href="#" onclick="return false;">Tooltips</a></li>
     </ul>
 </nav>
  
                 <div class="rd-page-content">
-                    <h1>Tab</h1>
+                    <h1>Tooltips</h1>
                     <p>
-                        The tab content based on <a href="http://jqueryui.com/" target="jqueryui">jQuery UI</a><br>
-                        In order to make tab works, you have to add jquery-ui js file and css file and then add link to <strong>assets/css/rdta/jquery-ui-override/jquery-ui-override.css</strong>.
+                        Tooltips use <a href="https://popper.js.org/tooltip-examples.html" target="tooltip.js">tooltip.js</a> powered by popper.js.<br>
+                        In order to make tooltips works, add these files.
+                        <strong>assets/css/rdta/components/rdta-tooltips.css</strong>,
+                        <strong>assets/js/tooltip.js/umd/tooltip.min.js</strong>,
+                        <strong>assets/js/rdta/components/rdta-tooltips.js</strong>
                     </p>
                     <hr>
 
                     <h2>Examples</h2>
-                    <div class="tabs">
-                        <ul>
-                            <li><a href="#tabs-1">Nunc tincidunt</a></li>
-                            <li><a href="#tabs-2">Proin dolor</a></li>
-                            <li><a href="#tabs-3">Aenean lacinia</a></li>
-                        </ul>
-                        <div id="tabs-1">
-                            <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
-                        </div>
-                        <div id="tabs-2">
-                            <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
-                        </div>
-                        <div id="tabs-3">
-                            <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
-                            <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
-                        </div>
-                    </div>
-                    <h3>Ajax</h3>
-                    <div class="tabs">
-                        <ul>
-                            <li><a href="#tabs-a1">Preloaded</a></li>
-                            <li><a href="xhr-page.html">Ajax</a></li>
-                        </ul>
-                        <div id="tabs-a1">
-                            <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
-                        </div>
-                    </div>
-                    <h3>Vertical</h3>
-                    <div class="tabs tabs-vertical">
-                        <ul>
-                            <li><a href="#tabs-v1">Nunc tincidunt</a></li>
-                            <li><a href="#tabs-v2">Proin dolor</a></li>
-                            <li><a href="#tabs-v3">Aenean lacinia</a></li>
-                        </ul>
-                        <div id="tabs-v1">
-                            <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
-                        </div>
-                        <div id="tabs-v2">
-                            <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
-                        </div>
-                        <div id="tabs-v3">
-                            <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
-                            <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
-                        </div>
-                    </div>
+                    <p>
+                        Lorem ipsum dolor <a title="A tooltip text" data-toggle="tooltip">sit amet</a>, consectetur adipiscing elit. Curabitur in <a title="Another tooltip" data-toggle="tooltip">sagittis</a> neque. 
+                        Nunc id ex sed tortor dapibus mollis. Phasellus mollis maximus pretium. 
+                        Praesent hendrerit ultricies tellus a vehicula. 
+                        Interdum et malesuada fames ac ante ipsum primis in faucibus. 
+                        Duis nisi elit, aliquam sit amet gravida eget, tempus nec ante. 
+                        Sed dictum lobortis libero ac placerat.
+                    </p>
+                    <pre>&lt;a title=&quot;A tooltip text&quot; data-toggle=&quot;tooltip&quot;&gt;Text&lt;/a&gt;</pre>
+                    <h3>Placement</h3>
+                    <button type="button" title="Tooltip on top" data-toggle="tooltip" data-placement="top">Tooltip on top</button>
+                    <button type="button" title="Tooltip on right" data-toggle="tooltip" data-placement="right">Tooltip on right</button>
+                    <button type="button" title="Tooltip on bottom" data-toggle="tooltip" data-placement="bottom">Tooltip on bottom</button>
+                    <button type="button" title="Tooltip on left" data-toggle="tooltip" data-placement="left">Tooltip on left</button>
+
+                    <hr>
+                    <p>For more options, please read more at <a href="https://popper.js.org/tooltip-documentation.html" target="tooltip.js-doc">tooltip.js documentation</a>.</p>
                 </div><!--.rd-page-content-->
             </main>
             <footer>
@@ -342,12 +320,11 @@
         <script src="assets/js/sticky-sidebar/jquery.sticky-sidebar.min.js?v=3.2.0&amp;mt=1560009256"></script>
         <script src="assets/js/sticky-sidebar/ResizeSensor.js?v=3.2.0&amp;mt=1560009256"></script><!-- use with sticky sidebar js. -->
 
-        <script src="assets/js/rdta/rundiz-template-admin.js?mt=1566464656"></script> 
-        <script src="assets/js/jquery-ui/jquery-ui.min.js?mt=1560009256"></script>
-        <script type="text/javascript">
-            jQuery(function($) {
-                $('.tabs').tabs();
-            });
+        <script src="assets/js/rdta/rundiz-template-admin.js?mt=1569462791"></script> 
+        <script src="assets/js/tooltip.js/umd/tooltip.min.js"></script>
+        <script src="assets/js/rdta/components/rdta-tooltips.js"></script>
+        <script>
+            RDTATooltips.init('[data-toggle="tooltip"]');
         </script>
     </body>
 </html>

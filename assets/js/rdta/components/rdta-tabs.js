@@ -1,4 +1,4 @@
-/*! Rundiz template for admin v 2.0.4 
+/*! Rundiz template for admin v 2.0.5 
 License: MIT*//**
  * RDTA Tabs
  */
@@ -23,7 +23,11 @@ class RDTATabs {
 
             // add required class name.
             item.classList.add('rd-tabs');
-            item.querySelector('ul').classList.add('rd-tabs-nav');
+            if (item.querySelector('ul')) {
+                item.querySelector('ul').classList.add('rd-tabs-nav');
+            } else if (item.querySelector('ol')) {
+                item.querySelector('ol').classList.add('rd-tabs-nav');
+            }
             for (let i = 0; i < item.children.length; i++) {
                 // loop each children of selector.
                 if (!item.children[i].classList.contains('rd-tabs-nav')) {

@@ -11,7 +11,8 @@
 
 .rd-tooltips {
     background-color: $tooltip-background-color;
-    padding: ($tooltip-arrow-size * 2);
+    font-size: 80%;
+    padding: ($tooltip-arrow-size);
     z-index: $z-index-tooltips;
 
     // .rd-tooltips[x-placement="top"]

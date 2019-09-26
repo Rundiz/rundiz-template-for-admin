@@ -11,10 +11,10 @@
         <link rel="stylesheet" href="assets/font-awesome/css/all.min.css?v=5.10.2&amp;mt=1566477676">
 
         <link rel="stylesheet" href="assets/css/smartmenus/sm-core-css.css?v=1.1.0&amp;mt=1559110074">
-        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?mt=1568876955">
+        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?mt=1569462792">
 
-        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?mt=1568876955">
-        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?mt=1568876955"> 
+        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?mt=1569462793">
+        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?mt=1569462793"> 
     </head>
     <body ontouchstart="">
         <header class="rd-navbar">
@@ -224,15 +224,19 @@
                                         <li><a href="stickymenu-long-content-menu.html">Sticky menu (long content &amp; menu)</a></li>
                                     </ul>
                                 </li>
+                                <li class="divider"></li>
+                                <li><a href="accordion.html">Accordion</a></li>
                                 <li><a href="alert-box.html">Alert box</a></li>
                                 <li><a href="badge.html">Badge</a></li>
                                 <li><a href="button.html">Button</a></li>
                                 <li><a href="columns-flex.html">Columns flex</a></li>
                                 <li><a href="datatable.html">Data table</a></li>
+                                <li><a href="dialog.html">Dialog</a></li>
                                 <li><a href="form.html">Form</a></li>
                                 <li><a href="helpers.html">Helpers</a></li>
                                 <li><a href="pagination.html">Pagination</a></li>
-                                <li><a href="tab.html">Tab</a></li>
+                                <li><a href="tabs.html">Tabs</a></li>
+                                <li><a href="tooltips.html">Tooltips</a></li>
                             </ul>
                         </li>
                         <li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-laptop-code"></i> <span class="rd-sidebar-menu-text">Examples</span></a>
@@ -274,29 +278,30 @@
 
                     <h2>Examples</h2>
                     <div class="rd-datatable-wrapper">
-                        <table class="rd-datatable">
-                            <thead>
-                                <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Address</th>
-                                    <th>Email</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tfoot>
-                                <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Address</th>
-                                    <th>Email</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </tfoot>
-                            <tbody>
-                                
+                        <form method="post" actionsrc="form.html">
+                            <table class="rd-datatable">
+                                <thead>
+                                    <tr>
+                                        <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Address</th>
+                                        <th>Email</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Address</th>
+                                        <th>Email</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    
                                 <tr>
                                     <td class="column-checkbox"><input type="checkbox" name="id[]" value="1"></td>
                                     <td>1</td>
@@ -383,8 +388,10 @@
                                     </td>
                                 </tr>
  
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                            <button type="submit">Submit</button>
+                        </form>
                     </div><!--.rd-datatable-wrapper-->
                     <h3>H Border</h3>
                     <p>This data table only use horizontal border</p>
@@ -392,7 +399,7 @@
                         <table class="rd-datatable h-border">
                             <thead>
                                 <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Address</th>
@@ -402,7 +409,7 @@
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Address</th>
@@ -507,7 +514,7 @@
                         <table class="rd-datatable h-border">
                             <thead>
                                 <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
                                     <th><a href="?sort=id" onclick="return false;">ID <i class="order-asc sortable-icon"></i></a></th>
                                     <th class="sorted"><a href="?sort=name" onclick="return false;">Name <i class="order-asc sortable-icon"></i></a></th>
                                     <th><a href="?sort=address" onclick="return false;">Address <i class="order-asc sortable-icon"></i></a></th>
@@ -517,7 +524,7 @@
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
                                     <th><a href="?sort=id" onclick="return false;">ID <i class="order-asc sortable-icon"></i></a></th>
                                     <th class="sorted"><a href="?sort=name" onclick="return false;">Name <i class="order-asc sortable-icon"></i></a></th>
                                     <th><a href="?sort=address" onclick="return false;">Address <i class="order-asc sortable-icon"></i></a></th>
@@ -622,7 +629,7 @@
                         <table class="rd-datatable h-border">
                             <thead>
                                 <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
                                     <th>Type</th>
                                     <th>Name</th>
                                     <th>Actions</th>
@@ -630,7 +637,7 @@
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
                                     <th>Type</th>
                                     <th>Name</th>
                                     <th>Actions</th>
@@ -786,7 +793,7 @@
                         <table class="rd-datatable">
                             <thead>
                                 <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
                                     <th class="sorted"><a href="?sort=id" onclick="return false;">ID <i class="order-desc sortable-icon"></i></a></th>
                                     <th>Name</th>
                                     <th>Address</th>
@@ -810,7 +817,7 @@
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
                                     <th class="sorted"><a href="?sort=id" onclick="return false;">ID <i class="order-desc sortable-icon"></i></a></th>
                                     <th>Name</th>
                                     <th>Address</th>
@@ -914,7 +921,7 @@
                     <table class="rd-datatable responsive">
                         <thead>
                             <tr>
-                                <td class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></td>
+                                <td class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></td>
                                 <th class="column-primary"><a href="?sort=name" onclick="return false;">Name <i class="order-asc sortable-icon"></i></a></th>
                                 <th><a href="?sort=address" onclick="return false;">Address <i class="order-asc sortable-icon"></i></a></th>
                                 <th><a href="?sort=email" onclick="return false;">Email <i class="order-asc sortable-icon"></i></a></th>
@@ -922,7 +929,7 @@
                         </thead>
                         <tfoot>
                             <tr>
-                                <td class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></td>
+                                <td class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></td>
                                 <th class="column-primary"><a href="?sort=name" onclick="return false;">Name <i class="order-asc sortable-icon"></i></a></th>
                                 <th><a href="?sort=address" onclick="return false;">Address <i class="order-asc sortable-icon"></i></a></th>
                                 <th><a href="?sort=email" onclick="return false;">Email <i class="order-asc sortable-icon"></i></a></th>
@@ -1007,7 +1014,7 @@
                     <table class="rd-datatable responsive">
                         <thead>
                             <tr>
-                                <td class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></td>
+                                <td class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></td>
                                 <th class="column-primary">Name</th>
                                 <th>Address</th>
                                 <th>Email</th>
@@ -1015,7 +1022,7 @@
                         </thead>
                         <tfoot>
                             <tr>
-                                <td class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></td>
+                                <td class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></td>
                                 <th class="column-primary">Name</th>
                                 <th>Address</th>
                                 <th>Email</th>
@@ -1046,6 +1053,6 @@
         <script src="assets/js/sticky-sidebar/jquery.sticky-sidebar.min.js?v=3.2.0&amp;mt=1560009256"></script>
         <script src="assets/js/sticky-sidebar/ResizeSensor.js?v=3.2.0&amp;mt=1560009256"></script><!-- use with sticky sidebar js. -->
 
-        <script src="assets/js/rdta/rundiz-template-admin.js?mt=1566464656"></script> 
+        <script src="assets/js/rdta/rundiz-template-admin.js?mt=1569462791"></script> 
     </body>
 </html>
