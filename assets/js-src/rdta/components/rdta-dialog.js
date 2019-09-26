@@ -7,6 +7,26 @@ class RDTADialog {
 
 
     /**
+     * Activate (open) the dialog.
+     * 
+     * @param {string} selector
+     * @returns {undefined}
+     */
+    activateDialog(selector) {
+        let thisClass = this;
+
+        if (!document.querySelector(selector).classList.contains('show')) {
+            if (document.querySelector(selector).classList.contains('rd-dialog-modal')) {
+                document.body.classList.add('rd-modal-open');
+            }
+            document.querySelector(selector).classList.add('show');
+            thisClass.listenOnCloseButton(selector);
+            thisClass.listenOnClickOutsideClose(selector);
+        }
+    }// activateDialog
+
+
+    /**
      * Initialize the dialog by listening on button clicked.
      */
     static init() {
@@ -17,14 +37,7 @@ class RDTADialog {
                 event.stopPropagation();
                 let targetDialog = event.currentTarget.activeElement.dataset.target;
                 if (targetDialog) {
-                    if (!document.querySelector(targetDialog).classList.contains('show')) {
-                        if (document.querySelector(targetDialog).classList.contains('rd-dialog-modal')) {
-                            document.body.classList.add('rd-modal-open');
-                        }
-                        document.querySelector(targetDialog).classList.add('show');
-                        thisClass.listenOnCloseButton(targetDialog);
-                        thisClass.listenOnClickOutsideClose(targetDialog);
-                    }
+                    thisClass.activateDialog(targetDialog);
                 }
             }
         });
@@ -85,7 +98,7 @@ class RDTADialog {
      * 
      * @private
      */
-    listenOnEscapeKeyPressClose(targetDialog) {
+    listenOnEscapeKeyPressClose() {
         document.addEventListener('keyup', function handler(event) {
             if (
                 event.key === 'Escape' &&
@@ -113,8 +126,3 @@ class RDTADialog {
 
 
 }
-
-
-document.addEventListener('DOMContentLoaded',function() {
-    RDTADialog.init();
-});

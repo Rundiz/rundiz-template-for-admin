@@ -42,10 +42,10 @@ include 'includes/html-head.php';
                         </div>
                     </div>
                     <pre>&lt;button type=&quot;button&quot; data-toggle=&quot;dialog&quot; data-target=&quot;#dialog01&quot;&gt;Open dialog&lt;/button&gt;
-&lt;div id=&quot;dialog01&quot; class=&quot;rd-dialog rd-block-level-margin-bottom&quot; aria-labelledby=&quot;example-dialog-label&quot;&gt;
+&lt;div id=&quot;dialog01&quot; class=&quot;rd-dialog hide&quot;&gt;
     &lt;div class=&quot;rd-dialog-header&quot;&gt;
-        &lt;h4 id=&quot;example-dialog-label&quot; class=&quot;rd-dialog-title&quot;&gt;Dialog header&lt;/h4&gt;
-        &lt;button class=&quot;rd-dialog-close&quot; type=&quot;button&quot; aria-label=&quot;Close&quot;&gt;
+        &lt;h4 class=&quot;rd-dialog-title&quot;&gt;Dialog header&lt;/h4&gt;
+        &lt;button class=&quot;rd-dialog-close&quot; type=&quot;button&quot; aria-label=&quot;Close&quot; data-dismiss=&quot;dialog&quot;&gt;
             &lt;i class=&quot;fas fa-times&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
         &lt;/button&gt;
     &lt;/div&gt;
@@ -54,7 +54,7 @@ include 'includes/html-head.php';
     &lt;/div&gt;
     &lt;div class=&quot;rd-dialog-footer&quot;&gt;
         &lt;button class=&quot;rd-button primary&quot; type=&quot;button&quot;&gt;Save&lt;/button&gt;
-        &lt;button class=&quot;rd-button&quot; type=&quot;button&quot;&gt;Cancel&lt;/button&gt;
+        &lt;button class=&quot;rd-button&quot; type=&quot;button&quot; data-dismiss=&quot;dialog&quot;&gt;Close&lt;/button&gt;
     &lt;/div&gt;
 &lt;/div&gt;</pre>
                     <h3>Live demo</h3>
@@ -99,6 +99,24 @@ include 'includes/html-head.php';
                             </div>
                         </div>
                     </div>
+                    <pre>&lt;button type=&quot;button&quot; data-toggle=&quot;dialog&quot; data-target=&quot;#dialog02&quot;&gt;Open modal dialog&lt;/button&gt;
+&lt;div id=&quot;dialog02&quot; class=&quot;rd-dialog-modal&quot;&gt;
+    &lt;div class=&quot;rd-dialog&quot;&gt;
+        &lt;div class=&quot;rd-dialog-header&quot;&gt;
+            &lt;h4 class=&quot;rd-dialog-title&quot;&gt;Dialog with modal&lt;/h4&gt;
+            &lt;button class=&quot;rd-dialog-close&quot; type=&quot;button&quot; aria-label=&quot;Close&quot; data-dismiss=&quot;dialog&quot;&gt;
+                &lt;i class=&quot;fas fa-times&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;rd-dialog-body&quot;&gt;
+            &lt;p&gt;The modal dialog with backdrop.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;rd-dialog-footer&quot;&gt;
+            &lt;button class=&quot;rd-button primary&quot; type=&quot;button&quot;&gt;Save&lt;/button&gt;
+            &lt;button class=&quot;rd-button&quot; type=&quot;button&quot; data-dismiss=&quot;dialog&quot;&gt;Close&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
                     <h3>Long paragraph</h3>
                     <div class="rd-block-level-margin-bottom">
                         <button type="button" data-toggle="dialog" data-target="#dialog03">Open modal dialog</button>
@@ -210,6 +228,28 @@ include 'includes/html-head.php';
                             </div>
                         </div>
                     </div>
+                    <h3>Manual activate dialog</h3>
+                    <p>The open dialog button below does not contain <code>data-toggle=&quot;dialog&quot;</code> but it just call the class.method to open dialog manually.</p>
+                    <div class="rd-block-level-margin-bottom">
+                        <button type="button" onclick="rdtaOpenDialogManual();">Open modal dialog</button>
+                        <div id="dialog08" class="rd-dialog-modal">
+                            <div class="rd-dialog">
+                                <div class="rd-dialog-header">
+                                    <h4 class="rd-dialog-title">Manual dialog</h4>
+                                    <button class="rd-dialog-close" type="button" aria-label="Close" data-dismiss="dialog">
+                                        <i class="fas fa-times" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <div class="rd-dialog-body">
+                                    <p>Manual trigger open modal dialog.</p>
+                                </div>
+                                <div class="rd-dialog-footer">
+                                    <button class="rd-button primary" type="button">Save</button>
+                                    <button class="rd-button" type="button" data-dismiss="dialog">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div><!--.rd-page-content-->
             </main>
 <?php include 'includes/partials/page-footer.php'; ?> 
@@ -218,5 +258,15 @@ include 'includes/html-head.php';
 
 <?php include 'includes/js-end-body.php'; ?> 
         <script src="assets/js/rdta/components/rdta-dialog.js"></script>
+        <script>
+            function rdtaOpenDialogManual() {
+                let rdtaDialog = new RDTADialog();
+                rdtaDialog.activateDialog('#dialog08');
+            }// rdtaOpenDialogManual
+
+            document.addEventListener('DOMContentLoaded', function() {
+                RDTADialog.init();
+            });
+        </script>
     </body>
 </html>
