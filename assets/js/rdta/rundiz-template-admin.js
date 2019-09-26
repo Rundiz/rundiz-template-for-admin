@@ -1,4 +1,4 @@
-/*! Rundiz template for admin v 2.0.7 
+/*! Rundiz template for admin v 2.0.8 
 License: MIT*//*! Rundiz template for admin
  * https://rundiz.com
  * @license MIT
@@ -230,9 +230,11 @@ class RundizTemplateAdmin {
         document.addEventListener('click', function(event) {
             if (event.currentTarget.activeElement.classList.contains('toggle-row')) {
                 let thisElement = event.currentTarget.activeElement;
-                let toggleIcons = thisElement.querySelector('.faicon').dataset.toggleIcon;
-                $(thisElement.querySelectorAll('.faicon')).toggleClass(toggleIcons);// non jQuery cannot toggle multiple class names.
-                thisElement.closest('tr').classList.toggle('is-expanded');
+                let toggleIcons = (thisElement ? thisElement.querySelector('.faicon').dataset.toggleIcon : '');
+                if (toggleIcons) {
+                    $(thisElement.querySelectorAll('.faicon')).toggleClass(toggleIcons);// non jQuery cannot toggle multiple class names.
+                    thisElement.closest('tr').classList.toggle('is-expanded');
+                }
             }
         });
 
@@ -332,7 +334,11 @@ class RundizTemplateAdmin {
         let $ = jQuery.noConflict();
 
         let togglerButton = document.querySelector('.rd-sidebar-expand-collapse-controls a');
-        let dataTarget = togglerButton.dataset.target;
+        let dataTarget = (togglerButton ? togglerButton.dataset.target : '');
+
+        if (!dataTarget) {
+            return false;
+        }
 
         document.addEventListener('click', function(event) {
             // match selector.
@@ -381,11 +387,15 @@ class RundizTemplateAdmin {
      * This method can work on dynamically insert/update elements.<br>
      * This will toggle push/pull (or show/hide) sidebar menu in the small screen, not expand/collapse (shorten).
      * 
-     * @returns {undefined}
+     * @returns {Boolean}
      */
     sidebarToggler() {
         let togglerButton = document.querySelector('.rd-sidebar-toggler');
         let dataTarget = (togglerButton ? togglerButton.dataset.target : '');
+
+        if (!dataTarget) {
+            return false;
+        }
 
         document.addEventListener('click', function(event) {
             // match selector.
