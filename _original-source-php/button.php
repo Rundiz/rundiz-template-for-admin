@@ -272,6 +272,9 @@ include 'includes/html-head.php';
                             <li><a href="#" onclick="return false;">Cancel B</a></li>
                         </ul>
                     </div>
+                    <h3>Dynamically activate button with dropdown</h3>
+                    <div id="demo-button-dropdown-placeholder" style="border: 1px dashed #ccc; padding: 0.625rem;"></div>
+                    <button id="demo-dynamically-add-button" type="button">Click here to add a button</button>
                     <hr>
 
                     <h2>Button group</h2>
@@ -288,5 +291,18 @@ include 'includes/html-head.php';
         
 
 <?php include 'includes/js-end-body.php'; ?> 
+        <script>
+            document.getElementById('demo-dynamically-add-button').addEventListener('click', function(event) {
+                let buttonDropdown = '<div class="rd-button-group">\
+                    <button class="rd-button dropdown-toggler">Dropdown <i class="fas fa-caret-down"></i></button>\
+                    <ul class="rd-dropdown">\
+                        <li><a href="#" onclick="return false;">Save A</a></li>\
+                        <li><a href="#" onclick="return false;">Save &amp; Publish A</a></li>\
+                        <li><a href="#" onclick="return false;">Cancel A</a></li>\
+                    </ul>\
+                </div>';
+                document.getElementById('demo-button-dropdown-placeholder').innerHTML = buttonDropdown;
+            });
+        </script>
     </body>
 </html>

@@ -16,14 +16,6 @@ include 'includes/html-head.php';
 <?php include 'includes/partials/multimedia.php'; ?> 
 
 <?php include 'includes/partials/form.php'; ?> 
-
-            <hr>
-            <h5>Credits</h5>
-            <p>
-                Icon uses <a href="https://fontawesome.com" target="fontawesome">FontAwesome 5</a>, 
-                Based CSS uses <a href="https://github.com/csstools/sanitize.css" target="sanizecss">Sanitize.css</a>.
-                All other credits is on each page that use certain plugin.
-            </p>
             <hr>
 
             <footer>
@@ -34,6 +26,7 @@ include 'includes/html-head.php';
                     Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9HQE4GVV4KTZE
                     Thank you in advance.
                     -->
+                    | <a href="credits.php">Credits.</a>
                 </p>
             </footer>
         </div>

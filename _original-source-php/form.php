@@ -1,4 +1,15 @@
-<?php require 'includes/functions.php'; ?>
+<?php 
+require 'includes/functions.php'; 
+
+// for debugging form inputs.
+if (strtolower($_SERVER['REQUEST_METHOD']) === 'post') {
+    echo '<pre>' . print_r($_POST, true) . '</pre>' . PHP_EOL;
+    if (!empty($_FILES)) {
+        echo '<pre>' . print_r($_FILES, true) . '</pre>' . PHP_EOL;
+    }
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html class="rd-template-admin">
     <head>
@@ -21,7 +32,7 @@ include 'includes/html-head.php';
                     <hr>
 
                     <h2>Examples</h2>
-                    <form class="rd-form">
+                    <form class="rd-form" method="post" enctype="multipart/form-data">
                         <fieldset>
                             <legend>Input types</legend>
                         <?php
@@ -31,7 +42,7 @@ include 'includes/html-head.php';
                             echo indent(7).'<div class="form-group">'."\n";
                             echo indent(8).'<label class="control-label" for="input-type-'.$input_type.'">Input '.ucwords($input_type).'</label><br>'."\n";
                             echo indent(8).'<div class="control-wrapper">'."\n";
-                            echo indent(9).'<input id="input-type-'.$input_type.'" type="'.$input_type.'">'."\n";
+                            echo indent(9).'<input id="input-type-'.$input_type.'" type="'.$input_type.'" name="demo-input-' . $input_type . '">'."\n";
                             echo indent(8).'</div>'."\n";
                             echo indent(7).'</div>'."\n";
                         }
@@ -57,11 +68,11 @@ include 'includes/html-head.php';
                                 <div class="control-wrapper">
                                     <span class="rd-button info small rd-inputfile" tabindex="0">
                                         <span class="label">Choose file</span>
-                                        <input id="rd-inputfile_single" type="file" name="rd-inputfile" tabindex="-1">
+                                        <input id="rd-inputfile_single" type="file" name="rd-inputfile1" tabindex="-1">
                                     </span>
                                     <span class="rd-input-files-queue"></span>
                                     <template class="rd-inputfile-reset-button">
-                                        <button class="rd-button tiny" type="button" onclick="return RundizTemplateAdmin.resetInputFile(jQuery(this));" title="Remove files"><i class="fas fa-times"></i><span class="screen-reader-only">Remove files</span></button>
+                                        <button class="rd-button tiny" type="button" onclick="return RundizTemplateAdmin.resetInputFile(this);" title="Remove files"><i class="fas fa-times"></i><span class="screen-reader-only">Remove files</span></button>
                                     </template>
                                 </div>
                             </div>
@@ -74,7 +85,7 @@ include 'includes/html-head.php';
                                     </span>
                                     <span class="rd-input-files-queue"></span>
                                     <template class="rd-inputfile-reset-button">
-                                        <button class="rd-button tiny" type="button" onclick="return RundizTemplateAdmin.resetInputFile(jQuery(this));" title="Remove files"><i class="fas fa-times"></i><span class="screen-reader-only">Remove files</span></button>
+                                        <button class="rd-button tiny" type="button" onclick="return RundizTemplateAdmin.resetInputFile(this);" title="Remove files"><i class="fas fa-times"></i><span class="screen-reader-only">Remove files</span></button>
                                     </template>
                                 </div>
                             </div>
@@ -83,14 +94,17 @@ include 'includes/html-head.php';
                                 <div class="control-wrapper">
                                     <span class="rd-button info small disabled rd-inputfile" tabindex="0">
                                         <span class="label">Choose file</span>
-                                        <input id="rd-inputfile_disabled" type="file" name="rd-inputfile" disabled="" tabindex="-1">
+                                        <input id="rd-inputfile_disabled" type="file" name="rd-inputfile-disabled" disabled="" tabindex="-1">
                                     </span>
                                     <span class="rd-input-files-queue"></span>
                                     <template class="rd-inputfile-reset-button">
-                                        <button class="rd-button tiny" type="button" onclick="return RundizTemplateAdmin.resetInputFile(jQuery(this));" title="Remove files"><i class="fas fa-times"></i><span class="screen-reader-only">Remove files</span></button>
+                                        <button class="rd-button tiny" type="button" onclick="return RundizTemplateAdmin.resetInputFile(this);" title="Remove files"><i class="fas fa-times"></i><span class="screen-reader-only">Remove files</span></button>
                                     </template>
                                 </div>
                             </div>
+                            <h4>Dynamically insert/update input file</h4>
+                            <div id="demo-custom-inputfile-placeholder" style="border: 1px dashed #ccc; padding: 0.625rem;"></div>
+                            <button type="button" onclick="rdtaAddCustomInputFile('demo-custom-inputfile-placeholder');">Click here to add an input file</button>
                         </fieldset>
                         <fieldset>
                             <legend>Input checkbox/radio</legend>
@@ -113,17 +127,17 @@ include 'includes/html-head.php';
                             <div class="form-group">
                                 <label class="control-label">Input checkbox</label>
                                 <div class="control-wrapper">
-                                    <label><input type="checkbox"> Input checkbox 1</label><br>
-                                    <label><input type="checkbox"> Input checkbox 2</label><br>
-                                    <label class="disabled"><input type="checkbox" disabled=""> Input checkbox 3 disabled</label>
+                                    <label><input type="checkbox" name="checkbox[]"> Input checkbox 1</label><br>
+                                    <label><input type="checkbox" name="checkbox[]"> Input checkbox 2</label><br>
+                                    <label class="disabled"><input type="checkbox" name="checkbox[]" disabled=""> Input checkbox 3 disabled</label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Input checkbox inline</label>
                                 <div class="control-wrapper">
-                                    <label><input type="checkbox"> 1</label>
-                                    <label><input type="checkbox"> 2</label>
-                                    <label class="disabled"><input type="checkbox" disabled=""> 3</label>
+                                    <label><input type="checkbox" name="checkbox-inline[]"> 1</label>
+                                    <label><input type="checkbox" name="checkbox-inline[]"> 2</label>
+                                    <label class="disabled"><input type="checkbox" name="checkbox-inline[]" disabled=""> 3</label>
                                 </div>
                             </div>
                         </fieldset>
@@ -132,7 +146,7 @@ include 'includes/html-head.php';
                             <div class="form-group">
                                 <label class="control-label" for="input-select">Select box</label>
                                 <div class="control-wrapper">
-                                    <select id="input-select">
+                                    <select id="input-select" name="demo-selectbox">
                                         <optgroup label="Group1">
                                             <option>1</option>
                                             <option>2</option>
@@ -150,7 +164,7 @@ include 'includes/html-head.php';
                             <div class="form-group">
                                 <label class="control-label" for="input-select-multiple">Select box multiple</label>
                                 <div class="control-wrapper">
-                                    <select id="input-select-multiple" multiple="">
+                                    <select id="input-select-multiple" multiple="" name="demo-selectbox-multiple">
                                         <optgroup label="Group1">
                                             <option>1</option>
                                             <option>2</option>
@@ -168,7 +182,7 @@ include 'includes/html-head.php';
                             <div class="form-group">
                                 <label class="control-label" for="input-select-disabled">Select box disabled</label>
                                 <div class="control-wrapper">
-                                    <select id="input-select-disabled" disabled="">
+                                    <select id="input-select-disabled" disabled="" name="demo-selectbox-disabled">
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -179,20 +193,21 @@ include 'includes/html-head.php';
                         <div class="form-group">
                             <label class="control-label" for="input-textarea">Textarea</label>
                             <div class="control-wrapper">
-                                <textarea id="input-textarea"></textarea>
+                                <textarea id="input-textarea" name="demo-textarea"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="input-textarea-disabled">Textarea disabled</label>
                             <div class="control-wrapper">
-                                <textarea id="input-textarea-disabled" disabled=""></textarea>
+                                <textarea id="input-textarea-disabled" disabled="" name="demo-textarea-disabled"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label"></label>
                             <div class="control-wrapper">
-                                <button class="rd-button primary" type="button">Save</button>
+                                <button class="rd-button primary" type="submit">Save</button>
                                 <button class="rd-button" type="button">Cancel</button>
+                                <button class="rd-button" type="button" onclick="rdtaGetFormData(this);">Form data (see console)</button>
                             </div>
                         </div>
                     </form>
@@ -323,5 +338,33 @@ include 'includes/html-head.php';
         
 
 <?php include 'includes/js-end-body.php'; ?> 
+        <script>
+            function rdtaGetFormData(thisObj) {
+                let thisForm = thisObj.closest('form');
+                let formData = new FormData(thisForm);
+                console.log('Showing form values -------------------------');
+                for (var value of formData.values()) {
+                    if (value) {
+                        console.log(value); 
+                    }
+                }
+            }// rdtaGetFormData
+
+
+            function rdtaAddCustomInputFile(targetId) {
+                let customInputFile = '<span class="rd-button info small rd-inputfile" tabindex="0">\
+                        <span class="label">Choose file</span>\
+                        <input id="rd-inputfile_single" type="file" name="rd-inputfile-dynamic" tabindex="-1">\
+                    </span>\
+                    <span class="rd-input-files-queue"></span>\
+                    <template class="rd-inputfile-reset-button">\
+                        <button class="rd-button tiny" type="button" onclick="return RundizTemplateAdmin.resetInputFile(this);" title="Remove files">\
+                            <i class="fas fa-times"></i>\
+                            <span class="screen-reader-only">Remove files</span>\
+                        </button>\
+                    </template>';
+                document.getElementById(targetId).innerHTML = customInputFile;
+            }// rdtaAddCustomInputFile
+        </script>
     </body>
 </html>

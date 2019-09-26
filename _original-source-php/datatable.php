@@ -45,64 +45,67 @@ include 'includes/html-head.php';
 
                     <h2>Examples</h2>
                     <div class="rd-datatable-wrapper">
-                        <table class="rd-datatable">
-                            <thead>
-                                <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Address</th>
-                                    <th>Email</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tfoot>
-                                <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Address</th>
-                                    <th>Email</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </tfoot>
-                            <tbody>
-                                <?php
-                                echo "\n";
-                                if (isset($dummyData)) {
-                                    $dummyDataArray = json_decode($dummyData);
-                                    if (is_array($dummyDataArray)) {
-                                        $i = 1;
-                                        foreach ($dummyDataArray as $row) {
-                                            echo indent(8).'<tr>'."\n";
-                                            echo indent(9).'<td class="column-checkbox"><input type="checkbox" name="id[]" value="'.$row->id.'"></td>'."\n";
-                                            echo indent(9).'<td>'.$row->id.'</td>'."\n";
-                                            echo indent(9).'<td>'.$row->name.'</td>'."\n";
-                                            echo indent(9).'<td>'.$row->address.'</td>'."\n";
-                                            echo indent(9).'<td>'.$row->email.'</td>'."\n";
-                                            echo indent(9).'<td>'."\n";
-                                            echo indent(10).'<div class="rd-button-group">'."\n";
-                                            echo indent(11).'<button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>'."\n";
-                                            echo indent(11).'<button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fas fa-caret-down"></i></button>'."\n";
-                                            echo indent(11).'<ul class="rd-dropdown">'."\n";
-                                            echo indent(12).'<li><a href="#" onclick="return false;"><i class="fas fa-key fa-fw"></i> Permissions</a></li>'."\n";
-                                            echo indent(12).'<li><a href="#" onclick="return false;"><i class="fas fa-times fa-fw"></i> Delete</a></li>'."\n";
-                                            echo indent(11).'</ul>'."\n";
-                                            echo indent(10).'</div>'."\n";
-                                            echo indent(9).'</td>'."\n";
-                                            echo indent(8).'</tr>'."\n";
-                                            $i++;
-                                            if ($i > 5) {
-                                                break;
-                                            }
-                                        }// endforeach;
-                                        unset($i, $row);
+                        <form method="post" action="form.php">
+                            <table class="rd-datatable">
+                                <thead>
+                                    <tr>
+                                        <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Address</th>
+                                        <th>Email</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Address</th>
+                                        <th>Email</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <?php
+                                    echo "\n";
+                                    if (isset($dummyData)) {
+                                        $dummyDataArray = json_decode($dummyData);
+                                        if (is_array($dummyDataArray)) {
+                                            $i = 1;
+                                            foreach ($dummyDataArray as $row) {
+                                                echo indent(8).'<tr>'."\n";
+                                                echo indent(9).'<td class="column-checkbox"><input type="checkbox" name="id[]" value="'.$row->id.'"></td>'."\n";
+                                                echo indent(9).'<td>'.$row->id.'</td>'."\n";
+                                                echo indent(9).'<td>'.$row->name.'</td>'."\n";
+                                                echo indent(9).'<td>'.$row->address.'</td>'."\n";
+                                                echo indent(9).'<td>'.$row->email.'</td>'."\n";
+                                                echo indent(9).'<td>'."\n";
+                                                echo indent(10).'<div class="rd-button-group">'."\n";
+                                                echo indent(11).'<button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>'."\n";
+                                                echo indent(11).'<button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fas fa-caret-down"></i></button>'."\n";
+                                                echo indent(11).'<ul class="rd-dropdown">'."\n";
+                                                echo indent(12).'<li><a href="#" onclick="return false;"><i class="fas fa-key fa-fw"></i> Permissions</a></li>'."\n";
+                                                echo indent(12).'<li><a href="#" onclick="return false;"><i class="fas fa-times fa-fw"></i> Delete</a></li>'."\n";
+                                                echo indent(11).'</ul>'."\n";
+                                                echo indent(10).'</div>'."\n";
+                                                echo indent(9).'</td>'."\n";
+                                                echo indent(8).'</tr>'."\n";
+                                                $i++;
+                                                if ($i > 5) {
+                                                    break;
+                                                }
+                                            }// endforeach;
+                                            unset($i, $row);
+                                        }
+                                        unset($dummyDataArray);
                                     }
-                                    unset($dummyDataArray);
-                                }
-                                ?> 
-                            </tbody>
-                        </table>
+                                    ?> 
+                                </tbody>
+                            </table>
+                            <button type="submit">Submit</button>
+                        </form>
                     </div><!--.rd-datatable-wrapper-->
                     <h3>H Border</h3>
                     <p>This data table only use horizontal border</p>
@@ -110,7 +113,7 @@ include 'includes/html-head.php';
                         <table class="rd-datatable h-border">
                             <thead>
                                 <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Address</th>
@@ -120,7 +123,7 @@ include 'includes/html-head.php';
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Address</th>
@@ -172,7 +175,7 @@ include 'includes/html-head.php';
                         <table class="rd-datatable h-border">
                             <thead>
                                 <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
                                     <th><a href="?sort=id" onclick="return false;">ID <i class="order-asc sortable-icon"></i></a></th>
                                     <th class="sorted"><a href="?sort=name" onclick="return false;">Name <i class="order-asc sortable-icon"></i></a></th>
                                     <th><a href="?sort=address" onclick="return false;">Address <i class="order-asc sortable-icon"></i></a></th>
@@ -182,7 +185,7 @@ include 'includes/html-head.php';
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
                                     <th><a href="?sort=id" onclick="return false;">ID <i class="order-asc sortable-icon"></i></a></th>
                                     <th class="sorted"><a href="?sort=name" onclick="return false;">Name <i class="order-asc sortable-icon"></i></a></th>
                                     <th><a href="?sort=address" onclick="return false;">Address <i class="order-asc sortable-icon"></i></a></th>
@@ -243,7 +246,7 @@ include 'includes/html-head.php';
                         <table class="rd-datatable h-border">
                             <thead>
                                 <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
                                     <th>Type</th>
                                     <th>Name</th>
                                     <th>Actions</th>
@@ -251,7 +254,7 @@ include 'includes/html-head.php';
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
                                     <th>Type</th>
                                     <th>Name</th>
                                     <th>Actions</th>
@@ -358,7 +361,7 @@ include 'includes/html-head.php';
                         <table class="rd-datatable">
                             <thead>
                                 <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
                                     <th class="sorted"><a href="?sort=id" onclick="return false;">ID <i class="order-desc sortable-icon"></i></a></th>
                                     <th>Name</th>
                                     <th>Address</th>
@@ -382,7 +385,7 @@ include 'includes/html-head.php';
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
                                     <th class="sorted"><a href="?sort=id" onclick="return false;">ID <i class="order-desc sortable-icon"></i></a></th>
                                     <th>Name</th>
                                     <th>Address</th>
@@ -434,7 +437,7 @@ include 'includes/html-head.php';
                     <table class="rd-datatable responsive">
                         <thead>
                             <tr>
-                                <td class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></td>
+                                <td class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></td>
                                 <th class="column-primary"><a href="?sort=name" onclick="return false;">Name <i class="order-asc sortable-icon"></i></a></th>
                                 <th><a href="?sort=address" onclick="return false;">Address <i class="order-asc sortable-icon"></i></a></th>
                                 <th><a href="?sort=email" onclick="return false;">Email <i class="order-asc sortable-icon"></i></a></th>
@@ -442,7 +445,7 @@ include 'includes/html-head.php';
                         </thead>
                         <tfoot>
                             <tr>
-                                <td class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></td>
+                                <td class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></td>
                                 <th class="column-primary"><a href="?sort=name" onclick="return false;">Name <i class="order-asc sortable-icon"></i></a></th>
                                 <th><a href="?sort=address" onclick="return false;">Address <i class="order-asc sortable-icon"></i></a></th>
                                 <th><a href="?sort=email" onclick="return false;">Email <i class="order-asc sortable-icon"></i></a></th>
@@ -486,7 +489,7 @@ include 'includes/html-head.php';
                     <table class="rd-datatable responsive">
                         <thead>
                             <tr>
-                                <td class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></td>
+                                <td class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></td>
                                 <th class="column-primary">Name</th>
                                 <th>Address</th>
                                 <th>Email</th>
@@ -494,7 +497,7 @@ include 'includes/html-head.php';
                         </thead>
                         <tfoot>
                             <tr>
-                                <td class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></td>
+                                <td class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></td>
                                 <th class="column-primary">Name</th>
                                 <th>Address</th>
                                 <th>Email</th>

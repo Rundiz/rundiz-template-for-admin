@@ -131,15 +131,19 @@ for ($i = 1; $i <= 50; $i++) {
                                         <li><a href="stickymenu-long-content-menu.php">Sticky menu (long content &amp; menu)</a></li>
                                     </ul>
                                 </li>
+                                <li class="divider"></li>
+                                <li><a href="accordion.php">Accordion</a></li>
                                 <li><a href="alert-box.php">Alert box</a></li>
                                 <li><a href="badge.php">Badge</a></li>
                                 <li><a href="button.php">Button</a></li>
                                 <li><a href="columns-flex.php">Columns flex</a></li>
                                 <li><a href="datatable.php">Data table</a></li>
+                                <li><a href="dialog.php">Dialog</a></li>
                                 <li><a href="form.php">Form</a></li>
                                 <li><a href="helpers.php">Helpers</a></li>
                                 <li><a href="pagination.php">Pagination</a></li>
-                                <li><a href="tab.php">Tab</a></li>
+                                <li><a href="tabs.php">Tabs</a></li>
+                                <li><a href="tooltips.php">Tooltips</a></li>
                             </ul>
                         </li>
                         <li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-laptop-code"></i> <span class="rd-sidebar-menu-text">Examples</span></a>

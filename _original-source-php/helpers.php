@@ -55,6 +55,12 @@ include 'includes/html-head.php';
                     <p class="text-center">Align center</p>
                     <p class="text-right">Align right</p>
 
+                    <h3>Fade in/out</h3>
+                    <div id="demo-box-fadeout" class="rd-animation fade" style="border: 1px dashed #ccc; padding: 0.625rem;">Fade content box</div>
+                    <button type="button" onclick="rdtaDemoFadeOut();" style="margin-bottom: 0.625rem;">Fade out</button>
+                    <div id="demo-box-fadein" class="rd-animation fade fade-out" style="border: 1px dashed #ccc; padding: 0.625rem;">Fade content box</div>
+                    <button type="button" onclick="rdtaDemoFadeIn();" style="margin-bottom: 0.625rem;">Fade in</button>
+
                     <h3>Responsive visibility</h3>
                     <p>This text -&gt;<span class="hidden">was hidden</span>&lt;- hidden in all screen sizes.</p>
                     <p>The text below will be hidden and visible in different screen size. Try to resize the browser to see it in action.</p>
@@ -186,5 +192,21 @@ include 'includes/html-head.php';
         
 
 <?php include 'includes/js-end-body.php'; ?> 
+        <script>
+            function rdtaDemoFadeIn() {
+                document.getElementById('demo-box-fadein').classList.remove('fade-out');
+                setTimeout(function() {
+                    document.getElementById('demo-box-fadein').classList.add('fade-out');
+                }, 1000);
+            }// rdtaDemoFadeIn
+
+
+            function rdtaDemoFadeOut() {
+                document.getElementById('demo-box-fadeout').classList.add('fade-out');
+                setTimeout(function() {
+                    document.getElementById('demo-box-fadeout').classList.remove('fade-out');
+                }, 1000);
+            }// rdtaDemoFadeOut
+        </script>
     </body>
 </html>
