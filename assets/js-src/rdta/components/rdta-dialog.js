@@ -20,6 +20,8 @@ class RDTADialog {
                 document.body.classList.add('rd-modal-open');
             }
             document.querySelector(selector).classList.add('show');
+            let event = new Event('rdta.dialog.opened');
+            document.querySelector(selector).dispatchEvent(event);
             thisClass.listenOnCloseButton(selector);
             thisClass.listenOnClickOutsideClose(selector);
         }
@@ -84,7 +86,12 @@ class RDTADialog {
                 if (target.matches('[data-dismiss="dialog"]')) {
                     if (target.closest('.show')) {
                         document.body.classList.remove('rd-modal-open');
-                        target.closest('.show').classList.remove('show');
+                        let dialogMainElement = target.closest('.show');
+                        if (dialogMainElement) {
+                            dialogMainElement.classList.remove('show');
+                            let event = new Event('rdta.dialog.closed');
+                            dialogMainElement.dispatchEvent(event);
+                        }
                         document.querySelector(targetDialog).removeEventListener('click', handler);
                     }
                 }

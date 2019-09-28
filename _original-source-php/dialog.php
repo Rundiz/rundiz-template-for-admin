@@ -229,7 +229,7 @@ include 'includes/html-head.php';
                         </div>
                     </div>
                     <h3>Manual activate dialog</h3>
-                    <p>The open dialog button below does not contain <code>data-toggle=&quot;dialog&quot;</code> but it just call the class.method to open dialog manually.</p>
+                    <p>The open dialog button below does not contain <code>data-toggle=&quot;dialog&quot;</code> but it just call the class.method (<code>(new RDTADialog).activateDialog('#dialogID')</code>) to open dialog manually.</p>
                     <div class="rd-block-level-margin-bottom">
                         <button type="button" onclick="rdtaOpenDialogManual();">Open modal dialog</button>
                         <div id="dialog08" class="rd-dialog-modal">
@@ -250,6 +250,45 @@ include 'includes/html-head.php';
                             </div>
                         </div>
                     </div>
+                    <h3>Events</h3>
+                    <p>RDTA dialog have few events for hooking.</p>
+                    <table class="rd-datatable">
+                        <thead>
+                            <tr>
+                                <th>Event type</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>rdta.dialog.opened</td>
+                                <td>This event is fired when dialog was opened.</td>
+                            </tr>
+                            <tr>
+                                <td>rdta.dialog.closed</td>
+                                <td>This event is fired when dialog was closed.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button type="button" data-toggle="dialog" data-target="#dialog09">Open modal dialog</button> Click on the open dialog button to see its events below.
+                    <div id="dialog09" class="rd-dialog-modal">
+                        <div class="rd-dialog">
+                            <div class="rd-dialog-header">
+                                <h4 class="rd-dialog-title">Dialog with modal</h4>
+                                <button class="rd-dialog-close" type="button" aria-label="Close" data-dismiss="dialog">
+                                    <i class="fas fa-times" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="rd-dialog-body">
+                                <p>Open and then close to see events show up below.</p>
+                            </div>
+                            <div class="rd-dialog-footer">
+                                <button class="rd-button primary" type="button">Save</button>
+                                <button class="rd-button" type="button" data-dismiss="dialog">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rd-block-level-margin-bottom rd-dialog-events" style="border: 1px dashed #ccc; padding: 10px;"></div>
                 </div><!--.rd-page-content-->
             </main>
 <?php include 'includes/partials/page-footer.php'; ?> 
@@ -264,8 +303,20 @@ include 'includes/html-head.php';
                 rdtaDialog.activateDialog('#dialog08');
             }// rdtaOpenDialogManual
 
+
+            function rdtaDebugDialogEvents() {
+                document.querySelector('#dialog09').addEventListener('rdta.dialog.opened', function() {
+                    document.querySelector('.rd-dialog-events').insertAdjacentHTML('beforeend', 'Dialog opened<br>');
+                });
+                document.querySelector('#dialog09').addEventListener('rdta.dialog.closed', function() {
+                    document.querySelector('.rd-dialog-events').insertAdjacentHTML('beforeend', 'Dialog closed<br>');
+                });
+            }// rdtaDebugDialogEvents
+
+
             document.addEventListener('DOMContentLoaded', function() {
                 RDTADialog.init();
+                rdtaDebugDialogEvents();
             });
         </script>
     </body>

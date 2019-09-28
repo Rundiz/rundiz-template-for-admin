@@ -1,4 +1,4 @@
-/*! Rundiz template for admin v 2.0.8 
+/*! Rundiz template for admin v 2.0.9 
 License: MIT*//**
  * RDTA Tabs
  */
