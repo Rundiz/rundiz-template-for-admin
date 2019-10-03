@@ -1,4 +1,4 @@
-/*! Rundiz template for admin v 2.0.10 
+/*! Rundiz template for admin v 2.0.11 
 License: MIT*//*! Rundiz template for admin
  * https://rundiz.com
  * @license MIT
@@ -151,6 +151,8 @@ class RundizTemplateAdmin {
         // display selected file name and remove button.
         document.addEventListener('change', function(event) {
             if (
+                event.target.attributes &&
+                event.target.attributes.type &&
                 event.target.attributes.type.nodeValue === 'file' &&
                 event.target.parentElement.classList.contains('rd-inputfile')
             ) {
@@ -228,7 +230,10 @@ class RundizTemplateAdmin {
         let $ = jQuery.noConflict();
 
         document.addEventListener('click', function(event) {
-            if (event.currentTarget.activeElement.classList.contains('toggle-row')) {
+            if (
+                event.currentTarget.activeElement &&
+                event.currentTarget.activeElement.classList.contains('toggle-row')
+            ) {
                 let thisElement = event.currentTarget.activeElement;
                 let toggleIcons = (thisElement ? thisElement.querySelector('.faicon').dataset.toggleIcon : '');
                 if (toggleIcons) {
@@ -294,7 +299,7 @@ class RundizTemplateAdmin {
 
         if (typeof(thisObj) !== 'undefined') {
             let thisFilesQueue = thisObj.closest('.rd-input-files-queue');
-            let thisSiblings = thisFilesQueue.parentElement.children;
+            let thisSiblings = (thisFilesQueue.parentElement ? thisFilesQueue.parentElement.children : []);
             let thisRdInputFile;
             for (let i = 0; i < thisSiblings.length; i++) {
                 if (thisSiblings[i].classList.contains('rd-inputfile')) {
