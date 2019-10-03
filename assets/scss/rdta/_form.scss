@@ -33,6 +33,7 @@
         color: $disabled-font-color;
         cursor: not-allowed;
     }
+
     .form-group {
         margin-bottom: $content-block-element-margin-bottom;
         .control-label {
@@ -52,13 +53,22 @@
         }
     }
 
+    .form-description {
+        color: #777;
+        font-size: .875em;
+        font-style: italic;
+    }
+
     @media (min-width: $minimum-sidebar-breakpoint) {
         &.horizontal {
+            // .rd-form.horizontal .form-group
             .form-group {
                 display: flex;
+                // .rd-form.horizontal .form-group .control-label
                 .control-label {
                     width: 180px;
                 }
+                // .rd-form.horizontal .form-group .control-wrapper
                 .control-wrapper {
                     flex-grow: 1;
                 }

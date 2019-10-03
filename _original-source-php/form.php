@@ -2,7 +2,7 @@
 require 'includes/functions.php'; 
 
 // for debugging form inputs.
-if (strtolower($_SERVER['REQUEST_METHOD']) === 'post') {
+if (isset($_SERVER['REQUEST_METHOD']) && strtolower($_SERVER['REQUEST_METHOD']) === 'post') {
     echo '<pre>' . print_r($_POST, true) . '</pre>' . PHP_EOL;
     if (!empty($_FILES)) {
         echo '<pre>' . print_r($_FILES, true) . '</pre>' . PHP_EOL;
@@ -40,7 +40,7 @@ include 'includes/html-head.php';
                         $input_types = ['color', 'date', 'datetime-local', 'email', 'file', 'month', 'number', 'password', 'range', 'search', 'tel', 'text', 'time', 'url', 'week'];
                         foreach ($input_types as $input_type) {
                             echo indent(7).'<div class="form-group">'."\n";
-                            echo indent(8).'<label class="control-label" for="input-type-'.$input_type.'">Input '.ucwords($input_type).'</label><br>'."\n";
+                            echo indent(8).'<label class="control-label" for="input-type-'.$input_type.'">Input '.ucwords($input_type).'</label>'."\n";
                             echo indent(8).'<div class="control-wrapper">'."\n";
                             echo indent(9).'<input id="input-type-'.$input_type.'" type="'.$input_type.'" name="demo-input-' . $input_type . '">'."\n";
                             echo indent(8).'</div>'."\n";
@@ -59,6 +59,7 @@ include 'includes/html-head.php';
                             <label class="control-label" for="input-type-text-disabled">Input text disabled</label>
                             <div class="control-wrapper">
                                 <input id="input-type-text-disabled" type="text" disabled="">
+                                <div class="form-description">The help message about this form input.</div>
                             </div>
                         </div>
                         <fieldset>
@@ -100,6 +101,7 @@ include 'includes/html-head.php';
                                     <template class="rd-inputfile-reset-button">
                                         <button class="rd-button tiny" type="button" onclick="return RundizTemplateAdmin.resetInputFile(this);" title="Remove files"><i class="fas fa-times"></i><span class="screen-reader-only">Remove files</span></button>
                                     </template>
+                                    <div class="form-description">The help message about this form input.</div>
                                 </div>
                             </div>
                             <h4>Dynamically insert/update input file</h4>
@@ -114,6 +116,7 @@ include 'includes/html-head.php';
                                     <label><input type="radio" name="input-radio" value="1"> Input radio option 1</label><br>
                                     <label><input type="radio" name="input-radio" value="2"> Input radio option 2</label><br>
                                     <label class="disabled"><input type="radio" name="input-radio" value="3" disabled=""> Input radio option 3 disabled</label>
+                                    <div class="form-description">The help message about this form input.</div>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -138,6 +141,7 @@ include 'includes/html-head.php';
                                     <label><input type="checkbox" name="checkbox-inline[]"> 1</label>
                                     <label><input type="checkbox" name="checkbox-inline[]"> 2</label>
                                     <label class="disabled"><input type="checkbox" name="checkbox-inline[]" disabled=""> 3</label>
+                                    <div class="form-description">The help message about this form input.</div>
                                 </div>
                             </div>
                         </fieldset>
@@ -219,6 +223,7 @@ include 'includes/html-head.php';
                             <label class="control-label" for="input-type-text2">Input text</label>
                             <div class="control-wrapper">
                                 <input id="input-type-text2" type="text">
+                                <div class="form-description">The help message about this form input.</div>
                             </div>
                         </div>
                         <fieldset>
@@ -316,18 +321,21 @@ include 'includes/html-head.php';
                             <label class="control-label">Input</label>
                             <div class="control-wrapper">
                                 <input type="text" placeholder="normal">
+                                <div class="form-description">The help message about this form input.</div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label small">Input small</label>
                             <div class="control-wrapper">
                                 <input class="input-small" type="text" placeholder="small">
+                                <div class="form-description">The help message about this form input.</div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label large">Input large</label>
                             <div class="control-wrapper">
                                 <input class="input-large" type="text" placeholder="large">
+                                <div class="form-description">The help message about this form input.</div>
                             </div>
                         </div>
                     </form>

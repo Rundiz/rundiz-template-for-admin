@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Rundiz template for admin V.2.0.9
+ * Rundiz template for admin V.2.0.10
  */
 /*
 * ----------------------------------------------------------------------------------------------
@@ -881,6 +881,11 @@ textarea.input-small {
 .rd-form .form-group .control-wrapper textarea {
   display: block;
   width: 100%;
+}
+.rd-form .form-description {
+  color: #777;
+  font-size: 0.875em;
+  font-style: italic;
 }
 @media (min-width: 1000px) {
   .rd-form.horizontal .form-group {
