@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Rundiz template for admin V.2.0.11
+ * Rundiz template for admin V.2.0.12
  */
 /*
 * ----------------------------------------------------------------------------------------------
@@ -892,7 +892,7 @@ textarea.input-small {
     display: flex;
   }
   .rd-form.horizontal .form-group .control-label {
-    width: 180px;
+    flex: 0 0 180px;
   }
   .rd-form.horizontal .form-group .control-wrapper {
     flex-grow: 1;

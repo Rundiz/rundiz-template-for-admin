@@ -272,6 +272,13 @@ include 'includes/html-head.php';
                                         <option>3</option>
                                     </optgroup>
                                     <option>out of optgroup</option>
+                                    <option>The super very long option. 
+                                        Donec varius laoreet purus in mollis. Ut ut nisi in metus elementum sollicitudin vel eu eros. 
+                                        Aliquam varius velit libero, a ornare ligula posuere a. 
+                                        Ut posuere sapien vel nisi porta, eu facilisis ex egestas. 
+                                        Curabitur pharetra nisi vel condimentum tempor. 
+                                        Donec vestibulum blandit risus, ac porttitor mi tempor nec. Quisque ac nunc risus.
+                                    </option>
                                 </select>
                             </div>
                         </div>
