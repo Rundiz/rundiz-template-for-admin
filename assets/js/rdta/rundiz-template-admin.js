@@ -1,4 +1,4 @@
-/*! Rundiz template for admin v 2.0.12 
+/*! Rundiz template for admin v 2.0.13 
 License: MIT*//*! Rundiz template for admin
  * https://rundiz.com
  * @license MIT
@@ -136,7 +136,10 @@ class RundizTemplateAdmin {
         // (press tab to custom input file and then press enter for browse file.)
         document.addEventListener('keyup', function(event) {
             if (
+                typeof(event.key) !== 'undefined' &&
                 event.key.toLowerCase() === 'enter' &&
+                event.currentTarget &&
+                event.currentTarget.activeElement &&
                 event.currentTarget.activeElement.classList.contains('rd-inputfile')
             ) {
                 let thisTarget = event.currentTarget.activeElement;

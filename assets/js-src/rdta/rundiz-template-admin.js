@@ -135,7 +135,10 @@ class RundizTemplateAdmin {
         // (press tab to custom input file and then press enter for browse file.)
         document.addEventListener('keyup', function(event) {
             if (
+                typeof(event.key) !== 'undefined' &&
                 event.key.toLowerCase() === 'enter' &&
+                event.currentTarget &&
+                event.currentTarget.activeElement &&
                 event.currentTarget.activeElement.classList.contains('rd-inputfile')
             ) {
                 let thisTarget = event.currentTarget.activeElement;
