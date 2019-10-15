@@ -3,114 +3,50 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Rundiz template for admin</title>
-        <link rel="stylesheet" href="assets/css/sanitize/sanitize.css?v=8.0.0&amp;mt=499162500">
-        <link rel="stylesheet" href="assets/css/sanitize/typography.css?v=8.0.0&amp;mt=499162500">
-        <link rel="stylesheet" href="assets/css/sanitize/forms.css?v=8.0.0&amp;mt=499162500">
+        <title>Alert dialog | Rundiz template for admin</title>
+        <link rel="stylesheet" href="assets/css/sanitize/sanitize.css?v=11.0.0&amp;mt=499162500">
+        <link rel="stylesheet" href="assets/css/sanitize/typography.css?v=11.0.0&amp;mt=499162500">
+        <link rel="stylesheet" href="assets/css/sanitize/forms.css?v=11.0.0&amp;mt=499162500">
 
-        <link rel="stylesheet" href="assets/font-awesome/css/all.min.css?v=5.8.2&amp;mt=1566477676">
-        <link rel="stylesheet" href="assets/css/smartmenus/sm-core-css.css?mt=1559110074">
+        <link rel="stylesheet" href="assets/font-awesome/css/all.min.css?v=5.10.2&amp;mt=1566477676">
+
+        <link rel="stylesheet" href="assets/css/smartmenus/sm-core-css.css?v=1.1.0&amp;mt=1559110074">
         <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?mt=1571180813">
+
         <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?mt=1571180814">
-
-        <style type="text/css">
-            .rd-template-admin,
-            body {
-                height: 100%;
-            }
-            .rd-template-admin body {
-                padding-top: 3.125rem;
-            }
-            .rd-template-admin body > header {
-                background-color: #222;
-                color: #aaa;
-                display: flex;
-                height: 3.125rem;
-                left: 0;
-                position: fixed;
-                right: 0;
-                top: 0;
-                z-index: 10000;
-            }
-            .rd-site-brand {
-                align-items: center;
-                display: flex;
-                font-size: 1.188em;
-                height: 3.125rem;
-                margin-left: 0.625rem;
-            }
-
-
-            /* css grid layout */
-            .rd-page-wrapper {
-                display: -ms-grid;
-                display: grid;
-                -ms-grid-columns: 160px auto;
-                -ms-grid-rows: auto 1.656rem;
-                grid-template-columns: 160px auto;
-                grid-template-rows: auto 1.656rem;
-                height: auto;
-                min-height: 100%;
-                position: relative;
-            }
-            .rd-page-wrapper .rd-sidebar {
-                -ms-grid-column: 1;
-                -ms-grid-row: 1;
-                grid-column-end: 2;
-                grid-column-start: 1;
-                grid-row-end: 3;
-                grid-row-start: 1;
-            }
-            .rd-page-wrapper > main {
-                -ms-grid-column: 2;
-                -ms-grid-row: 1;
-                grid-column-start: 2;
-                grid-row-end: 2;
-                grid-row-start: 1;
-                min-width: 0;/* fix table push this element over screen width ( https://stackoverflow.com/questions/43311943/prevent-grid-items-from-stretching-in-css-grid-layout ) */
-            }
-
-            .rd-page-wrapper > footer {
-                display: flex;
-                -ms-grid-column: 2;
-                -ms-grid-row: 2;
-                grid-column-start: 2;
-                grid-row-end: 3;
-                grid-row-start: 2;
-            }
-            .rd-page-wrapper > footer .rd-page-footer-left,
-            .rd-page-wrapper > footer .rd-page-footer-right {
-                flex-grow: 1;
-            }
-            .rd-page-wrapper > footer .rd-page-footer-right {
-                text-align: right;
-            }
-
-
-            .rd-sidebar-back {
-                background-color: #222;
-                bottom: 0;
-                display: block;
-                position: absolute;
-                top: 0;
-                width: 160px;
-                z-index: -1;
-            }
-            .rd-sidebar-inner {
-                z-index: 2;
-            }
-
-
-            .wrap-table {
-                display: block;
-                overflow-x: auto;
-            }
-        </style>
+        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?mt=1571180814"> 
+        <link rel="stylesheet" href="assets/css/rdta/components/rdta-dialog.css?mt=1571180814">
+        <link rel="stylesheet" href="assets/css/rdta/components/rdta-alertdialog.css?mt=1571180814">
     </head>
-    <body>
-        <header>
-            <div class="rd-site-brand">Admin Dashboard</div><!--.rd-site-brand-->
-        </header>
+    <body ontouchstart="">
+        <header class="rd-navbar">
+            <button class="rd-sidebar-toggler" data-target=".rd-page-wrapper" title="Toggle side bar menu"><i class="fas fa-bars fa-fw"></i><span class="screen-reader-only" aria-hidden="true">Toggle side bar menu</span></button>
+            <div class="rd-site-brand"><a href="#" onclick="return false;">Admin Dashboard</a></div><!--.rd-site-brand-->
+            <nav class="nav-right">
+                <ul class="sm sm-rdta navbar">
+                    <li><a href="#" onclick="return false;"><i class="fas fa-globe fa-fw"></i></a>
+                        <ul>
+                            <li><a href="javascript:alert('link clicked');">Thai</a></li>
+                            <li class="is-active"><a href="javascript:alert('link clicked');">English</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" onclick="return false;"><i class="fas fa-bell fa-fw"></i> <span class="rd-notification-badge tiny">3</span></a>
+                        <ul>
+                            <li><a href="#" onclick="return false;">Approve new comments</a></li>
+                            <li><a href="#" onclick="return false;">Approve new posts</a></li>
+                            <li><a href="#" onclick="return false;">There are new contact messages</a></li>
+                        </ul>
+                    </li>
+                    <li class="user"><a href="#" onclick="return false;"><i class="far fa-user-circle"></i></a>
+                        <ul>
+                            <li><a>Hello, user name</a></li>
+                            <li><a href="#" onclick="return false;">Edit your account</a></li>
+                            <li><a href="#" onclick="return false;">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav><!--.nav-right-->
+        </header><!--.rd-navbar--> 
         <div class="rd-page-wrapper">
             <div class="rd-sidebar-back"></div>
             <section class="rd-sidebar">
@@ -331,57 +267,71 @@
                 </div><!--.rd-sidebar-inner-->
             </section><!--.rd-sidebar--> 
             <main>
+                <nav>
+    <ul class="rd-breadcrumb">
+        <li><a href="./">Home</a></li>
+        <li class="current"><a href="#" onclick="return false;">Alert dialog</a></li>
+    </ul>
+</nav>
+ 
                 <div class="rd-page-content">
-                    <h1>Basic layout using CSS grid</h1>
-                    <p>
-                        Demonstrate how the page layout will be.<br>
-                        This page should render correctly in all browsers including new version of Microsoft Edge.
-                    </p>
-                    <p>Test table cause overflow. (3 duplicate email columns is for test very wide table that will be over screen width shoud be wrapped inside <code>.wrap-table</code> class.</p>
-                    <div class="wrap-table">
-                        <table class="rd-datatable">
-                            <thead>
-                                <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(jQuery(this));"></th>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Address</th>
-                                    <th>Email</th>
-                                    <th>Email</th>
-                                    <th>Email</th>
-                                    <th>Email</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="column-checkbox"><input type="checkbox" name="id[]" value="1"></td>
-                                    <td>1</td>
-                                    <td>Gwendolyn Uphill</td>
-                                    <td>282 Springview Street</td>
-                                    <td>guphill0@upenn.edu</td>
-                                    <td>guphill0@upenn.edu</td>
-                                    <td>guphill0@upenn.edu</td>
-                                    <td>guphill0@upenn.edu</td>
-                                    <td>
-                                        <button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="column-checkbox"><input type="checkbox" name="id[]" value="2"></td>
-                                    <td>2</td>
-                                    <td>Reinhold Keneleyside</td>
-                                    <td>820 Old Gate Parkway</td>
-                                    <td>rkeneleyside1@de.vu</td>
-                                    <td>rkeneleyside1@de.vu</td>
-                                    <td>rkeneleyside1@de.vu</td>
-                                    <td>rkeneleyside1@de.vu</td>
-                                    <td>
-                                        <button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <h1>Alert dialog</h1>
+                    <p>The alert dialog with styles.</p>
+                    <hr>
+
+                    <h2>Examples</h2>
+                    <p>Normal JS alert box. <a href="#" onclick="alert('Hello, this is normal JS alert.'); return false;">Show normal JS alert.</a></p>
+                    <pre>alert(&#039;Hello, this is normal JS alert.&#039;);</pre>
+                     
+                    <p>Info alert dialog. <a href="#" onclick="rdtaAlertBoxShowAlert('info'); return false;">Show me.</a></p>
+                    <pre>RDTAAlertDialog.alert({
+    &#039;type&#039;: &#039;info&#039;,
+    &#039;html&#039;: &#039;&lt;p&gt;Hello, this is RDTA alert dialog. You can use &lt;strong&gt;HTML&lt;/strong&gt; here.&lt;/p&gt;&#039;,
+});</pre>
+                     
+                    <p>Danger alert dialog. <a href="#" onclick="rdtaAlertBoxShowAlert('danger'); return false;">Show me.</a></p>
+                    <pre>RDTAAlertDialog.alert({
+    &#039;type&#039;: &#039;danger&#039;,
+    &#039;html&#039;: &#039;&lt;p&gt;Hello, this is RDTA alert dialog. You can use &lt;strong&gt;HTML&lt;/strong&gt; here.&lt;/p&gt;&#039;,
+});</pre>
+                     
+                    <p>Warning alert dialog. <a href="#" onclick="rdtaAlertBoxShowAlert('warning'); return false;">Show me.</a></p>
+                    <pre>RDTAAlertDialog.alert({
+    &#039;type&#039;: &#039;warning&#039;,
+    &#039;html&#039;: &#039;&lt;p&gt;Hello, this is RDTA alert dialog. You can use &lt;strong&gt;HTML&lt;/strong&gt; here.&lt;/p&gt;&#039;,
+});</pre>
+                     
+                    <p>Success alert dialog. <a href="#" onclick="rdtaAlertBoxShowAlert('success'); return false;">Show me.</a></p>
+                    <pre>RDTAAlertDialog.alert({
+    &#039;type&#039;: &#039;success&#039;,
+    &#039;html&#039;: &#039;&lt;p&gt;Hello, this is RDTA alert dialog. You can use &lt;strong&gt;HTML&lt;/strong&gt; here.&lt;/p&gt;&#039;,
+});</pre>
+                     
+                    <p>Text alert dialog. <a href="#" onclick="RDTAAlertDialog.alert({'type': 'info', 'text': 'Alert that contain text only.'}); return false;">Show me.</a></p>
+                    <p>If both <code>text</code> &amp <code>html</code> were set, it will be use <code>text</code> by default.</p>
+                    <pre>RDTAAlertDialog.alert({&#039;type&#039;: &#039;info&#039;, &#039;text&#039;: &#039;Alert that contain text only.&#039;});</pre>
+
+                    <h3>Alert dialog on modal dialog</h3>
+                    <div class="rd-block-level-margin-bottom">
+                        <button type="button" data-toggle="dialog" data-target="#dialog02">Open modal dialog</button>
+                        <div id="dialog02" class="rd-dialog-modal" tabindex="-1">
+                            <div class="rd-dialog rd-dialog-size-large">
+                                <div class="rd-dialog-header">
+                                    <h4 class="rd-dialog-title">Dialog with modal</h4>
+                                    <button class="rd-dialog-close" type="button" aria-label="Close" data-dismiss="dialog">
+                                        <i class="fas fa-times" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <div class="rd-dialog-body">
+                                    <p>The modal dialog with backdrop.</p>
+                                    <p>Show me <a href="#" onclick="rdtaAlertBoxShowAlert('danger'); return false;">alert dialog</a>.</p>
+                                </div>
+                                <div class="rd-dialog-footer">
+                                    <button class="rd-button primary" type="button">Save</button>
+                                    <button class="rd-button" type="button" data-dismiss="dialog">Close</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div><!--.rd-page-content-->
             </main>
@@ -390,7 +340,7 @@
                 <div class="rd-page-footer-right">My app version n.n.</div>
             </footer> 
         </div><!--.rd-page-wrapper-->
-
+        
 
 
         <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -403,5 +353,22 @@
         <script src="assets/js/sticky-sidebar/ResizeSensor.js?v=3.2.0&amp;mt=1560009256"></script><!-- use with sticky sidebar js. -->
 
         <script src="assets/js/rdta/rundiz-template-admin.js?mt=1571180812"></script> 
+        <script src="assets/js/rdta/components/rdta-dialog.js"></script>
+        <script src="assets/js/rdta/components/rdta-alertdialog.js"></script>
+        <script>
+            function rdtaAlertBoxShowAlert(alertType = 'info') {
+                RDTAAlertDialog.alert({
+                    'type': alertType,
+                    'html': '<p>Hello, this is RDTA alert dialog. You can use <strong>HTML</strong> here.</p>',
+                });
+
+                return false;
+            }// rdtaAlertBoxShowAlert
+
+
+            document.addEventListener('DOMContentLoaded', function() {
+                RDTADialog.init();
+            });
+        </script>
     </body>
 </html>

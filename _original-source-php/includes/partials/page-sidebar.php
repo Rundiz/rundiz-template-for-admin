@@ -134,6 +134,7 @@ for ($i = 1; $i <= 50; $i++) {
                                 <li class="divider"></li>
                                 <li><a href="accordion.php">Accordion</a></li>
                                 <li><a href="alert-box.php">Alert box</a></li>
+                                <li><a href="alert-dialog.php">Alert dialog</a></li>
                                 <li><a href="badge.php">Badge</a></li>
                                 <li><a href="button.php">Button</a></li>
                                 <li><a href="columns-flex.php">Columns flex</a></li>

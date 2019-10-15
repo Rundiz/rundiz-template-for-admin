@@ -33,7 +33,8 @@ $form-tiny-font-size: 0.625em !default;// currently only available to button.
 $z-index-sidebar: 2 !default;
 $z-index-navbar: 4 !default;// navbar (top) must higher than sidebar to prevent scroll page and sidebar visible on top of navbar.
 $z-index-dialogbackdrop: 1010 !default;// modal dialog.
-$z-index-tooltips: 1011 !default;// tooltips
+$z-index-alertdialogbackgrop: 2000 !default;// alert dialog.
+$z-index-tooltips: 2001 !default;// tooltips.
 
 
 // colors for alert box, buttons, badge, table

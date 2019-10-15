@@ -1,4 +1,4 @@
-/*! Rundiz template for admin v 2.0.13 
+/*! Rundiz template for admin v 2.0.14 
 License: MIT*//**
  * RDTA dialog
  */
@@ -15,14 +15,27 @@ class RDTADialog {
      */
     activateDialog(selector) {
         let thisClass = this;
+        let dialogOrModalElement = document.querySelector(selector);
 
-        if (!document.querySelector(selector).classList.contains('show')) {
-            if (document.querySelector(selector).classList.contains('rd-dialog-modal')) {
+        if (
+            dialogOrModalElement &&
+            dialogOrModalElement.classList &&
+            !dialogOrModalElement.classList.contains('show')
+        ) {
+            if (dialogOrModalElement.classList.contains('rd-dialog-modal')) {
                 document.body.classList.add('rd-modal-open');
             }
-            document.querySelector(selector).classList.add('show');
+            // show dialog or modal dialog
+            dialogOrModalElement.classList.add('show');
+            // focus on dialog/modal.
+            setTimeout(function() {
+                dialogOrModalElement.tabIndex = '-1';
+                dialogOrModalElement.focus();
+                //console.log('changed focus', document.activeElement);
+            }, 301);
+            // fire event.
             let event = new Event('rdta.dialog.opened');
-            document.querySelector(selector).dispatchEvent(event);
+            dialogOrModalElement.dispatchEvent(event);
             thisClass.listenOnCloseButton(selector);
             thisClass.listenOnClickOutsideClose(selector);
         }
@@ -36,7 +49,12 @@ class RDTADialog {
         let thisClass = new this();
 
         document.addEventListener('click', function(event) {
-            if (event.currentTarget.activeElement.dataset.toggle === 'dialog') {
+            if (
+                event.currentTarget &&
+                event.currentTarget.activeElement &&
+                event.currentTarget.activeElement.dataset &&
+                event.currentTarget.activeElement.dataset.toggle === 'dialog'
+            ) {
                 event.stopPropagation();
                 let targetDialog = event.currentTarget.activeElement.dataset.target;
                 if (targetDialog) {
@@ -56,19 +74,26 @@ class RDTADialog {
      * @private
      */
     listenOnClickOutsideClose(targetDialog) {
+        let modalElement = document.querySelector(targetDialog);
         if (
+            modalElement &&
+            modalElement.dataset &&
+            modalElement.classList &&
             (
-                !document.querySelector(targetDialog).dataset.clickOutsideNotClose ||
-                document.querySelector(targetDialog).dataset.clickOutsideNotClose !== 'true'
+                !modalElement.dataset.clickOutsideNotClose ||
+                modalElement.dataset.clickOutsideNotClose !== 'true'
             ) &&
-            document.querySelector(targetDialog).classList.contains('rd-dialog-modal')
+            modalElement.classList.contains('rd-dialog-modal')
         ) {
             // if no html attribute `data-click-outside-not-close="true"` and there is modal element then click outside to close the dialog.
-            document.querySelector(targetDialog).addEventListener('click', function handler(event) {
-                if (event.target.querySelector('[data-dismiss="dialog"]')) {
-                    event.target.querySelector('[data-dismiss="dialog"]').click();
+            modalElement.addEventListener('click', function handler(event) {
+                if (event.target === modalElement) {
+                    // if clicking target is on the modal element.
+                    if (event.target.querySelector('[data-dismiss="dialog"]')) {
+                        event.target.querySelector('[data-dismiss="dialog"]').click();
+                        modalElement.removeEventListener('click', handler);
+                    }
                 }
-                document.querySelector(targetDialog).removeEventListener('click', handler);
             });
         }
     }// listenOnClickOutsideClose
@@ -92,9 +117,11 @@ class RDTADialog {
                             dialogMainElement.classList.remove('show');
                             let event = new Event('rdta.dialog.closed');
                             dialogMainElement.dispatchEvent(event);
+                            document.querySelector(targetDialog).removeEventListener('click', handler);
                         }
-                        document.querySelector(targetDialog).removeEventListener('click', handler);
                     }
+
+                    break;
                 }
             }
         });
@@ -107,25 +134,38 @@ class RDTADialog {
      * @private
      */
     listenOnEscapeKeyPressClose() {
-        document.addEventListener('keyup', function handler(event) {
+        document.body.addEventListener('keyup', function handler(event) {
             if (
                 event.key === 'Escape' &&
                 event.altKey === false &&
                 event.ctrlKey === false &&
                 event.metaKey === false &&
-                event.shiftKey === false
+                event.shiftKey === false &&
+                !document.querySelector('.rd-alertdialog-modal.show')// make sure that alert dialog is not opened. if opened, close it before close dialog.
             ) {
+                // if target key press.
+                // close dialog that without modal.
                 if (
                     document.querySelector('.rd-dialog.show') &&
+                    document.querySelector('.rd-dialog.show').dataset &&
                     document.querySelector('.rd-dialog.show').dataset.escKeyNotClose !== 'true'
                 ) {
-                    document.querySelector('.rd-dialog.show [data-dismiss="dialog"]').focus();
-                    document.querySelector('.rd-dialog.show [data-dismiss="dialog"]').click();
+                    if (document.querySelector('.rd-dialog.show [data-dismiss="dialog"]')) {
+                        document.querySelector('.rd-dialog.show [data-dismiss="dialog"]').focus();
+                        document.querySelector('.rd-dialog.show [data-dismiss="dialog"]').click();
+                    }
                 }
+                // close dialog with modal.
                 if (document.querySelector('.rd-dialog-modal.show')) {
-                    if (document.querySelector('.rd-dialog-modal.show .rd-dialog').dataset.escKeyNotClose !== 'true') {
-                        document.querySelector('.rd-dialog-modal.show [data-dismiss="dialog"]').focus();
-                        document.querySelector('.rd-dialog-modal.show [data-dismiss="dialog"]').click();
+                    if (
+                        document.querySelector('.rd-dialog-modal.show .rd-dialog') &&
+                        document.querySelector('.rd-dialog-modal.show .rd-dialog').dataset &&
+                        document.querySelector('.rd-dialog-modal.show .rd-dialog').dataset.escKeyNotClose !== 'true'
+                    ) {
+                        if (document.querySelector('.rd-dialog-modal.show [data-dismiss="dialog"]')) {
+                            document.querySelector('.rd-dialog-modal.show [data-dismiss="dialog"]').focus();
+                            document.querySelector('.rd-dialog-modal.show [data-dismiss="dialog"]').click();
+                        }
                     }
                 }
             }
