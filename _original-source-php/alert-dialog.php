@@ -20,6 +20,11 @@ include 'includes/html-head.php';
                 <div class="rd-page-content">
                     <h1>Alert dialog</h1>
                     <p>The alert dialog with styles.</p>
+                    <p>
+                        In order to make dialog works, add these files.
+                        <strong>assets/css/rdta/components/rdta-alertdialog.css</strong>,
+                        <strong>assets/js/rdta/components/rdta-alertdialog.js</strong>
+                    </p>
                     <hr>
 
                     <h2>Examples</h2>
