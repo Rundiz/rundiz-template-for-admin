@@ -44,7 +44,7 @@ include 'includes/html-head.php';
                     <hr>
 
                     <h2>Examples</h2>
-                    <div class="rd-datatable-wrapper">
+                    <div class="rd-datatable-wrapper rd-block-level-margin-bottom">
                         <form method="post" action="form.php">
                             <table class="rd-datatable">
                                 <thead>
@@ -107,8 +107,36 @@ include 'includes/html-head.php';
                             <button type="submit">Submit</button>
                         </form>
                     </div><!--.rd-datatable-wrapper-->
+                    <pre>&lt;div class=&quot;rd-datatable-wrapper&quot;&gt;
+    &lt;table class=&quot;rd-datatable&quot;&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th class=&quot;column-checkbox&quot;&gt;
+                    &lt;input type=&quot;checkbox&quot; onclick=&quot;RundizTemplateAdmin.dataTableCheckboxToggler(this);&quot;&gt;
+                &lt;/th&gt;
+                &lt;th&gt;Name&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tfoot&gt;
+            &lt;tr&gt;
+                &lt;th class=&quot;column-checkbox&quot;&gt;
+                    &lt;input type=&quot;checkbox&quot; onclick=&quot;RundizTemplateAdmin.dataTableCheckboxToggler(this);&quot;&gt;
+                &lt;/th&gt;
+                &lt;th&gt;Name&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/tfoot&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td class=&quot;column-checkbox&quot;&gt;
+                    &lt;input type=&quot;checkbox&quot; name=&quot;id[]&quot; value=&quot;1&quot;&gt;
+                &lt;/td&gt;
+                &lt;td&gt;Demo Demo&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</pre>
                     <h3>H Border</h3>
-                    <p>This data table only use horizontal border</p>
+                    <p>This data table only use horizontal border by add <code>h-border</code> to table class.</p>
                     <div class="rd-datatable-wrapper">
                         <table class="rd-datatable h-border">
                             <thead>
@@ -242,12 +270,14 @@ include 'includes/html-head.php';
                     ];
                     ?> 
                     <h3>Row colors</h3>
+                    <p>Add showing class to <code>&lt;tr&gt;</code>.</p>
                     <div class="rd-datatable-wrapper">
                         <table class="rd-datatable h-border">
                             <thead>
                                 <tr>
                                     <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
                                     <th>Type</th>
+                                    <th>Class</th>
                                     <th>Name</th>
                                     <th>Actions</th>
                                 </tr>
@@ -256,6 +286,7 @@ include 'includes/html-head.php';
                                 <tr>
                                     <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
                                     <th>Type</th>
+                                    <th>Class</th>
                                     <th>Name</th>
                                     <th>Actions</th>
                                 </tr>
@@ -275,6 +306,7 @@ include 'includes/html-head.php';
                                             echo '>'."\n";
                                             echo indent(9).'<td class="column-checkbox"><input type="checkbox" name="id[]" value="'.$row->id.'"></td>'."\n";
                                             echo indent(9).'<td>'.(isset($rowColors[$i]['name']) && is_scalar($rowColors[$i]['name']) ? $rowColors[$i]['name'] : '').'</td>'."\n";
+                                            echo indent(9).'<td>'.(isset($rowColors[$i]['class']) && is_scalar($rowColors[$i]['class']) && $rowColors[$i]['class'] != null ? '<code>table-row-'.$rowColors[$i]['class'] . '</code>' : '').'</td>'."\n";
                                             echo indent(9).'<td>'.$row->name.'</td>'."\n";
                                             echo indent(9).'<td>'."\n";
                                             echo indent(10).'<div class="rd-button-group">'."\n";
@@ -301,6 +333,7 @@ include 'includes/html-head.php';
                         </table>
                     </div><!--.rd-datatable-wrapper-->
                     <h4>Cell colors</h4>
+                    <p>Add showing class to table cell (<code>&lt;td&gt;</code>).</p>
                     <div class="rd-datatable-wrapper">
                         <table class="rd-datatable">
                             <thead>
@@ -339,7 +372,12 @@ include 'includes/html-head.php';
                                             if (isset($colorItem['class']) && is_scalar($colorItem['class']) && $colorItem['class'] != null) {
                                                 echo ' class="table-cell-'.$colorItem['class'].'"';
                                             }
-                                            echo '>'.(isset($colorItem['name']) ? $colorItem['name'] : '').'</td>'."\n";
+                                            echo '>';
+                                            echo (isset($colorItem['name']) ? $colorItem['name'] : '');
+                                            if (isset($colorItem['class']) && is_scalar($colorItem['class']) && $colorItem['class'] != null) {
+                                                echo '<br><code>table-cell-'.$colorItem['class'] . '</code>';
+                                            }
+                                            echo '</td>'."\n";
                                         }// endforeach;
                                         unset($colorItem);
                                     }
@@ -357,6 +395,7 @@ include 'includes/html-head.php';
                     </div><!--.rd-datatable-wrapper-->
                     <?php unset($rowColors); ?> 
                     <h3>Data table with filters row</h3>
+                    <p>Add <code>filter-row</code> class to <code>&lt;tr&gt;</code> of the row that contain filters input.</p>
                     <div class="rd-datatable-wrapper">
                         <table class="rd-datatable">
                             <thead>
@@ -434,57 +473,100 @@ include 'includes/html-head.php';
                     </div><!--.rd-datatable-wrapper-->
                     <h3>Responsive</h3>
                     <p>This style of responsive is collapsible/expandable table for small screen size.</p>
-                    <table class="rd-datatable responsive">
-                        <thead>
-                            <tr>
-                                <td class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></td>
-                                <th class="column-primary"><a href="?sort=name" onclick="return false;">Name <i class="order-asc sortable-icon"></i></a></th>
-                                <th><a href="?sort=address" onclick="return false;">Address <i class="order-asc sortable-icon"></i></a></th>
-                                <th><a href="?sort=email" onclick="return false;">Email <i class="order-asc sortable-icon"></i></a></th>
-                            </tr>
-                        </thead>
-                        <tfoot>
-                            <tr>
-                                <td class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></td>
-                                <th class="column-primary"><a href="?sort=name" onclick="return false;">Name <i class="order-asc sortable-icon"></i></a></th>
-                                <th><a href="?sort=address" onclick="return false;">Address <i class="order-asc sortable-icon"></i></a></th>
-                                <th><a href="?sort=email" onclick="return false;">Email <i class="order-asc sortable-icon"></i></a></th>
-                            </tr>
-                        </tfoot>
-                        <tbody>
-                            <?php
-                            echo "\n";
-                            if (isset($dummyData)) {
-                                $dummyDataArray = json_decode($dummyData);
-                                if (is_array($dummyDataArray)) {
-                                    $i = 1;
-                                    foreach ($dummyDataArray as $row) {
-                                        echo indent(7).'<tr>'."\n";
-                                        echo indent(8).'<td class="column-checkbox"><input type="checkbox" name="id[]" value="'.$row->id.'"></td>'."\n";
-                                        echo indent(8).'<td class="column-primary" data-colname="Name">'."\n";
-                                        echo indent(9).$row->name."\n";
-                                        echo indent(9).'<div class="row-actions">'."\n";
-                                        echo indent(10).'<span class="action"><a href="#" onclick="return false;">Edit</a></span>'."\n";
-                                        echo indent(10).'<span class="action"><a href="#" onclick="return false;">Permissions</a></span>'."\n";
-                                        echo indent(10).'<span class="action"><a href="#" onclick="return false;">Delete</a></span>'."\n";
-                                        echo indent(9).'</div><!--.row-actions-->'."\n";
-                                        echo indent(9).'<button class="toggle-row" type="button"><i class="faicon fas fa-caret-down fa-fw" data-toggle-icon="fa-caret-down fa-caret-up"></i><span class="screen-reader-only">Show more details</span></button>'."\n";
-                                        echo indent(8).'</td>'."\n";
-                                        echo indent(8).'<td data-colname="Address">'.$row->address.'</td>'."\n";
-                                        echo indent(8).'<td data-colname="Email">'.$row->email.'</td>'."\n";
-                                        echo indent(7).'</tr>'."\n";
-                                        $i++;
-                                        if ($i > 5) {
-                                            break;
-                                        }
-                                    }// endforeach;
-                                    unset($i, $row);
+                    <div class="rd-block-level-margin-bottom">
+                        <table class="rd-datatable responsive">
+                            <thead>
+                                <tr>
+                                    <td class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></td>
+                                    <th class="column-primary"><a href="?sort=name" onclick="return false;">Name <i class="order-asc sortable-icon"></i></a></th>
+                                    <th><a href="?sort=address" onclick="return false;">Address <i class="order-asc sortable-icon"></i></a></th>
+                                    <th><a href="?sort=email" onclick="return false;">Email <i class="order-asc sortable-icon"></i></a></th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <td class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></td>
+                                    <th class="column-primary"><a href="?sort=name" onclick="return false;">Name <i class="order-asc sortable-icon"></i></a></th>
+                                    <th><a href="?sort=address" onclick="return false;">Address <i class="order-asc sortable-icon"></i></a></th>
+                                    <th><a href="?sort=email" onclick="return false;">Email <i class="order-asc sortable-icon"></i></a></th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <?php
+                                echo "\n";
+                                if (isset($dummyData)) {
+                                    $dummyDataArray = json_decode($dummyData);
+                                    if (is_array($dummyDataArray)) {
+                                        $i = 1;
+                                        foreach ($dummyDataArray as $row) {
+                                            echo indent(7).'<tr>'."\n";
+                                            echo indent(8).'<td class="column-checkbox"><input type="checkbox" name="id[]" value="'.$row->id.'"></td>'."\n";
+                                            echo indent(8).'<td class="column-primary" data-colname="Name">'."\n";
+                                            echo indent(9).$row->name."\n";
+                                            echo indent(9).'<div class="row-actions">'."\n";
+                                            echo indent(10).'<span class="action"><a href="#" onclick="return false;">Edit</a></span>'."\n";
+                                            echo indent(10).'<span class="action"><a href="#" onclick="return false;">Permissions</a></span>'."\n";
+                                            echo indent(10).'<span class="action"><a href="#" onclick="return false;">Delete</a></span>'."\n";
+                                            echo indent(9).'</div><!--.row-actions-->'."\n";
+                                            echo indent(9).'<button class="toggle-row" type="button"><i class="faicon fas fa-caret-down fa-fw" data-toggle-icon="fa-caret-down fa-caret-up"></i><span class="screen-reader-only">Show more details</span></button>'."\n";
+                                            echo indent(8).'</td>'."\n";
+                                            echo indent(8).'<td data-colname="Address">'.$row->address.'</td>'."\n";
+                                            echo indent(8).'<td data-colname="Email">'.$row->email.'</td>'."\n";
+                                            echo indent(7).'</tr>'."\n";
+                                            $i++;
+                                            if ($i > 5) {
+                                                break;
+                                            }
+                                        }// endforeach;
+                                        unset($i, $row);
+                                    }
+                                    unset($dummyDataArray);
                                 }
-                                unset($dummyDataArray);
-                            }
-                            ?> 
-                        </tbody>
-                    </table>
+                                ?> 
+                            </tbody>
+                        </table>
+                    </div>
+                    <pre>&lt;table class=&quot;rd-datatable responsive&quot;&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;td class=&quot;column-checkbox&quot;&gt;
+                &lt;input type=&quot;checkbox&quot; onclick=&quot;RundizTemplateAdmin.dataTableCheckboxToggler(this);&quot;&gt;
+            &lt;/td&gt;
+            &lt;th class=&quot;column-primary&quot;&gt;&lt;a href=&quot;?sort=name&quot; onclick=&quot;return false;&quot;&gt;Name &lt;i class=&quot;order-asc sortable-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/th&gt;
+            &lt;th&gt;&lt;a href=&quot;?sort=address&quot; onclick=&quot;return false;&quot;&gt;Address &lt;i class=&quot;order-asc sortable-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/th&gt;
+            &lt;th&gt;&lt;a href=&quot;?sort=email&quot; onclick=&quot;return false;&quot;&gt;Email &lt;i class=&quot;order-asc sortable-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td class=&quot;column-checkbox&quot;&gt;
+                &lt;input type=&quot;checkbox&quot; onclick=&quot;RundizTemplateAdmin.dataTableCheckboxToggler(this);&quot;&gt;
+            &lt;/td&gt;
+            &lt;th class=&quot;column-primary&quot;&gt;&lt;a href=&quot;?sort=name&quot; onclick=&quot;return false;&quot;&gt;Name &lt;i class=&quot;order-asc sortable-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/th&gt;
+            &lt;th&gt;&lt;a href=&quot;?sort=address&quot; onclick=&quot;return false;&quot;&gt;Address &lt;i class=&quot;order-asc sortable-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/th&gt;
+            &lt;th&gt;&lt;a href=&quot;?sort=email&quot; onclick=&quot;return false;&quot;&gt;Email &lt;i class=&quot;order-asc sortable-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td class=&quot;column-checkbox&quot;&gt;
+                &lt;input type=&quot;checkbox&quot; name=&quot;id[]&quot; value=&quot;1&quot;&gt;
+            &lt;/td&gt;
+            &lt;td class=&quot;column-primary&quot; data-colname=&quot;Name&quot;&gt;
+                Demo Demo
+                &lt;div class=&quot;row-actions&quot;&gt;
+                    &lt;span class=&quot;action&quot;&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;Edit&lt;/a&gt;&lt;/span&gt;
+                    &lt;span class=&quot;action&quot;&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;Permissions&lt;/a&gt;&lt;/span&gt;
+                    &lt;span class=&quot;action&quot;&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;Delete&lt;/a&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;!--.row-actions--&gt;
+                &lt;button class=&quot;toggle-row&quot; type=&quot;button&quot;&gt;&lt;i class=&quot;faicon fas fa-caret-down fa-fw&quot; data-toggle-icon=&quot;fa-caret-down fa-caret-up&quot;&gt;&lt;/i&gt;&lt;span class=&quot;screen-reader-only&quot;&gt;Show more details&lt;/span&gt;&lt;/button&gt;
+            &lt;/td&gt;
+            &lt;td data-colname=&quot;Address&quot;&gt;123 Address Street&lt;/td&gt;
+            &lt;td data-colname=&quot;Email&quot;&gt;demo@localhost.localhost&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</pre>
                     <p>And if there is no data.</p>
                     <table class="rd-datatable responsive">
                         <thead>
