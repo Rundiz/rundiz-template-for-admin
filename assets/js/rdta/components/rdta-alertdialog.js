@@ -1,4 +1,4 @@
-/*! Rundiz template for admin v 2.0.15 
+/*! Rundiz template for admin v 2.0.16 
 License: MIT*//**
  * RDTA alert dialog
  */
@@ -21,7 +21,7 @@ class RDTAAlertDialog {
             'text': '',
             'txtCloseButton': 'OK'
         };
-        this.options = {...defaultOptions, ...options};
+        this.options = Object.assign(defaultOptions, options);
         defaultOptions = undefined;
     }// constructor
 

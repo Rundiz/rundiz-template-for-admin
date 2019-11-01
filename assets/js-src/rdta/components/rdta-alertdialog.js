@@ -20,7 +20,7 @@ class RDTAAlertDialog {
             'text': '',
             'txtCloseButton': 'OK'
         };
-        this.options = {...defaultOptions, ...options};
+        this.options = Object.assign(defaultOptions, options);
         defaultOptions = undefined;
     }// constructor
 
