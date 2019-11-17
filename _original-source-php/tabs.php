@@ -106,11 +106,11 @@ include 'includes/html-head.php';
                         Use <code>rememberLastTab</code> option and set it to <code>true</code> to remember last active tab.</p>
                     <div id="rdta-tabs-rememberlasttab" class="rd-tabs">
                         <ul class="rd-tabs-nav">
-                            <li class="active"><a href="#tabs-1_1">Nunc tincidunt</a></li>
+                            <li><a href="#tabs-1_1">Nunc tincidunt</a></li>
                             <li><a href="#tabs-1_2">Proin dolor</a></li>
                             <li><a href="#tabs-1_3">Aenean lacinia</a></li>
                         </ul>
-                        <div id="tabs-1_1" class="rd-tabs-content active">
+                        <div id="tabs-1_1" class="rd-tabs-content">
                             <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
                         </div>
                         <div id="tabs-1_2" class="rd-tabs-content">

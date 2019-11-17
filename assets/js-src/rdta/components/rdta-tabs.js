@@ -110,7 +110,7 @@ class RDTATabs {
             selector.querySelector(targetTabContent).classList.add('active');
             if (thisClass.options.rememberLastTab === true && window.localStorage) {
                 // if remember last tab.
-                window.localStorage.setItem(thisClass.selector, activeTabNav);
+                window.localStorage.setItem('rdtaTabsLast-' + thisClass.selector, activeTabNav);
             }
             // trigger event.
             let eventDetail = {
@@ -176,8 +176,8 @@ class RDTATabs {
 
         if (options.rememberLastTab === true && window.localStorage) {
             // if option was set to remember last tab.
-            let lastTab = window.localStorage.getItem(selector);
-            if (!isNaN(lastTab)) {
+            let lastTab = window.localStorage.getItem('rdtaTabsLast-' + selector);
+            if (!isNaN(lastTab) && lastTab !== '' && lastTab !== null) {
                 options.activeTabs = parseInt(lastTab);
             }
         }
