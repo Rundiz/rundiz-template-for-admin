@@ -7,6 +7,19 @@ class RDTATabs {
 
 
     /**
+     * Class constructor.
+     * 
+     * @private Do not access this method directly, it was called via `init()` method.
+     * @param {object} options
+     * @returns {RDTATabs}
+     */
+    constructor(options) {
+        this.selector = (options.selector ? options.selector : '');
+        this.options = (options.options ? options.options : {});
+    }// constructor
+
+
+    /**
      * Add required CSS classes.
      * 
      * @private Do not call this, just call `init()`.
@@ -68,6 +81,7 @@ class RDTATabs {
         if (!targetTabContent) {
             return false;
         }
+        let thisClass = this;
 
         for (let i = 0; i < selector.children.length; i++) {
             if (!selector.children[i].classList.contains('rd-tabs-nav')) {
@@ -86,12 +100,18 @@ class RDTATabs {
         // set active on tab content.
         if (selector.querySelector(targetTabContent)) {
             selector.querySelector(targetTabContent).classList.add('active');
+            let eventDetail = {
+                'tabsElement': selector,
+                'targetTab': targetTabContent,
+            };
+            let event = new CustomEvent('rdta.tabs.activeTab', {'detail': eventDetail});
+            document.querySelector(thisClass.selector).dispatchEvent(event);
         }
     }// activateTabContent
 
 
     /**
-     * Ajax and set content to target.
+     * Ajax and set content to target. Did not activate the tab nav.
      * 
      * @private Do not call this, just call `init()`.
      * @param {string} url
@@ -101,14 +121,21 @@ class RDTATabs {
      */
     ajaxTabContent(url, selector, targetTabContent) {
         let xhr = new XMLHttpRequest();
+        let thisClass = this;
 
-        xhr.onreadystatechange = function() {
-            if (this.readyState === 4 && this.status === 200) {
-                if (selector.querySelector(targetTabContent)) {
-                    selector.querySelector(targetTabContent).innerHTML = this.responseText;
-                }
+        xhr.addEventListener('error', function(e) {
+            let event = new CustomEvent('rdta.tabs.ajaxFailed', {'detail': e});
+            document.querySelector(thisClass.selector).dispatchEvent(event);
+        });
+        xhr.addEventListener('loadend', function(e) {
+            let event = new CustomEvent('rdta.tabs.ajaxContentLoaded', {'detail': e});
+            document.querySelector(thisClass.selector).dispatchEvent(event);
+
+            if (selector.querySelector(targetTabContent)) {
+                selector.querySelector(targetTabContent).innerHTML = this.responseText;
             }
-        };
+        });
+
         xhr.open('GET', url);
         xhr.send();
     }// ajaxTabContent
@@ -131,7 +158,7 @@ class RDTATabs {
             options = defaultOptions;
         }
 
-        let thisClass = new this();
+        let thisClass = new this({'selector': selector, 'options': options});
         thisClass.addRequiredClasses(selector, options);
         thisClass.listenOnTabNav(selector, options);
     }// init
@@ -147,6 +174,7 @@ class RDTATabs {
      */
     listenOnTabNav(selector, options) {
         let thisClass = this;
+        let tabElement = document.querySelector(selector);
 
         document.addEventListener('click', function(event) {
             // match selector.
