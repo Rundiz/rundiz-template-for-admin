@@ -34,6 +34,11 @@
                     margin-bottom: .188rem;
                     margin-right: -1px;
 
+                    // .rd-tabs.tabs-vertical .rd-tabs-nav li
+                    @media (min-width: $minimum-sidebar-breakpoint) {
+                        padding: $block-element-margin-sides 0.313rem;
+                    }
+
                     // .rd-tabs.tabs-vertical .rd-tabs-nav li.active
                     &.active {
                         border-bottom: 1px solid $border-color;
@@ -69,6 +74,7 @@
             @media (min-width: $minimum-sidebar-breakpoint) {
                 margin-bottom: -1px;
                 margin-right: .188rem;
+                padding: $block-element-margin-sides 0.813rem;
             }
 
             // .rd-tabs .rd-tabs-nav li.active
