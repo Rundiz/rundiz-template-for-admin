@@ -90,19 +90,34 @@ class RDTATabs {
             }
         }
 
+        // set active on tab nav.
+        let countTabNav = 0;
+        let activeTabNav = 0;
         selector.querySelectorAll('ul a').forEach(function(item, index) {
             if (item.hash === targetTabContent || item.dataset.targettab === targetTabContent) {
                 item.parentElement.classList.add('active');
+                activeTabNav = countTabNav;
             } else {
                 item.parentElement.classList.remove('active');
             }
+            countTabNav++;
         });
+
         // set active on tab content.
         if (selector.querySelector(targetTabContent)) {
+            // if tab content exists.
+            // add active class to it.
             selector.querySelector(targetTabContent).classList.add('active');
+            if (thisClass.options.rememberLastTab === true && window.localStorage) {
+                // if remember last tab.
+                window.localStorage.setItem(thisClass.selector, activeTabNav);
+            }
+            // trigger event.
             let eventDetail = {
                 'tabsElement': selector,
+                'tabsSelector': thisClass.selector,
                 'targetTab': targetTabContent,
+                'targetTabNumber': activeTabNav
             };
             let event = new CustomEvent('rdta.tabs.activeTab', {'detail': eventDetail});
             document.querySelector(thisClass.selector).dispatchEvent(event);
@@ -151,11 +166,20 @@ class RDTATabs {
     static init(selector, options) {
         let defaultOptions = {
             'activeTabs': 0,
+            'rememberLastTab': false,
         };
         if (typeof(options) === 'object') {
             options = Object.assign(defaultOptions, options);
         } else {
             options = defaultOptions;
+        }
+
+        if (options.rememberLastTab === true && window.localStorage) {
+            // if option was set to remember last tab.
+            let lastTab = window.localStorage.getItem(selector);
+            if (!isNaN(lastTab)) {
+                options.activeTabs = parseInt(lastTab);
+            }
         }
 
         let thisClass = new this({'selector': selector, 'options': options});
