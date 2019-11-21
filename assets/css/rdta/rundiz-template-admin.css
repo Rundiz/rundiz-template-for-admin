@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Rundiz template for admin V.2.0.19
+ * Rundiz template for admin V.2.0.20
  */
 /*
 * ----------------------------------------------------------------------------------------------
@@ -1195,7 +1195,7 @@ textarea.input-small {
 
 .hidden,
 .hide {
-  display: none;
+  display: none !important;
 }
 
 .rd-animation.fade {
@@ -1209,7 +1209,7 @@ textarea.input-small {
   .hidden-only-xs,
 .hidden-under-sm,
 .hidden-under-equal-xs {
-    display: none;
+    display: none !important;
   }
 }
 @media (max-width: 767px) {
@@ -1230,7 +1230,7 @@ textarea.input-small {
 .visible-only-xs,
 .visible-under-equal-xs,
 .visible-under-sm {
-    display: none;
+    display: none !important;
   }
 }
 @media (max-width: 999px) {
@@ -1239,12 +1239,12 @@ textarea.input-small {
 .visible-only-md,
 .visible-over-equal-md,
 .visible-over-sm {
-    display: none;
+    display: none !important;
   }
 }
 @media (min-width: 1000px) and (max-width: 1199px) {
   .hidden-only-md {
-    display: none;
+    display: none !important;
   }
 }
 @media (min-width: 1000px) {
@@ -1253,7 +1253,7 @@ textarea.input-small {
 .visible-only-sm,
 .visible-under-equal-sm,
 .visible-under-md {
-    display: none;
+    display: none !important;
   }
 }
 @media (max-width: 1199px) {
@@ -1262,12 +1262,12 @@ textarea.input-small {
 .visible-only-lg,
 .visible-over-equal-lg,
 .visible-over-md {
-    display: none;
+    display: none !important;
   }
 }
 @media (min-width: 1200px) and (max-width: 1399px) {
   .hidden-only-lg {
-    display: none;
+    display: none !important;
   }
 }
 @media (min-width: 1200px) {
@@ -1276,7 +1276,7 @@ textarea.input-small {
 .visible-only-md,
 .visible-under-equal-md,
 .visible-under-lg {
-    display: none;
+    display: none !important;
   }
 }
 @media (max-width: 1399px) {
@@ -1285,7 +1285,7 @@ textarea.input-small {
 .visible-only-xl,
 .visible-over-equal-xl,
 .visible-over-lg {
-    display: none;
+    display: none !important;
   }
 }
 @media (min-width: 1400px) {
@@ -1295,7 +1295,7 @@ textarea.input-small {
 .visible-only-lg,
 .visible-under-equal-lg,
 .visible-under-xl {
-    display: none;
+    display: none !important;
   }
 }
 .hidden-over-equal-xs,
@@ -1303,7 +1303,7 @@ textarea.input-small {
 .hidden-under-equal-xl,
 .visible-over-xl,
 .visible-under-xs {
-  display: none;
+  display: none !important;
 }
 
 .rd-helpers-screen-size-xs-max::after {

@@ -1,6 +1,6 @@
 /**!
  * @fileOverview Kickass library to create and place poppers near their reference elements.
- * @version 1.3.2
+ * @version 1.3.3
  * @license
  * Copyright (c) 2016 Federico Zivolo and contributors
  *
@@ -108,8 +108,8 @@ var Tooltip = function () {
    * @param {String} options.placement='top'
    *      Placement of the popper accepted values: `top(-start, -end), right(-start, -end), bottom(-start, -end),
    *      left(-start, -end)`
-   * @param {String} options.arrowSelector='.tooltip-arrow, .tooltip__arrow' - className used to locate the DOM arrow element in the tooltip.
-   * @param {String} options.innerSelector='.tooltip-inner, .tooltip__inner' - className used to locate the DOM inner element in the tooltip.
+   * @param {String} [options.arrowSelector='.tooltip-arrow, .tooltip__arrow'] - className used to locate the DOM arrow element in the tooltip.
+   * @param {String} [options.innerSelector='.tooltip-inner, .tooltip__inner'] - className used to locate the DOM inner element in the tooltip.
    * @param {HTMLElement|String|false} options.container=false - Append the tooltip to a specific element.
    * @param {Number|Object} options.delay=0
    *      Delay showing and hiding the tooltip (ms) - does not apply to manual trigger type.
@@ -247,9 +247,9 @@ var Tooltip = function () {
         // if title is a element node or document fragment, append it only if allowHtml is true
         allowHtml && titleNode.appendChild(title);
       } else if (isFunction(title)) {
-        // if title is a function, call it and set textContent or innerHtml depending by `allowHtml` value
-        var titleText = title.call(reference);
-        allowHtml ? titleNode.innerHTML = titleText : titleNode.textContent = titleText;
+        // Recursively call ourself so that the return value of the function gets handled appropriately - either
+        // as a dom node, a string, or even as another function.
+        this._addTitleContent(reference, title.call(reference), allowHtml, titleNode);
       } else {
         // if it's just a simple text, set textContent or innerHtml depending by `allowHtml` value
         allowHtml ? titleNode.innerHTML = title : titleNode.textContent = title;
@@ -301,7 +301,7 @@ var Tooltip = function () {
           element: options.arrowSelector
         }),
         offset: _extends({}, this._popperOptions.modifiers && this._popperOptions.modifiers.offset, {
-          offset: options.offset
+          offset: options.offset || this._popperOptions.modifiers && this._popperOptions.modifiers.offset && this._popperOptions.modifiers.offset.offset || options.offset
         })
       });
 
