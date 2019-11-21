@@ -100,6 +100,10 @@ class RDTAAlertDialog {
         if (document.querySelector('.rd-alertdialog [data-dismiss="dialog"]')) {
             document.querySelector('.rd-alertdialog [data-dismiss="dialog"]').focus();
         }
+
+        // fire event.
+        let event = new Event('rdta.alertdialog.opened');
+        document.body.dispatchEvent(event);
     }// createHtmlDialog
 
 
@@ -119,6 +123,10 @@ class RDTAAlertDialog {
                         target.closest('.rd-alertdialog-modal').remove();
                         document.body.classList.remove('rd-alertdialog-modal-open');
                         document.body.removeEventListener('click', handler);
+
+                        // fire event
+                        let event = new Event('rdta.alertdialog.closed');
+                        document.body.dispatchEvent(event);
                     }
                     break;
                 }
