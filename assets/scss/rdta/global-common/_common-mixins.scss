@@ -30,3 +30,17 @@
         @content;
     }
 }
+
+
+@mixin link-actions-color($colorName) {
+    &:active {
+        color: darken($colorName, 15);
+    }
+    &:focus,
+    &:hover {
+        color: lighten($colorName, 15);
+    }
+    &:visited {
+        color: $colorName;
+    }
+}

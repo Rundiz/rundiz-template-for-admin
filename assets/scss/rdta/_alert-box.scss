@@ -21,24 +21,28 @@
         border-left-color: $danger-color;
         a {
             color: $danger-color;
+            @include link-actions-color($danger-color);
         }
     }
     &.alert-info {
         border-left-color: $info-color;
         a {
             color: $info-color;
+            @include link-actions-color($info-color);
         }
     }
     &.alert-success {
         border-left-color: $success-color;
         a {
             color: $success-color;
+            @include link-actions-color($success-color);
         }
     }
     &.alert-warning {
         border-left-color: $warning-color;
         a {
             color: $warning-color;
+            @include link-actions-color($warning-color);
         }
     }
     &.is-dismissable {
