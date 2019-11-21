@@ -1,0 +1,51 @@
+/*
+* ----------------------------------------------------------------------------------------------
+* text classes
+* ----------------------------------------------------------------------------------------------
+*/
+
+
+// text colors.
+.text-color-danger {
+    color: $danger-color;
+    @include link-actions-color($danger-color);
+}
+.text-color-disabled {
+    color: $disabled-font-color;
+    @include link-actions-color($disabled-font-color);
+}
+.text-color-info {
+    color: $info-color;
+    @include link-actions-color($info-color);
+}
+.text-color-primary {
+    color: $primary-color;
+    @include link-actions-color($primary-color);
+}
+.text-color-success {
+    color: $success-color;
+    @include link-actions-color($success-color);
+}
+.text-color-warning {
+    color: $warning-color;
+    @include link-actions-color($warning-color);
+}
+.text-color-white {
+    color: $white-color;
+    @include link-actions-color($white-color);
+}
+
+
+// text alignment.
+.text-center {
+    text-align: center;
+}
+.text-justify {
+    text-align: justify;
+}
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
