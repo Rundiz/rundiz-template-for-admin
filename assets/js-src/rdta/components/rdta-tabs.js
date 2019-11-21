@@ -47,23 +47,26 @@ class RDTATabs {
                     // add tabs content class.
                     item.children[i].classList.add('rd-tabs-content');
                 }
-            }
+            }// endfor;
 
             // set active class
-            for (let i = 0; i < item.querySelector('ul').children.length; i++) {
-                // loop each li.
-                if (i === options.activeTabs) {
-                    let targetTab = '';
-                    if (item.querySelector('ul').children[i].querySelector('a').dataset.targettab) {
-                        targetTab = item.querySelector('ul').children[i].querySelector('a').dataset.targettab;
-                    } else if (item.querySelector('ul').children[i].querySelector('a').hash) {
-                        targetTab = item.querySelector('ul').children[i].querySelector('a').hash;
+            if (item.querySelector('.rd-tabs-nav')) {
+                let tabNavElement = item.querySelector('.rd-tabs-nav');
+                for (let i = 0; i < tabNavElement.children.length; i++) {
+                    // loop each li.
+                    if (i === options.activeTabs) {
+                        let targetTab = '';
+                        if (tabNavElement.children[i].querySelector('a').dataset.targettab) {
+                            targetTab = tabNavElement.children[i].querySelector('a').dataset.targettab;
+                        } else if (tabNavElement.children[i].querySelector('a').hash) {
+                            targetTab = tabNavElement.children[i].querySelector('a').hash;
+                        }
+                        if (targetTab) {
+                            thisClass.activateTabContent(item, targetTab);
+                        }
+                        break;
                     }
-                    if (targetTab) {
-                        thisClass.activateTabContent(item, targetTab);
-                    }
-                    break;
-                }
+                }// endfor;
             }
         });
     }// addRequiredClasses
@@ -93,7 +96,7 @@ class RDTATabs {
         // set active on tab nav.
         let countTabNav = 0;
         let activeTabNav = 0;
-        selector.querySelectorAll('ul a').forEach(function(item, index) {
+        selector.querySelectorAll('.rd-tabs-nav a').forEach(function(item, index) {
             if (item.hash === targetTabContent || item.dataset.targettab === targetTabContent) {
                 item.parentElement.classList.add('active');
                 activeTabNav = countTabNav;

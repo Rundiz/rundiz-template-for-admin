@@ -34,15 +34,14 @@
                     margin-bottom: .188rem;
                     margin-right: -1px;
 
-                    // .rd-tabs.tabs-vertical .rd-tabs-nav li
-                    @media (min-width: $minimum-sidebar-breakpoint) {
-                        padding: $block-element-margin-sides 0.313rem;
-                    }
-
                     // .rd-tabs.tabs-vertical .rd-tabs-nav li.active
                     &.active {
                         border-bottom: 1px solid $border-color;
                         border-right: none;
+                    }
+
+                    > a {
+                        padding: $block-element-margin-sides 0.313rem;
                     }
                 }
             }
@@ -68,13 +67,11 @@
             background-color: $background-color;
             border: 1px solid $border-color;
             margin: 0 0 0.313rem 0;
-            padding: 0.313rem;
 
             // .rd-tabs .rd-tabs-nav li
             @media (min-width: $minimum-sidebar-breakpoint) {
                 margin-bottom: -1px;
                 margin-right: .188rem;
-                padding: $block-element-margin-sides 0.813rem;
             }
 
             // .rd-tabs .rd-tabs-nav li.active
@@ -92,6 +89,12 @@
                 color: $font-color;
                 cursor: pointer;
                 display: block;
+                padding: 0.313rem;
+
+                // .rd-tabs .rd-tabs-nav li > a 
+                @media (min-width: $minimum-sidebar-breakpoint) {
+                    padding: $block-element-margin-sides 0.813rem;
+                }
             }
         }
     }
