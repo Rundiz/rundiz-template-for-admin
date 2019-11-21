@@ -71,6 +71,28 @@ include 'includes/html-head.php';
                             </div>
                         </div>
                     </div>
+                    <h3>Events</h3>
+                    <p>RDTA alert dialog have few events for hooking.</p>
+                    <table class="rd-datatable">
+                        <thead>
+                            <tr>
+                                <th>Event type</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>rdta.alertdialog.opened</td>
+                                <td>This event is fired when alert dialog was opened.</td>
+                            </tr>
+                            <tr>
+                                <td>rdta.alertdialog.closed</td>
+                                <td>This event is fired when alert dialog was closed.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Click on <a href="#" onclick="RDTAAlertDialog.alert({'type': 'info', 'text': 'See events log on the page.'}); return false;">this link</a> to open alert dialog and see its events.</p>
+                    <div class="rd-block-level-margin-bottom rd-alertdialog-events rdta-demopage-debugbox"></div>
                 </div><!--.rd-page-content-->
             </main>
 <?php include 'includes/partials/page-footer.php'; ?> 
@@ -91,8 +113,19 @@ include 'includes/html-head.php';
             }// rdtaAlertBoxShowAlert
 
 
+            function rdtaDebugAlertDialogEvents() {
+                document.body.addEventListener('rdta.alertdialog.opened', function() {
+                    document.querySelector('.rd-alertdialog-events').insertAdjacentHTML('beforeend', 'Alert dialog opened<br>');
+                }, false);
+                document.body.addEventListener('rdta.alertdialog.closed', function() {
+                    document.querySelector('.rd-alertdialog-events').insertAdjacentHTML('beforeend', 'Alert dialog closed<br>');
+                }, false);
+            }// rdtaDebugAlertDialogEvents
+
+
             document.addEventListener('DOMContentLoaded', function() {
                 RDTADialog.init();
+                rdtaDebugAlertDialogEvents();
             });
         </script>
     </body>

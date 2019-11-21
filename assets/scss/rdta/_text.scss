@@ -49,3 +49,30 @@
 .text-right {
     text-align: right;
 }
+
+
+// text flow.
+.text-flow-wrap {
+    white-space: normal !important;
+}
+.text-flow-nowrap {
+    white-space: nowrap !important;
+}
+.text-flow-breakword {
+    // @link https://stackoverflow.com/a/15137272/128761 Reference.
+    word-break: break-word !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+}
+
+
+// text transform.
+.text-transform-lowercase {
+    text-transform: lowercase;
+}
+.text-transform-uppercase {
+    text-transform: uppercase;
+}
+.text-transform-capitalize {
+    text-transform: capitalize;
+}

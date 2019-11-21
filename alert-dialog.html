@@ -11,12 +11,14 @@
         <link rel="stylesheet" href="assets/font-awesome/css/all.min.css?v=5.10.2&amp;mt=1566477676">
 
         <link rel="stylesheet" href="assets/css/smartmenus/sm-core-css.css?v=1.1.0&amp;mt=1559110074">
-        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?mt=1573966181">
+        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?mt=1574315639">
 
-        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?mt=1573966182">
-        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?mt=1573966182"> 
-        <link rel="stylesheet" href="assets/css/rdta/components/rdta-dialog.css?mt=1573966182">
-        <link rel="stylesheet" href="assets/css/rdta/components/rdta-alertdialog.css?mt=1573966182">
+        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?mt=1574315640">
+        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?mt=1574315640">
+
+        <link rel="stylesheet" href="assets/css/rdta-demo-pages.css?mt=1574313893"> 
+        <link rel="stylesheet" href="assets/css/rdta/components/rdta-dialog.css?mt=1574315640">
+        <link rel="stylesheet" href="assets/css/rdta/components/rdta-alertdialog.css?mt=1574315640">
     </head>
     <body ontouchstart="">
         <header class="rd-navbar">
@@ -239,6 +241,7 @@
                                 <li><a href="helpers.html">Helpers</a></li>
                                 <li><a href="pagination.html">Pagination</a></li>
                                 <li><a href="tabs.html">Tabs</a></li>
+                                <li><a href="text.html">Text</a></li>
                                 <li><a href="tooltips.html">Tooltips</a></li>
                             </ul>
                         </li>
@@ -338,6 +341,28 @@
                             </div>
                         </div>
                     </div>
+                    <h3>Events</h3>
+                    <p>RDTA alert dialog have few events for hooking.</p>
+                    <table class="rd-datatable">
+                        <thead>
+                            <tr>
+                                <th>Event type</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>rdta.alertdialog.opened</td>
+                                <td>This event is fired when alert dialog was opened.</td>
+                            </tr>
+                            <tr>
+                                <td>rdta.alertdialog.closed</td>
+                                <td>This event is fired when alert dialog was closed.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Click on <a href="#" onclick="RDTAAlertDialog.alert({'type': 'info', 'text': 'See events log on the page.'}); return false;">this link</a> to open alert dialog and see its events.</p>
+                    <div class="rd-block-level-margin-bottom rd-alertdialog-events rdta-demopage-debugbox"></div>
                 </div><!--.rd-page-content-->
             </main>
             <footer>
@@ -357,7 +382,7 @@
         <script src="assets/js/sticky-sidebar/jquery.sticky-sidebar.min.js?v=3.2.0&amp;mt=1560009256"></script>
         <script src="assets/js/sticky-sidebar/ResizeSensor.js?v=3.2.0&amp;mt=1560009256"></script><!-- use with sticky sidebar js. -->
 
-        <script src="assets/js/rdta/rundiz-template-admin.js?mt=1573966817"></script> 
+        <script src="assets/js/rdta/rundiz-template-admin.js?mt=1574315638"></script> 
         <script src="assets/js/rdta/components/rdta-dialog.js"></script>
         <script src="assets/js/rdta/components/rdta-alertdialog.js"></script>
         <script>
@@ -371,8 +396,19 @@
             }// rdtaAlertBoxShowAlert
 
 
+            function rdtaDebugAlertDialogEvents() {
+                document.body.addEventListener('rdta.alertdialog.opened', function() {
+                    document.querySelector('.rd-alertdialog-events').insertAdjacentHTML('beforeend', 'Alert dialog opened<br>');
+                }, false);
+                document.body.addEventListener('rdta.alertdialog.closed', function() {
+                    document.querySelector('.rd-alertdialog-events').insertAdjacentHTML('beforeend', 'Alert dialog closed<br>');
+                }, false);
+            }// rdtaDebugAlertDialogEvents
+
+
             document.addEventListener('DOMContentLoaded', function() {
                 RDTADialog.init();
+                rdtaDebugAlertDialogEvents();
             });
         </script>
     </body>

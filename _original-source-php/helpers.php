@@ -36,6 +36,7 @@ include 'includes/html-head.php';
                     <div class="helper-responsive-visibility-box rd-block-level-margin-bottom">block with margin bottom</div>
                     <p>So, you can put this class into any element you want the same bottom space as block level element.</p>
                     <h3>Clear float</h3>
+                    <p>Use <code>.clearfix</code> class to clear any float CSS.</p>
                     <div>
                         <div style="border: 1px dotted #ccc; float: left; width: 50px;">
                             Float item
@@ -48,21 +49,20 @@ include 'includes/html-head.php';
                     </div>
 
                     <h3>Screen reader only</h3>
+                    <p>Use <code>.screen-reader-only</code> class to show for screen reader only.</p>
                     <p>This is normal text. This is &quot;<span class="screen-reader-only">for screen reader only</span>&quot; which does not appears on screen.</p>
 
-                    <h3>Text alignment</h3>
-                    <p class="text-left">Align left</p>
-                    <p class="text-center">Align center</p>
-                    <p class="text-right">Align right</p>
-
                     <h3>Fade in/out</h3>
+                    <p>Begins with element that contain <code>.rd-animation</code>, <code>.fade</code> classes.<br>
+                        To fade out add the <code>.fade-out</code> class, to fade in just remove the <code>.fade-out</code> class.
+                    </p>
                     <div id="demo-box-fadeout" class="rd-animation fade" style="border: 1px dashed #ccc; padding: 0.625rem;">Fade content box</div>
                     <button type="button" onclick="rdtaDemoFadeOut();" style="margin-bottom: 0.625rem;">Fade out</button>
                     <div id="demo-box-fadein" class="rd-animation fade fade-out" style="border: 1px dashed #ccc; padding: 0.625rem;">Fade content box</div>
                     <button type="button" onclick="rdtaDemoFadeIn();" style="margin-bottom: 0.625rem;">Fade in</button>
 
                     <h3>Responsive visibility</h3>
-                    <p>This text -&gt;<span class="hidden">was hidden</span>&lt;- hidden in all screen sizes.</p>
+                    <p>This text -&gt;<span class="hidden">was hidden</span>&lt;- hidden in all screen sizes using <code>.hidden</code> class.</p>
                     <p>The text below will be hidden and visible in different screen size. Try to resize the browser to see it in action.</p>
                     <div class="rd-datatable-wrapper">
                         <table class="rd-datatable">

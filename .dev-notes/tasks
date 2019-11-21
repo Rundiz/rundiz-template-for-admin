@@ -34,7 +34,7 @@ To watch scss files, use following command line:
 Publish ================================================
 To publish this package to node package manager please follow instruction.
 1. Update the version number in package.json.
-2. Run `gulp` command.
-3. Open readme.md in _builder folder and follow instruction on commit section.
+2. Run `gulp` command. Or run `npm run build` command.
+3. Open readme.md in _builder folder and follow instruction on commit section. Or run `npm run phpbuild` command.
 4. Commit and push to Github.
 5. run `npm publish` command.

@@ -144,6 +144,7 @@ for ($i = 1; $i <= 50; $i++) {
                                 <li><a href="helpers.php">Helpers</a></li>
                                 <li><a href="pagination.php">Pagination</a></li>
                                 <li><a href="tabs.php">Tabs</a></li>
+                                <li><a href="text.php">Text</a></li>
                                 <li><a href="tooltips.php">Tooltips</a></li>
                             </ul>
                         </li>

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Rundiz template for admin V.2.0.18
+ * Rundiz template for admin V.2.0.19
  */
 /*
 * ----------------------------------------------------------------------------------------------
@@ -249,10 +249,28 @@ ul.rd-sidebar-expand-collapse-controls a .icon,
 .rd-alertbox.alert-danger a {
   color: #bc0000;
 }
+.rd-alertbox.alert-danger a:active {
+  color: #700000;
+}
+.rd-alertbox.alert-danger a:focus, .rd-alertbox.alert-danger a:hover {
+  color: #ff0a0a;
+}
+.rd-alertbox.alert-danger a:visited {
+  color: #bc0000;
+}
 .rd-alertbox.alert-info {
   border-left-color: #2481ad;
 }
 .rd-alertbox.alert-info a {
+  color: #2481ad;
+}
+.rd-alertbox.alert-info a:active {
+  color: #17526e;
+}
+.rd-alertbox.alert-info a:focus, .rd-alertbox.alert-info a:hover {
+  color: #45a9d8;
+}
+.rd-alertbox.alert-info a:visited {
   color: #2481ad;
 }
 .rd-alertbox.alert-success {
@@ -261,10 +279,28 @@ ul.rd-sidebar-expand-collapse-controls a .icon,
 .rd-alertbox.alert-success a {
   color: #007c00;
 }
+.rd-alertbox.alert-success a:active {
+  color: #003000;
+}
+.rd-alertbox.alert-success a:focus, .rd-alertbox.alert-success a:hover {
+  color: #00c900;
+}
+.rd-alertbox.alert-success a:visited {
+  color: #007c00;
+}
 .rd-alertbox.alert-warning {
   border-left-color: #e69200;
 }
 .rd-alertbox.alert-warning a {
+  color: #e69200;
+}
+.rd-alertbox.alert-warning a:active {
+  color: #9a6100;
+}
+.rd-alertbox.alert-warning a:focus, .rd-alertbox.alert-warning a:hover {
+  color: #ffb534;
+}
+.rd-alertbox.alert-warning a:visited {
   color: #e69200;
 }
 .rd-alertbox.is-dismissable {
@@ -1314,8 +1350,108 @@ textarea.input-small {
   width: 1px;
 }
 
+/*
+* ----------------------------------------------------------------------------------------------
+* text classes
+* ----------------------------------------------------------------------------------------------
+*/
+.text-color-danger {
+  color: #bc0000;
+}
+.text-color-danger:active {
+  color: #700000;
+}
+.text-color-danger:focus, .text-color-danger:hover {
+  color: #ff0a0a;
+}
+.text-color-danger:visited {
+  color: #bc0000;
+}
+
+.text-color-disabled {
+  color: #999;
+}
+.text-color-disabled:active {
+  color: #737373;
+}
+.text-color-disabled:focus, .text-color-disabled:hover {
+  color: #bfbfbf;
+}
+.text-color-disabled:visited {
+  color: #999;
+}
+
+.text-color-info {
+  color: #2481ad;
+}
+.text-color-info:active {
+  color: #17526e;
+}
+.text-color-info:focus, .text-color-info:hover {
+  color: #45a9d8;
+}
+.text-color-info:visited {
+  color: #2481ad;
+}
+
+.text-color-primary {
+  color: #52A0E5;
+}
+.text-color-primary:active {
+  color: #1f7bcc;
+}
+.text-color-primary:focus, .text-color-primary:hover {
+  color: #95c5ef;
+}
+.text-color-primary:visited {
+  color: #52A0E5;
+}
+
+.text-color-success {
+  color: #007c00;
+}
+.text-color-success:active {
+  color: #003000;
+}
+.text-color-success:focus, .text-color-success:hover {
+  color: #00c900;
+}
+.text-color-success:visited {
+  color: #007c00;
+}
+
+.text-color-warning {
+  color: #e69200;
+}
+.text-color-warning:active {
+  color: #9a6100;
+}
+.text-color-warning:focus, .text-color-warning:hover {
+  color: #ffb534;
+}
+.text-color-warning:visited {
+  color: #e69200;
+}
+
+.text-color-white {
+  color: #ffffff;
+}
+.text-color-white:active {
+  color: #d9d9d9;
+}
+.text-color-white:focus, .text-color-white:hover {
+  color: white;
+}
+.text-color-white:visited {
+  color: #ffffff;
+}
+
 .text-center {
   text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
 }
 
 .text-left {
@@ -1324,5 +1460,31 @@ textarea.input-small {
 
 .text-right {
   text-align: right;
+}
+
+.text-flow-wrap {
+  white-space: normal !important;
+}
+
+.text-flow-nowrap {
+  white-space: nowrap !important;
+}
+
+.text-flow-breakword {
+  word-break: break-word !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+.text-transform-lowercase {
+  text-transform: lowercase;
+}
+
+.text-transform-uppercase {
+  text-transform: uppercase;
+}
+
+.text-transform-capitalize {
+  text-transform: capitalize;
 }
 /*# sourceMappingURL=rundiz-template-admin.css.map */

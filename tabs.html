@@ -11,11 +11,13 @@
         <link rel="stylesheet" href="assets/font-awesome/css/all.min.css?v=5.10.2&amp;mt=1566477676">
 
         <link rel="stylesheet" href="assets/css/smartmenus/sm-core-css.css?v=1.1.0&amp;mt=1559110074">
-        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?mt=1573966181">
+        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?mt=1574315639">
 
-        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?mt=1573966182">
-        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?mt=1573966182"> 
-        <link rel="stylesheet" href="assets/css/rdta/components/rdta-tabs.css?mt=1573966182">
+        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?mt=1574315640">
+        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?mt=1574315640">
+
+        <link rel="stylesheet" href="assets/css/rdta-demo-pages.css?mt=1574313893"> 
+        <link rel="stylesheet" href="assets/css/rdta/components/rdta-tabs.css?mt=1574315640">
     </head>
     <body ontouchstart="">
         <header class="rd-navbar">
@@ -238,6 +240,7 @@
                                 <li><a href="helpers.html">Helpers</a></li>
                                 <li><a href="pagination.html">Pagination</a></li>
                                 <li><a href="tabs.html">Tabs</a></li>
+                                <li><a href="text.html">Text</a></li>
                                 <li><a href="tooltips.html">Tooltips</a></li>
                             </ul>
                         </li>
@@ -321,6 +324,24 @@
                     <pre>document.addEventListener('DOMContentLoaded', function() {
     RDTATabs.init('.tabs');
 });</pre>
+                    <h4>Using <code>&lt;ol&gt;</code></h4>
+                    <div class="tabs">
+                        <ol>
+                            <li><a href="#tabs-1">Nunc tincidunt</a></li>
+                            <li><a href="#tabs-2">Proin dolor</a></li>
+                            <li><a href="#tabs-3">Aenean lacinia</a></li>
+                        </ol>
+                        <div id="tabs-1">
+                            <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
+                        </div>
+                        <div id="tabs-2">
+                            <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
+                        </div>
+                        <div id="tabs-3">
+                            <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
+                            <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
+                        </div>
+                    </div>
                     <h3>With pre-defined CSS classes.</h3>
                     <p><abbr title="Rundiz template for admin">RDTA</abbr> can also use pre-defined CSS classes.</p>
                     <pre>&lt;div class=&quot;tabs rd-tabs&quot;&gt;
@@ -461,7 +482,7 @@
                         </tbody>
                     </table>
                     <p>Open console to see detail.</p>
-                    <div class="rd-block-level-margin-bottom rd-tabs-events" style="border: 1px dashed #ccc; padding: 10px;"></div>
+                    <div class="rd-block-level-margin-bottom rd-tabs-events rdta-demopage-debugbox"></div>
                 </div><!--.rd-page-content-->
             </main>
             <footer>
@@ -481,7 +502,7 @@
         <script src="assets/js/sticky-sidebar/jquery.sticky-sidebar.min.js?v=3.2.0&amp;mt=1560009256"></script>
         <script src="assets/js/sticky-sidebar/ResizeSensor.js?v=3.2.0&amp;mt=1560009256"></script><!-- use with sticky sidebar js. -->
 
-        <script src="assets/js/rdta/rundiz-template-admin.js?mt=1573966817"></script> 
+        <script src="assets/js/rdta/rundiz-template-admin.js?mt=1574315638"></script> 
         <script src="assets/js/rdta/components/rdta-tabs.js"></script>
         <script>
             function rdtaDebugTabsEvents() {

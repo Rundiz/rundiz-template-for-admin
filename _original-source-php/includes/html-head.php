@@ -20,3 +20,5 @@
 
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta/typo-and-form/typo-and-form.css'); ?>">
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta/rundiz-template-admin.css'); ?>">
+
+        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta-demo-pages.css'); ?>">

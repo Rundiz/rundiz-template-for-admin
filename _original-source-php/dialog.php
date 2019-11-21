@@ -288,7 +288,7 @@ include 'includes/html-head.php';
                             </div>
                         </div>
                     </div>
-                    <div class="rd-block-level-margin-bottom rd-dialog-events" style="border: 1px dashed #ccc; padding: 10px;"></div>
+                    <div class="rd-block-level-margin-bottom rd-dialog-events rdta-demopage-debugbox"></div>
                 </div><!--.rd-page-content-->
             </main>
 <?php include 'includes/partials/page-footer.php'; ?> 

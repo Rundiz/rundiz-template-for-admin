@@ -1,0 +1,9 @@
+/*
+Styles for Rundiz Template for Admin demo pages.
+*/
+
+
+.rdta-demopage-debugbox {
+    border: 1px dashed #ccc;
+    padding: 10px;
+}
