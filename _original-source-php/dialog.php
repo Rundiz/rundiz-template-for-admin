@@ -144,6 +144,15 @@ include 'includes/html-head.php';
                                     <p>
                                         In duis conubia mattis mattis elementum suspendisse metus. Ullamcorper tincidunt enim ligula semper dolor! Gravida natoque quis mus velit urna metus tincidunt aliquam potenti risus sodales! Non id sollicitudin quis turpis habitasse. Sociosqu ac vitae congue varius per augue venenatis tempor. Porttitor quisque risus nostra. Hac duis quis litora dis nisi pretium. Aliquet montes.
                                     </p>
+                                    <p>
+                                        Nulla pharetra rutrum varius. Vestibulum quis nisl ut tortor ullamcorper mattis quis ultrices dui. Praesent eu turpis lobortis, finibus lorem sed, finibus odio. In eleifend cursus sem, et suscipit dui ornare id. Vestibulum velit diam, auctor non lacinia mollis, vehicula quis urna. Nullam leo arcu, dignissim at turpis sed, maximus sollicitudin tortor. Fusce vulputate leo diam, a luctus metus suscipit a. Nam tristique eros quis risus imperdiet, in tempus eros mollis. Aenean scelerisque dolor ac urna placerat, ut placerat leo fermentum. Sed mattis magna eu leo eleifend pharetra. Duis est nisl, varius et neque non, elementum tempor libero. Aenean vitae mi eu est bibendum dignissim vitae at nunc. Maecenas luctus leo eget tortor finibus varius. Aenean nec ipsum at quam maximus scelerisque vitae at diam.
+                                    </p>
+                                    <p>
+                                        Curabitur condimentum nulla velit, vel aliquet mauris semper a. Duis suscipit lectus nec urna feugiat gravida. Quisque commodo bibendum nibh in molestie. Vivamus tincidunt, massa non blandit suscipit, mauris orci tempor justo, ut sollicitudin nunc ante et diam. Etiam tempus sem vitae tincidunt gravida. Aliquam erat volutpat. Morbi mattis leo a ex ullamcorper, sed faucibus risus consectetur. Nulla volutpat pretium dolor, vitae cursus felis fringilla a. Cras et aliquam lectus. Morbi sit amet ultrices ipsum. Aliquam eu velit urna. Donec volutpat tempus ornare.
+                                    </p>
+                                    <p>
+                                        In hac habitasse platea dictumst. Suspendisse potenti. Donec in laoreet arcu. Nunc ut turpis ac velit aliquet laoreet. Duis gravida, justo vel rutrum varius, purus eros aliquam nulla, rhoncus ullamcorper lectus leo id mi. Aliquam erat volutpat. Quisque at fringilla tortor. Phasellus ut fringilla nisl, ac molestie enim. Vestibulum sagittis odio accumsan laoreet blandit. Aliquam in bibendum tellus. In quis lobortis nisl. Nulla venenatis magna a orci hendrerit dictum. Vestibulum ac neque leo. Phasellus lacinia purus mi. Donec commodo libero id euismod tincidunt.
+                                    </p>
                                 </div>
                                 <div class="rd-dialog-footer">
                                     <button class="rd-button primary" type="button">Save</button>
@@ -174,6 +183,24 @@ include 'includes/html-head.php';
                             </div>
                         </div>
                     </div>
+                    <pre>&lt;button type=&quot;button&quot; data-toggle=&quot;dialog&quot; data-target=&quot;#dialog04&quot;&gt;Open modal dialog&lt;/button&gt;
+&lt;div id=&quot;dialog04&quot; class=&quot;rd-dialog-modal&quot; data-click-outside-not-close=&quot;true&quot;&gt;
+    &lt;div class=&quot;rd-dialog&quot;&gt;
+        &lt;div class=&quot;rd-dialog-header&quot;&gt;
+            &lt;h4 class=&quot;rd-dialog-title&quot;&gt;Disable close on click outside the dialog&lt;/h4&gt;
+            &lt;button class=&quot;rd-dialog-close&quot; type=&quot;button&quot; aria-label=&quot;Close&quot; data-dismiss=&quot;dialog&quot;&gt;
+                &lt;i class=&quot;fas fa-times&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;rd-dialog-body&quot;&gt;
+            &lt;p&gt;The modal dialog with backdrop.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;rd-dialog-footer&quot;&gt;
+            &lt;button class=&quot;rd-button primary&quot; type=&quot;button&quot;&gt;Save&lt;/button&gt;
+            &lt;button class=&quot;rd-button&quot; type=&quot;button&quot; data-dismiss=&quot;dialog&quot;&gt;Close&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
                     <h3>Disable close on press escape key</h3>
                     <p>Add <code>data-esc-key-not-close=&quot;true&quot;</code> HTML attribute into the dialog element to disable close on press <kbd>esc</kbd> key.</p>
                     <div class="rd-block-level-margin-bottom">
@@ -196,6 +223,24 @@ include 'includes/html-head.php';
                             </div>
                         </div>
                     </div>
+                    <pre>&lt;button type=&quot;button&quot; data-toggle=&quot;dialog&quot; data-target=&quot;#dialog05&quot;&gt;Open modal dialog&lt;/button&gt;
+&lt;div id=&quot;dialog05&quot; class=&quot;rd-dialog-modal&quot;&gt;
+    &lt;div class=&quot;rd-dialog&quot; data-esc-key-not-close=&quot;true&quot;&gt;
+        &lt;div class=&quot;rd-dialog-header&quot;&gt;
+            &lt;h4 class=&quot;rd-dialog-title&quot;&gt;Disable close on click outside the dialog&lt;/h4&gt;
+            &lt;button class=&quot;rd-dialog-close&quot; type=&quot;button&quot; aria-label=&quot;Close&quot; data-dismiss=&quot;dialog&quot;&gt;
+                &lt;i class=&quot;fas fa-times&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;rd-dialog-body&quot;&gt;
+            &lt;p&gt;The modal dialog with backdrop.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;rd-dialog-footer&quot;&gt;
+            &lt;button class=&quot;rd-button primary&quot; type=&quot;button&quot;&gt;Save&lt;/button&gt;
+            &lt;button class=&quot;rd-button&quot; type=&quot;button&quot; data-dismiss=&quot;dialog&quot;&gt;Close&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
                     <h3>Sizes</h3>
                     <p>Dialog with different sizes by adding <code>rd-dialog-size-xxx</code> into dialog element.</p>
                     <div class="rd-block-level-margin-bottom">
@@ -228,6 +273,34 @@ include 'includes/html-head.php';
                             </div>
                         </div>
                     </div>
+                    <pre>&lt;button type=&quot;button&quot; data-toggle=&quot;dialog&quot; data-target=&quot;#dialog06&quot;&gt;Open large dialog&lt;/button&gt;
+&lt;div id=&quot;dialog06&quot; class=&quot;rd-dialog-modal&quot;&gt;
+    &lt;div class=&quot;rd-dialog rd-dialog-size-large&quot;&gt;
+        &lt;div class=&quot;rd-dialog-header&quot;&gt;
+            &lt;h4 class=&quot;rd-dialog-title&quot;&gt;Large dialog&lt;/h4&gt;
+            &lt;button class=&quot;rd-dialog-close&quot; type=&quot;button&quot; aria-label=&quot;Close&quot; data-dismiss=&quot;dialog&quot;&gt;
+                &lt;i class=&quot;fas fa-times&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;rd-dialog-body&quot;&gt;
+            &lt;p&gt;&amp;hellip;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;button type=&quot;button&quot; data-toggle=&quot;dialog&quot; data-target=&quot;#dialog07&quot;&gt;Open full window dialog&lt;/button&gt;
+&lt;div id=&quot;dialog07&quot; class=&quot;rd-dialog-modal&quot;&gt;
+    &lt;div class=&quot;rd-dialog rd-dialog-size-fullwindow&quot;&gt;
+        &lt;div class=&quot;rd-dialog-header&quot;&gt;
+            &lt;h4 class=&quot;rd-dialog-title&quot;&gt;Full window dialog&lt;/h4&gt;
+            &lt;button class=&quot;rd-dialog-close&quot; type=&quot;button&quot; aria-label=&quot;Close&quot; data-dismiss=&quot;dialog&quot;&gt;
+                &lt;i class=&quot;fas fa-times&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;rd-dialog-body&quot;&gt;
+            &lt;p&gt;&amp;hellip;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
                     <h3>Manual activate dialog</h3>
                     <p>The open dialog button below does not contain <code>data-toggle=&quot;dialog&quot;</code> but it just call the class.method (<code>(new RDTADialog).activateDialog('#dialogID')</code>) to open dialog manually.</p>
                     <div class="rd-block-level-margin-bottom">

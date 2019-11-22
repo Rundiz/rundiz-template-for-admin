@@ -22,47 +22,39 @@ include 'includes/html-head.php';
 
                     <h2>Examples</h2>
                     <div class="rd-alertbox">
-                        Default alert box. Please follow <a href="#" onclick="return false">this link</a>.
+                        Default alert box. Example <a href="#" onclick="return false">link</a> inside alert box.
                     </div>
-                    <div class="rd-alertbox alert-info">
-                        Info alert box. Please follow <a href="#" onclick="return false">this link</a>.
-                    </div>
-                    <div class="rd-alertbox alert-danger">
-                        Danger alert box. Please follow <a href="#" onclick="return false">this link</a>.
-                    </div>
-                    <div class="rd-alertbox alert-warning">
-                        Warning alert box. Please follow <a href="#" onclick="return false">this link</a>.
-                    </div>
-                    <div class="rd-alertbox alert-success">
-                        Success alert box. Please follow <a href="#" onclick="return false">this link</a>.
-                    </div>
+                    <pre>&lt;div class=&quot;rd-alertbox&quot;&gt;
+    Default alert box. Please follow &lt;a href=&quot;#&quot; onclick=&quot;return false&quot;&gt;this link&lt;/a&gt;.
+&lt;/div&gt;</pre>
+                    <?php
+                    $alertNames = ['info', 'danger', 'warning', 'success'];
+                    foreach ($alertNames as $alertName) {
+                        echo '<div class="rd-alertbox alert-' . $alertName . '">' . PHP_EOL .
+                            ucfirst($alertName) . ' alert box by add <code>.alert-' . $alertName . '</code> class into alert box element. Example <a href="#" onclick="return false">link</a> inside alert box.' . PHP_EOL .
+                            '</div>';
+                    }// endforeach;
+                    unset($alertName);
+                    ?> 
 
                     <h3>Dismissable</h3>
                     <div class="rd-alertbox is-dismissable">
                         <button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(this);"><span aria-hidden="true">&times;</span></button>
-                        Default alert box. Please follow <a href="#" onclick="return false">this link</a>.
+                        Default alert box. Example <a href="#" onclick="return false">link</a> inside alert box.
                     </div>
-                    <div class="rd-alertbox alert-info is-dismissable">
-                        <button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(this);"><span aria-hidden="true">&times;</span></button>
-                        Info alert box. Please follow <a href="#" onclick="return false">this link</a>.
-                    </div>
-                    <div class="rd-alertbox alert-danger is-dismissable">
-                        <button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(this);"><span aria-hidden="true">&times;</span></button>
-                        Danger alert box. Please follow <a href="#" onclick="return false">this link</a>.
-                    </div>
-                    <div class="rd-alertbox alert-warning is-dismissable">
-                        <button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(this);"><span aria-hidden="true">&times;</span></button>
-                        Warning alert box. Please follow <a href="#" onclick="return false">this link</a>.
-                    </div>
-                    <div class="rd-alertbox alert-success is-dismissable">
-                        <button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(this);"><span aria-hidden="true">&times;</span></button>
-                        Success alert box. Please follow <a href="#" onclick="return false">this link</a>.
-                    </div>
-                    <h4>Using <code>jQuery(this)</code></h4>
-                    <div class="rd-alertbox is-dismissable">
-                        <button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(jQuery(this));"><span aria-hidden="true">&times;</span></button>
-                        Default alert box. Please follow <a href="#" onclick="return false">this link</a>.
-                    </div>
+                    <pre>&lt;div class=&quot;rd-alertbox is-dismissable&quot;&gt;
+    &lt;button class=&quot;close&quot; type=&quot;button&quot; aria-label=&quot;Close&quot; onclick=&quot;return RundizTemplateAdmin.closeAlertbox(this);&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;
+    Default alert box. Example &lt;a href=&quot;#&quot; onclick=&quot;return false&quot;&gt;link&lt;/a&gt; inside alert box.
+&lt;/div&gt;</pre>
+                    <?php
+                    foreach ($alertNames as $alertName) {
+                        echo '<div class="rd-alertbox alert-' . $alertName . ' is-dismissable">' . PHP_EOL .
+                            '<button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(this);"><span aria-hidden="true">&times;</span></button>' . PHP_EOL .
+                            ucfirst($alertName) . ' alert box by add <code>.alert-' . $alertName . '</code> class into alert box element. Example <a href="#" onclick="return false">link</a> inside alert box.' . PHP_EOL .
+                            '</div>';
+                    }// endforeach;
+                    unset($alertName, $alertNames);
+                    ?> 
 
                     <h3>Alert with more content</h3>
                     <div class="rd-alertbox alert-warning">

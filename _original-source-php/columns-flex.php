@@ -51,6 +51,10 @@ include 'includes/html-head.php';
                         <div class="column">column</div>
                         <div class="column">column</div>
                     </div>
+                    <pre>&lt;div class=&quot;rd-columns-flex-container&quot;&gt;
+    &lt;div class=&quot;column&quot;&gt;column&lt;/div&gt;
+    &lt;div class=&quot;column&quot;&gt;column&lt;/div&gt;
+&lt;/div&gt;</pre>
                     <p>If you feels like the left and right edge is too narrower than the page layout, fix with <code>.fix-columns-container-edge</code> class.</p>
                     <div class="rd-columns-flex-container fix-columns-container-edge rd-block-level-margin-bottom">
                         <div class="column example-transparent">
@@ -81,6 +85,20 @@ include 'includes/html-head.php';
                         <div class="column col-xs-1">col-xs-1</div>
                         <div class="column col-xs-1">col-xs-1</div>
                     </div>
+                    <pre>&lt;div class=&quot;rd-columns-flex-container&quot;&gt;
+    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
+    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
+    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
+    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
+    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
+    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
+    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
+    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
+    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
+    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
+    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
+    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
+&lt;/div&gt;</pre>
                     <p>And what gonna happen if you put more than 12 columns.</p>
                     <div class="rd-columns-flex-container rd-block-level-margin-bottom">
                         <div class="column col-xs-1">col-xs-1</div>
@@ -205,21 +223,32 @@ include 'includes/html-head.php';
                         <div class="column col-xl-3 col-lg-9 col-md-3 col-sm-3 col-xs-4">col-xl-3 col-lg-9 col-md-3 col-sm-3 col-xs-4</div>
                         <div class="column col-xl-3 col-lg-3 col-md-12 col-sm-9 col-xs-8">col-xl-3 col-lg-3 col-md-12 col-sm-9 col-xs-8</div>
                     </div>
+                    <pre>&lt;div class=&quot;rd-columns-flex-container&quot;&gt;
+    &lt;div class=&quot;column col-xl-3 col-lg-6 col-md-3 col-sm-2 col-xs-4&quot;&gt;col-xl-3 col-lg-6 col-md-3 col-sm-2 col-xs-4&lt;/div&gt;
+    &lt;div class=&quot;column col-xl-3 col-lg-6 col-md-6 col-sm-10 col-xs-8&quot;&gt;col-xl-3 col-lg-6 col-md-6 col-sm-10 col-xs-8&lt;/div&gt;
+    &lt;div class=&quot;column col-xl-3 col-lg-9 col-md-3 col-sm-3 col-xs-4&quot;&gt;col-xl-3 col-lg-9 col-md-3 col-sm-3 col-xs-4&lt;/div&gt;
+    &lt;div class=&quot;column col-xl-3 col-lg-3 col-md-12 col-sm-9 col-xs-8&quot;&gt;col-xl-3 col-lg-3 col-md-12 col-sm-9 col-xs-8&lt;/div&gt;
+&lt;/div&gt;</pre>
 
                     <h2>Offset</h2>
                     <p>Move column to the right using offset.</p>
-                    <?php
-                    echo "\n";
-                    for ($i = 1; $i <= 12; $i++) {
-                        echo indent(5).'<div class="rd-columns-flex-container">'."\n";
-                        echo indent(6).'<div class="column col-xs-' . (12-$i) . ' offset-xs-' . $i . '">col-xs-' . (12-$i) . ' offset-xs-' . $i . '</div>'."\n";
-                        echo indent(5).'</div>'."\n";
-                        if ($i >= 11) {
-                            break;
-                        }
-                    }// endfor;
-                    unset($i);
-                    ?> 
+                    <div class="rd-block-level-margin-bottom">
+                        <?php
+                        echo "\n";
+                        for ($i = 1; $i <= 12; $i++) {
+                            echo indent(5).'<div class="rd-columns-flex-container">'."\n";
+                            echo indent(6).'<div class="column col-xs-' . (12-$i) . ' offset-xs-' . $i . '">col-xs-' . (12-$i) . ' offset-xs-' . $i . '</div>'."\n";
+                            echo indent(5).'</div>'."\n";
+                            if ($i >= 11) {
+                                break;
+                            }
+                        }// endfor;
+                        unset($i);
+                        ?> 
+                    </div>
+                    <pre>&lt;div class=&quot;rd-columns-flex-container&quot;&gt;
+    &lt;div class=&quot;column col-xs-11 offset-xs-1&quot;&gt;col-xs-11 offset-xs-1&lt;/div&gt;
+&lt;/div&gt;</pre>
 
                     <h3>Small screen or larger</h3>
                     <?php
@@ -296,6 +325,13 @@ include 'includes/html-head.php';
                         <div class="column-break"></div>
                         <div class="column col-xs-3">col-xs-3</div>
                     </div>
+                    <pre>&lt;div class=&quot;rd-columns-flex-container&quot;&gt;
+    &lt;div class=&quot;column col-xs-3&quot;&gt;col-xs-3&lt;/div&gt;
+    &lt;div class=&quot;column col-xs-3&quot;&gt;col-xs-3&lt;/div&gt;
+    &lt;div class=&quot;column col-xs-3&quot;&gt;col-xs-3&lt;/div&gt;
+    &lt;div class=&quot;column-break&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;column col-xs-3&quot;&gt;col-xs-3&lt;/div&gt;
+&lt;/div&gt;</pre>
 
                     <h2>Nesting</h2>
                     <p>The columns can be nested.</p>
@@ -309,6 +345,16 @@ include 'includes/html-head.php';
                         </div>
                         <div class="column col-sm-3">col-sm-3</div>
                     </div>
+                    <pre>&lt;div class=&quot;rd-columns-flex-container&quot;&gt;
+    &lt;div class=&quot;column col-sm-9&quot;&gt;
+        col-sm-9
+        &lt;div class=&quot;rd-columns-flex-container&quot;&gt;
+            &lt;div class=&quot;column col-md-6&quot;&gt;col-md-6&lt;/div&gt;
+            &lt;div class=&quot;column col-md-6&quot;&gt;col-md-6&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;column col-sm-3&quot;&gt;col-sm-3&lt;/div&gt;
+&lt;/div&gt;</pre>
                     <p>You may feels that the left &amp; right edge of columns, even nested column was too narrower than page layout. This can be fixed by add <code>.fix-columns-container-edge</code> class to the container.</p>
                     <div class="rd-columns-flex-container fix-columns-container-edge rd-block-level-margin-bottom">
                         <div class="column col-sm-9 example-transparent">

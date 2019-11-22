@@ -6,33 +6,20 @@
 
 
 // text colors.
-.text-color-danger {
-    color: $danger-color;
-    @include link-actions-color($danger-color);
-}
-.text-color-disabled {
-    color: $disabled-font-color;
-    @include link-actions-color($disabled-font-color);
-}
-.text-color-info {
-    color: $info-color;
-    @include link-actions-color($info-color);
-}
-.text-color-primary {
-    color: $primary-color;
-    @include link-actions-color($primary-color);
-}
-.text-color-success {
-    color: $success-color;
-    @include link-actions-color($success-color);
-}
-.text-color-warning {
-    color: $warning-color;
-    @include link-actions-color($warning-color);
-}
-.text-color-white {
-    color: $white-color;
-    @include link-actions-color($white-color);
+@each $colorName, $colorValue in ("danger", $danger-color), 
+                        ("disabled", $disabled-font-color), 
+                        ("info", $info-color), 
+                        ("primary", $primary-color), 
+                        ("success", $success-color), 
+                        ("warning", $warning-color), 
+                        ("white", $white-color) {
+    .text-color-#{$colorName} {
+        color: $colorValue;
+    }
+    a.text-color-#{$colorName} {
+        color: $colorValue;
+        @include link-actions-color($colorValue);
+    }
 }
 
 

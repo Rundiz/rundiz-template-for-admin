@@ -62,35 +62,71 @@ include 'includes/html-head.php';
                     <hr>
 
                     <h2>Examples</h2>
-                    <nav>
-                        <?php echo renderPagination(); ?> 
-                    </nav>
-                    <h3 class="text-center">Center</h3>
-                    <nav class="text-center">
-                        <?php echo renderPagination(); ?> 
-                    </nav>
-                    <h3 class="text-right">Right</h3>
-                    <nav class="text-right">
-                        <?php echo renderPagination(); ?> 
-                    </nav>
+                    <div class="rd-block-level-margin-bottom">
+                        <nav>
+                            <?php echo renderPagination(); ?> 
+                        </nav>
+                        <h3 class="text-center">Center</h3>
+                        <nav class="text-center">
+                            <?php echo renderPagination(); ?> 
+                        </nav>
+                        <h3 class="text-right">Right</h3>
+                        <nav class="text-right">
+                            <?php echo renderPagination(); ?> 
+                        </nav>
+                    </div>
+                    <pre>&lt;nav&gt;
+    &lt;ul class=&quot;rd-pagination&quot;&gt;
+        &lt;li class=&quot;current&quot;&gt;&lt;span&gt;1&lt;/span&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#2&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#3&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;nav class=&quot;text-center&quot;&gt;
+    &lt;ul class=&quot;rd-pagination&quot;&gt;
+        &lt;li class=&quot;current&quot;&gt;&lt;span&gt;1&lt;/span&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#2&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#3&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;nav class=&quot;text-right&quot;&gt;
+    &lt;ul class=&quot;rd-pagination&quot;&gt;
+        &lt;li class=&quot;current&quot;&gt;&lt;span&gt;1&lt;/span&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#2&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#3&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</pre>
                     <h3>Much much many</h3>
                     <nav>
                         <?php echo renderPagination(5, 1002, 999); // use just 5 for small screen. ?> 
                     </nav>
                     <h3>Loose</h3>
-                    <nav>
+                    <nav class="rd-block-level-margin-bottom">
                         <?php echo renderPagination(5, 1, 1, 'space-loose'); // use just 5 for small screen. ?> 
                     </nav>
+                    <pre>&lt;nav&gt;
+    &lt;ul class=&quot;rd-pagination space-loose&quot;&gt;
+        &lt;li class=&quot;current&quot;&gt;&lt;span&gt;1&lt;/span&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#2&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#3&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</pre>
                     <hr>
 
                     <h2>Pager</h2>
                     <p>Display pagination as previous/next</p>
-                    <nav>
+                    <nav class="rd-block-level-margin-bottom">
                         <ul class="rd-pagination">
                             <li><a href="#" onclick="return false;">Previous</a></li>
                             <li><a href="#" onclick="return false;">Next</a></li>
                         </ul>
                     </nav>
+                    <pre>&lt;nav&gt;
+    &lt;ul class=&quot;rd-pagination&quot;&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;Previous&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;Next&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</pre>
                     <h3>Pager loose</h3>
                     <nav>
                         <ul class="rd-pagination space-loose">
@@ -114,16 +150,22 @@ include 'includes/html-head.php';
                     </nav>
                     <h3>To the edge</h3>
                     <p>Horizontal align button to the left &amp; right of the page. Please note that this will be change the pagination element to <code>display: flex;</code>.</p>
-                    <nav>
+                    <nav class="rd-block-level-margin-bottom">
                         <ul class="rd-pagination space-edge">
                             <li><a href="#" onclick="return false;">Previous</a></li>
                             <li><a href="#" onclick="return false;">Next</a></li>
                         </ul>
                     </nav>
+                    <pre>&lt;nav&gt;
+    &lt;ul class=&quot;rd-pagination space-edge&quot;&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Previous&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Next&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</pre>
                     <hr>
 
                     <h2>Advanced</h2>
-                    <p>Advanced pagination is the mixed between page numbers, pager (previous/next), input page, select page. You can choose what you want.</p>
+                    <p>Advanced pagination is the mixed between page numbers, pager (previous/next), input page, select page. To do this, add <code>advanced</code> class to the pagination element.</p>
                     <form method="get" style="margin-bottom: 0.625em;">
                         <nav>
                             <ul class="rd-pagination advanced">
@@ -141,6 +183,23 @@ include 'includes/html-head.php';
                             </ul>
                         </nav>
                     </form>
+                    <pre>&lt;nav&gt;
+    &lt;ul class=&quot;rd-pagination advanced&quot;&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&amp;laquo;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;
+            &lt;input type=&quot;number&quot; value=&quot;1&quot;&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&amp;raquo;&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;break-space&quot;&gt;&lt;/li&gt;
+        &lt;li&gt;
+            &lt;select&gt;
+                &lt;option&gt;1&lt;/option&gt;
+                &lt;option&gt;2&lt;/option&gt;
+                &lt;option&gt;3&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</pre>
                     <form method="get" style="margin-bottom: 0.625em;">
                         <nav>
                             <ul class="rd-pagination advanced">

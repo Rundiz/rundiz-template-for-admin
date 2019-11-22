@@ -215,9 +215,59 @@ include 'includes/html-head.php';
                             </div>
                         </div>
                     </form>
+                    <pre>&lt;form class=&quot;rd-form&quot;&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;control-label&quot; for=&quot;input-type-text&quot;&gt;Input text&lt;/label&gt;
+        &lt;div class=&quot;control-wrapper&quot;&gt;
+            &lt;input id=&quot;input-type-text&quot; type=&quot;text&quot;&gt;
+            &lt;div class=&quot;form-description&quot;&gt;Help message.&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;control-label&quot;&gt;Input radio&lt;/label&gt;
+        &lt;div class=&quot;control-wrapper&quot;&gt;
+            &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;input-radio&quot; value=&quot;1&quot;&gt; Input radio option 1&lt;/label&gt;&lt;br&gt;
+            &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;input-radio&quot; value=&quot;2&quot;&gt; Input radio option 2&lt;/label&gt;&lt;br&gt;
+            &lt;label class=&quot;disabled&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;input-radio&quot; value=&quot;3&quot; disabled=&quot;&quot;&gt; Input radio option 3 disabled&lt;/label&gt;
+            &lt;div class=&quot;form-description&quot;&gt;The help message about this form input.&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;control-label&quot;&gt;Input radio inline&lt;/label&gt;
+        &lt;div class=&quot;control-wrapper&quot;&gt;
+            &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;input-radio-inline&quot; value=&quot;1&quot;&gt; 1&lt;/label&gt;
+            &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;input-radio-inline&quot; value=&quot;2&quot;&gt; 2&lt;/label&gt;
+            &lt;label class=&quot;disabled&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;input-radio-inline&quot; value=&quot;3&quot; disabled=&quot;&quot;&gt; 3 disabled&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;control-label&quot;&gt;Input checkbox&lt;/label&gt;
+        &lt;div class=&quot;control-wrapper&quot;&gt;
+            &lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;checkbox[]&quot;&gt; Input checkbox 1&lt;/label&gt;&lt;br&gt;
+            &lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;checkbox[]&quot;&gt; Input checkbox 2&lt;/label&gt;&lt;br&gt;
+            &lt;label class=&quot;disabled&quot;&gt;&lt;input type=&quot;checkbox&quot; name=&quot;checkbox[]&quot; disabled=&quot;&quot;&gt; Input checkbox 3 disabled&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;control-label&quot;&gt;Input checkbox inline&lt;/label&gt;
+        &lt;div class=&quot;control-wrapper&quot;&gt;
+            &lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;checkbox-inline[]&quot;&gt; 1&lt;/label&gt;
+            &lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;checkbox-inline[]&quot;&gt; 2&lt;/label&gt;
+            &lt;label class=&quot;disabled&quot;&gt;&lt;input type=&quot;checkbox&quot; name=&quot;checkbox-inline[]&quot; disabled=&quot;&quot;&gt; 3&lt;/label&gt;
+            &lt;div class=&quot;form-description&quot;&gt;The help message about this form input.&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;control-label&quot;&gt;&lt;/label&gt;
+        &lt;div class=&quot;control-wrapper&quot;&gt;
+            &lt;button class=&quot;rd-button primary&quot; type=&quot;submit&quot;&gt;Save&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</pre>
                     <hr>
 
                     <h3>Horizontal form</h3>
+                    <p>To make form fields display horizontal, just add <code>horizontal</code> class to the <code>form</code> element.</p>
                     <form class="rd-form horizontal">
                         <div class="form-group">
                             <label class="control-label" for="input-type-text2">Input text</label>
@@ -296,6 +346,55 @@ include 'includes/html-head.php';
                             </div>
                         </div>
                     </form>
+                    <pre>&lt;form class=&quot;rd-form horizontal&quot;&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;control-label&quot; for=&quot;input-type-text&quot;&gt;Input text&lt;/label&gt;
+        &lt;div class=&quot;control-wrapper&quot;&gt;
+            &lt;input id=&quot;input-type-text&quot; type=&quot;text&quot;&gt;
+            &lt;div class=&quot;form-description&quot;&gt;Help message.&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;control-label&quot;&gt;Input radio&lt;/label&gt;
+        &lt;div class=&quot;control-wrapper&quot;&gt;
+            &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;input-radio&quot; value=&quot;1&quot;&gt; Input radio option 1&lt;/label&gt;&lt;br&gt;
+            &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;input-radio&quot; value=&quot;2&quot;&gt; Input radio option 2&lt;/label&gt;&lt;br&gt;
+            &lt;label class=&quot;disabled&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;input-radio&quot; value=&quot;3&quot; disabled=&quot;&quot;&gt; Input radio option 3 disabled&lt;/label&gt;
+            &lt;div class=&quot;form-description&quot;&gt;The help message about this form input.&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;control-label&quot;&gt;Input radio inline&lt;/label&gt;
+        &lt;div class=&quot;control-wrapper&quot;&gt;
+            &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;input-radio-inline&quot; value=&quot;1&quot;&gt; 1&lt;/label&gt;
+            &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;input-radio-inline&quot; value=&quot;2&quot;&gt; 2&lt;/label&gt;
+            &lt;label class=&quot;disabled&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;input-radio-inline&quot; value=&quot;3&quot; disabled=&quot;&quot;&gt; 3 disabled&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;control-label&quot;&gt;Input checkbox&lt;/label&gt;
+        &lt;div class=&quot;control-wrapper&quot;&gt;
+            &lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;checkbox[]&quot;&gt; Input checkbox 1&lt;/label&gt;&lt;br&gt;
+            &lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;checkbox[]&quot;&gt; Input checkbox 2&lt;/label&gt;&lt;br&gt;
+            &lt;label class=&quot;disabled&quot;&gt;&lt;input type=&quot;checkbox&quot; name=&quot;checkbox[]&quot; disabled=&quot;&quot;&gt; Input checkbox 3 disabled&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;control-label&quot;&gt;Input checkbox inline&lt;/label&gt;
+        &lt;div class=&quot;control-wrapper&quot;&gt;
+            &lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;checkbox-inline[]&quot;&gt; 1&lt;/label&gt;
+            &lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;checkbox-inline[]&quot;&gt; 2&lt;/label&gt;
+            &lt;label class=&quot;disabled&quot;&gt;&lt;input type=&quot;checkbox&quot; name=&quot;checkbox-inline[]&quot; disabled=&quot;&quot;&gt; 3&lt;/label&gt;
+            &lt;div class=&quot;form-description&quot;&gt;The help message about this form input.&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;control-label&quot;&gt;&lt;/label&gt;
+        &lt;div class=&quot;control-wrapper&quot;&gt;
+            &lt;button class=&quot;rd-button primary&quot; type=&quot;submit&quot;&gt;Save&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</pre>
                     <hr>
 
                     <h3>Sizes</h3>
@@ -308,6 +407,9 @@ include 'includes/html-head.php';
                                 <input class="input-large" type="text" placeholder="large">
                             </div>
                         </div>
+                        <pre>&lt;input type=&quot;text&quot; placeholder=&quot;normal&quot;&gt;
+&lt;input class=&quot;input-small&quot; type=&quot;text&quot; placeholder=&quot;small&quot;&gt;
+&lt;input class=&quot;input-large&quot; type=&quot;text&quot; placeholder=&quot;large&quot;&gt;</pre>
                         <div class="form-group">
                             <label class="control-label">Select box</label>
                             <div class="control-wrapper">
@@ -322,6 +424,15 @@ include 'includes/html-head.php';
                                 </select>
                             </div>
                         </div>
+                        <pre>&lt;select&gt;
+    &lt;option&gt;normal&lt;/option&gt;
+&lt;/select&gt;
+&lt;select class=&quot;input-small&quot;&gt;
+    &lt;option&gt;small&lt;/option&gt;
+&lt;/select&gt;
+&lt;select class=&quot;input-large&quot;&gt;
+    &lt;option&gt;large&lt;/option&gt;
+&lt;/select&gt;</pre>
                     </form>
                     <form class="rd-form horizontal">
                         <div class="form-group">

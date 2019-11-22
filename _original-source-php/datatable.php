@@ -396,7 +396,7 @@ include 'includes/html-head.php';
                     <?php unset($rowColors); ?> 
                     <h3>Data table with filters row</h3>
                     <p>Add <code>filter-row</code> class to <code>&lt;tr&gt;</code> of the row that contain filters input.</p>
-                    <div class="rd-datatable-wrapper">
+                    <div class="rd-datatable-wrapper rd-block-level-margin-bottom">
                         <table class="rd-datatable">
                             <thead>
                                 <tr>
@@ -471,6 +471,63 @@ include 'includes/html-head.php';
                             </tbody>
                         </table>
                     </div><!--.rd-datatable-wrapper-->
+                    <pre>&lt;div class=&quot;rd-datatable-wrapper&quot;&gt;
+    &lt;table class=&quot;rd-datatable&quot;&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th class=&quot;column-checkbox&quot;&gt;&lt;input type=&quot;checkbox&quot; onclick=&quot;RundizTemplateAdmin.dataTableCheckboxToggler(this);&quot;&gt;&lt;/th&gt;
+                &lt;th class=&quot;sorted&quot;&gt;&lt;a href=&quot;?sort=id&quot; onclick=&quot;return false;&quot;&gt;ID &lt;i class=&quot;order-desc sortable-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/th&gt;
+                &lt;th&gt;Name&lt;/th&gt;
+                &lt;th&gt;Address&lt;/th&gt;
+                &lt;th&gt;Email&lt;/th&gt;
+                &lt;th&gt;Actions&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr class=&quot;filter-row&quot;&gt;
+                &lt;td&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;input class=&quot;input-small&quot; type=&quot;search&quot; placeholder=&quot;Search for name&quot;&gt;&lt;/td&gt;
+                &lt;td&gt;
+                    &lt;select class=&quot;input-small&quot;&gt;
+                        &lt;option&gt;Filter address&lt;/option&gt;
+                        &lt;option&gt;City 1&lt;/option&gt;
+                        &lt;option&gt;City 2&lt;/option&gt;
+                    &lt;/select&gt;
+                &lt;/td&gt;
+                &lt;td&gt;&lt;input class=&quot;input-small&quot; type=&quot;search&quot; placeholder=&quot;Search for email&quot;&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;button class=&quot;rd-button info small&quot;&gt;Filter&lt;/button&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tfoot&gt;
+            &lt;tr&gt;
+                &lt;th class=&quot;column-checkbox&quot;&gt;&lt;input type=&quot;checkbox&quot; onclick=&quot;RundizTemplateAdmin.dataTableCheckboxToggler(this);&quot;&gt;&lt;/th&gt;
+                &lt;th class=&quot;sorted&quot;&gt;&lt;a href=&quot;?sort=id&quot; onclick=&quot;return false;&quot;&gt;ID &lt;i class=&quot;order-desc sortable-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/th&gt;
+                &lt;th&gt;Name&lt;/th&gt;
+                &lt;th&gt;Address&lt;/th&gt;
+                &lt;th&gt;Email&lt;/th&gt;
+                &lt;th&gt;Actions&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/tfoot&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td class=&quot;column-checkbox&quot;&gt;&lt;input type=&quot;checkbox&quot; name=&quot;id[]&quot; value=&quot;20&quot;&gt;&lt;/td&gt;
+                &lt;td&gt;20&lt;/td&gt;
+                &lt;td&gt;Magnum Bernardo&lt;/td&gt;
+                &lt;td&gt;140 Parkside Alley&lt;/td&gt;
+                &lt;td&gt;mbernardoj@google.es&lt;/td&gt;
+                &lt;td&gt;
+                    &lt;div class=&quot;rd-button-group&quot;&gt;
+                        &lt;button class=&quot;rd-button small&quot;&gt;&lt;i class=&quot;fas fa-pencil-alt&quot;&gt;&lt;/i&gt; Edit&lt;/button&gt;
+                        &lt;button class=&quot;rd-button small dropdown-toggler&quot; data-placement=&quot;bottom right&quot;&gt;&lt;i class=&quot;fas fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+                        &lt;ul class=&quot;rd-dropdown&quot;&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;&lt;i class=&quot;fas fa-key fa-fw&quot;&gt;&lt;/i&gt; Permissions&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;&lt;i class=&quot;fas fa-times fa-fw&quot;&gt;&lt;/i&gt; Delete&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</pre>
                     <h3>Responsive</h3>
                     <p>This style of responsive is collapsible/expandable table for small screen size.</p>
                     <div class="rd-block-level-margin-bottom">

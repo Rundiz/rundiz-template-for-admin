@@ -24,12 +24,20 @@ include 'includes/html-head.php';
                     <p>
                         This is normal text size.
                         <span class="rd-notification-badge">Normal</span>
-                        <span class="rd-notification-badge badge-primary">Primary</span>
-                        <span class="rd-notification-badge badge-info">Info</span>
-                        <span class="rd-notification-badge badge-danger">Danger</span>
-                        <span class="rd-notification-badge badge-warning">Warning</span>
-                        <span class="rd-notification-badge badge-success">Success</span>
+                        <?php
+                        $badgeNames = ['primary', 'info', 'danger', 'warning', 'success'];
+                        foreach ($badgeNames as $badgeName) {
+                            echo '<span class="rd-notification-badge badge-' . $badgeName . '">' . ucfirst($badgeName) . '</span>' . PHP_EOL;
+                        }// endforeach;
+                        unset($badgeName);
+                        ?> 
                     </p>
+                    <pre>&lt;span class=&quot;rd-notification-badge&quot;&gt;Normal&lt;/span&gt;
+&lt;span class=&quot;rd-notification-badge badge-primary&quot;&gt;Primary&lt;/span&gt;
+&lt;span class=&quot;rd-notification-badge badge-info&quot;&gt;Info&lt;/span&gt;
+&lt;span class=&quot;rd-notification-badge badge-danger&quot;&gt;Danger&lt;/span&gt;
+&lt;span class=&quot;rd-notification-badge badge-warning&quot;&gt;Warning&lt;/span&gt;
+&lt;span class=&quot;rd-notification-badge badge-success&quot;&gt;Success&lt;/span&gt;</pre>
 
                     <h3>Badge within heading text</h3>
                     <h1>Heading 1 <span class="rd-notification-badge">Normal</span></h1>
@@ -40,13 +48,15 @@ include 'includes/html-head.php';
                     <h6>Heading 6 <span class="rd-notification-badge">Normal</span></h6>
 
                     <h3>Tiny badge</h3>
+                    <p>Add <code>tiny</code> class into badge element to display tiny bade.</p>
                     <p>
                         <span class="rd-notification-badge tiny">Normal</span>
-                        <span class="rd-notification-badge badge-primary tiny">Primary</span>
-                        <span class="rd-notification-badge badge-info tiny">Info</span>
-                        <span class="rd-notification-badge badge-danger tiny">Danger</span>
-                        <span class="rd-notification-badge badge-warning tiny">Warning</span>
-                        <span class="rd-notification-badge badge-success tiny">Success</span>
+                        <?php
+                        foreach ($badgeNames as $badgeName) {
+                            echo '<span class="rd-notification-badge badge-' . $badgeName . ' tiny">' . ucfirst($badgeName) . '</span>' . PHP_EOL;
+                        }// endforeach;
+                        unset($badgeName, $badgeNames);
+                        ?> 
                     </p>
                 </div><!--.rd-page-content-->
             </main>
