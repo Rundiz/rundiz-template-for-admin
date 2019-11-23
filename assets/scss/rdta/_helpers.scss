@@ -8,6 +8,9 @@
 .rd-block-level-margin-bottom {
     margin-bottom: $block-element-margin-bottom;
 }
+.rd-content-level-margin-bottom {
+    margin-bottom: ($block-element-margin-bottom / 2);
+}
 
 
 .clearfix {

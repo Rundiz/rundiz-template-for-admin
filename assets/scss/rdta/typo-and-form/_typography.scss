@@ -86,6 +86,10 @@ dl {
     dd {
         margin: 0 0 0 1.111em;
     }
+    ol,
+    ul {
+        margin-left: 1.111em;
+    }
 }
 
 
@@ -299,6 +303,7 @@ ul li ol,
 ol li ol,
 ol li ul {
     margin-bottom: 0;
+    margin-left: 1.111em;
     margin-top: 0;
 }
 ol {
