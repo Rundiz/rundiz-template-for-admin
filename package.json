@@ -42,6 +42,9 @@
     "sass": "^1.23.7"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2",
+    "sanitize.css": "^11.0.0",
+    "smartmenus": "^1.1.0",
     "tooltip.js": "^1.3.3"
   }
 }

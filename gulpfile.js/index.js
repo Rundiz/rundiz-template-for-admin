@@ -19,9 +19,12 @@ async function clean(cb) {
     const del = require('del');
 
     await del(['assets/js/rdta']);
+    await del(['assets/js/smartmenus']);
     await del(['assets/js/tooltip']);
     await del(['assets/css/rdta']);
-    await del(['assets/css/smartmenus/sm-rdta']);
+    await del(['assets/css/sanitize']);
+    await del(['assets/css/smartmenus']);
+    await del(['assets/font-awesome']);
 
     await Promise.resolve();
 }// clean
