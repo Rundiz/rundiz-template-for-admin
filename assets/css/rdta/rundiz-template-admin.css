@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Rundiz template for admin V.2.0.21
+ * Rundiz template for admin V.2.0.22
  */
 /*
 * ----------------------------------------------------------------------------------------------
@@ -1187,6 +1187,10 @@ textarea.input-small {
 */
 .rd-block-level-margin-bottom {
   margin-bottom: 1.25rem;
+}
+
+.rd-content-level-margin-bottom {
+  margin-bottom: 0.625rem;
 }
 
 .clearfix {

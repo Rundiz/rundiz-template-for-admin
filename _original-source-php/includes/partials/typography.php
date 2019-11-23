@@ -142,6 +142,14 @@ unset($i);
                 <li>List item</li>
                 <li>List item</li>
                 <li>List item</li>
+                <li>List item
+                    <dl>
+                        <dt>Definition terms</dt>
+                        <dd>Definition list description.</dd>
+                        <dt>Definition terms</dt>
+                        <dd>Definition list description.</dd>
+                    </dl>
+                </li>
             </ul>
             <ol>
                 <li>List item with a much longer description or more content.</li>
@@ -176,17 +184,78 @@ unset($i);
                 <li>List item</li>
                 <li>List item</li>
                 <li>List item</li>
+                <li>List item
+                    <dl>
+                        <dt>Definition terms</dt>
+                        <dd>Definition list description.</dd>
+                        <dt>Definition terms</dt>
+                        <dd>Definition list description.</dd>
+                    </dl>
+                </li>
             </ol>
             <h3>Definition list</h3>
             <dl>
-                <dt>Definition list</dt>
+                <dt>Definition terms</dt>
                 <dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
                     commodo consequat.</dd>
-                <dt>Lorem ipsum dolor sit amet</dt>
+                <dt>Definition terms</dt>
                 <dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
                     commodo consequat.</dd>
+                <dt>Definition terms</dt>
+                <dd>
+                    <p>Here is the nested list of <code>ul</code>, <code>ol</code>.</p>
+                    <ul>
+                        <li>List item</li>
+                        <li>List item
+                            <ol>
+                                <li>List item</li>
+                                <li>List item</li>
+                                <li>List item</li>
+                            </ol>
+                        </li>
+                        <li>List item
+                            <ul>
+                                <li>List item</li>
+                                <li>List item</li>
+                                <li>List item</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p>Below is <code>ol</code> nested list item inside <code>dl</code>.</p>
+                    <ol>
+                        <li>List item</li>
+                        <li>List item
+                            <ul>
+                                <li>List item</li>
+                                <li>List item</li>
+                                <li>List item</li>
+                            </ul>
+                        </li>
+                        <li>List item
+                            <ol>
+                                <li>List item</li>
+                                <li>List item</li>
+                                <li>List item</li>
+                            </ol>
+                        </li>
+                    </ol>
+                    <p>And below is definition list inside definition list.</p>
+                    <dl>
+                        <dt>Definition terms</dt>
+                        <dd>Definition list description</dd>
+                        <dt>Definition terms</dt>
+                        <dd>
+                            Definition list description<br>
+                            Below is definition list inside definition list.
+                            <dl>
+                                <dt>Definition terms</dt>
+                                <dd>Definition list description</dd>
+                            </dl>
+                        </dd>
+                    </dl>
+                </dd>
             </dl>
             <h3>Details &amp; Summary</h3>
             <details>

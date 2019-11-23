@@ -35,6 +35,10 @@ include 'includes/html-head.php';
                     <div class="helper-responsive-visibility-box rd-block-level-margin-bottom">block with margin bottom</div>
                     <div class="helper-responsive-visibility-box rd-block-level-margin-bottom">block with margin bottom</div>
                     <p>So, you can put this class into any element you want the same bottom space as block level element.</p>
+                    <h3>Margin bottom for content level</h3>
+                    <p>To keep same bottom space of content level element or paragraph, use <code>.rd-content-level-margin-bottom</code> class.</p>
+                    <div class="rd-content-level-margin-bottom">The above line is paragraph, it is already has margin bottom but this line is <code>div</code>. This element add margin bottom as content level.</div>
+
                     <h3>Clear float</h3>
                     <p>Use <code>.clearfix</code> class to clear any float CSS.</p>
                     <div>

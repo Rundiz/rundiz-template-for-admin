@@ -4,17 +4,17 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Sticky menu (long content) | Rundiz template for admin</title>
-        <link rel="stylesheet" href="assets/css/sanitize/sanitize.css?v=11.0.0&amp;mt=499162500">
-        <link rel="stylesheet" href="assets/css/sanitize/typography.css?v=11.0.0&amp;mt=499162500">
-        <link rel="stylesheet" href="assets/css/sanitize/forms.css?v=11.0.0&amp;mt=499162500">
+        <link rel="stylesheet" href="assets/css/sanitize/sanitize.css?npm-v=11.0.0">
+        <link rel="stylesheet" href="assets/css/sanitize/typography.css?npm-v=11.0.0">
+        <link rel="stylesheet" href="assets/css/sanitize/forms.css?npm-v=11.0.0">
 
-        <link rel="stylesheet" href="assets/font-awesome/css/all.min.css?v=5.10.2&amp;mt=1566477676">
+        <link rel="stylesheet" href="assets/font-awesome/css/all.min.css?npm-v=5.11.2">
 
-        <link rel="stylesheet" href="assets/css/smartmenus/sm-core-css.css?v=1.1.0&amp;mt=1559110074">
-        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?mt=1574404690">
+        <link rel="stylesheet" href="assets/css/smartmenus/sm-core-css.css?npm-v=1.1.0">
+        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?mt=1574525044">
 
-        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?mt=1574404690">
-        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?mt=1574404690">
+        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?mt=1574525044">
+        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?mt=1574525044">
 
         <link rel="stylesheet" href="assets/css/rdta-demo-pages.css?mt=1574313893"> 
     </head>
@@ -359,7 +359,7 @@
             </p>
 
             <h2>Links</h2>
-            <p>These are links: <a href="?2019-11-2214%3A48%3A18" onclick="return false;">never visited link</a>, <a href=".">visited link</a>. Mouse hover to see effects.</p>
+            <p>These are links: <a href="?2019-11-2323%3A04%3A14" onclick="return false;">never visited link</a>, <a href=".">visited link</a>. Mouse hover to see effects.</p>
 
             <h2>Address</h2>
             <address>
@@ -430,6 +430,14 @@
                 <li>List item</li>
                 <li>List item</li>
                 <li>List item</li>
+                <li>List item
+                    <dl>
+                        <dt>Definition terms</dt>
+                        <dd>Definition list description.</dd>
+                        <dt>Definition terms</dt>
+                        <dd>Definition list description.</dd>
+                    </dl>
+                </li>
             </ul>
             <ol>
                 <li>List item with a much longer description or more content.</li>
@@ -464,17 +472,78 @@
                 <li>List item</li>
                 <li>List item</li>
                 <li>List item</li>
+                <li>List item
+                    <dl>
+                        <dt>Definition terms</dt>
+                        <dd>Definition list description.</dd>
+                        <dt>Definition terms</dt>
+                        <dd>Definition list description.</dd>
+                    </dl>
+                </li>
             </ol>
             <h3>Definition list</h3>
             <dl>
-                <dt>Definition list</dt>
+                <dt>Definition terms</dt>
                 <dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
                     commodo consequat.</dd>
-                <dt>Lorem ipsum dolor sit amet</dt>
+                <dt>Definition terms</dt>
                 <dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
                     commodo consequat.</dd>
+                <dt>Definition terms</dt>
+                <dd>
+                    <p>Here is the nested list of <code>ul</code>, <code>ol</code>.</p>
+                    <ul>
+                        <li>List item</li>
+                        <li>List item
+                            <ol>
+                                <li>List item</li>
+                                <li>List item</li>
+                                <li>List item</li>
+                            </ol>
+                        </li>
+                        <li>List item
+                            <ul>
+                                <li>List item</li>
+                                <li>List item</li>
+                                <li>List item</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p>Below is <code>ol</code> nested list item inside <code>dl</code>.</p>
+                    <ol>
+                        <li>List item</li>
+                        <li>List item
+                            <ul>
+                                <li>List item</li>
+                                <li>List item</li>
+                                <li>List item</li>
+                            </ul>
+                        </li>
+                        <li>List item
+                            <ol>
+                                <li>List item</li>
+                                <li>List item</li>
+                                <li>List item</li>
+                            </ol>
+                        </li>
+                    </ol>
+                    <p>And below is definition list inside definition list.</p>
+                    <dl>
+                        <dt>Definition terms</dt>
+                        <dd>Definition list description</dd>
+                        <dt>Definition terms</dt>
+                        <dd>
+                            Definition list description<br>
+                            Below is definition list inside definition list.
+                            <dl>
+                                <dt>Definition terms</dt>
+                                <dd>Definition list description</dd>
+                            </dl>
+                        </dd>
+                    </dl>
+                </dd>
             </dl>
             <h3>Details &amp; Summary</h3>
             <details>
@@ -576,13 +645,13 @@
 
         <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
 
-        <script src="assets/js/smartmenus/jquery.smartmenus.min.js?v=1.1.0&amp;mt=1560009256"></script>
+        <script src="assets/js/smartmenus/jquery.smartmenus.min.js?v=1.1.0&amp;mt=1574525042"></script>
 
         <script src="assets/js/popper/umd/popper.min.js?v=1.15.0&amp;mt=1560009256"></script>
 
         <script src="assets/js/sticky-sidebar/jquery.sticky-sidebar.min.js?v=3.2.0&amp;mt=1560009256"></script>
         <script src="assets/js/sticky-sidebar/ResizeSensor.js?v=3.2.0&amp;mt=1560009256"></script><!-- use with sticky sidebar js. -->
 
-        <script src="assets/js/rdta/rundiz-template-admin.js?mt=1574345271"></script> 
+        <script src="assets/js/rdta/rundiz-template-admin.js?mt=1574525043"></script> 
     </body>
 </html>

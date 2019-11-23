@@ -7,12 +7,14 @@ if (!defined('ROOTDIR')) {
 
 
 /**
- * Render asset URL with version querystring append.
+ * Render asset URL with version querystring append. By default it will be use file modify time as version qurey string.
  * 
  * @param string $assetUrl The relative path of asset URL refer from this app's root.
+ * @param array $options Accepted options:<br>
+ *                                      'npm' For detect package version and write out instead of using file modify time.
  * @return string Return asset URL and check if file exists then the version querystring will be append, otherwise return the same value as `$assetUrl`.
  */
-function assetUrl($assetUrl)
+function assetUrl($assetUrl, array $options = [])
 {
     if (stripos($assetUrl, '://') !== false || stripos($assetUrl, '//') === 0) {
         // if asset url is full url then no need to get file mtime.
@@ -24,19 +26,43 @@ function assetUrl($assetUrl)
     $query = (isset($urlParsed['query']) ? $urlParsed['query'] : '');
     unset($urlParsed);
 
-    parse_str($query, $queryArray);
-    unset($query);
-
-    if (isset($queryArray['mt'])) {
-        $additionalQueryName = 'mt' . time();
-    } else {
-        $additionalQueryName = 'mt';
+    if (array_key_exists('npm', $options)) {
+        // if npm option was set.
+        $fileContents = file_get_contents(ROOTDIR . DIRECTORY_SEPARATOR . 'package.json');
+        $fileContents = json_decode($fileContents);
+        if (
+            is_object($fileContents) && 
+            property_exists($fileContents, 'dependencies') &&
+            property_exists($fileContents->dependencies, $options['npm'])
+        ) {
+            // if detected package name in the package.json file.
+            $versionNumber = $fileContents->dependencies->{$options['npm']};
+            if (is_scalar($versionNumber)) {
+                // if version number is correctly string or number.
+                $versionNumber = str_replace(['^', '~', '>', '<', '='], '', $versionNumber);
+                $queryArray['npm-v'] = $versionNumber;
+            }
+            unset($versionNumber);
+        }
+        unset($fileContents);
     }
 
-    $assetFullPath = realpath(ROOTDIR . '/' . $url);
-    $additionalQueryValue = filemtime($assetFullPath);
-    $queryArray[$additionalQueryName] = $additionalQueryValue;
-    unset($additionalQueryName, $additionalQueryValue);
+    if (!isset($queryArray)) {
+        // if query array of assets never generated before (not set).
+        parse_str($query, $queryArray);
+        unset($query);
+
+        if (isset($queryArray['mt'])) {
+            $additionalQueryName = 'mt' . time();
+        } else {
+            $additionalQueryName = 'mt';
+        }
+
+        $assetFullPath = realpath(ROOTDIR . '/' . $url);
+        $additionalQueryValue = filemtime($assetFullPath);
+        $queryArray[$additionalQueryName] = $additionalQueryValue;
+        unset($additionalQueryName, $additionalQueryValue, $assetFullPath);
+    }
 
     $query = http_build_query($queryArray, '', '&amp;');
     unset($queryArray);

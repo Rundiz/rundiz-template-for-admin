@@ -121,6 +121,10 @@ dl dt {
 dl dd {
   margin: 0 0 0 1.111em;
 }
+dl ol,
+dl ul {
+  margin-left: 1.111em;
+}
 
 h1, h2, h3, h4, h5, h6, p {
   margin: 0 0 0.625rem 0;
@@ -322,6 +326,7 @@ ul li ol,
 ol li ol,
 ol li ul {
   margin-bottom: 0;
+  margin-left: 1.111em;
   margin-top: 0;
 }
 
