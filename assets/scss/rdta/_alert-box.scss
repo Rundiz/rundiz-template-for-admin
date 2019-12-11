@@ -45,6 +45,31 @@
             @include link-actions-color($warning-color);
         }
     }
+    // .rd-alertbox.fixed-xxx
+    &.fixed-bottom {
+        bottom: 0;
+        margin-bottom: 0;
+        position: fixed;
+    }
+    &.fixed-top {
+        position: fixed;
+        top: 0;
+    }
+    &.fixed-bottom,
+    &.fixed-top {
+        left: 0;
+        right: 0;
+        z-index: ($z-index-navbar + 1);
+        @each $colorName, $colorValue in ("danger", $danger-color), 
+                        ("info", $info-color), 
+                        ("success", $success-color), 
+                        ("warning", $warning-color) {
+            &.alert-#{$colorName} {
+                border-left-width: 10px;
+                box-shadow: 0 0 10px 2px rgba($colorValue, 0.6);
+            }
+        }
+    }
     &.is-dismissable {
         padding-right: 1.563em;
     }

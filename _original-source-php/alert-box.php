@@ -53,7 +53,7 @@ include 'includes/html-head.php';
                             ucfirst($alertName) . ' alert box by add <code>.alert-' . $alertName . '</code> class into alert box element. Example <a href="#" onclick="return false">link</a> inside alert box.' . PHP_EOL .
                             '</div>';
                     }// endforeach;
-                    unset($alertName, $alertNames);
+                    unset($alertName);
                     ?> 
 
                     <h3>Alert with more content</h3>
@@ -74,6 +74,49 @@ include 'includes/html-head.php';
                             <li>Read this message</li>
                         </ol>
                     </div>
+
+                    <h3>Placement</h3>
+                    <div class="rdta-demopage-debugbox rd-block-level-margin-bottom">
+                        <p>The alert box in default position (no fixed).</p>
+                        <div class="rd-alertbox alert-info">
+                            Info alert box.
+                        </div>
+                    </div>
+                    <div class="rdta-demopage-debugbox">
+                        <p>The alert box that will always stay at the top.</p>
+                        <div class="rd-alertbox alert-info fixed-top">
+                            Info alert box.
+                        </div>
+                    </div>
+                    <pre class="rd-block-level-margin-bottom">&lt;div class=&quot;rd-alertbox alert-info fixed-top&quot;&gt;
+    Info alert box.
+&lt;/div&gt;</pre>
+                    <div class="rdta-demopage-debugbox">
+                        <p>The alert box that will always stay at the bottom.</p>
+                        <div class="rd-alertbox alert-info fixed-bottom">
+                            Info alert box.
+                        </div>
+                    </div>
+                    <pre class="rd-block-level-margin-bottom">&lt;div class=&quot;rd-alertbox alert-info fixed-bottom&quot;&gt;
+    Info alert box.
+&lt;/div&gt;</pre>
+                    <p>To see it in action, please click on the link below.</p>
+                    <p>Show alert box fixed top for: 
+                    <?php
+                    foreach ($alertNames as $alertName) {
+                        echo '<a href="#" onclick="return rdtaDemoShowAlertbox(\'' . $alertName . '\', \'top\');">' . $alertName . '</a> ';
+                    }// endforeach;
+                    unset($alertName);
+                    ?>
+                    </p>
+                    <p>Show alert box fixed bottom for: 
+                    <?php
+                    foreach ($alertNames as $alertName) {
+                        echo '<a href="#" onclick="return rdtaDemoShowAlertbox(\'' . $alertName . '\');">' . $alertName . '</a> ';
+                    }// endforeach;
+                    unset($alertName);
+                    ?>
+                    </p>
                 </div><!--.rd-page-content-->
             </main>
 <?php include 'includes/partials/page-footer.php'; ?> 
@@ -81,5 +124,43 @@ include 'includes/html-head.php';
         
 
 <?php include 'includes/js-end-body.php'; ?> 
+        <script>
+            var timeout1, timeout2;
+
+            function rdtaDemoShowAlertbox(alertName, fixedPosition) {
+                if (fixedPosition !== 'top') {
+                    fixedPosition = 'bottom';
+                }
+
+                let alertboxHtml = '<div class="rd-alertbox alert-' + alertName + ' fixed-' + fixedPosition + ' is-dismissable alertbox-fixed-position-demo rd-animation fade">' +
+                    '<button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(this);"><span aria-hidden="true">&times;</span></button>' +
+                    'This is alert box ' + alertName + '. This alert box will be disappear after few seconds with custom JS function.' +
+                    '</div>';
+
+                // remove previous alert box demo.
+                if (document.querySelector('.alertbox-fixed-position-demo')) {
+                    document.querySelector('.alertbox-fixed-position-demo').remove();
+                }
+
+                document.body.insertAdjacentHTML('beforeEnd', alertboxHtml);
+                clearTimeout(timeout1);
+                clearTimeout(timeout2);
+
+                // make alert box demo disappear after few seconds.
+                timeout1 = setTimeout(function() {
+                    if (document.querySelector('.alertbox-fixed-position-demo')) {
+                        document.querySelector('.alertbox-fixed-position-demo').classList.add('fade-out');
+                    }
+                }, 5000);
+                // also remove alert box demo after disappeared.
+                timeout2 = setTimeout(function() {
+                    if (document.querySelector('.alertbox-fixed-position-demo')) {
+                        document.querySelector('.alertbox-fixed-position-demo').remove();
+                    }
+                }, 5400);
+
+                return false;
+            }// rdtaDemoShowAlertbox
+        </script>
     </body>
 </html>

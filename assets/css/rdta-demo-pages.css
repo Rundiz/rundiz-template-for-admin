@@ -7,3 +7,8 @@ Styles for Rundiz Template for Admin demo pages.
     border: 1px dashed #ccc;
     padding: 10px;
 }
+
+.rdta-demopage-debugbox .fixed-bottom,
+.rdta-demopage-debugbox .fixed-top {
+    position: static;
+}

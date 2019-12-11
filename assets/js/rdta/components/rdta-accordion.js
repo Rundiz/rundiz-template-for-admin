@@ -1,4 +1,4 @@
-/*! Rundiz template for admin v 2.0.22 
+/*! Rundiz template for admin v 2.0.23 
 License: MIT*//**
  * RDTA Accordion
  */

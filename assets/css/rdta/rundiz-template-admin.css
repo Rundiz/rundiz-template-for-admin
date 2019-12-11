@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Rundiz template for admin V.2.0.22
+ * Rundiz template for admin V.2.0.23
  */
 /*
 * ----------------------------------------------------------------------------------------------
@@ -302,6 +302,36 @@ ul.rd-sidebar-expand-collapse-controls a .icon,
 }
 .rd-alertbox.alert-warning a:visited {
   color: #e69200;
+}
+.rd-alertbox.fixed-bottom {
+  bottom: 0;
+  margin-bottom: 0;
+  position: fixed;
+}
+.rd-alertbox.fixed-top {
+  position: fixed;
+  top: 0;
+}
+.rd-alertbox.fixed-bottom, .rd-alertbox.fixed-top {
+  left: 0;
+  right: 0;
+  z-index: 5;
+}
+.rd-alertbox.fixed-bottom.alert-danger, .rd-alertbox.fixed-top.alert-danger {
+  border-left-width: 10px;
+  box-shadow: 0 0 10px 2px rgba(188, 0, 0, 0.6);
+}
+.rd-alertbox.fixed-bottom.alert-info, .rd-alertbox.fixed-top.alert-info {
+  border-left-width: 10px;
+  box-shadow: 0 0 10px 2px rgba(36, 129, 173, 0.6);
+}
+.rd-alertbox.fixed-bottom.alert-success, .rd-alertbox.fixed-top.alert-success {
+  border-left-width: 10px;
+  box-shadow: 0 0 10px 2px rgba(0, 124, 0, 0.6);
+}
+.rd-alertbox.fixed-bottom.alert-warning, .rd-alertbox.fixed-top.alert-warning {
+  border-left-width: 10px;
+  box-shadow: 0 0 10px 2px rgba(230, 146, 0, 0.6);
 }
 .rd-alertbox.is-dismissable {
   padding-right: 1.563em;
@@ -934,6 +964,47 @@ textarea.input-small {
   .rd-form.horizontal .form-group .control-wrapper {
     flex-grow: 1;
   }
+}
+
+/**
+* ----------------------------------------------------------------------------------------------
+* Input group.
+* ----------------------------------------------------------------------------------------------
+*/
+.rd-form .form-group .control-wrapper .rd-input-group {
+  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+}
+.rd-form .form-group .control-wrapper .rd-input-group .rd-input-control {
+  flex-basis: auto;
+  flex-grow: 1;
+  flex-shrink: 1;
+  height: auto;
+  width: 1%;
+}
+.rd-form .form-group .control-wrapper .rd-input-group .rd-input-group-block {
+  display: flex;
+}
+.rd-form .form-group .control-wrapper .rd-input-group .rd-input-group-block.append {
+  margin-left: -1px;
+}
+.rd-form .form-group .control-wrapper .rd-input-group .rd-input-group-block.prepend {
+  margin-right: -1px;
+}
+.rd-form .form-group .control-wrapper .rd-input-group .rd-input-group-block .rd-input-group-block-text {
+  align-items: center;
+  display: flex;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  line-height: 1.4;
+  padding: 0.313rem 0.625rem;
+}
+.rd-form .form-group .control-wrapper .rd-input-group.rd-input-group-lg {
+  font-size: 1.25em;
+}
+.rd-form .form-group .control-wrapper .rd-input-group.rd-input-group-sm {
+  font-size: 0.75em;
 }
 
 /*

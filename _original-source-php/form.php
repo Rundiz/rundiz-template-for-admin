@@ -457,6 +457,149 @@ include 'includes/html-head.php';
                             </div>
                         </div>
                     </form>
+
+                    <hr>
+
+                    <h3>Input group</h3>
+                    <p>The input group must be use with form class <code>rd-form</code> and elements with classes <code>form-group</code> <code>control-wrapper</code></p>
+                    <form class="rd-form">
+                        <div class="form-group">
+                            <div class="control-wrapper">
+                                <div class="rd-input-group rd-content-level-margin-bottom">
+                                    <input class="rd-input-control" type="number">
+                                    <div class="rd-input-group-block append">
+                                        <span class="rd-input-group-block-text">&#3647;</span>
+                                    </div>
+                                </div>
+                                <div class="rd-input-group rd-content-level-margin-bottom">
+                                    <div class="rd-input-group-block prepend">
+                                        <span class="rd-input-group-block-text">Price</span>
+                                    </div>
+                                    <div class="rd-input-group-block prepend">
+                                        <span class="rd-input-group-block-text">$</span>
+                                    </div>
+                                    <input class="rd-input-control" type="number">
+                                    <div class="rd-input-group-block append">
+                                        <span class="rd-input-group-block-text">.00</span>
+                                    </div>
+                                    <div class="rd-input-group-block append">
+                                        <span class="rd-input-group-block-text">each</span>
+                                    </div>
+                                </div>
+                                <div class="rd-input-group rd-content-level-margin-bottom">
+                                    <textarea class="rd-input-control"></textarea>
+                                    <div class="rd-input-group-block append">
+                                        <span class="rd-input-group-block-text">Textarea</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <pre>&lt;div class=&quot;rd-input-group rd-content-level-margin-bottom&quot;&gt;
+    &lt;input class=&quot;rd-input-control&quot; type=&quot;number&quot;&gt;
+    &lt;div class=&quot;rd-input-group-block append&quot;&gt;
+        &lt;span class=&quot;rd-input-group-block-text&quot;&gt;&amp;#3647;&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rd-input-group rd-content-level-margin-bottom&quot;&gt;
+    &lt;div class=&quot;rd-input-group-block prepend&quot;&gt;
+        &lt;span class=&quot;rd-input-group-block-text&quot;&gt;Price&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;rd-input-group-block prepend&quot;&gt;
+        &lt;span class=&quot;rd-input-group-block-text&quot;&gt;$&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;input class=&quot;rd-input-control&quot; type=&quot;number&quot;&gt;
+    &lt;div class=&quot;rd-input-group-block append&quot;&gt;
+        &lt;span class=&quot;rd-input-group-block-text&quot;&gt;.00&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;rd-input-group-block append&quot;&gt;
+        &lt;span class=&quot;rd-input-group-block-text&quot;&gt;each&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rd-input-group rd-content-level-margin-bottom&quot;&gt;
+    &lt;textarea class=&quot;rd-input-control&quot;&gt;&lt;/textarea&gt;
+    &lt;div class=&quot;rd-input-group-block append&quot;&gt;
+        &lt;span class=&quot;rd-input-group-block-text&quot;&gt;Textarea&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+                        <h4>Sizes</h4>
+                        <div class="form-group">
+                            <div class="control-wrapper">
+                                <div class="rd-input-group rd-content-level-margin-bottom">
+                                    <div class="rd-input-group-block prepend">
+                                        <span class="rd-input-group-block-text">normal</span>
+                                    </div>
+                                    <input class="rd-input-control" type="number">
+                                </div>
+                                <div class="rd-input-group rd-input-group-sm rd-content-level-margin-bottom">
+                                    <div class="rd-input-group-block prepend">
+                                        <span class="rd-input-group-block-text">small</span>
+                                    </div>
+                                    <input class="rd-input-control" type="number">
+                                </div>
+                                <div class="rd-input-group rd-input-group-lg rd-content-level-margin-bottom">
+                                    <div class="rd-input-group-block prepend">
+                                        <span class="rd-input-group-block-text">large</span>
+                                    </div>
+                                    <input class="rd-input-control" type="number">
+                                </div>
+                            </div>
+                        </div>
+                        <pre>&lt;div class=&quot;rd-input-group rd-input-group-sm rd-content-level-margin-bottom&quot;&gt;
+    &lt;div class=&quot;rd-input-group-block prepend&quot;&gt;
+        &lt;span class=&quot;rd-input-group-block-text&quot;&gt;small&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;input class=&quot;rd-input-control&quot; type=&quot;number&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rd-input-group rd-input-group-lg rd-content-level-margin-bottom&quot;&gt;
+    &lt;div class=&quot;rd-input-group-block prepend&quot;&gt;
+        &lt;span class=&quot;rd-input-group-block-text&quot;&gt;large&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;input class=&quot;rd-input-control&quot; type=&quot;number&quot;&gt;
+&lt;/div&gt;</pre>
+                        <h4>With button</h4>
+                        <div class="form-group">
+                            <div class="control-wrapper">
+                                <div class="rd-input-group rd-content-level-margin-bottom">
+                                    <input class="rd-input-control" type="number">
+                                    <div class="rd-input-group-block append">
+                                        <button class="rd-button" type="button">Button</button>
+                                    </div>
+                                </div>
+                                <div class="rd-input-group rd-content-level-margin-bottom">
+                                    <input class="rd-input-control" type="number">
+                                    <div class="rd-input-group-block append">
+                                        <div class="rd-button-group">
+                                            <button class="rd-button dropdown-toggler" type="button" data-placement="bottom right">Dropdown <i class="fas fa-caret-down"></i></button>
+                                            <ul class="rd-dropdown">
+                                                <li><a href="#" onclick="return false;">Save</a></li>
+                                                <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
+                                                <li><a href="#" onclick="return false;">Cancel</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <pre>&lt;div class=&quot;rd-input-group rd-content-level-margin-bottom&quot;&gt;
+    &lt;input class=&quot;rd-input-control&quot; type=&quot;number&quot;&gt;
+    &lt;div class=&quot;rd-input-group-block append&quot;&gt;
+        &lt;button class=&quot;rd-button&quot; type=&quot;button&quot;&gt;Button&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rd-input-group rd-content-level-margin-bottom&quot;&gt;
+    &lt;input class=&quot;rd-input-control&quot; type=&quot;number&quot;&gt;
+    &lt;div class=&quot;rd-input-group-block append&quot;&gt;
+        &lt;div class=&quot;rd-button-group&quot;&gt;
+            &lt;button class=&quot;rd-button dropdown-toggler&quot; type=&quot;button&quot; data-placement=&quot;bottom right&quot;&gt;Dropdown &lt;i class=&quot;fas fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+            &lt;ul class=&quot;rd-dropdown&quot;&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;Save&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;Save &amp;amp; Publish&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;Cancel&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+                    </form>
                 </div><!--.rd-page-content-->
             </main>
 <?php include 'includes/partials/page-footer.php'; ?> 
