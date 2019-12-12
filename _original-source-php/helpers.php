@@ -66,7 +66,7 @@ include 'includes/html-head.php';
                     <button type="button" onclick="rdtaDemoFadeIn();" style="margin-bottom: 0.625rem;">Fade in</button>
 
                     <h3>Responsive visibility</h3>
-                    <p>This text -&gt;<span class="hidden">was hidden</span>&lt;- hidden in all screen sizes using <code>.hidden</code> class.</p>
+                    <p>This text -&gt;<span class="rd-hidden">was hidden</span>&lt;- hidden in all screen sizes using <code>.rd-hidden</code> class.</p>
                     <p>The text below will be hidden and visible in different screen size. Try to resize the browser to see it in action.</p>
                     <div class="rd-datatable-wrapper">
                         <table class="rd-datatable">

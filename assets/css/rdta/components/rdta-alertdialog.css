@@ -24,7 +24,7 @@ body.rd-alertdialog-modal-open {
   display: none;
 }
 .rd-alertdialog.hide.show {
-  display: flex;
+  display: flex !important;
 }
 @media (min-width: 768px) and (max-width: 999px) {
   .rd-alertdialog.rd-dialog-size-large {

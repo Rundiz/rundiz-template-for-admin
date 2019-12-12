@@ -20,7 +20,7 @@
             display: none;
             // .rd-dialog.hide.show
             &.show {
-                display: flex;
+                display: flex !important;
             }
         }
 
