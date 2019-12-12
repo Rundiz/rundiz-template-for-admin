@@ -49,17 +49,19 @@
     &.fixed-bottom {
         bottom: 0;
         margin-bottom: 0;
-        position: fixed;
     }
     &.fixed-top {
-        position: fixed;
         top: 0;
+        @media (min-width: $minimum-sidebar-breakpoint) {
+            min-height: ($mobile-screen-navbar-height/2);
+        }
     }
     &.fixed-bottom,
     &.fixed-top {
         left: 0;
+        position: fixed;
         right: 0;
-        z-index: ($z-index-navbar + 1);
+        z-index: $z-index-alertboxfixed;
         @each $colorName, $colorValue in ("danger", $danger-color), 
                         ("info", $info-color), 
                         ("success", $success-color), 
