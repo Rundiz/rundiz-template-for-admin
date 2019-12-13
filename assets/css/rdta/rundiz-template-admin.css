@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Rundiz template for admin V.2.0.27
+ * Rundiz template for admin V.2.0.28
  */
 /*
 * ----------------------------------------------------------------------------------------------
@@ -318,7 +318,7 @@ ul.rd-sidebar-expand-collapse-controls a .icon,
   left: 0;
   position: fixed;
   right: 0;
-  z-index: 5;
+  z-index: 101;
 }
 .rd-alertbox.fixed-bottom.alert-danger, .rd-alertbox.fixed-top.alert-danger {
   border-left-width: 10px;

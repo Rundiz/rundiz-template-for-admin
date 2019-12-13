@@ -32,7 +32,7 @@ $form-tiny-font-size: 0.625em !default;// currently only available to button.
 // the z-indexes
 $z-index-sidebar: 2 !default;
 $z-index-navbar: 4 !default;// navbar (top) must higher than sidebar to prevent scroll page and sidebar visible on top of navbar.
-$z-index-alertboxfixed: 5 !default;// alert box fixed top or bottom.
+$z-index-alertboxfixed: 101 !default;// alert box fixed top or bottom.
 $z-index-dialogbackdrop: 1010 !default;// modal dialog (backdrop).
 $z-index-alertdialogbackdrop: 2000 !default;// alert dialog (backdrop).
 $z-index-tooltips: 2001 !default;// tooltips.
