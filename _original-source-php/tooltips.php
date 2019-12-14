@@ -25,6 +25,10 @@ include 'includes/html-head.php';
                         <strong>assets/js/tooltip.js/umd/tooltip.min.js</strong>,
                         <strong>assets/js/rdta/components/rdta-tooltips.js</strong>
                     </p>
+                    <p>Then enable its functional.</p>
+                    <pre>document.addEventListener('DOMContentLoaded', function() {
+    RDTATooltips.init('[data-toggle="tooltip"]');
+});</pre>
                     <hr>
 
                     <h2>Examples</h2>

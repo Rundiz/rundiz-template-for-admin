@@ -62,20 +62,37 @@ function compileSass(cb) {
  */
 function minRDTACss(cb) {
     const rename = require("gulp-rename");
+    const sass = require('gulp-sass');
+    const Fiber = require('fibers');
     const cleanCSS = require('gulp-clean-css');
     const sourcemaps = require('gulp-sourcemaps');
     const mergeStream =   require('merge-stream');
     let folders = ['rdta', 'smartmenus/sm-rdta'];
 
+    sass.compiler = require('sass');
+
     console.log('Minifying RDTA css.');
 
     let tasks = folders.map(function(element) {
-        return src(['assets/css/' + element + '/**/*.css', '!assets/css/' + element + '/**/*.min.css'])
-            .pipe(sourcemaps.init({loadMaps: true}))
-            .pipe(cleanCSS())
-            .pipe(rename({extname: '.min.css'}))
-            .pipe(sourcemaps.write('.'))
-            .pipe(dest('assets/css/' + element + '/'));
+        return src('assets/scss/**/*.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass({
+            fiber: Fiber,
+            outputStyle: 'compressed'
+        }).on('error', sass.logError))
+        .pipe(rename({extname: '.min.css'}))
+        .pipe(sourcemaps.write('.', {sourceRoot: '../../assets/scss'}))
+        .pipe(dest('assets/css/'));
+        // Minify from .css can cause some file delete when `git commit`.
+        // This is because compiling Sass to full .css can be slow.
+        // When it is not yet completed compile .scss to .css, this function cannot see full .css file.
+        // The full .css file will be skip and result is .min.css gets deleted.
+        //return src(['assets/css/' + element + '/**/*.css', '!assets/css/' + element + '/**/*.min.css'])
+        //    .pipe(sourcemaps.init({loadMaps: true}))
+        //    .pipe(cleanCSS())
+        //    .pipe(rename({extname: '.min.css'}))
+        //    .pipe(sourcemaps.write('.'))
+        //    .pipe(dest('assets/css/' + element + '/'));
     });
 
     return mergeStream(tasks);

@@ -1,4 +1,4 @@
-/*! Rundiz template for admin v 2.0.28 
+/*! Rundiz template for admin v 2.0.29 
 License: MIT*//**
  * RDTA alert dialog
  */
@@ -150,16 +150,13 @@ class RDTAAlertDialog {
                 event.metaKey === false &&
                 event.shiftKey === false
             ) {
+                // if key press (already up) for escape, numpad enter, enter
                 if (document.querySelector('.rd-alertdialog-modal.show')) {
-                    if (
-                        document.querySelector('.rd-alertdialog-modal.show .rd-alertdialog') &&
-                        document.querySelector('.rd-alertdialog-modal.show .rd-alertdialog').dataset &&
-                        document.querySelector('.rd-alertdialog-modal.show .rd-alertdialog').dataset.escKeyNotClose !== 'true'
-                    ) {
-                        if (document.querySelector('.rd-alertdialog-modal.show [data-dismiss="dialog"]')) {
-                            document.querySelector('.rd-alertdialog-modal.show [data-dismiss="dialog"]').focus();
-                            document.querySelector('.rd-alertdialog-modal.show [data-dismiss="dialog"]').click();
-                        }
+                    // alert dialog is showing.
+                    if (document.querySelector('.rd-alertdialog-modal.show [data-dismiss="dialog"]')) {
+                        document.querySelector('.rd-alertdialog-modal.show [data-dismiss="dialog"]').focus();
+                        document.querySelector('.rd-alertdialog-modal.show [data-dismiss="dialog"]').click();
+                        document.body.removeEventListener('keyup', handler);
                     }
                 }
             }

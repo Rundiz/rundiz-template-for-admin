@@ -23,6 +23,10 @@ include 'includes/html-head.php';
                         <strong>assets/css/rdta/components/rdta-accordion.css</strong>,
                         <strong>assets/js/rdta/components/rdta-accordion.js</strong>
                     </p>
+                    <p>Then enable its functional.</p>
+                    <pre>document.addEventListener('DOMContentLoaded', function() {
+    RDTAAccordion.init('.rd-accordion');
+});</pre>
                     <hr>
 
                     <h2>Examples</h2>
