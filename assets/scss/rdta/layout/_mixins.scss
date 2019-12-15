@@ -21,22 +21,21 @@
 
         // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list
         ul.rd-sidebar-item-list {
+            // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list > li (item list of main menu).
             > li {
                 // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list > li > a
-                >a {
+                > a {
                     display: block;
                     overflow-wrap: break-word;
                     padding: 0.625rem 2.125rem 0.625rem 0.625rem;
                     word-break: break-all;
-
                     // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list > li > a > span.rd-sidebar-menu-text
                     > span.rd-sidebar-menu-text {
                         overflow-wrap: break-word;
                         word-break: break-all;
                     }
-
                     // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list > li > a > .sidebar-icon
-                    > .sidebar-icon {
+                    .sidebar-icon {
                         font-size: 1.250rem;
                         transition: font-size $sidebar-transition-seconds;
                     }
@@ -51,6 +50,9 @@
                 a {
                     display: none;
                 }
+            }
+            li.sub-menu-heading {
+                font-weight: 700;
             }
         }
 

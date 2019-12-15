@@ -1,40 +1,48 @@
+## Start development
 
-Start development ========================================
-To start development, please open the readme.md in _builder folder and follow instruction on clone section.
+To start development, please open the **readme.md** in **_builder** folder and follow instruction on clone section.
 
-If you don't have node_modules folder in the working project, then run `npm install`.
-The node packages will be install in node_modules folder.
+If there is no **node_modules** folder in the working project, then run `npm install`.
+The node packages will be install in **node_modules** folder.
 
-SCSS =================================================
-To compile sass (or scss) to css use the following command line:
-For compile a single file: `sass assets/scss/file.scss assets/css/file.css`
-For compile the whole folders: `sass --update assets/scss:assets/css`
+-----
 
-For expand and nice syntax, append this command to the current command: `--style="expanded"`
-For minimum space, append this command to the current command: `--style="compressed"`
+## Build
 
-For no source map, append this command to the current command: `--sourcemap=none`
+After finish development or editing the source code, these commands can help.
 
-For emit comments about line number from source, append this command to the current command: `--line-numbers`
+### SCSS
 
-For force compile even css file is newer, append this command to the current command: `--force` (Old Scss)
+To compile sass (or scss) to css use the following command line:<br>
+For compile a single file: `sass assets/scss/file.scss assets/css/file.css`.<br>
+For compile the whole folders: `sass --update assets/scss:assets/css`.
 
-Please note that the sass files will be automatically compile and minified with source maps once `gulp` command was called.
+For expand and nice syntax, append this command to the current command: `--style="expanded"`.<br>
+For minimum space, append this command to the current command: `--style="compressed"`.
 
-Gulp =================================================
-Before running the command below, please make sure that you had run the npm command above.
+For no source map, append this command to the current command: `--sourcemap=none`.
 
-To minify js use the following command line:
-`gulp`
-Gulp will call gulpfile.js and create minified js, css files with source map.
+For emit comments about line number from source, append this command to the current command: `--line-numbers`.
 
-To watch scss files, use following command line:
-`gulp watch`
+For force compile even css file is newer, append this command to the current command: `--force` (Old Scss).
 
-Publish ================================================
+Please note that the sass files will be automatically compile and minified with source maps once `gulp` command has been called.
+
+### Gulp
+
+Before running the command below, please make sure that all node packages are already installed.
+
+To minify j, build scss files use `gulp` command.<br>
+Gulp will call **gulpfile.js** and create minified js, css files with source map.
+
+To watch scss files, use `gulp watch` command.
+
+### Publish
+
 To publish this package to node package manager please follow instruction.
+
 1. Update the version number in package.json.
 2. Run `gulp` command. Or run `npm run build` command.
-3. Open readme.md in _builder folder and follow instruction on commit section. Or run `npm run phpbuild` command.
+3. Open **readme.md** in **_builder** folder and follow instruction on commit section. Or run `npm run phpbuild` command.
 4. Commit and push to Github.
 5. run `npm publish` command.

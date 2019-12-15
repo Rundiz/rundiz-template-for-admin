@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Rundiz template for admin V.2.0.29
+ * Rundiz template for admin V.2.0.30
  */
 /*
 * ----------------------------------------------------------------------------------------------
@@ -99,7 +99,7 @@ html.rd-template-admin {
   overflow-wrap: break-word;
   word-break: break-all;
 }
-.rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list > li > a > .sidebar-icon {
+.rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list > li > a .sidebar-icon {
   font-size: 1.25rem;
   transition: font-size 0s;
 }
@@ -110,6 +110,9 @@ html.rd-template-admin {
 }
 .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list li.divider a {
   display: none;
+}
+.rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list li.sub-menu-heading {
+  font-weight: 700;
 }
 .rd-page-wrapper .rd-sidebar ul {
   list-style: none;
