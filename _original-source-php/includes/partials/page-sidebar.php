@@ -124,6 +124,7 @@ for ($i = 1; $i <= 50; $i++) {
                         </li>
                         <li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-server fa-fw"></i> <span class="rd-sidebar-menu-text">Components</span></a>
                             <ul>
+                                <li class="sub-menu-heading"><a>Basic component &amp; example</a></li>
                                 <li><a href="typography.php">Typography</a></li>
                                 <li><a href="basic-layout.php">Basic layout</a></li>
                                 <li><a href="#" onclick="return false;">Sticky menu</a>
@@ -134,6 +135,7 @@ for ($i = 1; $i <= 50; $i++) {
                                     </ul>
                                 </li>
                                 <li class="divider"></li>
+                                <li class="sub-menu-heading"><a>More components</a></li>
                                 <li><a href="accordion.php">Accordion</a></li>
                                 <li><a href="alert-box.php">Alert box</a></li>
                                 <li><a href="alert-dialog.php">Alert dialog</a></li>

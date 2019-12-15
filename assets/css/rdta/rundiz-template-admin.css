@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Rundiz template for admin V.2.0.30
+ * Rundiz template for admin V.2.0.31
  */
 /*
 * ----------------------------------------------------------------------------------------------
@@ -113,6 +113,12 @@ html.rd-template-admin {
 }
 .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list li.sub-menu-heading {
   font-weight: 700;
+}
+.rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list li.sub-menu-heading > a,
+.rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list li.sub-menu-heading > div,
+.rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list li.sub-menu-heading > span {
+  color: inherit;
+  font-size: 1rem;
 }
 .rd-page-wrapper .rd-sidebar ul {
   list-style: none;

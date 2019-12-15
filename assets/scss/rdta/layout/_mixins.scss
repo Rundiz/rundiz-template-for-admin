@@ -53,6 +53,12 @@
             }
             li.sub-menu-heading {
                 font-weight: 700;
+                > a,
+                > div,
+                > span {
+                    color: inherit;
+                    font-size: 1rem;
+                }
             }
         }
 
