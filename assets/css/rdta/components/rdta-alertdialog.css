@@ -69,10 +69,10 @@ body.rd-alertdialog-modal-open {
 }
 
 .rd-alertdialog.alert-info {
-  border: 5px solid #2481ad;
+  border: 5px solid #09a0bb;
 }
 .rd-alertdialog.alert-info .rd-alertdialog-icon {
-  color: #c4e3f2;
+  color: #c4ebf2;
 }
 .rd-alertdialog.alert-warning {
   border: 5px solid #e69200;

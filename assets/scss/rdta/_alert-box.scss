@@ -62,11 +62,12 @@
         position: fixed;
         right: 0;
         z-index: $z-index-alertboxfixed;
-        @each $colorName, $colorValue in ("danger", $danger-color), 
-                        ("info", $info-color), 
-                        ("success", $success-color), 
-                        ("warning", $warning-color) {
+        @each $colorName, $colorValue, $bgColorValue in ("danger", $danger-color, $danger-background-color), 
+                        ("info", $info-color, $info-background-color), 
+                        ("success", $success-color, $success-background-color), 
+                        ("warning", $warning-color, $warning-background-color) {
             &.alert-#{$colorName} {
+                background-color: lighten($bgColorValue, 7%);
                 border-left-width: 10px;
                 box-shadow: 0 0 10px 2px rgba($colorValue, 0.6);
             }
