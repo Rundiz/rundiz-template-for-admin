@@ -26,12 +26,7 @@ class RDTADialog {
             }
             // show dialog or modal dialog
             dialogOrModalElement.classList.add('show');
-            // focus on dialog/modal.
-            setTimeout(function() {
-                dialogOrModalElement.tabIndex = '-1';
-                dialogOrModalElement.focus();
-                //console.log('changed focus', document.activeElement);
-            }, 301);
+            dialogOrModalElement.tabIndex = '-1';
             // fire event.
             let event = new Event('rdta.dialog.opened');
             dialogOrModalElement.dispatchEvent(event);
