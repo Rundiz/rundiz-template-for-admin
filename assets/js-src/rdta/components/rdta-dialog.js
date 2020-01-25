@@ -10,9 +10,11 @@ class RDTADialog {
      * Activate (open) the dialog.
      * 
      * @param {string} selector
+     * @param {object} options Options:<br>
+     *                  'focusDialog' (bool) Set to `false` to do not focus on dialog. Default is `true`.
      * @returns {undefined}
      */
-    activateDialog(selector) {
+    activateDialog(selector, options) {
         let thisClass = this;
         let dialogOrModalElement = document.querySelector(selector);
 
@@ -27,9 +29,18 @@ class RDTADialog {
             // show dialog or modal dialog
             dialogOrModalElement.classList.add('show');
             dialogOrModalElement.tabIndex = '-1';
+            if (!options || (options && options.focusDialog !== false)) {
+                // focus on dialog/modal.
+                setTimeout(function() {
+                    dialogOrModalElement.focus();
+                    //console.log('changed focus', document.activeElement);
+                }, 301);// 301 is from css transition 0.3s (300) + 1.
+            }
             // fire event.
-            let event = new Event('rdta.dialog.opened');
-            dialogOrModalElement.dispatchEvent(event);
+            setTimeout(function() {
+                let event = new Event('rdta.dialog.opened');
+                dialogOrModalElement.dispatchEvent(event);
+            }, 301);// 301 is from css transition 0.3s (300) + 1.
             thisClass.listenOnCloseButton(selector);
             thisClass.listenOnClickOutsideClose(selector);
         }
