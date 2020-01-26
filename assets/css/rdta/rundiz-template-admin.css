@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Rundiz template for admin V.2.0.34
+ * Rundiz template for admin V.2.1.0
  */
 /*
 * ----------------------------------------------------------------------------------------------
@@ -1284,8 +1284,6 @@ textarea.input-small {
   clear: both;
 }
 
-.hidden,
-.hide,
 .rd-hidden {
   display: none !important;
 }

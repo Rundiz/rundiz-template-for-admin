@@ -24,7 +24,7 @@ include 'includes/html-head.php';
                         <li><a href="https://www.smartmenus.org" target="smartmenus">SmartMenus</a></li>
                         <li><a href="https://fontawesome.com" target="fontawesome">Font Awesome</a></li>
                         <li><a href="https://popper.js.org" target="popper.js">Popper.js</a></li>
-                        <li><a href="https://popper.js.org/tooltip-examples.html" target="tooltip.js">Tooltip.js</a></li>
+                        <li><a href="https://atomiks.github.io/tippyjs" target="tippy.js">tippy.js</a></li>
                         <li><a href="https://github.com/abouolia/sticky-sidebar" target="sticky-sidebar">Sticky Sidebar</a></li>
                         <li><a href="https://github.com/marcj/css-element-queries/blob/master/src/ResizeSensor.js" target="resizesensor">Resize Sensor</a></li>
                     </ul>

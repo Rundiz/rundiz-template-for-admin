@@ -6,7 +6,6 @@
 $title = 'Tooltips';
 include 'includes/html-head.php'; 
 ?> 
-        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta/components/rdta-tooltips.css'); ?>">
     </head>
     <body ontouchstart="">
 <?php include 'includes/partials/page-header.php'; ?> 
@@ -19,16 +18,16 @@ include 'includes/html-head.php';
                 <div class="rd-page-content">
                     <h1>Tooltips</h1>
                     <p>
-                        Tooltips use <a href="https://popper.js.org/tooltip-examples.html" target="tooltip.js">tooltip.js</a> powered by popper.js.<br>
+                        Tooltips use <a href="https://atomiks.github.io/tippyjs/" target="tippy.js">tippy.js</a> powered by popper.js.<br>
                         In order to make tooltips works, add these files.
-                        <strong>assets/css/rdta/components/rdta-tooltips.css</strong>,
-                        <strong>assets/js/tooltip.js/umd/tooltip.min.js</strong>,
+                        <strong>assets/js/tippy.js/dist/tippy-bundle.iife.min.js</strong>,
                         <strong>assets/js/rdta/components/rdta-tooltips.js</strong>
                     </p>
                     <p>Then enable its functional.</p>
                     <pre>document.addEventListener('DOMContentLoaded', function() {
-    RDTATooltips.init('[data-toggle="tooltip"]');
+    let rdtaTooltips = RDTATooltips.init('[data-toggle="tooltip"]');
 });</pre>
+                    <p>And you can get latest tippy instance or all instances with <code>rdtaTooltips.getInstance()</code> or <code>rdtaTooltips.getInstances()</code> method. Open browser console to see demonstration.</p>
                     <hr>
 
                     <h2>Examples</h2>
@@ -48,7 +47,7 @@ include 'includes/html-head.php';
                     <button type="button" title="Tooltip on left" data-toggle="tooltip" data-placement="left">Tooltip on left</button>
 
                     <hr>
-                    <p>For more options, please read more at <a href="https://popper.js.org/tooltip-documentation.html" target="tooltip.js-doc">tooltip.js documentation</a>.</p>
+                    <p>For more options, please read more at <a href="https://atomiks.github.io/tippyjs/creating-tooltips/" target="tippy.js-doc">tippy.js documentation</a>.</p>
                 </div><!--.rd-page-content-->
             </main>
 <?php include 'includes/partials/page-footer.php'; ?> 
@@ -56,10 +55,12 @@ include 'includes/html-head.php';
         
 
 <?php include 'includes/js-end-body.php'; ?> 
-        <script src="assets/js/tooltip.js/umd/tooltip.min.js"></script>
+        <script src="assets/js/tippy.js/dist/tippy-bundle.iife.min.js"></script>
         <script src="assets/js/rdta/components/rdta-tooltips.js"></script>
         <script>
-            RDTATooltips.init('[data-toggle="tooltip"]');
+            let rdtaTooltips = RDTATooltips.init('[data-toggle="tooltip"]');
+            console.log('latest tippy instance', rdtaTooltips.getInstance());
+            console.log('all tippy instances', rdtaTooltips.getInstances());
         </script>
     </body>
 </html>

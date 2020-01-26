@@ -8,7 +8,7 @@ List of the fix that should apply as soon as possible.
 - None
 
 ## Minor version
-- [ ] Remove `.hide`, `.hidden` classes in **_helpers.scss** about line 21 - 25 but keep `.rd-hidden` class in next minor version update.
+- None
 
 ## Patch version
 - None

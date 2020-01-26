@@ -29,6 +29,34 @@ function copyFontAwesome(cb) {
 
 
 /**
+ * Copy Popper.js v1
+ * 
+ * @param {type} cb 
+ */
+function copyPopper1(cb) {
+    return mergeStream(
+        src('./node_modules/popper.js/dist/umd/**')
+            .pipe(dest('./assets/js/popper.js/umd/'))
+    );
+}// copyPopper1
+
+
+/**
+ * Copy Popper.js v2
+ * 
+ * @param {type} cb 
+ */
+function copyPopper2(cb) {
+    return mergeStream(
+        src('./node_modules/@popperjs/core/dist/umd/popper.*')
+            .pipe(dest('./assets/js/popper.js/umd/')),
+        src('node_modules/@popperjs/core/LICENSE*')
+            .pipe(dest('assets/js/popper.js/'))
+    );
+}// copyPopper2
+
+
+/**
  * Copy sanitize.css files.
  * 
  * @param {type} cb
@@ -70,6 +98,12 @@ function copySmartMenus(cb) {
 }// copySmartMenus
 
 
+function copyTippy(cb) {
+    return src('./node_modules/tippy.js/**')
+    .pipe(dest('./assets/js/tippy.js/'));
+}// copyTippy
+
+
 /**
  * Copy tooltip.js
  */
@@ -81,7 +115,10 @@ function copyTooltip(cb) {
 
 exports.copyPackages = parallel(
     copyFontAwesome,
+    copyPopper1,
+    //copyPopper2,// not ready with tippy.js. to install this, use `npm i @popperjs/core --save`.
     copySanitizeCss,
     copySmartMenus,
-    copyTooltip
+    copyTippy,
+    //copyTooltip,// deprecated, use tippy.js instead
 );

@@ -11,13 +11,12 @@
         <link rel="stylesheet" href="assets/font-awesome/css/all.min.css?npm-v=5.12.0">
 
         <link rel="stylesheet" href="assets/css/smartmenus/sm-core-css.css?npm-v=1.1.0">
-        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?mt=1576397395">
+        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?mt=1580027941">
 
-        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?mt=1576397395">
-        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?mt=1576397394">
+        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?mt=1580027941">
+        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?mt=1580027941">
 
         <link rel="stylesheet" href="assets/css/rdta-demo-pages.css?mt=1576071800"> 
-        <link rel="stylesheet" href="assets/css/rdta/components/rdta-tooltips.css?mt=1576397395">
     </head>
     <body ontouchstart="">
         <header class="rd-navbar">
@@ -283,16 +282,16 @@
                 <div class="rd-page-content">
                     <h1>Tooltips</h1>
                     <p>
-                        Tooltips use <a href="https://popper.js.org/tooltip-examples.html" target="tooltip.js">tooltip.js</a> powered by popper.js.<br>
+                        Tooltips use <a href="https://atomiks.github.io/tippyjs/" target="tippy.js">tippy.js</a> powered by popper.js.<br>
                         In order to make tooltips works, add these files.
-                        <strong>assets/css/rdta/components/rdta-tooltips.css</strong>,
-                        <strong>assets/js/tooltip.js/umd/tooltip.min.js</strong>,
+                        <strong>assets/js/tippy.js/dist/tippy-bundle.iife.min.js</strong>,
                         <strong>assets/js/rdta/components/rdta-tooltips.js</strong>
                     </p>
                     <p>Then enable its functional.</p>
                     <pre>document.addEventListener('DOMContentLoaded', function() {
-    RDTATooltips.init('[data-toggle="tooltip"]');
+    let rdtaTooltips = RDTATooltips.init('[data-toggle="tooltip"]');
 });</pre>
+                    <p>And you can get latest tippy instance or all instances with <code>rdtaTooltips.getInstance()</code> or <code>rdtaTooltips.getInstances()</code> method. Open browser console to see demonstration.</p>
                     <hr>
 
                     <h2>Examples</h2>
@@ -312,7 +311,7 @@
                     <button type="button" title="Tooltip on left" data-toggle="tooltip" data-placement="left">Tooltip on left</button>
 
                     <hr>
-                    <p>For more options, please read more at <a href="https://popper.js.org/tooltip-documentation.html" target="tooltip.js-doc">tooltip.js documentation</a>.</p>
+                    <p>For more options, please read more at <a href="https://atomiks.github.io/tippyjs/creating-tooltips/" target="tippy.js-doc">tippy.js documentation</a>.</p>
                 </div><!--.rd-page-content-->
             </main>
             <footer>
@@ -325,18 +324,20 @@
 
         <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
 
-        <script src="assets/js/smartmenus/jquery.smartmenus.min.js?v=1.1.0&amp;mt=1576396228"></script>
+        <script src="assets/js/smartmenus/jquery.smartmenus.min.js?v=1.1.0&amp;mt=1580027939"></script>
 
-        <script src="assets/js/popper/umd/popper.min.js?v=1.15.0&amp;mt=1560009256"></script>
+        <script src="assets/js/popper.js/umd/popper.min.js?v=1.16.1&amp;mt=1580027939"></script>
 
         <script src="assets/js/sticky-sidebar/jquery.sticky-sidebar.min.js?v=3.2.0&amp;mt=1560009256"></script>
         <script src="assets/js/sticky-sidebar/ResizeSensor.js?v=3.2.0&amp;mt=1560009256"></script><!-- use with sticky sidebar js. -->
 
-        <script src="assets/js/rdta/rundiz-template-admin.js?mt=1576396229"></script> 
-        <script src="assets/js/tooltip.js/umd/tooltip.min.js"></script>
+        <script src="assets/js/rdta/rundiz-template-admin.js?mt=1580027939"></script> 
+        <script src="assets/js/tippy.js/dist/tippy-bundle.iife.min.js"></script>
         <script src="assets/js/rdta/components/rdta-tooltips.js"></script>
         <script>
-            RDTATooltips.init('[data-toggle="tooltip"]');
+            let rdtaTooltips = RDTATooltips.init('[data-toggle="tooltip"]');
+            console.log('latest tippy instance', rdtaTooltips.getInstance());
+            console.log('all tippy instances', rdtaTooltips.getInstances());
         </script>
     </body>
 </html>

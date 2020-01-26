@@ -1,4 +1,4 @@
-/*! Rundiz template for admin v 2.0.34 
+/*! Rundiz template for admin v 2.1.0 
 License: MIT*//**
  * RDTA alert dialog
  */
