@@ -158,10 +158,11 @@ class RundizTemplateAdmin {
                 event.target.attributes.type.nodeValue === 'file' &&
                 event.target.parentElement.classList.contains('rd-inputfile')
             ) {
-                let thisParent = event.target.parentElement;
+                let inputFileElement = event.target;
+                let thisParent = inputFileElement.parentElement;
                 let names = [];
-                for (let i = 0; i < event.target.files.length; ++i) {
-                    names.push(event.target.files[i].name);
+                for (let i = 0; i < inputFileElement.files.length; ++i) {
+                    names.push(inputFileElement.files[i].name);
                 }
 
                 // get input files queue element.
@@ -180,9 +181,13 @@ class RundizTemplateAdmin {
                     thisFilesQueue.innerText = names.join(', ');
                     if (typeof(thisResetButton) !== 'undefined' && thisResetButton) {
                         thisFilesQueue.insertAdjacentHTML('beforeend', ' ' + thisResetButton);
+                        inputFileElement.dispatchEvent(new CustomEvent('rdta.custominputfile.addedfilesqueue', {bubbles: true, detail: event.target}));
                     }
                 }
 
+                inputFileElement.dispatchEvent(new CustomEvent('rdta.custominputfile.change', {bubbles: true, detail: event.target}));
+
+                inputFileElement = undefined;
                 thisFilesQueue = undefined;
                 thisResetButton = undefined;
                 elementSiblings = undefined;

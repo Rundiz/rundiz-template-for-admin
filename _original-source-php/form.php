@@ -107,7 +107,35 @@ include 'includes/html-head.php';
                             <h4>Dynamically insert/update input file</h4>
                             <div id="demo-custom-inputfile-placeholder" style="border: 1px dashed #ccc; padding: 0.625rem;"></div>
                             <button type="button" onclick="rdtaAddCustomInputFile('demo-custom-inputfile-placeholder');">Click here to add an input file</button>
+                            <h4>Custom input file events</h4>
+                            <table class="rd-datatable">
+                                <thead>
+                                    <tr>
+                                        <th>Event type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>rdta.custominputfile.addedfilesqueue</td>
+                                        <td>This event is fired when files queue were added.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>rdta.custominputfile.change</td>
+                                        <td>This event is fired when input file has changed.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div id="demo-custom-inputfile-events-placeholder" style="border: 1px dashed #ccc; padding: 0.625rem;"></div>
                         </fieldset>
+                        <pre>&lt;span class=&quot;rd-button info small rd-inputfile&quot; tabindex=&quot;0&quot;&gt;
+    &lt;span class=&quot;label&quot;&gt;Choose file&lt;/span&gt;
+    &lt;input id=&quot;rd-inputfile_single&quot; type=&quot;file&quot; name=&quot;rd-inputfile1&quot; tabindex=&quot;-1&quot;&gt;
+&lt;/span&gt;
+&lt;span class=&quot;rd-input-files-queue&quot;&gt;&lt;/span&gt;
+&lt;template class=&quot;rd-inputfile-reset-button&quot;&gt;
+    &lt;button class=&quot;rd-button tiny&quot; type=&quot;button&quot; onclick=&quot;return RundizTemplateAdmin.resetInputFile(this);&quot; title=&quot;Remove files&quot;&gt;&lt;i class=&quot;fas fa-times&quot;&gt;&lt;/i&gt;&lt;span class=&quot;screen-reader-only&quot;&gt;Remove files&lt;/span&gt;&lt;/button&gt;
+&lt;/template&gt;</pre>
                         <fieldset>
                             <legend>Input checkbox/radio</legend>
                             <div class="form-group">
@@ -633,7 +661,32 @@ include 'includes/html-head.php';
                         </button>\
                     </template>';
                 document.getElementById(targetId).innerHTML = customInputFile;
+                rdtaCustomInputFileEvents();
             }// rdtaAddCustomInputFile
+
+
+            function rdtaCustomInputFileEvents() {
+                let eventsPlaceholder = document.querySelector('#demo-custom-inputfile-events-placeholder');
+                const handlerChange = function(event) {
+                    eventsPlaceholder.insertAdjacentHTML('beforeend', 'input changed (see details in console log).<br>');
+                    console.log(event);
+                };
+                const handlerFilesQueue = function(event) {
+                    eventsPlaceholder.insertAdjacentHTML('beforeend', 'added files queue (see details in console log).<br>');
+                    console.log(event);
+                };
+                document.querySelectorAll('.rd-inputfile [type="file"]').forEach(function(item, index) {
+                    item.removeEventListener('rdta.custominputfile.change', handlerChange);
+                    item.addEventListener('rdta.custominputfile.change', handlerChange);
+                    item.removeEventListener('rdta.custominputfile.addedfilesqueue', handlerFilesQueue);
+                    item.addEventListener('rdta.custominputfile.addedfilesqueue', handlerFilesQueue);
+                });
+            }// rdtaCustomInputFileEvents
+
+
+            document.addEventListener('DOMContentLoaded', function() {
+                rdtaCustomInputFileEvents();
+            });
         </script>
     </body>
 </html>
