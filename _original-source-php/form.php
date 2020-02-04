@@ -661,7 +661,6 @@ include 'includes/html-head.php';
                         </button>\
                     </template>';
                 document.getElementById(targetId).innerHTML = customInputFile;
-                //rdtaCustomInputFileEvents();
             }// rdtaAddCustomInputFile
 
 
