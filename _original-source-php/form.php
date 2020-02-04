@@ -661,7 +661,7 @@ include 'includes/html-head.php';
                         </button>\
                     </template>';
                 document.getElementById(targetId).innerHTML = customInputFile;
-                rdtaCustomInputFileEvents();
+                //rdtaCustomInputFileEvents();
             }// rdtaAddCustomInputFile
 
 
@@ -675,12 +675,8 @@ include 'includes/html-head.php';
                     eventsPlaceholder.insertAdjacentHTML('beforeend', 'added files queue (see details in console log).<br>');
                     console.log(event);
                 };
-                document.querySelectorAll('.rd-inputfile [type="file"]').forEach(function(item, index) {
-                    item.removeEventListener('rdta.custominputfile.change', handlerChange);
-                    item.addEventListener('rdta.custominputfile.change', handlerChange);
-                    item.removeEventListener('rdta.custominputfile.addedfilesqueue', handlerFilesQueue);
-                    item.addEventListener('rdta.custominputfile.addedfilesqueue', handlerFilesQueue);
-                });
+                document.addEventListener('rdta.custominputfile.change', handlerChange);
+                document.addEventListener('rdta.custominputfile.addedfilesqueue', handlerFilesQueue);
             }// rdtaCustomInputFileEvents
 
 
