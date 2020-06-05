@@ -78,6 +78,14 @@
                     // .rd-navbar .nav-right > ul > li.user > a
                     > a {
                         font-size: 1.875em;
+                        .display-picture {
+                            // .rd-navbar .nav-right > ul > li.user > a .display-picture
+                            border: 3px solid #aaa;
+                            border-radius: 50%;
+                            height: 30px;// must be px because its size is related to parent `a`.
+                            object-fit: cover;
+                            width: 30px; // must be px, same reason as height.
+                        }
                     }
                 }
 
