@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Rundiz template for admin V.2.1.1
+ * Rundiz template for admin V.2.1.2
  */
 /*
 * ----------------------------------------------------------------------------------------------
@@ -1098,6 +1098,13 @@ textarea.input-small {
 }
 .rd-navbar .nav-right > ul > li.user > a {
   font-size: 1.875em;
+}
+.rd-navbar .nav-right > ul > li.user > a .display-picture {
+  border: 3px solid #aaa;
+  border-radius: 50%;
+  height: 30px;
+  object-fit: cover;
+  width: 30px;
 }
 .rd-navbar .nav-right > ul > li > a {
   align-items: center;

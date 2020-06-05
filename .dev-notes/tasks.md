@@ -32,17 +32,17 @@ Please note that the sass files will be automatically compile and minified with 
 
 Before running the command below, please make sure that all node packages are already installed.
 
-To minify j, build scss files use `gulp` command.<br>
+To minify js, build scss files use `gulp` command.<br>
 Gulp will call **gulpfile.js** and create minified js, css files with source map.
 
-To watch scss files, use `gulp watch` command.
+To watch scss files, use `gulp watch` command or run `npm run watch` command.
 
 ### Publish
 
 To publish this package to node package manager please follow instruction.
 
 1. Update the version number in package.json.
-2. Run `gulp` command. Or run `npm run build` command.
+2. Run `gulp` command or run `npm run build` command.
 3. Open **readme.md** in **_builder** folder and follow instruction on commit section. Or run `npm run phpbuild` command.
 4. Commit and push to Github.
 5. run `npm publish` command.
