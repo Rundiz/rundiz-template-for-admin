@@ -20,7 +20,7 @@ include 'includes/html-head.php';
                     <p>
                         Tooltips use <a href="https://atomiks.github.io/tippyjs/" target="tippy.js">tippy.js</a> powered by popper.js.<br>
                         In order to make tooltips works, add these files.
-                        <strong>assets/js/tippy.js/dist/tippy-bundle.iife.min.js</strong>,
+                        <strong>assets/js/tippy.js/dist/tippy-bundle.umd.min.js</strong>,
                         <strong>assets/js/rdta/components/rdta-tooltips.js</strong>
                     </p>
                     <p>Then enable its functional.</p>
@@ -55,7 +55,7 @@ include 'includes/html-head.php';
         
 
 <?php include 'includes/js-end-body.php'; ?> 
-        <script src="assets/js/tippy.js/dist/tippy-bundle.iife.min.js"></script>
+        <script src="assets/js/tippy.js/dist/tippy-bundle.umd.min.js"></script>
         <script src="assets/js/rdta/components/rdta-tooltips.js"></script>
         <script>
             let rdtaTooltips = RDTATooltips.init('[data-toggle="tooltip"]');
