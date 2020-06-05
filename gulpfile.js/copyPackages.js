@@ -115,8 +115,8 @@ function copyTooltip(cb) {
 
 exports.copyPackages = parallel(
     copyFontAwesome,
-    copyPopper1,
-    //copyPopper2,// not ready with tippy.js. to install this, use `npm i @popperjs/core --save`.
+    //copyPopper1,// deprecated, use with tippy v5.
+    copyPopper2,// use with tippy.js v6. to install this, run `npm i @popperjs/core --save`.
     copySanitizeCss,
     copySmartMenus,
     copyTippy,

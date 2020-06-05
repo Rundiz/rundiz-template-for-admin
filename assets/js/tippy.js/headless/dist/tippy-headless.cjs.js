@@ -3,10 +3,13 @@
 * (c) 2017-2020 atomiks
 * MIT License
 */
-import { createPopper } from '@popperjs/core';
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var core = require('@popperjs/core');
 
 var ROUND_ARROW = '<svg width="16" height="6" xmlns="http://www.w3.org/2000/svg"><path d="M0 6s1.796-.013 4.67-3.615C5.851.9 6.93.006 8 0c1.07-.006 2.148.887 3.343 2.385C14.233 6.005 16 6 16 6H0z"></svg>';
-var BOX_CLASS = "tippy-box";
 var CONTENT_CLASS = "tippy-content";
 var BACKDROP_CLASS = "tippy-backdrop";
 var ARROW_CLASS = "tippy-arrow";
@@ -427,44 +430,6 @@ function validateProps(partialProps, plugins) {
   });
 }
 
-var innerHTML = function innerHTML() {
-  return 'innerHTML';
-};
-
-function dangerouslySetInnerHTML(element, html) {
-  element[innerHTML()] = html;
-}
-
-function createArrowElement(value) {
-  var arrow = div();
-
-  if (value === true) {
-    arrow.className = ARROW_CLASS;
-  } else {
-    arrow.className = SVG_ARROW_CLASS;
-
-    if (isElement(value)) {
-      arrow.appendChild(value);
-    } else {
-      dangerouslySetInnerHTML(arrow, value);
-    }
-  }
-
-  return arrow;
-}
-
-function setContent(content, props) {
-  if (isElement(props.content)) {
-    dangerouslySetInnerHTML(content, '');
-    content.appendChild(props.content);
-  } else if (typeof props.content !== 'function') {
-    if (props.allowHTML) {
-      dangerouslySetInnerHTML(content, props.content);
-    } else {
-      content.textContent = props.content;
-    }
-  }
-}
 function getChildren(popper) {
   var box = popper.firstElementChild;
   var boxChildren = arrayFrom(box.children);
@@ -481,76 +446,6 @@ function getChildren(popper) {
     })
   };
 }
-function render(instance) {
-  var popper = div();
-  var box = div();
-  box.className = BOX_CLASS;
-  box.setAttribute('data-state', 'hidden');
-  box.setAttribute('tabindex', '-1');
-  var content = div();
-  content.className = CONTENT_CLASS;
-  content.setAttribute('data-state', 'hidden');
-  setContent(content, instance.props);
-  popper.appendChild(box);
-  box.appendChild(content);
-  onUpdate(instance.props, instance.props);
-
-  function onUpdate(prevProps, nextProps) {
-    var _getChildren = getChildren(popper),
-        box = _getChildren.box,
-        content = _getChildren.content,
-        arrow = _getChildren.arrow;
-
-    if (nextProps.theme) {
-      box.setAttribute('data-theme', nextProps.theme);
-    } else {
-      box.removeAttribute('data-theme');
-    }
-
-    if (typeof nextProps.animation === 'string') {
-      box.setAttribute('data-animation', nextProps.animation);
-    } else {
-      box.removeAttribute('data-animation');
-    }
-
-    if (nextProps.inertia) {
-      box.setAttribute('data-inertia', '');
-    } else {
-      box.removeAttribute('data-inertia');
-    }
-
-    box.style.maxWidth = typeof nextProps.maxWidth === 'number' ? nextProps.maxWidth + "px" : nextProps.maxWidth;
-
-    if (nextProps.role) {
-      box.setAttribute('role', nextProps.role);
-    } else {
-      box.removeAttribute('role');
-    }
-
-    if (prevProps.content !== nextProps.content || prevProps.allowHTML !== nextProps.allowHTML) {
-      setContent(content, instance.props);
-    }
-
-    if (nextProps.arrow) {
-      if (!arrow) {
-        box.appendChild(createArrowElement(nextProps.arrow));
-      } else if (prevProps.arrow !== nextProps.arrow) {
-        box.removeChild(arrow);
-        box.appendChild(createArrowElement(nextProps.arrow));
-      }
-    } else if (arrow) {
-      box.removeChild(arrow);
-    }
-  }
-
-  return {
-    popper: popper,
-    onUpdate: onUpdate
-  };
-} // Runtime check to identify if the render function is the default one; this
-// way we can apply default CSS transitions logic and it can be tree-shaken away
-
-render.$$tippy = true;
 
 var idCounter = 1;
 var mouseMoveListeners = []; // Used by `hideAll()`
@@ -1119,7 +1014,7 @@ function createTippy(reference, passedProps) {
     }
 
     modifiers.push.apply(modifiers, (popperOptions == null ? void 0 : popperOptions.modifiers) || []);
-    instance.popperInstance = createPopper(computedReference, popper, Object.assign({}, popperOptions, {
+    instance.popperInstance = core.createPopper(computedReference, popper, Object.assign({}, popperOptions, {
       placement: placement,
       onFirstUpdate: onFirstUpdate,
       modifiers: modifiers
@@ -2226,9 +2121,16 @@ function areRectsDifferent(rectA, rectB) {
 }
 
 tippy.setDefaultProps({
-  render: render
+  animation: false
 });
 
-export default tippy;
-export { animateFill, createSingleton, delegate, followCursor, hideAll, inlinePositioning, ROUND_ARROW as roundArrow, sticky };
-//# sourceMappingURL=tippy.esm.js.map
+exports.animateFill = animateFill;
+exports.createSingleton = createSingleton;
+exports.default = tippy;
+exports.delegate = delegate;
+exports.followCursor = followCursor;
+exports.hideAll = hideAll;
+exports.inlinePositioning = inlinePositioning;
+exports.roundArrow = ROUND_ARROW;
+exports.sticky = sticky;
+//# sourceMappingURL=tippy-headless.cjs.js.map

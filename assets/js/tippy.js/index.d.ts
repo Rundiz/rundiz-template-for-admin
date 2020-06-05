@@ -1,12 +1,14 @@
-import Popper from 'popper.js';
+import * as Popper from '@popperjs/core';
 
-export type BasePlacement = 'top' | 'bottom' | 'left' | 'right';
+export type BasePlacement = Popper.BasePlacement;
 
 export type Placement = Popper.Placement;
 
-export type Boundary = Popper.Boundary | HTMLElement;
-
-export type Content = string | Element | ((ref: Element) => Element | string);
+export type Content =
+  | string
+  | Element
+  | DocumentFragment
+  | ((ref: Element) => string | Element | DocumentFragment);
 
 export type SingleTarget = Element;
 
@@ -22,19 +24,14 @@ export interface PopperElement<TProps = Props> extends HTMLDivElement {
   _tippy?: Instance<TProps>;
 }
 
-export interface PopperInstance extends Popper {
-  // Undo the static so we can mutate values inside for `tippyDistance`
-  modifiers: Popper.BaseModifier[];
-}
-
 export interface LifecycleHooks<TProps = Props> {
   onAfterUpdate(
     instance: Instance<TProps>,
-    partialProps: Partial<TProps>,
+    partialProps: Partial<TProps>
   ): void;
   onBeforeUpdate(
     instance: Instance<TProps>,
-    partialProps: Partial<TProps>,
+    partialProps: Partial<TProps>
   ): void;
   onCreate(instance: Instance<TProps>): void;
   onDestroy(instance: Instance<TProps>): void;
@@ -45,50 +42,74 @@ export interface LifecycleHooks<TProps = Props> {
   onShown(instance: Instance<TProps>): void;
   onTrigger(instance: Instance<TProps>, event: Event): void;
   onUntrigger(instance: Instance<TProps>, event: Event): void;
+  onClickOutside(instance: Instance<TProps>, event: Event): void;
 }
 
-export interface Props extends LifecycleHooks {
+export interface RenderProps {
   allowHTML: boolean;
-  animateFill: boolean;
-  animation: string;
-  appendTo: 'parent' | Element | ((ref: Element) => Element);
-  aria: 'describedby' | 'labelledby' | null;
-  arrow: boolean | string | SVGElement;
-  boundary: Boundary;
+  animation: string | boolean;
+  arrow: boolean | string | SVGElement | DocumentFragment;
   content: Content;
+  inertia: boolean;
+  maxWidth: number | string;
+  role: string;
+  theme: string;
+  zIndex: number;
+}
+
+export interface GetReferenceClientRect {
+  (): ClientRect | DOMRect;
+  contextElement?: Element;
+}
+
+export interface Props extends LifecycleHooks, RenderProps {
+  animateFill: boolean;
+  appendTo: 'parent' | Element | ((ref: Element) => Element);
+  aria: {
+    content?: 'auto' | 'describedby' | 'labelledby' | null;
+    expanded?: 'auto' | boolean;
+  };
   delay: number | [number | null, number | null];
-  distance: number | string;
   duration: number | [number | null, number | null];
-  flip: boolean;
-  flipBehavior: 'flip' | Placement[];
-  flipOnUpdate: boolean;
   followCursor: boolean | 'horizontal' | 'vertical' | 'initial';
+  getReferenceClientRect: null | GetReferenceClientRect;
   hideOnClick: boolean | 'toggle';
   ignoreAttributes: boolean;
-  inertia: boolean;
   inlinePositioning: boolean;
   interactive: boolean;
   interactiveBorder: number;
   interactiveDebounce: number;
-  lazy: boolean;
-  maxWidth: number | string;
-  multiple: boolean;
-  offset: number | string;
+  moveTransition: string;
+  offset:
+    | [number, number]
+    | (({
+        placement,
+        popper,
+        reference,
+      }: {
+        placement: Placement;
+        popper: Popper.Rect;
+        reference: Popper.Rect;
+      }) => [number, number]);
   placement: Placement;
-  plugins: Plugin[];
-  popperOptions: Popper.PopperOptions;
-  role: string;
+  plugins: Plugin<unknown>[];
+  popperOptions: Partial<Popper.Options>;
+  render:
+    | ((
+        instance: Instance
+      ) => {
+        popper: PopperElement;
+        onUpdate?: (prevProps: Props, nextProps: Props) => void;
+      })
+    | null;
   showOnCreate: boolean;
   sticky: boolean | 'reference' | 'popper';
-  theme: string;
   touch: boolean | 'hold' | ['hold', number];
   trigger: string;
   triggerTarget: Element | Element[] | null;
-  updateDuration: number;
-  zIndex: number;
 }
 
-export interface DefaultProps extends Props {
+export interface DefaultProps extends Omit<Props, 'delay' | 'duration'> {
   delay: number | [number, number];
   duration: number | [number, number];
 }
@@ -98,56 +119,41 @@ export interface Instance<TProps = Props> {
   destroy(): void;
   disable(): void;
   enable(): void;
-  hide(duration?: number): void;
+  hide(): void;
+  hideWithInteractivity(event: MouseEvent): void;
   id: number;
   plugins: Plugin<TProps>[];
   popper: PopperElement<TProps>;
-  popperChildren: PopperChildren;
-  popperInstance: PopperInstance | null;
+  popperInstance: Popper.Instance | null;
   props: TProps;
   reference: ReferenceElement<TProps>;
   setContent(content: Content): void;
   setProps(partialProps: Partial<TProps>): void;
-  show(duration?: number): void;
+  show(): void;
   state: {
-    currentPlacement: Placement | null;
     isEnabled: boolean;
     isVisible: boolean;
     isDestroyed: boolean;
     isMounted: boolean;
     isShown: boolean;
   };
-}
-
-export interface PopperChildren {
-  tooltip: HTMLDivElement;
-  content: HTMLDivElement;
-  arrow: HTMLDivElement | null;
+  unmount(): void;
 }
 
 export interface TippyStatics {
   readonly currentInput: {isTouch: boolean};
   readonly defaultProps: DefaultProps;
-  readonly version: string;
   setDefaultProps(partialProps: Partial<DefaultProps>): void;
 }
 
 export interface Tippy<TProps = Props> extends TippyStatics {
-  (
-    targets: SingleTarget,
-    optionalProps?: Partial<TProps>,
-    /** @deprecated use Props.plugins */
-    plugins?: Plugin<TProps>[],
-  ): Instance<TProps>;
+  (targets: SingleTarget, optionalProps?: Partial<TProps>): Instance<TProps>;
 }
 
 export interface Tippy<TProps = Props> extends TippyStatics {
-  (
-    targets: MultipleTargets,
-    optionalProps?: Partial<TProps>,
-    /** @deprecated use Props.plugins */
-    plugins?: Plugin<TProps>[],
-  ): Instance<TProps>[];
+  (targets: MultipleTargets, optionalProps?: Partial<TProps>): Instance<
+    TProps
+  >[];
 }
 
 declare const tippy: Tippy;
@@ -162,27 +168,31 @@ export interface DelegateInstance<TProps = Props> extends Instance<TProps> {
 export interface Delegate<TProps = Props> {
   (
     targets: SingleTarget,
-    props: Partial<TProps> & {target: string},
-    /** @deprecated use Props.plugins */
-    plugins?: Plugin<TProps>[],
+    props: Partial<TProps> & {target: string}
   ): DelegateInstance<TProps>;
 }
 
 export interface Delegate<TProps = Props> {
   (
     targets: MultipleTargets,
-    props: Partial<TProps> & {target: string},
-    /** @deprecated use Props.plugins */
-    plugins?: Plugin<TProps>[],
+    props: Partial<TProps> & {target: string}
   ): DelegateInstance<TProps>[];
 }
 
+export type CreateSingletonProps<TProps = Props> = TProps & {
+  overrides: Array<keyof TProps>;
+};
+
+export type CreateSingletonInstance<TProps = CreateSingletonProps> = Instance<
+  TProps
+> & {
+  setInstances(instances: Instance<any>[]): void;
+};
+
 export type CreateSingleton<TProps = Props> = (
-  tippyInstances: Instance<TProps | Props>[],
-  optionalProps?: Partial<TProps>,
-  /** @deprecated use Props.plugins */
-  plugins?: Plugin<TProps>[],
-) => Instance<TProps>;
+  tippyInstances: Instance<any>[],
+  optionalProps?: Partial<CreateSingletonProps<TProps>>
+) => CreateSingletonInstance<CreateSingletonProps<TProps>>;
 
 declare const delegate: Delegate;
 declare const createSingleton: CreateSingleton;
@@ -196,16 +206,9 @@ export interface Plugin<TProps = Props> {
   fn(instance: Instance<TProps>): Partial<LifecycleHooks<TProps>>;
 }
 
-export interface AnimateFillInstance extends Instance {
-  popperChildren: PopperChildren & {
-    backdrop: HTMLDivElement | null;
-  };
-}
-
 export interface AnimateFill extends Plugin {
   name: 'animateFill';
   defaultValue: false;
-  fn(instance: AnimateFillInstance): Partial<LifecycleHooks>;
 }
 
 export interface FollowCursor extends Plugin {
@@ -241,39 +244,9 @@ export type HideAll = (options?: HideAllOptions) => void;
 declare const hideAll: HideAll;
 declare const roundArrow: string;
 
-// =============================================================================
-// Deprecated types - these will be removed in the next major
-// =============================================================================
-/**
- * @deprecated use tippy.setDefaultProps({plugins: [...]});
- */
-export type CreateTippyWithPlugins = (outerPlugins: Plugin[]) => Tippy;
-declare const createTippyWithPlugins: CreateTippyWithPlugins;
-
-/** @deprecated */
-export interface AnimateFillProps {
-  animateFill: Props['animateFill'];
-}
-
-/** @deprecated */
-export interface FollowCursorProps {
-  followCursor: Props['followCursor'];
-}
-
-/** @deprecated */
-export interface InlinePositioningProps {
-  inlinePositioning: Props['inlinePositioning'];
-}
-
-/** @deprecated */
-export interface StickyProps {
-  sticky: Props['sticky'];
-}
-
 export default tippy;
 export {
   hideAll,
-  createTippyWithPlugins,
   delegate,
   createSingleton,
   animateFill,
