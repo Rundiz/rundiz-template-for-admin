@@ -29,7 +29,7 @@ Example:<br>
 
 Once you finished editing the project, open command line tool and go to working folder.
 
-* Run the command <kbd>php _builder/build.php build ../github/my-project</kbd>. Please note that **../github/my-project** is related folder from working folder to commit folder by example. You have to change yours.
+* Run the command `php _builder/build.php build ../github/my-project`. Please note that **../github/my-project** is related folder from working folder to commit folder by example. You have to change yours.
 * This command will works on clear target folder, copy source folder, convert PHP to HTML, compile SCSS to CSS with minified. All tasks in one.
 * Wait until completed message appears and then you can commit the project repository inside the commit folder.
 
@@ -41,12 +41,12 @@ This method use the same folder for edit, modify, made changes, and commit the r
 ### Clone
 
 * Clone the repository to the folder. Example C:\wwwroot\my-project
-* Run the command <kbd>php _builder/build.php modify</kbd> and you are ready for editing.
+* Run the command `php _builder/build.php modify` and you are ready for editing.
 
 ### Commit
 
 Once you finished editing the project, open command line tool in the project's root folder.
 
-* Run the command <kbd>php _builder/build.php build self</kbd>
+* Run the command `php _builder/build.php build self`
 * This command will works on convert PHP to HTML, compile SCSS to CSS with minified. All tasks in one.
 * Wait until completed message appears and then you can commit the project repository here.
