@@ -1,5 +1,5 @@
 /**!
-* tippy.js v6.2.3
+* tippy.js v6.2.6
 * (c) 2017-2020 atomiks
 * MIT License
 */
@@ -100,6 +100,15 @@
   }
   function arrayFrom(value) {
     return [].slice.call(value);
+  }
+  function removeUndefinedProps(obj) {
+    return Object.keys(obj).reduce(function (acc, key) {
+      if (obj[key] !== undefined) {
+        acc[key] = obj[key];
+      }
+
+      return acc;
+    }, {});
   }
 
   function div() {
@@ -577,7 +586,7 @@
 
   var mountedInstances = [];
   function createTippy(reference, passedProps) {
-    var props = evaluateProps(reference, Object.assign({}, defaultProps, {}, getExtendedPassedProps(passedProps))); // ===========================================================================
+    var props = evaluateProps(reference, Object.assign({}, defaultProps, {}, getExtendedPassedProps(removeUndefinedProps(passedProps)))); // ===========================================================================
     // 🔒 Private members
     // ===========================================================================
 
@@ -789,7 +798,6 @@
     }
 
     function cleanupInteractiveMouseListeners() {
-      doc.body.removeEventListener('mouseleave', scheduleHide);
       doc.removeEventListener('mousemove', debouncedOnMouseMove);
       mouseMoveListeners = mouseMoveListeners.filter(function (listener) {
         return listener !== debouncedOnMouseMove;
@@ -823,7 +831,6 @@
       }
 
       if (instance.props.hideOnClick === true) {
-        isVisibleFromClick = false;
         instance.clearDelayTimeouts();
         instance.hide(); // `mousedown` event is fired right before `focus` if pressing the
         // currentTarget. This lets a tippy with `focus` trigger know that it
@@ -1000,7 +1007,7 @@
 
     function onMouseMove(event) {
       var target = event.target;
-      var isCursorOverReferenceOrPopper = reference.contains(target) || popper.contains(target);
+      var isCursorOverReferenceOrPopper = getCurrentTarget().contains(target) || popper.contains(target);
 
       if (event.type === 'mousemove' && isCursorOverReferenceOrPopper) {
         return;
@@ -1445,6 +1452,7 @@
       instance.state.isVisible = false;
       instance.state.isShown = false;
       ignoreOnFirstUpdate = false;
+      isVisibleFromClick = false;
 
       if (getIsDefaultRenderFn()) {
         popper.style.visibility = 'hidden';
@@ -1483,7 +1491,6 @@
         warnWhen(instance.state.isDestroyed, createMemoryLeakWarning('hideWithInteractivity'));
       }
 
-      doc.body.addEventListener('mouseleave', scheduleHide);
       doc.addEventListener('mousemove', debouncedOnMouseMove);
       pushIfUnique(mouseMoveListeners, debouncedOnMouseMove);
       debouncedOnMouseMove(event);
@@ -1750,7 +1757,7 @@
         return;
       }
 
-      if (event.type !== 'touchstart' && trigger.indexOf(BUBBLING_EVENTS_MAP[event.type])) {
+      if (event.type !== 'touchstart' && trigger.indexOf(BUBBLING_EVENTS_MAP[event.type]) < 0) {
         return;
       }
 
@@ -1885,49 +1892,42 @@
     return backdrop;
   }
 
+  var mouseCoords = {
+    clientX: 0,
+    clientY: 0
+  };
+  var activeInstances = [];
+
+  function storeMouseCoords(_ref) {
+    var clientX = _ref.clientX,
+        clientY = _ref.clientY;
+    mouseCoords = {
+      clientX: clientX,
+      clientY: clientY
+    };
+  }
+
+  function addMouseCoordsListener(doc) {
+    doc.addEventListener('mousemove', storeMouseCoords);
+  }
+
+  function removeMouseCoordsListener(doc) {
+    doc.removeEventListener('mousemove', storeMouseCoords);
+  }
+
   var followCursor = {
     name: 'followCursor',
     defaultValue: false,
     fn: function fn(instance) {
       var reference = instance.reference;
       var doc = getOwnerDocument(instance.props.triggerTarget || reference);
-      var initialMouseCoords = null;
-
-      function getIsManual() {
-        return instance.props.trigger.trim() === 'manual';
-      }
-
-      function getIsEnabled() {
-        // #597
-        var isValidMouseEvent = getIsManual() ? true : // Check if a keyboard "click"
-        initialMouseCoords !== null && !(initialMouseCoords.clientX === 0 && initialMouseCoords.clientY === 0);
-        return instance.props.followCursor && isValidMouseEvent;
-      }
+      var isInternalUpdate = false;
+      var wasFocusEvent = false;
+      var isUnmounted = true;
+      var prevProps = instance.props;
 
       function getIsInitialBehavior() {
-        return currentInput.isTouch || instance.props.followCursor === 'initial' && instance.state.isVisible;
-      }
-
-      function unsetReferenceClientRect(shouldUnset) {
-        if (shouldUnset) {
-          instance.setProps({
-            getReferenceClientRect: null
-          });
-        }
-      }
-
-      function handleMouseMoveListener() {
-        if (getIsEnabled()) {
-          addListener();
-        } else {
-          unsetReferenceClientRect(instance.props.followCursor);
-        }
-      }
-
-      function triggerLastMouseMove() {
-        if (getIsEnabled()) {
-          onMouseMove(initialMouseCoords);
-        }
+        return instance.props.followCursor === 'initial' && instance.state.isVisible;
       }
 
       function addListener() {
@@ -1938,13 +1938,17 @@
         doc.removeEventListener('mousemove', onMouseMove);
       }
 
-      function onMouseMove(event) {
-        initialMouseCoords = {
-          clientX: event.clientX,
-          clientY: event.clientY
-        }; // If the instance is interactive, avoid updating the position unless it's
-        // over the reference element
+      function unsetGetReferenceClientRect() {
+        isInternalUpdate = true;
+        instance.setProps({
+          getReferenceClientRect: null
+        });
+        isInternalUpdate = false;
+      }
 
+      function onMouseMove(event) {
+        // If the instance is interactive, avoid updating the position unless it's
+        // over the reference element
         var isCursorOverReference = event.target ? reference.contains(event.target) : true;
         var followCursor = instance.props.followCursor;
         var clientX = event.clientX,
@@ -1980,59 +1984,86 @@
             }
           });
         }
+      }
 
-        if (getIsInitialBehavior()) {
-          removeListener();
+      function create() {
+        if (instance.props.followCursor) {
+          activeInstances.push({
+            instance: instance,
+            doc: doc
+          });
+          addMouseCoordsListener(doc);
+        }
+      }
+
+      function destroy() {
+        activeInstances = activeInstances.filter(function (data) {
+          return data.instance !== instance;
+        });
+
+        if (activeInstances.filter(function (data) {
+          return data.doc === doc;
+        }).length === 0) {
+          removeMouseCoordsListener(doc);
         }
       }
 
       return {
-        onAfterUpdate: function onAfterUpdate(_, _ref) {
-          var followCursor = _ref.followCursor;
+        onCreate: create,
+        onDestroy: destroy,
+        onBeforeUpdate: function onBeforeUpdate() {
+          prevProps = instance.props;
+        },
+        onAfterUpdate: function onAfterUpdate(_, _ref2) {
+          var followCursor = _ref2.followCursor;
 
-          if (followCursor !== undefined && !followCursor) {
-            unsetReferenceClientRect(true);
-          }
-        },
-        onMount: function onMount() {
-          triggerLastMouseMove();
-        },
-        onShow: function onShow() {
-          if (getIsManual()) {
-            // Since there's no trigger event to use, we have to use these as
-            // baseline coords
-            initialMouseCoords = {
-              clientX: 0,
-              clientY: 0
-            };
-            handleMouseMoveListener();
-          }
-        },
-        onTrigger: function onTrigger(_, event) {
-          // Tapping on touch devices can trigger `mouseenter` then `focus`
-          if (initialMouseCoords) {
+          if (isInternalUpdate) {
             return;
           }
 
+          if (followCursor !== undefined && prevProps.followCursor !== followCursor) {
+            destroy();
+
+            if (followCursor) {
+              create();
+
+              if (instance.state.isMounted && !wasFocusEvent && !getIsInitialBehavior()) {
+                addListener();
+              }
+            } else {
+              removeListener();
+              unsetGetReferenceClientRect();
+            }
+          }
+        },
+        onMount: function onMount() {
+          if (instance.props.followCursor && !wasFocusEvent) {
+            if (isUnmounted) {
+              onMouseMove(mouseCoords);
+              isUnmounted = false;
+            }
+
+            if (!getIsInitialBehavior()) {
+              addListener();
+            }
+          }
+        },
+        onTrigger: function onTrigger(_, event) {
           if (isMouseEvent(event)) {
-            initialMouseCoords = {
+            mouseCoords = {
               clientX: event.clientX,
               clientY: event.clientY
             };
           }
 
-          handleMouseMoveListener();
-        },
-        onUntrigger: function onUntrigger() {
-          // If untriggered before showing (`onHidden` will never be invoked)
-          if (!instance.state.isVisible) {
-            removeListener();
-            initialMouseCoords = null;
-          }
+          wasFocusEvent = event.type === 'focus';
         },
         onHidden: function onHidden() {
-          removeListener();
-          initialMouseCoords = null;
+          if (instance.props.followCursor) {
+            unsetGetReferenceClientRect();
+            removeListener();
+            isUnmounted = true;
+          }
         }
       };
     }

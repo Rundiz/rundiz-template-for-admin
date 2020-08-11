@@ -61,7 +61,7 @@ class RundizTemplateAdmin {
                 if (dropdownElement !== null) {
                     //console.log('activating dropdown');
                     dropdownElement.style.display = 'block';
-                    new Popper(
+                    Popper.createPopper(
                         thisTarget,
                         dropdownElement,
                         {
