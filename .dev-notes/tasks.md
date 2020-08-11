@@ -7,9 +7,11 @@ The node packages will be install in **node_modules** folder.
 
 -----
 
-## Build
+## Modify
 
-After finish development or editing the source code, these commands can help.
+To start modify page, run `npm run phpmodify` command.
+
+To build or compile JS, SCSS on editing, run `npm run watch` command.
 
 ### SCSS
 
@@ -28,14 +30,13 @@ For force compile even css file is newer, append this command to the current com
 
 Please note that the sass files will be automatically compile and minified with source maps once `gulp` command has been called.
 
-### Gulp
+-----
 
-Before running the command below, please make sure that all node packages are already installed.
+## Build
 
-To minify js, build scss files use `gulp` command.<br>
-Gulp will call **gulpfile.js** and create minified js, css files with source map.
+After finish development or editing the source code, these commands can help.
 
-To watch scss files, use `gulp watch` command or run `npm run watch` command.
+To minify JS, compile SCSS, build JS packages, run `npm run build` or `gulp` command.
 
 ### Publish
 
