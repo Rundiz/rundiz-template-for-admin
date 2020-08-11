@@ -20,6 +20,7 @@ async function clean(cb) {
 
     await del(['assets/js/rdta']);
     await del(['assets/js/smartmenus']);
+    await del(['assets/js/sticky-sidebar']);
     await del(['assets/js/popper.js']);
     await del(['assets/js/tippy.js']);
     await del(['assets/css/rdta']);

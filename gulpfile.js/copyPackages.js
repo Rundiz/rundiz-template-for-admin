@@ -98,6 +98,21 @@ function copySmartMenus(cb) {
 }// copySmartMenus
 
 
+/**
+ * Copy sticky sidebar.
+ */
+function copyStickySidebar(cb) {
+    return mergeStream(
+        src('node_modules/sticky-sidebar/dist/**.js')
+            .pipe(dest('assets/js/sticky-sidebar/')),
+        src('node_modules/sticky-sidebar/dist/**.map')
+            .pipe(dest('assets/js/sticky-sidebar/')),
+        src('node_modules/sticky-sidebar/LICENSE*')
+            .pipe(dest('assets/js/sticky-sidebar/')),
+    );
+}// copyStickySidebar
+
+
 function copyTippy(cb) {
     return src('./node_modules/tippy.js/**')
     .pipe(dest('./assets/js/tippy.js/'));
@@ -119,6 +134,7 @@ exports.copyPackages = parallel(
     copyPopper2,// use with tippy.js v6. to install this, run `npm i @popperjs/core --save`.
     copySanitizeCss,
     copySmartMenus,
+    copyStickySidebar,
     copyTippy,
     //copyTooltip,// deprecated, use tippy.js instead
 );
