@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Rundiz template for admin V.2.1.3
+ * Rundiz template for admin V.2.1.4
  */
 /*
 * ----------------------------------------------------------------------------------------------
@@ -325,26 +325,41 @@ ul.rd-sidebar-expand-collapse-controls a .icon,
 }
 .rd-alertbox.fixed-bottom, .rd-alertbox.fixed-top {
   left: 0;
-  position: fixed;
   right: 0;
+}
+.rd-alertbox.float-bottom {
+  bottom: 0.625rem;
+  margin-bottom: 0;
+}
+.rd-alertbox.float-top {
+  top: 0.625rem;
+}
+.rd-alertbox.float-bottom, .rd-alertbox.float-top {
+  display: inline-block;
+  left: 0.625rem;
+  margin-right: 0.625rem;
+  width: auto;
+}
+.rd-alertbox.fixed-bottom, .rd-alertbox.fixed-top, .rd-alertbox.float-bottom, .rd-alertbox.float-top {
+  position: fixed;
   z-index: 101;
 }
-.rd-alertbox.fixed-bottom.alert-danger, .rd-alertbox.fixed-top.alert-danger {
+.rd-alertbox.fixed-bottom.alert-danger, .rd-alertbox.fixed-top.alert-danger, .rd-alertbox.float-bottom.alert-danger, .rd-alertbox.float-top.alert-danger {
   background-color: #fbeded;
   border-left-width: 10px;
   box-shadow: 0 0 10px 2px rgba(188, 0, 0, 0.6);
 }
-.rd-alertbox.fixed-bottom.alert-info, .rd-alertbox.fixed-top.alert-info {
+.rd-alertbox.fixed-bottom.alert-info, .rd-alertbox.fixed-top.alert-info, .rd-alertbox.float-bottom.alert-info, .rd-alertbox.float-top.alert-info {
   background-color: #e1f5f8;
   border-left-width: 10px;
   box-shadow: 0 0 10px 2px rgba(9, 160, 187, 0.6);
 }
-.rd-alertbox.fixed-bottom.alert-success, .rd-alertbox.fixed-top.alert-success {
+.rd-alertbox.fixed-bottom.alert-success, .rd-alertbox.fixed-top.alert-success, .rd-alertbox.float-bottom.alert-success, .rd-alertbox.float-top.alert-success {
   background-color: #e8f3e8;
   border-left-width: 10px;
   box-shadow: 0 0 10px 2px rgba(0, 124, 0, 0.6);
 }
-.rd-alertbox.fixed-bottom.alert-warning, .rd-alertbox.fixed-top.alert-warning {
+.rd-alertbox.fixed-bottom.alert-warning, .rd-alertbox.fixed-top.alert-warning, .rd-alertbox.float-bottom.alert-warning, .rd-alertbox.float-top.alert-warning {
   background-color: #fce1b1;
   border-left-width: 10px;
   box-shadow: 0 0 10px 2px rgba(230, 146, 0, 0.6);

@@ -9,6 +9,8 @@ Styles for Rundiz Template for Admin demo pages.
 }
 
 .rdta-demopage-debugbox .fixed-bottom,
-.rdta-demopage-debugbox .fixed-top {
+.rdta-demopage-debugbox .fixed-top,
+.rdta-demopage-debugbox .float-bottom,
+.rdta-demopage-debugbox .float-top {
     position: static;
 }

@@ -53,14 +53,33 @@
     &.fixed-top {
         top: 0;
         @media (min-width: $minimum-sidebar-breakpoint) {
-            min-height: ($mobile-screen-navbar-height/2);
+            min-height: ($mobile-screen-navbar-height/2);// add min-height to match navbar.
         }
     }
     &.fixed-bottom,
     &.fixed-top {
         left: 0;
-        position: fixed;
         right: 0;
+    }
+    &.float-bottom {
+        bottom: $block-element-margin-sides;
+        margin-bottom: 0;
+    }
+    &.float-top {
+        top: $block-element-margin-sides;
+    }
+    &.float-bottom,
+    &.float-top {
+        display: inline-block;
+        left: $block-element-margin-sides;
+        margin-right: $block-element-margin-sides;
+        width: auto;
+    }
+    &.fixed-bottom,
+    &.fixed-top,
+    &.float-bottom,
+    &.float-top {
+        position: fixed;
         z-index: $z-index-alertboxfixed;
         @each $colorName, $colorValue, $bgColorValue in ("danger", $danger-color, $danger-background-color), 
                         ("info", $info-color, $info-background-color), 

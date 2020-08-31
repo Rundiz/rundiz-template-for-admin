@@ -11,12 +11,12 @@
         <link rel="stylesheet" href="assets/font-awesome/css/all.min.css?npm-v=5.14.0">
 
         <link rel="stylesheet" href="assets/css/smartmenus/sm-core-css.css?npm-v=1.1.1">
-        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?mt=1597126066">
+        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?mt=1598861783">
 
-        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?mt=1597126066">
-        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?mt=1597126066">
+        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?mt=1598861783">
+        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?mt=1598861783">
 
-        <link rel="stylesheet" href="assets/css/rdta-demo-pages.css?mt=1591342428"> 
+        <link rel="stylesheet" href="assets/css/rdta-demo-pages.css?mt=1598859694"> 
     </head>
     <body ontouchstart="">
         <header class="rd-navbar">
@@ -370,9 +370,20 @@ Success alert box by add <code>.alert-success</code> class into alert box elemen
 &lt;/div&gt;</pre>
                     <p>To see it in action, please click on the link below.</p>
                     <p>Show alert box fixed top for: 
-                    <a href="#" onclick="return rdtaDemoShowAlertbox('info', 'top');">info</a> <a href="#" onclick="return rdtaDemoShowAlertbox('danger', 'top');">danger</a> <a href="#" onclick="return rdtaDemoShowAlertbox('warning', 'top');">warning</a> <a href="#" onclick="return rdtaDemoShowAlertbox('success', 'top');">success</a>                     </p>
+                    <a href="#" onclick="return rdtaDemoShowAlertboxFixed('info', 'top');">info</a> <a href="#" onclick="return rdtaDemoShowAlertboxFixed('danger', 'top');">danger</a> <a href="#" onclick="return rdtaDemoShowAlertboxFixed('warning', 'top');">warning</a> <a href="#" onclick="return rdtaDemoShowAlertboxFixed('success', 'top');">success</a>                     </p>
                     <p>Show alert box fixed bottom for: 
-                    <a href="#" onclick="return rdtaDemoShowAlertbox('info');">info</a> <a href="#" onclick="return rdtaDemoShowAlertbox('danger');">danger</a> <a href="#" onclick="return rdtaDemoShowAlertbox('warning');">warning</a> <a href="#" onclick="return rdtaDemoShowAlertbox('success');">success</a>                     </p>
+                    <a href="#" onclick="return rdtaDemoShowAlertboxFixed('info');">info</a> <a href="#" onclick="return rdtaDemoShowAlertboxFixed('danger');">danger</a> <a href="#" onclick="return rdtaDemoShowAlertboxFixed('warning');">warning</a> <a href="#" onclick="return rdtaDemoShowAlertboxFixed('success');">success</a>                     </p>
+                    <div class="rdta-demopage-debugbox">
+                        <p>The alert box that will always stay at the bottom (float).</p>
+                        <div class="rd-alertbox alert-info float-bottom">
+                            Info alert box.
+                        </div>
+                    </div>
+                    <p>To see it in action, please click on the link below.</p>
+                    <p>Show alert box float top for: 
+                    <a href="#" onclick="return rdtaDemoShowAlertboxFloat('info', 'top');">info</a> <a href="#" onclick="return rdtaDemoShowAlertboxFloat('danger', 'top');">danger</a> <a href="#" onclick="return rdtaDemoShowAlertboxFloat('warning', 'top');">warning</a> <a href="#" onclick="return rdtaDemoShowAlertboxFloat('success', 'top');">success</a>                     </p>
+                    <p>Show alert box float bottom for: 
+                    <a href="#" onclick="return rdtaDemoShowAlertboxFloat('info');">info</a> <a href="#" onclick="return rdtaDemoShowAlertboxFloat('danger');">danger</a> <a href="#" onclick="return rdtaDemoShowAlertboxFloat('warning');">warning</a> <a href="#" onclick="return rdtaDemoShowAlertboxFloat('success');">success</a>                     </p>
                 </div><!--.rd-page-content-->
             </main>
             <footer>
@@ -392,11 +403,11 @@ Success alert box by add <code>.alert-success</code> class into alert box elemen
         <script src="assets/js/sticky-sidebar/jquery.sticky-sidebar.min.js?npm-v=3.3.1"></script>
         <script src="assets/js/resize-sensor/ResizeSensor.js?mt=1591342428"></script><!-- use with sticky sidebar js, manual update. -->
 
-        <script src="assets/js/rdta/rundiz-template-admin.js?mt=1597126064"></script> 
+        <script src="assets/js/rdta/rundiz-template-admin.js?mt=1598861781"></script> 
         <script>
-            var timeout1, timeout2;
+            var timeout1, timeout2, timeout3, timeout4;
 
-            function rdtaDemoShowAlertbox(alertName, fixedPosition) {
+            function rdtaDemoShowAlertboxFixed(alertName, fixedPosition) {
                 if (fixedPosition !== 'top') {
                     fixedPosition = 'bottom';
                 }
@@ -429,7 +440,43 @@ Success alert box by add <code>.alert-success</code> class into alert box elemen
                 }, 5400);
 
                 return false;
-            }// rdtaDemoShowAlertbox
+            }// rdtaDemoShowAlertboxFixed
+
+
+            function rdtaDemoShowAlertboxFloat(alertName, floatPosition) {
+                if (floatPosition !== 'top') {
+                    floatPosition = 'bottom';
+                }
+
+                let alertboxHtml = '<div class="rd-alertbox alert-' + alertName + ' float-' + floatPosition + ' is-dismissable alertbox-float-position-demo rd-animation fade">' +
+                    '<button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(this);"><span aria-hidden="true">&times;</span></button>' +
+                    'This is alert box ' + alertName + '. This alert box will be disappear after few seconds with custom JS function.' +
+                    '</div>';
+
+                // remove previous alert box demo.
+                if (document.querySelector('.alertbox-float-position-demo')) {
+                    document.querySelector('.alertbox-float-position-demo').remove();
+                }
+
+                document.body.insertAdjacentHTML('beforeEnd', alertboxHtml);
+                clearTimeout(timeout3);
+                clearTimeout(timeout4);
+
+                // make alert box demo disappear after few seconds.
+                timeout3 = setTimeout(function() {
+                    if (document.querySelector('.alertbox-float-position-demo')) {
+                        document.querySelector('.alertbox-float-position-demo').classList.add('fade-out');
+                    }
+                }, 5000);
+                // also remove alert box demo after disappeared.
+                timeout4 = setTimeout(function() {
+                    if (document.querySelector('.alertbox-float-position-demo')) {
+                        document.querySelector('.alertbox-float-position-demo').remove();
+                    }
+                }, 5400);
+
+                return false;
+            }// rdtaDemoShowAlertboxFloat
         </script>
     </body>
 </html>
