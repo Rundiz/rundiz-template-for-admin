@@ -218,6 +218,14 @@
             }
         }
     }
+    ul,
+    ol {
+        li {
+            &::before {
+                content: '';// fix sanitize v.12 that mess up top navbar space.
+            }
+        }
+    }
 }
 
 

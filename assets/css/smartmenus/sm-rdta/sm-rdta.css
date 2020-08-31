@@ -164,6 +164,10 @@
   background-color: transparent;
   color: inherit;
 }
+.sm-rdta.navbar ul li::before,
+.sm-rdta.navbar ol li::before {
+  content: "";
+}
 
 @media (min-width: 1000px) {
   /* Switch to desktop layout
