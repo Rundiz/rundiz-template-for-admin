@@ -10,8 +10,12 @@ class RDTAAlertDialog {
      * Class constructor.
      * 
      * @private Do not access this method directly, it was called from `alert()` method.
-     * @param {object} options
-     * @returns {RDTAAlertDialog}
+     * @param {object} options The options for alert dialog. Available options:<br>
+     *                                         `type` The alert type. Accept info, warning, success, danger.<br>
+     *                                         `html` The alert in HTML content if you want to use HTML in the alert.<br>
+     *                                         `text` The alert in text content. If both text & html were set, it will be use text by default.<br>
+     *                                         `txtCloseButton` Text on close button. Default is 'OK'.
+     * @returns {undefined}
      */
     constructor(options) {
         let defaultOptions = {
@@ -28,7 +32,11 @@ class RDTAAlertDialog {
     /**
      * Display alert dialog.
      * 
-     * @param {object} options
+     * @param {object} options The options for alert dialog. Available options:<br>
+     *                                         `type` The alert type. Accept info, warning, success, danger.<br>
+     *                                         `html` The alert in HTML content if you want to use HTML in the alert.<br>
+     *                                         `text` The alert in text content. If both text & html were set, it will be use text by default.<br>
+     *                                         `txtCloseButton` Text on close button. Default is 'OK'.
      * @returns {undefined}
      */
     static alert(options) {
@@ -36,10 +44,13 @@ class RDTAAlertDialog {
 
         // create HTML and put to body
         thisClass.createHtmlDialog();
-        // listen on click ok (close) button
-        thisClass.listenOnCloseButton();
-        // listen on key press (esc) to close.
-        thisClass.listenOnKeyPressClose();
+
+        setTimeout(function() {
+            // listen on click ok (close) button
+            thisClass.listenOnCloseButton();
+            // listen on key press (esc, enter) to close.
+            thisClass.listenOnKeyPressClose();
+        }, 600);
     }// alert
 
 
@@ -49,6 +60,8 @@ class RDTAAlertDialog {
      * @returns {undefined}
      */
     createHtmlDialog() {
+        this.previousFocus = document.activeElement;
+
         let dialogMessage = '';
         if (this.options && this.options.text) {
             dialogMessage = '<p>' + this.options.text + '</p>';
@@ -60,18 +73,22 @@ class RDTAAlertDialog {
         let alertClass = '';
         if (this.options && this.options.type) {
             switch (this.options.type) {
+                case 'alert-info':
                 case 'info':
                     dialogIcon = '<span class="fa-stack fa-3x"><i class="far fa-circle fa-2x"></i><i class="fas fa-info fa-stack-1x"></i></span>';
                     alertClass = 'alert-info';
                     break;
+                case 'alert-warning':
                 case 'warning':
                     dialogIcon = '<span class="fa-stack fa-3x"><i class="far fa-circle fa-2x"></i><i class="fas fa-exclamation fa-stack-1x"></i></span>';
                     alertClass = 'alert-warning';
                     break;
+                case 'alert-success':
                 case 'success':
                     dialogIcon = '<span class="fa-stack fa-3x"><i class="far fa-circle fa-2x"></i><i class="fas fa-check fa-stack-1x"></i></span>';
                     alertClass = 'alert-success';
                     break;
+                case 'alert-danger':
                 case 'danger':
                 default:
                     dialogIcon = '<span class="fa-stack fa-3x"><i class="far fa-circle fa-2x"></i><i class="fas fa-times fa-stack-1x"></i></span>';
@@ -127,6 +144,11 @@ class RDTAAlertDialog {
                         // fire event
                         let event = new Event('rdta.alertdialog.closed');
                         document.body.dispatchEvent(event);
+
+                        // back to previous focus.
+                        if (thisClass.previousFocus) {
+                            thisClass.previousFocus.focus();
+                        }
                     }
                     break;
                 }
