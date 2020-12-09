@@ -11,13 +11,13 @@
         <link rel="stylesheet" href="assets/font-awesome/css/all.min.css?npm-v=5.14.0">
 
         <link rel="stylesheet" href="assets/css/smartmenus/sm-core-css.css?npm-v=1.1.1">
-        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?mt=1607516184">
+        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?mt=1607523051">
 
-        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?mt=1607516185">
-        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?mt=1607516184">
+        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?mt=1607523051">
+        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?mt=1607523051">
 
         <link rel="stylesheet" href="assets/css/rdta-demo-pages.css?mt=1598859694"> 
-        <link rel="stylesheet" href="assets/css/rdta/components/rdta-tabs.css?mt=1607516185">
+        <link rel="stylesheet" href="assets/css/rdta/components/rdta-tabs.css?mt=1607523051">
     </head>
     <body ontouchstart="">
         <header class="rd-navbar">
@@ -514,6 +514,8 @@
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;</pre>
+                    <p>Activate tabs using specific id.</p>
+                    <pre>RDTATabs.init('#titOuterTabs');</pre>
                     <h3>Events</h3>
                     <p>RDTA tabs have few events for hooking.</p>
                     <table class="rd-datatable">
@@ -559,7 +561,7 @@
         <script src="assets/js/sticky-sidebar/jquery.sticky-sidebar.min.js?npm-v=3.3.1"></script>
         <script src="assets/js/resize-sensor/ResizeSensor.js?mt=1591342428"></script><!-- use with sticky sidebar js, manual update. -->
 
-        <script src="assets/js/rdta/rundiz-template-admin.js?mt=1607516183"></script> 
+        <script src="assets/js/rdta/rundiz-template-admin.js?mt=1607523049"></script> 
         <script src="assets/js/rdta/components/rdta-tabs.js"></script>
         <script>
             function rdtaDebugTabsEvents() {
@@ -578,12 +580,13 @@
 
             document.addEventListener('DOMContentLoaded', function() {
                 RDTATabs.init('.tabs');
+                rdtaDebugTabsEvents();
+                
                 RDTATabs.init('#my-custom-tabs1', {activeTabs: 1});
                 RDTATabs.init('#rdta-tabs-rememberlasttab', {rememberLastTab: true});
 
                 RDTATabs.init('#titOuterTabs');
                 RDTATabs.init('#titInnerTabs');
-                rdtaDebugTabsEvents();
             });
         </script>
     </body>

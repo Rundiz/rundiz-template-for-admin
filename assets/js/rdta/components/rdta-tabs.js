@@ -1,4 +1,4 @@
-/*! Rundiz template for admin v 2.1.8 
+/*! Rundiz template for admin v 2.1.9 
 License: MIT*//**
  * RDTA Tabs
  */
@@ -222,9 +222,16 @@ class RDTATabs {
             if (!target) {
                 return ;
             }
+
             let mainTabsElement = target.closest('.rd-tabs');
             if (!mainTabsElement) {
-                // if not click on tabs nav.
+                // if not click inside main tabs element.
+                return ;
+            }
+
+            let tabsNav = target.closest('.rd-tabs-nav');
+            if (!tabsNav) {
+                // if not click inside tabs nav.
                 return ;
             }
 

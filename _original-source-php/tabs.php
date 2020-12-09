@@ -250,6 +250,8 @@ include 'includes/html-head.php';
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;</pre>
+                    <p>Activate tabs using specific id.</p>
+                    <pre>RDTATabs.init('#titOuterTabs');</pre>
                     <h3>Events</h3>
                     <p>RDTA tabs have few events for hooking.</p>
                     <table class="rd-datatable">
@@ -301,12 +303,13 @@ include 'includes/html-head.php';
 
             document.addEventListener('DOMContentLoaded', function() {
                 RDTATabs.init('.tabs');
+                rdtaDebugTabsEvents();
+                
                 RDTATabs.init('#my-custom-tabs1', {activeTabs: 1});
                 RDTATabs.init('#rdta-tabs-rememberlasttab', {rememberLastTab: true});
 
                 RDTATabs.init('#titOuterTabs');
                 RDTATabs.init('#titInnerTabs');
-                rdtaDebugTabsEvents();
             });
         </script>
     </body>
