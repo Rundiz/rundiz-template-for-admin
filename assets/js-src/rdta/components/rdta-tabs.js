@@ -81,30 +81,39 @@ class RDTATabs {
      * @returns {undefined}
      */
     activateTabContent(selector, targetTabContent) {
-        if (!targetTabContent) {
+        if (!targetTabContent || !selector) {
             return false;
         }
         let thisClass = this;
 
-        for (let i = 0; i < selector.children.length; i++) {
+        // set active on tab nav.
+        let countTabNav = 0;
+        let activeTabNav = 0;
+        /// get selector's first tab nav that were found.
+        let selectorTabNav = selector.querySelector('.rd-tabs-nav');
+        if (selectorTabNav) {
+            let allLinks = selectorTabNav.querySelectorAll('a');
+            if (allLinks) {
+                allLinks.forEach(function(item, index) {
+                    if (item.hash === targetTabContent || item.dataset.targettab === targetTabContent) {
+                        item.parentElement.classList.add('active');
+                        activeTabNav = countTabNav;
+                    } else {
+                        item.parentElement.classList.remove('active');
+                    }
+                    countTabNav++;
+                });
+            }// endif; allLinks
+        }// endif; selectorTabNav
+
+        // ------------------------------------------
+
+        for (let i = 0, max = selector.children.length; i < max; i++) {
             if (!selector.children[i].classList.contains('rd-tabs-nav')) {
                 // if children of item is not tab nav.
                 selector.children[i].classList.remove('active');
             }
         }
-
-        // set active on tab nav.
-        let countTabNav = 0;
-        let activeTabNav = 0;
-        selector.querySelectorAll('.rd-tabs-nav a').forEach(function(item, index) {
-            if (item.hash === targetTabContent || item.dataset.targettab === targetTabContent) {
-                item.parentElement.classList.add('active');
-                activeTabNav = countTabNav;
-            } else {
-                item.parentElement.classList.remove('active');
-            }
-            countTabNav++;
-        });
 
         // set active on tab content.
         if (selector.querySelector(targetTabContent)) {
@@ -194,6 +203,7 @@ class RDTATabs {
     /**
      * Listen on tab nav click and activate tab content.
      * 
+     * @link https://stackoverflow.com/a/25248515/128761 Method 1 for delegation selection.
      * @private Do not call this, just call `init()`.
      * @param {type} selector
      * @param {type} options
@@ -204,26 +214,33 @@ class RDTATabs {
         let tabElement = document.querySelector(selector);
 
         document.addEventListener('click', function(event) {
-            // match selector.
-            // @link https://stackoverflow.com/a/25248515/128761 Original source code.
-            for (let target= event.target; target && target != this; target = target.parentNode) {
-                // loop parent nodes from the target to the delegation node
-                if (target.matches(selector + ' .rd-tabs-nav a')) {
-                    event.preventDefault();
-                    let targetTab = '';
-                    if (target.dataset.targettab) {
-                        targetTab = target.dataset.targettab;
-                    } else if (target.hash) {
-                        targetTab = target.hash;
-                    }
+            let target;
+            if (event.currentTarget && event.currentTarget.activeElement) {
+                target = event.currentTarget.activeElement;
+            }
+            if (!target) {
+                return ;
+            }
+            let mainTabsElement = target.closest('.rd-tabs');
+            if (!mainTabsElement) {
+                // if not click on tabs nav.
+                return ;
+            }
 
-                    if (target.getAttribute('href') && target.getAttribute('href').charAt(0) !== '#' && !target.hash) {
-                        thisClass.ajaxTabContent(target.getAttribute('href'), target.closest(selector), targetTab)
-                    }
-
-                    thisClass.activateTabContent(target.closest(selector), targetTab);
-                    break;
+            if (mainTabsElement === target.closest(selector)) {
+                event.preventDefault();
+                let targetTab = '';
+                if (target.dataset.targettab) {
+                    targetTab = target.dataset.targettab;
+                } else if (target.hash) {
+                    targetTab = target.hash;
                 }
+
+                if (target.getAttribute('href') && target.getAttribute('href').charAt(0) !== '#' && !target.hash) {
+                    thisClass.ajaxTabContent(target.getAttribute('href'), target.closest(selector), targetTab)
+                }
+
+                thisClass.activateTabContent(target.closest(selector), targetTab);
             }
         });
     }// listenOnTabNav

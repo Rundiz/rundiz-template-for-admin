@@ -25,7 +25,7 @@ include 'includes/html-head.php';
                     </p>
                     <hr>
 
-                    <h2>Examples</h2>
+                    <h2 id="tabs-example">Examples</h2>
                     <div class="tabs">
                         <ul>
                             <li><a href="#tabs-1">Nunc tincidunt</a></li>
@@ -197,6 +197,59 @@ include 'includes/html-head.php';
     &lt;/div&gt;
 &lt;/div&gt;</pre>
                     <p>Please note that you can use <code>data-targettab</code> HTML attribute to specify target tab instead of link to <code>#target-tab-number</code>.</p>
+                    <h3>Tabs inside tabs</h3>
+                    <div id="titOuterTabs" class="rd-tabs">
+                        <ul class="rd-tabs-nav">
+                            <li><a href="#tit-tab1">Tab 1</a></li>
+                            <li><a href="#tit-tab2">Tab 2</a></li>
+                        </ul>
+                        <div id="tit-tab1" class="rd-tabs-content">
+                            <p>The content in tab 1.</p>
+                        </div>
+                        <div id="tit-tab2" class="rd-tabs-content">
+                            <p>The content in tab 2.</p>
+                            <div id="titInnerTabs" class="tabs-vertical rd-tabs">
+                                <ul class="rd-tabs-nav">
+                                    <li><a href="#tit-tab2-1">Inner tab 1</a></li>
+                                    <li><a href="#tit-tab2-2">Inner tab 2</a></li>
+                                    <li><a href="xhr-page.html" data-targettab="#tit-tab2-3">Ajax</a></li>
+                                </ul>
+                                <div id="tit-tab2-1" class="rd-tabs-content">
+                                    <p>The inner tab 2-1.</p>
+                                </div>
+                                <div id="tit-tab2-2" class="rd-tabs-content">
+                                    <p>The inner tab 2-2.</p>
+                                </div>
+                                <div id="tit-tab2-3" class="rd-tabs-content"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <pre>&lt;div id=&quot;titOuterTabs&quot; class=&quot;rd-tabs&quot;&gt;
+    &lt;ul class=&quot;rd-tabs-nav&quot;&gt;
+        &lt;li&gt;&lt;a href=&quot;#tit-tab1&quot;&gt;Tab 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#tit-tab2&quot;&gt;Tab 2&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div id=&quot;tit-tab1&quot; class=&quot;rd-tabs-content&quot;&gt;
+        &lt;p&gt;The content in tab 1.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;tit-tab2&quot; class=&quot;rd-tabs-content&quot;&gt;
+        &lt;p&gt;The content in tab 2.&lt;/p&gt;
+        &lt;div id=&quot;titInnerTabs&quot; class=&quot;tabs-vertical rd-tabs&quot;&gt;
+            &lt;ul class=&quot;rd-tabs-nav&quot;&gt;
+                &lt;li&gt;&lt;a href=&quot;#tit-tab2-1&quot;&gt;Inner tab 1&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#tit-tab2-2&quot;&gt;Inner tab 2&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;xhr-page.html&quot; data-targettab=&quot;#tit-tab2-3&quot;&gt;Ajax&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;div id=&quot;tit-tab2-1&quot; class=&quot;rd-tabs-content&quot;&gt;
+                &lt;p&gt;The inner tab 2-1.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div id=&quot;tit-tab2-2&quot; class=&quot;rd-tabs-content&quot;&gt;
+                &lt;p&gt;The inner tab 2-2.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div id=&quot;tit-tab2-3&quot; class=&quot;rd-tabs-content&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
                     <h3>Events</h3>
                     <p>RDTA tabs have few events for hooking.</p>
                     <table class="rd-datatable">
@@ -221,7 +274,7 @@ include 'includes/html-head.php';
                             </tr>
                         </tbody>
                     </table>
-                    <p>Open console to see detail.</p>
+                    <p>Use the <a href="#tabs-example">first example</a> and open console to see detail.</p>
                     <div class="rd-block-level-margin-bottom rd-tabs-events rdta-demopage-debugbox"></div>
                 </div><!--.rd-page-content-->
             </main>
@@ -250,6 +303,9 @@ include 'includes/html-head.php';
                 RDTATabs.init('.tabs');
                 RDTATabs.init('#my-custom-tabs1', {activeTabs: 1});
                 RDTATabs.init('#rdta-tabs-rememberlasttab', {rememberLastTab: true});
+
+                RDTATabs.init('#titOuterTabs');
+                RDTATabs.init('#titInnerTabs');
                 rdtaDebugTabsEvents();
             });
         </script>
