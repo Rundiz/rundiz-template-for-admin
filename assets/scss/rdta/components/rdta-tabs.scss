@@ -16,6 +16,10 @@
         &.tabs-vertical {
             display: flex;
 
+            .rd-tabs-content {
+                flex-grow: 1;
+            }
+
             // .rd-tabs.tabs-vertical .rd-tabs-nav
             .rd-tabs-nav {
                 border-bottom: 0;

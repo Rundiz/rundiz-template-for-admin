@@ -10,6 +10,9 @@
   .rd-tabs.tabs-vertical {
     display: flex;
   }
+  .rd-tabs.tabs-vertical .rd-tabs-content {
+    flex-grow: 1;
+  }
   .rd-tabs.tabs-vertical .rd-tabs-nav {
     border-bottom: 0;
     border-right: 1px solid #ddd;
