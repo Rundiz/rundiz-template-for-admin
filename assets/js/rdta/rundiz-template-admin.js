@@ -1,4 +1,4 @@
-/*! Rundiz template for admin v 2.1.9 
+/*! Rundiz template for admin v 2.1.10 
 License: MIT*//*! Rundiz template for admin
  * https://rundiz.com
  * @license MIT
@@ -38,6 +38,7 @@ class RundizTemplateAdmin {
                 thisParent.classList.contains('rd-button-group') &&
                 thisTarget.classList.contains('dropdown-toggler')
             ) {
+                event.preventDefault();
                 // if parent of clicking button contain `.rd-button-group` class.
                 // and the clicking button contain `.dropdown-toggler` class.
                 let popperPlacement;

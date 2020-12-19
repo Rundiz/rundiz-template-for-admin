@@ -37,6 +37,7 @@ class RundizTemplateAdmin {
                 thisParent.classList.contains('rd-button-group') &&
                 thisTarget.classList.contains('dropdown-toggler')
             ) {
+                event.preventDefault();
                 // if parent of clicking button contain `.rd-button-group` class.
                 // and the clicking button contain `.dropdown-toggler` class.
                 let popperPlacement;

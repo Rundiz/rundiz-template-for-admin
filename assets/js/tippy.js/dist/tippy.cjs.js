@@ -1,5 +1,5 @@
 /**!
-* tippy.js v6.2.6
+* tippy.js v6.2.7
 * (c) 2017-2020 atomiks
 * MIT License
 */
@@ -586,8 +586,7 @@ function createTippy(reference, passedProps) {
   var onFirstUpdate;
   var listeners = [];
   var debouncedOnMouseMove = debounce(onMouseMove, props.interactiveDebounce);
-  var currentTarget;
-  var doc = getOwnerDocument(props.triggerTarget || reference); // ===========================================================================
+  var currentTarget; // ===========================================================================
   // 🔑 Public members
   // ===========================================================================
 
@@ -673,7 +672,7 @@ function createTippy(reference, passedProps) {
   });
   popper.addEventListener('mouseleave', function (event) {
     if (instance.props.interactive && instance.props.trigger.indexOf('mouseenter') >= 0) {
-      doc.addEventListener('mousemove', debouncedOnMouseMove);
+      getDocument().addEventListener('mousemove', debouncedOnMouseMove);
       debouncedOnMouseMove(event);
     }
   });
@@ -699,6 +698,11 @@ function createTippy(reference, passedProps) {
 
   function getCurrentTarget() {
     return currentTarget || reference;
+  }
+
+  function getDocument() {
+    var parent = getCurrentTarget().parentNode;
+    return parent ? getOwnerDocument(parent) : document;
   }
 
   function getDefaultTemplateChildren() {
@@ -782,7 +786,7 @@ function createTippy(reference, passedProps) {
   }
 
   function cleanupInteractiveMouseListeners() {
-    doc.removeEventListener('mousemove', debouncedOnMouseMove);
+    getDocument().removeEventListener('mousemove', debouncedOnMouseMove);
     mouseMoveListeners = mouseMoveListeners.filter(function (listener) {
       return listener !== debouncedOnMouseMove;
     });
@@ -842,6 +846,7 @@ function createTippy(reference, passedProps) {
   }
 
   function addDocumentPress() {
+    var doc = getDocument();
     doc.addEventListener('mousedown', onDocumentPress, true);
     doc.addEventListener('touchend', onDocumentPress, TOUCH_OPTIONS);
     doc.addEventListener('touchstart', onTouchStart, TOUCH_OPTIONS);
@@ -849,6 +854,7 @@ function createTippy(reference, passedProps) {
   }
 
   function removeDocumentPress() {
+    var doc = getDocument();
     doc.removeEventListener('mousedown', onDocumentPress, true);
     doc.removeEventListener('touchend', onDocumentPress, TOUCH_OPTIONS);
     doc.removeEventListener('touchstart', onTouchStart, TOUCH_OPTIONS);
@@ -1475,7 +1481,7 @@ function createTippy(reference, passedProps) {
       warnWhen(instance.state.isDestroyed, createMemoryLeakWarning('hideWithInteractivity'));
     }
 
-    doc.addEventListener('mousemove', debouncedOnMouseMove);
+    getDocument().addEventListener('mousemove', debouncedOnMouseMove);
     pushIfUnique(mouseMoveListeners, debouncedOnMouseMove);
     debouncedOnMouseMove(event);
   }
@@ -1611,19 +1617,20 @@ var createSingleton = function createSingleton(tippyInstances, optionalProps) {
     errorWhen(!Array.isArray(tippyInstances), ['The first argument passed to createSingleton() must be an array of', 'tippy instances. The passed value was', String(tippyInstances)].join(' '));
   }
 
-  var mutTippyInstances = tippyInstances;
+  var individualInstances = tippyInstances;
   var references = [];
   var currentTarget;
   var overrides = optionalProps.overrides;
+  var interceptSetPropsCleanups = [];
 
   function setReferences() {
-    references = mutTippyInstances.map(function (instance) {
+    references = individualInstances.map(function (instance) {
       return instance.reference;
     });
   }
 
   function enableInstances(isEnabled) {
-    mutTippyInstances.forEach(function (instance) {
+    individualInstances.forEach(function (instance) {
       if (isEnabled) {
         instance.enable();
       } else {
@@ -1632,9 +1639,27 @@ var createSingleton = function createSingleton(tippyInstances, optionalProps) {
     });
   }
 
+  function interceptSetProps(singleton) {
+    return individualInstances.map(function (instance) {
+      var originalSetProps = instance.setProps;
+
+      instance.setProps = function (props) {
+        originalSetProps(props);
+
+        if (instance.reference === currentTarget) {
+          singleton.setProps(props);
+        }
+      };
+
+      return function () {
+        instance.setProps = originalSetProps;
+      };
+    });
+  }
+
   enableInstances(false);
   setReferences();
-  var singleton = {
+  var plugin = {
     fn: function fn() {
       return {
         onDestroy: function onDestroy() {
@@ -1650,11 +1675,11 @@ var createSingleton = function createSingleton(tippyInstances, optionalProps) {
 
           currentTarget = target;
           var overrideProps = (overrides || []).concat('content').reduce(function (acc, prop) {
-            acc[prop] = mutTippyInstances[index].props[prop];
+            acc[prop] = individualInstances[index].props[prop];
             return acc;
           }, {});
           instance.setProps(Object.assign({}, overrideProps, {
-            getReferenceClientRect: function getReferenceClientRect() {
+            getReferenceClientRect: typeof overrideProps.getReferenceClientRect === 'function' ? overrideProps.getReferenceClientRect : function () {
               return target.getBoundingClientRect();
             }
           }));
@@ -1662,28 +1687,33 @@ var createSingleton = function createSingleton(tippyInstances, optionalProps) {
       };
     }
   };
-  var instance = tippy(div(), Object.assign({}, removeProperties(optionalProps, ['overrides']), {
-    plugins: [singleton].concat(optionalProps.plugins || []),
+  var singleton = tippy(div(), Object.assign({}, removeProperties(optionalProps, ['overrides']), {
+    plugins: [plugin].concat(optionalProps.plugins || []),
     triggerTarget: references
   }));
-  var originalSetProps = instance.setProps;
+  var originalSetProps = singleton.setProps;
 
-  instance.setProps = function (props) {
+  singleton.setProps = function (props) {
     overrides = props.overrides || overrides;
     originalSetProps(props);
   };
 
-  instance.setInstances = function (nextInstances) {
+  singleton.setInstances = function (nextInstances) {
     enableInstances(true);
-    mutTippyInstances = nextInstances;
+    interceptSetPropsCleanups.forEach(function (fn) {
+      return fn();
+    });
+    individualInstances = nextInstances;
     enableInstances(false);
     setReferences();
-    instance.setProps({
+    interceptSetProps(singleton);
+    singleton.setProps({
       triggerTarget: references
     });
   };
 
-  return instance;
+  interceptSetPropsCleanups = interceptSetProps(singleton);
+  return singleton;
 };
 
 var BUBBLING_EVENTS_MAP = {
@@ -1704,6 +1734,7 @@ function delegate(targets, props) {
 
   var listeners = [];
   var childTippyInstances = [];
+  var disabled = false;
   var target = props.target;
   var nativeProps = removeProperties(props, ['target']);
   var parentProps = Object.assign({}, nativeProps, {
@@ -1717,7 +1748,7 @@ function delegate(targets, props) {
   var normalizedReturnValue = normalizeToArray(returnValue);
 
   function onTrigger(event) {
-    if (!event.target) {
+    if (!event.target || disabled) {
       return;
     }
 
@@ -1787,6 +1818,8 @@ function delegate(targets, props) {
 
   function applyMutations(instance) {
     var originalDestroy = instance.destroy;
+    var originalEnable = instance.enable;
+    var originalDisable = instance.disable;
 
     instance.destroy = function (shouldDestroyChildInstances) {
       if (shouldDestroyChildInstances === void 0) {
@@ -1802,6 +1835,22 @@ function delegate(targets, props) {
       childTippyInstances = [];
       removeEventListeners();
       originalDestroy();
+    };
+
+    instance.enable = function () {
+      originalEnable();
+      childTippyInstances.forEach(function (instance) {
+        return instance.enable();
+      });
+      disabled = false;
+    };
+
+    instance.disable = function () {
+      originalDisable();
+      childTippyInstances.forEach(function (instance) {
+        return instance.disable();
+      });
+      disabled = true;
     };
 
     addEventListeners(instance);

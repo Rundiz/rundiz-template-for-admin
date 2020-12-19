@@ -152,6 +152,26 @@ include 'includes/html-head.php';
                                 <li><a href="#" onclick="return false;">Cancel B</a></li>
                             </ul>
                         </div>
+                        <div class="rd-button-group">
+                            <a class="rd-button" href="#go-somewhere">Link button</a>
+                            <a class="rd-button dropdown-toggler" href="#"><i class="fas fa-caret-down"></i></a>
+                            <ul class="rd-dropdown">
+                                <li><a href="#" onclick="return false;">Save C</a></li>
+                                <li><a href="#" onclick="return false;">Save &amp; Publish C</a></li>
+                                <li><a href="#" onclick="return false;">Cancel C</a></li>
+                            </ul>
+                        </div>
+                        <div class="rd-button-group">
+                            <button class="rd-button info">Button with sub buttons</button>
+                            <button class="rd-button info dropdown-toggler"><i class="fas fa-caret-down"></i></button>
+                            <ul class="rd-dropdown">
+                                <li><button type="button">Button</button></li>
+                                <li><input type="button" value="Input button"></li>
+                                <li><input type="submit" value="Input submit"></li>
+                                <li class="divider"></li>
+                                <li><a href="#" onclick="return false;">Link</a></li>
+                            </ul>
+                        </div>
                     </div>
                     <pre>&lt;div class=&quot;rd-button-group&quot;&gt;
     &lt;button class=&quot;rd-button dropdown-toggler&quot;&gt;Dropdown &lt;i class=&quot;fas fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
@@ -169,6 +189,26 @@ include 'includes/html-head.php';
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Save &amp;amp; Publish B&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Cancel B&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rd-button-group&quot;&gt;
+   &lt;a class=&quot;rd-button&quot; href=&quot;#go-somewhere&quot;&gt;Link button&lt;/a&gt;
+   &lt;a class=&quot;rd-button dropdown-toggler&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;fas fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+   &lt;ul class=&quot;rd-dropdown&quot;&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;Save C&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;Save &amp;amp; Publish C&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;Cancel C&lt;/a&gt;&lt;/li&gt;
+   &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;rd-button-group&quot;&gt;
+   &lt;button class=&quot;rd-button info&quot;&gt;Button with sub buttons&lt;/button&gt;
+   &lt;button class=&quot;rd-button info dropdown-toggler&quot;&gt;&lt;i class=&quot;fas fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+   &lt;ul class=&quot;rd-dropdown&quot;&gt;
+      &lt;li&gt;&lt;button type=&quot;button&quot;&gt;Button&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;input type=&quot;button&quot; value=&quot;Input button&quot;&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;input type=&quot;submit&quot; value=&quot;Input submit&quot;&gt;&lt;/li&gt;
+      &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
+   &lt;/ul&gt;
 &lt;/div&gt;</pre>
                     <h3>Sizes</h3>
                     <p>Add <code>tiny</code>, <code>small</code>, <code>large</code> class to the button element that contain <code>rd-button</code> class to change its size.</p>

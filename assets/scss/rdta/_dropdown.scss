@@ -24,14 +24,45 @@
         &:hover {
             background-color: rgba(0, 0, 0, 0.08);
         }
+        // .rd-dropdown li.divider
+        &.divider {
+            border-bottom: 1px solid $border-color;
+            margin-bottom: 0.625rem;
+            margin-top: 0.625rem;
+            // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list li.divider a
+            a {
+                display: none;
+            }
+        }
 
-        // .rd-dropdown li a
-        a {
+        // .rd-dropdown li a,
+        // .rd-dropdown li button,
+        // .rd-dropdown li input[type="..."],
+        a,
+        button,
+        input[type="button"],
+        input[type="reset"],
+        input[type="submit"] {
             background-color: transparent;
             color: $font-color;
             display: block;
             padding: 0.313rem 0.625rem;// padding for dropdown item should be rem to prevent too much space when user use bigger font size.?
             width: 100%;
+        }
+
+        // .rd-dropdown li button,
+        // .rd-dropdown li input[type="..."],
+        button,
+        input[type="button"],
+        input[type="reset"],
+        input[type="submit"] {
+            border: none;
+            box-shadow: none;
+            text-align: left;
+            &:active {
+                box-shadow: none;
+                top: auto;
+            }
         }
     }
 }

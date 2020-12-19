@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Rundiz template for admin V.2.1.9
+ * Rundiz template for admin V.2.1.10
  */
 /*
 * ----------------------------------------------------------------------------------------------
@@ -896,12 +896,39 @@ a.rd-button.tiny,
 .rd-dropdown li:hover {
   background-color: rgba(0, 0, 0, 0.08);
 }
-.rd-dropdown li a {
+.rd-dropdown li.divider {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 0.625rem;
+  margin-top: 0.625rem;
+}
+.rd-dropdown li.divider a {
+  display: none;
+}
+.rd-dropdown li a,
+.rd-dropdown li button,
+.rd-dropdown li input[type=button],
+.rd-dropdown li input[type=reset],
+.rd-dropdown li input[type=submit] {
   background-color: transparent;
   color: #333;
   display: block;
   padding: 0.313rem 0.625rem;
   width: 100%;
+}
+.rd-dropdown li button,
+.rd-dropdown li input[type=button],
+.rd-dropdown li input[type=reset],
+.rd-dropdown li input[type=submit] {
+  border: none;
+  box-shadow: none;
+  text-align: left;
+}
+.rd-dropdown li button:active,
+.rd-dropdown li input[type=button]:active,
+.rd-dropdown li input[type=reset]:active,
+.rd-dropdown li input[type=submit]:active {
+  box-shadow: none;
+  top: auto;
 }
 
 /*
