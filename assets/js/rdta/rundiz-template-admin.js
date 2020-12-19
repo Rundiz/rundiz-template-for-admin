@@ -1,4 +1,4 @@
-/*! Rundiz template for admin v 2.1.10 
+/*! Rundiz template for admin v 2.1.11 
 License: MIT*//*! Rundiz template for admin
  * https://rundiz.com
  * @license MIT
