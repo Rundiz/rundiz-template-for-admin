@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Tooltips | Rundiz template for admin</title>
+        <title>Embeds | Rundiz template for admin</title>
         <link rel="stylesheet" href="assets/css/sanitize/sanitize.css?npm-v=12.0.1">
         <link rel="stylesheet" href="assets/css/sanitize/typography.css?npm-v=12.0.1">
         <link rel="stylesheet" href="assets/css/sanitize/forms.css?npm-v=12.0.1">
@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?mt=1610957833">
 
         <link rel="stylesheet" href="assets/css/rdta-demo-pages.css?mt=1598859694"> 
+        <link rel="stylesheet" href="assets/css/rdta/components/rdta-embeds.css?mt=1610957833">
     </head>
     <body ontouchstart="">
         <header class="rd-navbar">
@@ -276,43 +277,67 @@
                 <nav>
     <ul class="rd-breadcrumb">
         <li><a href="./">Home</a></li>
-        <li class="current"><a href="#" onclick="return false;">Tooltips</a></li>
+        <li class="current"><a href="#" onclick="return false;">Embeds</a></li>
     </ul>
 </nav>
  
                 <div class="rd-page-content">
-                    <h1>Tooltips</h1>
+                    <h1>Embeds</h1>
+                    <p>Responsive video, embeded elements, or iframe.</p>
                     <p>
-                        Tooltips use <a href="https://atomiks.github.io/tippyjs/" target="tippy.js">tippy.js</a> powered by popper.js.<br>
-                        In order to make tooltips works, add these files.
-                        <strong>assets/js/tippy.js/dist/tippy-bundle.umd.min.js</strong>,
-                        <strong>assets/js/rdta/components/rdta-tooltips.js</strong>
+                        In order to make responsive embeds works, add this file.
+                        <strong>assets/css/rdta/components/rdta-embeds.css</strong>
                     </p>
-                    <p>Then enable its functional.</p>
-                    <pre>document.addEventListener('DOMContentLoaded', function() {
-    let rdtaTooltips = RDTATooltips.init('[data-toggle="tooltip"]');
-});</pre>
-                    <p>And you can get latest tippy instance or all instances with <code>rdtaTooltips.getInstance()</code> or <code>rdtaTooltips.getInstances()</code> method. Open browser console to see demonstration.</p>
                     <hr>
 
                     <h2>Examples</h2>
-                    <p>
-                        Lorem ipsum dolor <a title="A tooltip text" data-toggle="tooltip">sit amet</a>, consectetur adipiscing elit. Curabitur in <a title="Another tooltip" data-toggle="tooltip">sagittis</a> neque. 
-                        Nunc id ex sed tortor dapibus mollis. Phasellus mollis maximus pretium. 
-                        Praesent hendrerit ultricies tellus a vehicula. 
-                        Interdum et malesuada fames ac ante ipsum primis in faucibus. 
-                        Duis nisi elit, aliquam sit amet gravida eget, tempus nec ante. 
-                        Sed dictum lobortis libero ac placerat.
-                    </p>
-                    <pre>&lt;a title=&quot;A tooltip text&quot; data-toggle=&quot;tooltip&quot;&gt;Text&lt;/a&gt;</pre>
-                    <h3>Placement</h3>
-                    <button type="button" title="Tooltip on top" data-toggle="tooltip" data-placement="top">Tooltip on top</button>
-                    <button type="button" title="Tooltip on right" data-toggle="tooltip" data-placement="right">Tooltip on right</button>
-                    <button type="button" title="Tooltip on bottom" data-toggle="tooltip" data-placement="bottom">Tooltip on bottom</button>
-                    <button type="button" title="Tooltip on left" data-toggle="tooltip" data-placement="left">Tooltip on left</button>
+                    <div class="rd-embed-responsive rd-embed-responsive16by9">
+                        <iframe class="rd-embed-responsive-item" src="https://www.youtube.com/embed/KX3OnQeETdI"></iframe>
+                    </div>
+                    <pre>&lt;div class=&quot;rd-embed-responsive rd-embed-responsive16by9&quot;&gt;
+    &lt;iframe class=&quot;rd-embed-responsive-item&quot; src=&quot;https://www.youtube.com/embed/KX3OnQeETdI&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;</pre>
 
-                    <hr>
-                    <p>For more options, please read more at <a href="https://atomiks.github.io/tippyjs/creating-tooltips/" target="tippy.js-doc">tippy.js documentation</a>.</p>
+                    <h3>Aspect ratios</h3>
+                    <pre>
+&lt;!-- 21:9 --&gt;
+&lt;div class=&quot;rd-embed-responsive rd-embed-responsive21by9&quot;&gt;
+    &lt;iframe class=&quot;rd-embed-responsive-item&quot; src=&quot;...&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;!-- 16:9 --&gt;
+&lt;div class=&quot;rd-embed-responsive rd-embed-responsive16by9&quot;&gt;
+    &lt;iframe class=&quot;rd-embed-responsive-item&quot; src=&quot;...&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;!-- 8:5 --&gt;
+&lt;div class=&quot;rd-embed-responsive rd-embed-responsive8by5&quot;&gt;
+    &lt;iframe class=&quot;rd-embed-responsive-item&quot; src=&quot;...&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;!-- 4:3 --&gt;
+&lt;div class=&quot;rd-embed-responsive rd-embed-responsive4by3&quot;&gt;
+    &lt;iframe class=&quot;rd-embed-responsive-item&quot; src=&quot;...&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;!-- 3:2 --&gt;
+&lt;div class=&quot;rd-embed-responsive rd-embed-responsive3by2&quot;&gt;
+    &lt;iframe class=&quot;rd-embed-responsive-item&quot; src=&quot;...&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;!-- 1:1 --&gt;
+&lt;div class=&quot;rd-embed-responsive rd-embed-responsive1by1&quot;&gt;
+    &lt;iframe class=&quot;rd-embed-responsive-item&quot; src=&quot;...&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</pre>
+                    <h3>Video element</h3>
+                    <div class="rd-embed-responsive rd-embed-responsive16by9">
+                        <video class="rd-embed-responsive-item" controls height="1080" width="1920"></video>
+                    </div>
+                    <pre>&lt;div class=&quot;rd-embed-responsive rd-embed-responsive16by9&quot;&gt;
+    &lt;video class=&quot;rd-embed-responsive-item&quot; controls height=&quot;1080&quot; width=&quot;1920&quot;&gt;&lt;/video&gt;
+&lt;/div&gt;</pre>
                 </div><!--.rd-page-content-->
             </main>
             <footer>
@@ -333,12 +358,5 @@
         <script src="assets/js/resize-sensor/ResizeSensor.js?mt=1591342428"></script><!-- use with sticky sidebar js, manual update. -->
 
         <script src="assets/js/rdta/rundiz-template-admin.js?mt=1610957831"></script> 
-        <script src="assets/js/tippy.js/dist/tippy-bundle.umd.min.js"></script>
-        <script src="assets/js/rdta/components/rdta-tooltips.js"></script>
-        <script>
-            let rdtaTooltips = RDTATooltips.init('[data-toggle="tooltip"]');
-            console.log('latest tippy instance', rdtaTooltips.getInstance());
-            console.log('all tippy instances', rdtaTooltips.getInstances());
-        </script>
     </body>
 </html>

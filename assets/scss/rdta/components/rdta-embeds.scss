@@ -1,0 +1,60 @@
+/*!
+* ----------------------------------------------------------------------------------------------
+* Rundiz template embeds -- styling responsive embeds elements.
+* ----------------------------------------------------------------------------------------------
+*/
+
+
+@import '../global-common/_common-variables';
+@import '_variables';
+
+// @link https://www.w3schools.com/howto/howto_css_responsive_iframes.asp code reference.
+.rd-embed-responsive {
+    display: block;
+    overflow: hidden;
+    padding-top: 56.25%;
+    position: relative;
+    width: 100%;
+
+    // .rd-embed-responsive.rd-embed-responsive21by9::before
+    &.rd-embed-responsive21by9::before {
+        padding-top: 42.857143%;
+    }
+
+    // .rd-embed-responsive.rd-embed-responsive16by9::before
+    &.rd-embed-responsive16by9::before {
+        padding-top: 56.25%; //16:9 Aspect Ratio (divide 9 by 16 = 0.5625)
+    }
+
+    // .rd-embed-responsive.rd-embed-responsive8by5::before
+    &.rd-embed-responsive8by5::before {
+        padding-top: 62.5%;
+    }
+
+    // .rd-embed-responsive.rd-embed-responsive4by3::before
+    &.rd-embed-responsive4by3::before {
+        padding-top: 75%;
+    }
+
+    // .rd-embed-responsive.rd-embed-responsive3by2::before
+    &.rd-embed-responsive3by2::before {
+        padding-top: 66.66%;
+    }
+
+    // .rd-embed-responsive.rd-embed-responsive1by1::before
+    &.rd-embed-responsive1by1::before {
+        padding-top: 100%;
+    }
+
+    // .rd-embed-responsive .rd-embed-responsive-item
+    .rd-embed-responsive-item {
+        border: none;
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+    }
+}

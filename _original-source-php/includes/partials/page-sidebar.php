@@ -144,6 +144,7 @@ for ($i = 1; $i <= 50; $i++) {
                                 <li><a href="columns-flex.php">Columns flex</a></li>
                                 <li><a href="datatable.php">Data table</a></li>
                                 <li><a href="dialog.php">Dialog</a></li>
+                                <li><a href="embeds.php">Embeds</a></li>
                                 <li><a href="form.php">Form</a></li>
                                 <li><a href="helpers.php">Helpers</a></li>
                                 <li><a href="pagination.php">Pagination</a></li>
