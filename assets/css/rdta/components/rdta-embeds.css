@@ -10,6 +10,10 @@
   position: relative;
   width: 100%;
 }
+.rd-embed-responsive::before {
+  content: "";
+  display: block;
+}
 .rd-embed-responsive.rd-embed-responsive21by9::before {
   padding-top: 42.857143%;
 }
