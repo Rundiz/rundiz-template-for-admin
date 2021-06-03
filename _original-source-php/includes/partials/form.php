@@ -71,19 +71,23 @@ unset($input_type, $input_types);
                     <legend>Input checkbox/radio</legend>
                     <p>
                         <label><input type="radio" name="input-radio" value="1"> Input radio option 1</label><br>
-                        <label><input type="radio" name="input-radio" value="2"> Input radio option 2</label>
+                        <label><input type="radio" name="input-radio" value="2"> Input radio option 2</label><br>
+                        <label><input type="radio" name="input-radio" value="3" checked="checked"> Input radio option 3 checked</label>
                     </p>
                     <p>
                         <label><input type="radio" name="input-radio-disabled" value="1" disabled=""> Input radio option 1</label><br>
-                        <label><input type="radio" name="input-radio-disabled" value="2" disabled=""> Input radio option 2</label>
+                        <label><input type="radio" name="input-radio-disabled" value="2" disabled=""> Input radio option 2</label><br>
+                        <label><input type="radio" name="input-radio-disabled" value="3" checked="checked" disabled=""> Input radio option 3 checked, disabled</label>
                     </p>
                     <p>
                         <label><input type="checkbox"> Input checkbox 1</label><br>
-                        <label><input type="checkbox"> Input checkbox 2</label>
+                        <label><input type="checkbox"> Input checkbox 2</label><br>
+                        <label><input type="checkbox" checked="checked"> Input checkbox 3 checked</label>
                     </p>
                     <p>
                         <label><input type="checkbox" disabled=""> Input checkbox 1</label><br>
-                        <label><input type="checkbox" disabled=""> Input checkbox 2</label>
+                        <label><input type="checkbox" disabled=""> Input checkbox 2</label><br>
+                        <label><input type="checkbox" checked="checked" disabled=""> Input checkbox 3 checked, disabled</label>
                     </p>
                 </fieldset>
                 <fieldset>
