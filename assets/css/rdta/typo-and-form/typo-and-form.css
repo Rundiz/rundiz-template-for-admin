@@ -2,6 +2,10 @@
 /*!
  * Rundiz template typography and form
  */
+/**
+ * Encode color
+ * @link https://gist.github.com/certainlyakey/e9c0d8f5c87ff47e3d5b#gistcomment-3458258 Original source code.
+ */
 /*
 * ----------------------------------------------------------------------------------------------
 * focusable elements
@@ -552,12 +556,39 @@ input[type=range] {
 
 input[type=checkbox],
 input[type=radio] {
+  appearance: none;
+  background-color: #fff;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 1px solid #ddd;
+  color-adjust: exact;
   cursor: pointer;
+  height: 1em;
+  width: 1em;
 }
 input[type=checkbox][disabled], input[type=checkbox][readonly],
 input[type=radio][disabled],
 input[type=radio][readonly] {
+  background-color: #eee;
   cursor: not-allowed;
+}
+
+input[type=checkbox]:checked {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+}
+input[type=checkbox]:checked[disabled] {
+  opacity: 0.5;
+}
+
+input[type=radio] {
+  border-radius: 50%;
+}
+input[type=radio]:checked {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23333333'/%3e%3c/svg%3e");
+}
+input[type=radio]:checked[disabled] {
+  opacity: 0.5;
 }
 
 input[type=file] {
@@ -565,15 +596,16 @@ input[type=file] {
   overflow: hidden;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
-input[type=file]::-webkit-file-upload-button {
+input[type=file]::file-selector-button, input[type=file]::-webkit-file-upload-button {
   background-color: #eee;
   border: 1px solid #ddd;
   cursor: pointer;
+  font: inherit;
 }
 input[type=file][disabled] {
   cursor: not-allowed;
 }
-input[type=file][disabled]::-webkit-file-upload-button {
+input[type=file][disabled]::file-selector-button, input[type=file][disabled]::-webkit-file-upload-button {
   cursor: not-allowed;
 }
 
