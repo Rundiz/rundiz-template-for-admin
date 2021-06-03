@@ -5,6 +5,9 @@
 */
 
 
+@use 'sass:math';
+
+
 .rd-alertbox {
     background-color: #fff;
     border-left-color: $border-color;
@@ -53,7 +56,7 @@
     &.fixed-top {
         top: 0;
         @media (min-width: $minimum-sidebar-breakpoint) {
-            min-height: ($mobile-screen-navbar-height/2);// add min-height to match navbar.
+            min-height: math.div($mobile-screen-navbar-height, 2);// add min-height to match navbar.
         }
     }
     &.fixed-bottom,

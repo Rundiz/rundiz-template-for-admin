@@ -5,6 +5,9 @@
 */
 
 
+@use 'sass:math';
+
+
 .rd-navbar {
     background-color: $navbar-sidebar-background-color;
     color: #aaa;
@@ -15,10 +18,10 @@
     min-height: $mobile-screen-navbar-height;
     z-index: $z-index-navbar;// must higher than .sm (.sm-rdta in this theme).
     @media (min-width: $minimum-sidebar-breakpoint) {
-        height: ($mobile-screen-navbar-height/2);
+        height: math.div($mobile-screen-navbar-height, 2);
         left: 0;
         margin-bottom: $block-element-margin-bottom;
-        min-height: ($mobile-screen-navbar-height/2);
+        min-height: math.div($mobile-screen-navbar-height, 2);
         position: fixed;
         right: 0;
         top: 0;
@@ -38,7 +41,7 @@
             align-items: center;
             background-color: rgba(255, 255, 255, 0.055);
             display: flex;
-            height: ($mobile-screen-navbar-height/2);
+            height: math.div($mobile-screen-navbar-height, 2);
             justify-content: space-around;
             margin: 0;
             z-index: $z-index-navbar;// must higher than .sm (.sm-rdta in this theme).
@@ -136,7 +139,7 @@
         border: none;
         box-shadow: none;
         color: inherit;
-        height: ($mobile-screen-navbar-height/2);
+        height: math.div($mobile-screen-navbar-height, 2);
         margin: 0;
         min-width: 50px;// must be px because it is a button and it is minimum width so it should be fixed size.
         padding: 0;

@@ -1,10 +1,13 @@
+@use 'sass:math';
+
+
 // typography and form variables only.
 
 // common use variables in this component.
 // margin bottom for content block level element.
 // because this is block level element for content so its margin unit should be rem. 
 // if it is em then when browser based font size was changed to bigger and these elements are in parent element that also has bigger font, its result will be too much margin space.
-$content-block-element-margin-bottom: ($block-element-margin-bottom / 2) !default;
+$content-block-element-margin-bottom: math.div($block-element-margin-bottom, 2) !default;
 
 // <button>, <input type="submit|button|reset">
 $button-3d-height: 2px !default;

@@ -5,6 +5,9 @@
 */
 
 
+@use 'sass:math';
+
+
 @import '_variables';
 
 
@@ -64,7 +67,7 @@
     @media (min-width: $minimum-sidebar-breakpoint) {
         grid-template-columns: $sidebar-expanded-width auto;
         grid-template-rows: auto 1.656rem;
-        min-height: calc(100vh - #{($mobile-screen-navbar-height/2)});
+        min-height: calc(100vh - #{math.div($mobile-screen-navbar-height, 2)});
 
         // .rd-page-wrapper > footer
         > footer {

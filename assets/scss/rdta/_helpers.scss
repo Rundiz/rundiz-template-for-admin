@@ -5,11 +5,14 @@
 */
 
 
+@use 'sass:math';
+
+
 .rd-block-level-margin-bottom {
     margin-bottom: $block-element-margin-bottom;
 }
 .rd-content-level-margin-bottom {
-    margin-bottom: ($block-element-margin-bottom / 2);
+    margin-bottom: math.div($block-element-margin-bottom, 2);
 }
 
 
