@@ -1,31 +1,27 @@
 {
-  "_args": [
-    [
-      "tippy.js@6.2.7",
-      "D:\\wwwroot\\github\\rundiz\\rundiz-template-for-admin"
-    ]
-  ],
-  "_from": "tippy.js@6.2.7",
-  "_id": "tippy.js@6.2.7",
+  "_from": "tippy.js@6.3.1",
+  "_id": "tippy.js@6.3.1",
   "_inBundle": false,
-  "_integrity": "sha512-k+kWF9AJz5xLQHBi3K/XlmJiyu+p9gsCyc5qZhxxGaJWIW8SMjw1R+C7saUnP33IM8gUhDA2xX//ejRSwqR0tA==",
+  "_integrity": "sha512-JnFncCq+rF1dTURupoJ4yPie5Cof978inW6/4S6kmWV7LL9YOSEVMifED3KdrVPEG+Z/TFH2CDNJcQEfaeuQww==",
   "_location": "/tippy.js",
   "_phantomChildren": {},
   "_requested": {
     "type": "version",
     "registry": true,
-    "raw": "tippy.js@6.2.7",
+    "raw": "tippy.js@6.3.1",
     "name": "tippy.js",
     "escapedName": "tippy.js",
-    "rawSpec": "6.2.7",
+    "rawSpec": "6.3.1",
     "saveSpec": null,
-    "fetchSpec": "6.2.7"
+    "fetchSpec": "6.3.1"
   },
   "_requiredBy": [
+    "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/tippy.js/-/tippy.js-6.2.7.tgz",
-  "_spec": "6.2.7",
+  "_resolved": "https://registry.npmjs.org/tippy.js/-/tippy.js-6.3.1.tgz",
+  "_shasum": "3788a007be7015eee0fd589a66b98fb3f8f10181",
+  "_spec": "tippy.js@6.3.1",
   "_where": "D:\\wwwroot\\github\\rundiz\\rundiz-template-for-admin",
   "author": {
     "name": "atomiks"
@@ -41,6 +37,7 @@
   "bugs": {
     "url": "https://github.com/atomiks/tippyjs/issues"
   },
+  "bundleDependencies": false,
   "bundlesize": [
     {
       "path": "dist/tippy-bundle.umd.min.js",
@@ -65,8 +62,9 @@
     }
   ],
   "dependencies": {
-    "@popperjs/core": "^2.4.4"
+    "@popperjs/core": "^2.8.3"
   },
+  "deprecated": false,
   "description": "The complete tooltip, popover, dropdown, and menu solution for the web",
   "devDependencies": {
     "@babel/core": "^7.8.3",
@@ -187,5 +185,5 @@
   ],
   "types": "index.d.ts",
   "unpkg": "dist/tippy-bundle.umd.min.js",
-  "version": "6.2.7"
+  "version": "6.3.1"
 }
