@@ -1,5 +1,5 @@
 /**!
-* tippy.js v6.3.1
+* tippy.js v6.3.7
 * (c) 2017-2021 atomiks
 * MIT License
 */
@@ -9,7 +9,7 @@
   (global = global || self, global.tippy = factory(global.Popper));
 }(this, (function (core) { 'use strict';
 
-  var css = ".tippy-box[data-animation=fade][data-state=hidden]{opacity:0}[data-tippy-root]{max-width:calc(100vw - 10px)}.tippy-box{position:relative;background-color:#333;color:#fff;border-radius:4px;font-size:14px;line-height:1.4;outline:0;transition-property:transform,visibility,opacity}.tippy-box[data-placement^=top]>.tippy-arrow{bottom:0}.tippy-box[data-placement^=top]>.tippy-arrow:before{bottom:-7px;left:0;border-width:8px 8px 0;border-top-color:initial;transform-origin:center top}.tippy-box[data-placement^=bottom]>.tippy-arrow{top:0}.tippy-box[data-placement^=bottom]>.tippy-arrow:before{top:-7px;left:0;border-width:0 8px 8px;border-bottom-color:initial;transform-origin:center bottom}.tippy-box[data-placement^=left]>.tippy-arrow{right:0}.tippy-box[data-placement^=left]>.tippy-arrow:before{border-width:8px 0 8px 8px;border-left-color:initial;right:-7px;transform-origin:center left}.tippy-box[data-placement^=right]>.tippy-arrow{left:0}.tippy-box[data-placement^=right]>.tippy-arrow:before{left:-7px;border-width:8px 8px 8px 0;border-right-color:initial;transform-origin:center right}.tippy-box[data-inertia][data-state=visible]{transition-timing-function:cubic-bezier(.54,1.5,.38,1.11)}.tippy-arrow{width:16px;height:16px;color:#333}.tippy-arrow:before{content:\"\";position:absolute;border-color:transparent;border-style:solid}.tippy-content{position:relative;padding:5px 9px;z-index:1}";
+  var css = ".tippy-box[data-animation=fade][data-state=hidden]{opacity:0}[data-tippy-root]{max-width:calc(100vw - 10px)}.tippy-box{position:relative;background-color:#333;color:#fff;border-radius:4px;font-size:14px;line-height:1.4;white-space:normal;outline:0;transition-property:transform,visibility,opacity}.tippy-box[data-placement^=top]>.tippy-arrow{bottom:0}.tippy-box[data-placement^=top]>.tippy-arrow:before{bottom:-7px;left:0;border-width:8px 8px 0;border-top-color:initial;transform-origin:center top}.tippy-box[data-placement^=bottom]>.tippy-arrow{top:0}.tippy-box[data-placement^=bottom]>.tippy-arrow:before{top:-7px;left:0;border-width:0 8px 8px;border-bottom-color:initial;transform-origin:center bottom}.tippy-box[data-placement^=left]>.tippy-arrow{right:0}.tippy-box[data-placement^=left]>.tippy-arrow:before{border-width:8px 0 8px 8px;border-left-color:initial;right:-7px;transform-origin:center left}.tippy-box[data-placement^=right]>.tippy-arrow{left:0}.tippy-box[data-placement^=right]>.tippy-arrow:before{left:-7px;border-width:8px 8px 8px 0;border-right-color:initial;transform-origin:center right}.tippy-box[data-inertia][data-state=visible]{transition-timing-function:cubic-bezier(.54,1.5,.38,1.11)}.tippy-arrow{width:16px;height:16px;color:#333}.tippy-arrow:before{content:\"\";position:absolute;border-color:transparent;border-style:solid}.tippy-content{position:relative;padding:5px 9px;z-index:1}";
 
   function injectCSS(css) {
     var style = document.createElement('style');
@@ -26,8 +26,8 @@
   }
 
   var isBrowser = typeof window !== 'undefined' && typeof document !== 'undefined';
-  var ua = isBrowser ? navigator.userAgent : '';
-  var isIE = /MSIE |Trident\//.test(ua);
+  var isIE11 = isBrowser ? // @ts-ignore
+  !!window.msCrypto : false;
 
   var ROUND_ARROW = '<svg width="16" height="6" xmlns="http://www.w3.org/2000/svg"><path d="M0 6s1.796-.013 4.67-3.615C5.851.9 6.93.006 8 0c1.07-.006 2.148.887 3.343 2.385C14.233 6.005 16 6 16 6H0z"></svg>';
   var BOX_CLASS = "tippy-box";
@@ -38,6 +38,9 @@
   var TOUCH_OPTIONS = {
     passive: true,
     capture: true
+  };
+  var TIPPY_DEFAULT_APPEND_TO = function TIPPY_DEFAULT_APPEND_TO() {
+    return document.body;
   };
 
   function hasOwnProperty(obj, key) {
@@ -164,7 +167,7 @@
         element = _normalizeToArray[0]; // Elements created via a <template> have an ownerDocument with no reference to the body
 
 
-    return (element == null ? void 0 : (_element$ownerDocumen = element.ownerDocument) == null ? void 0 : _element$ownerDocumen.body) ? element.ownerDocument : document;
+    return element != null && (_element$ownerDocumen = element.ownerDocument) != null && _element$ownerDocumen.body ? element.ownerDocument : document;
   }
   function isCursorOutsideInteractiveBorder(popperTreeData, event) {
     var clientX = event.clientX,
@@ -199,6 +202,26 @@
     ['transitionend', 'webkitTransitionEnd'].forEach(function (event) {
       box[method](event, listener);
     });
+  }
+  /**
+   * Compared to xxx.contains, this function works for dom structures with shadow
+   * dom
+   */
+
+  function actualContains(parent, child) {
+    var target = child;
+
+    while (target) {
+      var _target$getRootNode;
+
+      if (parent.contains(target)) {
+        return true;
+      }
+
+      target = target.getRootNode == null ? void 0 : (_target$getRootNode = target.getRootNode()) == null ? void 0 : _target$getRootNode.host;
+    }
+
+    return false;
   }
 
   var currentInput = {
@@ -335,9 +358,7 @@
     zIndex: 9999
   };
   var defaultProps = Object.assign({
-    appendTo: function appendTo() {
-      return document.body;
-    },
+    appendTo: TIPPY_DEFAULT_APPEND_TO,
     aria: {
       content: 'auto',
       expanded: 'auto'
@@ -372,7 +393,7 @@
     touch: true,
     trigger: 'mouseenter focus',
     triggerTarget: null
-  }, pluginProps, {}, renderProps);
+  }, pluginProps, renderProps);
   var defaultKeys = Object.keys(defaultProps);
   var setDefaultProps = function setDefaultProps(partialProps) {
     /* istanbul ignore else */
@@ -392,12 +413,14 @@
           defaultValue = plugin.defaultValue;
 
       if (name) {
-        acc[name] = passedProps[name] !== undefined ? passedProps[name] : defaultValue;
+        var _name;
+
+        acc[name] = passedProps[name] !== undefined ? passedProps[name] : (_name = defaultProps[name]) != null ? _name : defaultValue;
       }
 
       return acc;
     }, {});
-    return Object.assign({}, passedProps, {}, pluginProps);
+    return Object.assign({}, passedProps, pluginProps);
   }
   function getDataAttributeProps(reference, plugins) {
     var propKeys = plugins ? Object.keys(getExtendedPassedProps(Object.assign({}, defaultProps, {
@@ -428,7 +451,7 @@
     var out = Object.assign({}, props, {
       content: invokeWithArgsOrReturn(props.content, [reference])
     }, props.ignoreAttributes ? {} : getDataAttributeProps(reference, props.plugins));
-    out.aria = Object.assign({}, defaultProps.aria, {}, out.aria);
+    out.aria = Object.assign({}, defaultProps.aria, out.aria);
     out.aria = {
       expanded: out.aria.expanded === 'auto' ? props.interactive : out.aria.expanded,
       content: out.aria.content === 'auto' ? props.interactive ? null : 'describedby' : out.aria.content
@@ -589,7 +612,7 @@
 
   var mountedInstances = [];
   function createTippy(reference, passedProps) {
-    var props = evaluateProps(reference, Object.assign({}, defaultProps, {}, getExtendedPassedProps(removeUndefinedProps(passedProps)))); // ===========================================================================
+    var props = evaluateProps(reference, Object.assign({}, defaultProps, getExtendedPassedProps(removeUndefinedProps(passedProps)))); // ===========================================================================
     // 🔒 Private members
     // ===========================================================================
 
@@ -689,10 +712,9 @@
         instance.clearDelayTimeouts();
       }
     });
-    popper.addEventListener('mouseleave', function (event) {
+    popper.addEventListener('mouseleave', function () {
       if (instance.props.interactive && instance.props.trigger.indexOf('mouseenter') >= 0) {
         getDocument().addEventListener('mousemove', debouncedOnMouseMove);
-        debouncedOnMouseMove(event);
       }
     });
     return instance; // ===========================================================================
@@ -712,7 +734,7 @@
       var _instance$props$rende;
 
       // @ts-ignore
-      return !!((_instance$props$rende = instance.props.render) == null ? void 0 : _instance$props$rende.$$tippy);
+      return !!((_instance$props$rende = instance.props.render) != null && _instance$props$rende.$$tippy);
     }
 
     function getCurrentTarget() {
@@ -739,8 +761,12 @@
       return getValueAtIndexOrReturn(instance.props.delay, isShow ? 0 : 1, defaultProps.delay);
     }
 
-    function handleStyles() {
-      popper.style.pointerEvents = instance.props.interactive && instance.state.isVisible ? '' : 'none';
+    function handleStyles(fromHide) {
+      if (fromHide === void 0) {
+        fromHide = false;
+      }
+
+      popper.style.pointerEvents = instance.props.interactive && !fromHide ? '' : 'none';
       popper.style.zIndex = "" + instance.props.zIndex;
     }
 
@@ -751,7 +777,7 @@
 
       pluginsHooks.forEach(function (pluginHooks) {
         if (pluginHooks[hook]) {
-          pluginHooks[hook].apply(void 0, args);
+          pluginHooks[hook].apply(pluginHooks, args);
         }
       });
 
@@ -817,15 +843,18 @@
         if (didTouchMove || event.type === 'mousedown') {
           return;
         }
-      } // Clicked on interactive popper
+      }
 
+      var actualTarget = event.composedPath && event.composedPath()[0] || event.target; // Clicked on interactive popper
 
-      if (instance.props.interactive && popper.contains(event.target)) {
+      if (instance.props.interactive && actualContains(popper, actualTarget)) {
         return;
       } // Clicked on the event listeners target
 
 
-      if (getCurrentTarget().contains(event.target)) {
+      if (normalizeToArray(instance.props.triggerTarget || reference).some(function (el) {
+        return actualContains(el, actualTarget);
+      })) {
         if (currentInput.isTouch) {
           return;
         }
@@ -953,7 +982,7 @@
             break;
 
           case 'focus':
-            on(isIE ? 'focusout' : 'blur', onBlurOrFocusOut);
+            on(isIE11 ? 'focusout' : 'blur', onBlurOrFocusOut);
             break;
 
           case 'focusin':
@@ -1179,7 +1208,7 @@
 
       var node = getCurrentTarget();
 
-      if (instance.props.interactive && appendTo === defaultProps.appendTo || appendTo === 'parent') {
+      if (instance.props.interactive && appendTo === TIPPY_DEFAULT_APPEND_TO || appendTo === 'parent') {
         parentNode = node.parentNode;
       } else {
         parentNode = invokeWithArgsOrReturn(appendTo, [node]);
@@ -1191,6 +1220,7 @@
         parentNode.appendChild(popper);
       }
 
+      instance.state.isMounted = true;
       createPopperInstance();
       /* istanbul ignore else */
 
@@ -1298,7 +1328,7 @@
       invokeHook('onBeforeUpdate', [instance, partialProps]);
       removeListeners();
       var prevProps = instance.props;
-      var nextProps = evaluateProps(reference, Object.assign({}, instance.props, {}, partialProps, {
+      var nextProps = evaluateProps(reference, Object.assign({}, prevProps, removeUndefinedProps(partialProps), {
         ignoreAttributes: true
       }));
       instance.props = nextProps;
@@ -1427,7 +1457,6 @@
         // popper has been positioned for the first time
 
         (_instance$popperInsta2 = instance.popperInstance) == null ? void 0 : _instance$popperInsta2.forceUpdate();
-        instance.state.isMounted = true;
         invokeHook('onMount', [instance]);
 
         if (instance.props.animation && getIsDefaultRenderFn()) {
@@ -1474,7 +1503,7 @@
 
       cleanupInteractiveMouseListeners();
       removeDocumentPress();
-      handleStyles();
+      handleStyles(true);
 
       if (getIsDefaultRenderFn()) {
         var _getDefaultTemplateCh4 = getDefaultTemplateChildren(),
@@ -1675,10 +1704,19 @@
 
     var individualInstances = tippyInstances;
     var references = [];
+    var triggerTargets = [];
     var currentTarget;
     var overrides = optionalProps.overrides;
     var interceptSetPropsCleanups = [];
     var shownOnCreate = false;
+
+    function setTriggerTargets() {
+      triggerTargets = individualInstances.map(function (instance) {
+        return normalizeToArray(instance.props.triggerTarget || instance.reference);
+      }).reduce(function (acc, item) {
+        return acc.concat(item);
+      }, []);
+    }
 
     function setReferences() {
       references = individualInstances.map(function (instance) {
@@ -1716,7 +1754,7 @@
 
 
     function prepareInstance(singleton, target) {
-      var index = references.indexOf(target); // bail-out
+      var index = triggerTargets.indexOf(target); // bail-out
 
       if (target === currentTarget) {
         return;
@@ -1729,13 +1767,16 @@
       }, {});
       singleton.setProps(Object.assign({}, overrideProps, {
         getReferenceClientRect: typeof overrideProps.getReferenceClientRect === 'function' ? overrideProps.getReferenceClientRect : function () {
-          return target.getBoundingClientRect();
+          var _references$index;
+
+          return (_references$index = references[index]) == null ? void 0 : _references$index.getBoundingClientRect();
         }
       }));
     }
 
     enableInstances(false);
     setReferences();
+    setTriggerTargets();
     var plugin = {
       fn: function fn() {
         return {
@@ -1765,7 +1806,7 @@
     };
     var singleton = tippy(div(), Object.assign({}, removeProperties(optionalProps, ['overrides']), {
       plugins: [plugin].concat(optionalProps.plugins || []),
-      triggerTarget: references,
+      triggerTarget: triggerTargets,
       popperOptions: Object.assign({}, optionalProps.popperOptions, {
         modifiers: [].concat(((_optionalProps$popper = optionalProps.popperOptions) == null ? void 0 : _optionalProps$popper.modifiers) || [], [applyStylesModifier])
       })
@@ -1792,13 +1833,13 @@
       } // target is a child tippy instance
 
 
-      if (individualInstances.includes(target)) {
+      if (individualInstances.indexOf(target) >= 0) {
         var ref = target.reference;
         return prepareInstance(singleton, ref);
       } // target is a ReferenceElement
 
 
-      if (references.includes(target)) {
+      if (references.indexOf(target) >= 0) {
         return prepareInstance(singleton, target);
       }
     };
@@ -1841,9 +1882,10 @@
       individualInstances = nextInstances;
       enableInstances(false);
       setReferences();
-      interceptSetProps(singleton);
+      setTriggerTargets();
+      interceptSetPropsCleanups = interceptSetProps(singleton);
       singleton.setProps({
-        triggerTarget: references
+        triggerTarget: triggerTargets
       });
     };
 
@@ -1876,7 +1918,9 @@
       trigger: 'manual',
       touch: false
     });
-    var childProps = Object.assign({}, nativeProps, {
+    var childProps = Object.assign({
+      touch: defaultProps.touch
+    }, nativeProps, {
       showOnCreate: true
     });
     var returnValue = tippy(targets, parentProps);
@@ -2002,7 +2046,7 @@
       var _instance$props$rende;
 
       // @ts-ignore
-      if (!((_instance$props$rende = instance.props.render) == null ? void 0 : _instance$props$rende.$$tippy)) {
+      if (!((_instance$props$rende = instance.props.render) != null && _instance$props$rende.$$tippy)) {
         {
           errorWhen(instance.props.animateFill, 'The `animateFill` plugin requires the default render function.');
         }
@@ -2127,6 +2171,7 @@
 
         if (isCursorOverReference || !instance.props.interactive) {
           instance.setProps({
+            // @ts-ignore - unneeded DOMRect properties
             getReferenceClientRect: function getReferenceClientRect() {
               var rect = reference.getBoundingClientRect();
               var x = clientX;
@@ -2263,6 +2308,7 @@
       var placement;
       var cursorRectIndex = -1;
       var isInternalUpdate = false;
+      var triedPlacements = [];
       var modifier = {
         name: 'tippyInlinePositioning',
         enabled: true,
@@ -2271,8 +2317,14 @@
           var state = _ref2.state;
 
           if (isEnabled()) {
-            if (placement !== state.placement) {
+            if (triedPlacements.indexOf(state.placement) !== -1) {
+              triedPlacements = [];
+            }
+
+            if (placement !== state.placement && triedPlacements.indexOf(state.placement) === -1) {
+              triedPlacements.push(state.placement);
               instance.setProps({
+                // @ts-ignore - unneeded DOMRect properties
                 getReferenceClientRect: function getReferenceClientRect() {
                   return _getReferenceClientRect(state.placement);
                 }
@@ -2309,10 +2361,11 @@
             var cursorRect = rects.find(function (rect) {
               return rect.left - 2 <= event.clientX && rect.right + 2 >= event.clientX && rect.top - 2 <= event.clientY && rect.bottom + 2 >= event.clientY;
             });
-            cursorRectIndex = rects.indexOf(cursorRect);
+            var index = rects.indexOf(cursorRect);
+            cursorRectIndex = index > -1 ? index : cursorRectIndex;
           }
         },
-        onUntrigger: function onUntrigger() {
+        onHidden: function onHidden() {
           cursorRectIndex = -1;
         }
       };
