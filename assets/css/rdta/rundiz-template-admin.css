@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*!
  * Rundiz template for admin V.2.1.15
  */
@@ -604,7 +603,7 @@ a.rd-button.tiny,
   display: inline-flex;
   position: relative;
 }
-.rd-button-group ul {
+.rd-button-group menu, .rd-button-group ul {
   display: none;
 }
 .rd-button-group .rd-button + .rd-button {
@@ -855,13 +854,13 @@ a.rd-button.tiny,
   transform: translateY(-29%);
 }
 .rd-datatable .sortable-icon.order-desc::before {
-  content: "";
+  content: "\f0dd";
 }
 .rd-datatable .sortable-icon.order-asc {
   transform: translateY(9%);
 }
 .rd-datatable .sortable-icon.order-asc::before {
-  content: "";
+  content: "\f0de";
 }
 .rd-datatable td.sorted .sortable-icon, .rd-datatable td:hover .sortable-icon,
 .rd-datatable th.sorted .sortable-icon,

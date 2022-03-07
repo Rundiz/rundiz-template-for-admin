@@ -114,7 +114,7 @@ a.rd-button,
 .rd-button-group {
     display: inline-flex;
     position: relative;
-    ul {
+    menu, ul {
         // it is dropdown within button
         display: none;
     }

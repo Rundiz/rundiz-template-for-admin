@@ -232,6 +232,9 @@ meter::-webkit-meter-bar {
   background-color: #eee;
   background-image: none;
   border: none;
+  border-radius: 0;
+  box-shadow: none;
+  height: 1em;
 }
 
 pre {
@@ -315,22 +318,27 @@ table td, table th {
   padding: 0.313em;
 }
 
-ul, ol {
+menu, ul, ol {
   line-height: 1.6;
-  margin: 0 0 0.625rem 1.111em;
+  margin: 0 0 0.625rem 1.211em;
   padding: 0;
 }
-ul li, ol li {
+menu li, ul li, ol li {
   margin: 0;
   padding: 0;
 }
 
-ul li ul,
+menu li menu,
+menu li ul,
+menu li ol,
+ul li menu,
 ul li ol,
+ul li ul,
+ol li menu,
 ol li ol,
 ol li ul {
   margin-bottom: 0;
-  margin-left: 1.111em;
+  margin-left: 1.211em;
   margin-top: 0;
 }
 
@@ -338,7 +346,7 @@ ol {
   list-style: decimal;
 }
 
-ul {
+menu, ul {
   list-style: disc;
 }
 
