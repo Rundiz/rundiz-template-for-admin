@@ -49,11 +49,11 @@ function replaceHeaders(cb) {
 
 exports.default = series(
     clean,
-    phpSrc.buildPHP,
     copyPackages.copyPackages,
     rdtaJs.bundleJs,
     rdtaSass.compileRdtaSass,
-    replaceHeaders
+    replaceHeaders,
+    phpSrc.buildPHP,
 );
 
 

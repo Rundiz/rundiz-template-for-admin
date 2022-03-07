@@ -64,6 +64,9 @@ function assetUrl($assetUrl, array $options = [])
 
         $assetFullPath = realpath(ROOTDIR . '/' . $url);
         $additionalQueryValue = filemtime($assetFullPath);
+        if (false === $additionalQueryValue) {
+            $additionalQueryValue = time();
+        }
         $queryArray[$additionalQueryName] = $additionalQueryValue;
         unset($additionalQueryName, $additionalQueryValue, $assetFullPath);
     }
