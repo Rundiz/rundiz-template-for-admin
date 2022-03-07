@@ -48,10 +48,12 @@ foreach ($input_types as $input_type) {
 unset($input_type, $input_types);
 ?> 
                 </fieldset>
-                <p>
-                    <label for="input-type-text-readonly">Input Text read only</label><br>
-                    <input id="input-type-text-readonly" type="text" readonly="">
-                </p>
+                <fieldset>
+                    <p>
+                        <label for="input-type-text-readonly">Input Text read only</label><br>
+                        <input id="input-type-text-readonly" type="text" readonly="">
+                    </p>
+                </fieldset>
                 <fieldset>
                     <legend>Input file</legend>
                     <p>
@@ -164,21 +166,25 @@ unset($input_type, $input_types);
             </fieldset>
 
             <h3 id="form-datalist">Datalist</h3>
-            <p>
-                Type <kbd>c</kbd> to display data list.<br>
-                <label for="form-datalist">Datalist</label><br>
-                <input id="form-datalist" type="text" list="form-datalist-example">
-                <datalist id="form-datalist-example">
-                    <option value="Chocolate">
-                    <option value="Coconut">
-                    <option value="Mint">
-                    <option value="Strawberry">
-                    <option value="Vanilla">
-                </datalist>
-            </p>
+            <fieldset>
+                <p>
+                    Type <kbd>c</kbd> to search.<br>
+                    <label for="form-datalist">Datalist</label><br>
+                    <input id="form-datalist" type="text" list="form-datalist-example">
+                    <datalist id="form-datalist-example">
+                        <option value="Chocolate">
+                        <option value="Coconut">
+                        <option value="Mint">
+                        <option value="Strawberry">
+                        <option value="Vanilla">
+                    </datalist>
+                </p>
+            </fieldset>
             <h3 id="form-output">Output</h3>
             <form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
-                <input id="a" type="number" value="10"> +
-                <input id="b" type="number" value="20"> =
-                <output id="result">30</output>
+                <fieldset>
+                    <input id="a" type="number" value="10"> +
+                    <input id="b" type="number" value="20"> =
+                    <output id="result">30</output>
+                </fieldset>
             </form>

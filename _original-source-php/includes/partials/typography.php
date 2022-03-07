@@ -67,7 +67,7 @@ unset($i);
                 I'm <ruby>
                     漢 <rp>(</rp><rt>kan</rt><rp>)</rp>
                     字 <rp>(</rp><rt>ji</rt><rp>)</rp>
-                </ruby> ruby with <code>rp</code> &amp; <code>rt</code><br>
+                </ruby> (ruby with <code>rp</code> &amp; <code>rt</code>)<br>
                 I'm <s>s (strike through)</s><br>
                 I'm <small>small</small><br>
                 I'm <span>span</span><br>
