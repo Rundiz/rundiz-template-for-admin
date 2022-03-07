@@ -125,43 +125,43 @@ for ($i = 1; $i <= 50; $i++) {
                         <li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-server fa-fw"></i> <span class="rd-sidebar-menu-text">Components</span></a>
                             <ul>
                                 <li class="sub-menu-heading"><a>Basic component &amp; example</a></li>
-                                <li><a href="typography.php">Typography</a></li>
-                                <li><a href="basic-layout.php">Basic layout</a></li>
+                                <li><a href="typography.html">Typography</a></li>
+                                <li><a href="basic-layout.html">Basic layout</a></li>
                                 <li><a href="#" onclick="return false;">Sticky menu</a>
                                     <ul>
-                                        <li><a href="stickymenu-long-content.php">Sticky menu (long content)</a></li>
-                                        <li><a href="stickymenu-long-menu.php">Sticky menu (long menu)</a></li>
-                                        <li><a href="stickymenu-long-content-menu.php">Sticky menu (long content &amp; menu)</a></li>
+                                        <li><a href="stickymenu-long-content.html">Sticky menu (long content)</a></li>
+                                        <li><a href="stickymenu-long-menu.html">Sticky menu (long menu)</a></li>
+                                        <li><a href="stickymenu-long-content-menu.html">Sticky menu (long content &amp; menu)</a></li>
                                     </ul>
                                 </li>
                                 <li class="divider"></li>
                                 <li class="sub-menu-heading"><a>More components</a></li>
-                                <li><a href="accordion.php">Accordion</a></li>
-                                <li><a href="alert-box.php">Alert box</a></li>
-                                <li><a href="alert-dialog.php">Alert dialog</a></li>
-                                <li><a href="badge.php">Badge</a></li>
-                                <li><a href="button.php">Button</a></li>
-                                <li><a href="columns-flex.php">Columns flex</a></li>
-                                <li><a href="datatable.php">Data table</a></li>
-                                <li><a href="dialog.php">Dialog</a></li>
-                                <li><a href="embeds.php">Embeds</a></li>
-                                <li><a href="form.php">Form</a></li>
-                                <li><a href="helpers.php">Helpers</a></li>
-                                <li><a href="pagination.php">Pagination</a></li>
-                                <li><a href="tabs.php">Tabs</a></li>
-                                <li><a href="text.php">Text</a></li>
-                                <li><a href="tooltips.php">Tooltips</a></li>
+                                <li><a href="accordion.html">Accordion</a></li>
+                                <li><a href="alert-box.html">Alert box</a></li>
+                                <li><a href="alert-dialog.html">Alert dialog</a></li>
+                                <li><a href="badge.html">Badge</a></li>
+                                <li><a href="button.html">Button</a></li>
+                                <li><a href="columns-flex.html">Columns flex</a></li>
+                                <li><a href="datatable.html">Data table</a></li>
+                                <li><a href="dialog.html">Dialog</a></li>
+                                <li><a href="embeds.html">Embeds</a></li>
+                                <li><a href="form.html">Form</a></li>
+                                <li><a href="helpers.html">Helpers</a></li>
+                                <li><a href="pagination.html">Pagination</a></li>
+                                <li><a href="tabs.html">Tabs</a></li>
+                                <li><a href="text.html">Text</a></li>
+                                <li><a href="tooltips.html">Tooltips</a></li>
                             </ul>
                         </li>
                         <li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-laptop-code"></i> <span class="rd-sidebar-menu-text">Examples</span></a>
                             <ul>
-                                <li><a href="example-login.php">Login page</a></li>
-                                <li><a href="example-logout.php">Logout page</a></li>
+                                <li><a href="example-login.html">Login page</a></li>
+                                <li><a href="example-logout.html">Logout page</a></li>
                             </ul>
                         </li>
                         <li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-code fa-fw"></i> <span class="rd-sidebar-menu-text">Tools &amp; guide</span></a>
                             <ul>
-                                <li><a href="credits.php">Credits</a></li>
+                                <li><a href="credits.html">Credits</a></li>
                                 <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="tools_cssgrid">CSS grid</a></li>
                                 <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="tools_cssflex">CSS flex box</a></li>
                                 <li><a href="https://www.w3.org/wiki/HTML_structural_elements" target="tools_html5structural">HTML 5 structural elements</a></li>

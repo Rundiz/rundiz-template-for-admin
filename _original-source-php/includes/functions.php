@@ -1,8 +1,12 @@
 <?php
 
 
+ini_set('log_errors', true);
+ini_set('error_log', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'php_error.log');
+
+
 if (!defined('ROOTDIR')) {
-    define('ROOTDIR', dirname(__DIR__));
+    define('ROOTDIR', dirname(__DIR__, 2));
 }
 
 
