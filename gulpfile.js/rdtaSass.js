@@ -29,21 +29,18 @@ async function compileAndMinifyRDTA(cb) {
  */
 function compileSass(cb) {
     const rename = require("gulp-rename");
-    const sass = require('gulp-sass');
-    const Fiber = require('fibers');
+    const sass = require('gulp-sass')(require('sass'));
     const sourcemaps = require('gulp-sourcemaps');
-
-    sass.compiler = require('sass');
 
     console.log('Compiling RDTA scss.');
 
     // just compile .scss -> .css
     return src('assets/scss/**/*.scss')
         .pipe(sourcemaps.init())
-        .pipe(sass({
-            fiber: Fiber,
+        .pipe(sass.sync({
             outputStyle: 'expanded'
-        }).on('error', sass.logError))
+        })
+            .on('error', sass.logError))
         .pipe(sourcemaps.write('.', {sourceRoot: '../../assets/scss'}))
         .pipe(dest('assets/css/'));
         // minify version (only work without sourcemaps).
@@ -62,24 +59,21 @@ function compileSass(cb) {
  */
 function minRDTACss(cb) {
     const rename = require("gulp-rename");
-    const sass = require('gulp-sass');
-    const Fiber = require('fibers');
+    const sass = require('gulp-sass')(require('sass'));
     const cleanCSS = require('gulp-clean-css');
     const sourcemaps = require('gulp-sourcemaps');
     const mergeStream =   require('merge-stream');
     let folders = ['rdta', 'smartmenus/sm-rdta'];
-
-    sass.compiler = require('sass');
 
     console.log('Minifying RDTA css.');
 
     let tasks = folders.map(function(element) {
         return src('assets/scss/**/*.scss')
         .pipe(sourcemaps.init())
-        .pipe(sass({
-            fiber: Fiber,
+        .pipe(sass.sync({
             outputStyle: 'compressed'
-        }).on('error', sass.logError))
+        })
+            .on('error', sass.logError))
         .pipe(rename({extname: '.min.css'}))
         .pipe(sourcemaps.write('.', {sourceRoot: '../../assets/scss'}))
         .pipe(dest('assets/css/'));
