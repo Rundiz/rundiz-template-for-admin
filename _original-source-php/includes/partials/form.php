@@ -1,4 +1,4 @@
-            <h2>Progress</h2>
+            <h2 id="form-progress">Progress</h2>
             <progress></progress> (no value)<br>
 <?php
 for ($i = 0; $i <= 100; $i+=20) {
@@ -6,7 +6,7 @@ for ($i = 0; $i <= 100; $i+=20) {
 }
 ?> 
 
-            <h2>Meter</h2>
+            <h2 id="form-meter">Meter</h2>
             <p>This meter have just value.</p>
             <meter value="0.6">60%</meter>
             <p>This meter attributes are: min 0, max 10.</p>
@@ -33,7 +33,7 @@ for ($i = 0; $i <= 100; $i+=20) {
             <meter min="0" max="10" low="3" high="8" optimum="9" value="5">5 out of 10</meter> value 5<br>
             <meter min="0" max="10" low="3" high="8" optimum="9" value="10">10 out of 10</meter> value 10<br>
 
-            <h2>Form elements</h2>
+            <h2 id="form-elements">Form elements</h2>
             <form>
                 <fieldset>
                     <legend>Input types</legend>
@@ -162,3 +162,23 @@ unset($input_type, $input_types);
                     <input type="button" value="Input disabled button" disabled="">
                 </p>
             </fieldset>
+
+            <h3 id="form-datalist">Datalist</h3>
+            <p>
+                Type <kbd>c</kbd> to display data list.<br>
+                <label for="form-datalist">Datalist</label><br>
+                <input id="form-datalist" type="text" list="form-datalist-example">
+                <datalist id="form-datalist-example">
+                    <option value="Chocolate">
+                    <option value="Coconut">
+                    <option value="Mint">
+                    <option value="Strawberry">
+                    <option value="Vanilla">
+                </datalist>
+            </p>
+            <h3 id="form-output">Output</h3>
+            <form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+                <input id="a" type="number" value="10"> +
+                <input id="b" type="number" value="20"> =
+                <output id="result">30</output>
+            </form>

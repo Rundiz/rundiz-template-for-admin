@@ -11,17 +11,115 @@
         <link rel="stylesheet" href="assets/font-awesome/css/all.min.css?npm-v=5.15.3">
 
         <link rel="stylesheet" href="assets/css/smartmenus/sm-core-css.css?npm-v=1.1.1">
-        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?mt=1622691287">
+        <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?mt=1646641544">
 
-        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?mt=1622691287">
-        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?mt=1622691287">
+        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?mt=1646641544">
+        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?mt=1646641544">
 
         <link rel="stylesheet" href="assets/css/rdta-demo-pages.css?mt=1598859694"> 
+        <style>
+            main {
+                margin: 0 auto; 
+                max-width: 1200px; 
+                padding-left: 0.313em; 
+                padding-right: 0.313em;
+                position: relative;
+            }
+
+            .float-menu-inpage-nav {
+                display: none;
+            }
+            @media (min-width: 1800px) {
+                .float-menu-inpage-nav {
+                    display: block;
+                    position: absolute;
+                    right: -290px;
+                    top: 10px;
+                    width: 280px;
+                }
+                .float-menu-fixed {
+                    border: 1px solid black;
+                    max-height: 90vh;
+                    overflow-y: auto;
+                    padding: 5px;
+                    position: fixed;
+                    width: 280px;
+                }
+            }
+
+            .wrap-contents-in-main {
+                overflow: hidden;
+            }
+        </style>
     </head>
     <body ontouchstart="">
-        <div style="margin: 0 auto; max-width: 1200px; overflow-x: hidden; padding-left: 0.313em; padding-right: 0.313em;">
-            <h1>Typography & kitchen sink</h1>
+        <main>
+            <aside class="float-menu-inpage-nav">
+                <div class="float-menu-fixed">
+                    Navigation
+                    <nav>
+                        <ul>
+                            <li><a href="#typography-head1to6">Heading</a></li>
+                            <li><a href="#typography-paragraph">Paragraph</a>
+                                <ul>
+                                    <li><a href="#typography-inlineelements">In-line elements</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#typography-links">Links</a></li>
+                            <li><a href="#typography-address">Address</a></li>
+                            <li><a href="#typography-blockquote">Blockquote</a></li>
+                            <li><a href="#typography-code">Code</a></li>
+                            <li><a href="#typography-lists">Lists</a>
+                                <ul>
+                                    <li><a href="#typography-lists-ul">Unordered list</a></li>
+                                    <li><a href="#typography-lists-ol">Ordered list</a></li>
+                                    <li><a href="#typography-lists-menu">Menu</a></li>
+                                    <li><a href="#typography-lists-mixed">Mixed</a></li>
+                                    <li><a href="#typography-lists-dl">Definition list</a></li>
+                                    <li><a href="#typography-detailssummary">Details &amp; Summary</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#typography-table">Table</a>
+                                <ul>
+                                    <li><a href="#typography-table-caption">Table with caption</a></li>
+                                    <li><a href="#typography-table-colgroup">Table with colgroup</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#multimedia-dialog">Dialog</a></li>
+                            <li><a href="#multimedia-iframe">Iframe</a></li>
+                            <li><a href="#multimedia-audiovideo">Audio &amp; video</a>
+                                <ul>
+                                    <li><a href="#multimedia-audiovideoaudio">Audio</a></li>
+                                    <li><a href="#multimedia-audiovideovideo">Video</a></li>
+                                    <li><a href="#multimedia-audiovideoembed">Embed</a></li>
+                                    <li><a href="#multimedia-audiovideoobject">Object</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#multimedia-image">Image</a>
+                                <ul>
+                                    <li><a href="#multimedia-image-fluidresponsive">Fluid or responsive image</a></li>
+                                    <li><a href="#multimedia-image-figcaption">Image with figcaption</a></li>
+                                    <li><a href="#multimedia-image-picture">Picture element</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#form-progress">Progress</a></li>
+                            <li><a href="#form-meter">Meter</a></li>
+                            <li><a href="#form-elements">Form elements</a>
+                                <ul>
+                                    <li><a href="#form-datalist">Datalist</a></li>
+                                    <li><a href="#form-output">Output</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+            <header>
+                <h1>Typography & kitchen sink</h1>
+            </header>
             <hr>
+            <article class="wrap-contents-in-main">
+            <header id="typography-head1to6">
         <h1>Heading level 1</h1>
         <h2>Heading level 2</h2>
         <h3>Heading level 3</h3>
@@ -29,8 +127,9 @@
         <h5>Heading level 5</h5>
         <h6>Heading level 6</h6>
  
+            </header>
 
-            <h2>Paragraph</h2>
+            <h2 id="typography-paragraph">Paragraph</h2>
             <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipiscing elit. In id risus quis purus mollis lobortis vel ac tellus. Nam pharetra lorem quis dui commodo dapibus. Curabitur aliquet sapien vitae ligula pretium sollicitudin. Sed sed magna eu risus placerat gravida non sit amet augue. Morbi volutpat lobortis imperdiet. Sed elit purus, commodo a mi in, condimentum sagittis urna. Etiam condimentum pharetra cursus. Aliquam erat volutpat. In vel diam nulla. Praesent faucibus augue quis dui vehicula, a consequat est fringilla. Sed nec nisi fermentum, maximus nunc ac, hendrerit lorem. Proin mollis metus in erat dictum egestas. Proin nec ipsum viverra, scelerisque nisi in, faucibus nulla.</p>
             <p>Aliquam erat volutpat. Donec sagittis libero ac justo suscipit laoreet. Suspendisse ut sem vel augue vulputate sodales blandit sit amet metus. Quisque porta consectetur efficitur. Duis venenatis nisl in mollis convallis. Pellentesque quis accumsan orci. Nulla porta arcu quis laoreet sagittis. Aliquam erat volutpat. Suspendisse sagittis, turpis vel posuere suscipit, dolor nunc sodales est, quis cursus dui elit vel nisl.</p>
             <p>Nunc accumsan molestie nisl non malesuada. In egestas tellus lectus, nec venenatis tellus pulvinar vel. Fusce consectetur sodales ante, sed vehicula mauris pulvinar non. Cras tempor ante nec nibh iaculis aliquet. In quis velit non dui dapibus tempus quis sed velit. Morbi a ornare sem. Maecenas ornare molestie ex, sed maximus lorem viverra at. In tincidunt vel purus et suscipit. Aenean aliquam neque et ipsum volutpat, eu laoreet justo vestibulum. Maecenas quam turpis, convallis id nibh efficitur, interdum volutpat elit. Suspendisse potenti. Nulla in vulputate massa.</p>
@@ -71,13 +170,15 @@
             <p>Déi Gart soubal heescht ze, frësch Hämmel Poufank dé net. Néierens hannendrun fir hu. Laacht gebotzt dén en. Am hier d'Beem laacht den, ze rou stét Dach prächteg, wou d'Land Hämmel genuch ze. Hir eraus geplot de, zum eise Hemecht klinzecht wa. Och si alles zënne d'Kanner, sou no d'Wise duerch.</p>
             <p>Jo zielen d'Kirmes rou. Jo net Léift derfir, ze keen brommt ech. Rem op wellen Fielse derfir, dat engem kréien iwerall en. Un fir deser verstoppen, fu wee bléit Fletschen schaddreg. Dem as schéi alles Dauschen, fond néierens hu vun. Jo päift sëtzen och.</p>
             <p>Oft dé Wand d'Wise, jeitzt d'Liewen Hämmelsbrot wa dem. Sou virun brommt jeitzt vu. As aus Gaart wellen, op ass Faarwen beschte Fréijor. Ons d'Beem schéinste un, hu wat derbei d'Hiezer d'Gaassen, hu Mier laacht ass. Nun wa wait onser däischter.</p>
-            <h3>In-line elements</h3>
+            <h3 id="typography-inlineelements">In-line elements</h3>
             <p>
                 I'm Normal text<br>
                 I'm <abbr title="Abbreviations">abbr</abbr><br>
                 I'm <b>b (bold)</b><br>
+                I'm <bdi dir="rtl">اَلأَعْشَى bdi</bdi> (bidirectional)<br>
                 I'm <bdo dir="rtl"> bdo</bdo> (bdo &mdash; it's just right to left)<br>
                 I'm <cite>cite</cite><br>
+                I'm <data value="333">data</data><br>
                 I'm <del>del</del><br>
                 I'm <dfn>dfn</dfn><br>
                 I'm <em>em</em><br>
@@ -85,6 +186,10 @@
                 I'm <ins>ins</ins><br>
                 I'm <mark>mark</mark><br>
                 I'm <q>q</q><br>
+                I'm <ruby>
+                    漢 <rp>(</rp><rt>kan</rt><rp>)</rp>
+                    字 <rp>(</rp><rt>ji</rt><rp>)</rp>
+                </ruby> ruby with <code>rp</code> &amp; <code>rt</code><br>
                 I'm <s>s (strike through)</s><br>
                 I'm <small>small</small><br>
                 I'm <span>span</span><br>
@@ -94,11 +199,15 @@
                 I'm time <time>12:00</time><br>
                 I'm <u>u</u><br>
             </p>
+            <h4>Line break (<code>wbr</code>)</h4>
+            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab<wbr>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab<wbr>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab<wbr>aaaaaaaaaaaaaaaaaaaaaaaaa</p>
+            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab&shy;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab&shy;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab&shy;aaaaaaaaaaaaaaaaaaaaaaaaa</p>
 
-            <h2>Links</h2>
-            <p>These are links: <a href="?2021-06-0310%3A35%3A38" onclick="return false;">never visited link</a>, <a href=".">visited link</a>. Mouse hover to see effects.</p>
+            <h2 id="typography-links">Links</h2>
+            <p>These are links: <a href="?2022-03-0715%3A26%3A41" onclick="return false;">never visited link</a>, <a href=".">visited link</a>. Mouse hover to see effects.</p>
 
-            <h2>Address</h2>
+            <h2 id="typography-address">Address</h2>
             <address>
                 Written by <a href="mailto:webmaster@example.dev">Jon Doe</a>.<br>
                 Visit us at:<br>
@@ -107,13 +216,13 @@
                 USA
             </address>
 
-            <h2>Blockquote</h2>
+            <h2 id="typography-blockquote">Blockquote</h2>
             <blockquote>
                 Those people who think they know everything are a great annoyance to those of us who do.<br>
                 <cite>Isaac Asimov</cite>
             </blockquote>
 
-            <h2>Code</h2>
+            <h2 id="typography-code">Code</h2>
             <p>This is inline code <code>&lt;div&gt;div element&lt;/div&gt;</code>. This is sample output <samp>sample</samp> And below is block code.</p>
             <pre>
 &lt;div&gt;
@@ -122,8 +231,8 @@
 &lt;/div&gt;</pre>
             <p>The input keyboard <kbd>Ctrl</kbd>+<kbd>S</kbd>. This is variable: <var>y</var> = <var>m</var><var>x</var> + <var>b</var></p>
 
-            <h2>Lists</h2>
-            <h3>Unordered list</h3>
+            <h2 id="typography-lists">Lists</h2>
+            <h3 id="typography-lists-ul">Unordered list</h3>
             <ul>
                 <li>List item with a much longer description or more content.</li>
                 <li>List item</li>
@@ -131,14 +240,18 @@
                     <ul>
                         <li>Nested list item</li>
                         <li>Nested list item</li>
-                        <li>Nested list item</li>
+                        <li>Nested list item
+                            <ul>
+                                <li>Nested list item</li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li>List item</li>
                 <li>List item</li>
                 <li>List item</li>
             </ul>
-            <h3>Ordered list</h3>
+            <h3 id="typography-lists-ol">Ordered list</h3>
             <ol>
                 <li>List item with a much longer description or more content.</li>
                 <li>List item</li>
@@ -153,7 +266,20 @@
                 <li>List item</li>
                 <li>List item</li>
             </ol>
-            <h3>Mixed</h3>
+            <h3 id="typography-lists-menu"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu" target="mdnmenu">Menu</a></h3>
+            <menu>
+                <li>List item</li>
+                <li>List item</li>
+                <li>List item
+                    <menu>
+                        <li>List item</li>
+                        <li>List item</li>
+                        <li>List item</li>
+                    </menu>
+                </li>
+            </menu>
+            <h3 id="typography-lists-mixed">Mixed</h3>
+            <h4>Use unordered list</h4>
             <ul>
                 <li>List item with a much longer description or more content.</li>
                 <li>List item</li>
@@ -162,7 +288,21 @@
                         <li>Nested list item</li>
                         <li>Nested list item</li>
                         <li>Nested list item</li>
+                        <li>Nested list item
+                            <menu>
+                                <li>Nested list item (use menu element)</li>
+                                <li>Nested list item</li>
+                                <li>Nested list item</li>
+                            </menu>
+                        </li>
                     </ol>
+                </li>
+                <li>List item
+                    <menu>
+                        <li>Nested list item (use menu element)</li>
+                        <li>Nested list item</li>
+                        <li>Nested list item</li>
+                    </menu>
                 </li>
                 <li>List item</li>
                 <li>List item</li>
@@ -176,6 +316,7 @@
                     </dl>
                 </li>
             </ul>
+            <h4>Use ordered list</h4>
             <ol>
                 <li>List item with a much longer description or more content.</li>
                 <li>List item</li>
@@ -218,7 +359,7 @@
                     </dl>
                 </li>
             </ol>
-            <h3>Definition list</h3>
+            <h3 id="typography-lists-dl">Definition list</h3>
             <dl>
                 <dt>Definition terms</dt>
                 <dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -282,7 +423,7 @@
                     </dl>
                 </dd>
             </dl>
-            <h3>Details &amp; Summary</h3>
+            <h3 id="typography-detailssummary">Details &amp; Summary</h3>
             <details>
                 <summary>Question 1</summary>
                 <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#" onclick="return false;">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
@@ -301,7 +442,7 @@
                 <p>Duis consequat metus et eros rutrum, interdum facilisis urna interdum. Etiam facilisis diam in libero varius ultricies id id est. Sed lacinia pellentesque sem vel sagittis.</p>
             </details>
 
-            <h2>Table</h2>
+            <h2 id="typography-table">Table</h2>
             <table>
                 <thead>
                     <tr>
@@ -334,7 +475,7 @@
                     </tr>
                 </tbody>
             </table>
-            <h3>Table with caption</h3>
+            <h3 id="typography-table-caption">Table with caption</h3>
             <table>
                 <caption>Monthly savings</caption>
                 <thead>
@@ -348,7 +489,7 @@
                     <td>$100</td>
                 </tr>
             </table> 
-            <h3>Table with colgroup</h3>
+            <h3 id="typography-table-colgroup">Table with colgroup</h3>
             <table>
                 <colgroup>
                     <col span="2" style="background-color:red">
@@ -369,37 +510,47 @@
                     </tr>
                 </tbody>
             </table>  
+            </article>
 
-            <h2>Dialog</h2>
+            <section class="wrap-contents-in-main">
+            <h2 id="multimedia-dialog">Dialog</h2>
             <dialog open>This is an open dialog window</dialog>
             <p>The dialog may not support in all browsers.</p>
 
-            <h2>Iframe</h2>
-            <iframe src="https://www.youtube.com/embed/KX3OnQeETdI"></iframe>
+            <h2 id="multimedia-iframe">Iframe</h2>
+            <iframe src="https://www.youtube-nocookie.com/embed/KX3OnQeETdI"></iframe>
 
-            <h2>Audio &amp; video controls</h2>
-            <h3>Audio</h3>
+            <h2 id="multimedia-audiovideo">Audio &amp; video</h2>
+            <h3 id="multimedia-audiovideoaudio">Audio</h3>
             <audio controls></audio>
-            <h3>Video</h3>
-            <video controls></video>
+            <h3 id="multimedia-audiovideovideo">Video</h3>
+            <video controls width="300" height="150">
+                <source src="https://file-examples-com.github.io/uploads/2020/03/file_example_WEBM_480_900KB.webm">
+            </video>
+            <h3 id="multimedia-audiovideoembed">Embed</h3>
+            <embed type="video/webm" src="https://file-examples-com.github.io/uploads/2020/03/file_example_WEBM_480_900KB.webm" width="300" height="150">
+            <h3 id="multimedia-audiovideoobject">Object</h3>
+            <object data="https://www.youtube-nocookie.com/embed/KX3OnQeETdI" width="300" height="150"></object>
 
-            <h2>Image</h2>
+            <h2 id="multimedia-image">Image</h2>
             <img src="assets/images/1920x1080.jpg" alt="1920x1080">
             <p>The image above will not resize on small screen.</p>
-            <h3>Fluid or responsive image</h3>
+            <h3 id="multimedia-image-fluidresponsive">Fluid or responsive image</h3>
             <img class="fluid" src="assets/images/1920x1080.jpg" alt="1920x1080">
             <p>The image above will be resize on small screen.</p>
-            <h3>Image with figcaption</h3>
+            <h3 id="multimedia-image-figcaption">Image with figcaption</h3>
             <figure>
                 <img class="fluid" src="assets/images/1920x1080.jpg" alt="1920x1080">
                 <figcaption>The image caption.</figcaption>
             </figure>
-            <h3>Picture element</h3>
+            <h3 id="multimedia-image-picture">Picture element</h3>
             <picture>
                 <img class="fluid" src="assets/images/1920x1080.jpg" alt="1920x1080">
             </picture> 
+            </section>
 
-            <h2>Progress</h2>
+            <section class="wrap-contents-in-main">
+            <h2 id="form-progress">Progress</h2>
             <progress></progress> (no value)<br>
             <progress max="100" value="0">0%</progress><br>
             <progress max="100" value="20">20%</progress><br>
@@ -409,7 +560,7 @@
             <progress max="100" value="100">100%</progress><br>
  
 
-            <h2>Meter</h2>
+            <h2 id="form-meter">Meter</h2>
             <p>This meter have just value.</p>
             <meter value="0.6">60%</meter>
             <p>This meter attributes are: min 0, max 10.</p>
@@ -436,7 +587,7 @@
             <meter min="0" max="10" low="3" high="8" optimum="9" value="5">5 out of 10</meter> value 5<br>
             <meter min="0" max="10" low="3" high="8" optimum="9" value="10">10 out of 10</meter> value 10<br>
 
-            <h2>Form elements</h2>
+            <h2 id="form-elements">Form elements</h2>
             <form>
                 <fieldset>
                     <legend>Input types</legend>
@@ -619,21 +770,38 @@
                     <input type="reset" value="Input reset button" onclick="return false;">
                     <input type="button" value="Input disabled button" disabled="">
                 </p>
-            </fieldset> 
+            </fieldset>
+
+            <h3 id="form-datalist">Datalist</h3>
+            <p>
+                Type <kbd>c</kbd> to display data list.<br>
+                <label for="form-datalist">Datalist</label><br>
+                <input id="form-datalist" type="text" list="form-datalist-example">
+                <datalist id="form-datalist-example">
+                    <option value="Chocolate">
+                    <option value="Coconut">
+                    <option value="Mint">
+                    <option value="Strawberry">
+                    <option value="Vanilla">
+                </datalist>
+            </p>
+            <h3 id="form-output">Output</h3>
+            <form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+                <input id="a" type="number" value="10"> +
+                <input id="b" type="number" value="20"> =
+                <output id="result">30</output>
+            </form> 
+            </section>
             <hr>
+
 
             <footer>
                 <p>
                     By <a href="http://rundiz.com">rundiz.com</a>
-                    <!--
-                    Do you like it? Does this helpful to you? If yes, please donate to help me buy some foods. :)
-                    Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9HQE4GVV4KTZE
-                    Thank you in advance.
-                    -->
                     | <a href="credits.html">Credits.</a>
                 </p>
             </footer>
-        </div>
+        </main>
 
 
 
@@ -646,6 +814,6 @@
         <script src="assets/js/sticky-sidebar/jquery.sticky-sidebar.min.js?npm-v=3.3.1"></script>
         <script src="assets/js/resize-sensor/ResizeSensor.js?mt=1591342428"></script><!-- use with sticky sidebar js, manual update. -->
 
-        <script src="assets/js/rdta/rundiz-template-admin.js?mt=1622686574"></script> 
+        <script src="assets/js/rdta/rundiz-template-admin.js?mt=1646641542"></script> 
     </body>
 </html>

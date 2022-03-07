@@ -1,11 +1,13 @@
+            <header id="typography-head1to6">
 <?php 
 for ($i = 1; $i <= 6; $i++) {
     echo indent(2).'<h'.$i.'>Heading level '.$i.'</h'.$i.'>'."\n";
 }// endfor;
 unset($i);
 ?> 
+            </header>
 
-            <h2>Paragraph</h2>
+            <h2 id="typography-paragraph">Paragraph</h2>
             <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipiscing elit. In id risus quis purus mollis lobortis vel ac tellus. Nam pharetra lorem quis dui commodo dapibus. Curabitur aliquet sapien vitae ligula pretium sollicitudin. Sed sed magna eu risus placerat gravida non sit amet augue. Morbi volutpat lobortis imperdiet. Sed elit purus, commodo a mi in, condimentum sagittis urna. Etiam condimentum pharetra cursus. Aliquam erat volutpat. In vel diam nulla. Praesent faucibus augue quis dui vehicula, a consequat est fringilla. Sed nec nisi fermentum, maximus nunc ac, hendrerit lorem. Proin mollis metus in erat dictum egestas. Proin nec ipsum viverra, scelerisque nisi in, faucibus nulla.</p>
             <p>Aliquam erat volutpat. Donec sagittis libero ac justo suscipit laoreet. Suspendisse ut sem vel augue vulputate sodales blandit sit amet metus. Quisque porta consectetur efficitur. Duis venenatis nisl in mollis convallis. Pellentesque quis accumsan orci. Nulla porta arcu quis laoreet sagittis. Aliquam erat volutpat. Suspendisse sagittis, turpis vel posuere suscipit, dolor nunc sodales est, quis cursus dui elit vel nisl.</p>
             <p>Nunc accumsan molestie nisl non malesuada. In egestas tellus lectus, nec venenatis tellus pulvinar vel. Fusce consectetur sodales ante, sed vehicula mauris pulvinar non. Cras tempor ante nec nibh iaculis aliquet. In quis velit non dui dapibus tempus quis sed velit. Morbi a ornare sem. Maecenas ornare molestie ex, sed maximus lorem viverra at. In tincidunt vel purus et suscipit. Aenean aliquam neque et ipsum volutpat, eu laoreet justo vestibulum. Maecenas quam turpis, convallis id nibh efficitur, interdum volutpat elit. Suspendisse potenti. Nulla in vulputate massa.</p>
@@ -46,13 +48,15 @@ unset($i);
             <p>Déi Gart soubal heescht ze, frësch Hämmel Poufank dé net. Néierens hannendrun fir hu. Laacht gebotzt dén en. Am hier d'Beem laacht den, ze rou stét Dach prächteg, wou d'Land Hämmel genuch ze. Hir eraus geplot de, zum eise Hemecht klinzecht wa. Och si alles zënne d'Kanner, sou no d'Wise duerch.</p>
             <p>Jo zielen d'Kirmes rou. Jo net Léift derfir, ze keen brommt ech. Rem op wellen Fielse derfir, dat engem kréien iwerall en. Un fir deser verstoppen, fu wee bléit Fletschen schaddreg. Dem as schéi alles Dauschen, fond néierens hu vun. Jo päift sëtzen och.</p>
             <p>Oft dé Wand d'Wise, jeitzt d'Liewen Hämmelsbrot wa dem. Sou virun brommt jeitzt vu. As aus Gaart wellen, op ass Faarwen beschte Fréijor. Ons d'Beem schéinste un, hu wat derbei d'Hiezer d'Gaassen, hu Mier laacht ass. Nun wa wait onser däischter.</p>
-            <h3>In-line elements</h3>
+            <h3 id="typography-inlineelements">In-line elements</h3>
             <p>
                 I'm Normal text<br>
                 I'm <abbr title="Abbreviations">abbr</abbr><br>
                 I'm <b>b (bold)</b><br>
+                I'm <bdi dir="rtl">اَلأَعْشَى bdi</bdi> (bidirectional)<br>
                 I'm <bdo dir="rtl"> bdo</bdo> (bdo &mdash; it's just right to left)<br>
                 I'm <cite>cite</cite><br>
+                I'm <data value="333">data</data><br>
                 I'm <del>del</del><br>
                 I'm <dfn>dfn</dfn><br>
                 I'm <em>em</em><br>
@@ -60,6 +64,10 @@ unset($i);
                 I'm <ins>ins</ins><br>
                 I'm <mark>mark</mark><br>
                 I'm <q>q</q><br>
+                I'm <ruby>
+                    漢 <rp>(</rp><rt>kan</rt><rp>)</rp>
+                    字 <rp>(</rp><rt>ji</rt><rp>)</rp>
+                </ruby> ruby with <code>rp</code> &amp; <code>rt</code><br>
                 I'm <s>s (strike through)</s><br>
                 I'm <small>small</small><br>
                 I'm <span>span</span><br>
@@ -69,11 +77,15 @@ unset($i);
                 I'm time <time>12:00</time><br>
                 I'm <u>u</u><br>
             </p>
+            <h4>Line break (<code>wbr</code>)</h4>
+            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab<wbr>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab<wbr>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab<wbr>aaaaaaaaaaaaaaaaaaaaaaaaa</p>
+            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab&shy;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab&shy;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab&shy;aaaaaaaaaaaaaaaaaaaaaaaaa</p>
 
-            <h2>Links</h2>
+            <h2 id="typography-links">Links</h2>
             <p>These are links: <a href="?<?php echo urlencode(date('Y-m-dH:i:s')); ?>" onclick="return false;">never visited link</a>, <a href=".">visited link</a>. Mouse hover to see effects.</p>
 
-            <h2>Address</h2>
+            <h2 id="typography-address">Address</h2>
             <address>
                 Written by <a href="mailto:webmaster@example.dev">Jon Doe</a>.<br>
                 Visit us at:<br>
@@ -82,13 +94,13 @@ unset($i);
                 USA
             </address>
 
-            <h2>Blockquote</h2>
+            <h2 id="typography-blockquote">Blockquote</h2>
             <blockquote>
                 Those people who think they know everything are a great annoyance to those of us who do.<br>
                 <cite>Isaac Asimov</cite>
             </blockquote>
 
-            <h2>Code</h2>
+            <h2 id="typography-code">Code</h2>
             <p>This is inline code <code>&lt;div&gt;div element&lt;/div&gt;</code>. This is sample output <samp>sample</samp> And below is block code.</p>
             <pre>
 &lt;div&gt;
@@ -97,8 +109,8 @@ unset($i);
 &lt;/div&gt;</pre>
             <p>The input keyboard <kbd>Ctrl</kbd>+<kbd>S</kbd>. This is variable: <var>y</var> = <var>m</var><var>x</var> + <var>b</var></p>
 
-            <h2>Lists</h2>
-            <h3>Unordered list</h3>
+            <h2 id="typography-lists">Lists</h2>
+            <h3 id="typography-lists-ul">Unordered list</h3>
             <ul>
                 <li>List item with a much longer description or more content.</li>
                 <li>List item</li>
@@ -106,14 +118,18 @@ unset($i);
                     <ul>
                         <li>Nested list item</li>
                         <li>Nested list item</li>
-                        <li>Nested list item</li>
+                        <li>Nested list item
+                            <ul>
+                                <li>Nested list item</li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li>List item</li>
                 <li>List item</li>
                 <li>List item</li>
             </ul>
-            <h3>Ordered list</h3>
+            <h3 id="typography-lists-ol">Ordered list</h3>
             <ol>
                 <li>List item with a much longer description or more content.</li>
                 <li>List item</li>
@@ -128,7 +144,20 @@ unset($i);
                 <li>List item</li>
                 <li>List item</li>
             </ol>
-            <h3>Mixed</h3>
+            <h3 id="typography-lists-menu"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu" target="mdnmenu">Menu</a></h3>
+            <menu>
+                <li>List item</li>
+                <li>List item</li>
+                <li>List item
+                    <menu>
+                        <li>List item</li>
+                        <li>List item</li>
+                        <li>List item</li>
+                    </menu>
+                </li>
+            </menu>
+            <h3 id="typography-lists-mixed">Mixed</h3>
+            <h4>Use unordered list</h4>
             <ul>
                 <li>List item with a much longer description or more content.</li>
                 <li>List item</li>
@@ -137,7 +166,21 @@ unset($i);
                         <li>Nested list item</li>
                         <li>Nested list item</li>
                         <li>Nested list item</li>
+                        <li>Nested list item
+                            <menu>
+                                <li>Nested list item (use menu element)</li>
+                                <li>Nested list item</li>
+                                <li>Nested list item</li>
+                            </menu>
+                        </li>
                     </ol>
+                </li>
+                <li>List item
+                    <menu>
+                        <li>Nested list item (use menu element)</li>
+                        <li>Nested list item</li>
+                        <li>Nested list item</li>
+                    </menu>
                 </li>
                 <li>List item</li>
                 <li>List item</li>
@@ -151,6 +194,7 @@ unset($i);
                     </dl>
                 </li>
             </ul>
+            <h4>Use ordered list</h4>
             <ol>
                 <li>List item with a much longer description or more content.</li>
                 <li>List item</li>
@@ -193,7 +237,7 @@ unset($i);
                     </dl>
                 </li>
             </ol>
-            <h3>Definition list</h3>
+            <h3 id="typography-lists-dl">Definition list</h3>
             <dl>
                 <dt>Definition terms</dt>
                 <dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -257,7 +301,7 @@ unset($i);
                     </dl>
                 </dd>
             </dl>
-            <h3>Details &amp; Summary</h3>
+            <h3 id="typography-detailssummary">Details &amp; Summary</h3>
             <details>
                 <summary>Question 1</summary>
                 <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#" onclick="return false;">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
@@ -276,7 +320,7 @@ unset($i);
                 <p>Duis consequat metus et eros rutrum, interdum facilisis urna interdum. Etiam facilisis diam in libero varius ultricies id id est. Sed lacinia pellentesque sem vel sagittis.</p>
             </details>
 
-            <h2>Table</h2>
+            <h2 id="typography-table">Table</h2>
             <table>
                 <thead>
                     <tr>
@@ -309,7 +353,7 @@ unset($i);
                     </tr>
                 </tbody>
             </table>
-            <h3>Table with caption</h3>
+            <h3 id="typography-table-caption">Table with caption</h3>
             <table>
                 <caption>Monthly savings</caption>
                 <thead>
@@ -323,7 +367,7 @@ unset($i);
                     <td>$100</td>
                 </tr>
             </table> 
-            <h3>Table with colgroup</h3>
+            <h3 id="typography-table-colgroup">Table with colgroup</h3>
             <table>
                 <colgroup>
                     <col span="2" style="background-color:red">

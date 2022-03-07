@@ -35,6 +35,10 @@ include 'includes/html-head.php';
                         <li><a href="https://nodejs.org" target="node.js">Node.js</a></li>
                         <li><a href="https://gulpjs.com" target="gulp">Gulp</a></li>
                     </ul>
+                    <h3>Reference</h3>
+                    <ul>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" target="mdnhtmlelement">MDN HTML elements</a></li>
+                    </ul>
                 </div><!--.rd-page-content-->
             </main>
 <?php include 'includes/partials/page-footer.php'; ?> 
