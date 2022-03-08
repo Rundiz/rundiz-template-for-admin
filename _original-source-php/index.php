@@ -27,7 +27,7 @@ $dummyData = '[{"id":1,"name":"Gwendolyn Uphill","address":"282 Springview Stree
     <head>
 <?php include 'includes/html-head.php'; ?> 
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta/columns/columns-flex.css'); ?>">
-        <style type="text/css">
+        <style>
             .example-card {
                 border: 1px solid #ddd;
                 box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -107,13 +107,6 @@ $dummyData = '[{"id":1,"name":"Gwendolyn Uphill","address":"282 Springview Stree
                                             <th>Email</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th class="column-primary">Name</th>
-                                            <th>Address</th>
-                                            <th>Email</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
                                         <?php
                                         echo "\n";
@@ -141,6 +134,13 @@ $dummyData = '[{"id":1,"name":"Gwendolyn Uphill","address":"282 Springview Stree
                                         }
                                         ?> 
                                     </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th class="column-primary">Name</th>
+                                            <th>Address</th>
+                                            <th>Email</th>
+                                        </tr>
+                                    </tfoot>
                                 </table>
                             </div>
                         </div><!--.column-->

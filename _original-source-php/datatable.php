@@ -57,16 +57,6 @@ include 'includes/html-head.php';
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Address</th>
-                                        <th>Email</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </tfoot>
                                 <tbody>
                                     <?php
                                     echo "\n";
@@ -103,6 +93,16 @@ include 'includes/html-head.php';
                                     }
                                     ?> 
                                 </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Address</th>
+                                        <th>Email</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </tfoot>
                             </table>
                             <button type="submit">Submit</button>
                         </form>
@@ -117,14 +117,6 @@ include 'includes/html-head.php';
                 &lt;th&gt;Name&lt;/th&gt;
             &lt;/tr&gt;
         &lt;/thead&gt;
-        &lt;tfoot&gt;
-            &lt;tr&gt;
-                &lt;th class=&quot;column-checkbox&quot;&gt;
-                    &lt;input type=&quot;checkbox&quot; onclick=&quot;RundizTemplateAdmin.dataTableCheckboxToggler(this);&quot;&gt;
-                &lt;/th&gt;
-                &lt;th&gt;Name&lt;/th&gt;
-            &lt;/tr&gt;
-        &lt;/tfoot&gt;
         &lt;tbody&gt;
             &lt;tr&gt;
                 &lt;td class=&quot;column-checkbox&quot;&gt;
@@ -133,6 +125,14 @@ include 'includes/html-head.php';
                 &lt;td&gt;Demo Demo&lt;/td&gt;
             &lt;/tr&gt;
         &lt;/tbody&gt;
+        &lt;tfoot&gt;
+            &lt;tr&gt;
+                &lt;th class=&quot;column-checkbox&quot;&gt;
+                    &lt;input type=&quot;checkbox&quot; onclick=&quot;RundizTemplateAdmin.dataTableCheckboxToggler(this);&quot;&gt;
+                &lt;/th&gt;
+                &lt;th&gt;Name&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/tfoot&gt;
     &lt;/table&gt;
 &lt;/div&gt;</pre>
                     <h3>H Border</h3>
@@ -149,16 +149,6 @@ include 'includes/html-head.php';
                                     <th>Actions</th>
                                 </tr>
                             </thead>
-                            <tfoot>
-                                <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Address</th>
-                                    <th>Email</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </tfoot>
                             <tbody>
                                 <?php
                                 echo "\n";
@@ -195,6 +185,16 @@ include 'includes/html-head.php';
                                 }
                                 ?> 
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Email</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div><!--.rd-datatable-wrapper-->
                     <h3>Sortable columns</h3>
@@ -211,16 +211,6 @@ include 'includes/html-head.php';
                                     <th>Actions</th>
                                 </tr>
                             </thead>
-                            <tfoot>
-                                <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
-                                    <th><a href="?sort=id" onclick="return false;">ID <i class="order-asc sortable-icon"></i></a></th>
-                                    <th class="sorted"><a href="?sort=name" onclick="return false;">Name <i class="order-asc sortable-icon"></i></a></th>
-                                    <th><a href="?sort=address" onclick="return false;">Address <i class="order-asc sortable-icon"></i></a></th>
-                                    <th><a href="?sort=email" onclick="return false;">Email <i class="order-asc sortable-icon"></i></a></th>
-                                    <th>Actions</th>
-                                </tr>
-                            </tfoot>
                             <tbody>
                                 <?php
                                 echo "\n";
@@ -257,6 +247,16 @@ include 'includes/html-head.php';
                                 }
                                 ?> 
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
+                                    <th><a href="?sort=id" onclick="return false;">ID <i class="order-asc sortable-icon"></i></a></th>
+                                    <th class="sorted"><a href="?sort=name" onclick="return false;">Name <i class="order-asc sortable-icon"></i></a></th>
+                                    <th><a href="?sort=address" onclick="return false;">Address <i class="order-asc sortable-icon"></i></a></th>
+                                    <th><a href="?sort=email" onclick="return false;">Email <i class="order-asc sortable-icon"></i></a></th>
+                                    <th>Actions</th>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div><!--.rd-datatable-wrapper-->
                     <?php
@@ -282,15 +282,6 @@ include 'includes/html-head.php';
                                     <th>Actions</th>
                                 </tr>
                             </thead>
-                            <tfoot>
-                                <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
-                                    <th>Type</th>
-                                    <th>Class</th>
-                                    <th>Name</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </tfoot>
                             <tbody>
                                 <?php
                                 echo "\n";
@@ -330,6 +321,15 @@ include 'includes/html-head.php';
                                 }
                                 ?> 
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
+                                    <th>Type</th>
+                                    <th>Class</th>
+                                    <th>Name</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div><!--.rd-datatable-wrapper-->
                     <h4>Cell colors</h4>
@@ -349,19 +349,6 @@ include 'includes/html-head.php';
                                     ?> 
                                 </tr>
                             </thead>
-                            <tfoot>
-                                <tr>
-                                    <?php
-                                    echo "\n";
-                                    if (isset($rowColors) && is_array($rowColors)) {
-                                        foreach ($rowColors as $colorItem) {
-                                            echo indent(9).'<th>'.(isset($colorItem['name']) && is_scalar($colorItem['name']) ? $colorItem['name'] : '').'</th>'."\n";
-                                        }// endforeach;
-                                        unset($colorItem);
-                                    }
-                                    ?> 
-                                </tr>
-                            </tfoot>
                             <tbody>
                                 <tr>
                                     <?php
@@ -391,6 +378,19 @@ include 'includes/html-head.php';
                                     <td colspan="<?php if (isset($rowColors) && is_array($rowColors)) {echo count($rowColors);} else {echo 1;} ?>">This row contain no cell or row color.</td>
                                 </tr>
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <?php
+                                    echo "\n";
+                                    if (isset($rowColors) && is_array($rowColors)) {
+                                        foreach ($rowColors as $colorItem) {
+                                            echo indent(9).'<th>'.(isset($colorItem['name']) && is_scalar($colorItem['name']) ? $colorItem['name'] : '').'</th>'."\n";
+                                        }// endforeach;
+                                        unset($colorItem);
+                                    }
+                                    ?> 
+                                </tr>
+                            </tfoot>
                         </table>
                     </div><!--.rd-datatable-wrapper-->
                     <?php unset($rowColors); ?> 
@@ -422,16 +422,6 @@ include 'includes/html-head.php';
                                     <td><button class="rd-button info small">Filter</button></td>
                                 </tr>
                             </thead>
-                            <tfoot>
-                                <tr>
-                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
-                                    <th class="sorted"><a href="?sort=id" onclick="return false;">ID <i class="order-desc sortable-icon"></i></a></th>
-                                    <th>Name</th>
-                                    <th>Address</th>
-                                    <th>Email</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </tfoot>
                             <tbody>
                                 <?php
                                 echo "\n";
@@ -469,6 +459,16 @@ include 'includes/html-head.php';
                                 }
                                 ?> 
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
+                                    <th class="sorted"><a href="?sort=id" onclick="return false;">ID <i class="order-desc sortable-icon"></i></a></th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Email</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div><!--.rd-datatable-wrapper-->
                     <pre>&lt;div class=&quot;rd-datatable-wrapper&quot;&gt;
@@ -497,16 +497,6 @@ include 'includes/html-head.php';
                 &lt;td&gt;&lt;button class=&quot;rd-button info small&quot;&gt;Filter&lt;/button&gt;&lt;/td&gt;
             &lt;/tr&gt;
         &lt;/thead&gt;
-        &lt;tfoot&gt;
-            &lt;tr&gt;
-                &lt;th class=&quot;column-checkbox&quot;&gt;&lt;input type=&quot;checkbox&quot; onclick=&quot;RundizTemplateAdmin.dataTableCheckboxToggler(this);&quot;&gt;&lt;/th&gt;
-                &lt;th class=&quot;sorted&quot;&gt;&lt;a href=&quot;?sort=id&quot; onclick=&quot;return false;&quot;&gt;ID &lt;i class=&quot;order-desc sortable-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/th&gt;
-                &lt;th&gt;Name&lt;/th&gt;
-                &lt;th&gt;Address&lt;/th&gt;
-                &lt;th&gt;Email&lt;/th&gt;
-                &lt;th&gt;Actions&lt;/th&gt;
-            &lt;/tr&gt;
-        &lt;/tfoot&gt;
         &lt;tbody&gt;
             &lt;tr&gt;
                 &lt;td class=&quot;column-checkbox&quot;&gt;&lt;input type=&quot;checkbox&quot; name=&quot;id[]&quot; value=&quot;20&quot;&gt;&lt;/td&gt;
@@ -526,6 +516,16 @@ include 'includes/html-head.php';
                 &lt;/td&gt;
             &lt;/tr&gt;
         &lt;/tbody&gt;
+        &lt;tfoot&gt;
+            &lt;tr&gt;
+                &lt;th class=&quot;column-checkbox&quot;&gt;&lt;input type=&quot;checkbox&quot; onclick=&quot;RundizTemplateAdmin.dataTableCheckboxToggler(this);&quot;&gt;&lt;/th&gt;
+                &lt;th class=&quot;sorted&quot;&gt;&lt;a href=&quot;?sort=id&quot; onclick=&quot;return false;&quot;&gt;ID &lt;i class=&quot;order-desc sortable-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/th&gt;
+                &lt;th&gt;Name&lt;/th&gt;
+                &lt;th&gt;Address&lt;/th&gt;
+                &lt;th&gt;Email&lt;/th&gt;
+                &lt;th&gt;Actions&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/tfoot&gt;
     &lt;/table&gt;
 &lt;/div&gt;</pre>
                     <h3>Responsive</h3>
@@ -540,14 +540,6 @@ include 'includes/html-head.php';
                                     <th><a href="?sort=email" onclick="return false;">Email <i class="order-asc sortable-icon"></i></a></th>
                                 </tr>
                             </thead>
-                            <tfoot>
-                                <tr>
-                                    <td class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></td>
-                                    <th class="column-primary"><a href="?sort=name" onclick="return false;">Name <i class="order-asc sortable-icon"></i></a></th>
-                                    <th><a href="?sort=address" onclick="return false;">Address <i class="order-asc sortable-icon"></i></a></th>
-                                    <th><a href="?sort=email" onclick="return false;">Email <i class="order-asc sortable-icon"></i></a></th>
-                                </tr>
-                            </tfoot>
                             <tbody>
                                 <?php
                                 echo "\n";
@@ -581,6 +573,14 @@ include 'includes/html-head.php';
                                 }
                                 ?> 
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></td>
+                                    <th class="column-primary"><a href="?sort=name" onclick="return false;">Name <i class="order-asc sortable-icon"></i></a></th>
+                                    <th><a href="?sort=address" onclick="return false;">Address <i class="order-asc sortable-icon"></i></a></th>
+                                    <th><a href="?sort=email" onclick="return false;">Email <i class="order-asc sortable-icon"></i></a></th>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div>
                     <pre>&lt;table class=&quot;rd-datatable responsive&quot;&gt;
@@ -594,16 +594,6 @@ include 'includes/html-head.php';
             &lt;th&gt;&lt;a href=&quot;?sort=email&quot; onclick=&quot;return false;&quot;&gt;Email &lt;i class=&quot;order-asc sortable-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/th&gt;
         &lt;/tr&gt;
     &lt;/thead&gt;
-    &lt;tfoot&gt;
-        &lt;tr&gt;
-            &lt;td class=&quot;column-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; onclick=&quot;RundizTemplateAdmin.dataTableCheckboxToggler(this);&quot;&gt;
-            &lt;/td&gt;
-            &lt;th class=&quot;column-primary&quot;&gt;&lt;a href=&quot;?sort=name&quot; onclick=&quot;return false;&quot;&gt;Name &lt;i class=&quot;order-asc sortable-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/th&gt;
-            &lt;th&gt;&lt;a href=&quot;?sort=address&quot; onclick=&quot;return false;&quot;&gt;Address &lt;i class=&quot;order-asc sortable-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/th&gt;
-            &lt;th&gt;&lt;a href=&quot;?sort=email&quot; onclick=&quot;return false;&quot;&gt;Email &lt;i class=&quot;order-asc sortable-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/th&gt;
-        &lt;/tr&gt;
-    &lt;/tfoot&gt;
     &lt;tbody&gt;
         &lt;tr&gt;
             &lt;td class=&quot;column-checkbox&quot;&gt;
@@ -623,6 +613,16 @@ include 'includes/html-head.php';
             &lt;td data-colname=&quot;Email&quot;&gt;demo@localhost.localhost&lt;/td&gt;
         &lt;/tr&gt;
     &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td class=&quot;column-checkbox&quot;&gt;
+                &lt;input type=&quot;checkbox&quot; onclick=&quot;RundizTemplateAdmin.dataTableCheckboxToggler(this);&quot;&gt;
+            &lt;/td&gt;
+            &lt;th class=&quot;column-primary&quot;&gt;&lt;a href=&quot;?sort=name&quot; onclick=&quot;return false;&quot;&gt;Name &lt;i class=&quot;order-asc sortable-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/th&gt;
+            &lt;th&gt;&lt;a href=&quot;?sort=address&quot; onclick=&quot;return false;&quot;&gt;Address &lt;i class=&quot;order-asc sortable-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/th&gt;
+            &lt;th&gt;&lt;a href=&quot;?sort=email&quot; onclick=&quot;return false;&quot;&gt;Email &lt;i class=&quot;order-asc sortable-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
 &lt;/table&gt;</pre>
                     <p>And if there is no data.</p>
                     <table class="rd-datatable responsive">
@@ -634,6 +634,11 @@ include 'includes/html-head.php';
                                 <th>Email</th>
                             </tr>
                         </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="4">No data.</td>
+                            </tr>
+                        </tbody>
                         <tfoot>
                             <tr>
                                 <td class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></td>
@@ -642,11 +647,6 @@ include 'includes/html-head.php';
                                 <th>Email</th>
                             </tr>
                         </tfoot>
-                        <tbody>
-                            <tr>
-                                <td colspan="4">No data.</td>
-                            </tr>
-                        </tbody>
                     </table>
                 </div><!--.rd-page-content-->
             </main>

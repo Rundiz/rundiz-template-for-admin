@@ -80,16 +80,6 @@ include 'includes/html-head.php';
                                     <th>Extra large <small class="rd-helpers-screen-size-xl-min">&gt;=</small></th>
                                 </tr>
                             </thead>
-                            <tfoot>
-                                <tr>
-                                    <th>Class</th>
-                                    <th>Extra small <small class="rd-helpers-screen-size-xs-max">&lt;=</small></th>
-                                    <th>Small <small class="rd-helpers-screen-size-sm-min"></small> - <small class="rd-helpers-screen-size-sm-max"></small></th>
-                                    <th>Medium <small class="rd-helpers-screen-size-md-min"></small> - <small class="rd-helpers-screen-size-md-max"></small></th>
-                                    <th>Large <small class="rd-helpers-screen-size-lg-min"></small> - <small class="rd-helpers-screen-size-lg-max"></small></th>
-                                    <th>Extra large <small class="rd-helpers-screen-size-xl-min">&gt;=</small></th>
-                                </tr>
-                            </tfoot>
                             <tbody>
                                 <tr>
                                     <td colspan="6">Hidden</td>
@@ -178,6 +168,16 @@ include 'includes/html-head.php';
                                     <td><div class="helper-responsive-visibility-box visible-over-equal-xl">xl</div></td>
                                 </tr>
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Class</th>
+                                    <th>Extra small <small class="rd-helpers-screen-size-xs-max">&lt;=</small></th>
+                                    <th>Small <small class="rd-helpers-screen-size-sm-min"></small> - <small class="rd-helpers-screen-size-sm-max"></small></th>
+                                    <th>Medium <small class="rd-helpers-screen-size-md-min"></small> - <small class="rd-helpers-screen-size-md-max"></small></th>
+                                    <th>Large <small class="rd-helpers-screen-size-lg-min"></small> - <small class="rd-helpers-screen-size-lg-max"></small></th>
+                                    <th>Extra large <small class="rd-helpers-screen-size-xl-min">&gt;=</small></th>
+                                </tr>
+                            </tfoot>
                         </table>
                         <p>
                             I'm 

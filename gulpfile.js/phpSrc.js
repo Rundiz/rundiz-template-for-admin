@@ -18,7 +18,7 @@ const exec = require('child_process').exec;
 /**
  * Build HTML from PHP source.
  */
-function buildPHPFiles(cb) {
+function buildHTMLFiles(cb) {
     console.log('Building from main PHP files.');
 
     return src(['_original-source-php/*.php'], {
@@ -35,8 +35,8 @@ function buildPHPFiles(cb) {
                 callback(null, content);
             })
         )
-        ;
-}// buildPHPFiles
+    ;
+}// buildHTMLFiles
 
 
 /**
@@ -63,16 +63,15 @@ function buildPHPChanged(cb) {
                 // if edited php file is inside include folder.
                 // build all
                 console.log('  File changed is inside includes folder, calling to build all main PHP files.');
-                buildPHPFiles(cb);
-                callback(null, content);
+                buildHTMLFiles(cb);
             } else {
-                console.log('  ' + file.relative + ' > ./' + file.stem + '.html');
+                //console.log('  ' + file.relative + ' > ./' + file.stem + '.html');
                 //console.log(file.path);
                 //console.log(file.dirname);
                 //console.log(file.stem + '.html');
-                exec('php -f ' + file.path + ' > ./' + file.stem + '.html');
-                callback(null, content);
+                //exec('php -f ' + file.path + ' > ./' + file.stem + '.html');
             }
+            callback(null, content);
         })
     )
     ;
@@ -80,7 +79,7 @@ function buildPHPChanged(cb) {
 
 
 exports.buildPHP = parallel(
-    buildPHPFiles,
+    buildHTMLFiles,
 );
 
 exports.watchBuildPHP = function() {

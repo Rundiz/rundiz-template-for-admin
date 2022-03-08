@@ -328,12 +328,6 @@ unset($i);
                         <th>Table heading</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>Table footer</th>
-                        <th>Table footer</th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     <tr>
                         <td>Table data</td>
@@ -352,6 +346,12 @@ unset($i);
                         <td>Table data</td>
                     </tr>
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Table footer</th>
+                        <th>Table footer</th>
+                    </tr>
+                </tfoot>
             </table>
             <h3 id="typography-table-caption">Table with caption</h3>
             <table>
