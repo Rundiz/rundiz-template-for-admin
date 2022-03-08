@@ -7,7 +7,7 @@ $title = 'Text';
 include 'includes/html-head.php'; 
 ?> 
     </head>
-    <body ontouchstart="">
+    <body>
 <?php include 'includes/partials/page-header.php'; ?> 
         <div class="rd-page-wrapper">
 <?php include 'includes/partials/page-sidebar.php'; ?> 

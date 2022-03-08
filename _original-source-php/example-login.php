@@ -8,7 +8,7 @@ include 'includes/html-head.php';
 ?> 
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta/columns/columns-flex.css'); ?>">
     </head>
-    <body ontouchstart="">
+    <body>
         <main class="rd-columns-flex-container">
             <div class="col-xs-10 offset-xs-1 col-sm-6 offset-sm-3 col-md-4 offset-md-4">
                 <h1>Login page</h1>

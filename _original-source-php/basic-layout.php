@@ -7,7 +7,7 @@ $title = 'Basic layout';
 include 'includes/html-head.php'; 
 ?> 
     </head>
-    <body ontouchstart="">
+    <body>
 <?php include 'includes/partials/page-header.php'; ?> 
         <div class="rd-page-wrapper">
             <div class="rd-sidebar-back"></div>

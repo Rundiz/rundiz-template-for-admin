@@ -41,7 +41,7 @@ include 'includes/html-head.php';
             }
         </style>
     </head>
-    <body ontouchstart="">
+    <body>
         <main>
             <aside class="float-menu-inpage-nav">
                 <div class="float-menu-fixed">

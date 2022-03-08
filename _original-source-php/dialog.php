@@ -8,7 +8,7 @@ include 'includes/html-head.php';
 ?> 
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta/components/rdta-dialog.css'); ?>">
     </head>
-    <body ontouchstart="">
+    <body>
 <?php include 'includes/partials/page-header.php'; ?> 
         <div class="rd-page-wrapper">
 <?php include 'includes/partials/page-sidebar.php'; ?> 

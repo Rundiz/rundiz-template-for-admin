@@ -46,7 +46,7 @@ $dummyData = '[{"id":1,"name":"Gwendolyn Uphill","address":"282 Springview Stree
             }
         </style>
     </head>
-    <body ontouchstart="">
+    <body>
 <?php include 'includes/partials/page-header.php'; ?> 
         <div class="rd-page-wrapper">
 <?php include 'includes/partials/page-sidebar.php'; ?> 
