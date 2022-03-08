@@ -56,10 +56,10 @@ function assetUrl($assetUrl, array $options = [])
         parse_str($query, $queryArray);
         unset($query);
 
-        if (isset($queryArray['mt'])) {
-            $additionalQueryName = 'mt' . time();
+        if (isset($queryArray['v'])) {
+            $additionalQueryName = 'v' . time();
         } else {
-            $additionalQueryName = 'mt';
+            $additionalQueryName = 'v';
         }
 
         $assetFullPath = realpath(ROOTDIR . '/' . $url);
