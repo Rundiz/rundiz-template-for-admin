@@ -27,7 +27,7 @@ function buildHTMLFiles(cb) {
     })
         .pipe(
             each(function(content, file, callback) {
-                console.log('  ' + file.relative + ' > ./' + file.stem + '.html');
+                //console.log('  ' + file.relative + ' > ./' + file.stem + '.html');
                 //console.log(file.path);
                 //console.log(file.dirname);
                 //console.log(file.stem + '.html');
@@ -35,6 +35,7 @@ function buildHTMLFiles(cb) {
                 callback(null, content);
             })
         )
+        .pipe(print((filePath) => {return `converted ${filePath} to HTML.`}))
     ;
 }// buildHTMLFiles
 
@@ -50,30 +51,33 @@ function buildPHPChanged(cb) {
     ], {
         base: './'
     })
-    .pipe(cache('changedPHP'))
-    .pipe(
-        each(function(content, file, callback) {
-            // file is the original Vinyl file object
-            // @link https://gulpjs.com/docs/en/api/vinyl/
+        .pipe(cache('changedPHP'))
+        .pipe(
+            each(function(content, file, callback) {
+                // file is the original Vinyl file object
+                // @link https://gulpjs.com/docs/en/api/vinyl/
 
-            let filterstrings = ['includes\/', 'includes\\\\'];
-            let patternString = filterstrings.join( "|" );
-            let regex = new RegExp(patternString, "i");
-            if (regex.test(file.path)) {
-                // if edited php file is inside include folder.
-                // build all
-                console.log('  File changed is inside includes folder, calling to build all main PHP files.');
-                buildHTMLFiles(cb);
-            } else {
-                //console.log('  ' + file.relative + ' > ./' + file.stem + '.html');
-                //console.log(file.path);
-                //console.log(file.dirname);
-                //console.log(file.stem + '.html');
-                //exec('php -f ' + file.path + ' > ./' + file.stem + '.html');
-            }
-            callback(null, content);
-        })
-    )
+                let filterstrings = ['includes\/', 'includes\\\\'];
+                let patternString = filterstrings.join("|");
+                let regex = new RegExp(patternString, "i");
+                if (regex.test(file.path)) {
+                    // if edited php file is inside include folder.
+                    // build all
+                    console.log('  File changed is inside includes folder, calling to build all main PHP files.');
+                    buildHTMLFiles(cb);
+                    cb();
+                } else {
+                    //console.log('  ' + file.relative + ' > ./' + file.stem + '.html');
+                    //console.log(file.path);
+                    //console.log(file.dirname);
+                    //console.log(file.stem + '.html');
+                    exec('php -f ' + file.path + ' > ./' + file.stem + '.html');
+                    callback(null, content);
+                }
+                //callback(null, content);
+            })
+        )
+        .pipe(print((filePath) => {return `(watch) converted ${filePath} to HTML.`}))
     ;
 }// buildPHPChanged
 
