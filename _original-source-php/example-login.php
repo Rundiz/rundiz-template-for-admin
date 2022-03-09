@@ -4,8 +4,22 @@
     <head>
 <?php
 $title = 'Example login page';
-include 'includes/html-head.php'; 
 ?> 
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title><?php
+        $titleAppend = 'Rundiz template for admin';
+        if (isset($title)) {
+            echo $title . ' | ' . $titleAppend;
+        } else {
+            echo $titleAppend;
+        }
+        unset($titleAppend);
+        ?></title>
+        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/sanitize/sanitize.css', ['npm' => 'sanitize.css']); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/sanitize/typography.css', ['npm' => 'sanitize.css']); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/sanitize/forms.css', ['npm' => 'sanitize.css']); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta/typo-and-form/typo-and-form.css'); ?>">
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta/columns/columns-flex.css'); ?>">
     </head>
     <body>
@@ -42,6 +56,5 @@ include 'includes/html-head.php';
         </main>
         
 
-<?php include 'includes/js-end-body.php'; ?> 
     </body>
 </html>

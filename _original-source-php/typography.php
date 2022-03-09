@@ -4,8 +4,22 @@
     <head>
 <?php
 $title = 'Typography';
-include 'includes/html-head.php'; 
 ?> 
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title><?php
+        $titleAppend = 'Rundiz template for admin';
+        if (isset($title)) {
+            echo $title . ' | ' . $titleAppend;
+        } else {
+            echo $titleAppend;
+        }
+        unset($titleAppend);
+        ?></title>
+        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/sanitize/sanitize.css', ['npm' => 'sanitize.css']); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/sanitize/typography.css', ['npm' => 'sanitize.css']); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/sanitize/forms.css', ['npm' => 'sanitize.css']); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta/typo-and-form/typo-and-form.css'); ?>">
         <style>
             main {
                 margin: 0 auto; 
@@ -106,6 +120,9 @@ include 'includes/html-head.php';
             <header>
                 <h1>Typography & kitchen sink</h1>
             </header>
+            <p>To getting started, the most basic requirement is to load CSS files which contains 
+                <strong>sanitize</strong> CSS files, <strong>rdta/typo-and-form/typo-and-form.css</strong>
+            </p>
             <hr>
             <article class="wrap-contents-in-main">
 <?php include 'includes/partials/typography.php'; ?> 
@@ -130,6 +147,5 @@ include 'includes/html-head.php';
         </main>
 
 
-<?php include 'includes/js-end-body.php'; ?> 
     </body>
 </html>
