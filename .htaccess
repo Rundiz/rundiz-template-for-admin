@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+    Options -MultiViews
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)\.html$ _original-source-php/$1.php?%{QUERY_STRING} [L]
+
+    # auto index file.
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^.*$ _original-source-php/index.php [L] 
+</IfModule>

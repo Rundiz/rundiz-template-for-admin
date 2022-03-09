@@ -28,7 +28,6 @@ async function clean(cb) {
     await del(['assets/css/sanitize']);
     await del(['assets/css/smartmenus']);
     await del(['assets/font-awesome']);
-    await del(['*.html', '!xhr-page.html']);
 
     await Promise.resolve();
 }// clean
@@ -49,6 +48,7 @@ function replaceHeaders(cb) {
 
 exports.default = series(
     clean,
+    phpSrc.deleteHTMLFiles,
     copyPackages.copyPackages,
     rdtaJs.bundleJs,
     rdtaSass.compileRdtaSass,
@@ -60,5 +60,5 @@ exports.default = series(
 exports.watch = function() {
     watch('assets/scss/**/*.scss', rdtaSass.compileRdtaSass);
     watch('assets/js-src/**/*.js', rdtaJs.bundleJs);
-    phpSrc.watchBuildPHP();
+    phpSrc.deleteHTMLFiles();
 };

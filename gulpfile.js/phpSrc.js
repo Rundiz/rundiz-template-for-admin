@@ -82,9 +82,29 @@ function buildPHPChanged(cb) {
 }// buildPHPChanged
 
 
+/**
+ * Delete HTML files.
+ */
+async function deleteHTMLFiles(cb) {
+    const del = require('del');
+
+    console.log('Deleting HTML files.');
+    let deletedResult = await del(['*.html', '!xhr-page.html']);
+    console.log('  Deleted: ', deletedResult.join("\n    "));
+
+    await Promise.resolve();
+}// deleteHTMLFiles
+
+
 exports.buildPHP = parallel(
     buildHTMLFiles,
 );
+
+
+exports.deleteHTMLFiles = series(
+    deleteHTMLFiles,
+);
+
 
 exports.watchBuildPHP = function() {
     console.log('Watching php.');
