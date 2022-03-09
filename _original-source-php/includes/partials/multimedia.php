@@ -1,5 +1,7 @@
 <?php
 $youtubeUrl = 'https://www.youtube-nocookie.com/embed/KX3OnQeETdI';
+$audioUrl = 'https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_700KB.mp3';
+$videoUrl = 'https://file-examples-com.github.io/uploads/2020/03/file_example_WEBM_480_900KB.webm';
 ?>
             <h2 id="multimedia-dialog">Dialog</h2>
             <dialog open>This is an open dialog window</dialog>
@@ -10,13 +12,13 @@ $youtubeUrl = 'https://www.youtube-nocookie.com/embed/KX3OnQeETdI';
 
             <h2 id="multimedia-audiovideo">Audio &amp; video</h2>
             <h3 id="multimedia-audiovideoaudio">Audio</h3>
-            <audio controls></audio>
+            <audio controls src="<?php echo $audioUrl; ?>"></audio>
             <h3 id="multimedia-audiovideovideo">Video</h3>
             <video controls width="300" height="150">
-                <source src="https://file-examples-com.github.io/uploads/2020/03/file_example_WEBM_480_900KB.webm">
+                <source src="<?php echo $videoUrl; ?>">
             </video>
             <h3 id="multimedia-audiovideoembed">Embed</h3>
-            <embed type="video/webm" src="https://file-examples-com.github.io/uploads/2020/03/file_example_WEBM_480_900KB.webm" width="300" height="150">
+            <embed type="video/webm" src="<?php echo $videoUrl; ?>" width="300" height="150">
             <h3 id="multimedia-audiovideoobject">Object</h3>
             <object data="<?php echo $youtubeUrl; ?>" width="300" height="150"></object>
 
