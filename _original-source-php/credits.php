@@ -38,6 +38,7 @@ include 'includes/html-head.php';
                     <h3>Reference</h3>
                     <ul>
                         <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" target="mdnhtmlelement">MDN HTML elements</a></li>
+                        <li><a href="https://file-examples.com/" target="fileexamples">File examples for audio &amp; video files</a></li>
                     </ul>
                 </div><!--.rd-page-content-->
             </main>
