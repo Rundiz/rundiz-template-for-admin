@@ -3,13 +3,17 @@
 * Rundiz template alert dialog -- styling alert dialog elements.
 * ----------------------------------------------------------------------------------------------
 */
+.rd-alertdialog-modal {
+  --alertdialog-backdrop-z-index: 2000;
+}
+
 body.rd-alertdialog-modal-open {
   overflow: hidden;
 }
 
 .rd-alertdialog {
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid var(--block-border-color);
   display: flex;
   flex-direction: column;
   padding: 0;
@@ -59,10 +63,10 @@ body.rd-alertdialog-modal-open {
   display: flex;
 }
 .rd-alertdialog .rd-dialog-footer {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--block-border-color);
 }
 .rd-alertdialog .rd-dialog-header {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--block-border-color);
 }
 .rd-alertdialog .rd-dialog-title {
   margin: 0;
@@ -112,7 +116,7 @@ body.rd-alertdialog-modal-open {
   top: 0;
   transition: opacity 0.3s, visibility 0.3s;
   visibility: hidden;
-  z-index: 2000;
+  z-index: var(--alertdialog-backdrop-z-index);
 }
 .rd-alertdialog-modal.show {
   opacity: 1;
@@ -121,7 +125,7 @@ body.rd-alertdialog-modal-open {
 .rd-alertdialog-modal .rd-alertdialog {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-  max-height: calc(100vh - 2.5rem);
+  max-height: calc(100vh - var(--block-element-margin-vertical) * 2);
   overflow: hidden;
   top: 50%;
   transform: translate(0, -50%);

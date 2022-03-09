@@ -9,8 +9,8 @@
   flex-wrap: wrap;
 }
 .rd-columns-flex-container.fix-columns-container-edge {
-  margin-left: -0.625rem;
-  margin-right: -0.625rem;
+  margin-left: calc(var(--block-element-margin-horizontal) * -1);
+  margin-right: calc(var(--block-element-margin-horizontal) * -1);
 }
 .rd-columns-flex-container .column {
   align-self: flex-start;
@@ -18,7 +18,7 @@
   flex-grow: 1;
   flex-shrink: 1;
   min-width: 0;
-  padding: 0 0.625rem;
+  padding: 0 var(--block-element-padding-horizontal);
 }
 .rd-columns-flex-container .column-break {
   flex-basis: 100%;

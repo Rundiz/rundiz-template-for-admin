@@ -7,6 +7,29 @@
  * @link https://gist.github.com/certainlyakey/e9c0d8f5c87ff47e3d5b#gistcomment-3458258 Original source code.
  */
 /*
+mixin: link actions color.
+@todo [rdta] use relative color when browsers supported.
+@link https://stackoverflow.com/a/55330103/128761 Original source code for hsl calculation.
+@link https://stackoverflow.com/a/67209745/128761 Escape string for hsl() with calc() functions.
+*/
+/*
+CSS 3 variables
+
+These variables will be work with based, typo, form (typo-and-form.css) and also work with the rest of RDTA.
+*/
+:root {
+  --basic-focus-color: rgba(153, 153, 153, 0.35);
+  --form-focus-color: rgba(255, 182, 0, 0.35);
+  --page-background-color: #FFF;
+  --page-text-color: #333;
+  --block-background-color: #eee;
+  --block-border-color: #ddd;
+  --content-block-element-margin-vertical: 0.625rem;
+  --inputrange-thumb-border-color: #AAA;
+  --text-link-color: #1280EF;
+}
+
+/*
 * ----------------------------------------------------------------------------------------------
 * focusable elements
 *
@@ -16,7 +39,7 @@
 * ----------------------------------------------------------------------------------------------
 */
 :focus {
-  outline: 2px dotted rgba(153, 153, 153, 0.35);
+  outline: 2px dotted var(--basic-focus-color);
 }
 
 button:focus,
@@ -25,7 +48,7 @@ button:focus,
 input:focus,
 select:focus,
 textarea:focus {
-  outline: 3px solid rgba(255, 182, 0, 0.35);
+  outline: 3px solid var(--form-focus-color);
 }
 
 input[type=radio]:focus {
@@ -36,7 +59,7 @@ button:-moz-focusring,
 [type=button]:-moz-focusring,
 [type=reset]:-moz-focusring,
 [type=submit]:-moz-focusring {
-  outline: 2px solid rgba(255, 182, 0, 0.35);
+  outline: 2px solid var(--form-focus-color);
 }
 
 input[type=color]::-moz-focus-inner {
@@ -45,11 +68,11 @@ input[type=color]::-moz-focus-inner {
 
 /*
 * ----------------------------------------------------------------------------------------------
-* typography
+* based html & typography
 * ----------------------------------------------------------------------------------------------
 */
 html {
-  background-color: #fff;
+  background-color: var(--page-background-color);
   cursor: auto;
   font-size: 107%;
 }
@@ -60,7 +83,7 @@ html {
 }
 
 body {
-  color: #333;
+  color: var(--page-text-color);
   cursor: auto;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid sans", "Helvetica Neue", "Helvetica", "Tahoma", "Arial", sans-serif;
   font-size: 100%;
@@ -70,7 +93,7 @@ body {
 }
 
 a {
-  color: #1280EF;
+  color: var(--text-link-color);
   text-decoration: none;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
@@ -92,9 +115,9 @@ abbr {
 }
 
 blockquote {
-  border-left: 5px solid #ddd;
+  border-left: 5px solid var(--block-border-color);
   border-right: 0;
-  margin: 0 0 0.625rem 0;
+  margin: 0 0 var(--content-block-element-margin-vertical) 0;
   padding: 0 0 0 0.625em;
 }
 
@@ -106,7 +129,7 @@ code, samp, pre, kbd {
 }
 
 details {
-  margin: 0 0 0.625rem 0;
+  margin: 0 0 var(--content-block-element-margin-vertical) 0;
 }
 details details {
   margin-left: 1.111em;
@@ -117,7 +140,7 @@ details summary {
 }
 
 dl {
-  margin: 0 0 0.625rem 0;
+  margin: 0 0 var(--content-block-element-margin-vertical) 0;
 }
 dl dt {
   margin: 0;
@@ -131,7 +154,7 @@ dl ul {
 }
 
 h1, h2, h3, h4, h5, h6, p {
-  margin: 0 0 0.625rem 0;
+  margin: 0 0 var(--content-block-element-margin-vertical) 0;
 }
 
 h1 {
@@ -168,12 +191,12 @@ hr {
   border-bottom: 0;
   border-left: 0;
   border-right: 0;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--block-border-color);
   margin: 1.25rem 0;
 }
 
 iframe {
-  border: 1px solid #ddd;
+  border: 1px solid var(--block-border-color);
 }
 
 img.fluid {
@@ -183,7 +206,7 @@ img.fluid {
 
 kbd {
   background-color: #f1f1f1;
-  border: 1px solid #ddd;
+  border: 1px solid var(--block-border-color);
   border-radius: 2px;
 }
 
@@ -196,7 +219,7 @@ label [readonly] {
 }
 
 meter {
-  background-color: #eee;
+  background-color: var(--block-background-color);
   background-image: none;
   box-shadow: none;
   display: inline-block;
@@ -229,7 +252,7 @@ meter::-webkit-meter-even-less-good-value {
   background-image: none;
 }
 meter::-webkit-meter-bar {
-  background-color: #eee;
+  background-color: var(--block-background-color);
   background-image: none;
   border: none;
   border-radius: 0;
@@ -238,7 +261,7 @@ meter::-webkit-meter-bar {
 }
 
 pre {
-  margin: 0 0 0.625rem 0;
+  margin: 0 0 var(--content-block-element-margin-vertical) 0;
   overflow: auto;
   padding: 0.625em;
 }
@@ -255,7 +278,7 @@ progress {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  background-color: #eee;
+  background-color: var(--block-background-color);
   border: none;
   height: 1em;
   width: 11.25em;
@@ -280,7 +303,7 @@ progress::-ms-fill {
   background-color: green;
 }
 progress::-webkit-progress-bar {
-  background-color: #eee;
+  background-color: var(--block-background-color);
 }
 progress::-webkit-progress-value {
   background-color: green;
@@ -294,33 +317,33 @@ q::before {
 }
 
 samp {
-  background-color: #eee;
+  background-color: var(--block-background-color);
   border-bottom: 0;
-  border-left: 3px solid #ddd;
+  border-left: 3px solid var(--block-border-color);
   border-right: 0;
   border-top: 0;
 }
 
 table {
-  border: 1px solid #ddd;
-  margin-bottom: 0.625rem;
+  border: 1px solid var(--block-border-color);
+  margin-bottom: var(--content-block-element-margin-vertical);
 }
 table thead th,
 table thead td,
 table tfoot th,
 table tfoot td {
-  background-color: #eee;
+  background-color: var(--block-background-color);
   font-weight: 600;
   text-align: left;
 }
 table td, table th {
-  border: 1px solid #ddd;
+  border: 1px solid var(--block-border-color);
   padding: 0.313em;
 }
 
 menu, ul, ol {
   line-height: 1.6;
-  margin: 0 0 0.625rem 1.211em;
+  margin: 0 0 var(--content-block-element-margin-vertical) 1.211em;
   padding: 0;
 }
 menu li, ul li, ol li {
@@ -351,7 +374,7 @@ menu, ul {
 }
 
 var {
-  border: 1px solid #ddd;
+  border: 1px solid var(--block-border-color);
   padding: 0.063em 0.375em 0.063em 0.188em;
 }
 
@@ -387,11 +410,11 @@ button {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  background-color: #eee;
-  border: 1px solid #ddd;
+  background-color: var(--block-background-color);
+  border: 1px solid var(--block-border-color);
   border-radius: 0;
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
-  color: #333;
+  color: inherit;
   cursor: pointer;
   display: inline-block;
   margin-bottom: 2px;
@@ -463,12 +486,12 @@ button.disabled:active {
 }
 
 fieldset {
-  border: 1px solid #ddd;
-  margin: 0 0 0.625rem 0;
+  border: 1px solid var(--block-border-color);
+  margin: 0 0 var(--content-block-element-margin-vertical) 0;
   padding: 0.625em;
 }
 fieldset legend {
-  border: 1px solid #ddd;
+  border: 1px solid var(--block-border-color);
   padding: 0.125em 0.313em;
 }
 
@@ -484,7 +507,7 @@ input[type=text],
 input[type=time],
 input[type=url],
 input[type=week] {
-  border: 1px solid #ddd;
+  border: 1px solid var(--block-border-color);
   border-radius: 0;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
   font-family: inherit;
@@ -541,14 +564,14 @@ input[type=url][disabled],
 input[type=url][readonly],
 input[type=week][disabled],
 input[type=week][readonly] {
-  background-color: #eee;
-  color: #999;
+  background-color: var(--block-background-color);
+  color: var(--text-disabled-color);
   cursor: not-allowed;
 }
 
 input[type=color] {
   cursor: pointer;
-  border: 1px solid #ddd;
+  border: 1px solid var(--block-border-color);
   height: 2em;
   padding: 0;
 }
@@ -569,7 +592,7 @@ input[type=radio] {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  border: 1px solid #ddd;
+  border: 1px solid var(--block-border-color);
   color-adjust: exact;
   cursor: pointer;
   height: 1em;
@@ -578,7 +601,7 @@ input[type=radio] {
 input[type=checkbox][disabled], input[type=checkbox][readonly],
 input[type=radio][disabled],
 input[type=radio][readonly] {
-  background-color: #eee;
+  background-color: var(--block-background-color);
   cursor: not-allowed;
 }
 
@@ -605,8 +628,8 @@ input[type=file] {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 input[type=file]::file-selector-button, input[type=file]::-webkit-file-upload-button {
-  background-color: #eee;
-  border: 1px solid #ddd;
+  background-color: var(--block-background-color);
+  border: 1px solid var(--block-border-color);
   cursor: pointer;
   font: inherit;
 }
@@ -620,7 +643,7 @@ input[type=file][disabled]::file-selector-button, input[type=file][disabled]::-w
 input[type=image] {
   border: none;
   border-radius: 0;
-  color: #333;
+  color: inherit;
   cursor: pointer;
   display: inline-block;
   margin: 0;
@@ -640,7 +663,7 @@ select {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  border: 1px solid #ddd;
+  border: 1px solid var(--block-border-color);
   border-radius: 0;
   font-family: inherit;
   font-size: 0.99em;
@@ -648,8 +671,8 @@ select {
   padding: 0.313em 1.5em 0.313em 0.188em;
 }
 select[disabled], select[readonly] {
-  background-color: #eee;
-  color: #999;
+  background-color: var(--block-background-color);
+  color: var(--text-disabled-color);
   cursor: not-allowed;
 }
 
@@ -658,7 +681,7 @@ select:not([multiple]) {
 }
 
 textarea {
-  border: 1px solid #ddd;
+  border: 1px solid var(--block-border-color);
   border-radius: 0;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
   font-family: inherit;
@@ -670,8 +693,8 @@ textarea:active, textarea:focus {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
 }
 textarea[disabled], textarea[readonly] {
-  background-color: #eee;
-  color: #999;
+  background-color: var(--block-background-color);
+  color: var(--text-disabled-color);
   cursor: not-allowed;
 }
 
@@ -690,7 +713,7 @@ textarea[disabled], textarea[readonly] {
   vertical-align: middle;
 }
 .rd-inputfile:active, .rd-inputfile:focus {
-  outline: 3px solid rgba(255, 182, 0, 0.35);
+  outline: 3px solid var(--form-focus-color);
 }
 .rd-inputfile input[type=file] {
   display: block;
@@ -737,8 +760,8 @@ input[type=range] {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 input[type=range]::-moz-range-thumb {
-  background: #eee;
-  border: 1px solid #AAA;
+  background: var(--block-background-color);
+  border: 1px solid var(--inputrange-thumb-border-color);
   border-radius: 0px;
   box-shadow: none;
   cursor: pointer;
@@ -747,9 +770,9 @@ input[type=range]::-moz-range-thumb {
 }
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  background: #eee;
+  background: var(--block-background-color);
   box-shadow: none;
-  border: 1px solid #AAA;
+  border: 1px solid var(--inputrange-thumb-border-color);
   border-radius: 0px;
   cursor: pointer;
   height: 30px;
@@ -786,8 +809,8 @@ input[type=range]::-ms-track {
   height: 3px;
 }
 input[type=range]::-ms-thumb {
-  background: #eee;
-  border: 1px solid #AAA;
+  background: var(--block-background-color);
+  border: 1px solid var(--inputrange-thumb-border-color);
   border-radius: 0px;
   box-shadow: none;
   cursor: pointer;

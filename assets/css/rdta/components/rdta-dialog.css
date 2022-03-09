@@ -3,13 +3,17 @@
 * Rundiz template dialog -- styling dialog elements.
 * ----------------------------------------------------------------------------------------------
 */
+.rd-dialog-modal {
+  --dialog-backdrop-z-index: 1010;
+}
+
 body.rd-modal-open {
   overflow: hidden;
 }
 
 .rd-dialog {
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid var(--block-border-color);
   display: flex;
   flex-direction: column;
   padding: 0;
@@ -59,10 +63,10 @@ body.rd-modal-open {
   display: flex;
 }
 .rd-dialog .rd-dialog-footer {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--block-border-color);
 }
 .rd-dialog .rd-dialog-header {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--block-border-color);
 }
 .rd-dialog .rd-dialog-title {
   margin: 0;
@@ -78,7 +82,7 @@ body.rd-modal-open {
   top: 0;
   transition: opacity 0.3s, visibility 0.3s;
   visibility: hidden;
-  z-index: 1010;
+  z-index: var(--dialog-backdrop-z-index);
 }
 .rd-dialog-modal.show {
   opacity: 1;
@@ -87,7 +91,7 @@ body.rd-modal-open {
 .rd-dialog-modal .rd-dialog {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-  max-height: calc(100vh - 2.5rem);
+  max-height: calc(100vh - var(--block-element-margin-vertical) * 2);
   overflow: hidden;
   top: 50%;
   transform: translate(0, -50%);

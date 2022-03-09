@@ -7,7 +7,7 @@
   margin-left: 0;
 }
 .rd-accordion .rd-accordion-group {
-  border-color: #ddd;
+  border-color: var(--block-border-color);
   border-style: solid;
   border-bottom-width: 0;
   border-top-width: 1px;
@@ -20,7 +20,7 @@
   border-bottom-width: 1px;
 }
 .rd-accordion .rd-accordion-group .rd-accordion-body {
-  padding: 0.625rem;
+  padding: var(--block-element-padding-vertical);
 }
 .rd-accordion .rd-accordion-group .rd-accordion-body.collapse {
   height: 0;
@@ -31,14 +31,14 @@
 }
 .rd-accordion .rd-accordion-group .rd-accordion-body.collapse.expanded {
   height: auto;
-  padding-bottom: 0.625rem;
-  padding-top: 0.625rem;
+  padding-bottom: var(--block-element-padding-vertical);
+  padding-top: var(--block-element-padding-vertical);
 }
 .rd-accordion .rd-accordion-group .rd-accordion-header {
-  background-color: #eee;
-  border-bottom: 1px solid #ddd;
+  background-color: var(--block-background-color);
+  border-bottom: 1px solid var(--block-border-color);
   margin: 0;
-  padding: 0.313rem 0.625rem;
+  padding: 0.313rem var(--block-element-padding-horizontal);
 }
 .rd-accordion .rd-accordion-group .rd-accordion-header > * {
   color: inherit;
