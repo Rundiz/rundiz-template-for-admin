@@ -2,15 +2,15 @@
             <section class="rd-sidebar">
                 <div class="rd-sidebar-inner">
                     <ul class="rd-sidebar-item-list sm sm-vertical sm-rdta">
-                        <li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-tachometer-alt fa-fw"></i> <span class="rd-sidebar-menu-text">Admin home</span></a>
+                        <li><a href="#" onclick="return false;" title="Admin home"><i class="sidebar-icon fas fa-tachometer-alt fa-fw"></i> <span class="rd-sidebar-menu-text">Admin home</span></a>
                             <ul>
                                 <li><a href="./">Admin dashboard</a></li>
                                 <li><a href="javascript:alert('link clicked');">Update</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-home fa-fw"></i> <span class="rd-sidebar-menu-text">Front home</span></a></li>
-                        <li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-cog fa-fw"></i> <span class="rd-sidebar-menu-text">Settings</span></a></li>
-                        <li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-cubes fa-fw"></i> <span class="rd-sidebar-menu-text">Sub menus</span></a>
+                        <li><a href="#" onclick="return false;" title="Front home"><i class="sidebar-icon fas fa-home fa-fw"></i> <span class="rd-sidebar-menu-text">Front home</span></a></li>
+                        <li><a href="#" onclick="return false;" title="Settings"><i class="sidebar-icon fas fa-cog fa-fw"></i> <span class="rd-sidebar-menu-text">Settings</span></a></li>
+                        <li><a href="#" onclick="return false;" title="Sub menus"><i class="sidebar-icon fas fa-cubes fa-fw"></i> <span class="rd-sidebar-menu-text">Sub menus</span></a>
                             <ul>
                                 <li><a href="javascript:alert('link clicked');">1</a>
                                     <ul>
@@ -95,7 +95,7 @@ for ($i = 1; $i <= 50; $i++) {
                                 <li><a href="#" onclick="return false;">10</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-greater-than-equal fa-fw"></i> <span class="rd-sidebar-menu-text">Longggggggggg menu item text that is very long</span></a>
+                        <li><a href="#" onclick="return false;" title="Long menu text"><i class="sidebar-icon fas fa-greater-than-equal fa-fw"></i> <span class="rd-sidebar-menu-text">Longggggggggg menu item text that is very long</span></a>
                             <ul>
                                 <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 1</a>
                                     <ul>
@@ -122,7 +122,7 @@ for ($i = 1; $i <= 50; $i++) {
                                 <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 5</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-server fa-fw"></i> <span class="rd-sidebar-menu-text">Components</span></a>
+                        <li><a href="#" onclick="return false;" title="Components"><i class="sidebar-icon fas fa-server fa-fw"></i> <span class="rd-sidebar-menu-text">Components</span></a>
                             <ul>
                                 <li class="sub-menu-heading"><a>Basic component &amp; example</a></li>
                                 <li><a href="typography.html">Typography</a></li>
@@ -153,13 +153,13 @@ for ($i = 1; $i <= 50; $i++) {
                                 <li><a href="tooltips.html">Tooltips</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-laptop-code"></i> <span class="rd-sidebar-menu-text">Examples</span></a>
+                        <li><a href="#" onclick="return false;" title="Examples"><i class="sidebar-icon fas fa-laptop-code"></i> <span class="rd-sidebar-menu-text">Examples</span></a>
                             <ul>
                                 <li><a href="example-login.html">Login page</a></li>
                                 <li><a href="example-logout.html">Logout page</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-code fa-fw"></i> <span class="rd-sidebar-menu-text">Tools &amp; guide</span></a>
+                        <li><a href="#" onclick="return false;" title="Tools &amp; guide"><i class="sidebar-icon fas fa-code fa-fw"></i> <span class="rd-sidebar-menu-text">Tools &amp; guide</span></a>
                             <ul>
                                 <li><a href="credits.html">Credits</a></li>
                                 <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="tools_cssgrid">CSS grid</a></li>
