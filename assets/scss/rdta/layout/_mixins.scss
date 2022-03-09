@@ -12,7 +12,7 @@
         min-height: 100%;
         padding: 0;
         position: absolute;
-        width: $sidebar-expanded-width;
+        width: var(--sidebar-expanded-width);
 
         // .rd-page-wrapper .rd-sidebar a
         a {
@@ -27,7 +27,7 @@
                 > a {
                     display: block;
                     overflow-wrap: break-word;
-                    padding: 0.625rem 2.125rem 0.625rem 0.625rem;
+                    padding: var(--block-element-padding-vertical) 2.125rem var(--block-element-padding-vertical) var(--block-element-padding-horizontal);
                     word-break: break-all;
                     // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list > li > a > span.rd-sidebar-menu-text
                     > span.rd-sidebar-menu-text {
@@ -37,15 +37,15 @@
                     // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list > li > a > .sidebar-icon
                     .sidebar-icon {
                         font-size: 1.250rem;
-                        transition: font-size $sidebar-transition-seconds;
+                        transition: font-size var(--sidebar-transition-seconds);
                     }
                 }
             }
             // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list li.divider
             li.divider {
-                border-bottom: 1px solid $border-color;
-                margin-bottom: 0.625rem;
-                margin-top: 0.625rem;
+                border-bottom: 1px solid var(--block-border-color);
+                margin-bottom: var(--content-block-element-margin-vertical);
+                margin-top: var(--content-block-element-margin-vertical);
                 // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list li.divider a
                 a {
                     display: none;
@@ -82,7 +82,7 @@
         // .rd-page-wrapper.mini-screen-sidebar-visible > main
         > footer,
         > main {
-            transform: translateX($sidebar-expanded-width);
+            transform: translateX(var(--sidebar-expanded-width));
         }
         // .rd-page-wrapper.mini-screen-sidebar-visible .rd-sidebar
         .rd-sidebar {
@@ -112,7 +112,7 @@
 @mixin rd-page-wrapperIs-collapsed_rd-sidebar {
     // this will becomes .rd-page-wrapper.is-collapsed .rd-sidebar
     .rd-sidebar {
-        width: $sidebar-collapsed-width;
+        width: var(--sidebar-collapsed-width);
         // .rd-page-wrapper.is-collapsed .rd-sidebar ul.rd-sidebar-item-list
         ul.rd-sidebar-item-list {
             // .rd-page-wrapper.is-collapsed .rd-sidebar ul.rd-sidebar-item-list > li
@@ -141,7 +141,7 @@
         // to use css position sticky, enable these code but it is not recommended because in long content page the menu will still stick to top until it matches the bottom of content.
         //bottom: 0;
         //position: sticky;
-        //top: $navbar-height;
-        z-index: ($z-index-sidebar + 1);// fix sticky menu cause the menu is under everything that contain `position: relative;`.
+        //top: var(--navbar-height);
+        z-index: calc(var(--sidebar-z-index) + 1);// fix sticky menu cause the menu is under everything that contain `position: relative;`.
     }
 }

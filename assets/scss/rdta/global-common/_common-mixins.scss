@@ -32,15 +32,29 @@
 }
 
 
-@mixin link-actions-color($colorName) {
+/*
+mixin: link actions color.
+@todo [rdta] use relative color when browsers supported.
+@link https://stackoverflow.com/a/55330103/128761 Original source code for hsl calculation.
+@link https://stackoverflow.com/a/67209745/128761 Escape string for hsl() with calc() functions.
+*/
+@mixin link-actions-color($colorValue, $colorVar) {
     &:active {
-        color: darken($colorName, 15);
+        //@if (type-of($colorValue) == 'string' and str-index($colorValue, '--')) {
+            //color: #{'hsl(from var(' + #{$colorValue} + ') h s calc(l - 45%))'};// browsers not supported yet
+        //} @else {
+            color: darken($colorValue, 15);
+        //}
     }
     &:focus,
     &:hover {
-        color: lighten($colorName, 15);
+        //@if (type-of($colorValue) == 'string' and str-index($colorValue, '--')) {
+            //color: #{'hsl(from var(' + #{$colorValue} + ') h s calc(l + 15%))'};
+        //} @else {
+            color: lighten($colorValue, 15);
+        //}
     }
     &:visited {
-        color: $colorName;
+        color: var($colorVar);
     }
 }

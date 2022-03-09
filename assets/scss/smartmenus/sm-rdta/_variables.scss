@@ -3,4 +3,4 @@
 
 // sub menu item wrapper such as <a>, <span>.
 $submenu-item-wrapper-fontsize: 0.875rem !default;
-$submenu-item-wrapper-padding: 0.625rem 35px 0.625rem 0.625rem !default;
+$submenu-item-wrapper-padding: var(--block-element-padding-vertical) 35px var(--block-element-padding-vertical) var(--block-element-padding-horizontal) !default;

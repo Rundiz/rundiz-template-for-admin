@@ -2,12 +2,14 @@
 * ----------------------------------------------------------------------------------------------
 * rundiz template for admin - layout for styling grid, columns
 * ----------------------------------------------------------------------------------------------
+* This use CSS `display: flex`, not `display: grid`. It is alternative for *_layout-displaygrid.scss* file.
 */
 
 
 @import '_variables';
 
 
+@import '../_css-variables';
 @import '_layout-common';
 @import '_layout-common-sidebar';
 
@@ -34,7 +36,7 @@
         flex-basis: 100%;
         font-size: 0.688em;
         min-height: 1.250rem;
-        padding: 0.313rem $block-element-margin-sides;
+        padding: 0.313rem var(--block-element-padding-horizontal);
 
         // .rd-page-wrapper > footer a
         a {
@@ -45,14 +47,14 @@
         .rd-page-footer-left {
             margin-left: 0;
             margin-right: 0;
-            padding-right: $block-element-margin-sides;
+            padding-right: var(--block-element-padding-horizontal);
         }
 
         // .rd-page-wrapper > footer .rd-page-footer-right
         .rd-page-footer-right {
             margin-left: auto;
             margin-right: 0;
-            padding-left: $block-element-margin-sides;
+            padding-left: var(--block-element-padding-horizontal);
         }
     }
 
@@ -75,9 +77,9 @@
         // .rd-page-wrapper > footer
         > footer {
             display: flex;
-            flex-basis: calc(100% - #{$sidebar-expanded-width});
-            transform: translateX($sidebar-expanded-width);
-            transition: flex-basis $sidebar-transition-seconds, transform $sidebar-transition-seconds;
+            flex-basis: calc(100% - var(--sidebar-expanded-width));
+            transform: translateX(var(--sidebar-expanded-width));
+            transition: flex-basis var(--sidebar-transition-seconds), transform var(--sidebar-transition-seconds);
         }
 
         // .rd-page-wrapper .rd-sidebar
@@ -86,15 +88,15 @@
             background-color: transparent;
             display: block;
             position: relative;
-            transition: width $sidebar-transition-seconds;
-            width: $sidebar-expanded-width;
+            transition: width var(--sidebar-transition-seconds);
+            width: var(--sidebar-expanded-width);
 
             // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list
             ul.rd-sidebar-item-list {
                 > li {
                     // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list > li > a
                     >a {
-                        padding: 0.625rem 1.125rem 0.625rem 0.625rem;
+                        padding: var(--block-element-padding-vertical) 1.125rem var(--block-element-padding-vertical) var(--block-element-padding-horizontal);
                     }
                 }
             }
@@ -103,8 +105,8 @@
         &.is-collapsed {
             // .rd-page-wrapper.is-collapsed > footer
             > footer {
-                flex-basis: calc(100% - #{$sidebar-collapsed-width});
-                transform: translateX($sidebar-collapsed-width);
+                flex-basis: calc(100% - var(--sidebar-collapsed-width));
+                transform: translateX(var(--sidebar-collapsed-width));
             }
 
             // .rd-page-wrapper.is-collapsed .rd-sidebar

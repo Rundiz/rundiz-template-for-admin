@@ -9,10 +9,10 @@
 
 
 .rd-block-level-margin-bottom {
-    margin-bottom: $block-element-margin-bottom;
+    margin-bottom: var(--block-element-margin-vertical);
 }
 .rd-content-level-margin-bottom {
-    margin-bottom: math.div($block-element-margin-bottom, 2);
+    margin-bottom: var(--content-block-element-margin-vertical);
 }
 
 

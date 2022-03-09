@@ -9,11 +9,11 @@
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
-    background-color: $background-color;
-    border: 1px solid $border-color;
+    background-color: var(--block-background-color);
+    border: 1px solid var(--block-border-color);
     border-radius: 0;
     box-shadow: 0 $button-3d-height 0 rgba(0, 0, 0, 0.1);
-    color: $font-color;
+    color: inherit;
     cursor: pointer;
     display: inline-block;
     margin-bottom: $button-3d-height;// must be the same value as box shadow bottom.
@@ -37,9 +37,9 @@
     }
     &[disabled],
     &.disabled {
-        background-color: lighten($background-color, 2);
+        background-color: lighten($block-background-color, 2);
         box-shadow: 0 $button-3d-height 0 lighten(rgba(0, 0, 0, 0.1), 15);
-        color: lighten($font-color, 40);
+        color: lighten($page-text-color, 40);
         cursor: not-allowed;
         opacity: 1;
         &:active {
@@ -57,11 +57,11 @@ button {
 
 
 fieldset {
-    border: 1px solid $border-color;
-    margin: 0 0 $content-block-element-margin-bottom 0;
+    border: 1px solid var(--block-border-color);
+    margin: 0 0 var(--content-block-element-margin-vertical) 0;
     padding: 0.625em;
     legend {
-        border: 1px solid $border-color;
+        border: 1px solid var(--block-border-color);
         padding: 0.125em 0.313em;
     }
 }
@@ -94,7 +94,7 @@ input[type="submit"] {
 
 input[type="color"] {
     cursor: pointer;
-    border: 1px solid $border-color;
+    border: 1px solid var(--block-border-color);
     height: 2em;
     padding: 0;
     &::-webkit-color-swatch-wrapper {
@@ -117,21 +117,21 @@ input[type="radio"] {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    border: 1px solid $border-color;
+    border: 1px solid var(--block-border-color);
     color-adjust: exact;
     cursor: pointer;
     height: 1em;
     width: 1em;
     &[disabled],
     &[readonly] {
-        background-color: $background-color;
+        background-color: var(--block-background-color);
         cursor: not-allowed;
     }
 }
 input[type="checkbox"] {
     &:checked {
         // use checked icon from Bootstrap 5.
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='#{encodecolor($font-color)}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='#{encodecolor($page-text-color)}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
         &[disabled] {
             opacity: .5;
         }
@@ -141,7 +141,7 @@ input[type="radio"] {
     border-radius: 50%;
     &:checked {
         // use radio checked icon from Bootstrap 5.
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='#{encodecolor($font-color)}'/%3e%3c/svg%3e");
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='#{encodecolor($page-text-color)}'/%3e%3c/svg%3e");
         &[disabled] {
             opacity: .5;
         }
@@ -156,8 +156,8 @@ input[type="file"] {
 
     &::file-selector-button,
     &::-webkit-file-upload-button {
-        background-color: $background-color;
-        border: 1px solid $border-color;
+        background-color: var(--block-background-color);
+        border: 1px solid var(--block-border-color);
         cursor: pointer;
         font: inherit;
     }
@@ -176,7 +176,7 @@ input[type="file"] {
 input[type="image"] {
     border: none;
     border-radius: 0;
-    color: $font-color;
+    color: inherit;
     cursor: pointer;
     display: inline-block;
     margin: 0;
@@ -195,7 +195,7 @@ select {
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
-    border: 1px solid $border-color;// this also override active, focus in firefox.
+    border: 1px solid var(--block-border-color);// this also override active, focus in firefox.
     border-radius: 0;
     font-family: inherit;
     font-size: 0.99em;
@@ -203,8 +203,8 @@ select {
     padding: 0.313em 1.5em 0.313em 0.188em;
     &[disabled],
     &[readonly] {
-        background-color: $background-color;
-        color: $disabled-font-color;
+        background-color: var(--block-background-color);
+        color: var(--text-disabled-color);
         cursor: not-allowed;
     }
 }

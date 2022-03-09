@@ -6,19 +6,19 @@
 
 
 // text colors.
-@each $colorName, $colorValue in ("danger", $danger-color), 
-                        ("disabled", $disabled-font-color), 
-                        ("info", $info-color), 
-                        ("primary", $primary-color), 
-                        ("success", $success-color), 
-                        ("warning", $warning-color), 
-                        ("white", $white-color) {
+@each $colorName, $colorValue, $colorVar in ("danger", $danger-color, --text-danger-color), 
+                        ("disabled", $text-disabled-color, --text-disabled-color), 
+                        ("info", $info-color, --text-info-color), 
+                        ("primary", $primary-color, --text-primary-color), 
+                        ("success", $success-color, --text-success-color), 
+                        ("warning", $warning-color, --text-warning-color), 
+                        ("white", $white-color, --text-white-color) {
     .text-color-#{$colorName} {
-        color: $colorValue;
+        color: var($colorVar);
     }
     a.text-color-#{$colorName} {
-        color: $colorValue;
-        @include link-actions-color($colorValue);
+        color: var($colorVar);
+        @include link-actions-color($colorValue, $colorVar);
     }
 }
 

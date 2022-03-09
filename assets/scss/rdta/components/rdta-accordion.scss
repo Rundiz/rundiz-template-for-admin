@@ -13,7 +13,7 @@
 
     // .rd-accordion .rd-accordion-group
     .rd-accordion-group {
-        border-color: $border-color;
+        border-color: var(--block-border-color);
         border-style: solid;
         border-bottom-width: 0;
         border-top-width: 1px;
@@ -29,7 +29,7 @@
 
         // .rd-accordion .rd-accordion-group .rd-accordion-body
         .rd-accordion-body {
-            padding: .625rem;
+            padding: var(--block-element-padding-vertical);
 
             // .rd-accordion .rd-accordion-group .rd-accordion-body.collapse
             &.collapse {
@@ -42,18 +42,18 @@
                 // .rd-accordion .rd-accordion-group .rd-accordion-body.collapse.expanded
                 &.expanded {
                     height: auto;
-                    padding-bottom: .625rem;
-                    padding-top: .625rem;
+                    padding-bottom: var(--block-element-padding-vertical);
+                    padding-top: var(--block-element-padding-vertical);
                 }
             }
         }
 
         // .rd-accordion .rd-accordion-group .rd-accordion-header
         .rd-accordion-header {
-            background-color: $background-color;
-            border-bottom: 1px solid $border-color;
+            background-color: var(--block-background-color);
+            border-bottom: 1px solid var(--block-border-color);
             margin: 0;
-            padding: .313rem .625rem;
+            padding: .313rem var(--block-element-padding-horizontal);
 
             // .rd-accordion .rd-accordion-group .rd-accordion-header > *
             > * {

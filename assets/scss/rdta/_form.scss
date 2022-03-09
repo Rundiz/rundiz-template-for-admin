@@ -9,12 +9,12 @@
 
 
 %input-large {
-    font-size: $form-large-font-size;
+    font-size: var(--form-large-font-size);
 }
 
 
 %input-small {
-    font-size: $form-small-font-size;
+    font-size: var(--form-small-font-size);
 }
 
 
@@ -30,19 +30,19 @@
 
 .rd-form {
     .disabled {
-        color: $disabled-font-color;
+        color: var(--text-disabled-color);
         cursor: not-allowed;
     }
 
     .form-group {
-        margin-bottom: $content-block-element-margin-bottom;
+        margin-bottom: var(--content-block-element-margin-vertical);
         .control-label {
             font-weight: 600;
             &.large {
-                font-size: $form-large-font-size;
+                font-size: var(--form-large-font-size);
             }
             &.small {
-                font-size: $form-small-font-size;
+                font-size: var(--form-small-font-size);
             }
         }
         .control-wrapper {
@@ -67,7 +67,7 @@
                 // .rd-form.horizontal .form-group .control-label
                 .control-label {
                     flex: 0 0 180px;
-                    margin-right: $block-element-margin-sides;
+                    margin-right: var(--block-element-margin-horizontal);
                 }
                 // .rd-form.horizontal .form-group .control-wrapper
                 .control-wrapper {

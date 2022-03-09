@@ -10,6 +10,8 @@
 
 
 input[type="range"] {
+    $input-range-track-color: $block-border-color;
+
     -webkit-appearance: none;
     height: 37px;
     margin: 10px 0;
@@ -17,8 +19,8 @@ input[type="range"] {
 
     // thumb
     &::-moz-range-thumb {
-        background: $background-color;
-        border: 1px solid $inputrange-thumb-border-color;
+        background: var(--block-background-color);
+        border: 1px solid var(--inputrange-thumb-border-color);
         border-radius: 0px;
         box-shadow: none;
         cursor: pointer;
@@ -27,9 +29,9 @@ input[type="range"] {
     }
     &::-webkit-slider-thumb {
         -webkit-appearance: none;
-        background: $background-color;
+        background: var(--block-background-color);
         box-shadow: none;
-        border: 1px solid $inputrange-thumb-border-color;
+        border: 1px solid var(--inputrange-thumb-border-color);
         border-radius: 0px;
         cursor: pointer;
         height: 30px;
@@ -40,7 +42,7 @@ input[type="range"] {
     // track
     &::-moz-range-track {
         animate: 0.2s;
-        background: $border-color;
+        background: $input-range-track-color;
         border: 0px solid #000000;
         border-radius: 0px;
         box-shadow: none;
@@ -49,7 +51,7 @@ input[type="range"] {
     }
     &::-webkit-slider-runnable-track {
         animate: 0.2s;
-        background: $border-color;
+        background: $input-range-track-color;
         border: 0px solid #000000;
         border-radius: 0px;
         box-shadow: none;
@@ -57,7 +59,7 @@ input[type="range"] {
         height: 3px;
     }
     &:focus::-webkit-slider-runnable-track {
-        background: $border-color;
+        background: $input-range-track-color;
     }
 
     // ms (works on Microsoft Edge only.)
@@ -70,8 +72,8 @@ input[type="range"] {
         height: 3px;
     }// track must stay before thumb.
     &::-ms-thumb {
-        background: $background-color;
-        border: 1px solid $inputrange-thumb-border-color;
+        background: var(--block-background-color);
+        border: 1px solid var(--inputrange-thumb-border-color);
         border-radius: 0px;
         box-shadow: none;
         cursor: pointer;
@@ -81,24 +83,24 @@ input[type="range"] {
         width: 15px;
     }
     &::-ms-fill-lower {
-        background: $border-color;
+        background: $input-range-track-color;
         border: 0px solid #000000;
         border-radius: 0px;
         box-shadow: none;
     }
     &::-ms-fill-upper {
-        background: $border-color;
+        background: $input-range-track-color;
         border: 0px solid #000000;
         border-radius: 0px;
         box-shadow: none;
     }
     // fill track on the left.
     &:focus::-ms-fill-lower {
-        background: $border-color;
+        background: $input-range-track-color;
     }
     // fill track on the right.
     &:focus::-ms-fill-upper {
-        background: $border-color;
+        background: $input-range-track-color;
     }
 }
 

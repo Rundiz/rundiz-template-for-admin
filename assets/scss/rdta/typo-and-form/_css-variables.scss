@@ -1,0 +1,23 @@
+/*
+CSS 3 variables
+
+These variables will be work with based, typo, form (typo-and-form.css) and also work with the rest of RDTA.
+*/
+
+
+:root {
+    --basic-focus-color: #{$basic-focus-color};
+    --form-focus-color: #{$form-focus-color};
+
+    --page-background-color: #{$page-background-color};
+    --page-text-color: #{$page-text-color};// this variable is from global-common/_common-variables.scss.
+
+    --block-background-color: #{$block-background-color};// this variable is from global-common/_common-variables.scss.
+    --block-border-color: #{$block-border-color};// this variable is from global-common/_common-variables.scss.
+
+    --content-block-element-margin-vertical: #{$content-block-element-margin-vertical};
+
+    --inputrange-thumb-border-color: #{$inputrange-thumb-border-color};
+
+    --text-link-color: #{$text-link-color};// this variable is from global-common/_common-variables.scss.
+}

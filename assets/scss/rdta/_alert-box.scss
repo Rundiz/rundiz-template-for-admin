@@ -9,14 +9,19 @@
 
 
 .rd-alertbox {
+    --alertbox-z-index: #{$z-index-alertboxfixed};// this variable is from global-common/_common-variables.scss.
+}
+
+
+.rd-alertbox {
     background-color: #fff;
-    border-left-color: $border-color;
+    border-left-color: var(--block-border-color);
     border-left-width: 5px;
     border-left-style: solid;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-    color: $font-color;
+    color: inherit;
     font-size: 0.85em;
-    margin-bottom: $block-element-margin-bottom;
+    margin-bottom: var(--block-element-margin-vertical);
     padding: 0.625em;
     position: relative;
     width: 100%;
@@ -24,28 +29,28 @@
         border-left-color: $danger-color;
         a {
             color: $danger-color;
-            @include link-actions-color($danger-color);
+            @include link-actions-color($danger-color, --text-danger-color);
         }
     }
     &.alert-info {
         border-left-color: $info-color;
         a {
             color: $info-color;
-            @include link-actions-color($info-color);
+            @include link-actions-color($info-color, --text-info-color);
         }
     }
     &.alert-success {
         border-left-color: $success-color;
         a {
             color: $success-color;
-            @include link-actions-color($success-color);
+            @include link-actions-color($success-color, --text-success-color);
         }
     }
     &.alert-warning {
         border-left-color: $warning-color;
         a {
             color: $warning-color;
-            @include link-actions-color($warning-color);
+            @include link-actions-color($warning-color, --text-warning-color);
         }
     }
     // .rd-alertbox.fixed-xxx
@@ -56,7 +61,7 @@
     &.fixed-top {
         top: 0;
         @media (min-width: $minimum-sidebar-breakpoint) {
-            min-height: math.div($mobile-screen-navbar-height, 2);// add min-height to match navbar.
+            min-height: calc(var(--navbar-height_mobilescreen) / 2);// add min-height to match navbar. it must be on top and above navbar.
         }
     }
     &.fixed-bottom,
@@ -65,17 +70,17 @@
         right: 0;
     }
     &.float-bottom {
-        bottom: $block-element-margin-sides;
+        bottom: 0.625rem;
         margin-bottom: 0;
     }
     &.float-top {
-        top: $block-element-margin-sides;
+        top: 0.625rem;
     }
     &.float-bottom,
     &.float-top {
         display: inline-block;
-        left: $block-element-margin-sides;
-        margin-right: $block-element-margin-sides;
+        left: 0.625rem;
+        margin-right: var(--block-element-margin-horizontal);
         width: auto;
     }
     &.fixed-bottom,
@@ -83,7 +88,7 @@
     &.float-bottom,
     &.float-top {
         position: fixed;
-        z-index: $z-index-alertboxfixed;
+        z-index: var(--alertbox-z-index);
         @each $colorName, $colorValue, $bgColorValue in ("danger", $danger-color, $danger-background-color), 
                         ("info", $info-color, $info-background-color), 
                         ("success", $success-color, $success-background-color), 
@@ -126,7 +131,7 @@
         &:focus,
         &:hover {
             box-shadow: none;
-            color: $font-color;
+            color: inherit;
             opacity: 0.8;
             top: 0.1rem;
         }

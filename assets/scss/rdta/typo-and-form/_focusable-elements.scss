@@ -10,7 +10,7 @@
 
 
 :focus {
-    outline: 2px dotted $other-focus-color;
+    outline: 2px dotted var(--basic-focus-color);
 }
 
 
@@ -21,7 +21,7 @@ input,
 select,
 textarea {
     &:focus {
-        outline: 3px solid $form-focus-color;
+        outline: 3px solid var(--form-focus-color);
     }
 }
 
@@ -37,7 +37,7 @@ button,
 [type="reset"],
 [type="submit"] {
     &:-moz-focusring {
-        outline: 2px solid $form-focus-color;// override focus on button in Firefox. this also override sanitize.css which is must begins with [type="xxx"].
+        outline: 2px solid var(--form-focus-color);// override focus on button in Firefox. this also override sanitize.css which is must begins with [type="xxx"].
     }
 }
 

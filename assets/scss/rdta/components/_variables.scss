@@ -8,7 +8,8 @@
 $dialog-normal-breakpoint: 550px !default;
 
 
-// tooltip
-$tooltip-background-color: #000 !default;
-$tooltip-font-color: #fff !default;
-$tooltip-arrow-size: 5px !default;
+// tooltips
+// @todo [rdta] this is deprecated, read more in rdta-tooltips.scss file.
+$tooltips-background-color: #000 !default;
+$tooltips-text-color: #fff !default;
+$tooltips-arrow-size: 5px !default;

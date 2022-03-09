@@ -17,7 +17,7 @@
 
     &:active,
     &:focus {
-        outline: 3px solid $form-focus-color;
+        outline: 3px solid var(--form-focus-color);
     }
 
     // .rd-inputfile input[type="file"]

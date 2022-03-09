@@ -11,10 +11,15 @@
 @import '_dialog-mixins';
 
 
+.rd-dialog-modal {
+    --dialog-backdrop-z-index: #{$z-index-dialogbackdrop};// this variable is from global-common/_common-variables.scss.
+}
+
+
 @include dialog-modal-open('.rd-modal-open');
 
 
 @include dialog-element('.rd-dialog');
 
 
-@include dialog-modal('.rd-dialog-modal', '.rd-dialog', $z-index-dialogbackdrop);
+@include dialog-modal('.rd-dialog-modal', '.rd-dialog', var(--dialog-backdrop-z-index));

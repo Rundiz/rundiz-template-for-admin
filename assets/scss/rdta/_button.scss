@@ -32,9 +32,9 @@ a.rd-button,
         }
         &[disabled],
         &.disabled {
-            background-color: $danger-disabled-color;
-            border-color: darken($danger-disabled-color, 7);
-            box-shadow: 0 $button-3d-height 0 darken($danger-disabled-color, 5);
+            background-color: var(--background-danger-disabled-color);
+            border-color: darken($danger-disabled-background-color, 7);
+            box-shadow: 0 $button-3d-height 0 darken($danger-disabled-background-color, 5);
         }
     }
     &.info {
@@ -47,9 +47,9 @@ a.rd-button,
         }
         &[disabled],
         &.disabled {
-            background-color: $info-disabled-color;
-            border-color: darken($info-disabled-color, 7);
-            box-shadow: 0 $button-3d-height 0 darken($info-disabled-color, 5);
+            background-color: var(--background-info-disabled-color);
+            border-color: darken($info-disabled-background-color, 7);
+            box-shadow: 0 $button-3d-height 0 darken($info-disabled-background-color, 5);
         }
     }
     &.primary {
@@ -62,9 +62,9 @@ a.rd-button,
         }
         &[disabled],
         &.disabled {
-            background-color: $primary-disabled-color;
-            border-color: darken($primary-disabled-color, 7);
-            box-shadow: 0 $button-3d-height 0 darken($primary-disabled-color, 5);
+            background-color: var(--background-primary-disabled-color);
+            border-color: darken($primary-background-disabled-color, 7);
+            box-shadow: 0 $button-3d-height 0 darken($primary-background-disabled-color, 5);
         }
     }
     &.success {
@@ -77,9 +77,9 @@ a.rd-button,
         }
         &[disabled],
         &.disabled {
-            background-color: $success-disabled-color;
-            border-color: darken($success-disabled-color, 7);
-            box-shadow: 0 $button-3d-height 0 darken($success-disabled-color, 5);
+            background-color: var(--background-success-disabled-color);
+            border-color: darken($success-background-disabled-color, 7);
+            box-shadow: 0 $button-3d-height 0 darken($success-background-disabled-color, 5);
         }
     }
     &.warning {
@@ -92,21 +92,21 @@ a.rd-button,
         }
         &[disabled],
         &.disabled {
-            background-color: $warning-disabled-color;
-            border-color: darken($warning-disabled-color, 7);
-            box-shadow: 0 $button-3d-height 0 darken($warning-disabled-color, 5);
+            background-color: var(--background-warning-disabled-color);
+            border-color: darken($warning-background-disabled-color, 7);
+            box-shadow: 0 $button-3d-height 0 darken($warning-background-disabled-color, 5);
         }
     }
 
     // sizes (padding is no need due to its unit is em so font size changed it gonna be changed.)
     &.large {
-        font-size: $form-large-font-size;
+        font-size: var(--form-large-font-size);
     }
     &.small {
-        font-size: $form-small-font-size;
+        font-size: var(--form-small-font-size);
     }
     &.tiny {
-        font-size: $form-tiny-font-size;
+        font-size: var(--form-tiny-font-size);
     }
 }
 

@@ -4,7 +4,7 @@
 @mixin dialog-element($dialogSelectorName) {
     #{$dialogSelectorName} {
         background-color: #fff;
-        border: 1px solid $border-color;
+        border: 1px solid var(--block-border-color);
         display: flex;
         flex-direction: column;
         padding: 0;
@@ -70,11 +70,11 @@
 
         // .rd-dialog .rd-dialog-footer
         .rd-dialog-footer {
-            border-top: 1px solid $border-color;
+            border-top: 1px solid var(--block-border-color);
         }
         // .rd-dialog .rd-dialog-header
         .rd-dialog-header {
-            border-bottom: 1px solid $border-color;
+            border-bottom: 1px solid var(--block-border-color);
         }
 
         // .rd-dialog .rd-dialog-title
@@ -108,7 +108,7 @@
         #{$dialogSelectorName} {
             margin-left: .5rem;
             margin-right: .5rem;
-            max-height: calc(100vh - #{$block-element-margin-bottom * 2});
+            max-height: calc(100vh - calc(var(--block-element-margin-vertical) * 2));
             overflow: hidden;
             top: 50%;
             transform: translate(0, -50%);

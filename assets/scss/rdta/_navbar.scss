@@ -9,19 +9,19 @@
 
 
 .rd-navbar {
-    background-color: $navbar-sidebar-background-color;
+    background-color: var(--navbarsidebar-background-color);
     color: #aaa;
     display: flex;
     flex-wrap: wrap;
     height: auto;
     max-height: none;
-    min-height: $mobile-screen-navbar-height;
-    z-index: $z-index-navbar;// must higher than .sm (.sm-rdta in this theme).
+    min-height: var(--navbar-height_mobilescreen);
+    z-index: var(--navbar-z-index);// must higher than .sm (.sm-rdta in this theme).
     @media (min-width: $minimum-sidebar-breakpoint) {
-        height: math.div($mobile-screen-navbar-height, 2);
+        height: calc(var(--navbar-height_mobilescreen) / 2);
         left: 0;
-        margin-bottom: $block-element-margin-bottom;
-        min-height: math.div($mobile-screen-navbar-height, 2);
+        margin-bottom: var(--block-element-margin-vertical);
+        min-height: calc(var(--navbar-height_mobilescreen) / 2);
         position: fixed;
         right: 0;
         top: 0;
@@ -33,7 +33,7 @@
         @media (min-width: $minimum-sidebar-breakpoint) {
             flex-basis: auto;
             margin-left: auto;
-            margin-right: $block-element-margin-sides;
+            margin-right: var(--block-element-margin-horizontal);
         }
 
         // .rd-navbar .nav-right > ul
@@ -41,10 +41,10 @@
             align-items: center;
             background-color: rgba(255, 255, 255, 0.055);
             display: flex;
-            height: math.div($mobile-screen-navbar-height, 2);
+            height: calc(var(--navbar-height_mobilescreen) / 2);
             justify-content: space-around;
             margin: 0;
-            z-index: $z-index-navbar;// must higher than .sm (.sm-rdta in this theme).
+            z-index: var(--navbar-z-index);// must higher than .sm (.sm-rdta in this theme).
             @media (min-width: $minimum-sidebar-breakpoint) {
                 background-color: transparent;
                 height: 100%;
@@ -139,7 +139,7 @@
         border: none;
         box-shadow: none;
         color: inherit;
-        height: math.div($mobile-screen-navbar-height, 2);
+        height: calc(var(--navbar-height_mobilescreen) / 2);
         margin: 0;
         min-width: 50px;// must be px because it is a button and it is minimum width so it should be fixed size.
         padding: 0;
@@ -165,14 +165,14 @@
     .rd-site-brand {
         align-items: center;
         display: flex;
-        margin: 0 0 0 $block-element-margin-sides;
+        margin: 0 0 0 var(--block-element-margin-horizontal);
         a {
             color: inherit;
             text-decoration: none;
         }
         @media (min-width: $minimum-sidebar-breakpoint) {
             font-size: 1.188em;
-            height: $navbar-height;
+            height: var(--navbar-height);
         }
     }
 }

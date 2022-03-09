@@ -2,64 +2,72 @@
 
 
 // based colors and settings.
-$background-color: #eee !default;
-$border-color: #ddd !default;
-$disabled-font-color: #999 !default;
-$font-color: #333 !default;
-$link-color: #1280EF !default;
-$max-z-index: 10000 !default;
+// all variables below can be access from CSS 3 variables.
+$block-background-color: #eee !default;// this can be access from CSS 3 variable in typo-and-form/_css-variable.scss file.
+$block-border-color: #ddd !default;// this can be access from CSS 3 variable in typo-and-form/_css-variable.scss file.
+$page-text-color: #333 !default;// this can be access from CSS 3 variable in typo-and-form/_css-variable.scss file.
+$text-disabled-color: #999 !default;
+$text-link-color: #1280EF !default;// this can be access from CSS 3 variable in typo-and-form/_css-variable.scss file.
 
-// navbar settings.
-// header and sidebar (medium screen size up) background color
-$navbar-sidebar-background-color: #222 !default;
+
+// navbar & sidebar settings.
+// all variables below can be access from CSS 3 variables in _css-variables.scss file.
+// navbar and sidebar (medium screen size up) background color
+$navbarsidebar-background-color: #222 !default;
+// navbar height.
 $navbar-height: 3.125rem !default;// must use rem because it should relate to the root only.
-// for mobile screen - the header (including navbar height).
+// navbar height for mobile screen.
 // unit must be rem because it is page top header and navbar init. so, it is root header and navbar then use rem.
-$mobile-screen-navbar-height: 6.250rem !default;
+$navbar-height_mobilescreen: 6.250rem !default;
 
 
 // margin for block level element.
-$block-element-margin-bottom: 1.250rem !default;
-$block-element-margin-sides: 0.625rem !default;
+// all variables below can be access from CSS 3 variables in _css-variables.scss file.
+$block-element-margin-horizontal: 0.625rem !default;
+$block-element-margin-vertical: 1.250rem !default;
+$block-element-padding-horizontal: 0.625rem !default;
+$block-element-padding-vertical: 0.625rem !default;
 
 
 // form font sizes
+// all variables below can be access from CSS 3 variables in _css-variables.scss file.
 $form-large-font-size: 1.250em !default;
 $form-small-font-size: 0.75em !default;
 $form-tiny-font-size: 0.625em !default;// currently only available to button.
 
 
 // the z-indexes
+// all variables below can be access from CSS 3 variables.
 $z-index-sidebar: 2 !default;
 $z-index-navbar: 4 !default;// navbar (top) must higher than sidebar to prevent scroll page and sidebar visible on top of navbar.
-$z-index-alertboxfixed: 101 !default;// alert box fixed top or bottom.
-$z-index-dialogbackdrop: 1010 !default;// modal dialog (backdrop).
-$z-index-alertdialogbackdrop: 2000 !default;// alert dialog (backdrop).
-$z-index-tooltips: 2001 !default;// tooltips.
+$z-index-alertboxfixed: 101 !default;// alert box fixed top or bottom. this can be access from CSS 3 variable in _alert-box.scss file.
+$z-index-dialogbackdrop: 1010 !default;// modal dialog (backdrop). this can be access from CSS 3 variable in components/rdta-dialog.scss file.
+$z-index-alertdialogbackdrop: 2000 !default;// alert dialog (backdrop). this can be access from CSS 3 variable in components/rdta-alertdialog.scss file.
+$z-index-tooltips: 2001 !default;// tooltips.. this can be access from CSS 3 variable in components/rdta-tooltips.scss file. @todo [rdta] this is deprecated, read more in rdta-tooltips.scss file.
 
 
 // colors for alert box, buttons, badge, table
+// all variables below can be access from CSS 3 variables in _css-variables.scss file.
 $primary-background-color: #a2ccf0 !default;
-$primary-hover-background-color: #91c2ed !default;
+$primary-background-disabled-color: #97c3ea !default;
+$primary-background-hover-color: #91c2ed !default;
 $primary-color: #52A0E5 !default;
-$primary-hover-color: #7ab6eb !default;
-$primary-disabled-color: #97c3ea !default;
 $danger-background-color: #f4d0d0 !default;
-$danger-hover-background-color: #eeb9b9 !default;
+$danger-disabled-background-color: #cf6464 !default;
+$danger-background-hover-color: #eeb9b9 !default;
 $danger-color: #bc0000 !default;
-$danger-disabled-color: #cf6464 !default;
 $info-background-color: #c4ebf2 !default;
-$info-hover-background-color: #afdfe7 !default;
+$info-disabled-background-color: #64abb8 !default;
+$info-background-hover-color: #afdfe7 !default;
 $info-color: #09a0bb !default;
-$info-disabled-color: #64abb8 !default;
 $success-background-color: #d1e6d1 !default;
-$success-hover-background-color: #c0dcc0 !default;
+$success-background-disabled-color: #65b065 !default;
+$success-background-hover-color: #c0dcc0 !default;
 $success-color: #007c00 !default;
-$success-disabled-color: #65b065 !default;
 $warning-background-color: #fbd38f !default;
-$warning-hover-background-color: #fac875 !default;
+$warning-background-disabled-color: #efb247 !default;
+$warning-background-hover-color: #fac875 !default;
 $warning-color: #e69200 !default;
-$warning-disabled-color: #efb247 !default;
 $white-color: #ffffff !default;
 
 

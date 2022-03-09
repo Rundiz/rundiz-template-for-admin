@@ -6,20 +6,20 @@
 
 
 .rd-breadcrumb {
-    background-color: $background-color;
+    background-color: var(--block-background-color);
     color: #777;
     display: flex;
     font-size: 0.750em;
     list-style: none;
-    margin: 0 0 0.625rem 0;
-    padding: 0.500rem $block-element-margin-sides;
+    margin: 0 0 var(--content-block-element-margin-vertical) 0;
+    padding: 0.500rem var(--block-element-padding-horizontal);
 
     li {
-        margin-right: 0.625rem;
+        margin-right: var(--block-element-margin-horizontal);
         // .rd-breadcrumb li::after
         &::after {
             content: '/';
-            margin-left: 0.625rem;
+            margin-left: var(--block-element-margin-horizontal);
         }
         // .rd-breadcrumb li:last-child
         &:last-child {

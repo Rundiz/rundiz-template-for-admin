@@ -8,7 +8,7 @@
 // .rd-dropdown (should be <ul class="rd-dropdown">)
 .rd-dropdown {
     background-color: #FFF;
-    border: 1px solid $border-color;
+    border: 1px solid var(--block-border-color);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     font-size: 0.875em;
     list-style: none;
@@ -26,9 +26,9 @@
         }
         // .rd-dropdown li.divider
         &.divider {
-            border-bottom: 1px solid $border-color;
-            margin-bottom: 0.625rem;
-            margin-top: 0.625rem;
+            border-bottom: 1px solid var(--block-border-color);
+            margin-bottom: var(--content-block-element-margin-vertical);
+            margin-top: var(--content-block-element-margin-vertical);
             // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list li.divider a
             a {
                 display: none;
@@ -44,9 +44,9 @@
         input[type="reset"],
         input[type="submit"] {
             background-color: transparent;
-            color: $font-color;
+            color: inherit;
             display: block;
-            padding: 0.313rem 0.625rem;// padding for dropdown item should be rem to prevent too much space when user use bigger font size.?
+            padding: 0.313rem var(--block-element-padding-horizontal);// padding for dropdown item should be rem to prevent too much space when user use bigger font size.?
             width: 100%;
         }
 

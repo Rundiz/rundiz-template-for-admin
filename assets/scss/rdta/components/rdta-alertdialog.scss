@@ -11,6 +11,11 @@
 @import '_dialog-mixins';
 
 
+.rd-alertdialog-modal {
+    --alertdialog-backdrop-z-index: #{$z-index-alertdialogbackdrop};// this variable is from global-common/_common-variables.scss.
+}
+
+
 @include dialog-modal-open('.rd-alertdialog-modal-open');
 
 
@@ -59,4 +64,4 @@
 }
 
 
-@include dialog-modal('.rd-alertdialog-modal', '.rd-alertdialog', $z-index-alertdialogbackdrop);
+@include dialog-modal('.rd-alertdialog-modal', '.rd-alertdialog', var(--alertdialog-backdrop-z-index));

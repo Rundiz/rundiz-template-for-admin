@@ -2,7 +2,7 @@
 
 // define styles of element that looks like a box.
 @mixin form-inputbox {
-    border: 1px solid $border-color;// this also override active, focus in firefox.
+    border: 1px solid var(--block-border-color);// this also override active, focus in firefox.
     border-radius: 0;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
     font-family: inherit;
@@ -16,8 +16,8 @@
     }
     &[disabled],
     &[readonly] {
-        background-color: $background-color;
-        color: $disabled-font-color;
+        background-color: var(--block-background-color);
+        color: var(--text-disabled-color);
         cursor: not-allowed;
     }
 }

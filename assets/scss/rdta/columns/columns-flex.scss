@@ -16,8 +16,8 @@
 
     // .rd-columns-flex-container.fix-columns-container-edge
     &.fix-columns-container-edge {
-        margin-left: -$block-element-margin-sides;
-        margin-right: -$block-element-margin-sides;
+        margin-left: calc(var(--block-element-margin-horizontal) * -1);
+        margin-right: calc(var(--block-element-margin-horizontal) * -1);
     }
 
     // .rd-columns-flex-container .column(flexible columns)
@@ -27,7 +27,7 @@
         flex-grow: 1;
         flex-shrink: 1;
         min-width: 0;// fix table push column over screen.
-        padding: 0 $block-element-margin-sides;
+        padding: 0 var(--block-element-padding-horizontal);
     }
 
     // .rd-columns-flex-container .column-break

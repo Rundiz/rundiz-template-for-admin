@@ -33,18 +33,18 @@
                     .rd-input-group-block-text {
                         align-items: center;
                         display: flex;
-                        background-color: $background-color;
-                        border: 1px solid $border-color;
+                        background-color: var(--block-background-color);
+                        border: 1px solid var(--block-border-color);
                         line-height: 1.4;
-                        padding: .313rem $block-element-margin-sides;
+                        padding: .313rem var(--block-element-padding-horizontal);
                     }
                 }
 
                 &.rd-input-group-lg {
-                    font-size: $form-large-font-size;
+                    font-size: var(--form-large-font-size);
                 }
                 &.rd-input-group-sm {
-                    font-size: $form-small-font-size;
+                    font-size: var(--form-small-font-size);
                 }
             }
         }

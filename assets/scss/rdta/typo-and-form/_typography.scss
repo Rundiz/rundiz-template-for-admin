@@ -1,12 +1,12 @@
 /*
 * ----------------------------------------------------------------------------------------------
-* typography
+* based html & typography
 * ----------------------------------------------------------------------------------------------
 */
 
 
 html {
-    background-color: #fff;
+    background-color: var(--page-background-color);
     cursor: auto;
     font-size: 107%;
     @media (min-width: $sm-min-width) {
@@ -16,7 +16,7 @@ html {
 
 
 body {
-    color: $font-color;
+    color: var(--page-text-color);
     cursor: auto;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid sans", "Helvetica Neue", "Helvetica", "Tahoma", "Arial", sans-serif;// from Smashing magazine. Warning! the font name "Segoe UI" cause quote mark italic and looks same for left and right quote.
     font-size: 100%;
@@ -27,7 +27,7 @@ body {
 
 
 a {
-    color: $link-color;
+    color: var(--text-link-color);
     text-decoration: none;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);// remove on touch and white blue background color appears.
     &:active,
@@ -36,11 +36,11 @@ a {
         @include crossbrowser-no-select;
     }
     &:visited {
-        color: darken($link-color, 15);
+        color: darken($text-link-color, 15);
     }
     &:focus,
     &:hover {
-        color: lighten($link-color, 15);
+        color: lighten($text-link-color, 15);
     }
 }
 
@@ -51,9 +51,9 @@ abbr {
 
 
 blockquote {
-    border-left: 5px solid $border-color;
+    border-left: 5px solid var(--block-border-color);
     border-right: 0;
-    margin: 0 0 $content-block-element-margin-bottom 0;
+    margin: 0 0 var(--content-block-element-margin-vertical) 0;
     padding: 0 0 0 0.625em;
 }
 
@@ -67,7 +67,7 @@ code {
 
 
 details {
-    margin: 0 0 $content-block-element-margin-bottom 0;
+    margin: 0 0 var(--content-block-element-margin-vertical) 0;
     details {
         margin-left: 1.111em;
         margin-right: 0;
@@ -79,7 +79,7 @@ details {
 
 
 dl {
-    margin: 0 0 $content-block-element-margin-bottom 0;
+    margin: 0 0 var(--content-block-element-margin-vertical) 0;
     dt {
         margin: 0;
     }
@@ -94,7 +94,7 @@ dl {
 
 
 h1, h2, h3, h4, h5, h6, p {
-    margin: 0 0 $content-block-element-margin-bottom 0;
+    margin: 0 0 var(--content-block-element-margin-vertical) 0;
 }
 @each $header, $font-size, $font-weight in (h1, 2.44em, 400),
                                                                 (h2, 2.05em, 400),
@@ -113,13 +113,13 @@ hr {
     border-bottom: 0;
     border-left: 0;
     border-right: 0;
-    border-top: 1px solid $border-color;
+    border-top: 1px solid var(--block-border-color);
     margin: 1.250rem 0;// must be rem due to h1-h6, p use margin as rem. use this as em will cause a lot different with those elements if parent element use larger or smaller font size.
 }
 
 
 iframe {
-    border: 1px solid $border-color;
+    border: 1px solid var(--block-border-color);
 }
 
 
@@ -134,7 +134,7 @@ img {
 kbd {
     @extend code;
     background-color: #f1f1f1;
-    border: 1px solid $border-color;
+    border: 1px solid var(--block-border-color);
     border-radius: 2px;
 }
 
@@ -149,7 +149,7 @@ label {
 
 
 meter {
-    background-color: $background-color;// Firefox
+    background-color: var(--block-background-color);// Firefox
     background-image: none;// Firefox
     box-shadow: none;
     display: inline-block;
@@ -188,7 +188,7 @@ meter {
     }
     &::-webkit-meter-bar {
         // Chrome, Edge
-        background-color: $background-color;
+        background-color: var(--block-background-color);
         background-image: none;
         border: none;// (in Webkit, it has border by default).
         border-radius: 0;
@@ -200,7 +200,7 @@ meter {
 
 pre {
     @extend code;
-    margin: 0 0 $content-block-element-margin-bottom 0;
+    margin: 0 0 var(--content-block-element-margin-vertical) 0;
     overflow: auto;
     padding: 0.625em;
 }
@@ -218,7 +218,7 @@ progress {
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
-    background-color: $background-color;
+    background-color: var(--block-background-color);
     border: none;
     height: 1em;
     width: 11.250em;
@@ -246,7 +246,7 @@ progress {
         background-color: green;
     }
     &::-webkit-progress-bar {
-        background-color: $background-color;
+        background-color: var(--block-background-color);
     }
     &::-webkit-progress-value {
         background-color: green;
@@ -266,27 +266,27 @@ q {
 
 samp {
     @extend code;
-    background-color: $background-color;
+    background-color: var(--block-background-color);
     border-bottom: 0;
-    border-left: 3px solid $border-color;
+    border-left: 3px solid var(--block-border-color);
     border-right: 0;
     border-top: 0;
 }
 
 
 table {
-    border: 1px solid $border-color;
-    margin-bottom: $content-block-element-margin-bottom;
+    border: 1px solid var(--block-border-color);
+    margin-bottom: var(--content-block-element-margin-vertical);
     thead th,
     thead td,
     tfoot th,
     tfoot td {
-        background-color: $background-color;
+        background-color: var(--block-background-color);
         font-weight: 600;
         text-align: left;
     }
     td, th {
-        border: 1px solid $border-color;
+        border: 1px solid var(--block-border-color);
         padding: 0.313em;
     }
 }
@@ -294,7 +294,7 @@ table {
 
 menu, ul, ol {
     line-height: 1.6;
-    margin: 0 0 $content-block-element-margin-bottom 1.211em;
+    margin: 0 0 var(--content-block-element-margin-vertical) 1.211em;
     padding: 0;
     li {
         margin: 0;
@@ -323,6 +323,6 @@ menu, ul {
 
 
 var {
-    border: 1px solid $border-color;
+    border: 1px solid var(--block-border-color);
     padding: 0.063em 0.375em 0.063em 0.188em;
 }

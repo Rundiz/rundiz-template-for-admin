@@ -11,6 +11,7 @@
 @import '_variables';
 
 
+@import '../_css-variables';
 @import '_layout-common';
 @import '_mixins';
 
@@ -19,7 +20,7 @@
     display: grid;
     grid-template-columns: 0px auto;
     grid-template-rows: auto;
-    min-height: calc(100vh - #{$mobile-screen-navbar-height});
+    min-height: calc(100vh - var(--navbar-height_mobilescreen));
     position: relative;
 
     // .rd-page-wrapper > footer
@@ -29,7 +30,7 @@
         display: none;// when visible in the larger screen size, use flex
         font-size: 0.688em;
         min-height: 1.250rem;
-        padding: 0.313rem $block-element-margin-sides;
+        padding: 0.313rem var(--block-element-padding-horizontal);
 
         // .rd-page-wrapper > footer a
         a {
@@ -40,14 +41,14 @@
         .rd-page-footer-left {
             margin-left: 0;
             margin-right: 0;
-            padding-right: $block-element-margin-sides;
+            padding-right: var(--block-element-padding-horizontal);
         }
 
         // .rd-page-wrapper > footer .rd-page-footer-right
         .rd-page-footer-right {
             margin-left: auto;
             margin-right: 0;
-            padding-left: $block-element-margin-sides;
+            padding-left: var(--block-element-padding-horizontal);
         }
     }
 
@@ -65,9 +66,9 @@
 
     // .rd-page-wrapper in @media query
     @media (min-width: $minimum-sidebar-breakpoint) {
-        grid-template-columns: $sidebar-expanded-width auto;
+        grid-template-columns: var(--sidebar-expanded-width) auto;
         grid-template-rows: auto 1.656rem;
-        min-height: calc(100vh - #{math.div($mobile-screen-navbar-height, 2)});
+        min-height: calc(100vh - calc(var(--navbar-height_mobilescreen) / 2));
 
         // .rd-page-wrapper > footer
         > footer {
@@ -94,22 +95,22 @@
             grid-row-end: 3;
             grid-row-start: 1;
             position: relative;
-            transition: width $sidebar-transition-seconds;
-            width: $sidebar-expanded-width;
+            transition: width var(--sidebar-transition-seconds);
+            width: var(--sidebar-expanded-width);
 
             // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list
             ul.rd-sidebar-item-list {
                 > li {
                     // .rd-page-wrapper .rd-sidebar ul.rd-sidebar-item-list > li > a
                     >a {
-                        padding: 0.625rem 1.125rem 0.625rem 0.625rem;
+                        padding: var(--block-element-padding-vertical) 1.125rem var(--block-element-padding-vertical) var(--block-element-padding-horizontal);
                     }
                 }
             }
         }
         // .rd-page-wrapper.is-collapsed
         &.is-collapsed {
-            grid-template-columns: $sidebar-collapsed-width auto;
+            grid-template-columns: var(--sidebar-collapsed-width) auto;
 
             // .rd-page-wrapper.is-collapsed .rd-sidebar
             @include rd-page-wrapperIs-collapsed_rd-sidebar;

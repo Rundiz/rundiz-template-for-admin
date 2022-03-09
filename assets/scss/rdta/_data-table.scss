@@ -27,7 +27,7 @@
         td,
         th {
             a {
-                color: $link-color;
+                color: var(--text-link-color);
             }
         }
     }
@@ -110,7 +110,7 @@
         background-color: $danger-background-color;
         // .rd-datatable .table-cell-danger:hover
         &:hover {
-            background-color: $danger-hover-background-color;
+            background-color: var(--background-danger-hover-color);
         }
     }
     .table-cell-info,
@@ -118,7 +118,7 @@
         background-color: $info-background-color;
         // .rd-datatable .table-cell-info:hover
         &:hover {
-            background-color: $info-hover-background-color;
+            background-color: var(--background-info-hover-color);
         }
     }
     .table-cell-primary,
@@ -126,7 +126,7 @@
         background-color: $primary-background-color;
         // .rd-datatable .table-cell-primary:hover
         &:hover {
-            background-color: $primary-hover-background-color;
+            background-color: var(--background-primary-hover-color);
         }
     }
     .table-cell-success,
@@ -134,7 +134,7 @@
         background-color: $success-background-color;
         // .rd-datatable .table-cell-success:hover
         &:hover {
-            background-color: $success-hover-background-color;
+            background-color: var(--background-success-hover-color);
         }
     }
     .table-cell-warning,
@@ -142,7 +142,7 @@
         background-color: $warning-background-color;
         // .rd-datatable .table-cell-warning:hover
         &:hover {
-            background-color: $warning-hover-background-color;
+            background-color: var(--background-warning-hover-color);
         }
     }
 
@@ -174,7 +174,7 @@
         thead {
             // .rd-datatable.responsive thead tr
             tr {
-                border-bottom: 2px solid $border-color;
+                border-bottom: 2px solid var(--block-border-color);
             }
         }
 
@@ -182,13 +182,13 @@
         tfoot {
             // .rd-datatable.responsive tfoot tr
             tr {
-                border-top: 2px solid $border-color;
+                border-top: 2px solid var(--block-border-color);
             }
         }
 
         // .rd-datatable.responsive tr
         tr {
-            border-top: 1px solid $border-color;
+            border-top: 1px solid var(--block-border-color);
 
             // .rd-datatable.responsive tr:hover
             &:hover {

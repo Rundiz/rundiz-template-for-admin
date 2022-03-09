@@ -3,6 +3,7 @@
 * Rundiz template tooltips -- styling tooltips elements.
 * ----------------------------------------------------------------------------------------------
 * @todo [rdta] remove this in version 3. this file is for tooltip.js which is deprecated any use JS+CSS from tippy.js instead.
+* @todo [rdta] delete variables in global-common/_common-variables.scss, components/_variables.scss files when remove/delete this file.
 */
 
 
@@ -11,22 +12,30 @@
 
 
 .rd-tooltips {
-    background-color: $tooltip-background-color;
+    --tooltips-arrow-size: #{$tooltips-arrow-size};
+    --tooltips-background-color: #{$tooltips-background-color};
+    --tooltips-text-color: #{$tooltips-text-color};
+    --tooltips-z-index: #{$z-index-tooltips};// this variable is from global-common/_common-variables.scss.
+}
+
+
+.rd-tooltips {
+    background-color: var(--tooltips-background-color);
     font-size: 80%;
-    padding: ($tooltip-arrow-size);
-    z-index: $z-index-tooltips;
+    padding: var(--tooltips-arrow-size);
+    z-index: var(--tooltips-z-index);
 
     // .rd-tooltips[x-placement="top"]
     &[x-placement="top"] {
-        margin-bottom: $tooltip-arrow-size;
+        margin-bottom: var(--tooltips-arrow-size);
         // .rd-tooltips[x-placement="top"] .tooltip-arrow
         .tooltip-arrow {
-            border-width: $tooltip-arrow-size $tooltip-arrow-size 0 $tooltip-arrow-size;
+            border-width: var(--tooltips-arrow-size) var(--tooltips-arrow-size) 0 var(--tooltips-arrow-size);
             border-bottom-color: transparent;
             border-left-color: transparent;
             border-right-color: transparent;
-            bottom: -$tooltip-arrow-size;
-            left: calc(50% - #{$tooltip-arrow-size});
+            bottom: calc(var(--tooltips-arrow-size) * (-1));
+            left: calc(50% - var(--tooltips-arrow-size));
             margin-top: 0;
             margin-bottom: 0;
         }
@@ -34,15 +43,15 @@
 
     // .rd-tooltips[x-placement="right"]
     &[x-placement="right"] {
-        margin-left: $tooltip-arrow-size;
+        margin-left: var(--tooltips-arrow-size);
         // .rd-tooltips[x-placement="right"] .tooltip-arrow
         .tooltip-arrow {
-            border-width: $tooltip-arrow-size $tooltip-arrow-size $tooltip-arrow-size 0;
+            border-width: var(--tooltips-arrow-size) var(--tooltips-arrow-size) var(--tooltips-arrow-size) 0;
             border-bottom-color: transparent;
             border-left-color: transparent;
             border-top-color: transparent;
-            left: -$tooltip-arrow-size;
-            top: calc(50% - #{$tooltip-arrow-size});
+            left: calc(var(--tooltips-arrow-size) * (-1));
+            top: calc(50% - var(--tooltips-arrow-size));
             margin-left: 0;
             margin-right: 0;
         }
@@ -50,15 +59,15 @@
 
     // .rd-tooltips[x-placement="bottom"]
     &[x-placement="bottom"] {
-        margin-top: $tooltip-arrow-size;
+        margin-top: var(--tooltips-arrow-size);
         // .rd-tooltips[x-placement="bottom"] .tooltip-arrow
         .tooltip-arrow {
-            border-width: 0 $tooltip-arrow-size $tooltip-arrow-size $tooltip-arrow-size;
+            border-width: 0 var(--tooltips-arrow-size) var(--tooltips-arrow-size) var(--tooltips-arrow-size);
             border-left-color: transparent;
             border-right-color: transparent;
             border-top-color: transparent;
-            top: -$tooltip-arrow-size;
-            left: calc(50% - #{$tooltip-arrow-size});
+            top: calc(var(--tooltips-arrow-size) * (-1));
+            left: calc(50% - var(--tooltips-arrow-size));
             margin-top: 0;
             margin-bottom: 0;
         }
@@ -66,15 +75,15 @@
 
     // .rd-tooltips[x-placement="left"]
     &[x-placement="left"] {
-        margin-right: $tooltip-arrow-size;
+        margin-right: var(--tooltips-arrow-size);
         // .rd-tooltips[x-placement="left"] .tooltip-arrow
         .tooltip-arrow {
-            border-width: $tooltip-arrow-size 0 $tooltip-arrow-size $tooltip-arrow-size;
+            border-width: var(--tooltips-arrow-size) 0 var(--tooltips-arrow-size) var(--tooltips-arrow-size);
             border-bottom-color: transparent;
             border-right-color: transparent;
             border-top-color: transparent;
-            right: -$tooltip-arrow-size;
-            top: calc(50% - #{$tooltip-arrow-size});
+            right: calc(var(--tooltips-arrow-size) * (-1));
+            top: calc(50% - var(--tooltips-arrow-size));
             margin-left: 0;
             margin-right: 0;
         }
@@ -82,14 +91,14 @@
 
     // .rd-tooltips .tooltip-arrow,
     .tooltip-arrow {
-        border-color: $tooltip-background-color;
+        border-color: var(--tooltips-background-color);
         border-style: solid;
-        margin: $tooltip-arrow-size;
+        margin: var(--tooltips-arrow-size);
         position: absolute;
     }
 
     // .rd-tooltips .tooltip-inner
     .tooltip-inner {
-        color: $tooltip-font-color;
+        color: var(--tooltips-text-color);
     }
 }
