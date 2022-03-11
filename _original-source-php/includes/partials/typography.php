@@ -83,7 +83,12 @@ unset($i);
             <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab&shy;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab&shy;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab&shy;aaaaaaaaaaaaaaaaaaaaaaaaa</p>
 
             <h2 id="typography-links">Links</h2>
-            <p>These are links: <a href="?<?php echo urlencode(date('Y-m-dH:i:s')); ?>" onclick="return false;">never visited link</a>, <a href=".">visited link</a>. Mouse hover to see effects.</p>
+            <p>These are links: <a id="typo-never-visited-link" href="?never-visited" onclick="return false;">never visited link</a>, <a href=".">visited link</a>. Mouse hover to see effects.</p>
+            <script type="application/javascript">
+                let linkElement = document.getElementById('typo-never-visited-link');
+                console.log(linkElement);
+                linkElement.href += '&random=' + encodeURIComponent(Math.random());
+            </script>
 
             <h2 id="typography-address">Address</h2>
             <address>
