@@ -20,8 +20,10 @@ function uglifyJs(cb) {
     const pkg = require('../package.json');
     const mergeStream =   require('merge-stream');
 
-    var comment = '/*! Rundiz template for admin v <%= pkg.version %> \n' +
-        'License: <%= pkg.license %>*/';
+    var comment = '/*!\n ' +
+        'Rundiz template for admin v <%= pkg.version %> \n' +
+        'License: <%= pkg.license %>\n' +
+        '*/\n';
 
     return mergeStream(
         src('assets/js-src/rdta/**/*.js')

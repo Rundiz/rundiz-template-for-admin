@@ -4,7 +4,7 @@
 - None
 
 ## Minor version
-- None
+- Update to FontAwesome 6
 
 ## Patch version
 - [ ] Fix sub menu that contain long list and the top of it disappear under top nav menu. ( Example in sub menus 3. )
