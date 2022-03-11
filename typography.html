@@ -200,7 +200,12 @@
             <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab&shy;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab&shy;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab&shy;aaaaaaaaaaaaaaaaaaaaaaaaa</p>
 
             <h2 id="typography-links">Links</h2>
-            <p>These are links: <a href="?2022-03-1111%3A54%3A30" onclick="return false;">never visited link</a>, <a href=".">visited link</a>. Mouse hover to see effects.</p>
+            <p>These are links: <a id="typo-never-visited-link" href="?never-visited" onclick="return false;">never visited link</a>, <a href=".">visited link</a>. Mouse hover to see effects.</p>
+            <script type="application/javascript">
+                let linkElement = document.getElementById('typo-never-visited-link');
+                console.log(linkElement);
+                linkElement.href += '&random=' + encodeURIComponent(Math.random());
+            </script>
 
             <h2 id="typography-address">Address</h2>
             <address>
@@ -517,13 +522,13 @@
 
             <h2 id="multimedia-audiovideo">Audio &amp; video</h2>
             <h3 id="multimedia-audiovideoaudio">Audio</h3>
-            <audio controls src="https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_700KB.mp3"></audio>
+            <audio controls src="assets/multimedia/sample-audio.mp3"></audio>
             <h3 id="multimedia-audiovideovideo">Video</h3>
-            <video controls width="300" height="150">
-                <source src="https://file-examples-com.github.io/uploads/2020/03/file_example_WEBM_480_900KB.webm">
+            <video controls width="300" height="225">
+                <source src="assets/multimedia/sample-video.mp4">
             </video>
             <h3 id="multimedia-audiovideoembed">Embed</h3>
-            <embed type="video/webm" src="https://file-examples-com.github.io/uploads/2020/03/file_example_WEBM_480_900KB.webm" width="300" height="150">
+            <embed src="assets/multimedia/sample-video.mp4" autostart="0" width="300" height="225">
             <h3 id="multimedia-audiovideoobject">Object</h3>
             <object data="https://www.youtube-nocookie.com/embed/KX3OnQeETdI" width="300" height="150"></object>
 

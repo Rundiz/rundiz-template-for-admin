@@ -233,7 +233,7 @@ class RDTATabs {
                 ) &&
                 rdTabs === rdTabsNavScroll.closest(thisClass.selector)
             ) {
-                // if user is really clicked on tabs nav scroll.
+                // if user is really clicked on tabs nav scroll (horizontal).
                 // prevent follow link.
                 event.preventDefault();
 
@@ -244,29 +244,37 @@ class RDTATabs {
                 } else {
                     tabsNavLeftPosition = parseInt(tabsNavLeftPosition);
                 }
-                let tabsNavWrapper = rdTabs.querySelector('.rd-tabs-nav-wrapper');
-                //console.log('tabs nav offset width: ', tabsNav.offsetWidth);
-                //console.log('tabs nav left pos: ', tabsNavLeftPosition);
 
                 if (rdTabsNavScroll.classList.contains('rd-tabs-nav-hscroll-left')) {
                     // if user clicked on tabs nav left (<).
+                    let expectOffsetLeft = (tabsNavLeftPosition + parseInt(tabsNav.offsetWidth));
+                    if (expectOffsetLeft > 0) {
+                        expectOffsetLeft = 0;
+                    }
                     let firstTabNavItem;
-                    for (let i = 0; i < tabsNav.children.length; i++) {
-                        //console.log('children offset left:', tabsNav.children[i], tabsNav.children[i].offsetLeft);
-                        if ((tabsNav.children[i].offsetLeft + tabsNavLeftPosition) >= 0) {
+                    let totalVisibleTabsCounted = 1;
+                    for (let i = (tabsNav.children.length - 1); i >= 0; i--) {
+                        //console.log(tabsNav.children[i].innerText, tabsNav.children[i].offsetLeft);
+                        if (parseInt(tabsNav.children[i].offsetLeft) > Math.abs(expectOffsetLeft)) {
                             firstTabNavItem = tabsNav.children[i];
+                        } else {
                             break;
                         }
+                        totalVisibleTabsCounted++;
                     }// endfor;
-                    //console.log('first visible: ', firstTabNavItem);
-                    let newLeftPosition = (tabsNavLeftPosition + (tabsNavWrapper.offsetWidth + 2));// +2 for left & right borders
-                    if (newLeftPosition > 0) {
+                    //console.log(firstTabNavItem.outerHTML, firstTabNavItem, firstTabNavItem.offsetLeft);
+
+                    let newLeftPosition = firstTabNavItem.offsetLeft;
+                    if (totalVisibleTabsCounted >= tabsNav.children.length) {
                         newLeftPosition = 0;
+                    } else {
+                        newLeftPosition = '-' + newLeftPosition;
                     }
                     tabsNav.style.transform = 'translateX(' + newLeftPosition + 'px)';
                 } else if (rdTabsNavScroll.classList.contains('rd-tabs-nav-hscroll-right')) {
                     // if user clicked on tabs nav right (>).
                     let lastTabNavItem;
+                    let totalVisibleTabsCounted = 1;
                     for (let i = 0; i < tabsNav.children.length; i++) {
                         //console.log('children offset left:', tabsNav.children[i], tabsNav.children[i].offsetLeft);
                         if ((tabsNav.children[i].offsetLeft + tabsNavLeftPosition) < tabsNav.offsetWidth === true) {
@@ -274,9 +282,14 @@ class RDTATabs {
                         } else {
                             break;
                         }
+                        totalVisibleTabsCounted++;
                     }// endfor;
                     //console.log('last visible: ', lastTabNavItem);
-                    tabsNav.style.transform = 'translateX(-' + lastTabNavItem.offsetLeft + 'px)';
+
+                    if (totalVisibleTabsCounted <= tabsNav.children.length) {
+                        // if counted for visible tabs is less than all tabs. still be able to work, otherwise don't have to work anymore.
+                        tabsNav.style.transform = 'translateX(-' + lastTabNavItem.offsetLeft + 'px)';
+                    }
                 }// endif user clicked on < or >.
             }// endif; user is really click on tabs nav scroll.
         });
@@ -411,11 +424,11 @@ class RDTATabs {
                     // add horizontal scroll buttons.
                     if (tabsNavContainer) {
                         if (!tabsNavContainer.querySelector('.rd-tabs-nav-hscroll-left')) {
-                            let scrollLeftElement = '<div class="rd-tabs-nav-hscroll-left"><a href="#"><i class="fas fa-angle-left fa-fw"></i></a></div>';
+                            let scrollLeftElement = '<div class="rd-tabs-nav-hscroll-left"><a href="#"><i class="fas fa-angle-left"></i></a></div>';
                             tabsNavContainer.insertAdjacentHTML('afterbegin', scrollLeftElement);
                         }
                         if (!tabsNavContainer.querySelector('.rd-tabs-nav-hscroll-right')) {
-                            let scrollRightElement = '<div class="rd-tabs-nav-hscroll-right"><a href="#"><i class="fas fa-angle-right fa-fw"></i></a></div>';
+                            let scrollRightElement = '<div class="rd-tabs-nav-hscroll-right"><a href="#"><i class="fas fa-angle-right"></i></a></div>';
                             tabsNavContainer.insertAdjacentHTML('beforeend', scrollRightElement);
                         }
                     }
