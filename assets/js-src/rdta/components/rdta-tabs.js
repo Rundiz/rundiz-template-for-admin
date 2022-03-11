@@ -209,7 +209,6 @@ class RDTATabs {
      * 
      * Tabs nav scroll will be visible on tabs size is overflow visible width.
      * 
-     * @todo [rdta] to be done.
      * @since 2.1.16
      * @private This method was called from `init()`.
      * @returns {undefined}
