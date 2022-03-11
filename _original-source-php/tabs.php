@@ -109,7 +109,17 @@ include 'includes/html-head.php';
                             <?php }// endfor; ?> 
                         </ul>
                         <div id="tabs-manytabs-1" class="rd-tabs-content">
-                            Hello world.
+                            Many tabs content.
+                        </div>
+                    </div>
+                    <div class="tabs">
+                        <ul>
+                            <?php for ($i = 1; $i <= 60; $i++) { ?> 
+                            <li class="text-flow-nowrap"><a href="#tabs-manytabs2-<?php echo $i; ?>" onclick="return false;">Many Tabs2 Tab <?php echo $i; ?></a></li>
+                            <?php }// endfor; ?> 
+                        </ul>
+                        <div id="tabs-manytabs2-1" class="rd-tabs-content">
+                            Many tabs (2) content. For checking tabs horizontal scroll individually.
                         </div>
                     </div>
                     <h3>Manual set active tab.</h3>

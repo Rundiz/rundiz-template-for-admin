@@ -15,7 +15,7 @@
     .rd-tabs-nav-container {
         align-items: stretch;
         display: grid;
-        grid-template-columns: 20px minmax(0, 1fr) 20px;
+        grid-template-columns: 30px minmax(0, 1fr) 30px;
         justify-items: stretch;
         position: relative;
 
@@ -46,7 +46,6 @@
     }
 
     .rd-tabs-nav-wrapper {
-        margin-right: 0.313em;
         overflow: hidden;
     }
     .rd-tabs-nav-wrapper-bottomline {
