@@ -1,7 +1,7 @@
 <?php
 $youtubeUrl = 'https://www.youtube-nocookie.com/embed/KX3OnQeETdI';
-$audioUrl = 'https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_700KB.mp3';
-$videoUrl = 'https://file-examples-com.github.io/uploads/2020/03/file_example_WEBM_480_900KB.webm';
+$audioUrl = 'assets/multimedia/sample-audio.mp3';
+$videoUrl = 'assets/multimedia/sample-video.mp4';
 ?>
             <h2 id="multimedia-dialog">Dialog</h2>
             <dialog open>This is an open dialog window</dialog>
@@ -14,11 +14,11 @@ $videoUrl = 'https://file-examples-com.github.io/uploads/2020/03/file_example_WE
             <h3 id="multimedia-audiovideoaudio">Audio</h3>
             <audio controls src="<?php echo $audioUrl; ?>"></audio>
             <h3 id="multimedia-audiovideovideo">Video</h3>
-            <video controls width="300" height="150">
+            <video controls width="300" height="225">
                 <source src="<?php echo $videoUrl; ?>">
             </video>
             <h3 id="multimedia-audiovideoembed">Embed</h3>
-            <embed type="video/webm" src="<?php echo $videoUrl; ?>" width="300" height="150">
+            <embed src="<?php echo $videoUrl; ?>" autostart="0" width="300" height="225">
             <h3 id="multimedia-audiovideoobject">Object</h3>
             <object data="<?php echo $youtubeUrl; ?>" width="300" height="150"></object>
 
