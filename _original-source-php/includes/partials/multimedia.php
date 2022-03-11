@@ -18,7 +18,7 @@ $videoUrl = 'assets/multimedia/sample-video.mp4';
                 <source src="<?php echo $videoUrl; ?>">
             </video>
             <h3 id="multimedia-audiovideoembed">Embed</h3>
-            <embed src="<?php echo $videoUrl; ?>" autostart="0" width="300" height="225">
+            <embed src="<?php echo $videoUrl; ?>" width="300" height="225">
             <h3 id="multimedia-audiovideoobject">Object</h3>
             <object data="<?php echo $youtubeUrl; ?>" width="300" height="150"></object>
 
