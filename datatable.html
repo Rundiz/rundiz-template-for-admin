@@ -8,36 +8,36 @@
         <link rel="stylesheet" href="assets/css/sanitize/typography.css?npm-v=github%3Acsstools%2Fsanitize.css%23main">
         <link rel="stylesheet" href="assets/css/sanitize/forms.css?npm-v=github%3Acsstools%2Fsanitize.css%23main">
 
-        <link rel="stylesheet" href="assets/font-awesome/css/all.min.css?npm-v=5.15.4">
+        <link rel="stylesheet" href="assets/font-awesome/css/all.min.css?npm-v=6.0.0">
 
         <link rel="stylesheet" href="assets/css/smartmenus/sm-core-css.css?npm-v=1.1.1">
         <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?v=f8ca278194bcf804a4e16ea3459992a5">
 
         <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?v=0447766fd38ddd5161d7d04179bee59a">
-        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?v=8d9df12fef61c65c4c157a020f230d36">
+        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?v=7aa3755769e17f74c4f389fae4a6a8fa">
 
         <link rel="stylesheet" href="assets/css/rdta-demo-pages.css?v=5c5a3502c8c15fba309fc170b49e4583"> 
     </head>
     <body>
         <header class="rd-navbar">
-            <button class="rd-sidebar-toggler" data-target=".rd-page-wrapper" title="Toggle side bar menu"><i class="fas fa-bars fa-fw"></i><span class="screen-reader-only" aria-hidden="true">Toggle side bar menu</span></button>
-            <div class="rd-site-brand"><a href="#" onclick="return false;">Admin Dashboard</a></div><!--.rd-site-brand-->
+            <button class="rd-sidebar-toggler" data-target=".rd-page-wrapper" title="Toggle side bar menu"><i class="fa-solid fa-bars fa-fw"></i><span class="screen-reader-only" aria-hidden="true">Toggle side bar menu</span></button>
+            <div class="rd-site-brand"><a href="./">Admin Dashboard</a></div><!--.rd-site-brand-->
             <nav class="nav-right">
                 <ul class="sm sm-rdta navbar">
-                    <li><a href="#" onclick="return false;"><i class="fas fa-globe fa-fw"></i></a>
+                    <li><a href="#" onclick="return false;"><i class="fa-solid fa-globe fa-fw"></i></a>
                         <ul>
                             <li><a href="javascript:alert('link clicked');">Thai</a></li>
                             <li class="is-active"><a href="javascript:alert('link clicked');">English</a></li>
                         </ul>
                     </li>
-                    <li><a href="#" onclick="return false;"><i class="fas fa-bell fa-fw"></i> <span class="rd-notification-badge tiny">3</span></a>
+                    <li><a href="#" onclick="return false;"><i class="fa-solid fa-bell fa-fw"></i> <span class="rd-notification-badge tiny">3</span></a>
                         <ul>
                             <li><a href="#" onclick="return false;">Approve new comments</a></li>
                             <li><a href="#" onclick="return false;">Approve new posts</a></li>
                             <li><a href="#" onclick="return false;">There are new contact messages</a></li>
                         </ul>
                     </li>
-                    <li class="user"><a href="#" onclick="return false;"><i class="far fa-user-circle"></i></a>
+                    <li class="user"><a href="#" onclick="return false;"><i class="fa-regular fa-circle-user"></i></a>
                         <ul>
                             <li><a>Hello, user name</a></li>
                             <li><a href="#" onclick="return false;">Edit your account</a></li>
@@ -50,17 +50,64 @@
         <div class="rd-page-wrapper">
             <div class="rd-sidebar-back"></div>
             <section class="rd-sidebar">
+                <h2 class="screen-reader-only">Sidebar menus</h2>
                 <div class="rd-sidebar-inner">
                     <ul class="rd-sidebar-item-list sm sm-vertical sm-rdta">
-                        <li><a href="#" onclick="return false;" title="Admin home"><i class="sidebar-icon fas fa-tachometer-alt fa-fw"></i> <span class="rd-sidebar-menu-text">Admin home</span></a>
+                        <li><a href="#" onclick="return false;" title="Admin home"><i class="sidebar-icon fa-solid fa-gauge-high fa-fw"></i> <span class="rd-sidebar-menu-text">Admin home</span></a>
                             <ul>
                                 <li><a href="./">Admin dashboard</a></li>
                                 <li><a href="javascript:alert('link clicked');">Update</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" onclick="return false;" title="Front home"><i class="sidebar-icon fas fa-home fa-fw"></i> <span class="rd-sidebar-menu-text">Front home</span></a></li>
-                        <li><a href="#" onclick="return false;" title="Settings"><i class="sidebar-icon fas fa-cog fa-fw"></i> <span class="rd-sidebar-menu-text">Settings</span></a></li>
-                        <li><a href="#" onclick="return false;" title="Sub menus"><i class="sidebar-icon fas fa-cubes fa-fw"></i> <span class="rd-sidebar-menu-text">Sub menus</span></a>
+                        <li><a href="#" onclick="return false;" title="Components"><i class="sidebar-icon fa-solid fa-boxes-stacked fa-fw"></i> <span class="rd-sidebar-menu-text">Components</span></a>
+                            <ul>
+                                <li class="sub-menu-heading"><a>Typography &amp; getting started</a></li>
+                                <li><a href="typography.html">Typography</a></li>
+                                <li><a href="basic-layout.html">Basic layout (getting started)</a></li>
+                                <li class="divider"></li>
+                                <li class="sub-menu-heading"><a>More components</a></li>
+                                <li><a href="accordion.html">Accordion</a></li>
+                                <li><a href="alert-box.html">Alert box</a></li>
+                                <li><a href="alert-dialog.html">Alert dialog</a></li>
+                                <li><a href="badge.html">Badge</a></li>
+                                <li><a href="button.html">Button</a></li>
+                                <li><a href="columns-flex.html">Columns flex</a></li>
+                                <li><a href="datatable.html">Data table</a></li>
+                                <li><a href="dialog.html">Dialog</a></li>
+                                <li><a href="embeds.html">Embeds</a></li>
+                                <li><a href="form.html">Form</a></li>
+                                <li><a href="helpers.html">Helpers</a></li>
+                                <li><a href="pagination.html">Pagination</a></li>
+                                <li><a href="tabs.html">Tabs</a></li>
+                                <li><a href="text.html">Text</a></li>
+                                <li><a href="tooltips.html">Tooltips</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" onclick="return false;" title="Examples"><i class="sidebar-icon fa-solid fa-laptop-code"></i> <span class="rd-sidebar-menu-text">Examples</span></a>
+                            <ul>
+                                <li><a href="example-login.html">Login page</a></li>
+                                <li><a href="example-logout.html">Logout page</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" onclick="return false;" title="Tools &amp; guide"><i class="sidebar-icon fa-solid fa-code fa-fw"></i> <span class="rd-sidebar-menu-text">Tools &amp; guide</span></a>
+                            <ul>
+                                <li><a href="credits.html">Credits</a></li>
+                                <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="tools_cssgrid">CSS grid</a></li>
+                                <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="tools_cssflex">CSS flex box</a></li>
+                                <li><a href="https://www.w3.org/wiki/HTML_structural_elements" target="tools_html5structural">HTML 5 structural elements</a></li>
+                                <li><a href="http://pxtoem.com/" target="pxtoemconverter">Pixel / <code>em</code> converter</a></li>
+                            </ul>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="sub-menu-heading"><a onclick="return false;" title="Experiments"><i class="sidebar-icon fa-solid fa-vial fa-fw"></i> <span class="rd-sidebar-menu-text">Experiments</span></a></li>
+                        <li><a href="#" onclick="return false;" title="Sticky menu"><i class="sidebar-icon fa-solid fa-thumbtack fa-fw"></i> <span class="rd-sidebar-menu-text">Stickey menu</span></a>
+                            <ul>
+                                <li><a href="stickymenu-long-content.html">Sticky menu (long content)</a></li>
+                                <li><a href="stickymenu-long-menu.html">Sticky menu (long menu)</a></li>
+                                <li><a href="stickymenu-long-content-menu.html">Sticky menu (long content &amp; menu)</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" onclick="return false;" title="Sub menus"><i class="sidebar-icon fa-solid fa-folder-tree fa-fw"></i> <span class="rd-sidebar-menu-text">Sub menus</span></a>
                             <ul>
                                 <li><a href="javascript:alert('link clicked');">1</a>
                                     <ul>
@@ -87,7 +134,7 @@
                                         <li><a href="#" onclick="return false;">1.5</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#" onclick="return false;">2</a>
+                                <li><a href="#" onclick="return false;">2 (Deep sub menus)</a>
                                     <ul>
                                         <li><a href="#" onclick="return false;">2.1</a></li>
                                         <li><a href="#" onclick="return false;">2.2</a>
@@ -99,7 +146,13 @@
                                                         <li><a href="#" onclick="return false;">2.2.2.2</a>
                                                             <ul>
                                                                 <li><a href="#" onclick="return false;">2.2.2.2.1</a></li>
-                                                                <li><a href="#" onclick="return false;">2.2.2.2.2</a></li>
+                                                                <li><a href="#" onclick="return false;">2.2.2.2.2</a>
+                                                                    <ul>
+                                                                        <li><a href="#" onclick="return false;">2.2.2.2.2.1</a></li>
+                                                                        <li><a href="#" onclick="return false;">2.2.2.2.2.2</a></li>
+                                                                        <li><a href="#" onclick="return false;">2.2.2.2.2.3</a></li>
+                                                                    </ul>
+                                                                </li>
                                                                 <li><a href="#" onclick="return false;">2.2.2.2.3</a></li>
                                                             </ul>
                                                         </li>
@@ -112,7 +165,7 @@
                                         <li><a href="#" onclick="return false;">2.3</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#" onclick="return false;">3</a>
+                                <li><a href="#" onclick="return false;">3 (Very long sub menus)</a>
                                     <ul>
                                     <!-- it is recommended that you should not have more than 15 items per sub menu, or you have to modify options in `rdtaSidebarSmartMenus()` function -->
                                         <li><a href="#" onclick="return false;">3.1</a></li>
@@ -175,7 +228,7 @@
                                 <li class="divider"><a href="#" onclick="alert('Nothing works here!'); return false;">Nothing here will be display.</a></li>
                                 <li><a href="#" onclick="return false;">The above is <code>li.divider</code></a></li>
                                 <li class="sub-menu-heading"><a href="#" onclick="return false;">This is <code>li.sub-menu-heading</code></a></li>
-                                <li><a href="#" onclick="return false;">9</a>
+                                <li><a href="#" onclick="return false;">9 (Sub menu components)</a>
                                     <ul>
                                         <li><a href="#" onclick="return false;">1</a></li>
                                         <li><a href="#" onclick="return false;">2</a></li>
@@ -190,7 +243,7 @@
                                 <li><a href="#" onclick="return false;">10</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" onclick="return false;" title="Long menu text"><i class="sidebar-icon fas fa-greater-than-equal fa-fw"></i> <span class="rd-sidebar-menu-text">Longggggggggg menu item text that is very long</span></a>
+                        <li><a href="#" onclick="return false;" title="Long menu text"><i class="sidebar-icon fa-solid fa-greater-than-equal fa-fw"></i> <span class="rd-sidebar-menu-text">Longggggggggggggggggg menu text</span></a>
                             <ul>
                                 <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 1</a>
                                     <ul>
@@ -217,56 +270,10 @@
                                 <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 5</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" onclick="return false;" title="Components"><i class="sidebar-icon fas fa-server fa-fw"></i> <span class="rd-sidebar-menu-text">Components</span></a>
-                            <ul>
-                                <li class="sub-menu-heading"><a>Basic component &amp; example</a></li>
-                                <li><a href="typography.html">Typography</a></li>
-                                <li><a href="basic-layout.html">Basic layout</a></li>
-                                <li><a href="#" onclick="return false;">Sticky menu</a>
-                                    <ul>
-                                        <li><a href="stickymenu-long-content.html">Sticky menu (long content)</a></li>
-                                        <li><a href="stickymenu-long-menu.html">Sticky menu (long menu)</a></li>
-                                        <li><a href="stickymenu-long-content-menu.html">Sticky menu (long content &amp; menu)</a></li>
-                                    </ul>
-                                </li>
-                                <li class="divider"></li>
-                                <li class="sub-menu-heading"><a>More components</a></li>
-                                <li><a href="accordion.html">Accordion</a></li>
-                                <li><a href="alert-box.html">Alert box</a></li>
-                                <li><a href="alert-dialog.html">Alert dialog</a></li>
-                                <li><a href="badge.html">Badge</a></li>
-                                <li><a href="button.html">Button</a></li>
-                                <li><a href="columns-flex.html">Columns flex</a></li>
-                                <li><a href="datatable.html">Data table</a></li>
-                                <li><a href="dialog.html">Dialog</a></li>
-                                <li><a href="embeds.html">Embeds</a></li>
-                                <li><a href="form.html">Form</a></li>
-                                <li><a href="helpers.html">Helpers</a></li>
-                                <li><a href="pagination.html">Pagination</a></li>
-                                <li><a href="tabs.html">Tabs</a></li>
-                                <li><a href="text.html">Text</a></li>
-                                <li><a href="tooltips.html">Tooltips</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#" onclick="return false;" title="Examples"><i class="sidebar-icon fas fa-laptop-code"></i> <span class="rd-sidebar-menu-text">Examples</span></a>
-                            <ul>
-                                <li><a href="example-login.html">Login page</a></li>
-                                <li><a href="example-logout.html">Logout page</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#" onclick="return false;" title="Tools &amp; guide"><i class="sidebar-icon fas fa-code fa-fw"></i> <span class="rd-sidebar-menu-text">Tools &amp; guide</span></a>
-                            <ul>
-                                <li><a href="credits.html">Credits</a></li>
-                                <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="tools_cssgrid">CSS grid</a></li>
-                                <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="tools_cssflex">CSS flex box</a></li>
-                                <li><a href="https://www.w3.org/wiki/HTML_structural_elements" target="tools_html5structural">HTML 5 structural elements</a></li>
-                                <li><a href="http://pxtoem.com/" target="pxtoemconverter">Pixel / <code>em</code> converter</a></li>
-                            </ul>
-                        </li>
                     </ul>
                     <ul class="rd-sidebar-item-list rd-sidebar-expand-collapse-controls">
                         <li>
-                            <a data-target=".rd-page-wrapper" title="Expane/collapse menu"><i class="sidebar-icon faicon fas fa-chevron-left fa-fw" data-toggle-icon="fa-chevron-left fa-chevron-right"></i> <span class="screen-reader-only" aria-hidden="true">Expane/collapse menu</span></a>
+                            <a data-target=".rd-page-wrapper" title="Expane/collapse menu"><i class="sidebar-icon faicon fa-solid fa-chevron-left fa-fw" data-toggle-icon="fa-chevron-left fa-chevron-right"></i> <span class="screen-reader-only" aria-hidden="true">Expane/collapse menu</span></a>
                             <hr>
                         </li>
                     </ul>
@@ -309,11 +316,11 @@
                                     <td>guphill0@upenn.edu</td>
                                     <td>
                                         <div class="rd-button-group">
-                                            <button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fas fa-caret-down"></i></button>
+                                            <button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>
                                             <ul class="rd-dropdown">
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-key fa-fw"></i> Permissions</a></li>
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-times fa-fw"></i> Delete</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -326,11 +333,11 @@
                                     <td>rkeneleyside1@de.vu</td>
                                     <td>
                                         <div class="rd-button-group">
-                                            <button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fas fa-caret-down"></i></button>
+                                            <button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>
                                             <ul class="rd-dropdown">
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-key fa-fw"></i> Permissions</a></li>
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-times fa-fw"></i> Delete</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -343,11 +350,11 @@
                                     <td>lorrah2@wikia.com</td>
                                     <td>
                                         <div class="rd-button-group">
-                                            <button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fas fa-caret-down"></i></button>
+                                            <button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>
                                             <ul class="rd-dropdown">
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-key fa-fw"></i> Permissions</a></li>
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-times fa-fw"></i> Delete</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -360,11 +367,11 @@
                                     <td>rtarney3@cocolog-nifty.com</td>
                                     <td>
                                         <div class="rd-button-group">
-                                            <button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fas fa-caret-down"></i></button>
+                                            <button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>
                                             <ul class="rd-dropdown">
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-key fa-fw"></i> Permissions</a></li>
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-times fa-fw"></i> Delete</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -377,11 +384,11 @@
                                     <td>plancetter4@fc2.com</td>
                                     <td>
                                         <div class="rd-button-group">
-                                            <button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fas fa-caret-down"></i></button>
+                                            <button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>
                                             <ul class="rd-dropdown">
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-key fa-fw"></i> Permissions</a></li>
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-times fa-fw"></i> Delete</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -454,11 +461,11 @@
                                     <td>guphill0@upenn.edu</td>
                                     <td>
                                         <div class="rd-button-group">
-                                            <button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fas fa-caret-down"></i></button>
+                                            <button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>
                                             <ul class="rd-dropdown">
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-key fa-fw"></i> Permissions</a></li>
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-times fa-fw"></i> Delete</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -471,11 +478,11 @@
                                     <td>rkeneleyside1@de.vu</td>
                                     <td>
                                         <div class="rd-button-group">
-                                            <button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fas fa-caret-down"></i></button>
+                                            <button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>
                                             <ul class="rd-dropdown">
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-key fa-fw"></i> Permissions</a></li>
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-times fa-fw"></i> Delete</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -488,11 +495,11 @@
                                     <td>lorrah2@wikia.com</td>
                                     <td>
                                         <div class="rd-button-group">
-                                            <button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fas fa-caret-down"></i></button>
+                                            <button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>
                                             <ul class="rd-dropdown">
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-key fa-fw"></i> Permissions</a></li>
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-times fa-fw"></i> Delete</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -505,11 +512,11 @@
                                     <td>rtarney3@cocolog-nifty.com</td>
                                     <td>
                                         <div class="rd-button-group">
-                                            <button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fas fa-caret-down"></i></button>
+                                            <button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>
                                             <ul class="rd-dropdown">
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-key fa-fw"></i> Permissions</a></li>
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-times fa-fw"></i> Delete</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -522,11 +529,11 @@
                                     <td>plancetter4@fc2.com</td>
                                     <td>
                                         <div class="rd-button-group">
-                                            <button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fas fa-caret-down"></i></button>
+                                            <button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>
                                             <ul class="rd-dropdown">
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-key fa-fw"></i> Permissions</a></li>
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-times fa-fw"></i> Delete</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -569,11 +576,11 @@
                                     <td>guphill0@upenn.edu</td>
                                     <td>
                                         <div class="rd-button-group">
-                                            <button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fas fa-caret-down"></i></button>
+                                            <button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>
                                             <ul class="rd-dropdown">
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-key fa-fw"></i> Permissions</a></li>
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-times fa-fw"></i> Delete</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -586,11 +593,11 @@
                                     <td>rkeneleyside1@de.vu</td>
                                     <td>
                                         <div class="rd-button-group">
-                                            <button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fas fa-caret-down"></i></button>
+                                            <button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>
                                             <ul class="rd-dropdown">
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-key fa-fw"></i> Permissions</a></li>
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-times fa-fw"></i> Delete</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -603,11 +610,11 @@
                                     <td>lorrah2@wikia.com</td>
                                     <td>
                                         <div class="rd-button-group">
-                                            <button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fas fa-caret-down"></i></button>
+                                            <button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>
                                             <ul class="rd-dropdown">
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-key fa-fw"></i> Permissions</a></li>
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-times fa-fw"></i> Delete</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -620,11 +627,11 @@
                                     <td>rtarney3@cocolog-nifty.com</td>
                                     <td>
                                         <div class="rd-button-group">
-                                            <button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fas fa-caret-down"></i></button>
+                                            <button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>
                                             <ul class="rd-dropdown">
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-key fa-fw"></i> Permissions</a></li>
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-times fa-fw"></i> Delete</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -637,11 +644,11 @@
                                     <td>plancetter4@fc2.com</td>
                                     <td>
                                         <div class="rd-button-group">
-                                            <button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fas fa-caret-down"></i></button>
+                                            <button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>
                                             <ul class="rd-dropdown">
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-key fa-fw"></i> Permissions</a></li>
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-times fa-fw"></i> Delete</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -683,11 +690,11 @@
                                     <td>Gwendolyn Uphill</td>
                                     <td>
                                         <div class="rd-button-group">
-                                            <button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fas fa-caret-down"></i></button>
+                                            <button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>
                                             <ul class="rd-dropdown">
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-key fa-fw"></i> Permissions</a></li>
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-times fa-fw"></i> Delete</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -699,11 +706,11 @@
                                     <td>Reinhold Keneleyside</td>
                                     <td>
                                         <div class="rd-button-group">
-                                            <button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fas fa-caret-down"></i></button>
+                                            <button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>
                                             <ul class="rd-dropdown">
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-key fa-fw"></i> Permissions</a></li>
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-times fa-fw"></i> Delete</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -715,11 +722,11 @@
                                     <td>Leroy Orrah</td>
                                     <td>
                                         <div class="rd-button-group">
-                                            <button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fas fa-caret-down"></i></button>
+                                            <button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>
                                             <ul class="rd-dropdown">
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-key fa-fw"></i> Permissions</a></li>
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-times fa-fw"></i> Delete</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -731,11 +738,11 @@
                                     <td>Rutherford Tarney</td>
                                     <td>
                                         <div class="rd-button-group">
-                                            <button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fas fa-caret-down"></i></button>
+                                            <button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>
                                             <ul class="rd-dropdown">
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-key fa-fw"></i> Permissions</a></li>
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-times fa-fw"></i> Delete</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -747,11 +754,11 @@
                                     <td>Perl Lancetter</td>
                                     <td>
                                         <div class="rd-button-group">
-                                            <button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fas fa-caret-down"></i></button>
+                                            <button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>
                                             <ul class="rd-dropdown">
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-key fa-fw"></i> Permissions</a></li>
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-times fa-fw"></i> Delete</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -763,11 +770,11 @@
                                     <td>Georgie Ballister</td>
                                     <td>
                                         <div class="rd-button-group">
-                                            <button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fas fa-caret-down"></i></button>
+                                            <button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>
                                             <ul class="rd-dropdown">
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-key fa-fw"></i> Permissions</a></li>
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-times fa-fw"></i> Delete</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -873,11 +880,11 @@
                                     <td>mbernardoj@google.es</td>
                                     <td>
                                         <div class="rd-button-group">
-                                            <button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fas fa-caret-down"></i></button>
+                                            <button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>
                                             <ul class="rd-dropdown">
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-key fa-fw"></i> Permissions</a></li>
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-times fa-fw"></i> Delete</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -890,11 +897,11 @@
                                     <td>cmacnockateri@illinois.edu</td>
                                     <td>
                                         <div class="rd-button-group">
-                                            <button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fas fa-caret-down"></i></button>
+                                            <button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>
                                             <ul class="rd-dropdown">
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-key fa-fw"></i> Permissions</a></li>
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-times fa-fw"></i> Delete</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -907,11 +914,11 @@
                                     <td>ggriggsh@stanford.edu</td>
                                     <td>
                                         <div class="rd-button-group">
-                                            <button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fas fa-caret-down"></i></button>
+                                            <button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>
                                             <ul class="rd-dropdown">
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-key fa-fw"></i> Permissions</a></li>
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-times fa-fw"></i> Delete</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -924,11 +931,11 @@
                                     <td>kroubeixg@ning.com</td>
                                     <td>
                                         <div class="rd-button-group">
-                                            <button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fas fa-caret-down"></i></button>
+                                            <button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>
                                             <ul class="rd-dropdown">
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-key fa-fw"></i> Permissions</a></li>
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-times fa-fw"></i> Delete</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -941,11 +948,11 @@
                                     <td>wcaretf@soundcloud.com</td>
                                     <td>
                                         <div class="rd-button-group">
-                                            <button class="rd-button small"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fas fa-caret-down"></i></button>
+                                            <button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>
+                                            <button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>
                                             <ul class="rd-dropdown">
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-key fa-fw"></i> Permissions</a></li>
-                                                <li><a href="#" onclick="return false;"><i class="fas fa-times fa-fw"></i> Delete</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>
+                                                <li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -999,11 +1006,11 @@
                 &lt;td&gt;mbernardoj@google.es&lt;/td&gt;
                 &lt;td&gt;
                     &lt;div class=&quot;rd-button-group&quot;&gt;
-                        &lt;button class=&quot;rd-button small&quot;&gt;&lt;i class=&quot;fas fa-pencil-alt&quot;&gt;&lt;/i&gt; Edit&lt;/button&gt;
-                        &lt;button class=&quot;rd-button small dropdown-toggler&quot; data-placement=&quot;bottom right&quot;&gt;&lt;i class=&quot;fas fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+                        &lt;button class=&quot;rd-button small&quot;&gt;&lt;i class=&quot;fa-solid fa-pencil&quot;&gt;&lt;/i&gt; Edit&lt;/button&gt;
+                        &lt;button class=&quot;rd-button small dropdown-toggler&quot; data-placement=&quot;bottom right&quot;&gt;&lt;i class=&quot;fa-solid fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
                         &lt;ul class=&quot;rd-dropdown&quot;&gt;
-                            &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;&lt;i class=&quot;fas fa-key fa-fw&quot;&gt;&lt;/i&gt; Permissions&lt;/a&gt;&lt;/li&gt;
-                            &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;&lt;i class=&quot;fas fa-times fa-fw&quot;&gt;&lt;/i&gt; Delete&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;&lt;i class=&quot;fa-solid fa-key fa-fw&quot;&gt;&lt;/i&gt; Permissions&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;&lt;i class=&quot;fa-solid fa-xmark fa-fw&quot;&gt;&lt;/i&gt; Delete&lt;/a&gt;&lt;/li&gt;
                         &lt;/ul&gt;
                     &lt;/div&gt;
                 &lt;/td&gt;
@@ -1044,7 +1051,7 @@
                                         <span class="action"><a href="#" onclick="return false;">Permissions</a></span>
                                         <span class="action"><a href="#" onclick="return false;">Delete</a></span>
                                     </div><!--.row-actions-->
-                                    <button class="toggle-row" type="button"><i class="faicon fas fa-caret-down fa-fw" data-toggle-icon="fa-caret-down fa-caret-up"></i><span class="screen-reader-only">Show more details</span></button>
+                                    <button class="toggle-row" type="button"><i class="faicon fa-solid fa-caret-down fa-fw" data-toggle-icon="fa-caret-down fa-caret-up"></i><span class="screen-reader-only">Show more details</span></button>
                                 </td>
                                 <td data-colname="Address">282 Springview Street</td>
                                 <td data-colname="Email">guphill0@upenn.edu</td>
@@ -1058,7 +1065,7 @@
                                         <span class="action"><a href="#" onclick="return false;">Permissions</a></span>
                                         <span class="action"><a href="#" onclick="return false;">Delete</a></span>
                                     </div><!--.row-actions-->
-                                    <button class="toggle-row" type="button"><i class="faicon fas fa-caret-down fa-fw" data-toggle-icon="fa-caret-down fa-caret-up"></i><span class="screen-reader-only">Show more details</span></button>
+                                    <button class="toggle-row" type="button"><i class="faicon fa-solid fa-caret-down fa-fw" data-toggle-icon="fa-caret-down fa-caret-up"></i><span class="screen-reader-only">Show more details</span></button>
                                 </td>
                                 <td data-colname="Address">820 Old Gate Parkway</td>
                                 <td data-colname="Email">rkeneleyside1@de.vu</td>
@@ -1072,7 +1079,7 @@
                                         <span class="action"><a href="#" onclick="return false;">Permissions</a></span>
                                         <span class="action"><a href="#" onclick="return false;">Delete</a></span>
                                     </div><!--.row-actions-->
-                                    <button class="toggle-row" type="button"><i class="faicon fas fa-caret-down fa-fw" data-toggle-icon="fa-caret-down fa-caret-up"></i><span class="screen-reader-only">Show more details</span></button>
+                                    <button class="toggle-row" type="button"><i class="faicon fa-solid fa-caret-down fa-fw" data-toggle-icon="fa-caret-down fa-caret-up"></i><span class="screen-reader-only">Show more details</span></button>
                                 </td>
                                 <td data-colname="Address">8 Charing Cross Avenue</td>
                                 <td data-colname="Email">lorrah2@wikia.com</td>
@@ -1086,7 +1093,7 @@
                                         <span class="action"><a href="#" onclick="return false;">Permissions</a></span>
                                         <span class="action"><a href="#" onclick="return false;">Delete</a></span>
                                     </div><!--.row-actions-->
-                                    <button class="toggle-row" type="button"><i class="faicon fas fa-caret-down fa-fw" data-toggle-icon="fa-caret-down fa-caret-up"></i><span class="screen-reader-only">Show more details</span></button>
+                                    <button class="toggle-row" type="button"><i class="faicon fa-solid fa-caret-down fa-fw" data-toggle-icon="fa-caret-down fa-caret-up"></i><span class="screen-reader-only">Show more details</span></button>
                                 </td>
                                 <td data-colname="Address">10 Valley Edge Park</td>
                                 <td data-colname="Email">rtarney3@cocolog-nifty.com</td>
@@ -1100,7 +1107,7 @@
                                         <span class="action"><a href="#" onclick="return false;">Permissions</a></span>
                                         <span class="action"><a href="#" onclick="return false;">Delete</a></span>
                                     </div><!--.row-actions-->
-                                    <button class="toggle-row" type="button"><i class="faicon fas fa-caret-down fa-fw" data-toggle-icon="fa-caret-down fa-caret-up"></i><span class="screen-reader-only">Show more details</span></button>
+                                    <button class="toggle-row" type="button"><i class="faicon fa-solid fa-caret-down fa-fw" data-toggle-icon="fa-caret-down fa-caret-up"></i><span class="screen-reader-only">Show more details</span></button>
                                 </td>
                                 <td data-colname="Address">98697 Bultman Park</td>
                                 <td data-colname="Email">plancetter4@fc2.com</td>
@@ -1141,7 +1148,7 @@
                     &lt;span class=&quot;action&quot;&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;Delete&lt;/a&gt;&lt;/span&gt;
                 &lt;/div&gt;
                 &lt;!--.row-actions--&gt;
-                &lt;button class=&quot;toggle-row&quot; type=&quot;button&quot;&gt;&lt;i class=&quot;faicon fas fa-caret-down fa-fw&quot; data-toggle-icon=&quot;fa-caret-down fa-caret-up&quot;&gt;&lt;/i&gt;&lt;span class=&quot;screen-reader-only&quot;&gt;Show more details&lt;/span&gt;&lt;/button&gt;
+                &lt;button class=&quot;toggle-row&quot; type=&quot;button&quot;&gt;&lt;i class=&quot;faicon fa-solid fa-caret-down fa-fw&quot; data-toggle-icon=&quot;fa-caret-down fa-caret-up&quot;&gt;&lt;/i&gt;&lt;span class=&quot;screen-reader-only&quot;&gt;Show more details&lt;/span&gt;&lt;/button&gt;
             &lt;/td&gt;
             &lt;td data-colname=&quot;Address&quot;&gt;123 Address Street&lt;/td&gt;
             &lt;td data-colname=&quot;Email&quot;&gt;demo@localhost.localhost&lt;/td&gt;
@@ -1201,6 +1208,6 @@
         <script src="assets/js/sticky-sidebar/jquery.sticky-sidebar.min.js?npm-v=3.3.1"></script>
         <script src="assets/js/resize-sensor/ResizeSensor.js?v=8652505c23e8fdc8016445c5e13bee64"></script><!-- use with sticky sidebar js, manual update. -->
 
-        <script src="assets/js/rdta/rundiz-template-admin.js?v=ee4489c024424ffffd77ca1ee69f0f43"></script> 
+        <script src="assets/js/rdta/rundiz-template-admin.js?v=3a430070058c88de26193f94a797cd49"></script> 
     </body>
 </html>

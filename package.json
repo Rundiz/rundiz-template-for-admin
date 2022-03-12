@@ -1,6 +1,6 @@
 {
   "name": "rundiz-template-for-admin",
-  "version": "2.1.15",
+  "version": "2.2.1",
   "description": "HTML, CSS, JS template for administrator application.",
   "main": "assets/js/rdta/rundiz-template-admin.js",
   "scripts": {
@@ -41,7 +41,7 @@
     "sass": "^1.0.0"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@fortawesome/fontawesome-free": "^6.0.0",
     "@popperjs/core": "^2.11.2",
     "sanitize.css": "github:csstools/sanitize.css#main",
     "smartmenus": "^1.1.1",

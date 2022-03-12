@@ -1,5 +1,5 @@
 /*!
- Rundiz template for admin v 2.1.15 
+ Rundiz template for admin v 2.2.1 
 License: MIT
 */
 /**
@@ -213,7 +213,7 @@ class RDTATabs {
      * 
      * Tabs nav scroll will be visible on tabs size is overflow visible width.
      * 
-     * @since 2.1.16
+     * @since 2.2.1
      * @private This method was called from `init()`.
      * @returns {undefined}
      */
@@ -354,7 +354,7 @@ class RDTATabs {
     /**
      * Listen on window resize and do the task.
      * 
-     * @since 2.1.16
+     * @since 2.2.1
      * @private This method was called from `init()`.
      * @returns {undefined}
      */
@@ -369,7 +369,7 @@ class RDTATabs {
     /**
      * Set tabs nav horizontal scroll.
      * 
-     * @since 2.1.16
+     * @since 2.2.1
      * @private This method was called from `init()`, `listenWindowResize()`.
      * @returns {undefined}
      */

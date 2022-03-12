@@ -8,36 +8,36 @@
         <link rel="stylesheet" href="assets/css/sanitize/typography.css?npm-v=github%3Acsstools%2Fsanitize.css%23main">
         <link rel="stylesheet" href="assets/css/sanitize/forms.css?npm-v=github%3Acsstools%2Fsanitize.css%23main">
 
-        <link rel="stylesheet" href="assets/font-awesome/css/all.min.css?npm-v=5.15.4">
+        <link rel="stylesheet" href="assets/font-awesome/css/all.min.css?npm-v=6.0.0">
 
         <link rel="stylesheet" href="assets/css/smartmenus/sm-core-css.css?npm-v=1.1.1">
         <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?v=f8ca278194bcf804a4e16ea3459992a5">
 
         <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?v=0447766fd38ddd5161d7d04179bee59a">
-        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?v=8d9df12fef61c65c4c157a020f230d36">
+        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?v=7aa3755769e17f74c4f389fae4a6a8fa">
 
         <link rel="stylesheet" href="assets/css/rdta-demo-pages.css?v=5c5a3502c8c15fba309fc170b49e4583"> 
     </head>
     <body>
         <header class="rd-navbar">
-            <button class="rd-sidebar-toggler" data-target=".rd-page-wrapper" title="Toggle side bar menu"><i class="fas fa-bars fa-fw"></i><span class="screen-reader-only" aria-hidden="true">Toggle side bar menu</span></button>
-            <div class="rd-site-brand"><a href="#" onclick="return false;">Admin Dashboard</a></div><!--.rd-site-brand-->
+            <button class="rd-sidebar-toggler" data-target=".rd-page-wrapper" title="Toggle side bar menu"><i class="fa-solid fa-bars fa-fw"></i><span class="screen-reader-only" aria-hidden="true">Toggle side bar menu</span></button>
+            <div class="rd-site-brand"><a href="./">Admin Dashboard</a></div><!--.rd-site-brand-->
             <nav class="nav-right">
                 <ul class="sm sm-rdta navbar">
-                    <li><a href="#" onclick="return false;"><i class="fas fa-globe fa-fw"></i></a>
+                    <li><a href="#" onclick="return false;"><i class="fa-solid fa-globe fa-fw"></i></a>
                         <ul>
                             <li><a href="javascript:alert('link clicked');">Thai</a></li>
                             <li class="is-active"><a href="javascript:alert('link clicked');">English</a></li>
                         </ul>
                     </li>
-                    <li><a href="#" onclick="return false;"><i class="fas fa-bell fa-fw"></i> <span class="rd-notification-badge tiny">3</span></a>
+                    <li><a href="#" onclick="return false;"><i class="fa-solid fa-bell fa-fw"></i> <span class="rd-notification-badge tiny">3</span></a>
                         <ul>
                             <li><a href="#" onclick="return false;">Approve new comments</a></li>
                             <li><a href="#" onclick="return false;">Approve new posts</a></li>
                             <li><a href="#" onclick="return false;">There are new contact messages</a></li>
                         </ul>
                     </li>
-                    <li class="user"><a href="#" onclick="return false;"><i class="far fa-user-circle"></i></a>
+                    <li class="user"><a href="#" onclick="return false;"><i class="fa-regular fa-circle-user"></i></a>
                         <ul>
                             <li><a>Hello, user name</a></li>
                             <li><a href="#" onclick="return false;">Edit your account</a></li>
@@ -50,17 +50,64 @@
         <div class="rd-page-wrapper">
             <div class="rd-sidebar-back"></div>
             <section class="rd-sidebar">
+                <h2 class="screen-reader-only">Sidebar menus</h2>
                 <div class="rd-sidebar-inner">
                     <ul class="rd-sidebar-item-list sm sm-vertical sm-rdta">
-                        <li><a href="#" onclick="return false;" title="Admin home"><i class="sidebar-icon fas fa-tachometer-alt fa-fw"></i> <span class="rd-sidebar-menu-text">Admin home</span></a>
+                        <li><a href="#" onclick="return false;" title="Admin home"><i class="sidebar-icon fa-solid fa-gauge-high fa-fw"></i> <span class="rd-sidebar-menu-text">Admin home</span></a>
                             <ul>
                                 <li><a href="./">Admin dashboard</a></li>
                                 <li><a href="javascript:alert('link clicked');">Update</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" onclick="return false;" title="Front home"><i class="sidebar-icon fas fa-home fa-fw"></i> <span class="rd-sidebar-menu-text">Front home</span></a></li>
-                        <li><a href="#" onclick="return false;" title="Settings"><i class="sidebar-icon fas fa-cog fa-fw"></i> <span class="rd-sidebar-menu-text">Settings</span></a></li>
-                        <li><a href="#" onclick="return false;" title="Sub menus"><i class="sidebar-icon fas fa-cubes fa-fw"></i> <span class="rd-sidebar-menu-text">Sub menus</span></a>
+                        <li><a href="#" onclick="return false;" title="Components"><i class="sidebar-icon fa-solid fa-boxes-stacked fa-fw"></i> <span class="rd-sidebar-menu-text">Components</span></a>
+                            <ul>
+                                <li class="sub-menu-heading"><a>Typography &amp; getting started</a></li>
+                                <li><a href="typography.html">Typography</a></li>
+                                <li><a href="basic-layout.html">Basic layout (getting started)</a></li>
+                                <li class="divider"></li>
+                                <li class="sub-menu-heading"><a>More components</a></li>
+                                <li><a href="accordion.html">Accordion</a></li>
+                                <li><a href="alert-box.html">Alert box</a></li>
+                                <li><a href="alert-dialog.html">Alert dialog</a></li>
+                                <li><a href="badge.html">Badge</a></li>
+                                <li><a href="button.html">Button</a></li>
+                                <li><a href="columns-flex.html">Columns flex</a></li>
+                                <li><a href="datatable.html">Data table</a></li>
+                                <li><a href="dialog.html">Dialog</a></li>
+                                <li><a href="embeds.html">Embeds</a></li>
+                                <li><a href="form.html">Form</a></li>
+                                <li><a href="helpers.html">Helpers</a></li>
+                                <li><a href="pagination.html">Pagination</a></li>
+                                <li><a href="tabs.html">Tabs</a></li>
+                                <li><a href="text.html">Text</a></li>
+                                <li><a href="tooltips.html">Tooltips</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" onclick="return false;" title="Examples"><i class="sidebar-icon fa-solid fa-laptop-code"></i> <span class="rd-sidebar-menu-text">Examples</span></a>
+                            <ul>
+                                <li><a href="example-login.html">Login page</a></li>
+                                <li><a href="example-logout.html">Logout page</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" onclick="return false;" title="Tools &amp; guide"><i class="sidebar-icon fa-solid fa-code fa-fw"></i> <span class="rd-sidebar-menu-text">Tools &amp; guide</span></a>
+                            <ul>
+                                <li><a href="credits.html">Credits</a></li>
+                                <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="tools_cssgrid">CSS grid</a></li>
+                                <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="tools_cssflex">CSS flex box</a></li>
+                                <li><a href="https://www.w3.org/wiki/HTML_structural_elements" target="tools_html5structural">HTML 5 structural elements</a></li>
+                                <li><a href="http://pxtoem.com/" target="pxtoemconverter">Pixel / <code>em</code> converter</a></li>
+                            </ul>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="sub-menu-heading"><a onclick="return false;" title="Experiments"><i class="sidebar-icon fa-solid fa-vial fa-fw"></i> <span class="rd-sidebar-menu-text">Experiments</span></a></li>
+                        <li><a href="#" onclick="return false;" title="Sticky menu"><i class="sidebar-icon fa-solid fa-thumbtack fa-fw"></i> <span class="rd-sidebar-menu-text">Stickey menu</span></a>
+                            <ul>
+                                <li><a href="stickymenu-long-content.html">Sticky menu (long content)</a></li>
+                                <li><a href="stickymenu-long-menu.html">Sticky menu (long menu)</a></li>
+                                <li><a href="stickymenu-long-content-menu.html">Sticky menu (long content &amp; menu)</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" onclick="return false;" title="Sub menus"><i class="sidebar-icon fa-solid fa-folder-tree fa-fw"></i> <span class="rd-sidebar-menu-text">Sub menus</span></a>
                             <ul>
                                 <li><a href="javascript:alert('link clicked');">1</a>
                                     <ul>
@@ -87,7 +134,7 @@
                                         <li><a href="#" onclick="return false;">1.5</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#" onclick="return false;">2</a>
+                                <li><a href="#" onclick="return false;">2 (Deep sub menus)</a>
                                     <ul>
                                         <li><a href="#" onclick="return false;">2.1</a></li>
                                         <li><a href="#" onclick="return false;">2.2</a>
@@ -99,7 +146,13 @@
                                                         <li><a href="#" onclick="return false;">2.2.2.2</a>
                                                             <ul>
                                                                 <li><a href="#" onclick="return false;">2.2.2.2.1</a></li>
-                                                                <li><a href="#" onclick="return false;">2.2.2.2.2</a></li>
+                                                                <li><a href="#" onclick="return false;">2.2.2.2.2</a>
+                                                                    <ul>
+                                                                        <li><a href="#" onclick="return false;">2.2.2.2.2.1</a></li>
+                                                                        <li><a href="#" onclick="return false;">2.2.2.2.2.2</a></li>
+                                                                        <li><a href="#" onclick="return false;">2.2.2.2.2.3</a></li>
+                                                                    </ul>
+                                                                </li>
                                                                 <li><a href="#" onclick="return false;">2.2.2.2.3</a></li>
                                                             </ul>
                                                         </li>
@@ -112,7 +165,7 @@
                                         <li><a href="#" onclick="return false;">2.3</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#" onclick="return false;">3</a>
+                                <li><a href="#" onclick="return false;">3 (Very long sub menus)</a>
                                     <ul>
                                     <!-- it is recommended that you should not have more than 15 items per sub menu, or you have to modify options in `rdtaSidebarSmartMenus()` function -->
                                         <li><a href="#" onclick="return false;">3.1</a></li>
@@ -175,7 +228,7 @@
                                 <li class="divider"><a href="#" onclick="alert('Nothing works here!'); return false;">Nothing here will be display.</a></li>
                                 <li><a href="#" onclick="return false;">The above is <code>li.divider</code></a></li>
                                 <li class="sub-menu-heading"><a href="#" onclick="return false;">This is <code>li.sub-menu-heading</code></a></li>
-                                <li><a href="#" onclick="return false;">9</a>
+                                <li><a href="#" onclick="return false;">9 (Sub menu components)</a>
                                     <ul>
                                         <li><a href="#" onclick="return false;">1</a></li>
                                         <li><a href="#" onclick="return false;">2</a></li>
@@ -190,7 +243,7 @@
                                 <li><a href="#" onclick="return false;">10</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" onclick="return false;" title="Long menu text"><i class="sidebar-icon fas fa-greater-than-equal fa-fw"></i> <span class="rd-sidebar-menu-text">Longggggggggg menu item text that is very long</span></a>
+                        <li><a href="#" onclick="return false;" title="Long menu text"><i class="sidebar-icon fa-solid fa-greater-than-equal fa-fw"></i> <span class="rd-sidebar-menu-text">Longggggggggggggggggg menu text</span></a>
                             <ul>
                                 <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 1</a>
                                     <ul>
@@ -217,56 +270,10 @@
                                 <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 5</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" onclick="return false;" title="Components"><i class="sidebar-icon fas fa-server fa-fw"></i> <span class="rd-sidebar-menu-text">Components</span></a>
-                            <ul>
-                                <li class="sub-menu-heading"><a>Basic component &amp; example</a></li>
-                                <li><a href="typography.html">Typography</a></li>
-                                <li><a href="basic-layout.html">Basic layout</a></li>
-                                <li><a href="#" onclick="return false;">Sticky menu</a>
-                                    <ul>
-                                        <li><a href="stickymenu-long-content.html">Sticky menu (long content)</a></li>
-                                        <li><a href="stickymenu-long-menu.html">Sticky menu (long menu)</a></li>
-                                        <li><a href="stickymenu-long-content-menu.html">Sticky menu (long content &amp; menu)</a></li>
-                                    </ul>
-                                </li>
-                                <li class="divider"></li>
-                                <li class="sub-menu-heading"><a>More components</a></li>
-                                <li><a href="accordion.html">Accordion</a></li>
-                                <li><a href="alert-box.html">Alert box</a></li>
-                                <li><a href="alert-dialog.html">Alert dialog</a></li>
-                                <li><a href="badge.html">Badge</a></li>
-                                <li><a href="button.html">Button</a></li>
-                                <li><a href="columns-flex.html">Columns flex</a></li>
-                                <li><a href="datatable.html">Data table</a></li>
-                                <li><a href="dialog.html">Dialog</a></li>
-                                <li><a href="embeds.html">Embeds</a></li>
-                                <li><a href="form.html">Form</a></li>
-                                <li><a href="helpers.html">Helpers</a></li>
-                                <li><a href="pagination.html">Pagination</a></li>
-                                <li><a href="tabs.html">Tabs</a></li>
-                                <li><a href="text.html">Text</a></li>
-                                <li><a href="tooltips.html">Tooltips</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#" onclick="return false;" title="Examples"><i class="sidebar-icon fas fa-laptop-code"></i> <span class="rd-sidebar-menu-text">Examples</span></a>
-                            <ul>
-                                <li><a href="example-login.html">Login page</a></li>
-                                <li><a href="example-logout.html">Logout page</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#" onclick="return false;" title="Tools &amp; guide"><i class="sidebar-icon fas fa-code fa-fw"></i> <span class="rd-sidebar-menu-text">Tools &amp; guide</span></a>
-                            <ul>
-                                <li><a href="credits.html">Credits</a></li>
-                                <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="tools_cssgrid">CSS grid</a></li>
-                                <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="tools_cssflex">CSS flex box</a></li>
-                                <li><a href="https://www.w3.org/wiki/HTML_structural_elements" target="tools_html5structural">HTML 5 structural elements</a></li>
-                                <li><a href="http://pxtoem.com/" target="pxtoemconverter">Pixel / <code>em</code> converter</a></li>
-                            </ul>
-                        </li>
                     </ul>
                     <ul class="rd-sidebar-item-list rd-sidebar-expand-collapse-controls">
                         <li>
-                            <a data-target=".rd-page-wrapper" title="Expane/collapse menu"><i class="sidebar-icon faicon fas fa-chevron-left fa-fw" data-toggle-icon="fa-chevron-left fa-chevron-right"></i> <span class="screen-reader-only" aria-hidden="true">Expane/collapse menu</span></a>
+                            <a data-target=".rd-page-wrapper" title="Expane/collapse menu"><i class="sidebar-icon faicon fa-solid fa-chevron-left fa-fw" data-toggle-icon="fa-chevron-left fa-chevron-right"></i> <span class="screen-reader-only" aria-hidden="true">Expane/collapse menu</span></a>
                             <hr>
                         </li>
                     </ul>
@@ -400,7 +407,7 @@
                     <p>The dropdown button uses <a href="https://popper.js.org/" target="popper-js">Popper.js</a> to position the dropdown items.</p>
                     <div class="rd-block-level-margin-bottom">
                         <div class="rd-button-group">
-                            <button class="rd-button dropdown-toggler">Dropdown <i class="fas fa-caret-down"></i></button>
+                            <button class="rd-button dropdown-toggler">Dropdown <i class="fa-solid fa-caret-down"></i></button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save A</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish A</a></li>
@@ -409,7 +416,7 @@
                         </div>
                         <div class="rd-button-group">
                             <button class="rd-button primary">Button</button>
-                            <button class="rd-button primary dropdown-toggler"><i class="fas fa-caret-down"></i></button>
+                            <button class="rd-button primary dropdown-toggler"><i class="fa-solid fa-caret-down"></i></button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save B</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish B</a></li>
@@ -418,7 +425,7 @@
                         </div>
                         <div class="rd-button-group">
                             <a class="rd-button" href="#go-somewhere">Link button</a>
-                            <a class="rd-button dropdown-toggler" href="#"><i class="fas fa-caret-down"></i></a>
+                            <a class="rd-button dropdown-toggler" href="#"><i class="fa-solid fa-caret-down"></i></a>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save C</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish C</a></li>
@@ -427,7 +434,7 @@
                         </div>
                         <div class="rd-button-group">
                             <button class="rd-button info">Button with sub buttons</button>
-                            <button class="rd-button info dropdown-toggler"><i class="fas fa-caret-down"></i></button>
+                            <button class="rd-button info dropdown-toggler"><i class="fa-solid fa-caret-down"></i></button>
                             <ul class="rd-dropdown">
                                 <li><button type="button">Button</button></li>
                                 <li><input type="button" value="Input button"></li>
@@ -438,7 +445,7 @@
                         </div>
                     </div>
                     <pre>&lt;div class=&quot;rd-button-group&quot;&gt;
-    &lt;button class=&quot;rd-button dropdown-toggler&quot;&gt;Dropdown &lt;i class=&quot;fas fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+    &lt;button class=&quot;rd-button dropdown-toggler&quot;&gt;Dropdown &lt;i class=&quot;fa-solid fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
     &lt;ul class=&quot;rd-dropdown&quot;&gt;
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Save A&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Save &amp;amp; Publish A&lt;/a&gt;&lt;/li&gt;
@@ -447,7 +454,7 @@
 &lt;/div&gt;
 &lt;div class=&quot;rd-button-group&quot;&gt;
     &lt;button class=&quot;rd-button primary&quot;&gt;Button&lt;/button&gt;
-    &lt;button class=&quot;rd-button primary dropdown-toggler&quot;&gt;&lt;i class=&quot;fas fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+    &lt;button class=&quot;rd-button primary dropdown-toggler&quot;&gt;&lt;i class=&quot;fa-solid fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
     &lt;ul class=&quot;rd-dropdown&quot;&gt;
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Save B&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Save &amp;amp; Publish B&lt;/a&gt;&lt;/li&gt;
@@ -456,7 +463,7 @@
 &lt;/div&gt;
 &lt;div class=&quot;rd-button-group&quot;&gt;
    &lt;a class=&quot;rd-button&quot; href=&quot;#go-somewhere&quot;&gt;Link button&lt;/a&gt;
-   &lt;a class=&quot;rd-button dropdown-toggler&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;fas fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+   &lt;a class=&quot;rd-button dropdown-toggler&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;fa-solid fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/a&gt;
    &lt;ul class=&quot;rd-dropdown&quot;&gt;
       &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;Save C&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;Save &amp;amp; Publish C&lt;/a&gt;&lt;/li&gt;
@@ -465,7 +472,7 @@
 &lt;/div&gt;
 &lt;div class=&quot;rd-button-group&quot;&gt;
    &lt;button class=&quot;rd-button info&quot;&gt;Button with sub buttons&lt;/button&gt;
-   &lt;button class=&quot;rd-button info dropdown-toggler&quot;&gt;&lt;i class=&quot;fas fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+   &lt;button class=&quot;rd-button info dropdown-toggler&quot;&gt;&lt;i class=&quot;fa-solid fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
    &lt;ul class=&quot;rd-dropdown&quot;&gt;
       &lt;li&gt;&lt;button type=&quot;button&quot;&gt;Button&lt;/button&gt;&lt;/li&gt;
       &lt;li&gt;&lt;input type=&quot;button&quot; value=&quot;Input button&quot;&gt;&lt;/li&gt;
@@ -478,7 +485,7 @@
                     <p>Add <code>tiny</code>, <code>small</code>, <code>large</code> class to the button element that contain <code>rd-button</code> class to change its size.</p>
                     <div class="rd-block-level-margin-bottom">
                         <div class="rd-button-group">
-                            <button class="rd-button danger tiny dropdown-toggler">Tiny <i class="fas fa-caret-down"></i></button>
+                            <button class="rd-button danger tiny dropdown-toggler">Tiny <i class="fa-solid fa-caret-down"></i></button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
@@ -487,7 +494,7 @@
                         </div>
                         <div class="rd-button-group">
                             <button class="rd-button info small">Small</button>
-                            <button class="rd-button info small dropdown-toggler"><i class="fas fa-caret-down"></i></button>
+                            <button class="rd-button info small dropdown-toggler"><i class="fa-solid fa-caret-down"></i></button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save 2</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish 2</a></li>
@@ -495,7 +502,7 @@
                             </ul>
                         </div>
                         <div class="rd-button-group">
-                            <button class="rd-button warning dropdown-toggler">Normal <i class="fas fa-caret-down"></i></button>
+                            <button class="rd-button warning dropdown-toggler">Normal <i class="fa-solid fa-caret-down"></i></button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save 3</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish 3</a></li>
@@ -504,7 +511,7 @@
                         </div>
                         <div class="rd-button-group">
                             <button class="rd-button success large">Large</button>
-                            <button class="rd-button success large dropdown-toggler"><i class="fas fa-caret-down"></i></button>
+                            <button class="rd-button success large dropdown-toggler"><i class="fa-solid fa-caret-down"></i></button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save 4</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish 4</a></li>
@@ -513,7 +520,7 @@
                         </div>
                     </div>
                     <pre>&lt;div class=&quot;rd-button-group&quot;&gt;
-    &lt;button class=&quot;rd-button danger tiny dropdown-toggler&quot;&gt;Tiny &lt;i class=&quot;fas fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+    &lt;button class=&quot;rd-button danger tiny dropdown-toggler&quot;&gt;Tiny &lt;i class=&quot;fa-solid fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
     &lt;ul class=&quot;rd-dropdown&quot;&gt;
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Save&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Save &amp;amp; Publish&lt;/a&gt;&lt;/li&gt;
@@ -522,7 +529,7 @@
 &lt;/div&gt;
 &lt;div class=&quot;rd-button-group&quot;&gt;
     &lt;button class=&quot;rd-button info small&quot;&gt;Small&lt;/button&gt;
-    &lt;button class=&quot;rd-button info small dropdown-toggler&quot;&gt;&lt;i class=&quot;fas fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+    &lt;button class=&quot;rd-button info small dropdown-toggler&quot;&gt;&lt;i class=&quot;fa-solid fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
     &lt;ul class=&quot;rd-dropdown&quot;&gt;
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Save 2&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Save &amp;amp; Publish 2&lt;/a&gt;&lt;/li&gt;
@@ -531,7 +538,7 @@
 &lt;/div&gt;
 &lt;div class=&quot;rd-button-group&quot;&gt;
     &lt;button class=&quot;rd-button success large&quot;&gt;Large&lt;/button&gt;
-    &lt;button class=&quot;rd-button success large dropdown-toggler&quot;&gt;&lt;i class=&quot;fas fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+    &lt;button class=&quot;rd-button success large dropdown-toggler&quot;&gt;&lt;i class=&quot;fa-solid fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
     &lt;ul class=&quot;rd-dropdown&quot;&gt;
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Save 4&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Save &amp;amp; Publish 4&lt;/a&gt;&lt;/li&gt;
@@ -542,7 +549,7 @@
                     <p>Add <code>data-placement</code> attribute into button that contain <code>class=&quot;dropdown-toggler&quot;</code>. Accept values please see <a href="https://popper.js.org/popper-documentation.html#Popper.placements" target="popper-js-doc">this document</a>.</p>
                     <div class="rd-block-level-margin-bottom">
                         <div class="rd-button-group">
-                            <button class="rd-button dropdown-toggler" data-placement="top left"><i class="fas fa-caret-up"></i> Top left</button>
+                            <button class="rd-button dropdown-toggler" data-placement="top left"><i class="fa-solid fa-caret-up"></i> Top left</button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
@@ -550,7 +557,7 @@
                             </ul>
                         </div>
                         <div class="rd-button-group">
-                            <button class="rd-button dropdown-toggler" data-placement="top">Top center <i class="fas fa-caret-up"></i></button>
+                            <button class="rd-button dropdown-toggler" data-placement="top">Top center <i class="fa-solid fa-caret-up"></i></button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
@@ -558,7 +565,7 @@
                             </ul>
                         </div>
                         <div class="rd-button-group">
-                            <button class="rd-button dropdown-toggler" data-placement="top right">Top right <i class="fas fa-caret-up"></i></button>
+                            <button class="rd-button dropdown-toggler" data-placement="top right">Top right <i class="fa-solid fa-caret-up"></i></button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
@@ -566,7 +573,7 @@
                             </ul>
                         </div>
                         <div class="rd-button-group">
-                            <button class="rd-button dropdown-toggler" data-placement="left top"><i class="fas fa-caret-left"></i> Left top</button>
+                            <button class="rd-button dropdown-toggler" data-placement="left top"><i class="fa-solid fa-caret-left"></i> Left top</button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
@@ -574,7 +581,7 @@
                             </ul>
                         </div>
                         <div class="rd-button-group">
-                            <button class="rd-button dropdown-toggler" data-placement="left"><i class="fas fa-caret-left"></i> Left middle</button>
+                            <button class="rd-button dropdown-toggler" data-placement="left"><i class="fa-solid fa-caret-left"></i> Left middle</button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
@@ -582,7 +589,7 @@
                             </ul>
                         </div>
                         <div class="rd-button-group">
-                            <button class="rd-button dropdown-toggler" data-placement="left bottom"><i class="fas fa-caret-left"></i> Left bottom</button>
+                            <button class="rd-button dropdown-toggler" data-placement="left bottom"><i class="fa-solid fa-caret-left"></i> Left bottom</button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
@@ -591,7 +598,7 @@
                         </div>
                         <div class="rd-block-level-margin-bottom"></div>
                         <div class="rd-button-group">
-                            <button class="rd-button dropdown-toggler" data-placement="bottom left"><i class="fas fa-caret-down"></i> Bottom left</button>
+                            <button class="rd-button dropdown-toggler" data-placement="bottom left"><i class="fa-solid fa-caret-down"></i> Bottom left</button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
@@ -599,7 +606,7 @@
                             </ul>
                         </div>
                         <div class="rd-button-group">
-                            <button class="rd-button dropdown-toggler" data-placement="bottom">Bottom center <i class="fas fa-caret-down"></i></button>
+                            <button class="rd-button dropdown-toggler" data-placement="bottom">Bottom center <i class="fa-solid fa-caret-down"></i></button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
@@ -607,7 +614,7 @@
                             </ul>
                         </div>
                         <div class="rd-button-group">
-                            <button class="rd-button dropdown-toggler" data-placement="bottom right">Bottom right <i class="fas fa-caret-down"></i></button>
+                            <button class="rd-button dropdown-toggler" data-placement="bottom right">Bottom right <i class="fa-solid fa-caret-down"></i></button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
@@ -615,7 +622,7 @@
                             </ul>
                         </div>
                         <div class="rd-button-group">
-                            <button class="rd-button dropdown-toggler" data-placement="right top">Right top <i class="fas fa-caret-right"></i></button>
+                            <button class="rd-button dropdown-toggler" data-placement="right top">Right top <i class="fa-solid fa-caret-right"></i></button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
@@ -623,7 +630,7 @@
                             </ul>
                         </div>
                         <div class="rd-button-group">
-                            <button class="rd-button dropdown-toggler" data-placement="right">Right middle <i class="fas fa-caret-right"></i></button>
+                            <button class="rd-button dropdown-toggler" data-placement="right">Right middle <i class="fa-solid fa-caret-right"></i></button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
@@ -631,7 +638,7 @@
                             </ul>
                         </div>
                         <div class="rd-button-group">
-                            <button class="rd-button dropdown-toggler" data-placement="right bottom">Right bottom <i class="fas fa-caret-right"></i></button>
+                            <button class="rd-button dropdown-toggler" data-placement="right bottom">Right bottom <i class="fa-solid fa-caret-right"></i></button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
@@ -641,7 +648,7 @@
                         <div class="rd-block-level-margin-bottom"></div>
                         <div class="rd-button-group">
                             <button class="rd-button">Button</button>
-                            <button class="rd-button dropdown-toggler" data-placement="right top"><i class="fas fa-caret-right"></i></button>
+                            <button class="rd-button dropdown-toggler" data-placement="right top"><i class="fa-solid fa-caret-right"></i></button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save B</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish B</a></li>
@@ -650,7 +657,7 @@
                         </div>
                     </div>
                     <pre>&lt;div class=&quot;rd-button-group&quot;&gt;
-    &lt;button class=&quot;rd-button dropdown-toggler&quot; data-placement=&quot;top left&quot;&gt;&lt;i class=&quot;fas fa-caret-up&quot;&gt;&lt;/i&gt; Top left&lt;/button&gt;
+    &lt;button class=&quot;rd-button dropdown-toggler&quot; data-placement=&quot;top left&quot;&gt;&lt;i class=&quot;fa-solid fa-caret-up&quot;&gt;&lt;/i&gt; Top left&lt;/button&gt;
     &lt;ul class=&quot;rd-dropdown&quot;&gt;
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Save&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Save &amp;amp; Publish&lt;/a&gt;&lt;/li&gt;
@@ -696,11 +703,11 @@
         <script src="assets/js/sticky-sidebar/jquery.sticky-sidebar.min.js?npm-v=3.3.1"></script>
         <script src="assets/js/resize-sensor/ResizeSensor.js?v=8652505c23e8fdc8016445c5e13bee64"></script><!-- use with sticky sidebar js, manual update. -->
 
-        <script src="assets/js/rdta/rundiz-template-admin.js?v=ee4489c024424ffffd77ca1ee69f0f43"></script> 
+        <script src="assets/js/rdta/rundiz-template-admin.js?v=3a430070058c88de26193f94a797cd49"></script> 
         <script>
             document.getElementById('demo-dynamically-add-button').addEventListener('click', function(event) {
                 let buttonDropdown = '<div class="rd-button-group">\
-                    <button class="rd-button dropdown-toggler">Dropdown <i class="fas fa-caret-down"></i></button>\
+                    <button class="rd-button dropdown-toggler">Dropdown <i class="fa-solid fa-caret-down"></i></button>\
                     <ul class="rd-dropdown">\
                         <li><a href="#" onclick="return false;">Save A</a></li>\
                         <li><a href="#" onclick="return false;">Save &amp; Publish A</a></li>\
