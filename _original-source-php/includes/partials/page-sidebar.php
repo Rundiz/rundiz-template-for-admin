@@ -8,120 +8,6 @@
                                 <li><a href="javascript:alert('link clicked');">Update</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" onclick="return false;" title="Front home"><i class="sidebar-icon fas fa-home fa-fw"></i> <span class="rd-sidebar-menu-text">Front home</span></a></li>
-                        <li><a href="#" onclick="return false;" title="Settings"><i class="sidebar-icon fas fa-cog fa-fw"></i> <span class="rd-sidebar-menu-text">Settings</span></a></li>
-                        <li><a href="#" onclick="return false;" title="Sub menus"><i class="sidebar-icon fas fa-cubes fa-fw"></i> <span class="rd-sidebar-menu-text">Sub menus</span></a>
-                            <ul>
-                                <li><a href="javascript:alert('link clicked');">1</a>
-                                    <ul>
-                                        <li><a href="javascript:alert('link clicked');">1.1</a>
-                                            <ul>
-                                                <li><a href="javascript:alert('link clicked');">1.1.1</a>
-                                                    <ul>
-                                                        <li><a href="javascript:alert('link clicked');">1.1.1.1</a></li>
-                                                        <li><a href="#" onclick="return false;">1.1.1.2</a></li>
-                                                        <li><a href="#" onclick="return false;">1.1.1.3</a></li>
-                                                        <li><a href="#" onclick="return false;">1.1.1.4</a></li>
-                                                        <li><a href="#" onclick="return false;">1.1.1.5</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#" onclick="return false;">1.1.2</a></li>
-                                                <li><a href="#" onclick="return false;">1.1.3</a></li>
-                                                <li><a href="#" onclick="return false;">1.1.4</a></li>
-                                                <li><a href="#" onclick="return false;">1.1.5</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#" onclick="return false;">1.2</a></li>
-                                        <li><a href="#" onclick="return false;">1.3</a></li>
-                                        <li><a href="#" onclick="return false;">1.4</a></li>
-                                        <li><a href="#" onclick="return false;">1.5</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#" onclick="return false;">2</a>
-                                    <ul>
-                                        <li><a href="#" onclick="return false;">2.1</a></li>
-                                        <li><a href="#" onclick="return false;">2.2</a>
-                                            <ul>
-                                                <li><a href="#" onclick="return false;">2.2.1</a></li>
-                                                <li><a href="#" onclick="return false;">2.2.2</a>
-                                                    <ul>
-                                                        <li><a href="#" onclick="return false;">2.2.2.1</a></li>
-                                                        <li><a href="#" onclick="return false;">2.2.2.2</a>
-                                                            <ul>
-                                                                <li><a href="#" onclick="return false;">2.2.2.2.1</a></li>
-                                                                <li><a href="#" onclick="return false;">2.2.2.2.2</a></li>
-                                                                <li><a href="#" onclick="return false;">2.2.2.2.3</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li><a href="#" onclick="return false;">2.2.2.3</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#" onclick="return false;">2.2.3</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#" onclick="return false;">2.3</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#" onclick="return false;">3</a>
-                                    <ul>
-                                    <!-- it is recommended that you should not have more than 15 items per sub menu, or you have to modify options in `rdtaSidebarSmartMenus()` function -->
-<?php
-for ($i = 1; $i <= 50; $i++) {
-    echo indent(10).'<li><a href="#" onclick="return false;">3.'.$i.'</a></li>'."\n";
-}
-?>
-                                    </ul>
-                                </li>
-                                <li><a href="#" onclick="return false;">4</a></li>
-                                <li><a href="#" onclick="return false;">5</a></li>
-                                <li><a href="#" onclick="return false;">6</a></li>
-                                <li><a href="#" onclick="return false;">7</a></li>
-                                <li><a href="#" onclick="return false;">8</a></li>
-                                <li class="divider"><a href="#" onclick="alert('Nothing works here!'); return false;">Nothing here will be display.</a></li>
-                                <li><a href="#" onclick="return false;">The above is <code>li.divider</code></a></li>
-                                <li class="sub-menu-heading"><a href="#" onclick="return false;">This is <code>li.sub-menu-heading</code></a></li>
-                                <li><a href="#" onclick="return false;">9</a>
-                                    <ul>
-                                        <li><a href="#" onclick="return false;">1</a></li>
-                                        <li><a href="#" onclick="return false;">2</a></li>
-                                        <li><a href="#" onclick="return false;">3</a></li>
-                                        <li class="divider"><a href="#" onclick="alert('Nothing works here!'); return false;">Nothing here will be display.</a></li>
-                                        <li><a href="#" onclick="return false;">Divider in sub menus</a></li>
-                                        <li class="sub-menu-heading"><a>Deeper sub menu heading</a></li>
-                                        <li><a href="#" onclick="return false;">4</a></li>
-                                        <li><a href="#" onclick="return false;">5</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#" onclick="return false;">10</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#" onclick="return false;" title="Long menu text"><i class="sidebar-icon fas fa-greater-than-equal fa-fw"></i> <span class="rd-sidebar-menu-text">Longggggggggg menu item text that is very long</span></a>
-                            <ul>
-                                <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 1</a>
-                                    <ul>
-                                        <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 1.1</a></li>
-                                        <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 1.2</a></li>
-                                        <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 1.3</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 2</a>
-                                    <ul>
-                                        <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 2.1</a>
-                                            <ul>
-                                                <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 2.1.1</a></li>
-                                                <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 2.1.2</a></li>
-                                                <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 2.1.3</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 2.2</a></li>
-                                        <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 2.3</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 3</a></li>
-                                <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 4</a></li>
-                                <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 5</a></li>
-                            </ul>
-                        </li>
                         <li><a href="#" onclick="return false;" title="Components"><i class="sidebar-icon fas fa-server fa-fw"></i> <span class="rd-sidebar-menu-text">Components</span></a>
                             <ul>
                                 <li class="sub-menu-heading"><a>Basic component &amp; example</a></li>
@@ -166,6 +52,126 @@ for ($i = 1; $i <= 50; $i++) {
                                 <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="tools_cssflex">CSS flex box</a></li>
                                 <li><a href="https://www.w3.org/wiki/HTML_structural_elements" target="tools_html5structural">HTML 5 structural elements</a></li>
                                 <li><a href="http://pxtoem.com/" target="pxtoemconverter">Pixel / <code>em</code> converter</a></li>
+                            </ul>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="sub-menu-heading"><a onclick="return false;" title="Another samples"><i class="sidebar-icon fas fa-vial fa-fw"></i> <span class="rd-sidebar-menu-text">Another samples</span></a></li>
+                        <li><a href="#" onclick="return false;" title="Sub menus"><i class="sidebar-icon fas fa-cubes fa-fw"></i> <span class="rd-sidebar-menu-text">Sub menus</span></a>
+                            <ul>
+                                <li><a href="javascript:alert('link clicked');">1</a>
+                                    <ul>
+                                        <li><a href="javascript:alert('link clicked');">1.1</a>
+                                            <ul>
+                                                <li><a href="javascript:alert('link clicked');">1.1.1</a>
+                                                    <ul>
+                                                        <li><a href="javascript:alert('link clicked');">1.1.1.1</a></li>
+                                                        <li><a href="#" onclick="return false;">1.1.1.2</a></li>
+                                                        <li><a href="#" onclick="return false;">1.1.1.3</a></li>
+                                                        <li><a href="#" onclick="return false;">1.1.1.4</a></li>
+                                                        <li><a href="#" onclick="return false;">1.1.1.5</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="#" onclick="return false;">1.1.2</a></li>
+                                                <li><a href="#" onclick="return false;">1.1.3</a></li>
+                                                <li><a href="#" onclick="return false;">1.1.4</a></li>
+                                                <li><a href="#" onclick="return false;">1.1.5</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#" onclick="return false;">1.2</a></li>
+                                        <li><a href="#" onclick="return false;">1.3</a></li>
+                                        <li><a href="#" onclick="return false;">1.4</a></li>
+                                        <li><a href="#" onclick="return false;">1.5</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" onclick="return false;">2 (Deep sub menus)</a>
+                                    <ul>
+                                        <li><a href="#" onclick="return false;">2.1</a></li>
+                                        <li><a href="#" onclick="return false;">2.2</a>
+                                            <ul>
+                                                <li><a href="#" onclick="return false;">2.2.1</a></li>
+                                                <li><a href="#" onclick="return false;">2.2.2</a>
+                                                    <ul>
+                                                        <li><a href="#" onclick="return false;">2.2.2.1</a></li>
+                                                        <li><a href="#" onclick="return false;">2.2.2.2</a>
+                                                            <ul>
+                                                                <li><a href="#" onclick="return false;">2.2.2.2.1</a></li>
+                                                                <li><a href="#" onclick="return false;">2.2.2.2.2</a>
+                                                                    <ul>
+                                                                        <li><a href="#" onclick="return false;">2.2.2.2.2.1</a></li>
+                                                                        <li><a href="#" onclick="return false;">2.2.2.2.2.2</a></li>
+                                                                        <li><a href="#" onclick="return false;">2.2.2.2.2.3</a></li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li><a href="#" onclick="return false;">2.2.2.2.3</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li><a href="#" onclick="return false;">2.2.2.3</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="#" onclick="return false;">2.2.3</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#" onclick="return false;">2.3</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" onclick="return false;">3 (Very long sub menus)</a>
+                                    <ul>
+                                    <!-- it is recommended that you should not have more than 15 items per sub menu, or you have to modify options in `rdtaSidebarSmartMenus()` function -->
+<?php
+for ($i = 1; $i <= 50; $i++) {
+    echo indent(10).'<li><a href="#" onclick="return false;">3.'.$i.'</a></li>'."\n";
+}
+?>
+                                    </ul>
+                                </li>
+                                <li><a href="#" onclick="return false;">4</a></li>
+                                <li><a href="#" onclick="return false;">5</a></li>
+                                <li><a href="#" onclick="return false;">6</a></li>
+                                <li><a href="#" onclick="return false;">7</a></li>
+                                <li><a href="#" onclick="return false;">8</a></li>
+                                <li class="divider"><a href="#" onclick="alert('Nothing works here!'); return false;">Nothing here will be display.</a></li>
+                                <li><a href="#" onclick="return false;">The above is <code>li.divider</code></a></li>
+                                <li class="sub-menu-heading"><a href="#" onclick="return false;">This is <code>li.sub-menu-heading</code></a></li>
+                                <li><a href="#" onclick="return false;">9 (Sub menu components)</a>
+                                    <ul>
+                                        <li><a href="#" onclick="return false;">1</a></li>
+                                        <li><a href="#" onclick="return false;">2</a></li>
+                                        <li><a href="#" onclick="return false;">3</a></li>
+                                        <li class="divider"><a href="#" onclick="alert('Nothing works here!'); return false;">Nothing here will be display.</a></li>
+                                        <li><a href="#" onclick="return false;">Divider in sub menus</a></li>
+                                        <li class="sub-menu-heading"><a>Deeper sub menu heading</a></li>
+                                        <li><a href="#" onclick="return false;">4</a></li>
+                                        <li><a href="#" onclick="return false;">5</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" onclick="return false;">10</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" onclick="return false;" title="Long menu text"><i class="sidebar-icon fas fa-greater-than-equal fa-fw"></i> <span class="rd-sidebar-menu-text">Longggggggggg menu item text that is very long</span></a>
+                            <ul>
+                                <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 1</a>
+                                    <ul>
+                                        <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 1.1</a></li>
+                                        <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 1.2</a></li>
+                                        <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 1.3</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 2</a>
+                                    <ul>
+                                        <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 2.1</a>
+                                            <ul>
+                                                <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 2.1.1</a></li>
+                                                <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 2.1.2</a></li>
+                                                <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 2.1.3</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 2.2</a></li>
+                                        <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 2.3</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 3</a></li>
+                                <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 4</a></li>
+                                <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 5</a></li>
                             </ul>
                         </li>
                     </ul>
