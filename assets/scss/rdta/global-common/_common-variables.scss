@@ -43,7 +43,7 @@ $z-index-navbar: 4 !default;// navbar (top) must higher than sidebar to prevent 
 $z-index-alertboxfixed: 101 !default;// alert box fixed top or bottom. this can be access from CSS 3 variable in _alert-box.scss file.
 $z-index-dialogbackdrop: 1010 !default;// modal dialog (backdrop). this can be access from CSS 3 variable in components/rdta-dialog.scss file.
 $z-index-alertdialogbackdrop: 2000 !default;// alert dialog (backdrop). this can be access from CSS 3 variable in components/rdta-alertdialog.scss file.
-$z-index-tooltips: 2001 !default;// tooltips.. this can be access from CSS 3 variable in components/rdta-tooltips.scss file. @todo [rdta] this is deprecated, read more in rdta-tooltips.scss file.
+$z-index-tooltips: 2001 !default;// tooltips.. this can be access from CSS 3 variable in components/rdta-tooltips.scss file. @todo [rdta] this is deprecated and will be removed in version 3, read more in rdta-tooltips.scss file.
 
 
 // colors for alert box, buttons, badge, table
