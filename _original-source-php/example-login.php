@@ -20,12 +20,13 @@ $title = 'Example login page';
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/sanitize/typography.css', ['npm' => 'sanitize.css']); ?>">
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/sanitize/forms.css', ['npm' => 'sanitize.css']); ?>">
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta/typo-and-form/typo-and-form.css'); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta/rundiz-template-admin.css'); ?>">
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta/columns/columns-flex.css'); ?>">
     </head>
     <body>
         <main class="rd-columns-flex-container">
-            <div class="col-xs-10 offset-xs-1 col-sm-6 offset-sm-3 col-md-4 offset-md-4">
-                <h1>Login page</h1>
+            <div class="col-xs-8 offset-xs-2 col-sm-4 offset-sm-4 col-md-4 offset-md-4">
+                <h1 class="text-center">Login page</h1>
                 <form class="rd-form">
                     <div class="form-group">
                         <label class="control-label" for="user_login">Username or Email</label>
