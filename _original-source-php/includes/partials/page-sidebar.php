@@ -3,13 +3,13 @@
                 <h2 class="screen-reader-only">Sidebar menus</h2>
                 <div class="rd-sidebar-inner">
                     <ul class="rd-sidebar-item-list sm sm-vertical sm-rdta">
-                        <li><a href="#" onclick="return false;" title="Admin home"><i class="sidebar-icon fa-solid fa-gauge fa-fw"></i> <span class="rd-sidebar-menu-text">Admin home</span></a>
+                        <li><a href="#" onclick="return false;" title="Admin home"><i class="sidebar-icon fa-solid fa-gauge-high fa-fw"></i> <span class="rd-sidebar-menu-text">Admin home</span></a>
                             <ul>
                                 <li><a href="./">Admin dashboard</a></li>
                                 <li><a href="javascript:alert('link clicked');">Update</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" onclick="return false;" title="Components"><i class="sidebar-icon fa-solid fa-server fa-fw"></i> <span class="rd-sidebar-menu-text">Components</span></a>
+                        <li><a href="#" onclick="return false;" title="Components"><i class="sidebar-icon fa-solid fa-boxes-stacked fa-fw"></i> <span class="rd-sidebar-menu-text">Components</span></a>
                             <ul>
                                 <li class="sub-menu-heading"><a>Typography &amp; getting started</a></li>
                                 <li><a href="typography.html">Typography</a></li>
@@ -57,7 +57,7 @@
                                 <li><a href="stickymenu-long-content-menu.html">Sticky menu (long content &amp; menu)</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" onclick="return false;" title="Sub menus"><i class="sidebar-icon fa-solid fa-cubes fa-fw"></i> <span class="rd-sidebar-menu-text">Sub menus</span></a>
+                        <li><a href="#" onclick="return false;" title="Sub menus"><i class="sidebar-icon fa-solid fa-folder-tree fa-fw"></i> <span class="rd-sidebar-menu-text">Sub menus</span></a>
                             <ul>
                                 <li><a href="javascript:alert('link clicked');">1</a>
                                     <ul>
