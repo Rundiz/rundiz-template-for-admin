@@ -3,13 +3,13 @@
                 <h2 class="screen-reader-only">Sidebar menus</h2>
                 <div class="rd-sidebar-inner">
                     <ul class="rd-sidebar-item-list sm sm-vertical sm-rdta">
-                        <li><a href="#" onclick="return false;" title="Admin home"><i class="sidebar-icon fas fa-tachometer-alt fa-fw"></i> <span class="rd-sidebar-menu-text">Admin home</span></a>
+                        <li><a href="#" onclick="return false;" title="Admin home"><i class="sidebar-icon fa-solid fa-gauge fa-fw"></i> <span class="rd-sidebar-menu-text">Admin home</span></a>
                             <ul>
                                 <li><a href="./">Admin dashboard</a></li>
                                 <li><a href="javascript:alert('link clicked');">Update</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" onclick="return false;" title="Components"><i class="sidebar-icon fas fa-server fa-fw"></i> <span class="rd-sidebar-menu-text">Components</span></a>
+                        <li><a href="#" onclick="return false;" title="Components"><i class="sidebar-icon fa-solid fa-server fa-fw"></i> <span class="rd-sidebar-menu-text">Components</span></a>
                             <ul>
                                 <li class="sub-menu-heading"><a>Typography &amp; getting started</a></li>
                                 <li><a href="typography.html">Typography</a></li>
@@ -33,13 +33,13 @@
                                 <li><a href="tooltips.html">Tooltips</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" onclick="return false;" title="Examples"><i class="sidebar-icon fas fa-laptop-code"></i> <span class="rd-sidebar-menu-text">Examples</span></a>
+                        <li><a href="#" onclick="return false;" title="Examples"><i class="sidebar-icon fa-solid fa-laptop-code"></i> <span class="rd-sidebar-menu-text">Examples</span></a>
                             <ul>
                                 <li><a href="example-login.html">Login page</a></li>
                                 <li><a href="example-logout.html">Logout page</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" onclick="return false;" title="Tools &amp; guide"><i class="sidebar-icon fas fa-code fa-fw"></i> <span class="rd-sidebar-menu-text">Tools &amp; guide</span></a>
+                        <li><a href="#" onclick="return false;" title="Tools &amp; guide"><i class="sidebar-icon fa-solid fa-code fa-fw"></i> <span class="rd-sidebar-menu-text">Tools &amp; guide</span></a>
                             <ul>
                                 <li><a href="credits.html">Credits</a></li>
                                 <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="tools_cssgrid">CSS grid</a></li>
@@ -49,15 +49,15 @@
                             </ul>
                         </li>
                         <li class="divider"></li>
-                        <li class="sub-menu-heading"><a onclick="return false;" title="Experiments"><i class="sidebar-icon fas fa-vial fa-fw"></i> <span class="rd-sidebar-menu-text">Experiments</span></a></li>
-                        <li><a href="#" onclick="return false;" title="Sticky menu"><i class="sidebar-icon fas fa-thumbtack fa-fw"></i> <span class="rd-sidebar-menu-text">Stickey menu</span></a>
+                        <li class="sub-menu-heading"><a onclick="return false;" title="Experiments"><i class="sidebar-icon fa-solid fa-vial fa-fw"></i> <span class="rd-sidebar-menu-text">Experiments</span></a></li>
+                        <li><a href="#" onclick="return false;" title="Sticky menu"><i class="sidebar-icon fa-solid fa-thumbtack fa-fw"></i> <span class="rd-sidebar-menu-text">Stickey menu</span></a>
                             <ul>
                                 <li><a href="stickymenu-long-content.html">Sticky menu (long content)</a></li>
                                 <li><a href="stickymenu-long-menu.html">Sticky menu (long menu)</a></li>
                                 <li><a href="stickymenu-long-content-menu.html">Sticky menu (long content &amp; menu)</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" onclick="return false;" title="Sub menus"><i class="sidebar-icon fas fa-cubes fa-fw"></i> <span class="rd-sidebar-menu-text">Sub menus</span></a>
+                        <li><a href="#" onclick="return false;" title="Sub menus"><i class="sidebar-icon fa-solid fa-cubes fa-fw"></i> <span class="rd-sidebar-menu-text">Sub menus</span></a>
                             <ul>
                                 <li><a href="javascript:alert('link clicked');">1</a>
                                     <ul>
@@ -148,7 +148,7 @@ for ($i = 1; $i <= 50; $i++) {
                                 <li><a href="#" onclick="return false;">10</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" onclick="return false;" title="Long menu text"><i class="sidebar-icon fas fa-greater-than-equal fa-fw"></i> <span class="rd-sidebar-menu-text">Longggggggggggggggggg menu text</span></a>
+                        <li><a href="#" onclick="return false;" title="Long menu text"><i class="sidebar-icon fa-solid fa-greater-than-equal fa-fw"></i> <span class="rd-sidebar-menu-text">Longggggggggggggggggg menu text</span></a>
                             <ul>
                                 <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 1</a>
                                     <ul>
@@ -178,7 +178,7 @@ for ($i = 1; $i <= 50; $i++) {
                     </ul>
                     <ul class="rd-sidebar-item-list rd-sidebar-expand-collapse-controls">
                         <li>
-                            <a data-target=".rd-page-wrapper" title="Expane/collapse menu"><i class="sidebar-icon faicon fas fa-chevron-left fa-fw" data-toggle-icon="fa-chevron-left fa-chevron-right"></i> <span class="screen-reader-only" aria-hidden="true">Expane/collapse menu</span></a>
+                            <a data-target=".rd-page-wrapper" title="Expane/collapse menu"><i class="sidebar-icon faicon fa-solid fa-chevron-left fa-fw" data-toggle-icon="fa-chevron-left fa-chevron-right"></i> <span class="screen-reader-only" aria-hidden="true">Expane/collapse menu</span></a>
                             <hr>
                         </li>
                     </ul>

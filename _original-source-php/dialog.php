@@ -34,7 +34,7 @@ include 'includes/html-head.php';
                         <div class="rd-dialog-header">
                             <h4 id="example-dialog-label" class="rd-dialog-title">Dialog header</h4>
                             <button class="rd-dialog-close" type="button" aria-label="Close">
-                                <i class="fas fa-times" aria-hidden="true"></i>
+                                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                             </button>
                         </div>
                         <div class="rd-dialog-body">
@@ -50,7 +50,7 @@ include 'includes/html-head.php';
     &lt;div class=&quot;rd-dialog-header&quot;&gt;
         &lt;h4 class=&quot;rd-dialog-title&quot;&gt;Dialog header&lt;/h4&gt;
         &lt;button class=&quot;rd-dialog-close&quot; type=&quot;button&quot; aria-label=&quot;Close&quot; data-dismiss=&quot;dialog&quot;&gt;
-            &lt;i class=&quot;fas fa-times&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+            &lt;i class=&quot;fa-solid fa-xmark&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
         &lt;/button&gt;
     &lt;/div&gt;
     &lt;div class=&quot;rd-dialog-body&quot;&gt;
@@ -69,7 +69,7 @@ include 'includes/html-head.php';
                             <div class="rd-dialog-header">
                                 <h4 class="rd-dialog-title">Dialog header</h4>
                                 <button class="rd-dialog-close" type="button" aria-label="Close" data-dismiss="dialog">
-                                    <i class="fas fa-times" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                                 </button>
                             </div>
                             <div class="rd-dialog-body">
@@ -90,7 +90,7 @@ include 'includes/html-head.php';
                                 <div class="rd-dialog-header">
                                     <h4 class="rd-dialog-title">Dialog with modal</h4>
                                     <button class="rd-dialog-close" type="button" aria-label="Close" data-dismiss="dialog">
-                                        <i class="fas fa-times" aria-hidden="true"></i>
+                                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                                     </button>
                                 </div>
                                 <div class="rd-dialog-body">
@@ -109,7 +109,7 @@ include 'includes/html-head.php';
         &lt;div class=&quot;rd-dialog-header&quot;&gt;
             &lt;h4 class=&quot;rd-dialog-title&quot;&gt;Dialog with modal&lt;/h4&gt;
             &lt;button class=&quot;rd-dialog-close&quot; type=&quot;button&quot; aria-label=&quot;Close&quot; data-dismiss=&quot;dialog&quot;&gt;
-                &lt;i class=&quot;fas fa-times&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+                &lt;i class=&quot;fa-solid fa-xmark&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
             &lt;/button&gt;
         &lt;/div&gt;
         &lt;div class=&quot;rd-dialog-body&quot;&gt;
@@ -129,7 +129,7 @@ include 'includes/html-head.php';
                                 <div class="rd-dialog-header">
                                     <h4 class="rd-dialog-title">Long paragraph</h4>
                                     <button class="rd-dialog-close" type="button" aria-label="Close" data-dismiss="dialog">
-                                        <i class="fas fa-times" aria-hidden="true"></i>
+                                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                                     </button>
                                 </div>
                                 <div class="rd-dialog-body">
@@ -174,7 +174,7 @@ include 'includes/html-head.php';
                                 <div class="rd-dialog-header">
                                     <h4 class="rd-dialog-title">Disable close on click outside the dialog</h4>
                                     <button class="rd-dialog-close" type="button" aria-label="Close" data-dismiss="dialog">
-                                        <i class="fas fa-times" aria-hidden="true"></i>
+                                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                                     </button>
                                 </div>
                                 <div class="rd-dialog-body">
@@ -193,7 +193,7 @@ include 'includes/html-head.php';
         &lt;div class=&quot;rd-dialog-header&quot;&gt;
             &lt;h4 class=&quot;rd-dialog-title&quot;&gt;Disable close on click outside the dialog&lt;/h4&gt;
             &lt;button class=&quot;rd-dialog-close&quot; type=&quot;button&quot; aria-label=&quot;Close&quot; data-dismiss=&quot;dialog&quot;&gt;
-                &lt;i class=&quot;fas fa-times&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+                &lt;i class=&quot;fa-solid fa-xmark&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
             &lt;/button&gt;
         &lt;/div&gt;
         &lt;div class=&quot;rd-dialog-body&quot;&gt;
@@ -214,7 +214,7 @@ include 'includes/html-head.php';
                                 <div class="rd-dialog-header">
                                     <h4 class="rd-dialog-title">Disable close on click outside the dialog</h4>
                                     <button class="rd-dialog-close" type="button" aria-label="Close" data-dismiss="dialog">
-                                        <i class="fas fa-times" aria-hidden="true"></i>
+                                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                                     </button>
                                 </div>
                                 <div class="rd-dialog-body">
@@ -233,7 +233,7 @@ include 'includes/html-head.php';
         &lt;div class=&quot;rd-dialog-header&quot;&gt;
             &lt;h4 class=&quot;rd-dialog-title&quot;&gt;Disable close on click outside the dialog&lt;/h4&gt;
             &lt;button class=&quot;rd-dialog-close&quot; type=&quot;button&quot; aria-label=&quot;Close&quot; data-dismiss=&quot;dialog&quot;&gt;
-                &lt;i class=&quot;fas fa-times&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+                &lt;i class=&quot;fa-solid fa-xmark&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
             &lt;/button&gt;
         &lt;/div&gt;
         &lt;div class=&quot;rd-dialog-body&quot;&gt;
@@ -254,7 +254,7 @@ include 'includes/html-head.php';
                                 <div class="rd-dialog-header">
                                     <h4 class="rd-dialog-title">Large dialog</h4>
                                     <button class="rd-dialog-close" type="button" aria-label="Close" data-dismiss="dialog">
-                                        <i class="fas fa-times" aria-hidden="true"></i>
+                                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                                     </button>
                                 </div>
                                 <div class="rd-dialog-body">
@@ -268,7 +268,7 @@ include 'includes/html-head.php';
                                 <div class="rd-dialog-header">
                                     <h4 class="rd-dialog-title">Full window dialog</h4>
                                     <button class="rd-dialog-close" type="button" aria-label="Close" data-dismiss="dialog">
-                                        <i class="fas fa-times" aria-hidden="true"></i>
+                                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                                     </button>
                                 </div>
                                 <div class="rd-dialog-body">
@@ -283,7 +283,7 @@ include 'includes/html-head.php';
         &lt;div class=&quot;rd-dialog-header&quot;&gt;
             &lt;h4 class=&quot;rd-dialog-title&quot;&gt;Large dialog&lt;/h4&gt;
             &lt;button class=&quot;rd-dialog-close&quot; type=&quot;button&quot; aria-label=&quot;Close&quot; data-dismiss=&quot;dialog&quot;&gt;
-                &lt;i class=&quot;fas fa-times&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+                &lt;i class=&quot;fa-solid fa-xmark&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
             &lt;/button&gt;
         &lt;/div&gt;
         &lt;div class=&quot;rd-dialog-body&quot;&gt;
@@ -297,7 +297,7 @@ include 'includes/html-head.php';
         &lt;div class=&quot;rd-dialog-header&quot;&gt;
             &lt;h4 class=&quot;rd-dialog-title&quot;&gt;Full window dialog&lt;/h4&gt;
             &lt;button class=&quot;rd-dialog-close&quot; type=&quot;button&quot; aria-label=&quot;Close&quot; data-dismiss=&quot;dialog&quot;&gt;
-                &lt;i class=&quot;fas fa-times&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+                &lt;i class=&quot;fa-solid fa-xmark&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
             &lt;/button&gt;
         &lt;/div&gt;
         &lt;div class=&quot;rd-dialog-body&quot;&gt;
@@ -314,7 +314,7 @@ include 'includes/html-head.php';
                                 <div class="rd-dialog-header">
                                     <h4 class="rd-dialog-title">Manual dialog</h4>
                                     <button class="rd-dialog-close" type="button" aria-label="Close" data-dismiss="dialog">
-                                        <i class="fas fa-times" aria-hidden="true"></i>
+                                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                                     </button>
                                 </div>
                                 <div class="rd-dialog-body">
@@ -353,7 +353,7 @@ include 'includes/html-head.php';
                             <div class="rd-dialog-header">
                                 <h4 class="rd-dialog-title">Dialog with modal</h4>
                                 <button class="rd-dialog-close" type="button" aria-label="Close" data-dismiss="dialog">
-                                    <i class="fas fa-times" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                                 </button>
                             </div>
                             <div class="rd-dialog-body">

@@ -16,13 +16,13 @@ include 'includes/html-head.php';
                     <ul class="rd-sidebar-item-list sm sm-vertical sm-rdta">
                         <?php 
                         for ($i = 1; $i <= 50; $i++) {
-                            echo indent(6).'<li><a href="#" onclick="return false;"><i class="sidebar-icon fas fa-circle fa-fw"></i> <span class="rd-sidebar-menu-text">Test ' . $i . '</span></a></li>'."\n";
+                            echo indent(6).'<li><a href="#" onclick="return false;"><i class="sidebar-icon fa-solid fa-circle fa-fw"></i> <span class="rd-sidebar-menu-text">Test ' . $i . '</span></a></li>'."\n";
                         }
                         ?> 
                     </ul>
                     <ul class="rd-sidebar-item-list rd-sidebar-expand-collapse-controls">
                         <li>
-                            <a data-target=".rd-page-wrapper" title="Expane/collapse menu"><i class="sidebar-icon faicon fas fa-chevron-left fa-fw" data-toggle-icon="fa-chevron-left fa-chevron-right"></i> <span class="screen-reader-only" aria-hidden="true">Expane/collapse menu</span></a>
+                            <a data-target=".rd-page-wrapper" title="Expane/collapse menu"><i class="sidebar-icon faicon fa-solid fa-chevron-left fa-fw" data-toggle-icon="fa-chevron-left fa-chevron-right"></i> <span class="screen-reader-only" aria-hidden="true">Expane/collapse menu</span></a>
                             <hr>
                         </li>
                     </ul>

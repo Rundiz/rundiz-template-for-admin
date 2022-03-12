@@ -57,7 +57,7 @@ include 'includes/html-head.php';
                                 <div class="rd-dialog-header">
                                     <h4 class="rd-dialog-title">Dialog with modal</h4>
                                     <button class="rd-dialog-close" type="button" aria-label="Close" data-dismiss="dialog">
-                                        <i class="fas fa-times" aria-hidden="true"></i>
+                                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                                     </button>
                                 </div>
                                 <div class="rd-dialog-body">

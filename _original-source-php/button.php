@@ -136,7 +136,7 @@ include 'includes/html-head.php';
                     <p>The dropdown button uses <a href="https://popper.js.org/" target="popper-js">Popper.js</a> to position the dropdown items.</p>
                     <div class="rd-block-level-margin-bottom">
                         <div class="rd-button-group">
-                            <button class="rd-button dropdown-toggler">Dropdown <i class="fas fa-caret-down"></i></button>
+                            <button class="rd-button dropdown-toggler">Dropdown <i class="fa-solid fa-caret-down"></i></button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save A</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish A</a></li>
@@ -145,7 +145,7 @@ include 'includes/html-head.php';
                         </div>
                         <div class="rd-button-group">
                             <button class="rd-button primary">Button</button>
-                            <button class="rd-button primary dropdown-toggler"><i class="fas fa-caret-down"></i></button>
+                            <button class="rd-button primary dropdown-toggler"><i class="fa-solid fa-caret-down"></i></button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save B</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish B</a></li>
@@ -154,7 +154,7 @@ include 'includes/html-head.php';
                         </div>
                         <div class="rd-button-group">
                             <a class="rd-button" href="#go-somewhere">Link button</a>
-                            <a class="rd-button dropdown-toggler" href="#"><i class="fas fa-caret-down"></i></a>
+                            <a class="rd-button dropdown-toggler" href="#"><i class="fa-solid fa-caret-down"></i></a>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save C</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish C</a></li>
@@ -163,7 +163,7 @@ include 'includes/html-head.php';
                         </div>
                         <div class="rd-button-group">
                             <button class="rd-button info">Button with sub buttons</button>
-                            <button class="rd-button info dropdown-toggler"><i class="fas fa-caret-down"></i></button>
+                            <button class="rd-button info dropdown-toggler"><i class="fa-solid fa-caret-down"></i></button>
                             <ul class="rd-dropdown">
                                 <li><button type="button">Button</button></li>
                                 <li><input type="button" value="Input button"></li>
@@ -174,7 +174,7 @@ include 'includes/html-head.php';
                         </div>
                     </div>
                     <pre>&lt;div class=&quot;rd-button-group&quot;&gt;
-    &lt;button class=&quot;rd-button dropdown-toggler&quot;&gt;Dropdown &lt;i class=&quot;fas fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+    &lt;button class=&quot;rd-button dropdown-toggler&quot;&gt;Dropdown &lt;i class=&quot;fa-solid fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
     &lt;ul class=&quot;rd-dropdown&quot;&gt;
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Save A&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Save &amp;amp; Publish A&lt;/a&gt;&lt;/li&gt;
@@ -183,7 +183,7 @@ include 'includes/html-head.php';
 &lt;/div&gt;
 &lt;div class=&quot;rd-button-group&quot;&gt;
     &lt;button class=&quot;rd-button primary&quot;&gt;Button&lt;/button&gt;
-    &lt;button class=&quot;rd-button primary dropdown-toggler&quot;&gt;&lt;i class=&quot;fas fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+    &lt;button class=&quot;rd-button primary dropdown-toggler&quot;&gt;&lt;i class=&quot;fa-solid fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
     &lt;ul class=&quot;rd-dropdown&quot;&gt;
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Save B&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Save &amp;amp; Publish B&lt;/a&gt;&lt;/li&gt;
@@ -192,7 +192,7 @@ include 'includes/html-head.php';
 &lt;/div&gt;
 &lt;div class=&quot;rd-button-group&quot;&gt;
    &lt;a class=&quot;rd-button&quot; href=&quot;#go-somewhere&quot;&gt;Link button&lt;/a&gt;
-   &lt;a class=&quot;rd-button dropdown-toggler&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;fas fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+   &lt;a class=&quot;rd-button dropdown-toggler&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;fa-solid fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/a&gt;
    &lt;ul class=&quot;rd-dropdown&quot;&gt;
       &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;Save C&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;Save &amp;amp; Publish C&lt;/a&gt;&lt;/li&gt;
@@ -201,7 +201,7 @@ include 'includes/html-head.php';
 &lt;/div&gt;
 &lt;div class=&quot;rd-button-group&quot;&gt;
    &lt;button class=&quot;rd-button info&quot;&gt;Button with sub buttons&lt;/button&gt;
-   &lt;button class=&quot;rd-button info dropdown-toggler&quot;&gt;&lt;i class=&quot;fas fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+   &lt;button class=&quot;rd-button info dropdown-toggler&quot;&gt;&lt;i class=&quot;fa-solid fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
    &lt;ul class=&quot;rd-dropdown&quot;&gt;
       &lt;li&gt;&lt;button type=&quot;button&quot;&gt;Button&lt;/button&gt;&lt;/li&gt;
       &lt;li&gt;&lt;input type=&quot;button&quot; value=&quot;Input button&quot;&gt;&lt;/li&gt;
@@ -214,7 +214,7 @@ include 'includes/html-head.php';
                     <p>Add <code>tiny</code>, <code>small</code>, <code>large</code> class to the button element that contain <code>rd-button</code> class to change its size.</p>
                     <div class="rd-block-level-margin-bottom">
                         <div class="rd-button-group">
-                            <button class="rd-button danger tiny dropdown-toggler">Tiny <i class="fas fa-caret-down"></i></button>
+                            <button class="rd-button danger tiny dropdown-toggler">Tiny <i class="fa-solid fa-caret-down"></i></button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
@@ -223,7 +223,7 @@ include 'includes/html-head.php';
                         </div>
                         <div class="rd-button-group">
                             <button class="rd-button info small">Small</button>
-                            <button class="rd-button info small dropdown-toggler"><i class="fas fa-caret-down"></i></button>
+                            <button class="rd-button info small dropdown-toggler"><i class="fa-solid fa-caret-down"></i></button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save 2</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish 2</a></li>
@@ -231,7 +231,7 @@ include 'includes/html-head.php';
                             </ul>
                         </div>
                         <div class="rd-button-group">
-                            <button class="rd-button warning dropdown-toggler">Normal <i class="fas fa-caret-down"></i></button>
+                            <button class="rd-button warning dropdown-toggler">Normal <i class="fa-solid fa-caret-down"></i></button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save 3</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish 3</a></li>
@@ -240,7 +240,7 @@ include 'includes/html-head.php';
                         </div>
                         <div class="rd-button-group">
                             <button class="rd-button success large">Large</button>
-                            <button class="rd-button success large dropdown-toggler"><i class="fas fa-caret-down"></i></button>
+                            <button class="rd-button success large dropdown-toggler"><i class="fa-solid fa-caret-down"></i></button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save 4</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish 4</a></li>
@@ -249,7 +249,7 @@ include 'includes/html-head.php';
                         </div>
                     </div>
                     <pre>&lt;div class=&quot;rd-button-group&quot;&gt;
-    &lt;button class=&quot;rd-button danger tiny dropdown-toggler&quot;&gt;Tiny &lt;i class=&quot;fas fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+    &lt;button class=&quot;rd-button danger tiny dropdown-toggler&quot;&gt;Tiny &lt;i class=&quot;fa-solid fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
     &lt;ul class=&quot;rd-dropdown&quot;&gt;
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Save&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Save &amp;amp; Publish&lt;/a&gt;&lt;/li&gt;
@@ -258,7 +258,7 @@ include 'includes/html-head.php';
 &lt;/div&gt;
 &lt;div class=&quot;rd-button-group&quot;&gt;
     &lt;button class=&quot;rd-button info small&quot;&gt;Small&lt;/button&gt;
-    &lt;button class=&quot;rd-button info small dropdown-toggler&quot;&gt;&lt;i class=&quot;fas fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+    &lt;button class=&quot;rd-button info small dropdown-toggler&quot;&gt;&lt;i class=&quot;fa-solid fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
     &lt;ul class=&quot;rd-dropdown&quot;&gt;
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Save 2&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Save &amp;amp; Publish 2&lt;/a&gt;&lt;/li&gt;
@@ -267,7 +267,7 @@ include 'includes/html-head.php';
 &lt;/div&gt;
 &lt;div class=&quot;rd-button-group&quot;&gt;
     &lt;button class=&quot;rd-button success large&quot;&gt;Large&lt;/button&gt;
-    &lt;button class=&quot;rd-button success large dropdown-toggler&quot;&gt;&lt;i class=&quot;fas fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+    &lt;button class=&quot;rd-button success large dropdown-toggler&quot;&gt;&lt;i class=&quot;fa-solid fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
     &lt;ul class=&quot;rd-dropdown&quot;&gt;
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Save 4&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Save &amp;amp; Publish 4&lt;/a&gt;&lt;/li&gt;
@@ -278,7 +278,7 @@ include 'includes/html-head.php';
                     <p>Add <code>data-placement</code> attribute into button that contain <code>class=&quot;dropdown-toggler&quot;</code>. Accept values please see <a href="https://popper.js.org/popper-documentation.html#Popper.placements" target="popper-js-doc">this document</a>.</p>
                     <div class="rd-block-level-margin-bottom">
                         <div class="rd-button-group">
-                            <button class="rd-button dropdown-toggler" data-placement="top left"><i class="fas fa-caret-up"></i> Top left</button>
+                            <button class="rd-button dropdown-toggler" data-placement="top left"><i class="fa-solid fa-caret-up"></i> Top left</button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
@@ -286,7 +286,7 @@ include 'includes/html-head.php';
                             </ul>
                         </div>
                         <div class="rd-button-group">
-                            <button class="rd-button dropdown-toggler" data-placement="top">Top center <i class="fas fa-caret-up"></i></button>
+                            <button class="rd-button dropdown-toggler" data-placement="top">Top center <i class="fa-solid fa-caret-up"></i></button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
@@ -294,7 +294,7 @@ include 'includes/html-head.php';
                             </ul>
                         </div>
                         <div class="rd-button-group">
-                            <button class="rd-button dropdown-toggler" data-placement="top right">Top right <i class="fas fa-caret-up"></i></button>
+                            <button class="rd-button dropdown-toggler" data-placement="top right">Top right <i class="fa-solid fa-caret-up"></i></button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
@@ -302,7 +302,7 @@ include 'includes/html-head.php';
                             </ul>
                         </div>
                         <div class="rd-button-group">
-                            <button class="rd-button dropdown-toggler" data-placement="left top"><i class="fas fa-caret-left"></i> Left top</button>
+                            <button class="rd-button dropdown-toggler" data-placement="left top"><i class="fa-solid fa-caret-left"></i> Left top</button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
@@ -310,7 +310,7 @@ include 'includes/html-head.php';
                             </ul>
                         </div>
                         <div class="rd-button-group">
-                            <button class="rd-button dropdown-toggler" data-placement="left"><i class="fas fa-caret-left"></i> Left middle</button>
+                            <button class="rd-button dropdown-toggler" data-placement="left"><i class="fa-solid fa-caret-left"></i> Left middle</button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
@@ -318,7 +318,7 @@ include 'includes/html-head.php';
                             </ul>
                         </div>
                         <div class="rd-button-group">
-                            <button class="rd-button dropdown-toggler" data-placement="left bottom"><i class="fas fa-caret-left"></i> Left bottom</button>
+                            <button class="rd-button dropdown-toggler" data-placement="left bottom"><i class="fa-solid fa-caret-left"></i> Left bottom</button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
@@ -327,7 +327,7 @@ include 'includes/html-head.php';
                         </div>
                         <div class="rd-block-level-margin-bottom"></div>
                         <div class="rd-button-group">
-                            <button class="rd-button dropdown-toggler" data-placement="bottom left"><i class="fas fa-caret-down"></i> Bottom left</button>
+                            <button class="rd-button dropdown-toggler" data-placement="bottom left"><i class="fa-solid fa-caret-down"></i> Bottom left</button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
@@ -335,7 +335,7 @@ include 'includes/html-head.php';
                             </ul>
                         </div>
                         <div class="rd-button-group">
-                            <button class="rd-button dropdown-toggler" data-placement="bottom">Bottom center <i class="fas fa-caret-down"></i></button>
+                            <button class="rd-button dropdown-toggler" data-placement="bottom">Bottom center <i class="fa-solid fa-caret-down"></i></button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
@@ -343,7 +343,7 @@ include 'includes/html-head.php';
                             </ul>
                         </div>
                         <div class="rd-button-group">
-                            <button class="rd-button dropdown-toggler" data-placement="bottom right">Bottom right <i class="fas fa-caret-down"></i></button>
+                            <button class="rd-button dropdown-toggler" data-placement="bottom right">Bottom right <i class="fa-solid fa-caret-down"></i></button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
@@ -351,7 +351,7 @@ include 'includes/html-head.php';
                             </ul>
                         </div>
                         <div class="rd-button-group">
-                            <button class="rd-button dropdown-toggler" data-placement="right top">Right top <i class="fas fa-caret-right"></i></button>
+                            <button class="rd-button dropdown-toggler" data-placement="right top">Right top <i class="fa-solid fa-caret-right"></i></button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
@@ -359,7 +359,7 @@ include 'includes/html-head.php';
                             </ul>
                         </div>
                         <div class="rd-button-group">
-                            <button class="rd-button dropdown-toggler" data-placement="right">Right middle <i class="fas fa-caret-right"></i></button>
+                            <button class="rd-button dropdown-toggler" data-placement="right">Right middle <i class="fa-solid fa-caret-right"></i></button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
@@ -367,7 +367,7 @@ include 'includes/html-head.php';
                             </ul>
                         </div>
                         <div class="rd-button-group">
-                            <button class="rd-button dropdown-toggler" data-placement="right bottom">Right bottom <i class="fas fa-caret-right"></i></button>
+                            <button class="rd-button dropdown-toggler" data-placement="right bottom">Right bottom <i class="fa-solid fa-caret-right"></i></button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
@@ -377,7 +377,7 @@ include 'includes/html-head.php';
                         <div class="rd-block-level-margin-bottom"></div>
                         <div class="rd-button-group">
                             <button class="rd-button">Button</button>
-                            <button class="rd-button dropdown-toggler" data-placement="right top"><i class="fas fa-caret-right"></i></button>
+                            <button class="rd-button dropdown-toggler" data-placement="right top"><i class="fa-solid fa-caret-right"></i></button>
                             <ul class="rd-dropdown">
                                 <li><a href="#" onclick="return false;">Save B</a></li>
                                 <li><a href="#" onclick="return false;">Save &amp; Publish B</a></li>
@@ -386,7 +386,7 @@ include 'includes/html-head.php';
                         </div>
                     </div>
                     <pre>&lt;div class=&quot;rd-button-group&quot;&gt;
-    &lt;button class=&quot;rd-button dropdown-toggler&quot; data-placement=&quot;top left&quot;&gt;&lt;i class=&quot;fas fa-caret-up&quot;&gt;&lt;/i&gt; Top left&lt;/button&gt;
+    &lt;button class=&quot;rd-button dropdown-toggler&quot; data-placement=&quot;top left&quot;&gt;&lt;i class=&quot;fa-solid fa-caret-up&quot;&gt;&lt;/i&gt; Top left&lt;/button&gt;
     &lt;ul class=&quot;rd-dropdown&quot;&gt;
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Save&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Save &amp;amp; Publish&lt;/a&gt;&lt;/li&gt;
@@ -423,7 +423,7 @@ include 'includes/html-head.php';
         <script>
             document.getElementById('demo-dynamically-add-button').addEventListener('click', function(event) {
                 let buttonDropdown = '<div class="rd-button-group">\
-                    <button class="rd-button dropdown-toggler">Dropdown <i class="fas fa-caret-down"></i></button>\
+                    <button class="rd-button dropdown-toggler">Dropdown <i class="fa-solid fa-caret-down"></i></button>\
                     <ul class="rd-dropdown">\
                         <li><a href="#" onclick="return false;">Save A</a></li>\
                         <li><a href="#" onclick="return false;">Save &amp; Publish A</a></li>\

@@ -31,8 +31,8 @@ $title = 'Example logout page';
                 <form class="rd-form">
                     <div class="text-center rd-content-level-margin-bottom">
                         <span class="fa-stack fa-3x">
-                            <i class="fas fa-circle fa-stack-2x"></i>
-                            <i class="fas fa-user fa-stack-1x fa-inverse"></i>
+                            <i class="fa-solid fa-circle fa-stack-2x"></i>
+                            <i class="fa-solid fa-user fa-stack-1x fa-inverse"></i>
                         </span>
                     </div>
                     <div class="form-group">

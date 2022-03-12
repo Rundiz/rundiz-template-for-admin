@@ -118,7 +118,7 @@ $dummyData = '[{"id":1,"name":"Gwendolyn Uphill","address":"282 Springview Stree
                                                     echo indent(10).'<tr>'."\n";
                                                     echo indent(11).'<td class="column-primary" data-colname="Name">'."\n";
                                                     echo indent(12).$row->name."\n";
-                                                    echo indent(12).'<button class="toggle-row" type="button"><i class="faicon fas fa-caret-down fa-fw" data-toggle-icon="fa-caret-down fa-caret-up"></i><span class="screen-reader-only">Show more details</span></button>'."\n";
+                                                    echo indent(12).'<button class="toggle-row" type="button"><i class="faicon fa-solid fa-caret-down fa-fw" data-toggle-icon="fa-caret-down fa-caret-up"></i><span class="screen-reader-only">Show more details</span></button>'."\n";
                                                     echo indent(11).'</td>'."\n";
                                                     echo indent(11).'<td data-colname="Address">'.$row->address.'</td>'."\n";
                                                     echo indent(11).'<td data-colname="Email">'.$row->email.'</td>'."\n";

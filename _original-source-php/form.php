@@ -73,7 +73,7 @@ include 'includes/html-head.php';
                                     </span>
                                     <span class="rd-input-files-queue"></span>
                                     <template class="rd-inputfile-reset-button">
-                                        <button class="rd-button tiny" type="button" onclick="return RundizTemplateAdmin.resetInputFile(this);" title="Remove files"><i class="fas fa-times"></i><span class="screen-reader-only">Remove files</span></button>
+                                        <button class="rd-button tiny" type="button" onclick="return RundizTemplateAdmin.resetInputFile(this);" title="Remove files"><i class="fa-solid fa-xmark"></i><span class="screen-reader-only">Remove files</span></button>
                                     </template>
                                 </div>
                             </div>
@@ -86,7 +86,7 @@ include 'includes/html-head.php';
                                     </span>
                                     <span class="rd-input-files-queue"></span>
                                     <template class="rd-inputfile-reset-button">
-                                        <button class="rd-button tiny" type="button" onclick="return RundizTemplateAdmin.resetInputFile(this);" title="Remove files"><i class="fas fa-times"></i><span class="screen-reader-only">Remove files</span></button>
+                                        <button class="rd-button tiny" type="button" onclick="return RundizTemplateAdmin.resetInputFile(this);" title="Remove files"><i class="fa-solid fa-xmark"></i><span class="screen-reader-only">Remove files</span></button>
                                     </template>
                                 </div>
                             </div>
@@ -99,7 +99,7 @@ include 'includes/html-head.php';
                                     </span>
                                     <span class="rd-input-files-queue"></span>
                                     <template class="rd-inputfile-reset-button">
-                                        <button class="rd-button tiny" type="button" onclick="return RundizTemplateAdmin.resetInputFile(this);" title="Remove files"><i class="fas fa-times"></i><span class="screen-reader-only">Remove files</span></button>
+                                        <button class="rd-button tiny" type="button" onclick="return RundizTemplateAdmin.resetInputFile(this);" title="Remove files"><i class="fa-solid fa-xmark"></i><span class="screen-reader-only">Remove files</span></button>
                                     </template>
                                     <div class="form-description">The help message about this form input.</div>
                                 </div>
@@ -134,7 +134,7 @@ include 'includes/html-head.php';
 &lt;/span&gt;
 &lt;span class=&quot;rd-input-files-queue&quot;&gt;&lt;/span&gt;
 &lt;template class=&quot;rd-inputfile-reset-button&quot;&gt;
-    &lt;button class=&quot;rd-button tiny&quot; type=&quot;button&quot; onclick=&quot;return RundizTemplateAdmin.resetInputFile(this);&quot; title=&quot;Remove files&quot;&gt;&lt;i class=&quot;fas fa-times&quot;&gt;&lt;/i&gt;&lt;span class=&quot;screen-reader-only&quot;&gt;Remove files&lt;/span&gt;&lt;/button&gt;
+    &lt;button class=&quot;rd-button tiny&quot; type=&quot;button&quot; onclick=&quot;return RundizTemplateAdmin.resetInputFile(this);&quot; title=&quot;Remove files&quot;&gt;&lt;i class=&quot;fa-solid fa-xmark&quot;&gt;&lt;/i&gt;&lt;span class=&quot;screen-reader-only&quot;&gt;Remove files&lt;/span&gt;&lt;/button&gt;
 &lt;/template&gt;</pre>
                         <fieldset>
                             <legend>Input checkbox/radio</legend>
@@ -597,7 +597,7 @@ include 'includes/html-head.php';
                                     <input class="rd-input-control" type="number">
                                     <div class="rd-input-group-block append">
                                         <div class="rd-button-group">
-                                            <button class="rd-button dropdown-toggler" type="button" data-placement="bottom right">Dropdown <i class="fas fa-caret-down"></i></button>
+                                            <button class="rd-button dropdown-toggler" type="button" data-placement="bottom right">Dropdown <i class="fa-solid fa-caret-down"></i></button>
                                             <ul class="rd-dropdown">
                                                 <li><a href="#" onclick="return false;">Save</a></li>
                                                 <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
@@ -618,7 +618,7 @@ include 'includes/html-head.php';
     &lt;input class=&quot;rd-input-control&quot; type=&quot;number&quot;&gt;
     &lt;div class=&quot;rd-input-group-block append&quot;&gt;
         &lt;div class=&quot;rd-button-group&quot;&gt;
-            &lt;button class=&quot;rd-button dropdown-toggler&quot; type=&quot;button&quot; data-placement=&quot;bottom right&quot;&gt;Dropdown &lt;i class=&quot;fas fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+            &lt;button class=&quot;rd-button dropdown-toggler&quot; type=&quot;button&quot; data-placement=&quot;bottom right&quot;&gt;Dropdown &lt;i class=&quot;fa-solid fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
             &lt;ul class=&quot;rd-dropdown&quot;&gt;
                 &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;Save&lt;/a&gt;&lt;/li&gt;
                 &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;Save &amp;amp; Publish&lt;/a&gt;&lt;/li&gt;
@@ -656,7 +656,7 @@ include 'includes/html-head.php';
                     <span class="rd-input-files-queue"></span>\
                     <template class="rd-inputfile-reset-button">\
                         <button class="rd-button tiny" type="button" onclick="return RundizTemplateAdmin.resetInputFile(this);" title="Remove files">\
-                            <i class="fas fa-times"></i>\
+                            <i class="fa-solid fa-xmark"></i>\
                             <span class="screen-reader-only">Remove files</span>\
                         </button>\
                     </template>';
