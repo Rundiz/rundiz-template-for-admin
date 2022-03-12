@@ -1,5 +1,6 @@
             <div class="rd-sidebar-back"></div>
             <section class="rd-sidebar">
+                <h2 class="screen-reader-only">Sidebar menus</h2>
                 <div class="rd-sidebar-inner">
                     <ul class="rd-sidebar-item-list sm sm-vertical sm-rdta">
                         <li><a href="#" onclick="return false;" title="Admin home"><i class="sidebar-icon fas fa-tachometer-alt fa-fw"></i> <span class="rd-sidebar-menu-text">Admin home</span></a>
@@ -10,16 +11,9 @@
                         </li>
                         <li><a href="#" onclick="return false;" title="Components"><i class="sidebar-icon fas fa-server fa-fw"></i> <span class="rd-sidebar-menu-text">Components</span></a>
                             <ul>
-                                <li class="sub-menu-heading"><a>Basic component &amp; example</a></li>
+                                <li class="sub-menu-heading"><a>Typography &amp; getting started</a></li>
                                 <li><a href="typography.html">Typography</a></li>
-                                <li><a href="basic-layout.html">Basic layout</a></li>
-                                <li><a href="#" onclick="return false;">Sticky menu</a>
-                                    <ul>
-                                        <li><a href="stickymenu-long-content.html">Sticky menu (long content)</a></li>
-                                        <li><a href="stickymenu-long-menu.html">Sticky menu (long menu)</a></li>
-                                        <li><a href="stickymenu-long-content-menu.html">Sticky menu (long content &amp; menu)</a></li>
-                                    </ul>
-                                </li>
+                                <li><a href="basic-layout.html">Basic layout (getting started)</a></li>
                                 <li class="divider"></li>
                                 <li class="sub-menu-heading"><a>More components</a></li>
                                 <li><a href="accordion.html">Accordion</a></li>
@@ -55,7 +49,14 @@
                             </ul>
                         </li>
                         <li class="divider"></li>
-                        <li class="sub-menu-heading"><a onclick="return false;" title="Another samples"><i class="sidebar-icon fas fa-vial fa-fw"></i> <span class="rd-sidebar-menu-text">Another samples</span></a></li>
+                        <li class="sub-menu-heading"><a onclick="return false;" title="Experiments"><i class="sidebar-icon fas fa-vial fa-fw"></i> <span class="rd-sidebar-menu-text">Experiments</span></a></li>
+                        <li><a href="#" onclick="return false;" title="Sticky menu"><i class="sidebar-icon fas fa-thumbtack fa-fw"></i> <span class="rd-sidebar-menu-text">Stickey menu</span></a>
+                            <ul>
+                                <li><a href="stickymenu-long-content.html">Sticky menu (long content)</a></li>
+                                <li><a href="stickymenu-long-menu.html">Sticky menu (long menu)</a></li>
+                                <li><a href="stickymenu-long-content-menu.html">Sticky menu (long content &amp; menu)</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#" onclick="return false;" title="Sub menus"><i class="sidebar-icon fas fa-cubes fa-fw"></i> <span class="rd-sidebar-menu-text">Sub menus</span></a>
                             <ul>
                                 <li><a href="javascript:alert('link clicked');">1</a>
@@ -147,7 +148,7 @@ for ($i = 1; $i <= 50; $i++) {
                                 <li><a href="#" onclick="return false;">10</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" onclick="return false;" title="Long menu text"><i class="sidebar-icon fas fa-greater-than-equal fa-fw"></i> <span class="rd-sidebar-menu-text">Longggggggggg menu item text that is very long</span></a>
+                        <li><a href="#" onclick="return false;" title="Long menu text"><i class="sidebar-icon fas fa-greater-than-equal fa-fw"></i> <span class="rd-sidebar-menu-text">Longggggggggggggggggg menu text</span></a>
                             <ul>
                                 <li><a href="#" onclick="return false;">longggggggggggggggggggggggggggggggggggggggggggg submenu item 1</a>
                                     <ul>

@@ -3,7 +3,7 @@
 <html class="rd-template-admin">
     <head>
 <?php
-$title = 'Basic layout';
+$title = 'Basic layout (getting started)';
 include 'includes/html-head.php'; 
 ?> 
     </head>
@@ -30,7 +30,7 @@ include 'includes/html-head.php';
                 echo renderBreadcrumb(['./' => 'Home', '#' => $title]);
                 ?> 
                 <div class="rd-page-content">
-                    <h1>Basic layout</h1>
+                    <h1><?php echo $title; ?></h1>
                     <p>
                         Your content will be here inside <code>.rd-page-content</code> class.<br>
                         To begins design your page content, copy this page source code, remove these two paragraphs (&lt;p&gt;) and let's start.

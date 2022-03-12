@@ -1,6 +1,6 @@
         <header class="rd-navbar">
             <button class="rd-sidebar-toggler" data-target=".rd-page-wrapper" title="Toggle side bar menu"><i class="fas fa-bars fa-fw"></i><span class="screen-reader-only" aria-hidden="true">Toggle side bar menu</span></button>
-            <div class="rd-site-brand"><a href="#" onclick="return false;">Admin Dashboard</a></div><!--.rd-site-brand-->
+            <div class="rd-site-brand"><a href="./">Admin Dashboard</a></div><!--.rd-site-brand-->
             <nav class="nav-right">
                 <ul class="sm sm-rdta navbar">
                     <li><a href="#" onclick="return false;"><i class="fas fa-globe fa-fw"></i></a>
