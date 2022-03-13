@@ -95,7 +95,7 @@ class RDTAAlertDialog {
                 case 'alert-danger':
                 case 'danger':
                 default:
-                    dialogIcon = '<span class="fa-stack fa-3x"><i class="far fa-circle fa-2x"></i><i class="fas fa-times fa-stack-1x"></i></span>';
+                    dialogIcon = '<span class="fa-stack fa-3x"><i class="far fa-circle fa-2x"></i><i class="fas fa-xmark fa-stack-1x"></i></span>';
                     alertClass = 'alert-danger';
                     break;
             }
