@@ -62,6 +62,13 @@ include 'includes/html-head.php';
                                 <div class="form-description">The help message about this form input.</div>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label class="control-label" for="input-type-text-invalid">Input text invalid</label>
+                            <div class="control-wrapper">
+                                <input id="input-type-text-invalid" class="rd-input-invalid" type="text">
+                                <div class="form-description">Add <code>rd-input-invalid</code> class to the input.</div>
+                            </div>
+                        </div>
                         <fieldset>
                             <legend>Input file</legend>
                             <div class="form-group">
@@ -104,6 +111,20 @@ include 'includes/html-head.php';
                                     <div class="form-description">The help message about this form input.</div>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label class="control-label" for="rd-inputfile_invalid">Input file invalid</label>
+                                <div class="control-wrapper">
+                                    <span class="rd-button info small rd-input-invalid rd-inputfile" tabindex="0">
+                                        <span class="label">Choose file</span>
+                                        <input id="rd-inputfile_invalid" type="file" name="rd-inputfile-invalid" tabindex="-1">
+                                    </span>
+                                    <span class="rd-input-files-queue"></span>
+                                    <template class="rd-inputfile-reset-button">
+                                        <button class="rd-button tiny" type="button" onclick="return RundizTemplateAdmin.resetInputFile(this);" title="Remove files"><i class="fa-solid fa-xmark"></i><span class="screen-reader-only">Remove files</span></button>
+                                    </template>
+                                    <div class="form-description">Add <code>rd-input-invalid</code> class to the input.</div>
+                                </div>
+                            </div>
                             <h4>Dynamically insert/update input file</h4>
                             <div id="demo-custom-inputfile-placeholder" style="border: 1px dashed #ccc; padding: 0.625rem;"></div>
                             <button type="button" onclick="rdtaAddCustomInputFile('demo-custom-inputfile-placeholder');">Click here to add an input file</button>
@@ -143,7 +164,8 @@ include 'includes/html-head.php';
                                 <div class="control-wrapper">
                                     <label><input type="radio" name="input-radio" value="1"> Input radio option 1</label><br>
                                     <label><input type="radio" name="input-radio" value="2"> Input radio option 2</label><br>
-                                    <label class="disabled"><input type="radio" name="input-radio" value="3" disabled=""> Input radio option 3 disabled</label>
+                                    <label class="disabled"><input type="radio" name="input-radio" value="3" disabled=""> Input radio option 3 disabled</label><br>
+                                    <label><input class="rd-input-invalid" type="radio" name="input-radio" value="invalid"> Input radio option 3 invalid</label>
                                     <div class="form-description">The help message about this form input.</div>
                                 </div>
                             </div>
@@ -160,7 +182,8 @@ include 'includes/html-head.php';
                                 <div class="control-wrapper">
                                     <label><input type="checkbox" name="checkbox[]"> Input checkbox 1</label><br>
                                     <label><input type="checkbox" name="checkbox[]"> Input checkbox 2</label><br>
-                                    <label class="disabled"><input type="checkbox" name="checkbox[]" disabled=""> Input checkbox 3 disabled</label>
+                                    <label class="disabled"><input type="checkbox" name="checkbox[]" disabled=""> Input checkbox 3 disabled</label><br>
+                                    <label><input class="rd-input-invalid" type="checkbox" name="checkbox[]"> Input checkbox 3 invalid</label>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -221,6 +244,17 @@ include 'includes/html-head.php';
                                     </select>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label class="control-label" for="input-select-invalid">Select box invalid</label>
+                                <div class="control-wrapper">
+                                    <select id="input-select-invalid" class="rd-input-invalid" name="demo-selectbox-invalid">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
+                                </div>
+                                <div class="form-description">Add <code>rd-input-invalid</code> class to the select box.</div>
+                            </div>
                         </fieldset>
                         <div class="form-group">
                             <label class="control-label" for="input-textarea">Textarea</label>
@@ -232,6 +266,12 @@ include 'includes/html-head.php';
                             <label class="control-label" for="input-textarea-disabled">Textarea disabled</label>
                             <div class="control-wrapper">
                                 <textarea id="input-textarea-disabled" disabled="" name="demo-textarea-disabled"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="input-textarea-invalid">Textarea invalid</label>
+                            <div class="control-wrapper">
+                                <textarea id="input-textarea-invalid" class="rd-input-invalid" name="demo-textarea-invalid"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
@@ -519,6 +559,12 @@ include 'includes/html-head.php';
                                     <div class="rd-input-group-block append">
                                         <span class="rd-input-group-block-text">Textarea</span>
                                     </div>
+                                </div>
+                                <div class="rd-input-group rd-content-level-margin-bottom">
+                                    <div class="rd-input-group-block prepend">
+                                        <span class="rd-input-group-block-text">@</span>
+                                    </div>
+                                    <input class="rd-input-control rd-input-invalid" type="text" placeholder="invalid">
                                 </div>
                             </div>
                         </div>

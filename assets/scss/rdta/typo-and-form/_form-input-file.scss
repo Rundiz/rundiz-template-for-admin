@@ -20,6 +20,10 @@
         outline: 3px solid var(--form-focus-color);
     }
 
+    &.rd-input-invalid {
+        border-color: var(--form-invalid-border-color) !important;
+    }
+
     // .rd-inputfile input[type="file"]
     input[type="file"] {
         display: block;

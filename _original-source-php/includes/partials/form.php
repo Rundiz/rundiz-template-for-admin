@@ -165,6 +165,45 @@ unset($input_type, $input_types);
                 </p>
             </fieldset>
 
+            <h3 id="form-validation-pseudoclass">Form with validation status</h3>
+            <form onsubmit="return false;">
+                <fieldset>
+                    <p>
+                        <label for="form-validation-pseudoclass-inputtext">Input text (required)</label><br>
+                        <input id="form-validation-pseudoclass-inputtext" type="text" required="">
+                    </p>
+                    <p>
+                        <label for="form-validation-pseudoclass-inputemail">Email (required)</label><br>
+                        <input id="form-validation-pseudoclass-inputemail" type="email" required="">
+                    </p>
+                    <p>
+                        <label for="form-validation-pseudoclass-inputemail-optional">Email (optional)</label><br>
+                        <input id="form-validation-pseudoclass-inputemail-optional" type="email">
+                    </p>
+                    <p>
+                        <label><input type="radio" name="form-validation-pseudoclass-radio1" value="1" required="">Input radio 1</label><br>
+                        <label><input type="radio" name="form-validation-pseudoclass-radio1" value="2">Input radio 2</label><br>
+                    </p>
+                    <p>
+                        <label><input type="checkbox" name="form-validation-pseudoclass-checkbox1" value="1" required="">Input check box 1 (required)</label><br>
+                        <label><input type="checkbox" name="form-validation-pseudoclass-checkbox1" value="2">Input check box 2</label><br>
+                    </p>
+                    <p>
+                        <label for="form-validation-pseudoclass-textarea">Textarea (required)</label><br>
+                        <textarea id="form-validation-pseudoclass-textarea" required=""></textarea>
+                    </p>
+                    <p>
+                        <label for="form-validation-pseudoclass-selectbox">Select box (required)</label><br>
+                        <select id="form-validation-pseudoclass-selectbox" required="">
+                            <option disabled="disabled" selected="selected" value="">Please select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </p>
+                    <button type="submit">Submit</button>
+                </fieldset>
+            </form>
+
             <h3 id="form-datalist">Datalist</h3>
             <fieldset>
                 <p>

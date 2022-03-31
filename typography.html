@@ -4,11 +4,11 @@
  
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Typography | Rundiz template for admin</title>
+        <title>Typography & reset | Rundiz template for admin</title>
         <link rel="stylesheet" href="assets/css/sanitize/sanitize.css?npm-v=github%3Acsstools%2Fsanitize.css%23main">
         <link rel="stylesheet" href="assets/css/sanitize/typography.css?npm-v=github%3Acsstools%2Fsanitize.css%23main">
         <link rel="stylesheet" href="assets/css/sanitize/forms.css?npm-v=github%3Acsstools%2Fsanitize.css%23main">
-        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?v=0447766fd38ddd5161d7d04179bee59a">
+        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?v=362090d6c1e6404fcfe3d525b9d6ea26">
         <style>
             main {
                 margin: 0 auto; 
@@ -107,8 +107,9 @@
                 </div>
             </aside>
             <header>
-                <h1>Typography & kitchen sink</h1>
+                <h1>Typography & reset</h1>
             </header>
+            <p>This page displaying how all elements (or tags) were reset to their initial design. They should be displayed the same in all browsers &amp; OS.</p>
             <p>To getting started, the most basic requirement is to load CSS files which contains 
                 <strong>sanitize</strong> CSS files, <strong>rdta/typo-and-form/typo-and-form.css</strong>
             </p>
@@ -773,6 +774,45 @@
                     <input type="button" value="Input disabled button" disabled="">
                 </p>
             </fieldset>
+
+            <h3 id="form-validation-pseudoclass">Form with validation status</h3>
+            <form onsubmit="return false;">
+                <fieldset>
+                    <p>
+                        <label for="form-validation-pseudoclass-inputtext">Input text (required)</label><br>
+                        <input id="form-validation-pseudoclass-inputtext" type="text" required="">
+                    </p>
+                    <p>
+                        <label for="form-validation-pseudoclass-inputemail">Email (required)</label><br>
+                        <input id="form-validation-pseudoclass-inputemail" type="email" required="">
+                    </p>
+                    <p>
+                        <label for="form-validation-pseudoclass-inputemail-optional">Email (optional)</label><br>
+                        <input id="form-validation-pseudoclass-inputemail-optional" type="email">
+                    </p>
+                    <p>
+                        <label><input type="radio" name="form-validation-pseudoclass-radio1" value="1" required="">Input radio 1</label><br>
+                        <label><input type="radio" name="form-validation-pseudoclass-radio1" value="2">Input radio 2</label><br>
+                    </p>
+                    <p>
+                        <label><input type="checkbox" name="form-validation-pseudoclass-checkbox1" value="1" required="">Input check box 1 (required)</label><br>
+                        <label><input type="checkbox" name="form-validation-pseudoclass-checkbox1" value="2">Input check box 2</label><br>
+                    </p>
+                    <p>
+                        <label for="form-validation-pseudoclass-textarea">Textarea (required)</label><br>
+                        <textarea id="form-validation-pseudoclass-textarea" required=""></textarea>
+                    </p>
+                    <p>
+                        <label for="form-validation-pseudoclass-selectbox">Select box (required)</label><br>
+                        <select id="form-validation-pseudoclass-selectbox" required="">
+                            <option disabled="disabled" selected="selected" value="">Please select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </p>
+                    <button type="submit">Submit</button>
+                </fieldset>
+            </form>
 
             <h3 id="form-datalist">Datalist</h3>
             <fieldset>

@@ -20,6 +20,7 @@ These variables will be work with based, typo, form (typo-and-form.css) and also
 :root {
   --basic-focus-color: rgba(153, 153, 153, 0.35);
   --form-focus-color: rgba(255, 182, 0, 0.35);
+  --form-invalid-border-color: #bc0000;
   --page-background-color: #FFF;
   --page-text-color: #333;
   --block-background-color: #eee;
@@ -568,6 +569,31 @@ input[type=week][readonly] {
   color: var(--text-disabled-color);
   cursor: not-allowed;
 }
+input[type=date]:invalid, input[type=date].rd-input-invalid,
+input[type=datetime-local]:invalid,
+input[type=datetime-local].rd-input-invalid,
+input[type=email]:invalid,
+input[type=email].rd-input-invalid,
+input[type=month]:invalid,
+input[type=month].rd-input-invalid,
+input[type=number]:invalid,
+input[type=number].rd-input-invalid,
+input[type=password]:invalid,
+input[type=password].rd-input-invalid,
+input[type=search]:invalid,
+input[type=search].rd-input-invalid,
+input[type=tel]:invalid,
+input[type=tel].rd-input-invalid,
+input[type=text]:invalid,
+input[type=text].rd-input-invalid,
+input[type=time]:invalid,
+input[type=time].rd-input-invalid,
+input[type=url]:invalid,
+input[type=url].rd-input-invalid,
+input[type=week]:invalid,
+input[type=week].rd-input-invalid {
+  border-color: var(--form-invalid-border-color);
+}
 
 input[type=color] {
   cursor: pointer;
@@ -603,6 +629,11 @@ input[type=radio][disabled],
 input[type=radio][readonly] {
   background-color: var(--block-background-color);
   cursor: not-allowed;
+}
+input[type=checkbox]:invalid, input[type=checkbox].rd-input-invalid,
+input[type=radio]:invalid,
+input[type=radio].rd-input-invalid {
+  border-color: var(--form-invalid-border-color);
 }
 
 input[type=checkbox]:checked {
@@ -663,6 +694,7 @@ select {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
+  background-color: var(--page-background-color);
   border: 1px solid var(--block-border-color);
   border-radius: 0;
   font-family: inherit;
@@ -674,6 +706,13 @@ select[disabled], select[readonly] {
   background-color: var(--block-background-color);
   color: var(--text-disabled-color);
   cursor: not-allowed;
+}
+select:invalid, select.rd-input-invalid {
+  border-color: var(--form-invalid-border-color);
+}
+select option,
+select optgroup {
+  background-color: var(--page-background-color);
 }
 
 select:not([multiple]) {
@@ -697,6 +736,9 @@ textarea[disabled], textarea[readonly] {
   color: var(--text-disabled-color);
   cursor: not-allowed;
 }
+textarea:invalid, textarea.rd-input-invalid {
+  border-color: var(--form-invalid-border-color);
+}
 
 /*
 * ----------------------------------------------------------------------------------------------
@@ -714,6 +756,9 @@ textarea[disabled], textarea[readonly] {
 }
 .rd-inputfile:active, .rd-inputfile:focus {
   outline: 3px solid var(--form-focus-color);
+}
+.rd-inputfile.rd-input-invalid {
+  border-color: var(--form-invalid-border-color) !important;
 }
 .rd-inputfile input[type=file] {
   display: block;

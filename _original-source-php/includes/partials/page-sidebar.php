@@ -12,7 +12,7 @@
                         <li><a href="#" onclick="return false;" title="Components"><i class="sidebar-icon fa-solid fa-boxes-stacked fa-fw"></i> <span class="rd-sidebar-menu-text">Components</span></a>
                             <ul>
                                 <li class="sub-menu-heading"><a>Typography &amp; getting started</a></li>
-                                <li><a href="typography.html">Typography</a></li>
+                                <li><a href="typography.html">Typography &amp; reset</a></li>
                                 <li><a href="basic-layout.html">Basic layout (getting started)</a></li>
                                 <li class="divider"></li>
                                 <li class="sub-menu-heading"><a>More components</a></li>

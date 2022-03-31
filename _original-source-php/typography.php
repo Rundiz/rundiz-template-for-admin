@@ -3,7 +3,7 @@
 <html>
     <head>
 <?php
-$title = 'Typography';
+$title = 'Typography & reset';
 ?> 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -118,8 +118,9 @@ $title = 'Typography';
                 </div>
             </aside>
             <header>
-                <h1>Typography & kitchen sink</h1>
+                <h1><?=$title; ?></h1>
             </header>
+            <p>This page displaying how all elements (or tags) were reset to their initial design. They should be displayed the same in all browsers &amp; OS.</p>
             <p>To getting started, the most basic requirement is to load CSS files which contains 
                 <strong>sanitize</strong> CSS files, <strong>rdta/typo-and-form/typo-and-form.css</strong>
             </p>

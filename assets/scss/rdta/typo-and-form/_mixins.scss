@@ -20,4 +20,8 @@
         color: var(--text-disabled-color);
         cursor: not-allowed;
     }
+    &:invalid,
+    &.rd-input-invalid {
+        border-color: var(--form-invalid-border-color);
+    }
 }

@@ -127,6 +127,10 @@ input[type="radio"] {
         background-color: var(--block-background-color);
         cursor: not-allowed;
     }
+    &:invalid,
+    &.rd-input-invalid {
+        border-color: var(--form-invalid-border-color);
+    }
 }
 input[type="checkbox"] {
     &:checked {
@@ -195,6 +199,7 @@ select {
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
+    background-color: var(--page-background-color);
     border: 1px solid var(--block-border-color);// this also override active, focus in firefox.
     border-radius: 0;
     font-family: inherit;
@@ -206,6 +211,15 @@ select {
         background-color: var(--block-background-color);
         color: var(--text-disabled-color);
         cursor: not-allowed;
+    }
+    &:invalid,
+    &.rd-input-invalid {
+        border-color: var(--form-invalid-border-color);
+    }
+
+    option,
+    optgroup {
+        background-color: var(--page-background-color);
     }
 }
 select:not([multiple]) {
