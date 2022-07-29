@@ -710,10 +710,6 @@ select[disabled], select[readonly] {
 select:invalid, select.rd-input-invalid {
   border-color: var(--form-invalid-border-color);
 }
-select option,
-select optgroup {
-  background-color: var(--page-background-color);
-}
 
 select:not([multiple]) {
   height: 2.152em;

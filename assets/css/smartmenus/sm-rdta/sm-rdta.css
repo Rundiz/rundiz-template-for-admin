@@ -179,31 +179,24 @@
     position: absolute;
     width: 12em;
   }
-
   .sm-rdta li {
     float: left;
   }
-
   .sm-rdta.sm-rtl li {
     float: right;
   }
-
   .sm-rdta ul li, .sm-rdta.sm-rtl ul li, .sm-rdta.sm-vertical li {
     float: none;
   }
-
   .sm-rdta a {
     white-space: nowrap;
   }
-
   .sm-rdta ul a, .sm-rdta.sm-vertical a {
     white-space: normal;
   }
-
   .sm-rdta .sm-nowrap > li > a, .sm-rdta .sm-nowrap > li > :not(ul) a {
     white-space: nowrap;
   }
-
   /* ...end */
 }
 /*# sourceMappingURL=sm-rdta.css.map */

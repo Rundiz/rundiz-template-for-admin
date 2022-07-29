@@ -91,7 +91,6 @@ html.rd-template-admin {
     width: var(--sidebar-expanded-width);
     z-index: -1;
   }
-
   .rd-page-wrapper.is-collapsed .rd-sidebar-back {
     transition: width var(--sidebar-transition-seconds);
     width: var(--sidebar-collapsed-width);
@@ -130,7 +129,7 @@ html.rd-template-admin {
   min-width: 0;
 }
 .rd-page-wrapper .rd-sidebar {
-  background-color: #2e2e2e;
+  background-color: rgb(46, 46, 46);
   color: #ccc;
   display: none;
   height: auto;
