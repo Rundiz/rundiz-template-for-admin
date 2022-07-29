@@ -216,11 +216,6 @@ select {
     &.rd-input-invalid {
         border-color: var(--form-invalid-border-color);
     }
-
-    option,
-    optgroup {
-        background-color: var(--page-background-color);
-    }
 }
 select:not([multiple]) {
     height: 2.152em;
