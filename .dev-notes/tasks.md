@@ -25,7 +25,7 @@ For emit comments about line number from source, append this command to the curr
 
 For force compile even CSS file is newer, append this command to the current command: `--force` (Old SCSS).
 
-Please note that the SCSS files will be automatically compile and minified with source maps once `gulp` command has been called.
+Please note that the SCSS files will be automatically compile and minified with source maps once `npm run build` command has been called.
 
 -----
 
@@ -33,13 +33,13 @@ Please note that the SCSS files will be automatically compile and minified with 
 
 After finish development or editing the source code, these commands can help.
 
-To build HTML from PHP, minify JS, compile SCSS, build JS packages, run `npm run build` or `gulp` command.
+To build HTML from PHP, minify JS, compile SCSS, build JS packages, run `npm run build` command.
 
 ### Publish
 
 To publish this package to node package manager please follow instruction.
 
 1. Update the version number in package.json.
-2. Run `gulp` command or run `npm run build` command.
+2. Run `npm run build` command.
 3. Commit and push to Github.
 4. run `npm publish` command.
