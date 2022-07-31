@@ -57,7 +57,7 @@ export default class bundleRdtaSCSS {
             let compileResult = sassObj.compile({destFolder: this.destCSSFolder});
             let writeResult = await sassObj.writeFile(this.destCSSFolder);
 
-            console.log('    Compiled: ' + scssFile + ' > ' + writeResult.file);
+            console.log('    Compiled scss: ' + scssFile + ' > ' + writeResult.file);
         }// endfor;
     }// compileSCSS
 
@@ -87,7 +87,7 @@ export default class bundleRdtaSCSS {
             let compileResult = sassObj.compile({destFolder: this.destCSSFolder, suffix: '.min.css'});
             let writeResult = await sassObj.writeFile(this.destCSSFolder);
 
-            console.log('    Minified: ' + scssFile + ' > ' + writeResult.file);
+            console.log('    Minified scss: ' + scssFile + ' > ' + writeResult.file);
         }// endfor;
     }// minifySCSS
 

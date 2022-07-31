@@ -74,11 +74,10 @@ export default class BundleRdtaJS {
             for (const eachFile of this.jsFiles) {
                 const relativeName = path.relative('assets/js-src/rdta', eachFile);
                 const sourcePath = path.resolve(REPO_DIR, eachFile);
-                const destPath = path.resolve(REPO_DIR, this.destJSFolder, relativeName);
 
                 await JsBundler.run({
                     sourcePath: sourcePath,
-                    destPath: destPath,
+                    destPath: path.join(this.destJSFolder, relativeName),
                     relativeName: relativeName,
                     headerString: this.headerString,
                     destJSFolder: this.destJSFolder,

@@ -34,7 +34,7 @@ export default class JsBundler {
             destPath
         );
         if (echoOut === true) {
-            console.log('    Copied to: ' + destPath);
+            console.log('    Copied js to: ' + destPath);
         }
         
         // apply header to file.
@@ -62,9 +62,9 @@ export default class JsBundler {
         await minJS.writeFile(destJSFolder)
         .then((result) => {
             if (echoOut === true) {
-                console.log('    Minified file: ' + result.file);
+                console.log('    Minified js: ' + result.file);
                 if (result.sourceMap) {
-                    console.log('    Minified source map: ' + result.sourceMap);
+                    console.log('    Minified js source map: ' + result.sourceMap);
                 }
             }
             return Promise.resolve();
