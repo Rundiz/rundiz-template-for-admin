@@ -1,0 +1,140 @@
+{
+    "moduleName": "Rundiz template for admin",
+    "clean": {
+        "targets": [
+            {
+                "patterns": [
+                    "assets/css/rdta",
+                    "assets/css/sanitize",
+                    "assets/css/smartmenus"
+                ],
+                "options": {
+                }
+            },
+            {
+                "patterns": [
+                    "assets/font-awesome"
+                ]
+            },
+            {
+                "patterns": [
+                    "assets/js/rdta",
+                    "assets/js/smartmenus",
+                    "assets/js/sticky-sidebar",
+                    "assets/js/popper.js",
+                    "assets/js/tippy.js"
+                ]
+            },
+            {
+                "patterns": [
+                    "*.html",
+                    "!xhr-page.html"
+                ]
+            }
+        ]
+    },
+    "copyNodePackages": [
+        {
+            "patterns": "node_modules/@fortawesome/fontawesome-free/css/**",
+            "destination": "assets/font-awesome/css"
+        },
+        {
+            "patterns": "node_modules/@fortawesome/fontawesome-free/webfonts/**",
+            "destination": "assets/font-awesome/webfonts"
+        },
+        {
+            "patterns": "node_modules/@fortawesome/fontawesome-free/LICENSE.txt",
+            "destination": "assets/font-awesome"
+        },
+
+        {
+            "patterns": "node_modules/@popperjs/core/dist/umd/popper.*",
+            "destination": "assets/js/popper.js/umd"
+        },
+        {
+            "patterns": "node_modules/@popperjs/core/LICENSE*",
+            "destination": "assets/js/popper.js"
+        },
+
+        {
+            "patterns": "node_modules/sanitize.css/LICENSE*",
+            "destination": "assets/css/sanitize"
+        },
+        {
+            "patterns": "node_modules/sanitize.css/forms.css",
+            "destination": "assets/css/sanitize"
+        },
+        {
+            "patterns": "node_modules/sanitize.css/sanitize.css",
+            "destination": "assets/css/sanitize"
+        },
+        {
+            "patterns": "node_modules/sanitize.css/typography.css",
+            "destination": "assets/css/sanitize"
+        },
+
+        {
+            "patterns": "node_modules/smartmenus/dist/**.js",
+            "destination": "assets/js/smartmenus"
+        },
+        {
+            "patterns": "node_modules/smartmenus/LICENSE*",
+            "destination": "assets/js/smartmenus"
+        },
+        {
+            "patterns": "node_modules/smartmenus/dist/css/*.css",
+            "destination": "assets/css/smartmenus"
+        },
+        {
+            "patterns": "node_modules/smartmenus/dist/css/sm-clean/**",
+            "destination": "assets/css/smartmenus/sm-clean"
+        },
+        {
+            "patterns": "node_modules/smartmenus/dist/css/sm-simple/**",
+            "destination": "assets/css/smartmenus/sm-simple"
+        },
+
+        {
+            "patterns": "node_modules/sticky-sidebar/dist/**.js",
+            "destination": "assets/js/sticky-sidebar"
+        },
+        {
+            "patterns": "node_modules/sticky-sidebar/dist/**.map",
+            "destination": "assets/js/sticky-sidebar"
+        },
+        {
+            "patterns": "node_modules/sticky-sidebar/LICENSE*",
+            "destination": "assets/js/sticky-sidebar"
+        },
+
+        {
+            "patterns": "node_modules/tippy.js/**",
+            "destination": "assets/js/tippy.js"
+        }
+    ],
+    "bundleAssets": [
+        "config/bundleRdtaJS.mjs",
+        "config/bundleRdtaSCSS.mjs",
+        "config/replaceCSSHeader.mjs"
+    ],
+    "phpBuilder": {
+        "patterns": ["_original-source-php/*.php"],
+        "relativeFrom": "_original-source-php"
+    },
+    "watch": {
+        "clean": {
+            "targets": [
+                {
+                    "patterns": [
+                        "*.html",
+                        "!xhr-page.html"
+                    ]
+                }
+            ]
+        },
+        "watcher": [
+            "config/watchJS.mjs",
+            "config/watchSCSS.mjs"
+        ]
+    }
+}
