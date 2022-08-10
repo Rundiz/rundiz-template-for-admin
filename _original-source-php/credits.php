@@ -33,7 +33,6 @@ include 'includes/html-head.php';
                         <li><a href="https://www.php.net" target="php">PHP</a></li>
                         <li><a href="https://sass-lang.com" target="sass">Sass</a></li>
                         <li><a href="https://nodejs.org" target="node.js">Node.js</a></li>
-                        <li><a href="https://gulpjs.com" target="gulp">Gulp</a></li>
                     </ul>
                     <h3>Reference</h3>
                     <ul>
