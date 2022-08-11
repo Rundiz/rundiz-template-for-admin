@@ -28,7 +28,7 @@ export const handler = async (argv) => {
     console.log(TextStyles.programHeader());
     console.log(TextStyles.commandHeader(' Command: ' + argv._ + ' '));
 
-    // 1. Get and set framework's public path to `rdbPublicModuleAssetsDir` global variable.
+    // 1. Clean destination folders.
     await deleter.clean(argv);
     // 2. Start watching.
     const watcherObj = new watcher(argv);
