@@ -20,7 +20,7 @@ import {watcher} from './Tasks/Watch/watcher.mjs';
 
 
 export const command = 'watch';
-export const describe = 'Watch asset files such as CSS, JS, images changed and copy to public folder in the end.';
+export const describe = 'Watch asset files such as CSS, JS, images changed and apply changes.';
 export const builder = (yargs) => {
 
 };
