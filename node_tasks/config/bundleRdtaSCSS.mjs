@@ -52,6 +52,7 @@ export default class bundleRdtaSCSS {
                 sourceFile: scssFile,
                 options: {
                     sourceMap: true,
+                    sourceMapIncludeSources: true,
                 }
             });
             let compileResult = sassObj.compile({destFolder: this.destCSSFolder});
