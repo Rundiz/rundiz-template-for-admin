@@ -39,6 +39,7 @@ include 'includes/html-head.php';
                         To go back to use CSS flexbox as layout please modify the file <strong>assets/scss/rundiz-template-admin.scss</strong> and change the code from <code>@import 'layout/_layout-displaygrid';</code> to <code>@import 'layout/_layout';</code>
                         and then compile the scss using this command <kbd>sass --update assets/scss:assets/css</kbd>.
                     </p>
+                    <pre class="preview-source"></pre>
                 </div><!--.rd-page-content-->
             </main>
 <?php include 'includes/partials/page-footer.php'; ?> 

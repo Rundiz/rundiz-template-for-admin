@@ -47,14 +47,12 @@ include 'includes/html-head.php';
                         <div class="column">column</div>
                         <div class="column">column</div>
                     </div>
-                    <div class="rd-columns-flex-container rd-block-level-margin-bottom">
+                    <div class="rd-columns-flex-container rd-block-level-margin-bottom code-sample-columnflex-sample1">
                         <div class="column">column</div>
                         <div class="column">column</div>
                     </div>
-                    <pre>&lt;div class=&quot;rd-columns-flex-container&quot;&gt;
-    &lt;div class=&quot;column&quot;&gt;column&lt;/div&gt;
-    &lt;div class=&quot;column&quot;&gt;column&lt;/div&gt;
-&lt;/div&gt;</pre>
+                    <h3>Source</h3>
+                    <pre class="preview-source" data-target-src=".code-sample-columnflex-sample1" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
                     <p>If you feels like the left and right edge is too narrower than the page layout, fix with <code>.fix-columns-container-edge</code> class.</p>
                     <div class="rd-columns-flex-container fix-columns-container-edge rd-block-level-margin-bottom">
                         <div class="column example-transparent">
@@ -71,7 +69,7 @@ include 'includes/html-head.php';
 
                     <h2>Fixed columns</h2>
                     <p>The fixed columns will have total 12 columns max. The class name <code>.col-xs-*</code> is mobile first, it works on all screen sizes.</p>
-                    <div class="rd-columns-flex-container rd-block-level-margin-bottom">
+                    <div class="rd-columns-flex-container rd-block-level-margin-bottom code-sample-columnflex-fixedcols">
                         <div class="column col-xs-1">col-xs-1</div>
                         <div class="column col-xs-1">col-xs-1</div>
                         <div class="column col-xs-1">col-xs-1</div>
@@ -85,20 +83,8 @@ include 'includes/html-head.php';
                         <div class="column col-xs-1">col-xs-1</div>
                         <div class="column col-xs-1">col-xs-1</div>
                     </div>
-                    <pre>&lt;div class=&quot;rd-columns-flex-container&quot;&gt;
-    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
-    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
-    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
-    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
-    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
-    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
-    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
-    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
-    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
-    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
-    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
-    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
-&lt;/div&gt;</pre>
+                    <h3>Source</h3>
+                    <pre class="preview-source" data-target-src=".code-sample-columnflex-fixedcols" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
                     <p>And what gonna happen if you put more than 12 columns.</p>
                     <div class="rd-columns-flex-container rd-block-level-margin-bottom">
                         <div class="column col-xs-1">col-xs-1</div>
@@ -217,18 +203,14 @@ include 'includes/html-head.php';
 
                     <h3>Mixed column sizes in different screen</h3>
                     <p>The example below will show you the mixed column sizes in different screen. Resize your web browser to see it in action.</p>
-                    <div class="rd-columns-flex-container rd-block-level-margin-bottom">
+                    <div class="rd-columns-flex-container rd-block-level-margin-bottom code-sample-columnflex-mixedcolumnsizes">
                         <div class="column col-xl-3 col-lg-6 col-md-3 col-sm-2 col-xs-4">col-xl-3 col-lg-6 col-md-3 col-sm-2 col-xs-4</div>
                         <div class="column col-xl-3 col-lg-6 col-md-6 col-sm-10 col-xs-8">col-xl-3 col-lg-6 col-md-6 col-sm-10 col-xs-8</div>
                         <div class="column col-xl-3 col-lg-9 col-md-3 col-sm-3 col-xs-4">col-xl-3 col-lg-9 col-md-3 col-sm-3 col-xs-4</div>
                         <div class="column col-xl-3 col-lg-3 col-md-12 col-sm-9 col-xs-8">col-xl-3 col-lg-3 col-md-12 col-sm-9 col-xs-8</div>
                     </div>
-                    <pre>&lt;div class=&quot;rd-columns-flex-container&quot;&gt;
-    &lt;div class=&quot;column col-xl-3 col-lg-6 col-md-3 col-sm-2 col-xs-4&quot;&gt;col-xl-3 col-lg-6 col-md-3 col-sm-2 col-xs-4&lt;/div&gt;
-    &lt;div class=&quot;column col-xl-3 col-lg-6 col-md-6 col-sm-10 col-xs-8&quot;&gt;col-xl-3 col-lg-6 col-md-6 col-sm-10 col-xs-8&lt;/div&gt;
-    &lt;div class=&quot;column col-xl-3 col-lg-9 col-md-3 col-sm-3 col-xs-4&quot;&gt;col-xl-3 col-lg-9 col-md-3 col-sm-3 col-xs-4&lt;/div&gt;
-    &lt;div class=&quot;column col-xl-3 col-lg-3 col-md-12 col-sm-9 col-xs-8&quot;&gt;col-xl-3 col-lg-3 col-md-12 col-sm-9 col-xs-8&lt;/div&gt;
-&lt;/div&gt;</pre>
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".code-sample-columnflex-mixedcolumnsizes" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
 
                     <h2>Offset</h2>
                     <p>Move column to the right using offset.</p>
@@ -236,7 +218,7 @@ include 'includes/html-head.php';
                         <?php
                         echo "\n";
                         for ($i = 1; $i <= 12; $i++) {
-                            echo indent(5).'<div class="rd-columns-flex-container">'."\n";
+                            echo indent(5).'<div class="rd-columns-flex-container code-sample-columnflex-offsetsample' . $i . '">'."\n";
                             echo indent(6).'<div class="column col-xs-' . (12-$i) . ' offset-xs-' . $i . '">col-xs-' . (12-$i) . ' offset-xs-' . $i . '</div>'."\n";
                             echo indent(5).'</div>'."\n";
                             if ($i >= 11) {
@@ -246,9 +228,8 @@ include 'includes/html-head.php';
                         unset($i);
                         ?> 
                     </div>
-                    <pre>&lt;div class=&quot;rd-columns-flex-container&quot;&gt;
-    &lt;div class=&quot;column col-xs-11 offset-xs-1&quot;&gt;col-xs-11 offset-xs-1&lt;/div&gt;
-&lt;/div&gt;</pre>
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".code-sample-columnflex-offsetsample1" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
 
                     <h3>Small screen or larger</h3>
                     <?php
@@ -310,7 +291,7 @@ include 'includes/html-head.php';
 
                     <h2>Break columns</h2>
                     <p>The columns can be force break into new line using <code>.column-break</code> class.</p>
-                    <div class="rd-columns-flex-container rd-block-level-margin-bottom">
+                    <div class="rd-columns-flex-container rd-block-level-margin-bottom code-sample-columnflex-breakcols">
                         <div class="column">column</div>
                         <div class="column">column</div>
                         <div class="column">column</div>
@@ -325,17 +306,12 @@ include 'includes/html-head.php';
                         <div class="column-break"></div>
                         <div class="column col-xs-3">col-xs-3</div>
                     </div>
-                    <pre>&lt;div class=&quot;rd-columns-flex-container&quot;&gt;
-    &lt;div class=&quot;column col-xs-3&quot;&gt;col-xs-3&lt;/div&gt;
-    &lt;div class=&quot;column col-xs-3&quot;&gt;col-xs-3&lt;/div&gt;
-    &lt;div class=&quot;column col-xs-3&quot;&gt;col-xs-3&lt;/div&gt;
-    &lt;div class=&quot;column-break&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;column col-xs-3&quot;&gt;col-xs-3&lt;/div&gt;
-&lt;/div&gt;</pre>
+                    <h3>Source</h3>
+                    <pre class="preview-source" data-target-src=".code-sample-columnflex-breakcols" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
 
                     <h2>Nesting</h2>
                     <p>The columns can be nested.</p>
-                    <div class="rd-columns-flex-container rd-block-level-margin-bottom">
+                    <div class="rd-columns-flex-container rd-block-level-margin-bottom code-sample-columnflex-nested">
                         <div class="column col-sm-9">
                             col-sm-9
                             <div class="rd-columns-flex-container">
@@ -345,18 +321,10 @@ include 'includes/html-head.php';
                         </div>
                         <div class="column col-sm-3">col-sm-3</div>
                     </div>
-                    <pre>&lt;div class=&quot;rd-columns-flex-container&quot;&gt;
-    &lt;div class=&quot;column col-sm-9&quot;&gt;
-        col-sm-9
-        &lt;div class=&quot;rd-columns-flex-container&quot;&gt;
-            &lt;div class=&quot;column col-md-6&quot;&gt;col-md-6&lt;/div&gt;
-            &lt;div class=&quot;column col-md-6&quot;&gt;col-md-6&lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;column col-sm-3&quot;&gt;col-sm-3&lt;/div&gt;
-&lt;/div&gt;</pre>
+                    <h3>Source</h3>
+                    <pre class="preview-source" data-target-src=".code-sample-columnflex-nested" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
                     <p>You may feels that the left &amp; right edge of columns, even nested column was too narrower than page layout. This can be fixed by add <code>.fix-columns-container-edge</code> class to the container.</p>
-                    <div class="rd-columns-flex-container fix-columns-container-edge rd-block-level-margin-bottom">
+                    <div class="rd-columns-flex-container fix-columns-container-edge rd-block-level-margin-bottom code-sample-columnflex-fixedge">
                         <div class="column col-sm-9 example-transparent">
                             <div class="example-outline">col-sm-9</div>
                             <div class="rd-columns-flex-container fix-columns-container-edge">
@@ -391,6 +359,8 @@ include 'includes/html-head.php';
                             <div class="example-outline">col-sm-3</div>
                         </div>
                     </div>
+                    <h3>Source</h3>
+                    <pre class="preview-source" data-target-src=".code-sample-columnflex-fixedge" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
                 </div><!--.rd-page-content-->
             </main>
 <?php include 'includes/partials/page-footer.php'; ?> 

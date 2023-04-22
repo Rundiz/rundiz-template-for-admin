@@ -21,7 +21,7 @@ include 'includes/html-head.php';
                     <hr>
 
                     <h2>Examples</h2>
-                    <p>
+                    <p class="code-sample-badgesamples1">
                         This is normal text size.
                         <span class="rd-notification-badge">Normal</span>
                         <?php
@@ -32,12 +32,8 @@ include 'includes/html-head.php';
                         unset($badgeName);
                         ?> 
                     </p>
-                    <pre>&lt;span class=&quot;rd-notification-badge&quot;&gt;Normal&lt;/span&gt;
-&lt;span class=&quot;rd-notification-badge badge-primary&quot;&gt;Primary&lt;/span&gt;
-&lt;span class=&quot;rd-notification-badge badge-info&quot;&gt;Info&lt;/span&gt;
-&lt;span class=&quot;rd-notification-badge badge-danger&quot;&gt;Danger&lt;/span&gt;
-&lt;span class=&quot;rd-notification-badge badge-warning&quot;&gt;Warning&lt;/span&gt;
-&lt;span class=&quot;rd-notification-badge badge-success&quot;&gt;Success&lt;/span&gt;</pre>
+                    <h3>Source</h3>
+                    <pre class="preview-source" data-target-src=".code-sample-badgesamples1" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
 
                     <h3>Badge within heading text</h3>
                     <h1>Heading 1 <span class="rd-notification-badge">Normal</span></h1>
@@ -49,7 +45,7 @@ include 'includes/html-head.php';
 
                     <h3>Tiny badge</h3>
                     <p>Add <code>tiny</code> class into badge element to display tiny bade.</p>
-                    <p>
+                    <p class="code-sample-badgetiny">
                         <span class="rd-notification-badge tiny">Normal</span>
                         <?php
                         foreach ($badgeNames as $badgeName) {
@@ -58,6 +54,8 @@ include 'includes/html-head.php';
                         unset($badgeName, $badgeNames);
                         ?> 
                     </p>
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".code-sample-badgetiny" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
                 </div><!--.rd-page-content-->
             </main>
 <?php include 'includes/partials/page-footer.php'; ?> 

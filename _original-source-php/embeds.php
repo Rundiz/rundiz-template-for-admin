@@ -26,12 +26,11 @@ include 'includes/html-head.php';
                     <hr>
 
                     <h2>Examples</h2>
-                    <div class="rd-embed-responsive rd-embed-responsive16by9">
+                    <div class="rd-embed-responsive rd-embed-responsive16by9 code-sample-embed-sample1">
                         <iframe class="rd-embed-responsive-item" src="https://www.youtube.com/embed/KX3OnQeETdI"></iframe>
                     </div>
-                    <pre>&lt;div class=&quot;rd-embed-responsive rd-embed-responsive16by9&quot;&gt;
-    &lt;iframe class=&quot;rd-embed-responsive-item&quot; src=&quot;https://www.youtube.com/embed/KX3OnQeETdI&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;</pre>
+                    <h3>Source</h3>
+                    <pre class="preview-source" data-target-src=".code-sample-embed-sample1" data-target-src-remove-first-space="20"></pre>
 
                     <h3>Aspect ratios</h3>
 <?php
@@ -58,12 +57,11 @@ foreach ($ratios as $eachRatio) {
 unset($eachRatio, $ratios);
 ?></pre>
                     <h3>Video element</h3>
-                    <div class="rd-embed-responsive rd-embed-responsive16by9">
+                    <div class="rd-embed-responsive rd-embed-responsive16by9 code-sample-embed-videoelement">
                         <video class="rd-embed-responsive-item" controls height="1080" width="1920"></video>
                     </div>
-                    <pre>&lt;div class=&quot;rd-embed-responsive rd-embed-responsive16by9&quot;&gt;
-    &lt;video class=&quot;rd-embed-responsive-item&quot; controls height=&quot;1080&quot; width=&quot;1920&quot;&gt;&lt;/video&gt;
-&lt;/div&gt;</pre>
+                    <h3>Source</h3>
+                    <pre class="preview-source" data-target-src=".code-sample-embed-videoelement" data-target-src-remove-first-space="20"></pre>
                 </div><!--.rd-page-content-->
             </main>
 <?php include 'includes/partials/page-footer.php'; ?> 

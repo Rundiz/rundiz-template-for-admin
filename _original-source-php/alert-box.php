@@ -21,12 +21,11 @@ include 'includes/html-head.php';
                     <hr>
 
                     <h2>Examples</h2>
-                    <div class="rd-alertbox">
+                    <div class="rd-alertbox rd-alertbox-sample-1">
                         Default alert box. Example <a href="#" onclick="return false">link</a> inside alert box.
                     </div>
-                    <pre>&lt;div class=&quot;rd-alertbox&quot;&gt;
-    Default alert box. Please follow &lt;a href=&quot;#&quot; onclick=&quot;return false&quot;&gt;this link&lt;/a&gt;.
-&lt;/div&gt;</pre>
+                    <h3>Source</h3>
+                    <pre class="preview-source" data-target-src=".rd-alertbox-sample-1" data-target-src-remove-first-space="20"></pre>
                     <?php
                     $alertNames = ['info', 'danger', 'warning', 'success'];
                     foreach ($alertNames as $alertName) {
@@ -38,14 +37,12 @@ include 'includes/html-head.php';
                     ?> 
 
                     <h3>Dismissable</h3>
-                    <div class="rd-alertbox is-dismissable">
+                    <div class="rd-alertbox is-dismissable rd-alertbox-sample-dismissable">
                         <button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(this);"><span aria-hidden="true">&times;</span></button>
                         Default alert box. Example <a href="#" onclick="return false">link</a> inside alert box.
                     </div>
-                    <pre>&lt;div class=&quot;rd-alertbox is-dismissable&quot;&gt;
-    &lt;button class=&quot;close&quot; type=&quot;button&quot; aria-label=&quot;Close&quot; onclick=&quot;return RundizTemplateAdmin.closeAlertbox(this);&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;
-    Default alert box. Example &lt;a href=&quot;#&quot; onclick=&quot;return false&quot;&gt;link&lt;/a&gt; inside alert box.
-&lt;/div&gt;</pre>
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".rd-alertbox-sample-dismissable" data-target-src-remove-first-space="20"></pre>
                     <?php
                     foreach ($alertNames as $alertName) {
                         echo '<div class="rd-alertbox alert-' . $alertName . ' is-dismissable">' . PHP_EOL .
@@ -84,22 +81,20 @@ include 'includes/html-head.php';
                     </div>
                     <div class="rdta-demopage-debugbox">
                         <p>The alert box that will always stay at the top.</p>
-                        <div class="rd-alertbox alert-info fixed-top">
+                        <div class="rd-alertbox alert-info fixed-top rd-alertbox-sample-fixedtop">
                             Info alert box.
                         </div>
                     </div>
-                    <pre class="rd-block-level-margin-bottom">&lt;div class=&quot;rd-alertbox alert-info fixed-top&quot;&gt;
-    Info alert box.
-&lt;/div&gt;</pre>
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".rd-alertbox-sample-fixedtop" data-target-src-remove-first-space="24"></pre>
                     <div class="rdta-demopage-debugbox">
                         <p>The alert box that will always stay at the bottom.</p>
-                        <div class="rd-alertbox alert-info fixed-bottom">
+                        <div class="rd-alertbox alert-info fixed-bottom code-sample-fixedbottom">
                             Info alert box.
                         </div>
                     </div>
-                    <pre class="rd-block-level-margin-bottom">&lt;div class=&quot;rd-alertbox alert-info fixed-bottom&quot;&gt;
-    Info alert box.
-&lt;/div&gt;</pre>
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".code-sample-fixedbottom" data-target-src-remove-first-space="24"></pre>
                     <p>To see it in action, please click on the link below.</p>
                     <p>Show alert box fixed top for: 
                     <?php
@@ -119,10 +114,12 @@ include 'includes/html-head.php';
                     </p>
                     <div class="rdta-demopage-debugbox">
                         <p>The alert box that will always stay at the bottom (float).</p>
-                        <div class="rd-alertbox alert-info float-bottom">
+                        <div class="rd-alertbox alert-info float-bottom code-sample-floatbottom">
                             Info alert box.
                         </div>
                     </div>
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".code-sample-floatbottom" data-target-src-remove-first-space="24"></pre>
                     <p>To see it in action, please click on the link below.</p>
                     <p>Show alert box float top for: 
                     <?php

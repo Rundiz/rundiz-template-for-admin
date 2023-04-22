@@ -9,3 +9,6 @@
         <script src="<?php echo assetUrl('assets/js/resize-sensor/ResizeSensor.js'); ?>"></script><!-- use with sticky sidebar js, manual update. -->
 
         <script src="<?php echo assetUrl('assets/js/rdta/rundiz-template-admin.js'); ?>"></script>
+
+        <script class="exclude-preview" src="<?php echo assetUrl('assets/js-preview/view-target-source.js'); ?>"></script>
+        <script class="exclude-preview" src="<?php echo assetUrl('assets/js-preview/view-source.js'); ?>"></script>

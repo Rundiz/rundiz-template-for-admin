@@ -26,14 +26,14 @@ include 'includes/html-head.php';
                     <hr>
 
                     <h2 id="tabs-example">Examples</h2>
-                    <div class="tabs">
+                    <div class="tabs code-sample-tabs-sample1">
                         <ul>
-                            <li><a href="#tabs-1">Nunc tincidunt</a></li>
+                            <li><a href="#tabs-1"><abbr title="Rundiz template for admin">RDTA</abbr> tabs</a></li>
                             <li><a href="#tabs-2">Proin dolor</a></li>
                             <li><a href="#tabs-3">Aenean lacinia</a></li>
                         </ul>
                         <div id="tabs-1">
-                            <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
+                            <p><abbr title="Rundiz template for admin">RDTA</abbr> can use basic element and few CSS class by default. Here is an example.</p>
                         </div>
                         <div id="tabs-2">
                             <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
@@ -43,23 +43,8 @@ include 'includes/html-head.php';
                             <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
                         </div>
                     </div>
-                    <p><abbr title="Rundiz template for admin">RDTA</abbr> can use basic element and few CSS class by default. Here is an example.</p>
-                    <pre>&lt;div class=&quot;tabs&quot;&gt;
-    &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&quot;#tabs-1&quot;&gt;Tab 1&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;#tabs-2&quot;&gt;Tab 2&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;#tabs-3&quot;&gt;Tab 3&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;div id=&quot;tabs-1&quot;&gt;
-        &lt;p&gt;Tab 1 content.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div id=&quot;tabs-2&quot;&gt;
-        &lt;p&gt;Tab 2 content.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div id=&quot;tabs-3&quot;&gt;
-        &lt;p&gt;Tab 3 content.&lt;/p&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</pre>
+                    <h3>Source</h3>
+                    <pre class="preview-source" data-target-src=".code-sample-tabs-sample1" data-target-src-remove-first-space="20"></pre>
                     <p>To make tabs work, it must be manually activate once document loaded.</p>
                     <pre>document.addEventListener('DOMContentLoaded', function() {
     RDTATabs.init('.tabs');
@@ -84,22 +69,24 @@ include 'includes/html-head.php';
                     </div>
                     <h3>With pre-defined CSS classes.</h3>
                     <p><abbr title="Rundiz template for admin">RDTA</abbr> can also use pre-defined CSS classes.</p>
-                    <pre>&lt;div class=&quot;tabs rd-tabs&quot;&gt;
-    &lt;ul class=&quot;rd-tabs-nav&quot;&gt;
-        &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#tabs-1_1&quot;&gt;Tab 1&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;#tabs-1_2&quot;&gt;Tab 2&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;#tabs-1_3&quot;&gt;Tab 3&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;div id=&quot;tabs-1_1&quot; class=&quot;rd-tabs-content active&quot;&gt;
-        &lt;p&gt;Tab 1 content.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div id=&quot;tabs-1_2&quot; class=&quot;rd-tabs-content&quot;&gt;
-        &lt;p&gt;Tab 2 content.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div id=&quot;tabs-1_3&quot; class=&quot;rd-tabs-content&quot;&gt;
-        &lt;p&gt;Tab 3 content.&lt;/p&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</pre>
+                    <div class="tabs rd-tabs code-sample-tabs-predefinedclasses">
+                        <ul class="rd-tabs-nav">
+                            <li class="active"><a href="#tabs-1_1">Tab 1</a></li>
+                            <li><a href="#tabs-1_2">Tab 2</a></li>
+                            <li><a href="#tabs-1_3">Tab 3</a></li>
+                        </ul>
+                        <div id="tabs-1_1" class="rd-tabs-content active">
+                            <p>Tab 1 content.</p>
+                        </div>
+                        <div id="tabs-1_2" class="rd-tabs-content">
+                            <p>Tab 2 content.</p>
+                        </div>
+                        <div id="tabs-1_3" class="rd-tabs-content">
+                            <p>Tab 3 content.</p>
+                        </div>
+                    </div>
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".code-sample-tabs-predefinedclasses" data-target-src-remove-first-space="20"></pre>
                     <h3>Many tabs.</h3>
                     <p>Resize your browser to see how responsive tabs navbar work.</p>
                     <div class="tabs">
@@ -163,7 +150,7 @@ include 'includes/html-head.php';
                     </div>
                     <pre>RDTATabs.init('#rdta-tabs-rememberlasttab', {rememberLastTab: true});</pre>
                     <h3>Ajax</h3>
-                    <div class="tabs">
+                    <div class="tabs code-sample-tabs-ajax">
                         <ul>
                             <li><a href="#tabs-a1">Preloaded</a></li>
                             <li><a href="xhr-page.html" data-targettab="#tabs-a2">Ajax</a></li>
@@ -173,19 +160,11 @@ include 'includes/html-head.php';
                         </div>
                         <div id="tabs-a2"></div>
                     </div>
-                    <pre>&lt;div class=&quot;tabs&quot;&gt;
-    &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&quot;#tabs-a1&quot;&gt;Preloaded&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;xhr-page.html&quot; data-targettab=&quot;#tabs-a2&quot;&gt;Ajax&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;div id=&quot;tabs-a1&quot;&gt;
-        &lt;p&gt;Normal content.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div id=&quot;tabs-a2&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;</pre>
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".code-sample-tabs-ajax" data-target-src-remove-first-space="20"></pre>
                     <h3>Vertical</h3>
                     <p>Add <code>tabs-vertical</code> class to the tabs element to display it in vertical (medium screen or larger).</p>
-                    <div class="tabs tabs-vertical">
+                    <div class="tabs tabs-vertical code-sample-tabs-vertical">
                         <ul>
                             <li><a href="#" data-targettab="#tabs-v1">Nunc tincidunt</a></li>
                             <li><a href="#" data-targettab="#tabs-v2">Proin dolor</a></li>
@@ -202,25 +181,11 @@ include 'includes/html-head.php';
                             <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
                         </div>
                     </div>
-                    <pre>&lt;div class=&quot;tabs tabs-vertical&quot;&gt;
-    &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&quot;#&quot; data-targettab=&quot;#tabs-v1&quot;&gt;Tab 1&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;#&quot; data-targettab=&quot;#tabs-v2&quot;&gt;Tab 2&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;#&quot; data-targettab=&quot;#tabs-v3&quot;&gt;Tab 3&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;div id=&quot;tabs-v1&quot;&gt;
-        &lt;p&gt;Tab 1 content.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div id=&quot;tabs-v2&quot;&gt;
-        &lt;p&gt;Tab 2 content.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div id=&quot;tabs-v3&quot;&gt;
-        &lt;p&gt;Tab 3 content.&lt;/p&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</pre>
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".code-sample-tabs-vertical" data-target-src-remove-first-space="20"></pre>
                     <p>Please note that you can use <code>data-targettab</code> HTML attribute to specify target tab instead of link to <code>#target-tab-number</code>.</p>
                     <h3>Tabs inside tabs</h3>
-                    <div id="titOuterTabs" class="rd-tabs">
+                    <div id="titOuterTabs" class="rd-tabs code-sample-tabs-insidetabs">
                         <ul class="rd-tabs-nav">
                             <li><a href="#tit-tab1">Tab 1</a></li>
                             <li><a href="#tit-tab2">Tab 2</a></li>
@@ -246,32 +211,8 @@ include 'includes/html-head.php';
                             </div>
                         </div>
                     </div>
-                    <pre>&lt;div id=&quot;titOuterTabs&quot; class=&quot;rd-tabs&quot;&gt;
-    &lt;ul class=&quot;rd-tabs-nav&quot;&gt;
-        &lt;li&gt;&lt;a href=&quot;#tit-tab1&quot;&gt;Tab 1&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;#tit-tab2&quot;&gt;Tab 2&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;div id=&quot;tit-tab1&quot; class=&quot;rd-tabs-content&quot;&gt;
-        &lt;p&gt;The content in tab 1.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div id=&quot;tit-tab2&quot; class=&quot;rd-tabs-content&quot;&gt;
-        &lt;p&gt;The content in tab 2.&lt;/p&gt;
-        &lt;div id=&quot;titInnerTabs&quot; class=&quot;tabs-vertical rd-tabs&quot;&gt;
-            &lt;ul class=&quot;rd-tabs-nav&quot;&gt;
-                &lt;li&gt;&lt;a href=&quot;#tit-tab2-1&quot;&gt;Inner tab 1&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href=&quot;#tit-tab2-2&quot;&gt;Inner tab 2&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href=&quot;xhr-page.html&quot; data-targettab=&quot;#tit-tab2-3&quot;&gt;Ajax&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-            &lt;div id=&quot;tit-tab2-1&quot; class=&quot;rd-tabs-content&quot;&gt;
-                &lt;p&gt;The inner tab 2-1.&lt;/p&gt;
-            &lt;/div&gt;
-            &lt;div id=&quot;tit-tab2-2&quot; class=&quot;rd-tabs-content&quot;&gt;
-                &lt;p&gt;The inner tab 2-2.&lt;/p&gt;
-            &lt;/div&gt;
-            &lt;div id=&quot;tit-tab2-3&quot; class=&quot;rd-tabs-content&quot;&gt;&lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</pre>
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".code-sample-tabs-insidetabs" data-target-src-remove-first-space="20"></pre>
                     <p>Activate tabs using specific id.</p>
                     <pre>RDTATabs.init('#titOuterTabs');</pre>
                     <h3>Events</h3>
