@@ -16,7 +16,9 @@
         <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?v=782df4c386eb481a46cf4c87aeeb7d40">
         <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?v=db126f3139b1e9e4de7577b5dbf82307">
 
-        <link rel="stylesheet" href="assets/css/rdta-demo-pages.css?v=5c5a3502c8c15fba309fc170b49e4583"> 
+        <link rel="stylesheet" href="assets/css/rdta-demo-pages.css?v=5c5a3502c8c15fba309fc170b49e4583">
+
+        <link class="exclude-preview" rel="stylesheet" href="assets/css-preview/view-source.css?v=856c7087abf9e79c34c08320f05131ce"> 
         <link rel="stylesheet" href="assets/css/rdta/components/rdta-accordion.css?v=32896afff18e509ba9a108dd11903423">
     </head>
     <body>
@@ -302,7 +304,7 @@
                     <hr>
 
                     <h2>Examples</h2>
-                    <div class="rd-accordion" style="margin-bottom: .625em;">
+                    <div class="rd-accordion code-sample-accordion-sample1" style="margin-bottom: .625em;">
                         <div class="rd-accordion-group">
                             <h3 id="accordion-heading1" class="rd-accordion-header active"><a data-toggle="accordion" data-target="#accordion1" aria-controls="accordion1" aria-expanded="true">Section 1</a></h3>
                             <div id="accordion1" class="rd-accordion-body collapse expanded" aria-labelledby="accordion-heading1">
@@ -322,28 +324,10 @@
                             </div>
                         </div>
                     </div><!--.rd-accordion-->
-                    <pre>&lt;div class=&quot;rd-accordion&quot;&gt;
-    &lt;div class=&quot;rd-accordion-group&quot;&gt;
-        &lt;h3 id=&quot;accordion-heading1&quot; class=&quot;rd-accordion-header active&quot;&gt;&lt;a data-toggle=&quot;accordion&quot; data-target=&quot;#accordion1&quot; aria-controls=&quot;accordion1&quot; aria-expanded=&quot;true&quot;&gt;Section 1&lt;/a&gt;&lt;/h3&gt;
-        &lt;div id=&quot;accordion1&quot; class=&quot;rd-accordion-body collapse expanded&quot; aria-labelledby=&quot;accordion-heading1&quot;&gt;
-            &lt;p&gt;Content of section 1.&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;rd-accordion-group&quot;&gt;
-        &lt;h3 id=&quot;accordion-heading2&quot; class=&quot;rd-accordion-header&quot;&gt;&lt;a data-toggle=&quot;accordion&quot; data-target=&quot;#accordion2&quot; aria-controls=&quot;accordion2&quot; aria-expanded=&quot;false&quot;&gt;Section 2&lt;/a&gt;&lt;/h3&gt;
-        &lt;div id=&quot;accordion2&quot; class=&quot;rd-accordion-body collapse&quot; aria-labelledby=&quot;accordion-heading2&quot;&gt;
-            &lt;p&gt;Content of section 2.&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;rd-accordion-group&quot;&gt;
-        &lt;h3 id=&quot;accordion-heading3&quot; class=&quot;rd-accordion-header&quot;&gt;&lt;a data-toggle=&quot;accordion&quot; data-target=&quot;#accordion3&quot; aria-controls=&quot;accordion3&quot; aria-expanded=&quot;false&quot;&gt;Section 3&lt;/a&gt;&lt;/h3&gt;
-        &lt;div id=&quot;accordion3&quot; class=&quot;rd-accordion-body collapse&quot; aria-labelledby=&quot;accordion-heading3&quot;&gt;
-            &lt;p&gt;Content of section 3.&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</pre>
+                    <h3>Source</h3>
+                    <pre class="preview-source" data-target-src=".code-sample-accordion-sample1" data-target-src-remove-first-space="20"></pre>
                     <p>The accordion maybe in <code>ul</code> element.</p>
-                    <ul class="rd-accordion">
+                    <ul class="rd-accordion code-sample-accordion-ul">
                         <li class="rd-accordion-group">
                             <h3 id="ex2-accordion-heading1" class="rd-accordion-header active"><a data-toggle="accordion" data-target="#ex2-accordion1" aria-controls="ex2-accordion1" aria-expanded="true">Section 1</a></h3>
                             <div id="ex2-accordion1" class="rd-accordion-body collapse expanded" aria-labelledby="ex2-accordion-heading1">
@@ -363,9 +347,11 @@
                             </div>
                         </li>
                     </ul><!--.rd-accordion-->
+                    <h3>Source</h3>
+                    <pre class="preview-source" data-target-src=".code-sample-accordion-ul" data-target-src-remove-first-space="20"></pre>
                     <h3>Show only one</h3>
                     <p>The accordion can be show only one body while other will be collapsed. Add <code>data-accordion-one=&quot;true&quot;</code> to the element that contain <code>rd-accordion</code> class to enable this feature.</p>
-                    <div class="rd-accordion" data-accordion-one="true">
+                    <div class="rd-accordion code-sample-accordion-onlyone" data-accordion-one="true">
                         <div class="rd-accordion-group">
                             <h3 id="ex3-accordion-heading1" class="rd-accordion-header"><a data-toggle="accordion" data-target="#ex3-accordion1" aria-controls="ex3-accordion1">Section 1</a></h3>
                             <div id="ex3-accordion1" class="rd-accordion-body collapse expanded" aria-labelledby="ex3-accordion-heading1">
@@ -385,6 +371,8 @@
                             </div>
                         </div>
                     </div><!--.rd-accordion-->
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".code-sample-accordion-onlyone" data-target-src-remove-first-space="20"></pre>
                 </div><!--.rd-page-content-->
             </main>
             <footer>
@@ -404,7 +392,10 @@
         <script src="assets/js/sticky-sidebar/jquery.sticky-sidebar.min.js?npm-v=3.3.1"></script>
         <script src="assets/js/resize-sensor/ResizeSensor.js?v=8652505c23e8fdc8016445c5e13bee64"></script><!-- use with sticky sidebar js, manual update. -->
 
-        <script src="assets/js/rdta/rundiz-template-admin.js?v=75ee53c31bb3546320742997680dd1b5"></script> 
+        <script src="assets/js/rdta/rundiz-template-admin.js?v=75ee53c31bb3546320742997680dd1b5"></script>
+
+        <script class="exclude-preview" src="assets/js-preview/view-target-source.js?v=5d8e14607272d449d23384736d9e83c0"></script>
+        <script class="exclude-preview" src="assets/js-preview/view-source.js?v=6e407940d4adb1fce743eeea8253bcfa"></script> 
         <script src="assets/js/rdta/components/rdta-accordion.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {

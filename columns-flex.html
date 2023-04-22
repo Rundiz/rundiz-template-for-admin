@@ -16,7 +16,9 @@
         <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?v=782df4c386eb481a46cf4c87aeeb7d40">
         <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?v=db126f3139b1e9e4de7577b5dbf82307">
 
-        <link rel="stylesheet" href="assets/css/rdta-demo-pages.css?v=5c5a3502c8c15fba309fc170b49e4583"> 
+        <link rel="stylesheet" href="assets/css/rdta-demo-pages.css?v=5c5a3502c8c15fba309fc170b49e4583">
+
+        <link class="exclude-preview" rel="stylesheet" href="assets/css-preview/view-source.css?v=856c7087abf9e79c34c08320f05131ce"> 
         <link rel="stylesheet" href="assets/css/rdta/columns/columns-flex.css?v=e14bf15b5d5feb2a67bafd6821c6d99d">
         <style type="text/css">
             .column {
@@ -319,14 +321,12 @@
                         <div class="column">column</div>
                         <div class="column">column</div>
                     </div>
-                    <div class="rd-columns-flex-container rd-block-level-margin-bottom">
+                    <div class="rd-columns-flex-container rd-block-level-margin-bottom code-sample-columnflex-sample1">
                         <div class="column">column</div>
                         <div class="column">column</div>
                     </div>
-                    <pre>&lt;div class=&quot;rd-columns-flex-container&quot;&gt;
-    &lt;div class=&quot;column&quot;&gt;column&lt;/div&gt;
-    &lt;div class=&quot;column&quot;&gt;column&lt;/div&gt;
-&lt;/div&gt;</pre>
+                    <h3>Source</h3>
+                    <pre class="preview-source" data-target-src=".code-sample-columnflex-sample1" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
                     <p>If you feels like the left and right edge is too narrower than the page layout, fix with <code>.fix-columns-container-edge</code> class.</p>
                     <div class="rd-columns-flex-container fix-columns-container-edge rd-block-level-margin-bottom">
                         <div class="column example-transparent">
@@ -343,7 +343,7 @@
 
                     <h2>Fixed columns</h2>
                     <p>The fixed columns will have total 12 columns max. The class name <code>.col-xs-*</code> is mobile first, it works on all screen sizes.</p>
-                    <div class="rd-columns-flex-container rd-block-level-margin-bottom">
+                    <div class="rd-columns-flex-container rd-block-level-margin-bottom code-sample-columnflex-fixedcols">
                         <div class="column col-xs-1">col-xs-1</div>
                         <div class="column col-xs-1">col-xs-1</div>
                         <div class="column col-xs-1">col-xs-1</div>
@@ -357,20 +357,8 @@
                         <div class="column col-xs-1">col-xs-1</div>
                         <div class="column col-xs-1">col-xs-1</div>
                     </div>
-                    <pre>&lt;div class=&quot;rd-columns-flex-container&quot;&gt;
-    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
-    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
-    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
-    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
-    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
-    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
-    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
-    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
-    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
-    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
-    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
-    &lt;div class=&quot;column col-xs-1&quot;&gt;col-xs-1&lt;/div&gt;
-&lt;/div&gt;</pre>
+                    <h3>Source</h3>
+                    <pre class="preview-source" data-target-src=".code-sample-columnflex-fixedcols" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
                     <p>And what gonna happen if you put more than 12 columns.</p>
                     <div class="rd-columns-flex-container rd-block-level-margin-bottom">
                         <div class="column col-xs-1">col-xs-1</div>
@@ -754,61 +742,56 @@
 
                     <h3>Mixed column sizes in different screen</h3>
                     <p>The example below will show you the mixed column sizes in different screen. Resize your web browser to see it in action.</p>
-                    <div class="rd-columns-flex-container rd-block-level-margin-bottom">
+                    <div class="rd-columns-flex-container rd-block-level-margin-bottom code-sample-columnflex-mixedcolumnsizes">
                         <div class="column col-xl-3 col-lg-6 col-md-3 col-sm-2 col-xs-4">col-xl-3 col-lg-6 col-md-3 col-sm-2 col-xs-4</div>
                         <div class="column col-xl-3 col-lg-6 col-md-6 col-sm-10 col-xs-8">col-xl-3 col-lg-6 col-md-6 col-sm-10 col-xs-8</div>
                         <div class="column col-xl-3 col-lg-9 col-md-3 col-sm-3 col-xs-4">col-xl-3 col-lg-9 col-md-3 col-sm-3 col-xs-4</div>
                         <div class="column col-xl-3 col-lg-3 col-md-12 col-sm-9 col-xs-8">col-xl-3 col-lg-3 col-md-12 col-sm-9 col-xs-8</div>
                     </div>
-                    <pre>&lt;div class=&quot;rd-columns-flex-container&quot;&gt;
-    &lt;div class=&quot;column col-xl-3 col-lg-6 col-md-3 col-sm-2 col-xs-4&quot;&gt;col-xl-3 col-lg-6 col-md-3 col-sm-2 col-xs-4&lt;/div&gt;
-    &lt;div class=&quot;column col-xl-3 col-lg-6 col-md-6 col-sm-10 col-xs-8&quot;&gt;col-xl-3 col-lg-6 col-md-6 col-sm-10 col-xs-8&lt;/div&gt;
-    &lt;div class=&quot;column col-xl-3 col-lg-9 col-md-3 col-sm-3 col-xs-4&quot;&gt;col-xl-3 col-lg-9 col-md-3 col-sm-3 col-xs-4&lt;/div&gt;
-    &lt;div class=&quot;column col-xl-3 col-lg-3 col-md-12 col-sm-9 col-xs-8&quot;&gt;col-xl-3 col-lg-3 col-md-12 col-sm-9 col-xs-8&lt;/div&gt;
-&lt;/div&gt;</pre>
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".code-sample-columnflex-mixedcolumnsizes" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
 
                     <h2>Offset</h2>
                     <p>Move column to the right using offset.</p>
                     <div class="rd-block-level-margin-bottom">
                         
-                    <div class="rd-columns-flex-container">
+                    <div class="rd-columns-flex-container code-sample-columnflex-offsetsample1">
                         <div class="column col-xs-11 offset-xs-1">col-xs-11 offset-xs-1</div>
                     </div>
-                    <div class="rd-columns-flex-container">
+                    <div class="rd-columns-flex-container code-sample-columnflex-offsetsample2">
                         <div class="column col-xs-10 offset-xs-2">col-xs-10 offset-xs-2</div>
                     </div>
-                    <div class="rd-columns-flex-container">
+                    <div class="rd-columns-flex-container code-sample-columnflex-offsetsample3">
                         <div class="column col-xs-9 offset-xs-3">col-xs-9 offset-xs-3</div>
                     </div>
-                    <div class="rd-columns-flex-container">
+                    <div class="rd-columns-flex-container code-sample-columnflex-offsetsample4">
                         <div class="column col-xs-8 offset-xs-4">col-xs-8 offset-xs-4</div>
                     </div>
-                    <div class="rd-columns-flex-container">
+                    <div class="rd-columns-flex-container code-sample-columnflex-offsetsample5">
                         <div class="column col-xs-7 offset-xs-5">col-xs-7 offset-xs-5</div>
                     </div>
-                    <div class="rd-columns-flex-container">
+                    <div class="rd-columns-flex-container code-sample-columnflex-offsetsample6">
                         <div class="column col-xs-6 offset-xs-6">col-xs-6 offset-xs-6</div>
                     </div>
-                    <div class="rd-columns-flex-container">
+                    <div class="rd-columns-flex-container code-sample-columnflex-offsetsample7">
                         <div class="column col-xs-5 offset-xs-7">col-xs-5 offset-xs-7</div>
                     </div>
-                    <div class="rd-columns-flex-container">
+                    <div class="rd-columns-flex-container code-sample-columnflex-offsetsample8">
                         <div class="column col-xs-4 offset-xs-8">col-xs-4 offset-xs-8</div>
                     </div>
-                    <div class="rd-columns-flex-container">
+                    <div class="rd-columns-flex-container code-sample-columnflex-offsetsample9">
                         <div class="column col-xs-3 offset-xs-9">col-xs-3 offset-xs-9</div>
                     </div>
-                    <div class="rd-columns-flex-container">
+                    <div class="rd-columns-flex-container code-sample-columnflex-offsetsample10">
                         <div class="column col-xs-2 offset-xs-10">col-xs-2 offset-xs-10</div>
                     </div>
-                    <div class="rd-columns-flex-container">
+                    <div class="rd-columns-flex-container code-sample-columnflex-offsetsample11">
                         <div class="column col-xs-1 offset-xs-11">col-xs-1 offset-xs-11</div>
                     </div>
  
                     </div>
-                    <pre>&lt;div class=&quot;rd-columns-flex-container&quot;&gt;
-    &lt;div class=&quot;column col-xs-11 offset-xs-1&quot;&gt;col-xs-11 offset-xs-1&lt;/div&gt;
-&lt;/div&gt;</pre>
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".code-sample-columnflex-offsetsample1" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
 
                     <h3>Small screen or larger</h3>
                     
@@ -962,7 +945,7 @@
 
                     <h2>Break columns</h2>
                     <p>The columns can be force break into new line using <code>.column-break</code> class.</p>
-                    <div class="rd-columns-flex-container rd-block-level-margin-bottom">
+                    <div class="rd-columns-flex-container rd-block-level-margin-bottom code-sample-columnflex-breakcols">
                         <div class="column">column</div>
                         <div class="column">column</div>
                         <div class="column">column</div>
@@ -977,17 +960,12 @@
                         <div class="column-break"></div>
                         <div class="column col-xs-3">col-xs-3</div>
                     </div>
-                    <pre>&lt;div class=&quot;rd-columns-flex-container&quot;&gt;
-    &lt;div class=&quot;column col-xs-3&quot;&gt;col-xs-3&lt;/div&gt;
-    &lt;div class=&quot;column col-xs-3&quot;&gt;col-xs-3&lt;/div&gt;
-    &lt;div class=&quot;column col-xs-3&quot;&gt;col-xs-3&lt;/div&gt;
-    &lt;div class=&quot;column-break&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;column col-xs-3&quot;&gt;col-xs-3&lt;/div&gt;
-&lt;/div&gt;</pre>
+                    <h3>Source</h3>
+                    <pre class="preview-source" data-target-src=".code-sample-columnflex-breakcols" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
 
                     <h2>Nesting</h2>
                     <p>The columns can be nested.</p>
-                    <div class="rd-columns-flex-container rd-block-level-margin-bottom">
+                    <div class="rd-columns-flex-container rd-block-level-margin-bottom code-sample-columnflex-nested">
                         <div class="column col-sm-9">
                             col-sm-9
                             <div class="rd-columns-flex-container">
@@ -997,18 +975,10 @@
                         </div>
                         <div class="column col-sm-3">col-sm-3</div>
                     </div>
-                    <pre>&lt;div class=&quot;rd-columns-flex-container&quot;&gt;
-    &lt;div class=&quot;column col-sm-9&quot;&gt;
-        col-sm-9
-        &lt;div class=&quot;rd-columns-flex-container&quot;&gt;
-            &lt;div class=&quot;column col-md-6&quot;&gt;col-md-6&lt;/div&gt;
-            &lt;div class=&quot;column col-md-6&quot;&gt;col-md-6&lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;column col-sm-3&quot;&gt;col-sm-3&lt;/div&gt;
-&lt;/div&gt;</pre>
+                    <h3>Source</h3>
+                    <pre class="preview-source" data-target-src=".code-sample-columnflex-nested" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
                     <p>You may feels that the left &amp; right edge of columns, even nested column was too narrower than page layout. This can be fixed by add <code>.fix-columns-container-edge</code> class to the container.</p>
-                    <div class="rd-columns-flex-container fix-columns-container-edge rd-block-level-margin-bottom">
+                    <div class="rd-columns-flex-container fix-columns-container-edge rd-block-level-margin-bottom code-sample-columnflex-fixedge">
                         <div class="column col-sm-9 example-transparent">
                             <div class="example-outline">col-sm-9</div>
                             <div class="rd-columns-flex-container fix-columns-container-edge">
@@ -1043,6 +1013,8 @@
                             <div class="example-outline">col-sm-3</div>
                         </div>
                     </div>
+                    <h3>Source</h3>
+                    <pre class="preview-source" data-target-src=".code-sample-columnflex-fixedge" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
                 </div><!--.rd-page-content-->
             </main>
             <footer>
@@ -1062,6 +1034,9 @@
         <script src="assets/js/sticky-sidebar/jquery.sticky-sidebar.min.js?npm-v=3.3.1"></script>
         <script src="assets/js/resize-sensor/ResizeSensor.js?v=8652505c23e8fdc8016445c5e13bee64"></script><!-- use with sticky sidebar js, manual update. -->
 
-        <script src="assets/js/rdta/rundiz-template-admin.js?v=75ee53c31bb3546320742997680dd1b5"></script> 
+        <script src="assets/js/rdta/rundiz-template-admin.js?v=75ee53c31bb3546320742997680dd1b5"></script>
+
+        <script class="exclude-preview" src="assets/js-preview/view-target-source.js?v=5d8e14607272d449d23384736d9e83c0"></script>
+        <script class="exclude-preview" src="assets/js-preview/view-source.js?v=6e407940d4adb1fce743eeea8253bcfa"></script> 
     </body>
 </html>

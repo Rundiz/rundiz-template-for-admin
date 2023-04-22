@@ -16,7 +16,9 @@
         <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?v=782df4c386eb481a46cf4c87aeeb7d40">
         <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?v=db126f3139b1e9e4de7577b5dbf82307">
 
-        <link rel="stylesheet" href="assets/css/rdta-demo-pages.css?v=5c5a3502c8c15fba309fc170b49e4583"> 
+        <link rel="stylesheet" href="assets/css/rdta-demo-pages.css?v=5c5a3502c8c15fba309fc170b49e4583">
+
+        <link class="exclude-preview" rel="stylesheet" href="assets/css-preview/view-source.css?v=856c7087abf9e79c34c08320f05131ce"> 
     </head>
     <body>
         <header class="rd-navbar">
@@ -295,14 +297,19 @@
                     <h2>Examples</h2>
                     <h3>Text alignment</h3>
                     <p>To align text to left, center, right use <code>.text-left</code>, <code>.text-center</code>, <code>.text-right</code> classes.</p>
-                    <p class="text-left">Align left</p>
-                    <p class="text-center">Align center</p>
-                    <p class="text-right">Align right</p>
+                    <div class="code-sample-text-alignments">
+                        <p class="text-left">Align left</p>
+                        <p class="text-center">Align center</p>
+                        <p class="text-right">Align right</p>
+                    </div>
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".code-sample-text-alignments" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
                     <p>To align justify, use <code>.text-justify</code> class.</p>
                     <p class="text-justify">Nam a nisl fringilla tellus varius luctus. Aliquam tristique, velit tempor ullamcorper ultricies, lacus urna lacinia massa, vel sagittis nisi tellus vel enim. Praesent vestibulum pharetra cursus. Duis sit amet nunc quis lorem ultricies rutrum. Donec consectetur commodo ligula, at condimentum dui auctor vel. Praesent pulvinar odio ipsum, ac interdum elit rutrum a. Vestibulum iaculis posuere quam, in consequat ex laoreet quis. Nulla et iaculis lectus, sed maximus felis. Curabitur faucibus ornare pharetra. Quisque dictum augue quis auctor varius. Nam euismod, enim vel vehicula faucibus, massa felis gravida odio, a accumsan nisi risus non tortor. In vel congue sem, vel facilisis orci. Nunc non dui eget urna luctus sollicitudin. Nunc tincidunt elit non quam ullamcorper pulvinar. Phasellus pharetra tellus quis mattis dictum.</p>
 
                     <h3>Text colors</h3>
-                    <p class="text-color-danger">.text-color-danger</p>
+                    <div class="code-sample-text-colors">
+                        <p class="text-color-danger">.text-color-danger</p>
 <p class="text-color-disabled">.text-color-disabled</p>
 <p class="text-color-info">.text-color-info</p>
 <p class="text-color-primary">.text-color-primary</p>
@@ -310,14 +317,11 @@
 <p class="text-color-warning">.text-color-warning</p>
 <p class="text-color-white" style="background-color: #000;">.text-color-white</p>
  
-                    <pre>&lt;p class=&quot;text-color-danger&quot;&gt;.text-color-danger&lt;/p&gt;
-&lt;p class=&quot;text-color-info&quot;&gt;.text-color-info&lt;/p&gt;
-&lt;p class=&quot;text-color-primary&quot;&gt;.text-color-primary&lt;/p&gt;
-&lt;p class=&quot;text-color-success&quot;&gt;.text-color-success&lt;/p&gt;
-&lt;p class=&quot;text-color-warning&quot;&gt;.text-color-warning&lt;/p&gt;
-&lt;p class=&quot;text-color-white&quot;&gt;.text-color-white&lt;/p&gt;</pre>
+                    </div>
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".code-sample-text-colors" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
                     <p>It can also use with link.</p>
-                    <div class="rd-block-level-margin-bottom">
+                    <div class="rd-block-level-margin-bottom code-sample-text-colorslink">
                         <a class="text-color-danger" href="#" onclick="return false;">.text-color-danger</a><br>
 <a class="text-color-disabled" href="#" onclick="return false;">.text-color-disabled</a><br>
 <a class="text-color-info" href="#" onclick="return false;">.text-color-info</a><br>
@@ -327,13 +331,8 @@
 <a class="text-color-white" style="background-color: #000;" href="#" onclick="return false;">.text-color-white</a><br>
  
                     </div>
-                    <pre>&lt;a class=&quot;text-color-danger&quot; href=&quot;#&quot;&gt;.text-color-danger&lt;/a&gt;
-&lt;a class=&quot;text-color-disabled&quot; href=&quot;#&quot;&gt;.text-color-disabled&lt;/a&gt;
-&lt;a class=&quot;text-color-info&quot; href=&quot;#&quot;&gt;.text-color-info&lt;/a&gt;
-&lt;a class=&quot;text-color-primary&quot; href=&quot;#&quot;&gt;.text-color-primary&lt;/a&gt;
-&lt;a class=&quot;text-color-success&quot; href=&quot;#&quot;&gt;.text-color-success&lt;/a&gt;
-&lt;a class=&quot;text-color-warning&quot; href=&quot;#&quot;&gt;.text-color-warning&lt;/a&gt;
-&lt;a class=&quot;text-color-white&quot; style=&quot;background-color: #000;&quot; href=&quot;#&quot;&gt;.text-color-white&lt;/a&gt;</pre>
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".code-sample-text-colorslink" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
 
                     <h3>Text flow</h3>
                     <p>Default text flow without any class.</p>
@@ -343,35 +342,39 @@
                         </div>
                     </div>
                     <p>Force wrap text with <code>.text-flow-wrap</code> class.</p>
-                    <div class="rd-block-level-margin-bottom">
+                    <div class="rd-block-level-margin-bottom code-sample-text-flowwrap">
                         <div class="rdta-demopage-debugbox text-flow-wrap" style="width: 10em;">
                             This text should be wrapped by force.
                         </div>
                     </div>
-                    <pre>&lt;div class=&quot;text-flow-wrap&quot; style=&quot;width: 10em;&quot;&gt;This text should be wrapped by force.&lt;/div&gt;</pre>
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".code-sample-text-flowwrap" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
                     <p>No wrap text with <code>.text-flow-nowrap</code> class.</p>
-                    <div class="rd-block-level-margin-bottom">
+                    <div class="rd-block-level-margin-bottom code-sample-text-flownowrap">
                         <div class="rdta-demopage-debugbox text-flow-nowrap" style="width: 10em;">
                             This text should not be wrapped.
                         </div>
                     </div>
-                    <pre>&lt;div class=&quot;text-flow-nowrap&quot; style=&quot;width: 10em;&quot;&gt;This text should not be wrapped.&lt;/div&gt;</pre>
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".code-sample-text-flownowrap" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
                     <p>Break the long text with <code>.text-flow-breakword</code> class</p>
-                    <div class="rd-block-level-margin-bottom">
+                    <div class="rd-block-level-margin-bottom code-sample-text-flowbreakword">
                         <div class="rdta-demopage-debugbox text-flow-breakword" style="width: 10em;">
                             mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm 
                         </div>
                     </div>
-                    <pre>&lt;div class=&quot;text-flow-breakword&quot; style=&quot;width: 10em;&quot;&gt;mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm &lt;/div&gt;</pre>
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".code-sample-text-flowbreakword" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
 
                     <h3>Text transform</h3>
                     <p>Transform text into lower, upper case, capitalize</p>
-                    <p class="text-transform-lowercase">LOWER CASE TEXT</p>
-                    <p class="text-transform-uppercase">upper case text</p>
-                    <p class="text-transform-capitalize">capitalize text</p>
-                    <pre>&lt;p class=&quot;text-transform-lowercase&quot;&gt;LOWER CASE TEXT&lt;/p&gt;
-&lt;p class=&quot;text-transform-uppercase&quot;&gt;upper case text&lt;/p&gt;
-&lt;p class=&quot;text-transform-capitalize&quot;&gt;capitalize text&lt;/p&gt;</pre>
+                    <div class="code-sample-text-transform">
+                        <p class="text-transform-lowercase">LOWER CASE TEXT</p>
+                        <p class="text-transform-uppercase">upper case text</p>
+                        <p class="text-transform-capitalize">capitaize text</p>
+                    </div>
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".code-sample-text-transform" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
                 </div><!--.rd-page-content-->
             </main>
             <footer>
@@ -391,6 +394,9 @@
         <script src="assets/js/sticky-sidebar/jquery.sticky-sidebar.min.js?npm-v=3.3.1"></script>
         <script src="assets/js/resize-sensor/ResizeSensor.js?v=8652505c23e8fdc8016445c5e13bee64"></script><!-- use with sticky sidebar js, manual update. -->
 
-        <script src="assets/js/rdta/rundiz-template-admin.js?v=75ee53c31bb3546320742997680dd1b5"></script> 
+        <script src="assets/js/rdta/rundiz-template-admin.js?v=75ee53c31bb3546320742997680dd1b5"></script>
+
+        <script class="exclude-preview" src="assets/js-preview/view-target-source.js?v=5d8e14607272d449d23384736d9e83c0"></script>
+        <script class="exclude-preview" src="assets/js-preview/view-source.js?v=6e407940d4adb1fce743eeea8253bcfa"></script> 
     </body>
 </html>

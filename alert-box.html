@@ -16,7 +16,9 @@
         <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?v=782df4c386eb481a46cf4c87aeeb7d40">
         <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?v=db126f3139b1e9e4de7577b5dbf82307">
 
-        <link rel="stylesheet" href="assets/css/rdta-demo-pages.css?v=5c5a3502c8c15fba309fc170b49e4583"> 
+        <link rel="stylesheet" href="assets/css/rdta-demo-pages.css?v=5c5a3502c8c15fba309fc170b49e4583">
+
+        <link class="exclude-preview" rel="stylesheet" href="assets/css-preview/view-source.css?v=856c7087abf9e79c34c08320f05131ce"> 
     </head>
     <body>
         <header class="rd-navbar">
@@ -293,12 +295,11 @@
                     <hr>
 
                     <h2>Examples</h2>
-                    <div class="rd-alertbox">
+                    <div class="rd-alertbox rd-alertbox-sample-1">
                         Default alert box. Example <a href="#" onclick="return false">link</a> inside alert box.
                     </div>
-                    <pre>&lt;div class=&quot;rd-alertbox&quot;&gt;
-    Default alert box. Please follow &lt;a href=&quot;#&quot; onclick=&quot;return false&quot;&gt;this link&lt;/a&gt;.
-&lt;/div&gt;</pre>
+                    <h3>Source</h3>
+                    <pre class="preview-source" data-target-src=".rd-alertbox-sample-1" data-target-src-remove-first-space="20"></pre>
                     <div class="rd-alertbox alert-info">
 Info alert box by add <code>.alert-info</code> class into alert box element. Example <a href="#" onclick="return false">link</a> inside alert box.
 </div><div class="rd-alertbox alert-danger">
@@ -310,14 +311,12 @@ Success alert box by add <code>.alert-success</code> class into alert box elemen
 </div> 
 
                     <h3>Dismissable</h3>
-                    <div class="rd-alertbox is-dismissable">
+                    <div class="rd-alertbox is-dismissable rd-alertbox-sample-dismissable">
                         <button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(this);"><span aria-hidden="true">&times;</span></button>
                         Default alert box. Example <a href="#" onclick="return false">link</a> inside alert box.
                     </div>
-                    <pre>&lt;div class=&quot;rd-alertbox is-dismissable&quot;&gt;
-    &lt;button class=&quot;close&quot; type=&quot;button&quot; aria-label=&quot;Close&quot; onclick=&quot;return RundizTemplateAdmin.closeAlertbox(this);&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;
-    Default alert box. Example &lt;a href=&quot;#&quot; onclick=&quot;return false&quot;&gt;link&lt;/a&gt; inside alert box.
-&lt;/div&gt;</pre>
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".rd-alertbox-sample-dismissable" data-target-src-remove-first-space="20"></pre>
                     <div class="rd-alertbox alert-info is-dismissable">
 <button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(this);"><span aria-hidden="true">&times;</span></button>
 Info alert box by add <code>.alert-info</code> class into alert box element. Example <a href="#" onclick="return false">link</a> inside alert box.
@@ -360,22 +359,20 @@ Success alert box by add <code>.alert-success</code> class into alert box elemen
                     </div>
                     <div class="rdta-demopage-debugbox">
                         <p>The alert box that will always stay at the top.</p>
-                        <div class="rd-alertbox alert-info fixed-top">
+                        <div class="rd-alertbox alert-info fixed-top rd-alertbox-sample-fixedtop">
                             Info alert box.
                         </div>
                     </div>
-                    <pre class="rd-block-level-margin-bottom">&lt;div class=&quot;rd-alertbox alert-info fixed-top&quot;&gt;
-    Info alert box.
-&lt;/div&gt;</pre>
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".rd-alertbox-sample-fixedtop" data-target-src-remove-first-space="24"></pre>
                     <div class="rdta-demopage-debugbox">
                         <p>The alert box that will always stay at the bottom.</p>
-                        <div class="rd-alertbox alert-info fixed-bottom">
+                        <div class="rd-alertbox alert-info fixed-bottom code-sample-fixedbottom">
                             Info alert box.
                         </div>
                     </div>
-                    <pre class="rd-block-level-margin-bottom">&lt;div class=&quot;rd-alertbox alert-info fixed-bottom&quot;&gt;
-    Info alert box.
-&lt;/div&gt;</pre>
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".code-sample-fixedbottom" data-target-src-remove-first-space="24"></pre>
                     <p>To see it in action, please click on the link below.</p>
                     <p>Show alert box fixed top for: 
                     <a href="#" onclick="return rdtaDemoShowAlertboxFixed('info', 'top');">info</a> <a href="#" onclick="return rdtaDemoShowAlertboxFixed('danger', 'top');">danger</a> <a href="#" onclick="return rdtaDemoShowAlertboxFixed('warning', 'top');">warning</a> <a href="#" onclick="return rdtaDemoShowAlertboxFixed('success', 'top');">success</a>                     </p>
@@ -383,10 +380,12 @@ Success alert box by add <code>.alert-success</code> class into alert box elemen
                     <a href="#" onclick="return rdtaDemoShowAlertboxFixed('info');">info</a> <a href="#" onclick="return rdtaDemoShowAlertboxFixed('danger');">danger</a> <a href="#" onclick="return rdtaDemoShowAlertboxFixed('warning');">warning</a> <a href="#" onclick="return rdtaDemoShowAlertboxFixed('success');">success</a>                     </p>
                     <div class="rdta-demopage-debugbox">
                         <p>The alert box that will always stay at the bottom (float).</p>
-                        <div class="rd-alertbox alert-info float-bottom">
+                        <div class="rd-alertbox alert-info float-bottom code-sample-floatbottom">
                             Info alert box.
                         </div>
                     </div>
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".code-sample-floatbottom" data-target-src-remove-first-space="24"></pre>
                     <p>To see it in action, please click on the link below.</p>
                     <p>Show alert box float top for: 
                     <a href="#" onclick="return rdtaDemoShowAlertboxFloat('info', 'top');">info</a> <a href="#" onclick="return rdtaDemoShowAlertboxFloat('danger', 'top');">danger</a> <a href="#" onclick="return rdtaDemoShowAlertboxFloat('warning', 'top');">warning</a> <a href="#" onclick="return rdtaDemoShowAlertboxFloat('success', 'top');">success</a>                     </p>
@@ -411,7 +410,10 @@ Success alert box by add <code>.alert-success</code> class into alert box elemen
         <script src="assets/js/sticky-sidebar/jquery.sticky-sidebar.min.js?npm-v=3.3.1"></script>
         <script src="assets/js/resize-sensor/ResizeSensor.js?v=8652505c23e8fdc8016445c5e13bee64"></script><!-- use with sticky sidebar js, manual update. -->
 
-        <script src="assets/js/rdta/rundiz-template-admin.js?v=75ee53c31bb3546320742997680dd1b5"></script> 
+        <script src="assets/js/rdta/rundiz-template-admin.js?v=75ee53c31bb3546320742997680dd1b5"></script>
+
+        <script class="exclude-preview" src="assets/js-preview/view-target-source.js?v=5d8e14607272d449d23384736d9e83c0"></script>
+        <script class="exclude-preview" src="assets/js-preview/view-source.js?v=6e407940d4adb1fce743eeea8253bcfa"></script> 
         <script>
             var timeout1, timeout2, timeout3, timeout4;
 
