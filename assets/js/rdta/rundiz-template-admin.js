@@ -268,6 +268,10 @@ class RundizTemplateAdmin {
     hotfixLongSidebarSubmenus() {
         let $ = jQuery.noConflict();
         let $navbar = $('.rd-navbar');
+        if (!$navbar || $('.rd-sidebar-item-list').length <= 0) {
+            // if not found sidebar.
+            return ;
+        }
 
         $('.rd-sidebar-item-list').on({
             'show.smapi': function (e, menu) {
@@ -386,6 +390,10 @@ class RundizTemplateAdmin {
      */
     sidebarStickyMenu() {
         let $ = jQuery.noConflict();
+        if ($('.rd-sidebar').length <= 0) {
+            // if not found sidebar.
+            return ;
+        }
 
         $('.rd-sidebar').stickySidebar({
             bottomSpacing: 50,// fix Firefox scroll down and auto jump to top.
@@ -500,6 +508,10 @@ class RundizTemplateAdmin {
      */
     smartMenusSidebar() {
         let $ = jQuery.noConflict();
+        if ($('.sm-vertical').length <= 0) {
+            // if not found smart menu selector.
+            return ;
+        }
 
         $('.sm-vertical').smartmenus({
             markCurrentItem: true,
