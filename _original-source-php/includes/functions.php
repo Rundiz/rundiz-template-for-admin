@@ -113,17 +113,17 @@ function indent($number = 1, $return = true)
  * @param array $breadcrumb The breadcrumb data. Example: array('/path/to/page1' => 'page1', '/path/to/page2' => 'page2');
  * @return string Return generated breadcrumb HTML
  */
-function renderBreadcrumb(array $breadcrumb)
+function renderBreadcrumb(array $breadcrumb, int $indent = 1)
 {
     $output = '';
 
     if (!empty($breadcrumb)) {
-        $output .= '<nav>'."\n";
-        $output .= indent().'<ul class="rd-breadcrumb">'."\n";
+        $output .= indent($indent) . '<nav>'."\n";
+        $output .= indent(2 + ($indent - 1)) . '<ul class="rd-breadcrumb">'."\n";
         $arrayKeys = array_keys($breadcrumb);
         $lastArrayKey = array_pop($arrayKeys);
         foreach ($breadcrumb as $path => $name) {
-            $output .= indent(2);
+            $output .= indent((3 + ($indent - 1)));
             $output .= '<li';
             if ($path == $lastArrayKey) {
                 $output .= ' class="current"';
@@ -138,8 +138,8 @@ function renderBreadcrumb(array $breadcrumb)
             $output .= "\n";
         }// endforeach;
         unset($arrayKeys, $lastArrayKey, $name, $path);
-        $output .= indent().'</ul>'."\n";
-        $output .= '</nav>'."\n";
+        $output .= indent(2 + ($indent - 1)) . '</ul>'."\n";
+        $output .= indent($indent) . '</nav>'."\n";
     }
 
     return $output;
