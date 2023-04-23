@@ -8,6 +8,19 @@ class RundizTemplateAdmin {
 
 
     /**
+     * Check if jQuery is loaded or not.
+     * 
+     * @returns {Boolean} Return `true` if it is loaded, `false` for otherwise.
+     */
+    #isjQueryLoaded() {
+        if (typeof(window.jQuery) === 'function' && window.jQuery) {
+            return true;
+        }
+        return false;
+    }// isjQueryLoaded
+
+
+    /**
      * Listen to button dropdown or button group with dropdown.
      * 
      * This method can work on dynamically insert/update elements.
@@ -235,6 +248,11 @@ class RundizTemplateAdmin {
      * @returns {Boolean}
      */
     dataTableToggleRow() {
+        if (!this.#isjQueryLoaded()) {
+            // if jQuery is not loaded.
+            console.warn('jQuery is not loaded.');
+            return ;
+        }
         let $ = jQuery.noConflict();
 
         document.addEventListener('click', function(event) {
@@ -262,7 +280,13 @@ class RundizTemplateAdmin {
      * @return {undefined}
      */
     hotfixLongSidebarSubmenus() {
+        if (!this.#isjQueryLoaded()) {
+            // if jQuery is not loaded.
+            console.warn('jQuery is not loaded.');
+            return ;
+        }
         let $ = jQuery.noConflict();
+
         let $navbar = $('.rd-navbar');
         if (!$navbar || $('.rd-sidebar-item-list').length <= 0) {
             // if not found sidebar.
@@ -348,6 +372,11 @@ class RundizTemplateAdmin {
      * @returns {Boolean}
      */
     sidebarExpandToggler() {
+        if (!this.#isjQueryLoaded()) {
+            // if jQuery is not loaded.
+            console.warn('jQuery is not loaded.');
+            return ;
+        }
         let $ = jQuery.noConflict();
 
         let togglerButton = document.querySelector('.rd-sidebar-expand-collapse-controls a');
@@ -385,7 +414,13 @@ class RundizTemplateAdmin {
      * @returns {undefined}
      */
     sidebarStickyMenu() {
+        if (!this.#isjQueryLoaded()) {
+            // if jQuery is not loaded.
+            console.warn('jQuery is not loaded.');
+            return ;
+        }
         let $ = jQuery.noConflict();
+
         if ($('.rd-sidebar').length <= 0) {
             // if not found sidebar.
             return ;
@@ -440,7 +475,17 @@ class RundizTemplateAdmin {
      * @returns {undefined}
      */
     smartMenusNavbar() {
+        if (!this.#isjQueryLoaded()) {
+            // if jQuery is not loaded.
+            console.warn('jQuery is not loaded.');
+            return ;
+        }
         let $ = jQuery.noConflict();
+
+        if ($('.sm-rdta.navbar').length <= 0) {
+            // if not found navbar.
+            return ;
+        }
 
         // tweak to show only one menu at a time. ( https://www.smartmenus.org/forums/topic/accordion-failed/#post-2660 )
         // this problem occur on small screen navbar menu. so, this can fix it.
@@ -503,9 +548,15 @@ class RundizTemplateAdmin {
      * @returns {undefined}
      */
     smartMenusSidebar() {
+        if (!this.#isjQueryLoaded()) {
+            // if jQuery is not loaded.
+            console.warn('jQuery is not loaded.');
+            return ;
+        }
         let $ = jQuery.noConflict();
+
         if ($('.sm-vertical').length <= 0) {
-            // if not found smart menu selector.
+            // if not found sidebar.
             return ;
         }
 
