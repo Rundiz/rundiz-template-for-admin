@@ -34,6 +34,23 @@ class ViewSource {
 
 
     /**
+     * Beautify HTML.
+     * 
+     * @param {string} html Input HTML string.
+     * @returns {string} Return modified HTML string.
+     */
+    #beautifyHTML(html) {
+        // add new line to `<head>`.
+        html = html.replace(/><head/gi, '>' + "\n" + '    <head');
+        // add new line to `</html>`.
+        html = html.replace(/<\/body><\/html/gi, '    </body>' + "\n" + '</html');
+        // remove empty new lines that have more than 2 lines.
+        html = html.replace(/^([ ]*[\r\n]){2,}/gim, "\n");
+        return html;
+    }// beautifyHTML
+
+
+    /**
      * Escape HTML
      * 
      * @link https://stackoverflow.com/a/6234804/128761 Original source code.
@@ -83,6 +100,11 @@ class ViewSource {
                 });
             }
 
+            // remove auto generated `resize-sensor`.
+            this.htmlDoc.querySelectorAll('.resize-sensor')?.forEach((item) => {
+                item.remove();
+            });
+
             // also remove preview source placeholder itself.
             this.htmlDoc.querySelectorAll(this.previewSrcPlaceholderSelector)?.forEach((item) => {
                 item.remove();
@@ -110,8 +132,8 @@ class ViewSource {
                 + '>';
 
             previewE.insertAdjacentHTML('beforebegin', '<h3>HTML source</h3>');
-            previewE.insertAdjacentHTML('beforeend', this.#escapeHTML(htmlDoctype));
-            previewE.insertAdjacentHTML('beforeend', this.#escapeHTML(this.htmlDoc.documentElement.outerHTML));
+            previewE.insertAdjacentHTML('beforeend', this.#escapeHTML(htmlDoctype) + "\n");
+            previewE.insertAdjacentHTML('beforeend', this.#escapeHTML(this.#beautifyHTML(this.htmlDoc.documentElement.outerHTML)));
         }
     }// renderPreview
 
