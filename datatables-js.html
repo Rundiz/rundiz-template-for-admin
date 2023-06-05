@@ -1,9 +1,16 @@
+
+Warning: file_get_contents(includes/dummy-data.json): failed to open stream: No such file or directory in D:\wwwroot\github\rundiz\rundiz-template-for-admin\_original-source-php\datatables-js.php on line 5
+
+Call Stack:
+    0.0009     460720   1. {main}() D:\wwwroot\github\rundiz\rundiz-template-for-admin\_original-source-php\datatables-js.php:0
+    0.0015     483272   2. file_get_contents($filename = 'includes/dummy-data.json') D:\wwwroot\github\rundiz\rundiz-template-for-admin\_original-source-php\datatables-js.php:5
+
 <!DOCTYPE html>
 <html class="rd-template-admin">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Pagination | Rundiz template for admin</title>
+        <title>DataTables JS by datatables.net | Rundiz template for admin</title>
         <link rel="stylesheet" href="assets/css/sanitize/sanitize.css?npm-v=github%3Acsstools%2Fsanitize.css%23main">
         <link rel="stylesheet" href="assets/css/sanitize/typography.css?npm-v=github%3Acsstools%2Fsanitize.css%23main">
         <link rel="stylesheet" href="assets/css/sanitize/forms.css?npm-v=github%3Acsstools%2Fsanitize.css%23main">
@@ -19,6 +26,9 @@
         <link rel="stylesheet" href="assets/css/rdta-demo-pages.css?v=5c5a3502c8c15fba309fc170b49e4583">
 
         <link class="exclude-preview" rel="stylesheet" href="assets/css-preview/view-source.css?v=856c7087abf9e79c34c08320f05131ce"><!-- preview source css excluded. --> 
+        <link rel="stylesheet" href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="//cdn.datatables.net/responsive/2.4.1/css/responsive.dataTables.min.css">
+        <link rel="stylesheet" href="assets/css/rdta/components/rdta-datatables-js.css?v=16156d655fa2f9ee94ad3d32e57c0389">
     </head>
     <body>
         <header class="rd-navbar">
@@ -286,198 +296,316 @@
                     <nav>
         <ul class="rd-breadcrumb">
             <li><a href="./">Home</a></li>
-            <li class="current"><a href="#" onclick="return false;">Pagination</a></li>
+            <li class="current"><a href="#" onclick="return false;">DataTables JS by datatables.net</a></li>
         </ul>
     </nav>
  
                 <div class="rd-page-content">
-                    <h1>Pagination</h1>
-                    <p>The pagination styles</p>
+                    <h1>DataTables JS by datatables.net</h1>
+                    <p>Custom style for <a href="https://datatables.net/" target="datatables">DataTables JS</a>.</p>
+                    <p>
+                        In order to make accordion works, add this file after DataTables's CSS.
+                        <strong>assets/css/rdta/components/rdta-datatables.css</strong>,
+                    </p>
                     <hr>
 
                     <h2>Examples</h2>
-                    <div class="rd-block-level-margin-bottom code-sample-pagination-sample1">
-                        <nav>
-                            
-    <ul class="rd-pagination">
-        <li class="current"><span>1</span></li>
-        <li><a href="javascript: alert('go to page 2');">2</a></li>
-        <li><a href="javascript: alert('go to page 3');">3</a></li>
-        <li><a href="javascript: alert('go to page 4');">4</a></li>
-        <li><a href="javascript: alert('go to page 5');">5</a></li>
-        <li><a href="javascript: alert('go to page 6');">6</a></li>
-        <li><a href="javascript: alert('go to page 7');">7</a></li>
-        <li><a href="javascript: alert('go to page 8');">8</a></li>
-    </ul>
+                    <p>This is the most basic example (zero configuration) for DataTables. It use only class <code>display</code> on <code>&lt;table&gt;</code> element.</p>
+                    <p>The <code>&lt;div&gt;</code> that contain class <code>rd-datatable-wrapper</code> and wrapped the table is just to prevent table will be too wide. You may remove it in your real project.</p>
+                    <div class="rd-datatable-wrapper">
+                        <table id="rdta-datatables-sample1" class="display">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
  
-                        </nav>
-                        <h3 class="text-center">Center</h3>
-                        <nav class="text-center">
-                            
-    <ul class="rd-pagination">
-        <li class="current"><span>1</span></li>
-        <li><a href="javascript: alert('go to page 2');">2</a></li>
-        <li><a href="javascript: alert('go to page 3');">3</a></li>
-        <li><a href="javascript: alert('go to page 4');">4</a></li>
-        <li><a href="javascript: alert('go to page 5');">5</a></li>
-        <li><a href="javascript: alert('go to page 6');">6</a></li>
-        <li><a href="javascript: alert('go to page 7');">7</a></li>
-        <li><a href="javascript: alert('go to page 8');">8</a></li>
-    </ul>
- 
-                        </nav>
-                        <h3 class="text-right">Right</h3>
-                        <nav class="text-right">
-                            
-    <ul class="rd-pagination">
-        <li class="current"><span>1</span></li>
-        <li><a href="javascript: alert('go to page 2');">2</a></li>
-        <li><a href="javascript: alert('go to page 3');">3</a></li>
-        <li><a href="javascript: alert('go to page 4');">4</a></li>
-        <li><a href="javascript: alert('go to page 5');">5</a></li>
-        <li><a href="javascript: alert('go to page 6');">6</a></li>
-        <li><a href="javascript: alert('go to page 7');">7</a></li>
-        <li><a href="javascript: alert('go to page 8');">8</a></li>
-    </ul>
- 
-                        </nav>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Email</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div><!--.rd-datatable-wrapper-->
+                    <script type="application/javascript">
+                        document.addEventListener('DOMContentLoaded', () => {
+                            const table = new DataTable('#rdta-datatables-sample1');
+                        });
+                    </script>
+                    <h3>DataTables's styles</h3>
+                    <div class="select-datatables-styles rd-block-level-margin-bottom">
+                        <label>
+                            Select style:
+                            <select id="datatables-styles">
+                                <option value="display" selected="selected">Base style</option>
+                                <option value="">No style</option>
+                                <option value="cell-border">Cell borders</option>
+                                <option value="display compact">Compact</option>
+                                <option value="hover">Hover</option>
+                                <option value="order-column">Order-column</option>
+                                <option value="row-border">Row borders</option>
+                                <option value="stripe">Stripe</option>
+                            </select>
+                        </label>
                     </div>
-                    <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".code-sample-pagination-sample1" data-target-src-remove-first-space="24" data-remove-classes="rd-block-level-margin-bottom" data-inner-html="true"></pre>
-                    <h3>Much much many</h3>
-                    <nav>
-                        
-    <ul class="rd-pagination">
-        <li><a href="javascript: alert('go to page 999');">999</a></li>
-        <li><a href="javascript: alert('go to page 1000');">1000</a></li>
-        <li><a href="javascript: alert('go to page 1001');">1001</a></li>
-        <li class="current"><span>1002</span></li>
-        <li><a href="javascript: alert('go to page 1003');">1003</a></li>
-    </ul>
- 
-                    </nav>
-                    <h3>Loose</h3>
-                    <nav class="rd-block-level-margin-bottom code-sample-pagination-loose">
-                        
-    <ul class="rd-pagination space-loose">
-        <li class="current"><span>1</span></li>
-        <li><a href="javascript: alert('go to page 2');">2</a></li>
-        <li><a href="javascript: alert('go to page 3');">3</a></li>
-        <li><a href="javascript: alert('go to page 4');">4</a></li>
-        <li><a href="javascript: alert('go to page 5');">5</a></li>
-    </ul>
- 
-                    </nav>
-                    <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".code-sample-pagination-loose" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
-                    <hr>
+                    <div id="rdta-datatables-sample-dt-styles-placeholder"></div>
+                    <script type="application/javascript">
+                        const dtStylesNewTableId = 'rdta-datatables-sample-customstyles';
+                        let dtStylesTable = null;
 
-                    <h2>Pager</h2>
-                    <p>Display pagination as previous/next</p>
-                    <nav class="rd-block-level-margin-bottom code-sample-pagination-pager">
-                        <ul class="rd-pagination">
-                            <li><a href="#" onclick="return false;">Previous</a></li>
-                            <li><a href="#" onclick="return false;">Next</a></li>
-                        </ul>
-                    </nav>
-                    <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".code-sample-pagination-pager" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
-                    <h3>Pager loose</h3>
-                    <div class="code-sample-pagination-pager-otherstyles">
-                        <nav>
-                            <ul class="rd-pagination space-loose">
-                                <li><a href="#" onclick="return false;">Previous</a></li>
-                                <li><a href="#" onclick="return false;">Next</a></li>
-                            </ul>
-                        </nav>
-                        <h4 class="text-center">Center</h4>
-                        <nav class="text-center">
-                            <ul class="rd-pagination space-loose">
-                                <li><a href="#" onclick="return false;">Previous</a></li>
-                                <li><a href="#" onclick="return false;">Next</a></li>
-                            </ul>
-                        </nav>
-                        <h4>Use button</h4>
-                        <nav>
-                            <ul class="rd-pagination space-loose">
-                                <li><button type="button">Previous</button></li>
-                                <li><button type="button">Next</button></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <h5>Source</h5>
-                    <pre class="preview-source" data-target-src=".code-sample-pagination-pager-otherstyles" data-target-src-remove-first-space="24" data-remove-classes="rd-block-level-margin-bottom" data-inner-html="true"></pre>
-                    <h3>To the edge</h3>
-                    <p>Horizontal align button to the left &amp; right of the page. Please note that this will be change the pagination element to <code>display: flex;</code>.</p>
-                    <nav class="rd-block-level-margin-bottom code-sample-pagination-pager-edge">
-                        <ul class="rd-pagination space-edge">
-                            <li><a href="#" onclick="return false;">Previous</a></li>
-                            <li><a href="#" onclick="return false;">Next</a></li>
-                        </ul>
-                    </nav>
-                    <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".code-sample-pagination-pager-edge" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
-                    <hr>
+                        function listenDtStylesChange() {
+                            document.getElementById('datatables-styles').addEventListener('change', (event) => {
+                                const thisValue = event.target.value;
+                                const tableE = document.getElementById(dtStylesNewTableId);
+                                tableE.className = '';
+                                if (thisValue !== '') {
+                                    const selectClasses = thisValue.split(' ');
+                                    for (const eachClass of selectClasses) {
+                                        if (eachClass.trim() === '') {
+                                            continue;
+                                        }
+                                        tableE.classList.add(eachClass.trim());
+                                    }// endfor;
+                                }// endif; value is not empty.
 
-                    <h2>Advanced</h2>
-                    <p>Advanced pagination is the mixed between page numbers, pager (previous/next), input page, select page. To do this, add <code>advanced</code> class to the pagination element.</p>
-                    <form method="get" style="margin-bottom: 0.625em;">
-                        <nav class="code-sample-pagination-pager-advanced">
-                            <ul class="rd-pagination advanced">
-                                <li><a href="#" onclick="return false;">&laquo;</a></li>
-                                <li><input type="number" value="1"></li>
-                                <li><a href="#" onclick="return false;">&raquo;</a></li>
-                                <li class="break-space"></li>
-                                <li>
-                                    <select>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                    </select>
-                                </li>
-                            </ul>
-                        </nav>
-                    </form>
-                    <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".code-sample-pagination-pager-advanced" data-target-src-remove-first-space="24"></pre>
-                    <form method="get" style="margin-bottom: 0.625em;">
-                        <nav>
-                            <ul class="rd-pagination advanced">
-                                <li><a href="#" onclick="return false;">&laquo;</a></li>
-                                <li><input type="number" value="1"></li>
-                                <li><a href="#" onclick="return false;">&raquo;</a></li>
-                            </ul>
-                        </nav>
-                    </form>
-                    <form method="get" style="margin-bottom: 0.625em;">
-                        <nav>
-                            <ul class="rd-pagination advanced">
-                                <li><a href="#" onclick="return false;">&laquo; Previous</a></li>
-                                <li><a href="#" onclick="return false;">Next &raquo;</a></li>
-                                <li class="break-space"></li>
-                                <li>
-                                    <select>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                    </select>
-                                </li>
-                            </ul>
-                        </nav>
-                    </form>
-                    <form method="get" style="margin-bottom: 0.625em;">
-                        <nav>
-                            <ul class="rd-pagination advanced">
-                                <li><a href="#" onclick="return false;">&laquo;</a></li>
-                                <li class="current"><a href="#" onclick="return false;">1</a></li>
-                                <li><a href="#" onclick="return false;">2</a></li>
-                                <li><a href="#" onclick="return false;">3</a></li>
-                                <li><a href="#" onclick="return false;">&raquo;</a></li>
-                                <li class="break-space"></li>
-                                <li><input type="number" value="1"></li>
-                            </ul>
-                        </nav>
-                    </form>
+                                if (dtStylesTable) {
+                                    dtStylesTable.destroy();
+                                }
+                                dtStylesTable = new DataTable('#' + dtStylesNewTableId);
+                            });
+                        }// listenDtStylesChange
+
+                        document.addEventListener('DOMContentLoaded', () => {
+                            listenDtStylesChange();
+                            // copy and paste table from above.
+                            copyAndPasteTable('rdta-datatables-sample-dt-styles-placeholder', dtStylesNewTableId);
+                            // remove classes.
+                            document.getElementById(dtStylesNewTableId).className = '';
+                            document.getElementById('datatables-styles').dispatchEvent(new Event('change', {'bubbles': true}));
+                        });
+                    </script>
+                     
+                    <h3>Row colors</h3>
+                    <p>Add showing class to <code>&lt;tr&gt;</code>.</p>
+                    <table id="rdta-datatables-sample-rowcolors" class="display">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Class</th>
+                                <th>Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+ 
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>Type</th>
+                                <th>Class</th>
+                                <th>Name</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <script type="application/javascript">
+                        document.addEventListener('DOMContentLoaded', () => {
+                            const table = new DataTable('#rdta-datatables-sample-rowcolors', {
+                                'ordering': false,
+                            });
+                        });
+                    </script>
+                    <h4>Cell colors</h4>
+                    <p>Add showing class to table cell (<code>&lt;td&gt;</code>).</p>
+                    <div class="rd-datatable-wrapper">
+                        <table id="rdta-datatables-sample-cellcolors" class="cell-border">
+                            <thead>
+                                <tr>
+                                    
+                                    <th>Default</th>
+                                    <th>Primary</th>
+                                    <th>Info</th>
+                                    <th>Danger</th>
+                                    <th>Warning</th>
+                                    <th>Success</th>
+ 
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    
+                                    <td>Default</td>
+                                    <td class="table-cell-primary">Primary<br><code>table-cell-primary</code></td>
+                                    <td class="table-cell-info">Info<br><code>table-cell-info</code></td>
+                                    <td class="table-cell-danger">Danger<br><code>table-cell-danger</code></td>
+                                    <td class="table-cell-warning">Warning<br><code>table-cell-warning</code></td>
+                                    <td class="table-cell-success">Success<br><code>table-cell-success</code></td>
+ 
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    
+                                    <th>Default</th>
+                                    <th>Primary</th>
+                                    <th>Info</th>
+                                    <th>Danger</th>
+                                    <th>Warning</th>
+                                    <th>Success</th>
+ 
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div><!--.rd-datatable-wrapper-->
+                    <script type="application/javascript">
+                        document.addEventListener('DOMContentLoaded', () => {
+                            const table = new DataTable('#rdta-datatables-sample-cellcolors', {
+                                'ordering': false,
+                            });
+                        });
+                    </script>
+                     
+                    <h3>Individual column search, select</h3>
+                    <div id="rdta-datatables-sample-individual-searchselect-placeholder"></div>
+                    <script type="application/javascript">
+                        document.addEventListener('DOMContentLoaded', () => {
+                            const indDtNewId = 'rdta-datatables-sample-individual-searchselect';
+                            // copy and paste table from above.
+                            copyAndPasteTable('rdta-datatables-sample-individual-searchselect-placeholder', indDtNewId);
+
+                            // add filter to tfoot.
+                            document.querySelectorAll('#' + indDtNewId + ' tfoot th').forEach((item, index) => {
+                                if (index === 0) {
+                                    // if first column.
+                                    item.innerHTML = '<select><option value=""></option></select>';
+                                    return;// skip
+                                }
+                                const title = item.innerText;
+                                item.innerHTML = '<input type="text" placeholder="Search ' + title + '" />';
+                            });
+                            const table = $('#' + indDtNewId).DataTable({
+                                initComplete: function() {// can't use arrow function here, otherwise it will be unable to access the same `this`.
+                                    // Apply the search
+                                    this.api()
+                                        .columns()
+                                        .every(function() {// can't use arrow function here, otherwise it will be unable to access the same `this`.
+                                            const column = this;
+                                            const select = $('select', this.footer());
+                                            const collator = new Intl.Collator(undefined, {numeric: true, sensitivity: 'base'});
+
+                                            column
+                                            .data()
+                                            .unique()
+                                            .sort(collator.compare)
+                                            .each(function (d, j) {
+                                                select.append('<option value="' + d + '">' + d + '</option>');
+                                            });
+
+                                            if (select.length > 0) {
+                                                select.on('change', (event) => {
+                                                    const value = event.target.value;
+                                                    column.search(value ? '^' + value + '$' : '', true, false).draw();
+                                                });
+                                            }
+
+                                            $('input', this.footer()).on('keyup change clear', function() {// can't use arrow function here, otherwise it will be unable to access the same `this`.
+                                                if (column.search() !== this.value) {
+                                                    column.search(this.value).draw();
+                                                }
+                                            });
+                                        });
+                                },
+                            });// end .DataTable()
+                        });
+                    </script>
+                    <h3>Responsive</h3>
+                    <p>Resize your browser to be small to see responsive table work.</p>
+                    <div id="rdta-datatables-sample-responsive-placeholder"></div>
+                    <script type="application/javascript">
+                        document.addEventListener('DOMContentLoaded', () => {
+                            const responsiveDtNewId = 'rdta-datatables-sample-responsive1';
+                            // copy and paste table from above.
+                            copyAndPasteTable('rdta-datatables-sample-responsive-placeholder', responsiveDtNewId);
+                            // modify id attribute.
+                            document.getElementById(responsiveDtNewId)?.classList.add('nowrap');
+                            document.getElementById(responsiveDtNewId).closest('.rd-datatable-wrapper').className = '';
+                            $('#' + responsiveDtNewId).DataTable({
+                                responsive: true
+                            });
+                        });
+                    </script>
+                    <h4>Responsive full actions</h4>
+                    <p>Responsive DataTables with actions row, check box, and responsive button on custom column. The email column will be always hide to show the feature.</p>
+                    <table id="rdta-datatables-sample-responsive2" class="hover row-border">
+                        <thead>
+                            <tr>
+                                <td><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></td>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>Email</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+ 
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></td>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>Email</th>
+                                <th></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <script type="application/javascript">
+                        document.addEventListener('DOMContentLoaded', () => {
+                            const responsive2DtId = 'rdta-datatables-sample-responsive2';
+                            $('#' + responsive2DtId).DataTable({
+                                'autoWidth': false,// don't set style="width: xxx;" in the table cell.
+                                columnDefs: [
+                                    {
+                                        'orderable': false,
+                                        'searchable': false,
+                                        'targets': [0, -1]
+                                    },
+                                    {
+                                        'className': 'column-checkbox',
+                                        'targets': 0,
+                                    },
+                                    {
+                                        'className': 'none',
+                                        'targets': 4,
+                                    },
+                                    {
+                                        'className': 'dtr-control',
+                                        'orderable': false,
+                                        'targets': -1,
+                                    },
+                                ],
+                                'order': [[1, 'desc']],
+                                'processing': true,
+                                responsive: {
+                                    details: {
+                                        type: 'column',
+                                        target: -1,
+                                    },
+                                }
+                            });
+                        });
+                    </script>
                 </div><!--.rd-page-content-->
             </main>
             <footer>
@@ -485,7 +613,7 @@
                 <div class="rd-page-footer-right">My app version n.n.</div>
             </footer> 
         </div><!--.rd-page-wrapper-->
-        
+
 
 
         <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -501,5 +629,33 @@
 
         <script class="exclude-preview" src="assets/js-preview/view-target-source.js?v=5d8e14607272d449d23384736d9e83c0"></script>
         <script class="exclude-preview" src="assets/js-preview/view-source.js?v=cedb27a1b7352aa9d7e55d30eb87b1f6"></script> 
+        <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+        <script src="//cdn.datatables.net/responsive/2.4.1/js/dataTables.responsive.min.js"></script>
+        <script type="application/javascript">
+            /**
+             * Copy and paste table from sample 1 to placeholder and rename with new ID.
+             * 
+             * @param {string} placeholderId
+             * @param {string} newTableId
+             */
+            function copyAndPasteTable(placeholderId, newTableId) {
+                if (typeof(placeholderId) !== 'string') {
+                    throw Error('The placeholderId must be string.');
+                }
+                if (typeof(newTableId) !== 'string') {
+                    throw Error('The newTableId must be string.');
+                }
+
+                // copy and paste table from above.
+                const tableSample1 = document.getElementById('rdta-datatables-sample1');
+                let placeholderE = document.getElementById(placeholderId);
+                placeholderE.innerHTML = '<div class="rd-datatable-wrapper">' + tableSample1.outerHTML + '</div>';
+
+                // modify id attribute.
+                placeholderE.querySelector('table')
+                    ?.setAttribute('id', newTableId)
+                ;
+            }// copyAndPasteTable
+        </script>
     </body>
 </html>
