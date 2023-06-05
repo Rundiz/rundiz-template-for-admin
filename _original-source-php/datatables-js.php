@@ -2,7 +2,7 @@
 require 'includes/functions.php'; 
 
 // dummy data created by https://www.mockaroo.com/
-$dummyData = file_get_contents('includes/dummy-data.json');
+$dummyData = file_get_contents(__DIR__ . '/includes/dummy-data.json');
 ?>
 <!DOCTYPE html>
 <html class="rd-template-admin">
