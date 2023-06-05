@@ -121,6 +121,7 @@ class ViewSource {
     #renderPreview() {
         if (this.#isPreviewForTarget()) {
             this.viewTargetSourceObj.renderPreview();
+            document.dispatchEvent(new CustomEvent('rdta.viewsource.renderpreview.done', {'bubbles': true}));
         } else {
             const previewE = document.querySelector(this.previewSrcPlaceholderSelector);
             const node = this.htmlDoc.doctype;
