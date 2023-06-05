@@ -27,7 +27,7 @@ include 'includes/html-head.php';
                     <h1><?php echo $title; ?></h1>
                     <p>Custom style for <a href="https://datatables.net/" target="datatables">DataTables JS</a>.</p>
                     <p>
-                        In order to make accordion works, add this file after DataTables's CSS.
+                        In order to make DataTables JS design works, add this file after DataTables's CSS.
                         <strong>assets/css/rdta/components/rdta-datatables.css</strong>,
                     </p>
                     <hr>
