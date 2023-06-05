@@ -1,0 +1,20 @@
+// common use between data table, DataTables JS.
+
+
+@mixin datatable-column-checkbox {
+    text-align: center;
+    width: 32px;
+}
+
+
+@mixin datatable-row-actions {
+    font-size: 0.75em;
+    opacity: 0;
+    transition: opacity 0.2s;
+
+    // .rd-datatable.responsive .row-actions span + span::before
+    // must use <span> to wrap <a> because if it is a + a::before then the | text will becomes link.
+    span + span::before {
+        content: ' | ';
+    }
+}
