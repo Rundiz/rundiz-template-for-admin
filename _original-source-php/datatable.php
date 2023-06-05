@@ -1,26 +1,8 @@
 <?php 
 require 'includes/functions.php'; 
 
-$dummyData = '[{"id":1,"name":"Gwendolyn Uphill","address":"282 Springview Street","email":"guphill0@upenn.edu"},
-{"id":2,"name":"Reinhold Keneleyside","address":"820 Old Gate Parkway","email":"rkeneleyside1@de.vu"},
-{"id":3,"name":"Leroy Orrah","address":"8 Charing Cross Avenue","email":"lorrah2@wikia.com"},
-{"id":4,"name":"Rutherford Tarney","address":"10 Valley Edge Park","email":"rtarney3@cocolog-nifty.com"},
-{"id":5,"name":"Perl Lancetter","address":"98697 Bultman Park","email":"plancetter4@fc2.com"},
-{"id":6,"name":"Georgie Ballister","address":"91 Namekagon Road","email":"gballister5@mozilla.com"},
-{"id":7,"name":"Gay Bill","address":"825 Reindahl Trail","email":"gbill6@chron.com"},
-{"id":8,"name":"Leonid Berryann","address":"693 Roxbury Road","email":"lberryann7@cbc.ca"},
-{"id":9,"name":"Robby Scotson","address":"74600 Loeprich Way","email":"rscotson8@skype.com"},
-{"id":10,"name":"Valerie Tappor","address":"5 Welch Junction","email":"vtappor9@mac.com"},
-{"id":11,"name":"Lyle Calverley","address":"6 Fieldstone Plaza","email":"lcalverleya@chron.com"},
-{"id":12,"name":"Daniele Bradfield","address":"82 Michigan Plaza","email":"dbradfieldb@drupal.org"},
-{"id":13,"name":"Bria Bodycote","address":"3612 Darwin Park","email":"bbodycotec@walmart.com"},
-{"id":14,"name":"Dimitri Dowson","address":"90 8th Hill","email":"ddowsond@ustream.tv"},
-{"id":15,"name":"Janine Chavrin","address":"40807 Roxbury Point","email":"jchavrine@hostgator.com"},
-{"id":16,"name":"Wake Caret","address":"180 Shopko Parkway","email":"wcaretf@soundcloud.com"},
-{"id":17,"name":"Kaylyn Roubeix","address":"77 Dovetail Road","email":"kroubeixg@ning.com"},
-{"id":18,"name":"Goraud Griggs","address":"32679 Doe Crossing Circle","email":"ggriggsh@stanford.edu"},
-{"id":19,"name":"Crysta MacNockater","address":"7 Oakridge Way","email":"cmacnockateri@illinois.edu"},
-{"id":20,"name":"Magnum Bernardo","address":"140 Parkside Alley","email":"mbernardoj@google.es"}]';
+// dummy data created by https://www.mockaroo.com/
+$dummyData = file_get_contents('includes/dummy-data.json');
 ?>
 <!DOCTYPE html>
 <html class="rd-template-admin">
@@ -44,7 +26,7 @@ include 'includes/html-head.php';
                     <hr>
 
                     <h2>Examples</h2>
-                    <div class="rd-datatable-wrapper rd-block-level-margin-bottom">
+                    <div class="rd-datatable-wrapper rd-datatable-wrapper-sample1 rd-block-level-margin-bottom">
                         <form method="post" action="form.php">
                             <table class="rd-datatable">
                                 <thead>
@@ -107,37 +89,11 @@ include 'includes/html-head.php';
                             <button type="submit">Submit</button>
                         </form>
                     </div><!--.rd-datatable-wrapper-->
-                    <pre>&lt;div class=&quot;rd-datatable-wrapper&quot;&gt;
-    &lt;table class=&quot;rd-datatable&quot;&gt;
-        &lt;thead&gt;
-            &lt;tr&gt;
-                &lt;th class=&quot;column-checkbox&quot;&gt;
-                    &lt;input type=&quot;checkbox&quot; onclick=&quot;RundizTemplateAdmin.dataTableCheckboxToggler(this);&quot;&gt;
-                &lt;/th&gt;
-                &lt;th&gt;Name&lt;/th&gt;
-            &lt;/tr&gt;
-        &lt;/thead&gt;
-        &lt;tbody&gt;
-            &lt;tr&gt;
-                &lt;td class=&quot;column-checkbox&quot;&gt;
-                    &lt;input type=&quot;checkbox&quot; name=&quot;id[]&quot; value=&quot;1&quot;&gt;
-                &lt;/td&gt;
-                &lt;td&gt;Demo Demo&lt;/td&gt;
-            &lt;/tr&gt;
-        &lt;/tbody&gt;
-        &lt;tfoot&gt;
-            &lt;tr&gt;
-                &lt;th class=&quot;column-checkbox&quot;&gt;
-                    &lt;input type=&quot;checkbox&quot; onclick=&quot;RundizTemplateAdmin.dataTableCheckboxToggler(this);&quot;&gt;
-                &lt;/th&gt;
-                &lt;th&gt;Name&lt;/th&gt;
-            &lt;/tr&gt;
-        &lt;/tfoot&gt;
-    &lt;/table&gt;
-&lt;/div&gt;</pre>
+                    <h3>Source</h3>
+                    <pre class="preview-source" data-target-src=".rd-datatable-wrapper-sample1" data-target-src-remove-first-space="20"></pre>
                     <h3>H Border</h3>
                     <p>This data table only use horizontal border by add <code>h-border</code> to table class.</p>
-                    <div class="rd-datatable-wrapper">
+                    <div class="rd-datatable-wrapper rd-datatable-wrapper-sample-hborder">
                         <table class="rd-datatable h-border">
                             <thead>
                                 <tr>
@@ -175,7 +131,7 @@ include 'includes/html-head.php';
                                             echo indent(9).'</td>'."\n";
                                             echo indent(8).'</tr>'."\n";
                                             $i++;
-                                            if ($i > 5) {
+                                            if ($i > 3) {
                                                 break;
                                             }
                                         }// endforeach;
@@ -197,6 +153,8 @@ include 'includes/html-head.php';
                             </tfoot>
                         </table>
                     </div><!--.rd-datatable-wrapper-->
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".rd-datatable-wrapper-sample-hborder" data-target-src-remove-first-space="20"></pre>
                     <h3>Sortable columns</h3>
                     <p>Example for sortable columns</p>
                     <div class="rd-datatable-wrapper">
@@ -237,7 +195,7 @@ include 'includes/html-head.php';
                                             echo indent(9).'</td>'."\n";
                                             echo indent(8).'</tr>'."\n";
                                             $i++;
-                                            if ($i > 5) {
+                                            if ($i > 3) {
                                                 break;
                                             }
                                         }// endforeach;
@@ -271,7 +229,7 @@ include 'includes/html-head.php';
                     ?> 
                     <h3>Row colors</h3>
                     <p>Add showing class to <code>&lt;tr&gt;</code>.</p>
-                    <div class="rd-datatable-wrapper">
+                    <div class="rd-datatable-wrapper rd-datatable-wrapper-sample-rowcolors">
                         <table class="rd-datatable h-border">
                             <thead>
                                 <tr>
@@ -332,9 +290,11 @@ include 'includes/html-head.php';
                             </tfoot>
                         </table>
                     </div><!--.rd-datatable-wrapper-->
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".rd-datatable-wrapper-sample-rowcolors" data-target-src-remove-first-space="20"></pre>
                     <h4>Cell colors</h4>
                     <p>Add showing class to table cell (<code>&lt;td&gt;</code>).</p>
-                    <div class="rd-datatable-wrapper">
+                    <div class="rd-datatable-wrapper rd-datatable-wrapper-sample-cellcolors">
                         <table class="rd-datatable">
                             <thead>
                                 <tr>
@@ -394,9 +354,11 @@ include 'includes/html-head.php';
                         </table>
                     </div><!--.rd-datatable-wrapper-->
                     <?php unset($rowColors); ?> 
+                    <h5>Source</h5>
+                    <pre class="preview-source" data-target-src=".rd-datatable-wrapper-sample-cellcolors" data-target-src-remove-first-space="20"></pre>
                     <h3>Data table with filters row</h3>
                     <p>Add <code>filter-row</code> class to <code>&lt;tr&gt;</code> of the row that contain filters input.</p>
-                    <div class="rd-datatable-wrapper rd-block-level-margin-bottom">
+                    <div class="rd-datatable-wrapper rd-datatable-wrapper-sample-withfiltersrow rd-block-level-margin-bottom">
                         <table class="rd-datatable">
                             <thead>
                                 <tr>
@@ -449,7 +411,7 @@ include 'includes/html-head.php';
                                             echo indent(9).'</td>'."\n";
                                             echo indent(8).'</tr>'."\n";
                                             $i++;
-                                            if ($i > 5) {
+                                            if ($i > 3) {
                                                 break;
                                             }
                                         }// endforeach;
@@ -471,67 +433,12 @@ include 'includes/html-head.php';
                             </tfoot>
                         </table>
                     </div><!--.rd-datatable-wrapper-->
-                    <pre>&lt;div class=&quot;rd-datatable-wrapper&quot;&gt;
-    &lt;table class=&quot;rd-datatable&quot;&gt;
-        &lt;thead&gt;
-            &lt;tr&gt;
-                &lt;th class=&quot;column-checkbox&quot;&gt;&lt;input type=&quot;checkbox&quot; onclick=&quot;RundizTemplateAdmin.dataTableCheckboxToggler(this);&quot;&gt;&lt;/th&gt;
-                &lt;th class=&quot;sorted&quot;&gt;&lt;a href=&quot;?sort=id&quot; onclick=&quot;return false;&quot;&gt;ID &lt;i class=&quot;order-desc sortable-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/th&gt;
-                &lt;th&gt;Name&lt;/th&gt;
-                &lt;th&gt;Address&lt;/th&gt;
-                &lt;th&gt;Email&lt;/th&gt;
-                &lt;th&gt;Actions&lt;/th&gt;
-            &lt;/tr&gt;
-            &lt;tr class=&quot;filter-row&quot;&gt;
-                &lt;td&gt;&lt;/td&gt;
-                &lt;td&gt;&lt;/td&gt;
-                &lt;td&gt;&lt;input class=&quot;input-small&quot; type=&quot;search&quot; placeholder=&quot;Search for name&quot;&gt;&lt;/td&gt;
-                &lt;td&gt;
-                    &lt;select class=&quot;input-small&quot;&gt;
-                        &lt;option&gt;Filter address&lt;/option&gt;
-                        &lt;option&gt;City 1&lt;/option&gt;
-                        &lt;option&gt;City 2&lt;/option&gt;
-                    &lt;/select&gt;
-                &lt;/td&gt;
-                &lt;td&gt;&lt;input class=&quot;input-small&quot; type=&quot;search&quot; placeholder=&quot;Search for email&quot;&gt;&lt;/td&gt;
-                &lt;td&gt;&lt;button class=&quot;rd-button info small&quot;&gt;Filter&lt;/button&gt;&lt;/td&gt;
-            &lt;/tr&gt;
-        &lt;/thead&gt;
-        &lt;tbody&gt;
-            &lt;tr&gt;
-                &lt;td class=&quot;column-checkbox&quot;&gt;&lt;input type=&quot;checkbox&quot; name=&quot;id[]&quot; value=&quot;20&quot;&gt;&lt;/td&gt;
-                &lt;td&gt;20&lt;/td&gt;
-                &lt;td&gt;Magnum Bernardo&lt;/td&gt;
-                &lt;td&gt;140 Parkside Alley&lt;/td&gt;
-                &lt;td&gt;mbernardoj@google.es&lt;/td&gt;
-                &lt;td&gt;
-                    &lt;div class=&quot;rd-button-group&quot;&gt;
-                        &lt;button class=&quot;rd-button small&quot;&gt;&lt;i class=&quot;fa-solid fa-pencil&quot;&gt;&lt;/i&gt; Edit&lt;/button&gt;
-                        &lt;button class=&quot;rd-button small dropdown-toggler&quot; data-placement=&quot;bottom right&quot;&gt;&lt;i class=&quot;fa-solid fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
-                        &lt;ul class=&quot;rd-dropdown&quot;&gt;
-                            &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;&lt;i class=&quot;fa-solid fa-key fa-fw&quot;&gt;&lt;/i&gt; Permissions&lt;/a&gt;&lt;/li&gt;
-                            &lt;li&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;&lt;i class=&quot;fa-solid fa-xmark fa-fw&quot;&gt;&lt;/i&gt; Delete&lt;/a&gt;&lt;/li&gt;
-                        &lt;/ul&gt;
-                    &lt;/div&gt;
-                &lt;/td&gt;
-            &lt;/tr&gt;
-        &lt;/tbody&gt;
-        &lt;tfoot&gt;
-            &lt;tr&gt;
-                &lt;th class=&quot;column-checkbox&quot;&gt;&lt;input type=&quot;checkbox&quot; onclick=&quot;RundizTemplateAdmin.dataTableCheckboxToggler(this);&quot;&gt;&lt;/th&gt;
-                &lt;th class=&quot;sorted&quot;&gt;&lt;a href=&quot;?sort=id&quot; onclick=&quot;return false;&quot;&gt;ID &lt;i class=&quot;order-desc sortable-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/th&gt;
-                &lt;th&gt;Name&lt;/th&gt;
-                &lt;th&gt;Address&lt;/th&gt;
-                &lt;th&gt;Email&lt;/th&gt;
-                &lt;th&gt;Actions&lt;/th&gt;
-            &lt;/tr&gt;
-        &lt;/tfoot&gt;
-    &lt;/table&gt;
-&lt;/div&gt;</pre>
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".rd-datatable-wrapper-sample-withfiltersrow" data-target-src-remove-first-space="20"></pre>
                     <h3>Responsive</h3>
                     <p>This style of responsive is collapsible/expandable table for small screen size.</p>
                     <div class="rd-block-level-margin-bottom">
-                        <table class="rd-datatable responsive">
+                        <table class="rd-datatable responsive rd-datatable-sample-responsive1">
                             <thead>
                                 <tr>
                                     <td class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></td>
@@ -563,7 +470,7 @@ include 'includes/html-head.php';
                                             echo indent(8).'<td data-colname="Email">'.$row->email.'</td>'."\n";
                                             echo indent(7).'</tr>'."\n";
                                             $i++;
-                                            if ($i > 5) {
+                                            if ($i > 3) {
                                                 break;
                                             }
                                         }// endforeach;
@@ -583,47 +490,8 @@ include 'includes/html-head.php';
                             </tfoot>
                         </table>
                     </div>
-                    <pre>&lt;table class=&quot;rd-datatable responsive&quot;&gt;
-    &lt;thead&gt;
-        &lt;tr&gt;
-            &lt;td class=&quot;column-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; onclick=&quot;RundizTemplateAdmin.dataTableCheckboxToggler(this);&quot;&gt;
-            &lt;/td&gt;
-            &lt;th class=&quot;column-primary&quot;&gt;&lt;a href=&quot;?sort=name&quot; onclick=&quot;return false;&quot;&gt;Name &lt;i class=&quot;order-asc sortable-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/th&gt;
-            &lt;th&gt;&lt;a href=&quot;?sort=address&quot; onclick=&quot;return false;&quot;&gt;Address &lt;i class=&quot;order-asc sortable-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/th&gt;
-            &lt;th&gt;&lt;a href=&quot;?sort=email&quot; onclick=&quot;return false;&quot;&gt;Email &lt;i class=&quot;order-asc sortable-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/th&gt;
-        &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-        &lt;tr&gt;
-            &lt;td class=&quot;column-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; name=&quot;id[]&quot; value=&quot;1&quot;&gt;
-            &lt;/td&gt;
-            &lt;td class=&quot;column-primary&quot; data-colname=&quot;Name&quot;&gt;
-                Demo Demo
-                &lt;div class=&quot;row-actions&quot;&gt;
-                    &lt;span class=&quot;action&quot;&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;Edit&lt;/a&gt;&lt;/span&gt;
-                    &lt;span class=&quot;action&quot;&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;Permissions&lt;/a&gt;&lt;/span&gt;
-                    &lt;span class=&quot;action&quot;&gt;&lt;a href=&quot;#&quot; onclick=&quot;return false;&quot;&gt;Delete&lt;/a&gt;&lt;/span&gt;
-                &lt;/div&gt;
-                &lt;!--.row-actions--&gt;
-                &lt;button class=&quot;toggle-row&quot; type=&quot;button&quot;&gt;&lt;i class=&quot;faicon fa-solid fa-caret-down fa-fw&quot; data-toggle-icon=&quot;fa-caret-down fa-caret-up&quot;&gt;&lt;/i&gt;&lt;span class=&quot;screen-reader-only&quot;&gt;Show more details&lt;/span&gt;&lt;/button&gt;
-            &lt;/td&gt;
-            &lt;td data-colname=&quot;Address&quot;&gt;123 Address Street&lt;/td&gt;
-            &lt;td data-colname=&quot;Email&quot;&gt;demo@localhost.localhost&lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/tbody&gt;
-    &lt;tfoot&gt;
-        &lt;tr&gt;
-            &lt;td class=&quot;column-checkbox&quot;&gt;
-                &lt;input type=&quot;checkbox&quot; onclick=&quot;RundizTemplateAdmin.dataTableCheckboxToggler(this);&quot;&gt;
-            &lt;/td&gt;
-            &lt;th class=&quot;column-primary&quot;&gt;&lt;a href=&quot;?sort=name&quot; onclick=&quot;return false;&quot;&gt;Name &lt;i class=&quot;order-asc sortable-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/th&gt;
-            &lt;th&gt;&lt;a href=&quot;?sort=address&quot; onclick=&quot;return false;&quot;&gt;Address &lt;i class=&quot;order-asc sortable-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/th&gt;
-            &lt;th&gt;&lt;a href=&quot;?sort=email&quot; onclick=&quot;return false;&quot;&gt;Email &lt;i class=&quot;order-asc sortable-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/th&gt;
-        &lt;/tr&gt;
-    &lt;/tfoot&gt;
-&lt;/table&gt;</pre>
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".rd-datatable-sample-responsive1" data-target-src-remove-first-space="24"></pre>
                     <p>And if there is no data.</p>
                     <table class="rd-datatable responsive">
                         <thead>
