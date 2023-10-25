@@ -6,7 +6,7 @@
 'use strict';
 
 
-import del from 'del';
+import {deleteAsync} from 'del';
 import path from 'node:path';
 // import this app's useful class.
 import FS from "../Libraries/FS.mjs";
@@ -85,7 +85,7 @@ export default class WatchSCSS {
         if (command === 'delete') {
             // if command is delete (file and folder).
             const fullPathDest = path.resolve(REPO_DIR, this.destFolder, file);
-            const deleteResult = await del(fullPathDest, {force: true});
+            const deleteResult = await deleteAsync(fullPathDest, {force: true});
             for (const item of deleteResult) {
                 console.log('    - Deleted: ' + item);
             };
