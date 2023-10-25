@@ -22,7 +22,7 @@
 'use strict';
 
 
-import del from 'del';
+import {deleteAsync} from 'del';
 // import this app's useful class.
 import NtConfig from '../../../Libraries/NtConfig.mjs';
 import TextStyles from '../../../Libraries/TextStyles.mjs';
@@ -57,7 +57,7 @@ export const deleter = class Deleter {
                 }
                 console.log('    With options: ', options);
 
-                const deleteResult = await del(target.patterns, options);
+                const deleteResult = await deleteAsync(target.patterns, options);
                 deleteResult.forEach((item) => {
                     console.log('    - Deleted: ' + item.replaceAll(/\\/g, '/'));
                 });// end forEach;
