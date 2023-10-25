@@ -285,7 +285,7 @@
             &:active,
             &:focus,
             &:hover {
-                box-shadow: 0 0 0 1px $info-color, 0 0 3px 2px $info-background-color;
+                box-shadow: 0 0 0 1px $info-color, 0 0 3px 2px rgba($info-background-color, 0.8);
                 outline: none;
             }
 

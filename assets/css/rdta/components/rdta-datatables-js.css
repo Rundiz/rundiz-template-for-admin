@@ -64,7 +64,7 @@
 .dataTables_wrapper table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:active::before,
 .dataTables_wrapper table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:focus::before,
 .dataTables_wrapper table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:hover::before {
-  box-shadow: 0 0 0 1px #09a0bb, 0 0 3px 2px #c4ebf2;
+  box-shadow: 0 0 0 1px #09a0bb, 0 0 3px 2px rgba(196, 235, 242, 0.8);
 }
 .dataTables_wrapper table.dataTable.dtr-column.collapsed > tbody > tr > td.dtr-control::before,
 .dataTables_wrapper table.dataTable.dtr-column.collapsed > tbody > tr > th.dtr-control::before, .dataTables_wrapper table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control::before,
