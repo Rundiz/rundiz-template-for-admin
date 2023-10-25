@@ -5,7 +5,10 @@ $videoUrl = 'assets/multimedia/sample-video.mp4';
 ?>
             <h2 id="multimedia-dialog">Dialog</h2>
             <dialog open>This is an open dialog window</dialog>
-            <p>The dialog may not support in all browsers.</p>
+            <p style="height: 80px;">
+                The dialog should be shown on top of this paragraph. 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut maximus risus non convallis elementum. Cras tempus facilisis lectus eu pretium. Donec massa mauris, commodo rutrum augue ut, pulvinar posuere velit.
+            </p>
 
             <h2 id="multimedia-iframe">Iframe</h2>
             <iframe src="<?php echo $youtubeUrl; ?>"></iframe>
