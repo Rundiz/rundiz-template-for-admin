@@ -86,11 +86,19 @@
             "destination": "assets/css/smartmenus"
         },
         {
-            "patterns": "node_modules/smartmenus/dist/css/sm-clean/**",
+            "patterns": "node_modules/smartmenus/dist/css/sm-clean/*.css",
             "destination": "assets/css/smartmenus/sm-clean"
         },
         {
-            "patterns": "node_modules/smartmenus/dist/css/sm-simple/**",
+            "patterns": "node_modules/smartmenus/dist/css/sm-clean/*.map",
+            "destination": "assets/css/smartmenus/sm-clean"
+        },
+        {
+            "patterns": "node_modules/smartmenus/dist/css/sm-simple/*.css",
+            "destination": "assets/css/smartmenus/sm-simple"
+        },
+        {
+            "patterns": "node_modules/smartmenus/dist/css/sm-simple/*.map",
             "destination": "assets/css/smartmenus/sm-simple"
         },
 
