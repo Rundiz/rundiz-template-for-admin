@@ -94,6 +94,8 @@ export default class WatchSCSS {
         if (command !== 'delete') {
             // else, it is copy command.
             if (path.basename(file).startsWith('_')) {
+                // if file start with underscore (_), skip it.
+                console.log('    Skipping compile because this file start with underscore (_).');
                 return Promise.resolve();
             }
 
