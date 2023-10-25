@@ -142,7 +142,7 @@ $title = 'Typography & reset';
             <footer>
                 <p>
                     By <a href="http://rundiz.com">rundiz.com</a>
-                    | <a href="credits.php">Credits.</a>
+                    | <a href="credits.html">Credits.</a>
                 </p>
             </footer>
         </main>
