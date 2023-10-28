@@ -33,12 +33,13 @@ class RDTAAccordion {
         document.addEventListener('click', function(event) {
             // match selector.
             // @link https://stackoverflow.com/a/25248515/128761 Original source code.
+            let accordionGroup;
             for (let target= event.target; target && target != this; target = target.parentNode) {
                 // loop parent nodes from the target to the delegation node
                 if (target.matches(selector + ' [data-toggle="accordion"]')) {
                     event.preventDefault();
                     if (target.closest('.rd-accordion-group')) {
-                        var accordionGroup = target.closest('.rd-accordion-group');
+                        accordionGroup = target.closest('.rd-accordion-group');
                         let targetAccordionBody = accordionGroup.querySelector(target.dataset.target);
                         targetAccordionBody.classList.toggle('expanded');
 
@@ -50,19 +51,24 @@ class RDTAAccordion {
                             target.closest('.rd-accordion-header [data-toggle="accordion"]').setAttribute('aria-expanded', false);
                         }
                     }
-                }
+                } else if (target.matches(selector + ' details')) {
+                    accordionGroup = target.closest('.rd-accordion-group');
+                }// endif; matched selector
 
                 if (target.matches(selector) && target.dataset.accordionOne === 'true') {
                     target.querySelectorAll('.rd-accordion-group').forEach(function(item, index) {
-                        if (item !== accordionGroup) {
+                        if (item !== accordionGroup && typeof(accordionGroup) !== 'undefined') {
                             item.querySelector('.rd-accordion-header').classList.remove('active');
-                            item.querySelector('.rd-accordion-header [data-toggle="accordion"]').setAttribute('aria-expanded', false);
+                            item.querySelector('.rd-accordion-header [data-toggle="accordion"]')?.setAttribute('aria-expanded', false);
                             item.querySelector('.rd-accordion-body').classList.remove('expanded');
+                            if (item.nodeName.toLowerCase() === 'details') {
+                                item.removeAttribute('open');
+                            }
                         }
                     });
                     break;
                 }
-            }
+            }// endfor; loop parent nodes
             accordionGroup = undefined;
         });
     }// listenOnClickHeader
