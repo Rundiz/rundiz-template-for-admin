@@ -863,6 +863,12 @@ a.rd-button.tiny,
   display: block;
   overflow: hidden;
 }
+@media (min-width: 1000px) {
+  .rd-datatable.responsive .is-expanded .column-primary ~ td {
+    display: table-cell;
+    overflow: visible;
+  }
+}
 .rd-datatable.responsive .row-actions {
   font-size: 0.75em;
   opacity: 0;

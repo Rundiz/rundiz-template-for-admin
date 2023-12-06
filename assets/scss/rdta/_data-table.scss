@@ -254,6 +254,10 @@
             .column-primary ~ td {
                 display: block;
                 overflow: hidden;
+                @media (min-width: $minimum-sidebar-breakpoint) {
+                    display: table-cell;
+                    overflow: visible;
+                }
             }
         }
 
