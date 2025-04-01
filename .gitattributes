@@ -6,12 +6,12 @@
 # Explicitly declare text files you want to always be normalized and converted to native line endings on checkout.
 *.inc text
 *.ini text
-*.txt text
 *.xml text
 
 # Declare files that will always have LF line endings on checkout.
 .htaccess text eol=lf
 *.css text eol=lf
+*.flow text eol=lf
 *.htm text eol=lf
 *.html text eol=lf
 *.js text eol=lf
@@ -24,6 +24,8 @@
 *.pot text eol=lf
 *.sql text eol=lf
 *.svg text eol=lf
+*.ts text eol=lf
+*.txt text eol=lf
 *.yml text eol=lf
 
 # Denote all files that are truly binary and should not be modified.

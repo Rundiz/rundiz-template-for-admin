@@ -1,5 +1,5 @@
 /**
- * Watch assets/js-src/rdta folder.
+ * Watch assets-src/js/rdta folder.
  */
 
 
@@ -15,15 +15,15 @@ import JsBundler from './inc/jsBundler.mjs';
 
 
 /**
- * @type {String} destFolder Destination folder. Mirror to js-src.
+ * @type {String} destFolder Destination folder where source will be compiled to.
  */
 const destFolder = 'assets/js/rdta';
 
 
-const jsGlob = 'assets/js-src/rdta/**/*.js';
+const jsGlob = 'assets-src/js/rdta/**/*.js';
 
 
-const relativeSrc = 'assets/js-src/rdta';
+const relativeSrc = 'assets-src/js/rdta';
 
 
 export default class WatchJS {

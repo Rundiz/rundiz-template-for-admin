@@ -56,7 +56,7 @@ export default class BundleRdtaJS {
      * Get JS files from Glob pattern.
      */
     static async #getJsFilesFromPattern() {
-        jsFiles = await FS.glob('assets/js-src/rdta/**/*.js', {
+        jsFiles = await FS.glob('assets-src/js/rdta/**/*.js', {
             absolute: false,
             cwd: REPO_DIR
         });
@@ -72,7 +72,7 @@ export default class BundleRdtaJS {
         
         if (typeof(this.jsFiles) === 'object' && Array.isArray(this.jsFiles)) {
             for (const eachFile of this.jsFiles) {
-                const relativeName = path.relative('assets/js-src/rdta', eachFile);
+                const relativeName = path.relative('assets-src/js/rdta', eachFile);
                 const sourcePath = path.resolve(REPO_DIR, eachFile);
 
                 await JsBundler.run({

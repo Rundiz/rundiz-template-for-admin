@@ -4,7 +4,7 @@
  * Tasks for this command:
  * 1. Delete HTML files.
  * 2. Start watching::
- *  2.1. assets/js-src
+ *  2.1. assets-src/js
  *  2.2. assets/scss
  */
 

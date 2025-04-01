@@ -21,7 +21,7 @@ export default class JsBundler {
      * @param {Object} Object Accept object.
      * @param {string} Object.sourcePath Full source path.
      * @param {string} Object.destPath Full destination path.
-     * @param {string} Object.relativeName Relative source file name from the source pattern. Example: 'assets/js-src/rdta'
+     * @param {string} Object.relativeName Relative source file name from the source pattern. Example: 'assets-src/js/rdta'
      * @param {string} Object.headerString Header string.
      * @param {string} Object.destJSFolder Destination folder. Related from repository's folder.
      * @param {boolean} Object.echoOut Write out result or not. Set to `true` to write it out (default is true), `false` to not write out.
