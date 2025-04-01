@@ -8,7 +8,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-import sass from 'sass';
+import * as sass from 'sass';
 import url from 'node:url';
 // import class that extends from.
 import BasedBundler from './BasedBundler.mjs';
