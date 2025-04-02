@@ -27,7 +27,17 @@ import {phpBuilder} from './Tasks/Build/phpBuilder.mjs';
 export const command = 'build';
 export const describe = 'Build asset files such as CSS, JS, including HTML.';
 export const builder = (yargs) => {
-    
+    return yargs.options({
+        'skip-html': {
+            alias: 's',
+            demandOption: false,
+            describe: 'Set this option to skip build HTML.',
+            type: 'boolean',
+        },
+    })
+    .example('$0 build')
+    .example('$0 build --skip-html')
+    ;
 };
 export const handler = async (argv) => {
     console.log(TextStyles.programHeader());

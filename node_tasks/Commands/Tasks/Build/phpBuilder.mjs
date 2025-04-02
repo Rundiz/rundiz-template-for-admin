@@ -33,6 +33,11 @@ export const phpBuilder = class PhpBuilder {
      * @returns {Promise} Return `Promise` object.
      */
     static async run(argv) {
+        if (true === argv['skip-html']) {
+            console.log(TextStyles.txtInfo('Skip build HTML from PHP builder task.'));
+            return Promise.resolve();
+        }
+
         const phpBuilderObj = NtConfig.getValue('phpBuilder', {});
 
         if (
