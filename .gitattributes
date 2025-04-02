@@ -53,5 +53,6 @@ _original-source-php export-ignore
 .gitignore export-ignore
 assets-src export-ignore
 node_modules export-ignore
+node_tasks export-ignore
 package.json export-ignore
 package-lock.json export-ignore
