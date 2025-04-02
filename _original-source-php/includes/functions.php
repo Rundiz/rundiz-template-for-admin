@@ -63,14 +63,20 @@ function assetUrl($assetUrl, array $options = [])
         }
 
         $assetFullPath = realpath(ROOTDIR . '/' . $url);
-        if (filesize($assetFullPath) <= 1048576) {
+        if (is_string($assetFullPath) && filesize($assetFullPath) <= 1048576) {
             // if file size is smaller than or equal to 1 MB.
             $additionalQueryValue = md5_file($assetFullPath);
         }
-        if (!isset($additionalQueryValue) || false === $additionalQueryValue) {
+        if (
+            (
+                !isset($additionalQueryValue) || 
+                false === $additionalQueryValue
+            ) && 
+            is_string($assetFullPath)
+        ) {
             $additionalQueryValue = filemtime($assetFullPath);
         }
-        if (false === $additionalQueryValue) {
+        if (!isset($additionalQueryValue) || false === $additionalQueryValue) {
             $additionalQueryValue = time();
         }
         $queryArray[$additionalQueryName] = $additionalQueryValue;
