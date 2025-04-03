@@ -46,7 +46,6 @@
                                 <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="tools_cssgrid">CSS grid</a></li>
                                 <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="tools_cssflex">CSS flex box</a></li>
                                 <li><a href="https://www.w3.org/wiki/HTML_structural_elements" target="tools_html5structural">HTML 5 structural elements</a></li>
-                                <li><a href="http://pxtoem.com/" target="pxtoemconverter">Pixel / <code>em</code> converter</a></li>
                             </ul>
                         </li>
                         <li class="divider"></li>

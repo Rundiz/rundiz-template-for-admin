@@ -51,7 +51,7 @@ unset($input_type, $input_types);
                 <fieldset>
                     <p>
                         <label for="input-type-text-readonly">Input Text read only</label><br>
-                        <input id="input-type-text-readonly" type="text" readonly="">
+                        <input id="input-type-text-readonly" type="text" readonly="" value="Read only input text">
                     </p>
                 </fieldset>
                 <fieldset>
@@ -181,12 +181,12 @@ unset($input_type, $input_types);
                         <input id="form-validation-pseudoclass-inputemail-optional" type="email">
                     </p>
                     <p>
-                        <label><input type="radio" name="form-validation-pseudoclass-radio1" value="1" required="">Input radio 1</label><br>
-                        <label><input type="radio" name="form-validation-pseudoclass-radio1" value="2">Input radio 2</label><br>
+                        <label><input type="radio" name="form-validation-pseudoclass-radio1" value="1" required=""> Input radio 1</label><br>
+                        <label><input type="radio" name="form-validation-pseudoclass-radio1" value="2"> Input radio 2</label><br>
                     </p>
                     <p>
-                        <label><input type="checkbox" name="form-validation-pseudoclass-checkbox1" value="1" required="">Input check box 1 (required)</label><br>
-                        <label><input type="checkbox" name="form-validation-pseudoclass-checkbox1" value="2">Input check box 2</label><br>
+                        <label><input type="checkbox" name="form-validation-pseudoclass-checkbox1" value="1" required=""> Input check box 1 (required)</label><br>
+                        <label><input type="checkbox" name="form-validation-pseudoclass-checkbox1" value="2"> Input check box 2</label><br>
                     </p>
                     <p>
                         <label for="form-validation-pseudoclass-textarea">Textarea (required)</label><br>
