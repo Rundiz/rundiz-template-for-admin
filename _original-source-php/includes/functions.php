@@ -18,7 +18,7 @@ if (!defined('ROOTDIR')) {
  *                                      'npm' For detect package version and write out instead of using file modify time.
  * @return string Return asset URL and check if file exists then the version querystring will be append, otherwise return the same value as `$assetUrl`.
  */
-function assetUrl($assetUrl, array $options = [])
+function assetUrl(string $assetUrl, array $options = []): string
 {
     if (stripos($assetUrl, '://') !== false || stripos($assetUrl, '//') === 0) {
         // if asset url is full url then no need to get file mtime.
@@ -91,13 +91,39 @@ function assetUrl($assetUrl, array $options = [])
 
 
 /**
+ * Get this repository version that appears in package.json file.
+ * 
+ * @return string Return version number or 'n.n.n' if not found any.
+ * @throws \Exception Throw the exception if JSON error.
+ */
+function getVersion(): string
+{
+    $packageJsonFile = dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'package.json';
+    if (!is_file($packageJsonFile)) {
+        return 'n.n.n';
+    }
+
+    $packageJson = json_decode(file_get_contents($packageJsonFile));
+    if (json_last_error() !== JSON_ERROR_NONE) {
+        unset($packageJson, $packageJsonFile);
+        throw new \Exception(json_last_error_msg());
+    }
+
+    if (isset($packageJson->version) && is_string($packageJson->version)) {
+        return $packageJson->version;
+    }
+    return 'n.n.n';
+}// getVersion
+
+
+/**
  * Generate indent by 4 spaces per 1 indent.
  * 
- * @param integer $number Number of total indent.
- * @param boolean $return Set to false will be echo out, true will be return.
- * @return string If set to true then it will be return spaces indent, otherwise will be return null.
+ * @param int $number Number of total indent.
+ * @param bool $return Set to false will be echo out, true will be return.
+ * @return null|string If set `$return` to `true` then it will be return spaces indent, otherwise will be return `null`.
  */
-function indent($number = 1, $return = true)
+function indent(int $number = 1, bool $return = true)
 {
     $output = str_repeat('    ', $number);
 
@@ -117,9 +143,10 @@ function indent($number = 1, $return = true)
  * Render breadcrumb HTML.
  * 
  * @param array $breadcrumb The breadcrumb data. Example: array('/path/to/page1' => 'page1', '/path/to/page2' => 'page2');
+ * @param int $indent The indent number.
  * @return string Return generated breadcrumb HTML
  */
-function renderBreadcrumb(array $breadcrumb, int $indent = 1)
+function renderBreadcrumb(array $breadcrumb, int $indent = 1): string
 {
     $output = '';
 

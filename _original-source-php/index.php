@@ -63,7 +63,7 @@ $dummyData = '[{"id":1,"name":"Gwendolyn Uphill","address":"282 Springview Stree
                                 <p><abbr title="Rundiz template for admin">RDTA</abbr> support modern browsers such as Firefox, Google Chrome, Microsoft Edge, Opera, Safari, Vivaldi in all OS.</p>
                                 <p>Almost all element was reset the design to display the same way cross browsers and yes it does <a href="http://www.outlinenone.com/" target="outlinenone_com">support accessibility</a>.</p>
                                 <hr>
-                                <p>Check for the last update or fork me on <a href="https://github.com/Rundiz/rundiz-template-for-admin" target="rdta_on_github">Github</a></p>
+                                <p>Check for the last update or fork me on <a href="https://github.com/Rundiz/rundiz-template-for-admin" target="rdta_on_github">GitHub</a></p>
                             </div>
                         </div><!--.column-->
 
