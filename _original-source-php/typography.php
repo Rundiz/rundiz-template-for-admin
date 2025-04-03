@@ -141,7 +141,7 @@ $title = 'Typography & reset';
 
             <footer>
                 <p>
-                    By <a href="http://rundiz.com">rundiz.com</a>
+                    By <a href="https://rundiz.com">rundiz.com</a>
                     | <a href="credits.html">Credits.</a>
                 </p>
             </footer>

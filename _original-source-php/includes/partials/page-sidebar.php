@@ -13,7 +13,6 @@
                             <ul>
                                 <li class="sub-menu-heading"><a>Typography &amp; getting started</a></li>
                                 <li><a href="typography.html">Typography &amp; reset</a></li>
-                                <li><a href="basic-layout.html">Basic layout (getting started)</a></li>
                                 <li class="divider"></li>
                                 <li class="sub-menu-heading"><a>More components</a></li>
                                 <li><a href="accordion.html">Accordion</a></li>
@@ -36,6 +35,7 @@
                         </li>
                         <li><a href="#" onclick="return false;" title="Examples"><i class="sidebar-icon fa-solid fa-laptop-code"></i> <span class="rd-sidebar-menu-text">Examples</span></a>
                             <ul>
+                                <li><a href="basic-layout.html">Basic layout (getting started)</a></li>
                                 <li><a href="example-login.html">Login page</a></li>
                                 <li><a href="example-logout.html">Logout page</a></li>
                             </ul>
