@@ -46,9 +46,9 @@ include 'includes/html-head.php';
                     <h3>Source</h3>
                     <pre class="preview-source" data-target-src=".code-sample-tabs-sample1" data-target-src-remove-first-space="20"></pre>
                     <p>To make tabs work, it must be manually activate once document loaded.</p>
-                    <pre>document.addEventListener('DOMContentLoaded', function() {
+                    <pre><code class="language-js">document.addEventListener('DOMContentLoaded', function() {
     RDTATabs.init('.tabs');
-});</pre>
+});</code></pre>
                     <h4>Using <code>&lt;ol&gt;</code></h4>
                     <div class="tabs">
                         <ol>
@@ -121,7 +121,7 @@ include 'includes/html-head.php';
                         </div>
                         <div id="tabs-manual1_2" class="rd-tabs-content">
                             <p>This tab is set as active via JS option <code>activeTabs: 1</code>. The tab number start from 0.</p>
-                            <pre>RDTATabs.init('.my-custom-tabs1', {activeTabs: 1});</pre>
+                            <pre><code class="language-js">RDTATabs.init('.my-custom-tabs1', {activeTabs: 1});</code></pre>
                         </div>
                         <div id="tabs-manual1_3" class="rd-tabs-content">
                             <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
@@ -148,7 +148,7 @@ include 'includes/html-head.php';
                             <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
                         </div>
                     </div>
-                    <pre>RDTATabs.init('#rdta-tabs-rememberlasttab', {rememberLastTab: true});</pre>
+                    <pre><code class="language-js">RDTATabs.init('#rdta-tabs-rememberlasttab', {rememberLastTab: true});</code></pre>
                     <h3>Ajax</h3>
                     <div class="tabs code-sample-tabs-ajax">
                         <ul>
@@ -214,7 +214,7 @@ include 'includes/html-head.php';
                     <h4>Source</h4>
                     <pre class="preview-source" data-target-src=".code-sample-tabs-insidetabs" data-target-src-remove-first-space="20"></pre>
                     <p>Activate tabs using specific id.</p>
-                    <pre>RDTATabs.init('#titOuterTabs');</pre>
+                    <pre><code class="language-js">RDTATabs.init('#titOuterTabs');</code></pre>
                     <h3>Events</h3>
                     <p>RDTA tabs have few events for hooking.</p>
                     <table class="rd-datatable">

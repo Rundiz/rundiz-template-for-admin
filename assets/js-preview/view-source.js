@@ -51,23 +51,6 @@ class ViewSource {
 
 
     /**
-     * Escape HTML
-     * 
-     * @link https://stackoverflow.com/a/6234804/128761 Original source code.
-     * @param {string} unsafe HTML string
-     * @returns {unresolved}
-     */
-    #escapeHTML(unsafe) {
-        return unsafe
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
-    }// escapeHTML
-
-
-    /**
      * Check if preview source placeholder is for selected target only or not.
      * 
      * @returns {Boolean} Return `true` if it is for selected target only, `false` for otherwise.
@@ -133,46 +116,78 @@ class ViewSource {
                 + '>';
 
             previewE.insertAdjacentHTML('beforebegin', '<h3>HTML source</h3>');
-            previewE.insertAdjacentHTML('beforeend', this.#escapeHTML(htmlDoctype) + "\n");
-            previewE.insertAdjacentHTML('beforeend', this.#escapeHTML(this.#beautifyHTML(this.htmlDoc.documentElement.outerHTML)));
-        }
+            previewE.insertAdjacentHTML('beforeend', this.escapeHTML(htmlDoctype) + "\n");
+            previewE.insertAdjacentHTML('beforeend', this.escapeHTML(this.#beautifyHTML(this.htmlDoc.documentElement.outerHTML)));
+
+            // wrap content inside `<pre>..</pre>` with `<code>..</code>`.
+            const previewHTML = previewE.innerHTML;
+            const wrapPreviewHTML = '<code class="language-html">' + previewHTML + '</code>';
+            previewE.innerHTML = wrapPreviewHTML;
+        }// endif;
     }// renderPreview
 
 
     /**
      * Setup HTML DOM document object to `htmlDoc` property.
      * 
+     * @async
      * @returns {undefined}
      */
-    #setupHTMLDoc() {
+    async #setupHTMLDoc() {
         if (this.#isPreviewForTarget()) {
             this.viewTargetSourceObj.setupHTMLDoc();
         } else {
-            this.htmlDoc = document.cloneNode(true);
+            // old method, use `document.clodeNode()` but may cause copy altered HTML by other JS such as Smart menus.
+            //this.htmlDoc = document.cloneNode(true);
+            // new method, use AJAX, XMLHTTP, `fetch()` to retrieve the whole current page again without altered by JS then parse to DOM.
+            const response = await fetch(document.location.href);
+            const data = await response.text();
+            const parser = new DOMParser();
+            this.htmlDoc = parser.parseFromString(data, 'text/html');
         }
     }// setupHTMLDoc
 
 
     /**
+     * Escape HTML
+     * 
+     * @link https://stackoverflow.com/a/6234804/128761 Original source code.
+     * @param {string} unsafe HTML string
+     * @returns {unresolved}
+     */
+    escapeHTML(unsafe) {
+        return unsafe
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }// escapeHTML
+
+
+    /**
      * Initialize the class.
      */
-    init() {
-        if (!document.querySelector(this.previewSrcPlaceholderSelector)) {
-            // if there is no preview source placeholder on this page.
-            // no need to work here.
-            return ;
+    async init() {
+        if (document.querySelector(this.previewSrcPlaceholderSelector)) {
+            // if there is preview source placeholder on this page.
+            // otherwise no need to work here.
+
+            this.viewTargetSourceObj = new ViewTargetSource({
+                'excludePreviewSelector': this.excludePreviewSelector,
+                'previewSrcPlaceholderSelector': this.previewSrcPlaceholderSelector,
+                'viewSourceClass': this,
+            });
+
+            await this.#setupHTMLDoc();
+
+            this.#removeExcludePreview();
+
+            this.#renderPreview();
         }
 
-        this.viewTargetSourceObj = new ViewTargetSource({
-            'excludePreviewSelector': this.excludePreviewSelector,
-            'previewSrcPlaceholderSelector': this.previewSrcPlaceholderSelector,
-        });
-
-        this.#setupHTMLDoc();
-
-        this.#removeExcludePreview();
-
-        this.#renderPreview();
+        // call Prism.js to highlight the code.
+        Prism.highlightAll();
     }// init
 
 

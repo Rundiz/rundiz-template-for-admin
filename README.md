@@ -9,7 +9,7 @@
 
 Rundiz template for admin is the HTML template and CSS, JS set for admin page layout. It also come with essential components that administrator application have to use.
 
-<abbr title="Rundiz template for admin">RDTA</abbr> support modern browsers such as Firefox, Google Chrome, Microsoft Edge, Opera, Safari, Vivaldi in all OS.
+<abbr title="Rundiz template for admin">RDTA</abbr> support modern browsers such as Firefox, Google Chrome, Microsoft Edge, Opera, Vivaldi.
 
 Almost all element was reset the design to display the same way cross browsers and yes it does [support accessibility](http://www.outlinenone.com/).
 

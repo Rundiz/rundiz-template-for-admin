@@ -18,7 +18,9 @@
 
         <link rel="stylesheet" href="assets/css/rdta-demo-pages.css?v=5c5a3502c8c15fba309fc170b49e4583">
 
-        <link class="exclude-preview" rel="stylesheet" href="assets/css-preview/view-source.css?v=856c7087abf9e79c34c08320f05131ce"><!-- preview source css excluded. --> 
+        <link class="exclude-preview" rel="stylesheet" href="assets/css-preview/prism.css?v=de20a76f891181fd461354e782db7a0f">
+        <link class="exclude-preview" rel="stylesheet" href="assets/css-preview/view-source.css?v=856c7087abf9e79c34c08320f05131ce">
+         
     </head>
     <body>
         <header class="rd-navbar">
@@ -188,8 +190,8 @@
                 I'm Normal text<br>
                 I'm <abbr title="Abbreviations">abbr</abbr><br>
                 I'm <b>b (bold)</b><br>
-                I'm <bdi dir="rtl">اَلأَعْشَى bdi</bdi> (bidirectional)<br>
-                I'm <bdo dir="rtl"> bdo</bdo> (bdo &mdash; it's just right to left)<br>
+                I'm bdi (bidirectional). <bdi>اَلأَعْشَى </bdi>: 1st place. Without bdi. اَلأَعْشَى  : 1st place.<br>
+                I'm bdo (bidirectional text override). <bdo dir="rtl">I'm written in left to right.</bdo><br>
                 I'm <cite>cite</cite><br>
                 I'm <data value="333">data</data><br>
                 I'm <del>del</del><br>
@@ -219,7 +221,7 @@
 
             <h2 id="typography-links">Links</h2>
             <p>These are links: <a id="typo-never-visited-link" href="?never-visited" onclick="return false;">never visited link</a>, <a href=".">visited link</a>. Mouse hover to see effects.</p>
-            <script type="application/javascript">
+            <script>
                 let linkElement = document.getElementById('typo-never-visited-link');
                 console.log(linkElement);
                 linkElement.href += '&random=' + encodeURIComponent(Math.random());
@@ -550,7 +552,8 @@
 
         <script src="assets/js/rdta/rundiz-template-admin.js?v=f6d02fbc2032f12fa38494c92a2b124f"></script>
 
-        <script class="exclude-preview" src="assets/js-preview/view-target-source.js?v=5d8e14607272d449d23384736d9e83c0"></script>
-        <script class="exclude-preview" src="assets/js-preview/view-source.js?v=8921f78eb4b62617fff7cd24b9329802"></script> 
+        <script class="exclude-preview" src="assets/js-preview/prism.js?v=0718daece78cc150461b32c0ceab4fab" data-manual></script>
+        <script class="exclude-preview" src="assets/js-preview/view-target-source.js?v=91add7008c92139d32aa463ab2985274"></script>
+        <script class="exclude-preview" src="assets/js-preview/view-source.js?v=4577261b27e885bed38e7627289e1b29"></script> 
     </body>
 </html>

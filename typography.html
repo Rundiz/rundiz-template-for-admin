@@ -171,8 +171,8 @@
                 I'm Normal text<br>
                 I'm <abbr title="Abbreviations">abbr</abbr><br>
                 I'm <b>b (bold)</b><br>
-                I'm <bdi dir="rtl">اَلأَعْشَى bdi</bdi> (bidirectional)<br>
-                I'm <bdo dir="rtl"> bdo</bdo> (bdo &mdash; it's just right to left)<br>
+                I'm bdi (bidirectional). <bdi>اَلأَعْشَى </bdi>: 1st place. Without bdi. اَلأَعْشَى  : 1st place.<br>
+                I'm bdo (bidirectional text override). <bdo dir="rtl">I'm written in left to right.</bdo><br>
                 I'm <cite>cite</cite><br>
                 I'm <data value="333">data</data><br>
                 I'm <del>del</del><br>
@@ -202,7 +202,7 @@
 
             <h2 id="typography-links">Links</h2>
             <p>These are links: <a id="typo-never-visited-link" href="?never-visited" onclick="return false;">never visited link</a>, <a href=".">visited link</a>. Mouse hover to see effects.</p>
-            <script type="application/javascript">
+            <script>
                 let linkElement = document.getElementById('typo-never-visited-link');
                 console.log(linkElement);
                 linkElement.href += '&random=' + encodeURIComponent(Math.random());

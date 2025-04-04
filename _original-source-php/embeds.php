@@ -43,8 +43,7 @@ $ratios = [
     [1, 1],
 ];
 ?>
-                    <pre>
-<?php
+                    <pre><code class="language-html"><?php
 foreach ($ratios as $eachRatio) {                    
 ?>
 &lt;!-- <?php echo $eachRatio[0]; ?>:<?php echo $eachRatio[1]; ?> --&gt;
@@ -55,7 +54,7 @@ foreach ($ratios as $eachRatio) {
 <?php 
 }// endforeach;
 unset($eachRatio, $ratios);
-?></pre>
+?></code></pre>
                     <h3>Video element</h3>
                     <div class="rd-embed-responsive rd-embed-responsive16by9 code-sample-embed-videoelement">
                         <video class="rd-embed-responsive-item" controls height="1080" width="1920"></video>

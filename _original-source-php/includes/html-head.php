@@ -23,4 +23,6 @@
 
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta-demo-pages.css'); ?>">
 
-        <link class="exclude-preview" rel="stylesheet" href="<?php echo assetUrl('assets/css-preview/view-source.css'); ?>"><!-- preview source css excluded. -->
+        <link class="exclude-preview" rel="stylesheet" href="<?php echo assetUrl('assets/css-preview/prism.css'); ?>">
+        <link class="exclude-preview" rel="stylesheet" href="<?php echo assetUrl('assets/css-preview/view-source.css'); ?>">
+        

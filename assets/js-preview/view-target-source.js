@@ -32,6 +32,12 @@ class ViewTargetSource {
 
 
     /**
+     * @type ViewSource The `ViewSource` class.
+     */
+    #viewSourceClass = {};
+
+
+    /**
      * @type object Contain multiple sources. The key or property is the selector.
      */
     sources = {};
@@ -49,6 +55,9 @@ class ViewTargetSource {
         }
         if (options.excludePreviewSelector) {
             this.excludePreviewSelector = options.excludePreviewSelector
+        }
+        if (options.viewSourceClass) {
+            this.#viewSourceClass = options.viewSourceClass;
         }
     }// constructor
 
@@ -125,7 +134,17 @@ class ViewTargetSource {
                     sourceHTMLString = sourceHTMLString.replace(newRegexp, ``);
                 }
 
-                previewPlaceholderE.innerText = sourceHTMLString;
+                sourceHTMLString = this.#viewSourceClass.escapeHTML(sourceHTMLString);
+
+                // wrap content inside `<pre>..</pre>` with `<code>..</code>`.
+                const previewHTML = previewPlaceholderE.innerHTML;
+                let sourceLanguage = previewPlaceholderE.dataset.sourceLanguage;
+                if (typeof(sourceLanguage) !== 'string' || '' === sourceLanguage) {
+                    sourceLanguage = 'html';
+                }
+                sourceHTMLString = '<code class="language-' + sourceLanguage + '">' + sourceHTMLString + '</code>';
+
+                previewPlaceholderE.innerHTML = sourceHTMLString;
             }
         }// endfor;
     }// renderPreview

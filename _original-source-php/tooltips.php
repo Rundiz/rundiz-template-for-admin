@@ -24,9 +24,9 @@ include 'includes/html-head.php';
                         <strong>assets/js/rdta/components/rdta-tooltips.js</strong>
                     </p>
                     <p>Then enable its functional.</p>
-                    <pre>document.addEventListener('DOMContentLoaded', function() {
+                    <pre><code class="language-js">document.addEventListener('DOMContentLoaded', function() {
     let rdtaTooltips = RDTATooltips.init('[data-toggle="tooltip"]');
-});</pre>
+});</code></pre>
                     <p>And you can get latest tippy instance or all instances with <code>rdtaTooltips.getInstance()</code> or <code>rdtaTooltips.getInstances()</code> method. Open browser console to see demonstration.</p>
                     <hr>
 

@@ -10,5 +10,6 @@
 
         <script src="<?php echo assetUrl('assets/js/rdta/rundiz-template-admin.js'); ?>"></script>
 
+        <script class="exclude-preview" src="<?php echo assetUrl('assets/js-preview/prism.js'); ?>" data-manual></script>
         <script class="exclude-preview" src="<?php echo assetUrl('assets/js-preview/view-target-source.js'); ?>"></script>
         <script class="exclude-preview" src="<?php echo assetUrl('assets/js-preview/view-source.js'); ?>"></script>

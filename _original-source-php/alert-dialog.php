@@ -29,25 +29,25 @@ include 'includes/html-head.php';
 
                     <h2>Examples</h2>
                     <p>Normal JS alert box. <a href="#" onclick="alert('Hello, this is normal JS alert.'); return false;">Show normal JS alert.</a></p>
-                    <pre><?php echo htmlspecialchars("alert('Hello, this is normal JS alert.');", ENT_QUOTES); ?></pre>
+                    <pre><code class="language-js"><?php echo htmlspecialchars("alert('Hello, this is normal JS alert.');", ENT_QUOTES); ?></code></pre>
                     <?php
                     $alertTypes = ['info', 'danger', 'warning', 'success'];
                     foreach ($alertTypes as $alertType) {
                     ?> 
                     <p><?php echo ucfirst($alertType); ?> alert dialog. <a href="#" onclick="rdtaAlertBoxShowAlert('<?php echo $alertType; ?>'); return false;">Show me.</a></p>
-                    <pre><?php echo htmlspecialchars(
+                    <pre><code class="language-js"><?php echo htmlspecialchars(
 "RDTAAlertDialog.alert({
     'type': '$alertType',
     'html': '<p>Hello, this is RDTA alert dialog. You can use <strong>HTML</strong> here.</p>',
 });"
-                    , ENT_QUOTES); ?></pre>
+                    , ENT_QUOTES); ?></code></pre>
                     <?php 
                     }// endforeach;
                     unset($alertType, $alertTypes);
                     ?> 
                     <p>Text alert dialog. <a href="#" onclick="RDTAAlertDialog.alert({'type': 'info', 'text': 'Alert that contain text only.'}); return false;">Show me.</a></p>
                     <p>If both <code>text</code> &amp <code>html</code> were set, it will be use <code>text</code> by default.</p>
-                    <pre><?php echo htmlspecialchars("RDTAAlertDialog.alert({'type': 'info', 'text': 'Alert that contain text only.'});", ENT_QUOTES); ?></pre>
+                    <pre><code class="language-js"><?php echo htmlspecialchars("RDTAAlertDialog.alert({'type': 'info', 'text': 'Alert that contain text only.'});", ENT_QUOTES); ?></code></pre>
 
                     <h3>Alert dialog on modal dialog</h3>
                     <div class="rd-block-level-margin-bottom">

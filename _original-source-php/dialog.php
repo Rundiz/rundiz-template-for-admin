@@ -24,9 +24,9 @@ include 'includes/html-head.php';
                         <strong>assets/js/rdta/components/rdta-dialog.js</strong>
                     </p>
                     <p>Then enable its functional.</p>
-                    <pre>document.addEventListener('DOMContentLoaded', function() {
+                    <pre><code class="language-js">document.addEventListener('DOMContentLoaded', function() {
     RDTADialog.init();
-});</pre>
+});</code></pre>
                     <hr>
 
                     <h2>Examples</h2>
