@@ -1,0 +1,25 @@
+/* Auto generate by Sass. */
+.rd-button {
+  --rdta-button-disabled-styled-text-color: #fff;
+  --rdta-button-styled-text-color: #fff;
+  --rdta-button-danger-disabled-border-color: hsl(from var(--rdta-background-danger-disabled-color) h s calc(l - 7));
+  --rdta-button-danger-disabled-3d-edge-color: hsl(from var(--rdta-background-danger-disabled-color) h s calc(l - 5));
+  --rdta-button-danger-border-color: hsl(from var(--rdta-text-danger-color) h s calc(l - 7));
+  --rdta-button-danger-3d-edge-color: hsl(from var(--rdta-text-danger-color) h s calc(l - 5));
+  --rdta-button-info-disabled-border-color: hsl(from var(--rdta-background-info-disabled-color) h s calc(l - 7));
+  --rdta-button-info-disabled-3d-edge-color: hsl(from var(--rdta-background-info-disabled-color) h s calc(l - 5));
+  --rdta-button-info-border-color: hsl(from var(--rdta-text-info-color) h s calc(l - 7));
+  --rdta-button-info-3d-edge-color: hsl(from var(--rdta-text-info-color) h s calc(l - 5));
+  --rdta-button-primary-disabled-border-color: hsl(from var(--rdta-background-primary-disabled-color) h s calc(l - 7));
+  --rdta-button-primary-disabled-3d-edge-color: hsl(from var(--rdta-background-primary-disabled-color) h s calc(l - 5));
+  --rdta-button-primary-border-color: hsl(from var(--rdta-text-primary-color) h s calc(l - 7));
+  --rdta-button-primary-3d-edge-color: hsl(from var(--rdta-text-primary-color) h s calc(l - 5));
+  --rdta-button-success-disabled-border-color: hsl(from var(--rdta-background-success-disabled-color) h s calc(l - 7));
+  --rdta-button-success-disabled-3d-edge-color: hsl(from var(--rdta-background-success-disabled-color) h s calc(l - 5));
+  --rdta-button-success-border-color: hsl(from var(--rdta-text-success-color) h s calc(l - 7));
+  --rdta-button-success-3d-edge-color: hsl(from var(--rdta-text-success-color) h s calc(l - 5));
+  --rdta-button-warning-disabled-border-color: hsl(from var(--rdta-background-warning-disabled-color) h s calc(l - 7));
+  --rdta-button-warning-disabled-3d-edge-color: hsl(from var(--rdta-background-warning-disabled-color) h s calc(l - 5));
+  --rdta-button-warning-border-color: hsl(from var(--rdta-text-warning-color) h s calc(l - 7));
+  --rdta-button-warning-3d-edge-color: hsl(from var(--rdta-text-warning-color) h s calc(l - 5));
+}

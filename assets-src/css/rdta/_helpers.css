@@ -1,0 +1,180 @@
+/* Auto generate by Sass. */
+/*!
+* ----------------------------------------------------------------------------------------------
+* _helper.scss
+* ----------------------------------------------------------------------------------------------
+*/
+.rd-block-level-margin-bottom {
+  margin-bottom: var(--rdta-block-element-margin-vertical);
+}
+
+.rd-content-level-margin-bottom {
+  margin-bottom: var(--rdta-content-block-element-margin-vertical);
+}
+
+.clearfix {
+  clear: both;
+}
+
+.rd-hidden {
+  display: none !important;
+}
+
+/* animation helper */
+.rd-animation.fade {
+  transition: opacity 300ms;
+}
+
+.rd-animation.fade-out {
+  opacity: 0;
+}
+
+/* end animation helper */
+/* responsive visibility helper */
+@media (min-width: 0) and (max-width: 767px) {
+  .hidden-only-xs,
+  .hidden-under-sm,
+  .hidden-under-equal-xs {
+    display: none !important;
+  }
+}
+@media (max-width: 767px) {
+  .visible-only-sm,
+  .visible-over-equal-sm,
+  .visible-over-xs {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 999px) {
+  .hidden-only-sm {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .hidden-over-equal-sm,
+  .hidden-over-xs,
+  .visible-only-xs,
+  .visible-under-equal-xs,
+  .visible-under-sm {
+    display: none !important;
+  }
+}
+@media (max-width: 999px) {
+  .hidden-under-md,
+  .hidden-under-equal-sm,
+  .visible-only-md,
+  .visible-over-equal-md,
+  .visible-over-sm {
+    display: none !important;
+  }
+}
+@media (min-width: 1000px) and (max-width: 1199px) {
+  .hidden-only-md {
+    display: none !important;
+  }
+}
+@media (min-width: 1000px) {
+  .hidden-over-equal-md,
+  .hidden-over-sm,
+  .visible-only-sm,
+  .visible-under-equal-sm,
+  .visible-under-md {
+    display: none !important;
+  }
+}
+@media (max-width: 1199px) {
+  .hidden-under-lg,
+  .hidden-under-equal-md,
+  .visible-only-lg,
+  .visible-over-equal-lg,
+  .visible-over-md {
+    display: none !important;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .hidden-only-lg {
+    display: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  .hidden-over-equal-lg,
+  .hidden-over-md,
+  .visible-only-md,
+  .visible-under-equal-md,
+  .visible-under-lg {
+    display: none !important;
+  }
+}
+@media (max-width: 1399px) {
+  .hidden-under-xl,
+  .hidden-under-equal-lg,
+  .visible-only-xl,
+  .visible-over-equal-xl,
+  .visible-over-lg {
+    display: none !important;
+  }
+}
+@media (min-width: 1400px) {
+  .hidden-only-xl,
+  .hidden-over-equal-xl,
+  .hidden-over-lg,
+  .visible-only-lg,
+  .visible-under-equal-lg,
+  .visible-under-xl {
+    display: none !important;
+  }
+}
+.hidden-over-equal-xs,
+.hidden-over-xl,
+.hidden-under-equal-xl,
+.visible-over-xl,
+.visible-under-xs {
+  display: none !important;
+}
+
+/* end responsive visibility helper */
+/* display sizes number */
+.rd-helpers-screen-size-xs-max::after {
+  content: "767px";
+}
+
+.rd-helpers-screen-size-sm-min::before {
+  content: "768px";
+}
+
+.rd-helpers-screen-size-sm-max::before {
+  content: "999px";
+}
+
+.rd-helpers-screen-size-md-min::before {
+  content: "1000px";
+}
+
+.rd-helpers-screen-size-md-max::before {
+  content: "1199px";
+}
+
+.rd-helpers-screen-size-lg-min::before {
+  content: "1200px";
+}
+
+.rd-helpers-screen-size-lg-max::before {
+  content: "1399px";
+}
+
+.rd-helpers-screen-size-xl-min::after {
+  content: "1400px";
+}
+
+/* end display sizes number */
+.screenreader-only,
+.screen-reader-only,
+.sr-only {
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

@@ -1,0 +1,15 @@
+/* Auto generate by Sass. */
+.rd-navbar,
+.rd-sidebar,
+.rd-sidebar-back,
+.sm-rdta {
+  --rdta-navbar-height: 3.125rem;
+  --rdta-navbar-z-index: 4;
+  --rdta-navbar-sidebar-background-color: #222;
+  --rdta-sidebar-transition-seconds: 0s;
+  --rdta-sidebar-z-index: 2;
+}
+
+.sm-rdta {
+  --sm-rdta-submenu-item-wrapper-font-size: 0.875rem;
+}

@@ -1,0 +1,54 @@
+/* Auto generate by Sass. */
+// CSS 3 variables for Rundiz Template for Admin
+
+
+@use '.global-vars' as *;
+
+
+:root {
+    --rdta-background-danger-disabled-color: #{$danger-disabled-background-color};
+    --rdta-background-danger-hover-color: #{$danger-background-hover-color};
+    --rdta-background-danger-color: #{$danger-background-color};
+
+    --rdta-background-info-disabled-color: #{$info-disabled-background-color};
+    --rdta-background-info-hover-color: #{$info-background-hover-color};
+    --rdta-background-info-color: #{$info-background-color};
+
+    --rdta-background-primary-disabled-color: #{$primary-disabled-background-color};
+    --rdta-background-primary-hover-color: #{$primary-background-hover-color};
+    --rdta-background-primary-color: #{$primary-color};
+
+    --rdta-background-success-disabled-color: #{$success-disabled-background-color};
+    --rdta-background-success-hover-color: #{$success-background-hover-color};
+    --rdta-background-success-color: #{$success-background-color};
+
+    --rdta-background-warning-disabled-color: #{$warning-disabled-background-color};
+    --rdta-background-warning-hover-color: #{$warning-background-hover-color};
+    --rdta-background-warning-color: #{$warning-background-color};
+
+
+    --rdta-block-element-margin-horizontal: #{$block-element-margin-horizontal};
+    --rdta-block-element-margin-vertical: #{$block-element-margin-vertical};
+    --rdta-block-element-padding-horizontal: #{$block-element-padding-horizontal};
+    --rdta-block-element-padding-vertical: #{$block-element-padding-vertical};
+
+    --rdta-content-block-element-margin-vertical: calc(var(--rdta-block-element-margin-vertical) / 2);
+
+
+    --rdta-navbar-height_mobilescreen: #{$navbar-height_mobilescreen};
+
+    --rdta-sidebar-collapsed-width: #{$sidebar-collapsed-width};
+    --rdta-sidebar-expanded-width: #{$sidebar-expanded-width};
+
+
+    --rdta-text-danger-color: #{$danger-color};
+    --rdta-text-info-color: #{$info-color};
+    --rdta-text-primary-color: #{$primary-color};
+    --rdta-text-success-color: #{$success-color};
+    --rdta-text-warning-color: #{$warning-color};
+    --rdta-text-white-color: #{$white-color};
+
+
+    --rdta-sm-min-width: #{$sm-min-width};
+    --rdta-md-min-width: #{$md-min-width};
+}

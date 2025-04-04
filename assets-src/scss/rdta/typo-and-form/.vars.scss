@@ -1,0 +1,38 @@
+// Typography and form variables.
+
+
+@use 'sass:math';
+@use '../../global-vars/.global-vars' as *;
+
+
+// html, body background color.
+$page-background-color: #fff !default;
+$page-text-color: #333 !default;
+
+$text-disabled-color: #999 !default;
+$text-link-color: #1280EF !default;
+
+$block-background-color: #eee !default;
+$block-border-color: #ddd !default;
+// common use variables in this component.
+// margin vertical (top & bottom) for content block level element.
+// because this is block level element for content so its margin unit should be rem. 
+// if it is em then when browser based font size was changed to bigger and these elements are in parent element that also has bigger font, its result will be too much margin space.
+// all variables below can be access from CSS 3 variables in typo-and-form/_css-variables.scss file.
+$content-block-element-margin-vertical: math.div($block-element-margin-vertical, 2) !default;
+
+// focus colors.
+$basic-focus-color: rgba(153, 153,153, 0.35) !default;
+$form-focus-color: rgba(255, 182, 0, 0.35) !default;
+
+$form-invalid-border-color: #bc0000 !default;
+
+$button-3d-edge-color: rgba(0, 0, 0, 0.1);
+$button-3d-height: 2px !default;
+$button-3d-pressed-height: 1px !default;
+
+// table
+$table-cell-padding: 0.313em;
+
+// <input type="range">
+$input-range-thumb-border-color: #aaa !default;

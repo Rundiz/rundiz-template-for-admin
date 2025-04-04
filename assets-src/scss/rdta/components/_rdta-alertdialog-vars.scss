@@ -1,0 +1,14 @@
+/* Auto generate by Sass. */
+// CSS 3 variables for Rundiz Template for rdta-alertdialog.scss
+
+
+@use '../../global-vars/.global-vars' as *;
+
+
+.rd-alertdialog {
+    --rdta-alert-dialog-normal-breakpoint: #{$dialog-normal-breakpoint};
+}
+
+.rd-alertdialog-modal {
+    --rdta-alert-dialog-backdrop-z-index: #{$z-index-alert-dialog-backdrop};
+}

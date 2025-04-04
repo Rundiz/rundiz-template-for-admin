@@ -1,0 +1,57 @@
+/*!
+* ----------------------------------------------------------------------------------------------
+* _form-input-file.css
+* ----------------------------------------------------------------------------------------------
+* form > input[type="file"][class="rd-inputfile"]
+*
+* Reference:
+* https://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/
+*/
+
+
+.rd-inputfile {
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+}
+
+.rd-inputfile:active,
+.rd-inputfile:focus {
+    outline: 3px solid var(--rdta-tpf-form-focus-color);
+}
+
+.rd-inputfile.rd-input-invalid {
+    border-color: var(--rdta-tpf-form-invalid-border-color) !important;
+}
+
+.rd-inputfile input[type=file] {
+    display: block;
+    filter: alpha(opacity=0);
+    height: 100%;
+    left: 0;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+
+.rd-input-files-queue {
+    vertical-align: middle;
+    white-space: normal;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.rd-input-files-queue > * {
+    vertical-align: middle;
+}
+
+.rd-input-files-queue > button,
+.rd-input-files-queue > input[type=button],
+.rd-input-files-queue > .rd-button {
+    margin-top: calc(var(--rdta-tpf-button-3d-height) * -1);
+    position: relative;
+}

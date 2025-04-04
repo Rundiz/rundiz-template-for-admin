@@ -1,0 +1,364 @@
+/*!
+* ----------------------------------------------------------------------------------------------
+* _typography.css
+* ----------------------------------------------------------------------------------------------
+* based html & typography
+*/
+
+
+html {
+    background-color: var(--rdta-tpf-page-background-color);
+    cursor: auto;
+    font-size: 107%;
+}
+@media (min-width: 768px) {
+    /* use breakpoint `$sm-min-width` */
+    html {
+        font-size: 100%;
+    }
+}
+
+
+body {
+    color: var(--rdta-tpf-page-text-color);
+    cursor: auto;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid sans", "Helvetica Neue", "Helvetica", "Tahoma", "Arial", sans-serif;
+    font-size: 100%;
+    font-weight: normal;
+    line-height: 1.5;
+    padding: 0;
+}
+
+
+a {
+    color: var(--rdta-tpf-text-link-color);
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);/* remove on touch and white blue background color appears */
+}
+a:active, 
+a:focus, 
+a:hover {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+a:visited {
+    color: hsl(from var(--rdta-tpf-text-link-color) h s calc(l - 15));
+}
+a:focus, 
+a:hover {
+    color: hsl(from var(--rdta-tpf-text-link-color) h s calc(l + 15));
+}
+
+
+abbr {
+    cursor: help;
+}
+
+
+blockquote {
+    border-left: 5px solid var(--rdta-tpf-block-border-color);
+    border-right: 0;
+    margin: 0 0 var(--rdta-tpf-content-block-element-margin-vertical) 0;
+    padding: 0 0 0 0.625em;
+}
+
+
+code, 
+samp, 
+pre, 
+kbd {
+    background-color: #f1f1f1;
+    color: #555;
+    font-family: "Consolas", "Lucida Console", "DejaVu Sans Mono", "Liberation Mono", "Courier New", monospace, sans-serif;
+    padding: 0.125em 0.188em;
+}
+
+
+details {
+    margin: 0 0 var(--rdta-tpf-content-block-element-margin-vertical) 0;
+}
+details details {
+    margin-left: 1.111em;
+    margin-right: 0;
+}
+details summary {
+    cursor: pointer;
+}
+
+
+dl {
+    margin: 0 0 var(--rdta-tpf-content-block-element-margin-vertical) 0;
+}
+dl dt {
+    margin: 0;
+}
+dl dd {
+    margin: 0 0 0 1.111em;
+}
+dl ol,
+dl ul {
+    margin-left: 1.111em;
+}
+
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6, 
+p {
+  margin: 0 0 var(--rdta-tpf-content-block-element-margin-vertical) 0;
+}
+h1 {
+  font-size: 2.44em;
+  font-weight: 400;
+}
+h2 {
+  font-size: 2.05em;
+  font-weight: 400;
+}
+h3 {
+  font-size: 1.5em;
+  font-weight: 400;
+}
+h4 {
+  font-size: 1.27em;
+  font-weight: 400;
+}
+h5 {
+  font-size: 1em;
+  font-weight: 600;
+}
+h6 {
+  font-size: 0.75em;
+  font-weight: 700;
+}
+
+
+hr {
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: 1px solid var(--rdta-tpf-block-border-color);
+    margin: 1.25rem 0;/* must be rem due to h1-h6, p use margin as rem. use this as em will cause a lot different with those elements if parent element use larger or smaller font size. */
+}
+
+
+iframe {
+    border: 1px solid var(--rdta-tpf-block-border-color);
+}
+
+
+img.fluid {
+    height: auto;
+    max-width: 100%;
+}
+
+
+kbd {
+    background-color: #f1f1f1;
+    border: 1px solid var(--rdta-tpf-block-border-color);
+    border-radius: 2px;
+}
+
+
+label {
+    cursor: pointer;
+}
+label [disabled],
+label [readonly] {
+    cursor: not-allowed;
+}
+
+
+/* meter element */
+meter {
+    background-color: var(--rdta-tpf-block-background-color);/* Firefox */
+    background-image: none;/* Firefox */
+    box-shadow: none;
+    display: inline-block;
+    height: 1em;
+    outline: none;
+    width: 11.25em;
+}
+meter:-moz-meter-optimum::-moz-meter-bar {
+    /* Firefox */
+    background-color: #77AA33;
+    background-image: none;
+}
+meter:-moz-meter-sub-optimum::-moz-meter-bar {
+    /* Firefox */
+    background-color: #FFB900;
+    background-image: none;
+}
+meter:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+    /* Firefox */
+    background-color: #D13438;
+    background-image: none;
+}
+meter::-webkit-meter-optimum-value {
+    /* Chrome, Opera, Edge */
+    background-color: #77AA33;
+    background-image: none;
+}
+meter::-webkit-meter-suboptimum-value {
+    /* Chrome, Opera, Edge */
+    background-color: #FFB900;
+    background-image: none;
+}
+meter::-webkit-meter-even-less-good-value {
+    /* Chrome, Opera, Edge */
+    background-color: #D13438;
+    background-image: none;
+}
+meter::-webkit-meter-bar {
+    /* Chrome, Opera, Edge */
+    background-color: var(--rdta-tpf-block-background-color);
+    background-image: none;
+    border: none;/* in Webkit, it has border by default */
+    border-radius: 0;
+    box-shadow: none;
+    height: 1em;
+}
+/* end meter element */
+
+
+pre {
+    margin: 0 0 var(--rdta-tpf-content-block-element-margin-vertical) 0;
+    overflow: auto;
+    padding: 0.625em;
+}
+
+
+/* progress element */
+@keyframes progressbar-novalue-animations {
+    0% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+progress {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--rdta-tpf-block-background-color);
+    border: none;
+    height: 1em;
+    width: 11.25em;
+}
+progress:not([value]) {
+    /* no value attribute */
+    animation: progressbar-novalue-animations 1s linear infinite alternate;
+    background-color: green;/* Edge, IE */
+    box-shadow: 0 1px 1px rgba(50, 250, 50, 0.8);
+    color: green;/* fix progress with no value that have running dots in Edge, IE */
+    opacity: 0.2;
+}
+progress:not([value])::-moz-progress-bar {
+    /* no value attribute for mozilla. */
+    background-color: green;
+}
+progress:not([value])::-webkit-progress-bar {
+    /* no value attribute for webkit. */
+    background-color: green;
+}
+progress::-moz-progress-bar {
+    /* Firefox don't have -moz-progress-value. */
+    background-color: green;
+}
+progress::-ms-fill {
+    background-color: green;
+}
+progress::-webkit-progress-bar {
+    background-color: var(--rdta-tpf-block-background-color);
+}
+progress::-webkit-progress-value {
+    background-color: green;
+}
+/* end progress element */
+
+
+q::after {
+    content: "”";
+}
+q::before {
+    content: "“";
+}
+
+
+samp {
+    background-color: var(--rdta-tpf-block-background-color);
+    border-bottom: 0;
+    border-left: 3px solid var(--rdta-tpf-block-border-color);
+    border-right: 0;
+    border-top: 0;
+}
+
+
+table {
+    border: 1px solid var(--rdta-tpf-block-border-color);
+    margin-bottom: var(--rdta-tpf-content-block-element-margin-vertical);
+}
+table thead th,
+table thead td,
+table tfoot th,
+table tfoot td {
+    background-color: var(--rdta-tpf-block-background-color);
+    font-weight: 600;
+    text-align: left;
+}
+table td, 
+table th {
+    border: 1px solid var(--rdta-tpf-block-border-color);
+    padding-bottom: var(--rdta-tpf-table-cell-padding);
+    padding-left: var(--rdta-tpf-table-cell-padding);
+    padding-right: var(--rdta-tpf-table-cell-padding);
+    padding-top: var(--rdta-tpf-table-cell-padding);
+}
+
+
+/* menu, ul, ol li elements */
+menu, 
+ul, 
+ol {
+    line-height: 1.6;
+    margin: 0 0 var(--rdta-tpf-content-block-element-margin-vertical) 1.211em;
+    padding: 0;
+}
+menu li, 
+ul li, 
+ol li {
+    margin: 0;
+    padding: 0;
+}
+menu li menu,
+menu li ul,
+menu li ol,
+ul li menu,
+ul li ol,
+ul li ul,
+ol li menu,
+ol li ol,
+ol li ul {
+    margin-bottom: 0;
+    margin-left: 1.211em;
+    margin-top: 0;
+}
+ol {
+    list-style: decimal;
+}
+menu, ul {
+    list-style: disc;
+}
+/* end menu, ul, ol li elements */
+
+
+var {
+    border: 1px solid var(--rdta-tpf-block-border-color);
+    padding: 0.063em 0.375em 0.063em 0.188em;
+}

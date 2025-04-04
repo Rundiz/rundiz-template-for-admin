@@ -1,0 +1,145 @@
+/*!
+* ----------------------------------------------------------------------------------------------
+* Rundiz template dialog -- styling dialog elements.
+* ----------------------------------------------------------------------------------------------
+*/
+
+
+@import '_rdta-dialog-vars.css';
+
+
+body.rd-modal-open {
+    overflow: hidden;
+}
+
+.rd-dialog {
+    background-color: #fff;
+    border: 1px solid var(--rdta-tpf-block-border-color);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    position: relative;
+}
+
+@media (min-width: 550px) {
+    /* use `$dialog-normal-breakpoint` in media query */
+    .rd-dialog {
+        max-width: calc(var(--rdta-dialog-normal-breakpoint) - 50px);
+    }
+}
+
+.rd-dialog.hide {
+    display: none;
+}
+
+.rd-dialog.hide.show {
+    display: flex !important;
+}
+
+
+/* dialog sizes */
+@media (min-width: 768px) and (max-width: 999px) {
+    /* use `$sm-min-width` for `min-width`, `$sm-max-width` for `max-width`. */
+    .rd-dialog.rd-dialog-size-large {
+        max-width: calc(var(--rdta-sm-min-width) - 40px);
+    }
+}
+
+@media (min-width: 1000px) {
+    /* use `$md-min-width` in media query */
+    .rd-dialog.rd-dialog-size-large {
+        max-width: calc(var(--rdta-md-min-width) - 40px);
+    }
+}
+
+@media (min-width: 550px) {
+    /* use `$dialog-normal-breakpoint` in media query */
+    .rd-dialog.rd-dialog-size-fullwindow {
+        max-width: calc(100vw - 40px);
+    }
+}
+/* end dialog sizes */
+
+
+.rd-dialog .rd-dialog-body {
+    overflow: auto;
+}
+
+.rd-dialog .rd-dialog-body,
+.rd-dialog .rd-dialog-footer,
+.rd-dialog .rd-dialog-header {
+    padding: 1em;
+}
+
+.rd-dialog .rd-dialog-close {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    margin: 0 0 0 auto;
+}
+
+
+/* dialog header & footer */
+.rd-dialog .rd-dialog-header {
+    display: flex;
+}
+
+.rd-dialog .rd-dialog-footer {
+    border-top: 1px solid var(--rdta-tpf-block-border-color);
+}
+
+.rd-dialog .rd-dialog-header {
+    border-bottom: 1px solid var(--rdta-tpf-block-border-color);
+}
+/* end dialog header & footer */
+
+
+.rd-dialog .rd-dialog-title {
+    margin: 0;
+}
+
+
+/* dialog modal */
+.rd-dialog-modal {
+    background-color: rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+    visibility: hidden;
+    z-index: var(--rdta-dialog-backdrop-z-index);
+}
+
+.rd-dialog-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.rd-dialog-modal .rd-dialog {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    max-height: calc(100vh - var(--rdta-block-element-margin-vertical) * 2);
+    overflow: hidden;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+@media (min-width: 550px) {
+    /* use `$dialog-normal-breakpoint` in media query */
+    .rd-dialog-modal .rd-dialog {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.rd-dialog-modal .rd-dialog-modal-backdrop {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+/* end dialog modal */

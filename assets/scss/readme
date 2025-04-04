@@ -1,9 +1,0 @@
-Do not create folder name that is already exists in assets/css AND contain any files that is not compiled from scss file.
-
-Example:
-There is a folder assets/css/somefolder this folder contain .css file that is manually created.
-Then you don't create folder at assets/scss/somefolder because it will be removed once build via command line.
-
-This case is okay.
-There is a folder assets/css/somefolder/myfolder this folder have only .css files that compiled from scss file or empty folder or folder is not exists.
-Then you can create folder at assets/scss/somefolder/myfolder which is sub folder of somefolder.

@@ -1,0 +1,6 @@
+
+
+.rd-notification-badge {
+    --rdta-badge-basic-background-color: hsl(from var(--rdta-tpf-page-text-color) h s calc(l + 13.5));
+    --rdta-badge-basic-color: var(--rdta-tpf-block-background-color);
+}

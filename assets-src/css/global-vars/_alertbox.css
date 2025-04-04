@@ -1,0 +1,16 @@
+/* Auto generate by Sass. */
+.rd-alertbox {
+  --rdta-alert-danger-active: hsl(from var(--rdta-text-danger-color) h s calc(l - 15));
+  --rdta-alert-danger-hover: hsl(from var(--rdta-text-danger-color) h s calc(l + 15));
+  --rdta-alert-fixfloat-danger-background-color: hsl(from var(--rdta-background-danger-color) h s calc(l + 7));
+  --rdta-alert-info-active: hsl(from var(--rdta-text-info-color) h s calc(l - 15));
+  --rdta-alert-info-hover: hsl(from var(--rdta-text-info-color) h s calc(l + 15));
+  --rdta-alert-fixfloat-info-background-color: hsl(from var(--rdta-background-info-color) h s calc(l + 7));
+  --rdta-alert-success-active: hsl(from var(--rdta-text-success-color) h s calc(l - 15));
+  --rdta-alert-success-hover: hsl(from var(--rdta-text-success-color) h s calc(l + 15));
+  --rdta-alert-fixfloat-success-background-color: hsl(from var(--rdta-background-success-color) h s calc(l + 7));
+  --rdta-alert-warning-active: hsl(from var(--rdta-text-warning-color) h s calc(l - 15));
+  --rdta-alert-warning-hover: hsl(from var(--rdta-text-warning-color) h s calc(l + 15));
+  --rdta-alert-fixfloat-warning-background-color: hsl(from var(--rdta-background-warning-color) h s calc(l + 7));
+  --rdta-alert-box-z-index: 101;
+}

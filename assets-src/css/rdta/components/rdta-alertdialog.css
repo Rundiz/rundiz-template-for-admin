@@ -1,0 +1,192 @@
+/*!
+* ----------------------------------------------------------------------------------------------
+* Rundiz template alert dialog -- styling alert dialog elements.
+* ----------------------------------------------------------------------------------------------
+*/
+
+
+@import '_rdta-alertdialog-vars.css';
+
+
+body.rd-alertdialog-modal-open {
+    overflow: hidden;
+}
+
+.rd-alertdialog {
+    background-color: #fff;
+    border: 1px solid var(--rdta-tpf-block-border-color);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    position: relative;
+}
+
+@media (min-width: 550px) {
+    /* use `$dialog-normal-breakpoint` in media query */
+    .rd-alertdialog {
+        max-width: calc(var(--rdta-alert-dialog-normal-breakpoint) - 50px);
+    }
+}
+
+.rd-alertdialog.hide {
+    display: none;
+}
+
+.rd-alertdialog.hide.show {
+    display: flex !important;
+}
+
+
+/* alert dialog sizes */
+@media (min-width: 768px) and (max-width: 999px) {
+    /* use `$sm-min-width` for `min-width`, `$sm-max-width` for `max-width`. */
+    .rd-alertdialog.rd-dialog-size-large {
+        max-width: calc(var(--rdta-sm-min-width) - 40px);
+    }
+}
+
+@media (min-width: 1000px) {
+    /* use `$md-min-width` in media query */
+    .rd-alertdialog.rd-dialog-size-large {
+        max-width: calc(var(--rdta-md-min-width) - 40px);
+    }
+}
+
+@media (min-width: 550px) {
+    /* use `$dialog-normal-breakpoint` in media query */
+    .rd-alertdialog.rd-dialog-size-fullwindow {
+        max-width: calc(100vw - 40px);
+    }
+}
+/* end alert dialog sizes */
+
+
+.rd-alertdialog .rd-dialog-body {
+    overflow: auto;
+}
+
+.rd-alertdialog .rd-dialog-body,
+.rd-alertdialog .rd-dialog-footer,
+.rd-alertdialog .rd-dialog-header {
+    padding: 1em;
+}
+
+.rd-alertdialog .rd-dialog-close {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    margin: 0 0 0 auto;
+}
+
+
+/* alert dialog header & footer */
+.rd-alertdialog .rd-dialog-header {
+    display: flex;
+}
+
+.rd-alertdialog .rd-dialog-footer {
+    border-top: 1px solid var(--rdta-tpf-block-border-color);
+}
+
+.rd-alertdialog .rd-dialog-header {
+    border-bottom: 1px solid var(--rdta-tpf-block-border-color);
+}
+/* end alert dialog header & footer */
+
+
+.rd-alertdialog .rd-dialog-title {
+    margin: 0;
+}
+
+
+/* alert dialog color styles */
+.rd-alertdialog.alert-danger {
+    border: 5px solid var(--rdta-text-danger-color);
+}
+
+.rd-alertdialog.alert-danger .rd-alertdialog-icon {
+    color: var(--rdta-background-danger-color);
+}
+
+.rd-alertdialog.alert-info {
+    border: 5px solid var(--rdta-text-info-color);
+}
+
+.rd-alertdialog.alert-info .rd-alertdialog-icon {
+    color: var(--rdta-background-info-color);
+}
+
+.rd-alertdialog.alert-success {
+    border: 5px solid var(--rdta-text-success-color);
+}
+
+.rd-alertdialog.alert-success .rd-alertdialog-icon {
+    color: var(--rdta-background-success-color);
+}
+
+.rd-alertdialog.alert-warning {
+    border: 5px solid var(--rdta-text-warning-color);
+}
+
+.rd-alertdialog.alert-warning .rd-alertdialog-icon {
+    color: var(--rdta-background-warning-color);
+}
+/* end alert dialog color styles */
+
+
+.rd-alertdialog .rd-dialog-buttons {
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    text-align: center;
+}
+
+.rd-alertdialog .rd-alertdialog-icon {
+    color: #999;
+}
+
+
+/* alert dialog modal */
+.rd-alertdialog-modal {
+    background-color: rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+    visibility: hidden;
+    z-index: var(--rdta-alert-dialog-backdrop-z-index);
+}
+
+.rd-alertdialog-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.rd-alertdialog-modal .rd-alertdialog {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    max-height: calc(100vh - var(--rdta-block-element-margin-vertical) * 2);
+    overflow: hidden;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+@media (min-width: 550px) {
+    /* use `$dialog-normal-breakpoint` in media query */
+    .rd-alertdialog-modal .rd-alertdialog {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.rd-alertdialog-modal .rd-dialog-modal-backdrop {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+/* end alert dialog modal */

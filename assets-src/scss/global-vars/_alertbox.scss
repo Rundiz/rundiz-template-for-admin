@@ -1,0 +1,22 @@
+/* Auto generate by Sass. */
+// CSS 3 variables for Rundiz Template for Admin
+
+
+@use '.global-vars' as *;
+
+
+@mixin alertbox-color-styles {
+    $alertbox-styles: danger, info, success, warning;
+    @each $style in $alertbox-styles {
+        --rdta-alert-#{$style}-active: #{'hsl(from var(--rdta-text-#{$style}-color) h s calc(l - 15))'};
+        --rdta-alert-#{$style}-hover: #{'hsl(from var(--rdta-text-#{$style}-color) h s calc(l + 15))'};
+        --rdta-alert-fixfloat-#{$style}-background-color: #{'hsl(from var(--rdta-background-#{$style}-color) h s calc(l + 7))'};
+    }
+}
+
+
+.rd-alertbox {
+    @include alertbox-color-styles;
+
+    --rdta-alert-box-z-index: #{$z-index-alertboxfixed};
+}

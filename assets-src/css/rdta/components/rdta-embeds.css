@@ -1,0 +1,58 @@
+/*!
+* ----------------------------------------------------------------------------------------------
+* Rundiz template embeds -- styling responsive embeds elements.
+* ----------------------------------------------------------------------------------------------
+* @link https://www.w3schools.com/howto/howto_css_responsive_iframes.asp code reference.
+*/
+
+
+/* variables */
+.rd-embed-responsive21by9 {
+  --rdta-embeds-aspect-ratio: calc((9 / 21) * 100%);
+}
+
+.rd-embed-responsive16by9 {
+  --rdta-embeds-aspect-ratio: calc((9 / 16) * 100%);
+}
+
+.rd-embed-responsive8by5 {
+  --rdta-embeds-aspect-ratio: calc((5 / 8) * 100%);
+}
+
+.rd-embed-responsive4by3 {
+  --rdta-embeds-aspect-ratio: calc((3 / 4) * 100%);
+}
+
+.rd-embed-responsive3by2 {
+  --rdta-embeds-aspect-ratio: calc((2 / 3) * 100%);
+}
+
+.rd-embed-responsive1by1 {
+  --rdta-embeds-aspect-ratio: calc((1 / 1) * 100%);
+}
+/* end variables */
+
+
+.rd-embed-responsive {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+.rd-embed-responsive::before {
+    content: "";
+    display: block;
+    padding-top: var(--rdta-embeds-aspect-ratio);
+}
+
+.rd-embed-responsive > * {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.rd-embed-responsive .rd-embed-responsive-item {
+    border: none;
+}

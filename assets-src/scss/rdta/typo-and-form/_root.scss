@@ -1,0 +1,31 @@
+/* Auto generate by Sass. */
+// CSS 3 variables for Rundiz Template for Admin typography and form
+
+
+@use '.vars' as *;
+
+
+:root {
+    --rdta-tpf-basic-focus-color: #{$basic-focus-color};
+    --rdta-tpf-form-focus-color: #{$form-focus-color};
+    --rdta-tpf-form-invalid-border-color: #{$form-invalid-border-color};
+
+    --rdta-tpf-button-3d-height: #{$button-3d-height};
+    --rdta-tpf-button-3d-pressed-height: #{$button-3d-pressed-height};
+    --rdta-tpf-button-3d-edge-color: #{$button-3d-edge-color};
+
+    --rdta-tpf-input-range-thumb-border-color: #{$input-range-thumb-border-color};
+    --rdta-tpf-input-range-track-color: #{$block-border-color};
+
+    --rdta-tpf-page-background-color: #{$page-background-color};
+    --rdta-tpf-page-text-color: #{$page-text-color};
+
+    --rdta-tpf-block-background-color: #{$block-background-color};
+    --rdta-tpf-block-border-color: #{$block-border-color};
+    --rdta-tpf-content-block-element-margin-vertical: #{$content-block-element-margin-vertical};
+
+    --rdta-tpf-table-cell-padding: #{$table-cell-padding};
+
+    --rdta-tpf-text-disabled-color: #{$text-disabled-color};
+    --rdta-tpf-text-link-color: #{$text-link-color};
+}

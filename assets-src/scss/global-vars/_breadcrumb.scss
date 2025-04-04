@@ -1,0 +1,10 @@
+/* Auto generate by Sass. */
+// CSS 3 variables for Rundiz Template for Admin
+
+
+@use '.global-vars' as *;
+
+
+.rd-breadcrumb {
+    --rdta-breadcrumb-text-color: #{$breadcrumb-text-color};
+}

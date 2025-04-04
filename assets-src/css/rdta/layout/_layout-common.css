@@ -1,0 +1,44 @@
+/*! layout/_layout-common.css */
+
+
+html.rd-template-admin {
+    height: 100%;
+}
+
+
+.rd-template-admin body {
+    -webkit-text-size-adjust: 100%;/* fix ios orientation bug ( https://stackoverflow.com/a/27311443/128761 ). */
+}
+
+@media (min-width: 1000px) {
+    /* use sidebar breakpoint `$minimum-sidebar-breakpoint` */
+    .rd-template-admin body {
+        padding-top: calc(var(--rdta-navbar-height_mobilescreen) / 2);
+    }
+}
+
+
+.rd-page-content {
+    margin-bottom: var(--rdta-block-element-margin-vertical);
+    margin-left: var(--rdta-block-element-margin-horizontal);
+    margin-right: var(--rdta-block-element-margin-horizontal);
+}
+
+
+@media (min-width: 1000px) {
+    /* use sidebar breakpoint `$minimum-sidebar-breakpoint` */
+    .rd-sidebar-back {
+        background-color: var(--rdta-navbar-sidebar-background-color);
+        bottom: 0;
+        display: block;
+        position: fixed;
+        top: 0;
+        transition: width var(--rdta-sidebar-transition-seconds);
+        width: var(--rdta-sidebar-expanded-width);
+        z-index: -1;
+    }
+    .rd-page-wrapper.is-collapsed .rd-sidebar-back {
+        transition: width var(--rdta-sidebar-transition-seconds);
+        width: var(--rdta-sidebar-collapsed-width);
+    }
+}

@@ -1,0 +1,41 @@
+/*!
+* ----------------------------------------------------------------------------------------------
+* _badge.css
+* ----------------------------------------------------------------------------------------------
+*/
+
+
+@import '../global-vars/_badge.css';
+
+
+.rd-notification-badge {
+    background-color: var(--rdta-badge-basic-background-color);
+    border-radius: 1.1em;
+    color: var(--rdta-badge-basic-color);
+    display: inline-block;
+    font-size: 0.813em;
+    line-height: 1;
+    margin: 0 0.2rem;
+    min-width: 1.1em;
+    padding: 0.2rem 0.425rem;
+    text-align: center;
+}
+.rd-notification-badge.badge-danger {
+    background-color: var(--rdta-text-danger-color);
+}
+.rd-notification-badge.badge-info {
+    background-color: var(--rdta-text-info-color);
+}
+.rd-notification-badge.badge-primary {
+    background-color: var(--rdta-text-primary-color);
+}
+.rd-notification-badge.badge-success {
+    background-color: var(--rdta-text-success-color);
+}
+.rd-notification-badge.badge-warning {
+    background-color: var(--rdta-text-warning-color);
+}
+.rd-notification-badge.tiny {
+    font-size: 0.625em;
+    padding: 0.1rem 0.29rem;
+}

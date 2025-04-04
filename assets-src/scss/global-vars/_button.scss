@@ -1,0 +1,24 @@
+/* Auto generate by Sass. */
+// CSS 3 variables for Rundiz Template for Admin
+
+
+@use '.global-vars' as *;
+
+
+@mixin button-color-styles {
+    $button-styles: danger, info, primary, success, warning;
+    @each $style in $button-styles {
+        --rdta-button-#{$style}-disabled-border-color: #{'hsl(from var(--rdta-background-#{$style}-disabled-color) h s calc(l - 7))'};
+        --rdta-button-#{$style}-disabled-3d-edge-color: #{'hsl(from var(--rdta-background-#{$style}-disabled-color) h s calc(l - 5))'};
+        --rdta-button-#{$style}-border-color: #{'hsl(from var(--rdta-text-#{$style}-color) h s calc(l - 7))'};
+        --rdta-button-#{$style}-3d-edge-color: #{'hsl(from var(--rdta-text-#{$style}-color) h s calc(l - 5))'};
+    }
+}
+
+
+.rd-button {
+    --rdta-button-disabled-styled-text-color: #{$button-disabled-styled-text-color};
+    --rdta-button-styled-text-color: #{$button-styled-text-color};
+
+    @include button-color-styles;
+}

@@ -1,0 +1,66 @@
+/* Auto generate by Sass. */
+
+
+@use '../../global-vars/.global-vars' as *;
+
+
+@mixin columns-flex-12($size) {
+    @for $i from 1 through 12 {
+        .col-#{$size}-#{$i} {
+            flex: 0 0 calc((100% / 12) * $i);
+            max-width: calc((100% / 12) * $i);
+        }
+    }
+}
+
+
+@mixin offset-flex-12($size) {
+    @for $i from 1 through 12 {
+        .offset-#{$size}-#{$i} {
+            margin-left: calc((100% / 12) * $i);
+        }
+    }
+}
+
+
+.rd-columns-flex-container {
+    // .rd-columns-flex-container .col-xs-[1-12]
+    @include columns-flex-12('xs');
+
+    @media (min-width: $sm-min-width) {
+        // .rd-columns-flex-container .col-sm-[1-12]
+        @include columns-flex-12('sm');
+    }
+    @media (min-width: $md-min-width) {
+        // .rd-columns-flex-container .col-md-[1-12]
+        @include columns-flex-12('md');
+    }
+    @media (min-width: $lg-min-width) {
+        // .rd-columns-flex-container .col-lg-[1-12]
+        @include columns-flex-12('lg');
+    }
+    @media (min-width: $xl-min-width) {
+        // .rd-columns-flex-container .col-xl-[1-12]
+        @include columns-flex-12('xl');
+    }
+
+    // .rd-columns-flex-container .offset-xs-[1-12]
+    @include offset-flex-12('xs');
+
+    @media (min-width: $sm-min-width) {
+        // .rd-columns-flex-container .offset-sm-[1-12]
+        @include offset-flex-12('sm');
+    }
+    @media (min-width: $md-min-width) {
+        // .rd-columns-flex-container .offset-md-[1-12]
+        @include offset-flex-12('md');
+    }
+    @media (min-width: $lg-min-width) {
+        // .rd-columns-flex-container .offset-lg-[1-12]
+        @include offset-flex-12('lg');
+    }
+    @media (min-width: $xl-min-width) {
+        // .rd-columns-flex-container .offset-xl-[1-12]
+        @include offset-flex-12('xl');
+    }
+}

@@ -1,0 +1,26 @@
+/*!
+ * Rundiz template for admin V.__RDTA.VERSION__
+ */
+
+
+@import '../global-vars/_root.css';
+@import '../global-vars/_sidebar.css';
+
+@import 'layout/_layout-display-grid.css';
+
+@import '_alert-box.css';
+@import '_badge.css';
+@import '_breadcrumb.css';
+@import '_button.css';
+@import '_data-table.css';
+@import '_dropdown.css';
+
+@import '_form.css';
+@import '_form-input-file.css';
+
+@import '_input-group.css';
+@import '_navbar.css';
+@import '_pagination.css';
+
+@import '_helpers.css';
+@import '_text.css';

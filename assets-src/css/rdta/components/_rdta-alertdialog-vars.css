@@ -1,0 +1,8 @@
+/* Auto generate by Sass. */
+.rd-alertdialog {
+  --rdta-alert-dialog-normal-breakpoint: 550px;
+}
+
+.rd-alertdialog-modal {
+  --rdta-alert-dialog-backdrop-z-index: 2000;
+}

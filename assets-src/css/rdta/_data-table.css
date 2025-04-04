@@ -1,0 +1,348 @@
+/*!
+* ----------------------------------------------------------------------------------------------
+* _data-table.css
+* ----------------------------------------------------------------------------------------------
+*/
+
+
+.rd-datatable {
+    width: 100%;
+}
+
+.rd-datatable tbody tr:hover {
+    background-color: rgba(243, 243, 243, 0.5);
+}
+
+.rd-datatable tfoot td a,
+.rd-datatable tfoot th a,
+.rd-datatable thead td a,
+.rd-datatable thead th a {
+    color: var(--rdta-tpf-text-link-color);
+}
+
+.rd-datatable td,
+.rd-datatable th {
+    vertical-align: top;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.rd-datatable .column-checkbox {
+    text-align: center;
+    width: 32px;
+}
+
+.rd-datatable .filter-row td,
+.rd-datatable .filter-row th {
+    background-color: #f1f1f1;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+
+/* all inputs, select, textarea in filter row */
+/* below are `inputbox-like`. */
+.rd-datatable .filter-row td input[type=date],
+.rd-datatable .filter-row td input[type=datetime-local],
+.rd-datatable .filter-row td input[type=email],
+.rd-datatable .filter-row td input[type=month],
+.rd-datatable .filter-row td input[type=number],
+.rd-datatable .filter-row td input[type=password],
+.rd-datatable .filter-row td input[type=range],
+.rd-datatable .filter-row td input[type=search],
+.rd-datatable .filter-row td input[type=tel],
+.rd-datatable .filter-row td input[type=text],
+.rd-datatable .filter-row td input[type=time],
+.rd-datatable .filter-row td input[type=url],
+.rd-datatable .filter-row td input[type=week],
+.rd-datatable .filter-row td select,
+.rd-datatable .filter-row td textarea,
+.rd-datatable .filter-row th input[type=date],
+.rd-datatable .filter-row th input[type=datetime-local],
+.rd-datatable .filter-row th input[type=email],
+.rd-datatable .filter-row th input[type=month],
+.rd-datatable .filter-row th input[type=number],
+.rd-datatable .filter-row th input[type=password],
+.rd-datatable .filter-row th input[type=range],
+.rd-datatable .filter-row th input[type=search],
+.rd-datatable .filter-row th input[type=tel],
+.rd-datatable .filter-row th input[type=text],
+.rd-datatable .filter-row th input[type=time],
+.rd-datatable .filter-row th input[type=url],
+.rd-datatable .filter-row th input[type=week],
+.rd-datatable .filter-row th select,
+.rd-datatable .filter-row th textarea {
+    background-color: #fff;
+    height: 2.45em;
+    width: 100%;
+}
+/* end all inputs, select, textarea in filter row */
+
+
+.rd-datatable.h-border tfoot td,
+.rd-datatable.h-border tfoot th,
+.rd-datatable.h-border thead td,
+.rd-datatable.h-border thead th {
+    background-color: transparent;
+}
+
+.rd-datatable.h-border tfoot td,
+.rd-datatable.h-border tfoot th {
+    border-top-width: 2px;
+}
+
+.rd-datatable.h-border thead td,
+.rd-datatable.h-border thead th {
+    border-bottom-width: 2px;
+}
+
+.rd-datatable.h-border td,
+.rd-datatable.h-border th {
+    border-left-width: 0;
+    border-right-width: 0;
+}
+
+/* table cell styles */
+.rd-datatable .table-cell-danger,
+.rd-datatable .table-row-danger {
+    background-color: var(--rdta-background-danger-color);
+}
+
+.rd-datatable .table-cell-danger:hover,
+.rd-datatable .table-row-danger:hover {
+    background-color: var(--rdta-background-danger-hover-color);
+}
+
+.rd-datatable .table-cell-info,
+.rd-datatable .table-row-info {
+    background-color: var(--rdta-background-info-color);
+}
+
+.rd-datatable .table-cell-info:hover,
+.rd-datatable .table-row-info:hover {
+    background-color: var(--rdta-background-info-hover-color);
+}
+
+.rd-datatable .table-cell-primary,
+.rd-datatable .table-row-primary {
+    background-color: var(--rdta-background-primary-color);
+}
+
+.rd-datatable .table-cell-primary:hover,
+.rd-datatable .table-row-primary:hover {
+    background-color: var(--rdta-background-primary-hover-color);
+}
+
+.rd-datatable .table-cell-success,
+.rd-datatable .table-row-success {
+    background-color: var(--rdta-background-success-color);
+}
+
+.rd-datatable .table-cell-success:hover,
+.rd-datatable .table-row-success:hover {
+    background-color: var(--rdta-background-success-hover-color);
+}
+
+.rd-datatable .table-cell-warning,
+.rd-datatable .table-row-warning {
+    background-color: var(--rdta-background-warning-color);
+}
+
+.rd-datatable .table-cell-warning:hover,
+.rd-datatable .table-row-warning:hover {
+    background-color: var(--rdta-background-warning-hover-color);
+}
+/* end table cell styles */
+
+
+/* 
+responsive table by using expand/collapse
+`~` selector, see reference here https://www.w3schools.com/cssref/sel_gen_sibling.asp
+*/
+.rd-datatable.responsive td,
+.rd-datatable.responsive th {
+    background-color: transparent;
+    border: none;
+}
+
+.rd-datatable.responsive td.column-primary ~ td,
+.rd-datatable.responsive th.column-primary ~ th {
+    display: none;
+}
+
+@media (min-width: 1000px) {
+    /* use sidebar breakpoint `$minimum-sidebar-breakpoint` */
+    .rd-datatable.responsive td.column-primary ~ td,
+    .rd-datatable.responsive th.column-primary ~ th {
+        display: table-cell;
+    }
+}
+
+.rd-datatable.responsive thead tr {
+    border-bottom: 2px solid var(--rdta-tpf-block-border-color);
+}
+
+.rd-datatable.responsive tfoot tr {
+    border-top: 2px solid var(--rdta-tpf-block-border-color);
+}
+
+.rd-datatable.responsive tr {
+    border-top: 1px solid var(--rdta-tpf-block-border-color);
+}
+
+.rd-datatable.responsive tr:hover .row-actions {
+    opacity: 1;
+}
+
+.rd-datatable.responsive .column-primary {
+    display: block;
+    padding-right: 2.209rem;/* must related to the .toggle-row button width. */
+    position: relative;
+}
+
+@media (min-width: 1000px) {
+    /* use sidebar breakpoint `$minimum-sidebar-breakpoint` */
+    .rd-datatable.responsive .column-primary {
+        display: table-cell;
+        padding-right: var(--rdta-tpf-table-cell-padding);
+    }
+}
+
+.rd-datatable.responsive .column-primary ~ td {
+    clear: both;
+    padding-left: 35%;
+    position: relative;
+    width: auto;
+}
+
+.rd-datatable.responsive .column-primary ~ td::before {
+    content: attr(data-colname);
+    display: block;
+    left: var(--rdta-tpf-table-cell-padding);
+    overflow: hidden;
+    position: absolute;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 32%;
+}
+
+@media (min-width: 1000px) {
+    /* use sidebar breakpoint `$minimum-sidebar-breakpoint` */
+    .rd-datatable.responsive .column-primary ~ td::before {
+        display: none;
+    }
+}
+
+@media (min-width: 1000px) {
+    /* use sidebar breakpoint `$minimum-sidebar-breakpoint` */
+    .rd-datatable.responsive .column-primary ~ td {
+        clear: none;
+        padding-left: var(--rdta-tpf-table-cell-padding);
+    }
+}
+
+.rd-datatable.responsive .is-expanded .column-primary ~ td {
+    display: block;
+    overflow: hidden;
+}
+
+@media (min-width: 1000px) {
+    /* use sidebar breakpoint `$minimum-sidebar-breakpoint` */
+    .rd-datatable.responsive .is-expanded .column-primary ~ td {
+        display: table-cell;
+        overflow: visible;
+    }
+}
+
+.rd-datatable.responsive .row-actions {
+    font-size: 0.75em;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.rd-datatable.responsive .row-actions span + span::before {
+    /* must use `<span>` to wrap `<a>` because if it is `a + a::before` then the | text will becomes link. */
+    content: " | ";
+}
+
+.rd-datatable.responsive .toggle-row {
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    border-radius: 50%;
+    box-shadow: none;
+    display: block;
+    font-size: 1rem;
+    height: 1.688rem;
+    padding: 0;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.375rem;
+    transition: none;
+    width: 1.688rem;
+}
+
+.rd-datatable.responsive .toggle-row:active, 
+.rd-datatable.responsive .toggle-row:focus, 
+.rd-datatable.responsive .toggle-row:hover {
+    box-shadow: 0 0 0 1px var(--rdta-text-info-color), 0 0 3px 2px color-mix(in srgb, var(--rdta-background-info-color), transparent 20%);
+    outline: none;
+}
+
+@media (min-width: 1000px) {
+    /* use sidebar breakpoint `$minimum-sidebar-breakpoint` */
+    .rd-datatable.responsive .toggle-row {
+        display: none;
+    }
+}
+/* end responsive table by using expand/collapse */
+
+
+/* table sortable */
+.rd-datatable .sortable-icon {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-size: 0.75rem;
+    font-style: normal;
+    line-height: 1;
+    visibility: hidden;
+}
+
+.rd-datatable .sortable-icon::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+
+.rd-datatable .sortable-icon.order-desc {
+    transform: translateY(-29%);
+}
+
+.rd-datatable .sortable-icon.order-desc::before {
+    content: "\f0dd";/* down arrow. */
+}
+
+.rd-datatable .sortable-icon.order-asc {
+    transform: translateY(9%);
+}
+
+.rd-datatable .sortable-icon.order-asc::before {
+    content: "\f0de";/* up arrow. */
+}
+
+.rd-datatable td.sorted .sortable-icon, 
+.rd-datatable td:hover .sortable-icon,
+.rd-datatable th.sorted .sortable-icon,
+.rd-datatable th:hover .sortable-icon {
+    visibility: visible;
+}
+/* end table sortable */
+
+
+/* responsive table using slide left and right */
+.rd-datatable-wrapper {
+    display: block;
+    overflow-x: auto;
+    overflow-y: visible;
+    width: 100%;
+}
+/* end responsive table using slide left and right */

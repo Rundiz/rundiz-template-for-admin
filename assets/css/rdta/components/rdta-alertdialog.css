@@ -3,25 +3,28 @@
 * Rundiz template alert dialog -- styling alert dialog elements.
 * ----------------------------------------------------------------------------------------------
 */
-.rd-alertdialog-modal {
-  --alertdialog-backdrop-z-index: 2000;
+/* Auto generate by Sass. */
+.rd-alertdialog {
+  --rdta-alert-dialog-normal-breakpoint: 550px;
 }
-
+.rd-alertdialog-modal {
+  --rdta-alert-dialog-backdrop-z-index: 2000;
+}
 body.rd-alertdialog-modal-open {
   overflow: hidden;
 }
-
 .rd-alertdialog {
   background-color: #fff;
-  border: 1px solid var(--block-border-color);
+  border: 1px solid var(--rdta-tpf-block-border-color);
   display: flex;
   flex-direction: column;
   padding: 0;
   position: relative;
 }
 @media (min-width: 550px) {
+  /* use `$dialog-normal-breakpoint` in media query */
   .rd-alertdialog {
-    max-width: 500px;
+    max-width: calc(var(--rdta-alert-dialog-normal-breakpoint) - 50px);
   }
 }
 .rd-alertdialog.hide {
@@ -30,21 +33,26 @@ body.rd-alertdialog-modal-open {
 .rd-alertdialog.hide.show {
   display: flex !important;
 }
+/* alert dialog sizes */
 @media (min-width: 768px) and (max-width: 999px) {
+  /* use `$sm-min-width` for `min-width`, `$sm-max-width` for `max-width`. */
   .rd-alertdialog.rd-dialog-size-large {
-    max-width: 728px;
+    max-width: calc(var(--rdta-sm-min-width) - 40px);
   }
 }
 @media (min-width: 1000px) {
+  /* use `$md-min-width` in media query */
   .rd-alertdialog.rd-dialog-size-large {
-    max-width: 960px;
+    max-width: calc(var(--rdta-md-min-width) - 40px);
   }
 }
 @media (min-width: 550px) {
+  /* use `$dialog-normal-breakpoint` in media query */
   .rd-alertdialog.rd-dialog-size-fullwindow {
     max-width: calc(100vw - 40px);
   }
 }
+/* end alert dialog sizes */
 .rd-alertdialog .rd-dialog-body {
   overflow: auto;
 }
@@ -59,43 +67,46 @@ body.rd-alertdialog-modal-open {
   box-shadow: none;
   margin: 0 0 0 auto;
 }
+/* alert dialog header & footer */
 .rd-alertdialog .rd-dialog-header {
   display: flex;
 }
 .rd-alertdialog .rd-dialog-footer {
-  border-top: 1px solid var(--block-border-color);
+  border-top: 1px solid var(--rdta-tpf-block-border-color);
 }
 .rd-alertdialog .rd-dialog-header {
-  border-bottom: 1px solid var(--block-border-color);
+  border-bottom: 1px solid var(--rdta-tpf-block-border-color);
 }
+/* end alert dialog header & footer */
 .rd-alertdialog .rd-dialog-title {
   margin: 0;
 }
-
-.rd-alertdialog.alert-info {
-  border: 5px solid #09a0bb;
-}
-.rd-alertdialog.alert-info .rd-alertdialog-icon {
-  color: #c4ebf2;
-}
-.rd-alertdialog.alert-warning {
-  border: 5px solid #e69200;
-}
-.rd-alertdialog.alert-warning .rd-alertdialog-icon {
-  color: #fbd38f;
-}
-.rd-alertdialog.alert-success {
-  border: 5px solid #007c00;
-}
-.rd-alertdialog.alert-success .rd-alertdialog-icon {
-  color: #d1e6d1;
-}
+/* alert dialog color styles */
 .rd-alertdialog.alert-danger {
-  border: 5px solid #bc0000;
+  border: 5px solid var(--rdta-text-danger-color);
 }
 .rd-alertdialog.alert-danger .rd-alertdialog-icon {
-  color: #f4d0d0;
+  color: var(--rdta-background-danger-color);
 }
+.rd-alertdialog.alert-info {
+  border: 5px solid var(--rdta-text-info-color);
+}
+.rd-alertdialog.alert-info .rd-alertdialog-icon {
+  color: var(--rdta-background-info-color);
+}
+.rd-alertdialog.alert-success {
+  border: 5px solid var(--rdta-text-success-color);
+}
+.rd-alertdialog.alert-success .rd-alertdialog-icon {
+  color: var(--rdta-background-success-color);
+}
+.rd-alertdialog.alert-warning {
+  border: 5px solid var(--rdta-text-warning-color);
+}
+.rd-alertdialog.alert-warning .rd-alertdialog-icon {
+  color: var(--rdta-background-warning-color);
+}
+/* end alert dialog color styles */
 .rd-alertdialog .rd-dialog-buttons {
   padding-bottom: 1em;
   padding-left: 1em;
@@ -105,7 +116,7 @@ body.rd-alertdialog-modal-open {
 .rd-alertdialog .rd-alertdialog-icon {
   color: #999;
 }
-
+/* alert dialog modal */
 .rd-alertdialog-modal {
   background-color: rgba(0, 0, 0, 0.5);
   bottom: 0;
@@ -114,9 +125,9 @@ body.rd-alertdialog-modal-open {
   position: fixed;
   right: 0;
   top: 0;
-  transition: opacity 0.3s, visibility 0.3s;
+  transition: opacity 0.3s,visibility 0.3s;
   visibility: hidden;
-  z-index: var(--alertdialog-backdrop-z-index);
+  z-index: var(--rdta-alert-dialog-backdrop-z-index);
 }
 .rd-alertdialog-modal.show {
   opacity: 1;
@@ -125,12 +136,13 @@ body.rd-alertdialog-modal-open {
 .rd-alertdialog-modal .rd-alertdialog {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-  max-height: calc(100vh - var(--block-element-margin-vertical) * 2);
+  max-height: calc(100vh - var(--rdta-block-element-margin-vertical) * 2);
   overflow: hidden;
   top: 50%;
   transform: translate(0, -50%);
 }
 @media (min-width: 550px) {
+  /* use `$dialog-normal-breakpoint` in media query */
   .rd-alertdialog-modal .rd-alertdialog {
     margin-left: auto;
     margin-right: auto;
@@ -143,4 +155,6 @@ body.rd-alertdialog-modal-open {
   right: 0;
   top: 0;
 }
+/* end alert dialog modal */
+
 /*# sourceMappingURL=rdta-alertdialog.css.map */

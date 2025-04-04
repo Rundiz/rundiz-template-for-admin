@@ -1,0 +1,36 @@
+/*! layout/_layout-common-sidebar-expand-collapse-controls.css */
+
+
+ul.rd-sidebar-expand-collapse-controls,
+.rd-sidebar-expand-collapse-controls {
+    display: none;
+}
+@media (min-width: 1000px) {
+    /* use sidebar breakpoint `$minimum-sidebar-breakpoint` */
+    ul.rd-sidebar-expand-collapse-controls,
+    .rd-sidebar-expand-collapse-controls {
+        display: block;
+        position: relative;
+    }
+    ul.rd-sidebar-expand-collapse-controls a,
+    .rd-sidebar-expand-collapse-controls a {
+        background-color: var(--rdta-navbar-sidebar-background-color);
+        cursor: pointer;
+        margin-top: -2px;
+        position: absolute;
+        top: -1.25rem;/* -(hr margin top) */
+    }
+    ul.rd-sidebar-expand-collapse-controls a .sidebar-icon,
+    ul.rd-sidebar-expand-collapse-controls a .icon,
+    .rd-sidebar-expand-collapse-controls a .sidebar-icon,
+    .rd-sidebar-expand-collapse-controls a .icon {
+        color: #aaa;
+    }
+    ul.rd-sidebar-expand-collapse-controls hr,
+    .rd-sidebar-expand-collapse-controls hr {
+        border-top-color: #444;
+    }
+    .rd-page-wrapper.is-collapsed .rd-sidebar-expand-collapse-controls a {
+        box-shadow: none;
+    }
+}

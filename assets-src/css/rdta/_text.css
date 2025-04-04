@@ -1,0 +1,179 @@
+/*!
+* ----------------------------------------------------------------------------------------------
+* _text.css
+* ----------------------------------------------------------------------------------------------
+*/
+
+
+/* text colors style */
+.text-color-danger {
+    color: var(--rdta-text-danger-color);
+}
+a.text-color-danger {
+    color: var(--rdta-text-danger-color);
+}
+a.text-color-danger:active {
+    color: hsl(from var(--rdta-text-danger-color) h s calc(l - 15));
+}
+a.text-color-danger:focus, 
+a.text-color-danger:hover {
+    color: hsl(from var(--rdta-text-danger-color) h s calc(l + 15));
+}
+a.text-color-danger:visited {
+    color: var(--rdta-text-danger-color);
+}
+
+.text-color-disabled {
+    color: var(--rdta-tpf-text-disabled-color);
+}
+a.text-color-disabled {
+    color: var(--rdta-tpf-text-disabled-color);
+}
+a.text-color-disabled:active {
+    color: hsl(from var(--rdta-tpf-text-disabled-color) h s calc(l - 15));
+}
+a.text-color-disabled:focus, 
+a.text-color-disabled:hover {
+    color: hsl(from var(--rdta-tpf-text-disabled-color) h s calc(l + 15));
+}
+a.text-color-disabled:visited {
+    color: var(--rdta-tpf-text-disabled-color);
+}
+
+.text-color-info {
+    color: var(--rdta-text-info-color);
+}
+a.text-color-info {
+    color: var(--rdta-text-info-color);
+}
+a.text-color-info:active {
+    color: hsl(from var(--rdta-text-info-color) h s calc(l - 15));
+}
+a.text-color-info:focus, 
+a.text-color-info:hover {
+    color: hsl(from var(--rdta-text-info-color) h s calc(l + 15));
+}
+a.text-color-info:visited {
+    color: var(--rdta-text-info-color);
+}
+
+.text-color-primary {
+    color: var(--rdta-text-primary-color);
+}
+a.text-color-primary {
+    color: var(--rdta-text-primary-color);
+}
+a.text-color-primary:active {
+    color: hsl(from var(--rdta-text-primary-color) h s calc(l - 15));
+}
+a.text-color-primary:focus, 
+a.text-color-primary:hover {
+    color: hsl(from var(--rdta-text-primary-color) h s calc(l + 15));
+}
+a.text-color-primary:visited {
+    color: var(--rdta-text-primary-color);
+}
+
+.text-color-success {
+    color: var(--rdta-text-success-color);
+}
+a.text-color-success {
+    color: var(--rdta-text-success-color);
+}
+a.text-color-success:active {
+    color: hsl(from var(--rdta-text-success-color) h s calc(l - 15));
+}
+a.text-color-success:focus, 
+a.text-color-success:hover {
+    color: hsl(from var(--rdta-text-success-color) h s calc(l + 15));
+}
+a.text-color-success:visited {
+    color: var(--rdta-text-success-color);
+}
+
+.text-color-warning {
+    color: var(--rdta-text-warning-color);
+}
+a.text-color-warning {
+    color: var(--rdta-text-warning-color);
+}
+a.text-color-warning:active {
+    color: hsl(from var(--rdta-text-warning-color) h s calc(l - 15));
+}
+a.text-color-warning:focus, 
+a.text-color-warning:hover {
+    color: hsl(from var(--rdta-text-warning-color) h s calc(l + 15));
+}
+a.text-color-warning:visited {
+    color: var(--rdta-text-warning-color);
+}
+
+.text-color-white {
+    color: var(--rdta-text-white-color);
+}
+a.text-color-white {
+    color: var(--rdta-text-white-color);
+}
+a.text-color-white:active {
+    color: hsl(from var(--rdta-text-white-color) h s calc(l - 15));
+}
+a.text-color-white:focus, 
+a.text-color-white:hover {
+    color: hsl(from var(--rdta-text-white-color) h s calc(l + 15));
+}
+a.text-color-white:visited {
+    color: var(--rdta-text-white-color);
+}
+/* text colors style */
+
+
+/* text alignment */
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+/* end text alignment */
+
+
+/* text flow */
+.text-flow-wrap {
+    white-space: normal !important;
+}
+
+.text-flow-nowrap {
+    white-space: nowrap !important;
+}
+
+.text-flow-breakword {
+    /* @link https://stackoverflow.com/a/15137272/128761 Reference. */
+    word-break: break-word !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+}
+/* end text flow */
+
+
+/* text transform */
+.text-transform-lowercase {
+    text-transform: lowercase;
+}
+
+.text-transform-uppercase {
+    text-transform: uppercase;
+}
+
+.text-transform-capitalize {
+    text-transform: capitalize;
+}
+/* end text transform */

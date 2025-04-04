@@ -1,0 +1,8 @@
+/* Auto generate by Sass. */
+.rd-dialog {
+  --rdta-dialog-normal-breakpoint: 550px;
+}
+
+.rd-dialog-modal {
+  --rdta-dialog-backdrop-z-index: 1010;
+}

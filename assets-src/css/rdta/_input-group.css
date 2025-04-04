@@ -1,0 +1,49 @@
+/*!
+* ----------------------------------------------------------------------------------------------
+* _input-group.css
+* ----------------------------------------------------------------------------------------------
+*/
+
+
+.rd-form .form-group .control-wrapper .rd-input-group {
+    align-items: stretch;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.rd-form .form-group .control-wrapper .rd-input-group .rd-input-control {
+    flex-basis: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+    height: auto;
+    width: 1%;
+}
+
+.rd-form .form-group .control-wrapper .rd-input-group .rd-input-group-block {
+    display: flex;
+}
+
+.rd-form .form-group .control-wrapper .rd-input-group .rd-input-group-block.append {
+    margin-left: -1px;
+}
+
+.rd-form .form-group .control-wrapper .rd-input-group .rd-input-group-block.prepend {
+    margin-right: -1px;
+}
+
+.rd-form .form-group .control-wrapper .rd-input-group .rd-input-group-block .rd-input-group-block-text {
+    align-items: center;
+    display: flex;
+    background-color: var(--rdta-tpf-block-background-color);
+    border: 1px solid var(--rdta-tpf-block-border-color);
+    line-height: 1.4;
+    padding: 0.313rem var(--rdta-block-element-padding-horizontal);
+}
+
+.rd-form .form-group .control-wrapper .rd-input-group.rd-input-group-lg {
+    font-size: var(--rdta-form-large-font-size);
+}
+
+.rd-form .form-group .control-wrapper .rd-input-group.rd-input-group-sm {
+    font-size: var(--rdta-form-small-font-size);
+}

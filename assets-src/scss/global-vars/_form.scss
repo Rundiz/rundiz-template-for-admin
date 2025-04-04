@@ -1,0 +1,13 @@
+/* Auto generate by Sass. */
+// CSS 3 variables for Rundiz Template for Admin
+
+
+@use '.global-vars' as *;
+
+
+.rd-form,
+.rd-button {
+    --rdta-form-large-font-size: #{$form-large-font-size};
+    --rdta-form-small-font-size: #{$form-small-font-size};
+    --rdta-form-tiny-font-size: #{$form-tiny-font-size};
+}

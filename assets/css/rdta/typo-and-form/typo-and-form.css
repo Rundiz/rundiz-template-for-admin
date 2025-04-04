@@ -2,135 +2,126 @@
 /*!
  * Rundiz template typography and form
  */
-/**
- * Encode color
- * @link https://gist.github.com/certainlyakey/e9c0d8f5c87ff47e3d5b#gistcomment-3458258 Original source code.
- */
-/*
-mixin: link actions color.
-@todo [rdta] use relative color when browsers supported.
-@link https://stackoverflow.com/a/55330103/128761 Original source code for hsl calculation.
-@link https://stackoverflow.com/a/67209745/128761 Escape string for hsl() with calc() functions.
-*/
-/*
-CSS 3 variables
-
-These variables will be work with based, typo, form (typo-and-form.css) and also work with the rest of RDTA.
-*/
+/* Auto generate by Sass. */
 :root {
-  --basic-focus-color: rgba(153, 153, 153, 0.35);
-  --form-focus-color: rgba(255, 182, 0, 0.35);
-  --form-invalid-border-color: #bc0000;
-  --page-background-color: #FFF;
-  --page-text-color: #333;
-  --block-background-color: #eee;
-  --block-border-color: #ddd;
-  --content-block-element-margin-vertical: 0.625rem;
-  --inputrange-thumb-border-color: #AAA;
-  --text-link-color: #1280EF;
+  --rdta-tpf-basic-focus-color: rgba(153, 153, 153, 0.35);
+  --rdta-tpf-form-focus-color: rgba(255, 182, 0, 0.35);
+  --rdta-tpf-form-invalid-border-color: #bc0000;
+  --rdta-tpf-button-3d-height: 2px;
+  --rdta-tpf-button-3d-pressed-height: 1px;
+  --rdta-tpf-button-3d-edge-color: rgba(0, 0, 0, 0.1);
+  --rdta-tpf-input-range-thumb-border-color: #aaa;
+  --rdta-tpf-input-range-track-color: #ddd;
+  --rdta-tpf-page-background-color: #fff;
+  --rdta-tpf-page-text-color: #333;
+  --rdta-tpf-block-background-color: #eee;
+  --rdta-tpf-block-border-color: #ddd;
+  --rdta-tpf-content-block-element-margin-vertical: 0.625rem;
+  --rdta-tpf-table-cell-padding: 0.313em;
+  --rdta-tpf-text-disabled-color: #999;
+  --rdta-tpf-text-link-color: #1280EF;
 }
-
-/*
+/*!
+* ----------------------------------------------------------------------------------------------
+* _focusable-elements.css
 * ----------------------------------------------------------------------------------------------
 * focusable elements
-*
 * What are focusable elements?
-* - https://www.deque.com/blog/give-site-focus-tips-designing-usable-focus-indicators/
-* - https://stackoverflow.com/questions/1599660/which-html-elements-can-receive-focus
-* ----------------------------------------------------------------------------------------------
+* https://www.deque.com/blog/give-site-focus-tips-designing-usable-focus-indicators/
+* https://stackoverflow.com/questions/1599660/which-html-elements-can-receive-focus
 */
 :focus {
-  outline: 2px dotted var(--basic-focus-color);
+  outline: 2px dotted var(--rdta-tpf-basic-focus-color);
 }
-
 button:focus,
 .rd-button:focus,
 .rd-pagination a:focus,
 input:focus,
 select:focus,
 textarea:focus {
-  outline: 3px solid var(--form-focus-color);
+  outline: 3px solid var(--rdta-tpf-form-focus-color);
 }
-
 input[type=radio]:focus {
   border-radius: 50%;
 }
-
 button:-moz-focusring,
 [type=button]:-moz-focusring,
 [type=reset]:-moz-focusring,
 [type=submit]:-moz-focusring {
-  outline: 2px solid var(--form-focus-color);
+  outline: 2px solid var(--rdta-tpf-form-focus-color);/* override focus on button in Firefox. this also override sanitize.css which is must begins with [type="xxx"]. */
+  
 }
-
 input[type=color]::-moz-focus-inner {
-  border: none;
+  border: none;/* remove focus dotted in Firefox. */
+  
 }
-
-/*
+/*!
+* ----------------------------------------------------------------------------------------------
+* _typography.css
 * ----------------------------------------------------------------------------------------------
 * based html & typography
-* ----------------------------------------------------------------------------------------------
 */
 html {
-  background-color: var(--page-background-color);
+  background-color: var(--rdta-tpf-page-background-color);
   cursor: auto;
   font-size: 107%;
 }
 @media (min-width: 768px) {
+  /* use breakpoint `$sm-min-width` */
   html {
     font-size: 100%;
   }
 }
-
 body {
-  color: var(--page-text-color);
+  color: var(--rdta-tpf-page-text-color);
   cursor: auto;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid sans", "Helvetica Neue", "Helvetica", "Tahoma", "Arial", sans-serif;
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid sans","Helvetica Neue","Helvetica","Tahoma","Arial",sans-serif;
   font-size: 100%;
   font-weight: normal;
   line-height: 1.5;
   padding: 0;
 }
-
 a {
-  color: var(--text-link-color);
+  color: var(--rdta-tpf-text-link-color);
   text-decoration: none;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);/* remove on touch and white blue background color appears */
+  
 }
-a:active, a:focus, a:hover {
+a:active,
+a:focus,
+a:hover {
   -moz-user-select: none;
   -ms-user-select: none;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
 }
 a:visited {
-  color: #0b5aa9;
+  color: hsl(from var(--rdta-tpf-text-link-color) h s calc(l - 15));
 }
-a:focus, a:hover {
-  color: #5aa6f4;
+a:focus,
+a:hover {
+  color: hsl(from var(--rdta-tpf-text-link-color) h s calc(l + 15));
 }
-
 abbr {
   cursor: help;
 }
-
 blockquote {
-  border-left: 5px solid var(--block-border-color);
+  border-left: 5px solid var(--rdta-tpf-block-border-color);
   border-right: 0;
-  margin: 0 0 var(--content-block-element-margin-vertical) 0;
+  margin: 0 0 var(--rdta-tpf-content-block-element-margin-vertical) 0;
   padding: 0 0 0 0.625em;
 }
-
-code, samp, pre, kbd {
+code,
+samp,
+pre,
+kbd {
   background-color: #f1f1f1;
   color: #555;
-  font-family: "Consolas", "Lucida Console", "DejaVu Sans Mono", "Liberation Mono", "Courier New", monospace, sans-serif;
+  font-family: "Consolas","Lucida Console","DejaVu Sans Mono","Liberation Mono","Courier New",monospace,sans-serif;
   padding: 0.125em 0.188em;
 }
-
 details {
-  margin: 0 0 var(--content-block-element-margin-vertical) 0;
+  margin: 0 0 var(--rdta-tpf-content-block-element-margin-vertical) 0;
 }
 details details {
   margin-left: 1.111em;
@@ -139,9 +130,8 @@ details details {
 details summary {
   cursor: pointer;
 }
-
 dl {
-  margin: 0 0 var(--content-block-element-margin-vertical) 0;
+  margin: 0 0 var(--rdta-tpf-content-block-element-margin-vertical) 0;
 }
 dl dt {
   margin: 0;
@@ -153,64 +143,59 @@ dl ol,
 dl ul {
   margin-left: 1.111em;
 }
-
-h1, h2, h3, h4, h5, h6, p {
-  margin: 0 0 var(--content-block-element-margin-vertical) 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0 0 var(--rdta-tpf-content-block-element-margin-vertical) 0;
 }
-
 h1 {
   font-size: 2.44em;
   font-weight: 400;
 }
-
 h2 {
   font-size: 2.05em;
   font-weight: 400;
 }
-
 h3 {
   font-size: 1.5em;
   font-weight: 400;
 }
-
 h4 {
   font-size: 1.27em;
   font-weight: 400;
 }
-
 h5 {
   font-size: 1em;
   font-weight: 600;
 }
-
 h6 {
   font-size: 0.75em;
   font-weight: 700;
 }
-
 hr {
   border-bottom: 0;
   border-left: 0;
   border-right: 0;
-  border-top: 1px solid var(--block-border-color);
-  margin: 1.25rem 0;
+  border-top: 1px solid var(--rdta-tpf-block-border-color);
+  margin: 1.25rem 0;/* must be rem due to h1-h6, p use margin as rem. use this as em will cause a lot different with those elements if parent element use larger or smaller font size. */
+  
 }
-
 iframe {
-  border: 1px solid var(--block-border-color);
+  border: 1px solid var(--rdta-tpf-block-border-color);
 }
-
 img.fluid {
   height: auto;
   max-width: 100%;
 }
-
 kbd {
   background-color: #f1f1f1;
-  border: 1px solid var(--block-border-color);
+  border: 1px solid var(--rdta-tpf-block-border-color);
   border-radius: 2px;
 }
-
 label {
   cursor: pointer;
 }
@@ -218,10 +203,12 @@ label [disabled],
 label [readonly] {
   cursor: not-allowed;
 }
-
+/* meter element */
 meter {
-  background-color: var(--block-background-color);
+  background-color: var(--rdta-tpf-block-background-color);
+  /* Firefox */
   background-image: none;
+  /* Firefox */
   box-shadow: none;
   display: inline-block;
   height: 1em;
@@ -229,44 +216,52 @@ meter {
   width: 11.25em;
 }
 meter:-moz-meter-optimum::-moz-meter-bar {
+  /* Firefox */
   background-color: #77AA33;
   background-image: none;
 }
 meter:-moz-meter-sub-optimum::-moz-meter-bar {
+  /* Firefox */
   background-color: #FFB900;
   background-image: none;
 }
 meter:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+  /* Firefox */
   background-color: #D13438;
   background-image: none;
 }
 meter::-webkit-meter-optimum-value {
+  /* Chrome, Opera, Edge */
   background-color: #77AA33;
   background-image: none;
 }
 meter::-webkit-meter-suboptimum-value {
+  /* Chrome, Opera, Edge */
   background-color: #FFB900;
   background-image: none;
 }
 meter::-webkit-meter-even-less-good-value {
+  /* Chrome, Opera, Edge */
   background-color: #D13438;
   background-image: none;
 }
 meter::-webkit-meter-bar {
-  background-color: var(--block-background-color);
+  /* Chrome, Opera, Edge */
+  background-color: var(--rdta-tpf-block-background-color);
   background-image: none;
   border: none;
+  /* in Webkit, it has border by default */
   border-radius: 0;
   box-shadow: none;
   height: 1em;
 }
-
+/* end meter element */
 pre {
-  margin: 0 0 var(--content-block-element-margin-vertical) 0;
+  margin: 0 0 var(--rdta-tpf-content-block-element-margin-vertical) 0;
   overflow: auto;
   padding: 0.625em;
 }
-
+/* progress element */
 @keyframes progressbar-novalue-animations {
   0% {
     opacity: 0.2;
@@ -279,79 +274,90 @@ progress {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  background-color: var(--block-background-color);
+  background-color: var(--rdta-tpf-block-background-color);
   border: none;
   height: 1em;
   width: 11.25em;
 }
 progress:not([value]) {
+  /* no value attribute */
   animation: progressbar-novalue-animations 1s linear infinite alternate;
   background-color: green;
+  /* Edge, IE */
   box-shadow: 0 1px 1px rgba(50, 250, 50, 0.8);
   color: green;
+  /* fix progress with no value that have running dots in Edge, IE */
   opacity: 0.2;
 }
 progress:not([value])::-moz-progress-bar {
+  /* no value attribute for mozilla. */
   background-color: green;
 }
 progress:not([value])::-webkit-progress-bar {
+  /* no value attribute for webkit. */
   background-color: green;
 }
 progress::-moz-progress-bar {
+  /* Firefox don't have -moz-progress-value. */
   background-color: green;
 }
 progress::-ms-fill {
   background-color: green;
 }
 progress::-webkit-progress-bar {
-  background-color: var(--block-background-color);
+  background-color: var(--rdta-tpf-block-background-color);
 }
 progress::-webkit-progress-value {
   background-color: green;
 }
-
+/* end progress element */
 q::after {
   content: "”";
 }
 q::before {
   content: "“";
 }
-
 samp {
-  background-color: var(--block-background-color);
+  background-color: var(--rdta-tpf-block-background-color);
   border-bottom: 0;
-  border-left: 3px solid var(--block-border-color);
+  border-left: 3px solid var(--rdta-tpf-block-border-color);
   border-right: 0;
   border-top: 0;
 }
-
 table {
-  border: 1px solid var(--block-border-color);
-  margin-bottom: var(--content-block-element-margin-vertical);
+  border: 1px solid var(--rdta-tpf-block-border-color);
+  margin-bottom: var(--rdta-tpf-content-block-element-margin-vertical);
 }
 table thead th,
 table thead td,
 table tfoot th,
 table tfoot td {
-  background-color: var(--block-background-color);
+  background-color: var(--rdta-tpf-block-background-color);
   font-weight: 600;
   text-align: left;
 }
-table td, table th {
-  border: 1px solid var(--block-border-color);
-  padding: 0.313em;
+table td,
+table th {
+  border: 1px solid var(--rdta-tpf-block-border-color);
+  padding-bottom: var(--rdta-tpf-table-cell-padding);
+  padding-left: var(--rdta-tpf-table-cell-padding);
+  padding-right: var(--rdta-tpf-table-cell-padding);
+  padding-top: var(--rdta-tpf-table-cell-padding);
 }
-
-menu, ul, ol {
+/* menu, ul, ol li elements */
+menu,
+ul,
+ol {
   line-height: 1.6;
-  margin: 0 0 var(--content-block-element-margin-vertical) 1.211em;
+  margin: 0 0 var(--rdta-tpf-content-block-element-margin-vertical) 1.211em;
   padding: 0;
 }
-menu li, ul li, ol li {
+menu li,
+ul li,
+ol li {
   margin: 0;
   padding: 0;
 }
-
 menu li menu,
 menu li ul,
 menu li ol,
@@ -365,24 +371,23 @@ ol li ul {
   margin-left: 1.211em;
   margin-top: 0;
 }
-
 ol {
   list-style: decimal;
 }
-
-menu, ul {
+menu,
+ul {
   list-style: disc;
 }
-
+/* end menu, ul, ol li elements */
 var {
-  border: 1px solid var(--block-border-color);
+  border: 1px solid var(--rdta-tpf-block-border-color);
   padding: 0.063em 0.375em 0.063em 0.188em;
 }
-
-/*
-* ------------------------------------------------------------------------------------------------------------------------
+/*!
+* ----------------------------------------------------------------------------------------------
+* _reset-form.css
+* ----------------------------------------------------------------------------------------------
 * Reset forms by overriding Sanitize's forms.css.
-* ------------------------------------------------------------------------------------------------------------------------
 */
 button,
 input,
@@ -392,33 +397,35 @@ textarea {
   box-shadow: none;
   padding: 0;
 }
-
 input[type=file],
 input[type=range] {
   border: none;
 }
-
-/*
+/*!
+* ----------------------------------------------------------------------------------------------
+* _form.css
 * ----------------------------------------------------------------------------------------------
 * form, fieldset, and all input controls.
-* ----------------------------------------------------------------------------------------------
 */
+/* buttons */
 input[type=button],
 input[type=reset],
-input[type=submit], a.rd-button,
+input[type=submit],
+a.rd-button,
 .rd-button,
 button {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  background-color: var(--block-background-color);
-  border: 1px solid var(--block-border-color);
+  background-color: var(--rdta-tpf-block-background-color);
+  border: 1px solid var(--rdta-tpf-block-border-color);
   border-radius: 0;
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 var(--rdta-tpf-button-3d-height) 0 var(--rdta-tpf-button-3d-edge-color);
   color: inherit;
   cursor: pointer;
   display: inline-block;
-  margin-bottom: 2px;
+  margin-bottom: var(--rdta-tpf-button-3d-height);
+  /* must be the same value as box shadow bottom. */
   padding: 0.313em 0.625em;
   position: relative;
   top: 0;
@@ -427,13 +434,15 @@ button {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-  transition: box-shadow 0.1s, top 0.1s;
+  /* remove white-blue background color on tap or on touch in chrome for android. */
+  transition: box-shadow 0.1s,top 0.1s;
 }
 input[type=button]:active,
 input[type=reset]:active,
 input[type=submit]:active,
 .rd-button:active,
-button:active, input[type=button]:focus,
+button:active,
+input[type=button]:focus,
 input[type=reset]:focus,
 input[type=submit]:focus,
 .rd-button:focus,
@@ -444,13 +453,14 @@ input[type=button]:active,
 input[type=reset]:active,
 input[type=submit]:active,
 .rd-button:active,
-button:active, input.active[type=button],
+button:active,
+input.active[type=button],
 input.active[type=reset],
 input.active[type=submit],
 .active.rd-button,
 button.active {
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-  top: 1px;
+  box-shadow: 0 var(--rdta-tpf-button-3d-pressed-height) 0 var(--rdta-tpf-button-3d-edge-color);
+  top: calc(var(--rdta-tpf-button-3d-height) - var(--rdta-tpf-button-3d-pressed-height));
 }
 input[type=button]:hover,
 input[type=reset]:hover,
@@ -463,14 +473,15 @@ input[disabled][type=button],
 input[disabled][type=reset],
 input[disabled][type=submit],
 [disabled].rd-button,
-button[disabled], input.disabled[type=button],
+button[disabled],
+input.disabled[type=button],
 input.disabled[type=reset],
 input.disabled[type=submit],
 .disabled.rd-button,
 button.disabled {
-  background-color: #f3f3f3;
-  box-shadow: 0 2px 0 rgba(38, 38, 38, 0.1);
-  color: #999999;
+  background-color: hsl(from var(--rdta-tpf-block-background-color) h s calc(l + 2));
+  box-shadow: 0 var(--rdta-tpf-button-3d-height) 0 hsl(from var(--rdta-tpf-button-3d-edge-color) h s calc(l + 15));
+  color: hsl(from var(--rdta-tpf-page-text-color) h s calc(l + 40));
   cursor: not-allowed;
   opacity: 1;
 }
@@ -478,24 +489,25 @@ input[disabled][type=button]:active,
 input[disabled][type=reset]:active,
 input[disabled][type=submit]:active,
 [disabled].rd-button:active,
-button[disabled]:active, input.disabled[type=button]:active,
+button[disabled]:active,
+input.disabled[type=button]:active,
 input.disabled[type=reset]:active,
 input.disabled[type=submit]:active,
 .disabled.rd-button:active,
 button.disabled:active {
   top: 0;
 }
-
+/* end buttons */
 fieldset {
-  border: 1px solid var(--block-border-color);
-  margin: 0 0 var(--content-block-element-margin-vertical) 0;
+  border: 1px solid var(--rdta-tpf-block-border-color);
+  margin: 0 0 var(--rdta-tpf-content-block-element-margin-vertical) 0;
   padding: 0.625em;
 }
 fieldset legend {
-  border: 1px solid var(--block-border-color);
+  border: 1px solid var(--rdta-tpf-block-border-color);
   padding: 0.125em 0.313em;
 }
-
+/* inputs */
 input[type=date],
 input[type=datetime-local],
 input[type=email],
@@ -508,16 +520,18 @@ input[type=text],
 input[type=time],
 input[type=url],
 input[type=week] {
-  border: 1px solid var(--block-border-color);
+  border: 1px solid var(--rdta-tpf-block-border-color);
+  /* this also override active, focus in firefox. */
   border-radius: 0;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
   font-family: inherit;
   font-size: 0.99em;
+  height: 2.152em;
   line-height: 1.4;
   padding: 0.313em 0.188em;
-  height: 2.152em;
 }
-input[type=date]:active, input[type=date]:focus,
+input[type=date]:active,
+input[type=date]:focus,
 input[type=datetime-local]:active,
 input[type=datetime-local]:focus,
 input[type=email]:active,
@@ -542,7 +556,8 @@ input[type=week]:active,
 input[type=week]:focus {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
 }
-input[type=date][disabled], input[type=date][readonly],
+input[type=date][disabled],
+input[type=date][readonly],
 input[type=datetime-local][disabled],
 input[type=datetime-local][readonly],
 input[type=email][disabled],
@@ -565,11 +580,12 @@ input[type=url][disabled],
 input[type=url][readonly],
 input[type=week][disabled],
 input[type=week][readonly] {
-  background-color: var(--block-background-color);
-  color: var(--text-disabled-color);
+  background-color: var(--rdta-tpf-block-background-color);
+  color: var(--rdta-tpf-text-disabled-color);
   cursor: not-allowed;
 }
-input[type=date]:invalid, input[type=date].rd-input-invalid,
+input[type=date]:invalid,
+input[type=date].rd-input-invalid,
 input[type=datetime-local]:invalid,
 input[type=datetime-local].rd-input-invalid,
 input[type=email]:invalid,
@@ -592,25 +608,24 @@ input[type=url]:invalid,
 input[type=url].rd-input-invalid,
 input[type=week]:invalid,
 input[type=week].rd-input-invalid {
-  border-color: var(--form-invalid-border-color);
+  border-color: var(--rdta-tpf-form-invalid-border-color);
 }
-
+/* end inputs */
 input[type=color] {
-  cursor: pointer;
-  border: 1px solid var(--block-border-color);
+  border: 1px solid var(--rdta-tpf-block-border-color);
   height: 2em;
   padding: 0;
 }
 input[type=color]::-webkit-color-swatch-wrapper {
+  /* remove space around input type color and its border. https://stackoverflow.com/a/47971607/128761 */
   padding: 0;
 }
-
 input[type=color],
 input[type=file],
 input[type=range] {
   cursor: pointer;
 }
-
+/* checkbox and radio */
 input[type=checkbox],
 input[type=radio] {
   appearance: none;
@@ -618,59 +633,66 @@ input[type=radio] {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  border: 1px solid var(--block-border-color);
+  border: 1px solid var(--rdta-tpf-block-border-color);
   color-adjust: exact;
   cursor: pointer;
   height: 1em;
   width: 1em;
 }
-input[type=checkbox][disabled], input[type=checkbox][readonly],
+input[type=checkbox][disabled],
+input[type=checkbox][readonly],
 input[type=radio][disabled],
 input[type=radio][readonly] {
-  background-color: var(--block-background-color);
+  background-color: var(--rdta-tpf-block-background-color);
   cursor: not-allowed;
 }
-input[type=checkbox]:invalid, input[type=checkbox].rd-input-invalid,
+input[type=checkbox]:invalid,
+input[type=checkbox].rd-input-invalid,
 input[type=radio]:invalid,
 input[type=radio].rd-input-invalid {
-  border-color: var(--form-invalid-border-color);
+  border-color: var(--rdta-tpf-form-invalid-border-color);
 }
-
 input[type=checkbox]:checked {
+  /* below, use checked icon from Bootstrap 5. */
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
 }
 input[type=checkbox]:checked[disabled] {
   opacity: 0.5;
 }
-
 input[type=radio] {
   border-radius: 50%;
 }
 input[type=radio]:checked {
+  /* below, use radio checked icon from Bootstrap 5. */
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23333333'/%3e%3c/svg%3e");
 }
 input[type=radio]:checked[disabled] {
   opacity: 0.5;
 }
-
+/* end checkbox and radio */
+/* input type file */
 input[type=file] {
   max-width: 240px;
   overflow: hidden;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);/* remove white-blue background color on tap or on touch in chrome for android. */
+  
 }
-input[type=file]::file-selector-button, input[type=file]::-webkit-file-upload-button {
-  background-color: var(--block-background-color);
-  border: 1px solid var(--block-border-color);
+input[type=file]::file-selector-button,
+input[type=file]::-webkit-file-upload-button {
+  background-color: var(--rdta-tpf-block-background-color);
+  border: 1px solid var(--rdta-tpf-block-border-color);
   cursor: pointer;
   font: inherit;
 }
 input[type=file][disabled] {
   cursor: not-allowed;
 }
-input[type=file][disabled]::file-selector-button, input[type=file][disabled]::-webkit-file-upload-button {
+input[type=file][disabled]::file-selector-button,
+input[type=file][disabled]::-webkit-file-upload-button {
   cursor: not-allowed;
 }
-
+/* end input type file */
+/* input type image */
 input[type=image] {
   border: none;
   border-radius: 0;
@@ -683,40 +705,47 @@ input[type=image] {
   -ms-user-select: none;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);/* remove white-blue background color on tap or on touch in chrome for android. */
+  
 }
-input[type=image]:disabled, input[type=image][disabled] {
+input[type=image]:disabled,
+input[type=image][disabled] {
   cursor: not-allowed;
   opacity: 0.7;
 }
-
+/* end input type image */
+/* select box */
 select {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  background-color: var(--page-background-color);
-  border: 1px solid var(--block-border-color);
+  background-color: var(--rdta-tpf-page-background-color);
+  border: 1px solid var(--rdta-tpf-block-border-color);
+  /* this also override active, focus in firefox. */
   border-radius: 0;
   font-family: inherit;
   font-size: 0.99em;
   line-height: 1.4;
   padding: 0.313em 1.5em 0.313em 0.188em;
 }
-select[disabled], select[readonly] {
-  background-color: var(--block-background-color);
-  color: var(--text-disabled-color);
+select[disabled],
+select[readonly] {
+  background-color: var(--rdta-tpf-block-background-color);
+  color: var(--rdta-tpf-text-disabled-color);
   cursor: not-allowed;
 }
-select:invalid, select.rd-input-invalid {
-  border-color: var(--form-invalid-border-color);
+select:invalid,
+select.rd-input-invalid {
+  border-color: var(--rdta-tpf-form-invalid-border-color);
 }
-
 select:not([multiple]) {
   height: 2.152em;
 }
-
+/* end select box */
+/* textarea */
 textarea {
-  border: 1px solid var(--block-border-color);
+  border: 1px solid var(--rdta-tpf-block-border-color);
+  /* this also override active, focus in firefox. */
   border-radius: 0;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
   font-family: inherit;
@@ -724,85 +753,44 @@ textarea {
   line-height: 1.4;
   padding: 0.313em 0.188em;
 }
-textarea:active, textarea:focus {
+textarea:active,
+textarea:focus {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
 }
-textarea[disabled], textarea[readonly] {
-  background-color: var(--block-background-color);
-  color: var(--text-disabled-color);
+textarea[disabled],
+textarea[readonly] {
+  background-color: var(--rdta-tpf-block-background-color);
+  color: var(--rdta-tpf-text-disabled-color);
   cursor: not-allowed;
 }
-textarea:invalid, textarea.rd-input-invalid {
-  border-color: var(--form-invalid-border-color);
+textarea:invalid,
+textarea.rd-input-invalid {
+  border-color: var(--rdta-tpf-form-invalid-border-color);
 }
-
-/*
+/* end textarea */
+/* _form-input-file.css has been moved to rdta/ folder since v2.3.2dev-20250404 */
+/*!
 * ----------------------------------------------------------------------------------------------
-* form > input[type="file"][class="rd-inputfile"]
-*
-* Reference:
-* http://demo.rundiz.com/nice-form-plugins/
-* https://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/
-* ----------------------------------------------------------------------------------------------
-*/
-.rd-inputfile {
-  overflow: hidden;
-  position: relative;
-  vertical-align: middle;
-}
-.rd-inputfile:active, .rd-inputfile:focus {
-  outline: 3px solid var(--form-focus-color);
-}
-.rd-inputfile.rd-input-invalid {
-  border-color: var(--form-invalid-border-color) !important;
-}
-.rd-inputfile input[type=file] {
-  display: block;
-  filter: alpha(opacity=0);
-  height: 100%;
-  left: 0;
-  margin: 0;
-  opacity: 0;
-  padding: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-.rd-input-files-queue {
-  vertical-align: middle;
-  white-space: normal;
-  word-break: break-all;
-  word-wrap: break-word;
-}
-.rd-input-files-queue > * {
-  vertical-align: middle;
-}
-.rd-input-files-queue > button,
-.rd-input-files-queue > input[type=button],
-.rd-input-files-queue > .rd-button {
-  margin-top: -2px;
-  position: relative;
-}
-
-/*
+* _form-input-range.css
 * ----------------------------------------------------------------------------------------------
 * form > input[type="range"]
 *
 * Input range CSS generators:
 * http://danielstern.ca/range.css/
 * http://www.cssportal.com/style-input-range/
-* ----------------------------------------------------------------------------------------------
 */
 input[type=range] {
   -webkit-appearance: none;
+  appearance: none;
   height: 37px;
   margin: 10px 0;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);/* remove white-blue background color on tap or on touch in chrome for android. */
+  
 }
+/* input range thumb */
 input[type=range]::-moz-range-thumb {
-  background: var(--block-background-color);
-  border: 1px solid var(--inputrange-thumb-border-color);
+  background: var(--rdta-tpf-block-background-color);
+  border: 1px solid var(--rdta-tpf-input-range-thumb-border-color);
   border-radius: 0px;
   box-shadow: none;
   cursor: pointer;
@@ -811,18 +799,20 @@ input[type=range]::-moz-range-thumb {
 }
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  background: var(--block-background-color);
+  background: var(--rdta-tpf-block-background-color);
   box-shadow: none;
-  border: 1px solid var(--inputrange-thumb-border-color);
+  border: 1px solid var(--rdta-tpf-input-range-thumb-border-color);
   border-radius: 0px;
   cursor: pointer;
   height: 30px;
   margin-top: -14px;
   width: 15px;
 }
+/* end input range thumb */
+/* input range track */
 input[type=range]::-moz-range-track {
   animate: 0.2s;
-  background: #ddd;
+  background: var(--rdta-tpf-input-range-track-color);
   border: 0px solid #000000;
   border-radius: 0px;
   box-shadow: none;
@@ -831,7 +821,7 @@ input[type=range]::-moz-range-track {
 }
 input[type=range]::-webkit-slider-runnable-track {
   animate: 0.2s;
-  background: #ddd;
+  background: var(--rdta-tpf-input-range-track-color);
   border: 0px solid #000000;
   border-radius: 0px;
   box-shadow: none;
@@ -839,19 +829,22 @@ input[type=range]::-webkit-slider-runnable-track {
   height: 3px;
 }
 input[type=range]:focus::-webkit-slider-runnable-track {
-  background: #ddd;
+  background: var(--rdta-tpf-input-range-track-color);
 }
+/* end input range track */
+/* microsoft edge styles */
 input[type=range]::-ms-track {
   animate: 0.2s;
   background: transparent;
   border-color: transparent;
   color: transparent;
   cursor: pointer;
-  height: 3px;
+  height: 3px;/* track must stay before thumb. */
+  
 }
 input[type=range]::-ms-thumb {
-  background: var(--block-background-color);
-  border: 1px solid var(--inputrange-thumb-border-color);
+  background: var(--rdta-tpf-block-background-color);
+  border: 1px solid var(--rdta-tpf-input-range-thumb-border-color);
   border-radius: 0px;
   box-shadow: none;
   cursor: pointer;
@@ -861,21 +854,25 @@ input[type=range]::-ms-thumb {
   width: 15px;
 }
 input[type=range]::-ms-fill-lower {
-  background: #ddd;
+  background: var(--rdta-tpf-input-range-track-color);
   border: 0px solid #000000;
   border-radius: 0px;
   box-shadow: none;
 }
 input[type=range]::-ms-fill-upper {
-  background: #ddd;
+  background: var(--rdta-tpf-input-range-track-color);
   border: 0px solid #000000;
   border-radius: 0px;
   box-shadow: none;
 }
 input[type=range]:focus::-ms-fill-lower {
-  background: #ddd;
+  /* fill track on the left. */
+  background: var(--rdta-tpf-input-range-track-color);
 }
 input[type=range]:focus::-ms-fill-upper {
-  background: #ddd;
+  /* fill track on the right. */
+  background: var(--rdta-tpf-input-range-track-color);
 }
+/* end microsoft edge styles */
+
 /*# sourceMappingURL=typo-and-form.css.map */

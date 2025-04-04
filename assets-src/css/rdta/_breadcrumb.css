@@ -1,0 +1,48 @@
+/*!
+* ----------------------------------------------------------------------------------------------
+* _breadcrumb.css
+* ----------------------------------------------------------------------------------------------
+*/
+
+
+@import '../global-vars/_breadcrumb.css';
+
+
+.rd-breadcrumb {
+    background-color: var(--rdta-tpf-block-background-color);
+    color: var(--rdta-breadcrumb-text-color);
+    display: flex;
+    font-size: 0.75em;
+    list-style: none;
+    margin: 0 0 var(--rdta-content-block-element-margin-vertical) 0;
+    padding: 0.5rem var(--rdta-block-element-padding-horizontal);
+}
+
+.rd-breadcrumb a {
+    text-decoration: none;
+}
+
+.rd-breadcrumb li {
+    margin-right: var(--rdta-block-element-margin-horizontal);
+}
+
+.rd-breadcrumb li::after {
+    content: "/";
+    margin-left: var(--rdta-block-element-margin-horizontal);
+}
+
+.rd-breadcrumb li:last-child {
+    margin-right: 0;
+}
+
+.rd-breadcrumb li:last-child::after {
+    content: "";
+}
+
+.rd-breadcrumb li.active a,
+.rd-breadcrumb li.active span, 
+.rd-breadcrumb li.current a,
+.rd-breadcrumb li.current span {
+    color: inherit;
+    cursor: default;
+}

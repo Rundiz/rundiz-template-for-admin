@@ -1,0 +1,237 @@
+/*!
+ * Smartmenus style in Rundiz template for admin
+ * 
+ * Recommended use with rundiz-template-admin.css file.
+ */
+
+
+.sm-rdta {
+    z-index: var(--rdta-sidebar-z-index);
+}
+
+.sm-rdta > li > a.current {
+    background-color: var(--rdta-background-primary-color);
+    color: #FFF;
+}
+
+.sm-rdta > li > a > .sub-arrow {
+    display: inline-block;
+}
+
+.sm-rdta a span.sub-arrow {
+    background-color: rgba(0, 0, 0, 0.08);
+    color: #ccc;
+    height: 30px;
+    line-height: 30px;
+    margin-top: -15px;
+    overflow: hidden;
+    position: absolute;
+    right: 5px;
+    text-align: center;
+    top: 50%;
+    width: 30px;
+}
+
+.sm-rdta a span.sub-arrow::before {
+    content: "+";
+}
+
+.sm-rdta a:hover, 
+.sm-rdta a.highlighted {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.sm-rdta a:hover span.sub-arrow {
+    color: #ccc;
+}
+
+.sm-rdta a.highlighted span.sub-arrow::before {
+    display: block;
+    content: "-";
+}
+
+@media (min-width: 1000px) {
+    /* use sidebar breakpoint `$minimum-sidebar-breakpoint` */
+    .sm-rdta a span.sub-arrow {
+        background-color: transparent;
+        color: #888;
+        width: 12px;
+    }
+    .sm-rdta a span.sub-arrow::before {
+        display: block;
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        content: "\f0da";/* right arrow. */
+    }
+    .sm-rdta a.highlighted span.sub-arrow::before {
+        content: "\f0da";/* right arrow. Required to prevent its content back to minus sign (-). */
+    }
+}
+
+.sm-rdta ul {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.sm-rdta ul a {
+    font-size: var(--sm-rdta-submenu-item-wrapper-font-size);
+    overflow-wrap: break-word;
+    padding: var(--rdta-block-element-padding-vertical) 35px var(--rdta-block-element-padding-vertical) var(--rdta-block-element-padding-horizontal);
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.sm-rdta ul a:hover, 
+.sm-rdta ul a.highlighted {
+    background-color: transparent;
+    color: var(--rdta-text-primary-color);
+}
+
+.sm-rdta ul a.current {
+    font-weight: 700;
+}
+
+.sm-rdta ul ul {
+    background-color: transparent;
+}
+
+@media (min-width: 1000px) {
+    /* use sidebar breakpoint `$minimum-sidebar-breakpoint` */
+    .sm-rdta ul {
+        background-color: #FFF;
+        border: 1px solid var(--rdta-tpf-block-border-color);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        color: var(--rdta-tpf-page-text-color);
+    }
+    .sm-rdta ul a {
+        color: inherit;
+        padding-right: 18px;
+    }
+    .sm-rdta ul a:hover span.sub-arrow {
+        color: var(--rdta-tpf-page-text-color);
+    }
+    .sm-rdta ul a:hover, 
+    .sm-rdta ul a.highlighted {
+        background-color: var(--rdta-tpf-block-background-color);
+    }
+    .sm-rdta ul ul {
+        background-color: #FFF;
+    }
+}
+
+@media (min-width: 1000px) {
+    /* use sidebar breakpoint `$minimum-sidebar-breakpoint` */
+    .sm-rdta span.scroll-up,
+    .sm-rdta span.scroll-down {
+        background-color: #FFF;
+        display: none;
+        height: 20px;
+        overflow: hidden;
+        position: absolute;
+        visibility: hidden;
+    }
+    .sm-rdta span.scroll-up:hover,
+    .sm-rdta span.scroll-down:hover {
+        background-color: var(--rdta-tpf-block-background-color);
+    }
+    .sm-rdta span.scroll-up:hover span.scroll-up-arrow {
+        border-color: transparent transparent var(--rdta-tpf-page-text-color) transparent;
+    }
+    .sm-rdta span.scroll-down:hover span.scroll-down-arrow {
+        border-color: var(--rdta-tpf-page-text-color) transparent transparent transparent;
+    }
+    .sm-rdta span.scroll-down-arrow, 
+    .sm-rdta span.scroll-up-arrow {
+        border-color: transparent transparent var(--rdta-tpf-block-border-color) transparent;
+        border-style: dashed dashed solid dashed;
+        border-width: 6px;
+        height: 0;
+        left: 50%;
+        margin-left: -6px;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        width: 0;
+    }
+    .sm-rdta span.scroll-down-arrow {
+        border-color: var(--rdta-tpf-block-border-color) transparent transparent transparent;
+        border-style: solid dashed dashed dashed;
+        top: 8px;
+    }
+}
+
+.sm-rdta.navbar ul {
+    background-color: #FFF;
+    border: 1px solid var(--rdta-tpf-block-border-color);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    color: var(--rdta-tpf-page-text-color);
+    font-size: 80%;
+    height: auto;
+    min-width: 150px;
+    top: calc(var(--rdta-navbar-height_mobilescreen) / 2);
+    transition: none;
+    width: auto;
+}
+
+@media (min-width: 1000px) {
+    /* use sidebar breakpoint `$minimum-sidebar-breakpoint` */
+    .sm-rdta.navbar ul {
+        position: absolute;
+    }
+}
+
+.sm-rdta.navbar ul a {
+    color: inherit;
+    font-size: inherit;
+    padding: var(--rdta-block-element-padding-vertical) 0.313rem;
+}
+
+.sm-rdta.navbar ul a:hover, 
+.sm-rdta.navbar ul a.highlighted {
+    background-color: transparent;
+    color: inherit;
+}
+
+.sm-rdta.navbar ul li::before,
+.sm-rdta.navbar ol li::before {
+    content: "";/* fix sanitize v.12 that mess up top navbar space. */
+}
+
+@media (min-width: 1000px) {
+    /* use sidebar breakpoint `$minimum-sidebar-breakpoint` */
+    /* Switch to desktop layout
+    copied from https://www.smartmenus.org/docs/#styling-menus
+    -----------------------------------------------
+       These transform the menu tree from
+       collapsible to desktop (navbar + dropdowns)
+    -----------------------------------------------*/
+    /* start... (it's not recommended editing these rules) */
+    .sm-rdta ul {
+        position: absolute;
+        width: 12em;
+    }
+    .sm-rdta li {
+        float: left;
+    }
+    .sm-rdta.sm-rtl li {
+        float: right;
+    }
+    .sm-rdta ul li, 
+    .sm-rdta.sm-rtl ul li, 
+    .sm-rdta.sm-vertical li {
+        float: none;
+    }
+    .sm-rdta a {
+        white-space: nowrap;
+    }
+    .sm-rdta ul a, 
+    .sm-rdta.sm-vertical a {
+        white-space: normal;
+    }
+    .sm-rdta .sm-nowrap > li > a, 
+    .sm-rdta .sm-nowrap > li > :not(ul) a {
+        white-space: nowrap;
+    }
+    /* ...end */
+}

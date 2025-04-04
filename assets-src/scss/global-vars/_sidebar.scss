@@ -1,0 +1,24 @@
+/* Auto generate by Sass. */
+// CSS 3 variables for SmartMenus RDTA theme.
+
+
+@use '.global-vars' as *;
+
+
+.rd-navbar,
+.rd-sidebar,
+.rd-sidebar-back,
+.sm-rdta {
+    --rdta-navbar-height: #{$navbar-height};
+    --rdta-navbar-z-index: #{$z-index-navbar};
+
+    --rdta-navbar-sidebar-background-color: #{$navbar-sidebar-background-color};
+
+    --rdta-sidebar-transition-seconds: #{$sidebar-transition-seconds};
+    --rdta-sidebar-z-index: #{$z-index-sidebar};
+}
+
+
+.sm-rdta {
+    --sm-rdta-submenu-item-wrapper-font-size: #{$submenu-item-wrapper-font-size};
+}

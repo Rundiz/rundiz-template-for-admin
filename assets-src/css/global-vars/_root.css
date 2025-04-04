@@ -1,0 +1,34 @@
+/* Auto generate by Sass. */
+:root {
+  --rdta-background-danger-disabled-color: #cf6464;
+  --rdta-background-danger-hover-color: #eeb9b9;
+  --rdta-background-danger-color: #f4d0d0;
+  --rdta-background-info-disabled-color: #64abb8;
+  --rdta-background-info-hover-color: #afdfe7;
+  --rdta-background-info-color: #c4ebf2;
+  --rdta-background-primary-disabled-color: #97c3ea;
+  --rdta-background-primary-hover-color: #91c2ed;
+  --rdta-background-primary-color: #52A0E5;
+  --rdta-background-success-disabled-color: #65b065;
+  --rdta-background-success-hover-color: #c0dcc0;
+  --rdta-background-success-color: #d1e6d1;
+  --rdta-background-warning-disabled-color: #efb247;
+  --rdta-background-warning-hover-color: #fac875;
+  --rdta-background-warning-color: #fbd38f;
+  --rdta-block-element-margin-horizontal: 0.625rem;
+  --rdta-block-element-margin-vertical: 1.25rem;
+  --rdta-block-element-padding-horizontal: 0.625rem;
+  --rdta-block-element-padding-vertical: 0.625rem;
+  --rdta-content-block-element-margin-vertical: calc(var(--rdta-block-element-margin-vertical) / 2);
+  --rdta-navbar-height_mobilescreen: 6.25rem;
+  --rdta-sidebar-collapsed-width: 3.75rem;
+  --rdta-sidebar-expanded-width: 11.625rem;
+  --rdta-text-danger-color: #bc0000;
+  --rdta-text-info-color: #09a0bb;
+  --rdta-text-primary-color: #52A0E5;
+  --rdta-text-success-color: #007c00;
+  --rdta-text-warning-color: #e69200;
+  --rdta-text-white-color: #fff;
+  --rdta-sm-min-width: 768px;
+  --rdta-md-min-width: 1000px;
+}

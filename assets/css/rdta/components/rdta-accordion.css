@@ -7,7 +7,7 @@
   margin-left: 0;
 }
 .rd-accordion .rd-accordion-group {
-  border-color: var(--block-border-color);
+  border-color: var(--rdta-tpf-block-border-color);
   border-style: solid;
   border-bottom-width: 0;
   border-top-width: 1px;
@@ -20,31 +20,30 @@
   border-bottom-width: 1px;
 }
 .rd-accordion .rd-accordion-group .rd-accordion-body {
-  padding: var(--block-element-padding-vertical);
+  padding: var(--rdta-block-element-padding-vertical);
 }
 .rd-accordion .rd-accordion-group .rd-accordion-body.collapse {
   height: 0;
   overflow: hidden;
   padding-bottom: 0;
   padding-top: 0;
-  transition: height 0.3s, padding-bottom 0.3s, padding-top 0.3s;
+  transition: height 0.3s,padding-bottom 0.3s,padding-top 0.3s;
 }
 .rd-accordion .rd-accordion-group .rd-accordion-body.collapse.expanded {
   height: auto;
-  padding-bottom: var(--block-element-padding-vertical);
-  padding-top: var(--block-element-padding-vertical);
+  padding-bottom: var(--rdta-block-element-padding-vertical);
+  padding-top: var(--rdta-block-element-padding-vertical);
 }
 .rd-accordion .rd-accordion-group .rd-accordion-header {
-  background-color: var(--block-background-color);
-  border-bottom: 1px solid var(--block-border-color);
+  background-color: var(--rdta-tpf-block-background-color);
+  border-bottom: 1px solid var(--rdta-tpf-block-border-color);
   margin: 0;
-  padding: 0.313rem var(--block-element-padding-horizontal);
+  padding: 0.313rem var(--rdta-block-element-padding-horizontal);
 }
 .rd-accordion .rd-accordion-group .rd-accordion-header > * {
   color: inherit;
   display: block;
 }
-
 ul.rd-accordion,
 ol.rd-accordion {
   list-style: none;

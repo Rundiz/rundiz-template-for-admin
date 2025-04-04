@@ -9,8 +9,8 @@
   flex-wrap: wrap;
 }
 .rd-columns-flex-container.fix-columns-container-edge {
-  margin-left: calc(var(--block-element-margin-horizontal) * -1);
-  margin-right: calc(var(--block-element-margin-horizontal) * -1);
+  margin-left: calc(var(--rdta-block-element-margin-horizontal) * -1);
+  margin-right: calc(var(--rdta-block-element-margin-horizontal) * -1);
 }
 .rd-columns-flex-container .column {
   align-self: flex-start;
@@ -18,7 +18,8 @@
   flex-grow: 1;
   flex-shrink: 1;
   min-width: 0;
-  padding: 0 var(--block-element-padding-horizontal);
+  /* fix table push column over screen. */
+  padding: 0 var(--rdta-block-element-padding-horizontal);
 }
 .rd-columns-flex-container .column-break {
   flex-basis: 100%;
@@ -34,6 +35,7 @@
   flex: 0 0 100%;
   max-width: 100%;
 }
+/* Auto generate by Sass. */
 .rd-columns-flex-container .col-xs-1 {
   flex: 0 0 8.3333333333%;
   max-width: 8.3333333333%;

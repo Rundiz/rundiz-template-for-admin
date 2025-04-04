@@ -1,0 +1,113 @@
+/*!
+* ----------------------------------------------------------------------------------------------
+* _form.css
+* ----------------------------------------------------------------------------------------------
+*/
+
+
+/* input sizes */
+/* below are `inputbox-like`. */
+input[type=date].input-large,
+input[type=datetime-local].input-large,
+input[type=email].input-large,
+input[type=month].input-large,
+input[type=number].input-large,
+input[type=password].input-large,
+input[type=range].input-large,
+input[type=search].input-large,
+input[type=tel].input-large,
+input[type=text].input-large,
+input[type=time].input-large,
+input[type=url].input-large,
+input[type=week].input-large,
+select.input-large,
+textarea.input-large {
+    font-size: var(--rdta-form-large-font-size);
+}
+
+/* below are `inputbox-like`. */
+input[type=date].input-small,
+input[type=datetime-local].input-small,
+input[type=email].input-small,
+input[type=month].input-small,
+input[type=number].input-small,
+input[type=password].input-small,
+input[type=range].input-small,
+input[type=search].input-small,
+input[type=tel].input-small,
+input[type=text].input-small,
+input[type=time].input-small,
+input[type=url].input-small,
+input[type=week].input-small,
+select.input-small,
+textarea.input-small {
+    font-size: var(--rdta-form-small-font-size);
+}
+/* end input sizes */
+
+
+.rd-form .disabled {
+    color: var(--rdta-tpf-text-disabled-color);
+    cursor: not-allowed;
+}
+
+
+/* form group */
+.rd-form .form-group {
+    margin-bottom: var(--rdta-content-block-element-margin-vertical);
+}
+.rd-form .form-group .control-label {
+    font-weight: 600;
+}
+
+.rd-form .form-group .control-label.large {
+    font-size: var(--rdta-form-large-font-size);
+}
+
+.rd-form .form-group .control-label.small {
+    font-size: var(--rdta-form-small-font-size);
+}
+
+/* below are `inputbox-like`. */
+.rd-form .form-group .control-wrapper input[type=date],
+.rd-form .form-group .control-wrapper input[type=datetime-local],
+.rd-form .form-group .control-wrapper input[type=email],
+.rd-form .form-group .control-wrapper input[type=month],
+.rd-form .form-group .control-wrapper input[type=number],
+.rd-form .form-group .control-wrapper input[type=password],
+.rd-form .form-group .control-wrapper input[type=range],
+.rd-form .form-group .control-wrapper input[type=search],
+.rd-form .form-group .control-wrapper input[type=tel],
+.rd-form .form-group .control-wrapper input[type=text],
+.rd-form .form-group .control-wrapper input[type=time],
+.rd-form .form-group .control-wrapper input[type=url],
+.rd-form .form-group .control-wrapper input[type=week],
+.rd-form .form-group .control-wrapper select,
+.rd-form .form-group .control-wrapper textarea {
+    display: block;
+    width: 100%;
+}
+
+@media (min-width: 1000px) {
+    /* use sidebar breakpoint `$minimum-sidebar-breakpoint` */
+    .rd-form.horizontal .form-group {
+        display: flex;
+    }
+
+    .rd-form.horizontal .form-group .control-label {
+        flex: 0 0 180px;
+        margin-right: var(--rdta-block-element-margin-horizontal);
+    }
+
+    .rd-form.horizontal .form-group .control-wrapper {
+        flex-grow: 1;
+    }
+}
+/* end form group */
+
+
+.rd-form .form-description {
+    color: #777;
+    font-size: 0.875em;
+    font-style: italic;
+}

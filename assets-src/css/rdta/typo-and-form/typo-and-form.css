@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/*!
+ * Rundiz template typography and form
+ */
+
+
+@import '_root.css';
+
+@import '_focusable-elements.css';
+@import '_typography.css';
+@import '_reset-form.css';
+
+@import '_form.css';
+/* _form-input-file.css has been moved to rdta/ folder since v2.3.2dev-20250404 */
+@import '_form-input-range.css';

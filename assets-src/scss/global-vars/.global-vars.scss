@@ -1,0 +1,88 @@
+// Global variables for SCSS.
+
+
+// breadcrumb
+$breadcrumb-text-color: #777 !default;
+
+
+// button settings.
+$button-styled-text-color: #fff !default;
+$button-disabled-styled-text-color: $button-styled-text-color;
+
+
+// dialog and alert dialog.
+$dialog-normal-breakpoint: 550px !default;
+
+
+// navbar & sidebar settings.
+$navbar-sidebar-background-color: #222 !default;
+$navbar-height: 3.125rem !default;// must use rem because it should relate to the root only.
+// navbar height for mobile screen.
+// unit must be rem because it is page top header and navbar init. so, it is root header and navbar then use rem.
+$navbar-height_mobilescreen: 6.250rem !default;
+
+
+// margin for block level element.
+$block-element-margin-horizontal: 0.625rem !default;
+$block-element-margin-vertical: 1.250rem !default;
+$block-element-padding-horizontal: 0.625rem !default;
+$block-element-padding-vertical: 0.625rem !default;
+
+
+// form font sizes
+$form-large-font-size: 1.250em !default;
+$form-small-font-size: 0.75em !default;
+$form-tiny-font-size: 0.625em !default;
+
+
+// sidebar menu
+$sidebar-expanded-width: 11.625rem !default;
+$sidebar-collapsed-width: 3.750rem !default;
+$sidebar-transition-seconds: 0s;
+
+
+// sub-menus.
+$submenu-item-wrapper-font-size: 0.875rem !default;
+
+
+// colors for alert box, buttons, badge, table
+$primary-disabled-background-color: #97c3ea !default;
+$primary-background-hover-color: #91c2ed !default;
+$primary-color: #52A0E5 !default;
+$danger-background-color: #f4d0d0 !default;
+$danger-disabled-background-color: #cf6464 !default;
+$danger-background-hover-color: #eeb9b9 !default;
+$danger-color: #bc0000 !default;
+$info-background-color: #c4ebf2 !default;
+$info-disabled-background-color: #64abb8 !default;
+$info-background-hover-color: #afdfe7 !default;
+$info-color: #09a0bb !default;
+$success-background-color: #d1e6d1 !default;
+$success-disabled-background-color: #65b065 !default;
+$success-background-hover-color: #c0dcc0 !default;
+$success-color: #007c00 !default;
+$warning-background-color: #fbd38f !default;
+$warning-disabled-background-color: #efb247 !default;
+$warning-background-hover-color: #fac875 !default;
+$warning-color: #e69200 !default;
+$white-color: #fff !default;// for use with `.text-color-white`.
+
+
+// the z-indexes
+$z-index-sidebar: 2 !default;
+$z-index-navbar: 4 !default;// navbar (top) must higher than sidebar to prevent scroll page and sidebar visible on top of navbar.
+$z-index-alertboxfixed: 101 !default;
+$z-index-dialog-backdrop: 1010 !default;
+$z-index-alert-dialog-backdrop: 2000 !default;
+
+
+// common screen sizes. use pixel unit.
+$xs-max-width: 767px !default;
+$sm-min-width: ($xs-max-width+1);
+$sm-max-width: 999px !default;
+$md-min-width: ($sm-max-width+1);
+$md-max-width: 1199px !default;
+$lg-min-width: ($md-max-width+1);
+$lg-max-width: 1399px !default;
+$xl-min-width: ($lg-max-width+1);
+$minimum-sidebar-breakpoint: $md-min-width;

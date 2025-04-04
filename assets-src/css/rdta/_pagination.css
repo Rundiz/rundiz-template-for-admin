@@ -1,0 +1,141 @@
+/*!
+* ----------------------------------------------------------------------------------------------
+* _pagination.css
+* ----------------------------------------------------------------------------------------------
+*/
+
+
+.rd-pagination {
+    display: inline-flex;
+    list-style: none;
+    margin: 0;
+}
+
+.rd-pagination li {
+    border: 1px solid var(--rdta-tpf-block-border-color);
+    min-width: 2.063em;
+}
+
+.rd-pagination li + li {
+    margin-left: -1px;/* -1 for collapsed border. */
+}
+
+
+/* pagination button element */
+.rd-pagination li > a,
+.rd-pagination li > button,
+.rd-pagination li > span {
+    color: var(--rdta-tpf-text-link-color);
+    display: block;
+    line-height: 1;
+    padding: 0.438em 0.313em;
+    text-align: center;
+}
+
+.rd-pagination li > a:active, 
+.rd-pagination li > a:focus, 
+.rd-pagination li > a:hover,
+.rd-pagination li > button:active,
+.rd-pagination li > button:focus,
+.rd-pagination li > button:hover,
+.rd-pagination li > span:active,
+.rd-pagination li > span:focus,
+.rd-pagination li > span:hover {
+    background-color: var(--rdta-tpf-block-background-color);
+}
+
+.rd-pagination li > a,
+.rd-pagination li > button {
+    cursor: pointer;
+}
+
+.rd-pagination li > button {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    top: 0;
+}
+
+.rd-pagination li > button:active, 
+.rd-pagination li > button:focus, 
+.rd-pagination li > button:hover {
+    background-color: var(--rdta-tpf-block-background-color);
+}
+
+.rd-pagination li > span {
+    cursor: default;
+}
+/* end pagination button element */
+
+
+/* current page */
+.rd-pagination li.current {
+    background-color: var(--rdta-background-primary-color);
+}
+
+.rd-pagination li.current > a,
+.rd-pagination li.current > button,
+.rd-pagination li.current > span {
+    color: #f1f1f1;
+}
+
+.rd-pagination li.current > a:active, 
+.rd-pagination li.current > a:focus, 
+.rd-pagination li.current > a:hover,
+.rd-pagination li.current > button:active,
+.rd-pagination li.current > button:focus,
+.rd-pagination li.current > button:hover,
+.rd-pagination li.current > span:active,
+.rd-pagination li.current > span:focus,
+.rd-pagination li.current > span:hover {
+    background-color: inherit;
+}
+/* end current page */
+
+
+/* advanced pagination */
+.rd-pagination.advanced input,
+.rd-pagination.advanced select {
+    border: none;
+    height: 100%;
+}
+
+.rd-pagination.advanced input {
+    padding: 0;
+    width: 3.125em;
+}
+
+.rd-pagination.advanced select {
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-top: 0;
+    width: 4.375em;
+}
+
+.rd-pagination.advanced .break-space {
+    min-width: 0;
+    width: 0.625em;
+}
+/* end advanced pagination */
+
+
+/* pagination spaces (edge, loose) */
+.rd-pagination.space-edge {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rd-pagination.space-edge li + li {
+    margin-left: 0;
+}
+
+.rd-pagination.space-loose li:first-child {
+    margin-right: 0.313rem;
+}
+
+.rd-pagination.space-loose li + li {
+    margin-left: 0.313rem;
+    margin-right: 0.313rem;
+}
+/* end pagination spaces (edge, loose) */

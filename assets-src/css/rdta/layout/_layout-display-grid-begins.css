@@ -1,0 +1,40 @@
+/*! layout/_layout-display-grid-begins.css */
+
+
+.rd-page-wrapper {
+    display: grid;
+    grid-template-columns: 0px auto;
+    grid-template-rows: auto;
+    min-height: calc(100vh - var(--rdta-navbar-height_mobilescreen));
+    position: relative;
+}
+
+.rd-page-wrapper > footer {
+    background-color: transparent;
+    color: #888;
+    display: none;/* when visible in the larger screen size, use flex */
+    font-size: 0.688em;
+    min-height: 1.25rem;
+    padding: 0.313rem var(--rdta-block-element-padding-horizontal);
+}
+
+.rd-page-wrapper > footer a {
+    color: inherit;
+}
+
+.rd-page-wrapper > footer .rd-page-footer-left {
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: var(--rdta-block-element-padding-horizontal);
+}
+
+.rd-page-wrapper > footer .rd-page-footer-right {
+    margin-left: auto;
+    margin-right: 0;
+    padding-left: var(--rdta-block-element-padding-horizontal);
+}
+
+.rd-page-wrapper > main {
+    align-self: start;
+    min-width: 0;/* // fix table push this element over screen width ( https://stackoverflow.com/questions/43311943/prevent-grid-items-from-stretching-in-css-grid-layout ) */
+}
