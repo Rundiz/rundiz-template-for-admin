@@ -1,6 +1,6 @@
 {
   "name": "rundiz-template-for-admin",
-  "version": "2.3.1",
+  "version": "2.4.0",
   "description": "HTML, CSS, JS template for administrator application.",
   "type": "module",
   "main": "node_tasks/index.js",
