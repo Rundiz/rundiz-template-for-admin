@@ -92,8 +92,9 @@ export default class BundleRdtaJS {
      * Run bundle RDTA.
      * 
      * @async
+     * @param {Object} argv The CLI arguments.
      */
-    static run() {
+    static run(argv) {
         console.log('  Bundle RDTA JS.');
 
         let tasks = [];

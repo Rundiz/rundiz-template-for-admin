@@ -59,7 +59,7 @@ export default class Sass extends BasedBundler {
 
         const defaults = {
             charset: true,
-            sourceFolder: 'assets/scss',
+            sourceFolder: 'assets-src/scss',
             sourceMap: false,
             style: 'expanded',
         };

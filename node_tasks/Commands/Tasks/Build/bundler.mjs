@@ -47,7 +47,7 @@ export const bundler = class Bundler {
             const fullPathConfigJS = path.resolve(NODETASKS_DIR, configJS);
             if (fs.existsSync(fullPathConfigJS)) {
                 const {default: bundlerClass} = await import(url.pathToFileURL(fullPathConfigJS));
-                await bundlerClass.run();
+                await bundlerClass.run(argv);
             } else {
                 console.warn('  ' + TextStyles.txtWarning('The file ' + fullPathConfigJS + ' was not found.'));
             }

@@ -4,6 +4,22 @@
         "targets": [
             {
                 "patterns": [
+                    "assets-src/css/global-vars/_alertbox.css",
+                    "assets-src/css/global-vars/_breadcrumb.css",
+                    "assets-src/css/global-vars/_button.css",
+                    "assets-src/css/global-vars/_form.css",
+                    "assets-src/css/global-vars/_root.css",
+                    "assets-src/css/global-vars/_sidebar.css",
+                    "assets-src/css/rdta/columns/_columns-flex-breakpoints.css",
+                    "assets-src/css/rdta/components/_rdta-alertdialog-vars.css",
+                    "assets-src/css/rdta/components/_rdta-dialog-vars.css",
+                    "assets-src/css/rdta/typo-and-form/_root.css",
+                    "assets-src/css/rdta/_helpers.css"
+                ]
+            },
+            {
+                "patterns": [
+                    "assets/css/global-vars",
                     "assets/css/rdta",
                     "assets/css/sanitize",
                     "assets/css/smartmenus"
@@ -123,6 +139,7 @@
     "bundleAssets": [
         "config/bundleRdtaJS.mjs",
         "config/bundleRdtaSCSS.mjs",
+        "config/bundleRdtaCSS.mjs",
         "config/replaceCSSHeader.mjs"
     ],
     "phpBuilder": {
@@ -142,7 +159,8 @@
         },
         "watcher": [
             "config/watchJS.mjs",
-            "config/watchSCSS.mjs"
+            "config/watchSCSS.mjs",
+            "config/watchCSS.mjs"
         ]
     }
 }

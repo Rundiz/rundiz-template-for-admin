@@ -15,9 +15,9 @@ import FS from "../Libraries/FS.mjs";
 import Sass from '../Libraries/Sass.mjs';
 
 
-const scssGlob = 'assets/scss/**/*.scss';
+const scssGlob = 'assets-src/scss/**/*.scss';
 
-const destCSSFolder = 'assets/css';
+const destCSSFolder = 'assets-src/css';
 
 
 export default class bundleRdtaSCSS {
@@ -34,6 +34,33 @@ export default class bundleRdtaSCSS {
 
 
     /**
+     * Update destination folder to contain additional sub folder matched source file.
+     */
+    #updateDestFolderMatchSrc(sourceFile) {
+        const sourceFileOnly = path.basename(sourceFile);
+        const sourceFolder = path.dirname(sourceFile);
+        const sourceFolderArray = sourceFolder.split('/');
+        const destCSSFolderArray = bundleRdtaSCSS.destCSSFolder.split('/');
+
+        if (destCSSFolderArray.length <= sourceFolderArray.length) {
+            let i = 1;
+            for (const eachSrcSegment of sourceFolderArray) {
+                if (i <= destCSSFolderArray.length) {
+                    ++i;
+                    continue;
+                }
+                destCSSFolderArray.push(eachSrcSegment);
+                ++i;
+            }// endfor;
+            
+            return destCSSFolderArray.join('/');
+        }
+
+        return bundleRdtaSCSS.destCSSFolder;
+    }// #updateDestFolderMatchSrc
+
+
+    /**
      * Compile SCSS.
      */
     static async #compileSCSS() {
@@ -45,14 +72,13 @@ export default class bundleRdtaSCSS {
         );
 
         for (const scssFile of scssFiles) {
-            if (path.basename(scssFile).startsWith('_')) {
+            if (path.basename(scssFile).startsWith('.')) {
                 continue;
             }
             const sassObj = new Sass({
                 sourceFile: scssFile,
                 options: {
-                    sourceMap: true,
-                    sourceMapIncludeSources: true,
+                    sourceMap: false,
                 }
             });
             let compileResult = sassObj.compile({destFolder: this.destCSSFolder});
@@ -64,49 +90,17 @@ export default class bundleRdtaSCSS {
 
 
     /**
-     * Minify SCSS.
-     */
-    static async #minifySCSS() {
-        let scssFiles = await FS.glob(
-            this.scssGlob, 
-            {
-                absolute: false,
-            }
-        );
-
-        for (const scssFile of scssFiles) {
-            if (path.basename(scssFile).startsWith('_')) {
-                continue;
-            }
-            const sassObj = new Sass({
-                sourceFile: scssFile,
-                options: {
-                    sourceMap: true,
-                    style: 'compressed',
-                }
-            });
-            let compileResult = sassObj.compile({destFolder: this.destCSSFolder, suffix: '.min.css'});
-            let writeResult = await sassObj.writeFile(this.destCSSFolder);
-
-            console.log('    Minified scss: ' + scssFile + ' > ' + writeResult.file);
-        }// endfor;
-    }// minifySCSS
-
-
-    /**
      * Run bundle & minify assets.
      * 
+     * @param {Object} argv The CLI arguments.
      * @returns {Promise} Return `Promise` object.
      */
-    static run() {
+    static run(argv) {
         console.log('  Compile SCSS');
 
         let tasks = [];
         tasks.push(
             this.#compileSCSS()
-        );
-        tasks.push(
-            this.#minifySCSS()
         );
 
         return Promise.all(tasks)

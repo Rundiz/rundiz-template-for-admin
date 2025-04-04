@@ -20,9 +20,6 @@ import JsBundler from './inc/jsBundler.mjs';
 const destFolder = 'assets/js/rdta';
 
 
-const jsGlob = 'assets-src/js/rdta/**/*.js';
-
-
 const relativeSrc = 'assets-src/js/rdta';
 
 
@@ -51,11 +48,6 @@ export default class WatchJS {
     get destFolder() {
         return destFolder;
     }// destFolder
-
-
-    get jsGlob() {
-        return jsGlob;
-    }// jsGlob
 
 
     get relativeSrc() {
@@ -124,13 +116,15 @@ export default class WatchJS {
     /**
      * Run watch
      */
-    run() {
-        const watcher = FS.watch(
-            this.jsGlob, 
-            {
-                cwd: REPO_DIR,
-            }
-        );
+    async run() {
+        const options = {
+            cwd: REPO_DIR,
+            ignored: function (path, stats) {
+                // watch only file extension.
+                return stats?.isFile() && !path.endsWith('.js');
+            },
+        };
+        const watcher = FS.watch('./assets-src/js', options);
 
         watcher.on('all', async (event, file, stats) => {
             await this.#displayFileChanged(event, file, REPO_DIR);

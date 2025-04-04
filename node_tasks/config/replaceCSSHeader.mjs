@@ -56,9 +56,10 @@ export default class replaceCSSHeader {
     /**
      * Run bundle & minify assets.
      * 
+     * @param {Object} argv The CLI arguments.
      * @returns {Promise} Return `Promise` object.
      */
-     static run() {
+     static run(argv) {
         console.log('  Replace CSS header');
 
         let tasks = [];

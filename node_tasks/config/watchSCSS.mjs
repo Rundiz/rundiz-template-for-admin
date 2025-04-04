@@ -1,5 +1,5 @@
 /**
- * Watch assets/scss folder.
+ * Watch assets-src/scss folder.
  */
 
 
@@ -14,13 +14,10 @@ import FS from "../Libraries/FS.mjs";
 import Sass from '../Libraries/Sass.mjs';
 
 
-const destFolder = 'assets/css';
+const destFolder = 'assets-src/css';
 
 
-const scssGlob = 'assets/scss/**/*.scss';
-
-
-const relativeSrc = 'assets/scss';
+const relativeSrc = 'assets-src/scss';
 
 
 export default class WatchSCSS {
@@ -53,11 +50,6 @@ export default class WatchSCSS {
     get relativeSrc() {
         return relativeSrc;
     }// relativeSrc
-
-
-    get scssGlob() {
-        return scssGlob;
-    }// scssGlob
 
 
     /**
@@ -93,9 +85,9 @@ export default class WatchSCSS {
         
         if (command !== 'delete') {
             // else, it is copy command.
-            if (path.basename(file).startsWith('_')) {
-                // if file start with underscore (_), skip it.
-                console.log('    Skipping compile because this file start with underscore (_).');
+            if (path.basename(file).startsWith('.')) {
+                // if file start with dot (.), skip it.
+                console.log('    Skipping compile because this file start with dot (.).');
                 return Promise.resolve();
             }
 
@@ -105,24 +97,12 @@ export default class WatchSCSS {
             sassObj = new Sass({
                 sourceFile: file,
                 options: {
-                    sourceMap: true,
+                    sourceMap: false,
                 }
             });
             sassObj.compile();
             writeResult = await sassObj.writeFile(this.destFolder);
             console.log('    Compiled scss: ' + file + ' > ' + writeResult.file);
-
-            // minify scss.
-            sassObj = new Sass({
-                sourceFile: file,
-                options: {
-                    sourceMap: true,
-                    style: 'compressed',
-                }
-            });
-            sassObj.compile({suffix: '.min.css'});
-            writeResult = await sassObj.writeFile(this.destFolder);
-            console.log('    Minified scss: ' + file + ' > ' + writeResult.file);
         }// endif;
 
         return Promise.resolve();
@@ -145,13 +125,15 @@ export default class WatchSCSS {
     /**
      * Run watch
      */
-    run() {
-        const watcher = FS.watch(
-            this.scssGlob, 
-            {
-                cwd: REPO_DIR,
-            }
-        );
+    async run() {
+        const options = {
+            cwd: REPO_DIR,
+            ignored: function (path, stats) {
+                // watch only file extension.
+                return stats?.isFile() && !path.endsWith('.scss');
+            },
+        };
+        const watcher = FS.watch('./assets-src/scss', options);
 
         watcher.on('all', async (event, file, stats) => {
             await this.#displayFileChanged(event, file, REPO_DIR);

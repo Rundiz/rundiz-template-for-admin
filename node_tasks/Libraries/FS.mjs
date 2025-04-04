@@ -150,13 +150,13 @@ export default class FS {
      * Perform watching files changes.
      * 
      * @link https://github.com/paulmillr/chokidar chokidar document.
-     * @param {string[]} pattern Pattern to be matched.
+     * @param {string[]} paths Paths to files, dirs to be watched recursively.
      * @param {object} options The node package 'chokidar' options. Set to empty object to use default options.
      * @returns {chokidar.FSWatcher} Return chokidar `chokidar.FSWatcher` object.
      */
-    static watch(pattern, options = {}) {
-        if (typeof(pattern) !== 'string' && typeof(pattern) !== 'object') {
-            throw new Error('The pattern argument must be string or array.');
+    static watch(paths, options = {}) {
+        if (typeof(paths) !== 'string' && typeof(paths) !== 'object') {
+            throw new Error('The paths argument must be string or array.');
         }
 
         if (typeof(options) !== 'object') {
@@ -173,7 +173,7 @@ export default class FS {
         }
 
         return chokidar.watch(
-            pattern,
+            paths,
             options
         );
     }// watch
