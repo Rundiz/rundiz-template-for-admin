@@ -35,10 +35,9 @@ $dummyData = '[{"id":1,"name":"Gwendolyn Uphill","address":"282 Springview Stree
                 padding: 0.625em;
             }
 
-            .example-card.inverse {
-                background-color: #333;
-                border: none;
-                color: #eee;
+            .example-card.summary {
+                background-color: #eee;
+                color: #222;
             }
 
             .example-card.no-margin-bottom {
@@ -70,25 +69,25 @@ $dummyData = '[{"id":1,"name":"Gwendolyn Uphill","address":"282 Springview Stree
                         <div class="column-break"></div>
 
                         <div class="column col-lg-3 col-sm-6">
-                            <div class="example-card inverse">
+                            <div class="example-card summary">
                                 <h3>Users</h3>
                                 <p>Total <small class="rd-notification-badge tiny">14</small></p>
                             </div>
                         </div><!--.column-->
                         <div class="column col-lg-3 col-sm-6">
-                            <div class="example-card inverse">
+                            <div class="example-card summary">
                                 <h3>Comments</h3>
                                 <p>New <small class="rd-notification-badge tiny badge-info">2</small></p>
                             </div>
                         </div><!--.column-->
                         <div class="column col-lg-3 col-sm-6">
-                            <div class="example-card inverse">
+                            <div class="example-card summary">
                                 <h3>Posts</h3>
                                 <p>Pending <small class="rd-notification-badge tiny badge-warning">3</small></p>
                             </div>
                         </div><!--.column-->
                         <div class="column col-lg-3 col-sm-6">
-                            <div class="example-card inverse">
+                            <div class="example-card summary">
                                 <h3>Contact</h3>
                                 <p>New <small class="rd-notification-badge tiny badge-info">1</small></p>
                             </div>
