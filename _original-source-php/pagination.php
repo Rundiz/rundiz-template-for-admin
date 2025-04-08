@@ -29,7 +29,7 @@ if (!function_exists('renderPagination')) {
             if ($i == $current) {
                 $output .= '<span>' . $i . '</span>';
             } else {
-                $output .= '<a href="javascript: alert(\'go to page ' . $i . '\');">' . $i . '</a>';
+                $output .= '<a href="#">' . $i . '</a>';
             }
             $output .= '</li>'."\n";
         }// endfor;
@@ -62,139 +62,144 @@ include 'includes/html-head.php';
                     <hr>
 
                     <h2>Examples</h2>
-                    <div class="rd-block-level-margin-bottom code-sample-pagination-sample1">
-                        <nav>
-                            <?php echo renderPagination(); ?> 
-                        </nav>
-                        <h3 class="text-center">Center</h3>
-                        <nav class="text-center">
-                            <?php echo renderPagination(); ?> 
-                        </nav>
-                        <h3 class="text-right">Right</h3>
-                        <nav class="text-right">
-                            <?php echo renderPagination(); ?> 
-                        </nav>
-                    </div>
+                    <nav class="rd-block-level-margin-bottom code-sample-pagination-sample1" aria-label="Pagination">
+                        <?php echo renderPagination(); ?> 
+                    </nav>
                     <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".code-sample-pagination-sample1" data-target-src-remove-first-space="24" data-remove-classes="rd-block-level-margin-bottom" data-inner-html="true"></pre>
-                    <h3>Much much many</h3>
-                    <nav>
+                    <pre class="preview-source" data-target-src=".code-sample-pagination-sample1" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
+                    <h3>Alignment</h3>
+                    <p>You can change the alignment by use <a href="./text.html">Text alignment utility</a> on the <code>&lt;nav&gt;</code> element.</p>
+                    <h4 class="text-center">Center</h4>
+                    <nav class="rd-block-level-margin-bottom text-center code-sample-pagination-alignment-center" aria-label="Pagination center alignment">
+                        <?php echo renderPagination(); ?> 
+                    </nav>
+                    <h4>Source</h4>
+                    <pre class="preview-source" data-target-src=".code-sample-pagination-alignment-center" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
+                    <h4 class="text-right">Right</h4>
+                    <nav class="rd-block-level-margin-bottom text-right code-sample-pagination-alignment-right" aria-label="Pagination right alignment">
+                        <?php echo renderPagination(); ?> 
+                    </nav>
+                    <h4>Source</h4>
+                    <div class="rd-block-level-margin-bottom">
+                        <pre class="preview-source" data-target-src=".code-sample-pagination-alignment-right" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
+                    </div>
+                    
+                    <h3>Much much many pages</h3>
+                    <nav class="rd-block-level-margin-bottom" aria-label="Pagination">
                         <?php echo renderPagination(5, 1002, 999); // use just 5 for small screen. ?> 
                     </nav>
                     <h3>Loose</h3>
-                    <nav class="rd-block-level-margin-bottom code-sample-pagination-loose">
+                    <p>Add class <code>space-loose</code> to pagination element which contain class <code>rd-pagination</code>.</p>
+                    <nav class="rd-block-level-margin-bottom code-sample-pagination-loose" aria-label="Pagination">
                         <?php echo renderPagination(5, 1, 1, 'space-loose'); // use just 5 for small screen. ?> 
                     </nav>
                     <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".code-sample-pagination-loose" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
+                    <pre class="preview-source"><code class="language-html"><?php
+                    echo trim(htmlspecialchars('<ul class="rd-pagination space-loose">...</ul>', ENT_QUOTES));
+                    ?></code></pre>
                     <hr>
 
                     <h2>Pager</h2>
                     <p>Display pagination as previous/next</p>
-                    <nav class="rd-block-level-margin-bottom code-sample-pagination-pager">
+                    <nav class="rd-block-level-margin-bottom code-sample-pagination-pager" aria-label="Pagination">
                         <ul class="rd-pagination">
-                            <li><a href="#" onclick="return false;">Previous</a></li>
-                            <li><a href="#" onclick="return false;">Next</a></li>
+                            <li><a href="#">Previous</a></li>
+                            <li><a href="#">Next</a></li>
                         </ul>
                     </nav>
                     <h4>Source</h4>
                     <pre class="preview-source" data-target-src=".code-sample-pagination-pager" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
                     <h3>Pager loose</h3>
-                    <div class="code-sample-pagination-pager-otherstyles">
-                        <nav>
-                            <ul class="rd-pagination space-loose">
-                                <li><a href="#" onclick="return false;">Previous</a></li>
-                                <li><a href="#" onclick="return false;">Next</a></li>
-                            </ul>
-                        </nav>
-                        <h4 class="text-center">Center</h4>
-                        <nav class="text-center">
-                            <ul class="rd-pagination space-loose">
-                                <li><a href="#" onclick="return false;">Previous</a></li>
-                                <li><a href="#" onclick="return false;">Next</a></li>
-                            </ul>
-                        </nav>
-                        <h4>Use button</h4>
-                        <nav>
-                            <ul class="rd-pagination space-loose">
-                                <li><button type="button">Previous</button></li>
-                                <li><button type="button">Next</button></li>
-                            </ul>
-                        </nav>
-                    </div>
+                    <nav class="rd-block-level-margin-bottom" aria-label="Pagination loose">
+                        <ul class="rd-pagination space-loose">
+                            <li><a href="#">Previous</a></li>
+                            <li><a href="#">Next</a></li>
+                        </ul>
+                    </nav>
                     <h5>Source</h5>
-                    <pre class="preview-source" data-target-src=".code-sample-pagination-pager-otherstyles" data-target-src-remove-first-space="24" data-remove-classes="rd-block-level-margin-bottom" data-inner-html="true"></pre>
+                    <pre class="preview-source"><code class="language-html"><?php
+                    echo trim(htmlspecialchars('<ul class="rd-pagination space-loose">...</ul>', ENT_QUOTES));
+                    ?></code></pre>
+                    <h4>Use button</h4>
+                    <nav class="rd-block-level-margin-bottom code-sample-pagination-loose-button" aria-label="Pagination use buttons">
+                        <ul class="rd-pagination space-loose">
+                            <li><button type="button">Previous</button></li>
+                            <li><button type="button">Next</button></li>
+                        </ul>
+                    </nav>
+                    <h5>Source</h5>
+                    <pre class="preview-source" data-target-src=".code-sample-pagination-loose-button" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
                     <h3>To the edge</h3>
-                    <p>Horizontal align button to the left &amp; right of the page. Please note that this will be change the pagination element to <code>display: flex;</code>.</p>
-                    <nav class="rd-block-level-margin-bottom code-sample-pagination-pager-edge">
+                    <p>Horizontal align button to the left &amp; right of the page. Add the class <code>space-edge</code> to pagination element which contain class <code>rd-pagination</code>. 
+                        Please note that this will be change the pagination element to <code>display: flex;</code>.
+                    </p>
+                    <nav class="rd-block-level-margin-bottom code-sample-pagination-pager-edge" aria-label="Pagination to the edge">
                         <ul class="rd-pagination space-edge">
-                            <li><a href="#" onclick="return false;">Previous</a></li>
-                            <li><a href="#" onclick="return false;">Next</a></li>
+                            <li><a href="#">Previous</a></li>
+                            <li><a href="#">Next</a></li>
                         </ul>
                     </nav>
                     <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".code-sample-pagination-pager-edge" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
+                    <pre class="preview-source"><code class="language-html"><?php 
+                    echo trim(htmlspecialchars('<ul class="rd-pagination space-edge">...</ul>', ENT_QUOTES));
+                    ?></code></pre>
                     <hr>
 
                     <h2>Advanced</h2>
-                    <p>Advanced pagination is the mixed between page numbers, pager (previous/next), input page, select page. To do this, add <code>advanced</code> class to the pagination element.</p>
-                    <form method="get" style="margin-bottom: 0.625em;">
-                        <nav class="code-sample-pagination-pager-advanced">
-                            <ul class="rd-pagination advanced">
-                                <li><a href="#" onclick="return false;">&laquo;</a></li>
-                                <li><input type="number" value="1"></li>
-                                <li><a href="#" onclick="return false;">&raquo;</a></li>
-                                <li class="break-space"></li>
-                                <li>
-                                    <select>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                    </select>
-                                </li>
-                            </ul>
-                        </nav>
-                    </form>
-                    <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".code-sample-pagination-pager-advanced" data-target-src-remove-first-space="24"></pre>
-                    <form method="get" style="margin-bottom: 0.625em;">
-                        <nav>
-                            <ul class="rd-pagination advanced">
-                                <li><a href="#" onclick="return false;">&laquo;</a></li>
-                                <li><input type="number" value="1"></li>
-                                <li><a href="#" onclick="return false;">&raquo;</a></li>
-                            </ul>
-                        </nav>
-                    </form>
-                    <form method="get" style="margin-bottom: 0.625em;">
-                        <nav>
-                            <ul class="rd-pagination advanced">
-                                <li><a href="#" onclick="return false;">&laquo; Previous</a></li>
-                                <li><a href="#" onclick="return false;">Next &raquo;</a></li>
-                                <li class="break-space"></li>
-                                <li>
-                                    <select>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                    </select>
-                                </li>
-                            </ul>
-                        </nav>
-                    </form>
-                    <form method="get" style="margin-bottom: 0.625em;">
-                        <nav>
-                            <ul class="rd-pagination advanced">
-                                <li><a href="#" onclick="return false;">&laquo;</a></li>
-                                <li class="current"><a href="#" onclick="return false;">1</a></li>
-                                <li><a href="#" onclick="return false;">2</a></li>
-                                <li><a href="#" onclick="return false;">3</a></li>
-                                <li><a href="#" onclick="return false;">&raquo;</a></li>
-                                <li class="break-space"></li>
-                                <li><input type="number" value="1"></li>
-                            </ul>
-                        </nav>
-                    </form>
+                    <p>Advanced pagination is the mixed between page numbers, pager (previous/next), input page, select page. 
+                        To do this, add class <code>advanced</code> to pagination element which contain class <code>rd-pagination</code>.
+                    </p>
+                    <nav class="rd-block-level-margin-bottom code-sample-pagination-pager-advanced" aria-label="Pagination advanced">
+                        <ul class="rd-pagination advanced">
+                            <li><a href="#">&laquo;</a></li>
+                            <li><input type="number" value="1"></li>
+                            <li><a href="#">&raquo;</a></li>
+                            <li class="break-space"></li>
+                            <li>
+                                <select>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="rd-block-level-margin-bottom">
+                        <h4>Source</h4>
+                        <pre class="preview-source" data-target-src=".code-sample-pagination-pager-advanced" data-target-src-remove-first-space="20"></pre>
+                    </div>
+                    <nav class="rd-content-level-margin-bottom" aria-label="Pagination advanced">
+                        <ul class="rd-pagination advanced">
+                            <li><a href="#">&laquo;</a></li>
+                            <li><input type="number" value="1"></li>
+                            <li><a href="#">&raquo;</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="rd-content-level-margin-bottom" aria-label="Pagination advanced">
+                        <ul class="rd-pagination advanced">
+                            <li><a href="#">&laquo; Previous</a></li>
+                            <li><a href="#">Next &raquo;</a></li>
+                            <li class="break-space"></li>
+                            <li>
+                                <select>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav class="rd-content-level-margin-bottom" aria-label="Pagination advanced">
+                        <ul class="rd-pagination advanced">
+                            <li><a href="#">&laquo;</a></li>
+                            <li class="current"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">&raquo;</a></li>
+                            <li class="break-space"></li>
+                            <li><input type="number" value="1"></li>
+                        </ul>
+                    </nav>
                 </div><!--.rd-page-content-->
             </main>
 <?php include 'includes/partials/page-footer.php'; ?> 
@@ -202,5 +207,14 @@ include 'includes/html-head.php';
         
 
 <?php include 'includes/js-end-body.php'; ?> 
+        <script>
+            document.addEventListener('click', (event) => {
+                let thisTarget = event.target;
+                if (thisTarget.closest('[href="#"]')) {
+                    // if it is demo link.
+                    event.preventDefault();// just prevent link to '#'.
+                }
+            });
+        </script>
     </body>
 </html>

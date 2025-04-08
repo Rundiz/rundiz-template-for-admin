@@ -149,8 +149,8 @@ unset($input_type, $input_types);
                 <legend>Button types</legend>
                 <p>
                     <button type="button">Normal button</button>
-                    <button type="submit" onclick="return false;">Submit button</button>
-                    <button type="reset" onclick="return false;">Reset button</button>
+                    <button type="submit">Submit button</button>
+                    <button type="reset">Reset button</button>
                     <button type="button" disabled="">Disabled button</button>
                 </p>
                 <p>
@@ -159,8 +159,8 @@ unset($input_type, $input_types);
                 </p>
                 <p>
                     <input type="button" value="Input normal button">
-                    <input type="submit" value="Input submit button" onclick="return false;">
-                    <input type="reset" value="Input reset button" onclick="return false;">
+                    <input type="submit" value="Input submit button">
+                    <input type="reset" value="Input reset button">
                     <input type="button" value="Input disabled button" disabled="">
                 </p>
             </fieldset>

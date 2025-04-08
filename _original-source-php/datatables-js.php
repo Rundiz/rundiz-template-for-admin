@@ -33,8 +33,8 @@ include 'includes/html-head.php';
                     <hr>
 
                     <h2>Examples</h2>
-                    <p>This is the most basic example (zero configuration) for DataTables. It use only class <code>display</code> on <code>&lt;table&gt;</code> element.</p>
-                    <p>The <code>&lt;div&gt;</code> that contain class <code>rd-datatable-wrapper</code> and wrapped the table is just to prevent table will be too wide. You may remove it in your real project.</p>
+                    <p>This is the most basic example (<a href="https://datatables.net/examples/basic_init/zero_configuration.html" target="_blank">zero configuration</a>) for DataTables. It use only class <code>display</code> on <code>&lt;table&gt;</code> element.</p>
+                    <p>The <code>&lt;div&gt;</code> that contain class <code>rd-datatable-wrapper</code> and wrapped the table is just to prevent table too wide on small screen. You may remove it in your real project.</p>
                     <div class="rd-datatable-wrapper">
                         <table id="rdta-datatables-sample1" class="display">
                             <thead>
@@ -85,14 +85,14 @@ include 'includes/html-head.php';
                         <label>
                             Select style:
                             <select id="datatables-styles">
-                                <option value="display" selected="selected">Base style</option>
+                                <option value="display" selected="selected">Base style (class name display)</option>
                                 <option value="">No style</option>
-                                <option value="cell-border">Cell borders</option>
-                                <option value="display compact">Compact</option>
-                                <option value="hover">Hover</option>
-                                <option value="order-column">Order-column</option>
-                                <option value="row-border">Row borders</option>
-                                <option value="stripe">Stripe</option>
+                                <option value="cell-border">Cell borders (cell-border)</option>
+                                <option value="display compact">Compact (display compact)</option>
+                                <option value="hover">Hover (hover)</option>
+                                <option value="order-column">Order-column (order-column)</option>
+                                <option value="row-border">Row borders (row-border)</option>
+                                <option value="stripe">Stripe (stripe)</option>
                             </select>
                         </label>
                     </div>
@@ -154,7 +154,7 @@ include 'includes/html-head.php';
                         </tfoot>
                     </table>
                     <h4>Cell colors</h4>
-                    <p>Add showing class to table cell (<code>&lt;td&gt;</code>).</p>
+                    <p>Add showing class to table cell (<code>&lt;td&gt;</code>, or <code>&lt;th&gt;</code>).</p>
                     <div class="rd-datatable-wrapper">
                         <table id="rdta-datatables-sample-cellcolors" class="cell-border">
                             <thead>
@@ -209,6 +209,10 @@ include 'includes/html-head.php';
                     </div><!--.rd-datatable-wrapper-->
                     <?php unset($rowColors); ?> 
                     <h3>Individual column search, select</h3>
+                    <p>The individual column searching require more code on JS which you can see examples from 
+                        <a href="https://datatables.net/examples/api/multi_filter.html" target="_blank">here for text input</a>,
+                        or <a href="https://datatables.net/examples/api/multi_filter_select.html" target="_blank">here for select input</a>.
+                    </p>
                     <div id="rdta-datatables-sample-individual-searchselect-placeholder"></div>
                     <h3>Responsive</h3>
                     <p>Resize your browser to be small to see responsive table work.</p>
@@ -219,7 +223,7 @@ include 'includes/html-head.php';
                         });
                     </script>
                     <h4>Responsive full actions</h4>
-                    <p>Responsive DataTables with actions row, check box, and responsive button on custom column. The email column will be always hide to show the feature.</p>
+                    <p>Responsive DataTables with actions row, check box, and responsive button (expand/collapse) on custom column. The email column will be always hide to show the feature.</p>
                     <table id="rdta-datatables-sample-responsive2" class="hover row-border">
                         <thead>
                             <tr>
@@ -245,9 +249,8 @@ include 'includes/html-head.php';
                                         echo indent(9).'<td>' . "\n"
                                             . indent(10) . $row->name . "\n"
                                             . indent(10) . '<div class="row-actions">' . "\n"
-                                            . indent(11) . '<span class="action"><a href="#" onclick="return false;">Edit</a></span>' . "\n"
-                                            . indent(11) . '<span class="action"><a href="#" onclick="return false;">Permissions</a></span>' . "\n"
-                                            . indent(11) . '<span class="action"><a href="#" onclick="return false;">Delete</a></span>' . "\n"
+                                            . indent(11) . '<span class="action"><a href="#">Edit</a></span>' . "\n"
+                                            . indent(11) . '<span class="action"><a href="#">Delete</a></span>' . "\n"
                                             . indent(10) . '</div><!--.row-actions-->' . "\n"
                                             . indent(9) . '</td>'."\n";
                                         echo indent(9).'<td>'.$row->address.'</td>'."\n";
@@ -277,7 +280,46 @@ include 'includes/html-head.php';
                         </tfoot>
                     </table>
                     <h5>Source</h5>
+                    <p>Source for HTML.</p>
                     <pre class="preview-source" data-target-src="#rdta-datatables-sample-responsive2" data-target-src-remove-first-space="20"></pre>
+                    <p>Source for <a href="https://datatables.net/manual/options" target="_blank">DataTables options</a>.</p>
+                    <pre class="preview-source"><code class="language-js"><?php 
+$sampleJS = <<<EOT
+{
+    'autoWidth': false,// don't set style="width: xxx;" in the table cell.
+    columnDefs: [
+        {
+            'orderable': false,
+            'searchable': false,
+            'targets': [0, -1]
+        },
+        {
+            'className': 'column-checkbox',
+            'targets': 0,
+        },
+        {
+            'className': 'none',
+            'targets': 4,
+        },
+        {
+            'className': 'dtr-control',
+            'orderable': false,
+            'targets': -1,
+        },
+    ],
+    'order': [[1, 'desc']],
+    'processing': true,
+    responsive: {
+        details: {
+            type: 'column',
+            target: -1,
+        },
+    }
+}
+EOT;
+                    echo trim(htmlspecialchars($sampleJS, ENT_QUOTES));
+                    unset($sampleJS);
+                    ?></code></pre>
                 </div><!--.rd-page-content-->
             </main>
 <?php include 'includes/partials/page-footer.php'; ?> 
@@ -470,6 +512,14 @@ include 'includes/html-head.php';
                     }
                 });
                 // end JS for work with responsive full actions. ---------------------------------------
+            });
+
+            document.addEventListener('click', (event) => {
+                let thisTarget = event.target;
+                if (thisTarget.closest('[href="#"]')) {
+                    // if it is demo link.
+                    event.preventDefault();// just prevent link to '#'.
+                }
             });
         </script>
     </body>

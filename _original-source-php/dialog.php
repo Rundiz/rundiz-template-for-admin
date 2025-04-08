@@ -16,7 +16,7 @@ include 'includes/html-head.php';
                 <?php
                 echo renderBreadcrumb(['./' => 'Home', '#' => $title]);
                 ?> 
-                <div class="rd-page-content">
+                <div class="rd-page-content page-dialog">
                     <h1>Dialog</h1>
                     <p>
                         In order to make dialog works, add these files.
@@ -30,7 +30,8 @@ include 'includes/html-head.php';
                     <hr>
 
                     <h2>Examples</h2>
-                    <div class="rd-dialog rd-block-level-margin-bottom code-sample-dialog-sample1" aria-labelledby="example-dialog-label" style="margin-left: auto; margin-right: auto;">
+                    <p>Below is the basic dialog element showing how it looks like. It's included dialog header, body, and footer (optional).</p>
+                    <div class="rd-dialog rd-block-level-margin-bottom code-sample-dialog-sample1" aria-labelledby="example-dialog-label">
                         <div class="rd-dialog-header">
                             <h4 id="example-dialog-label" class="rd-dialog-title">Dialog header</h4>
                             <button class="rd-dialog-close" type="button" aria-label="Close">
@@ -48,7 +49,7 @@ include 'includes/html-head.php';
                     <h3>Source</h3>
                     <pre class="preview-source" data-target-src=".code-sample-dialog-sample1" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
                     <h3>Live demo</h3>
-                    <p>Open only dialog.</p>
+                    <p>The example below is non-modal dialog. It use the same HTML as above.</p>
                     <div class="rd-block-level-margin-bottom">
                         <button type="button" data-toggle="dialog" data-target="#dialog01">Open dialog</button>
                         <div id="dialog01" class="rd-dialog hide">
@@ -68,7 +69,7 @@ include 'includes/html-head.php';
                         </div>
                     </div>
                     <h3>Dialog with modal</h3>
-                    <p>To open dialog with modal (backdrop), wrap the dialog with element that contain class <code>rd-dialog-modal</code>.</p>
+                    <p>The example below is modal dialog. To open dialog with modal (backdrop), wrap the dialog with element that contain class <code>rd-dialog-modal</code>.</p>
                     <div class="rd-block-level-margin-bottom code-sample-dialog-modal">
                         <button type="button" data-toggle="dialog" data-target="#dialog02">Open modal dialog</button>
                         <div id="dialog02" class="rd-dialog-modal">
@@ -136,7 +137,7 @@ include 'includes/html-head.php';
                         </div>
                     </div>
                     <h3>Disable close on click outside the dialog</h3>
-                    <p>Add <code>data-click-outside-not-close=&quot;true&quot;</code> HTML attribute into the modal element to disable close on click outside.</p>
+                    <p>Add <code>data-click-outside-not-close=&quot;true&quot;</code> HTML attribute into the modal element to disable close on click outside the dialog box.</p>
                     <div class="rd-block-level-margin-bottom code-sample-dialog-disableclickclose">
                         <button type="button" data-toggle="dialog" data-target="#dialog04">Open modal dialog</button>
                         <div id="dialog04" class="rd-dialog-modal" data-click-outside-not-close="true">
@@ -148,7 +149,7 @@ include 'includes/html-head.php';
                                     </button>
                                 </div>
                                 <div class="rd-dialog-body">
-                                    <p>The modal dialog with backdrop.</p>
+                                    <p>&hellip;</p>
                                 </div>
                                 <div class="rd-dialog-footer">
                                     <button class="rd-button primary" type="button">Save</button>
@@ -158,7 +159,15 @@ include 'includes/html-head.php';
                         </div>
                     </div>
                     <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".code-sample-dialog-disableclickclose" data-target-src-remove-first-space="24" data-remove-classes="rd-block-level-margin-bottom" data-inner-html="true"></pre>
+                    <pre class="preview-source"><code class="language-html"><?php 
+$sampleHTML = <<<EOT
+<div id="my-dialog" class="rd-dialog-modal" data-click-outside-not-close="true">
+    <div class="rd-dialog">...</div>
+</div>
+EOT;
+                    echo trim(htmlspecialchars($sampleHTML, ENT_QUOTES));
+                    unset($sampleHTML);
+                    ?></code></pre>
                     <h3>Disable close on press escape key</h3>
                     <p>Add <code>data-esc-key-not-close=&quot;true&quot;</code> HTML attribute into the dialog element to disable close on press <kbd>esc</kbd> key.</p>
                     <div class="rd-block-level-margin-bottom code-sample-dialog-disableescclose">
@@ -172,7 +181,7 @@ include 'includes/html-head.php';
                                     </button>
                                 </div>
                                 <div class="rd-dialog-body">
-                                    <p>The modal dialog with backdrop.</p>
+                                    <p>&hellip;</p>
                                 </div>
                                 <div class="rd-dialog-footer">
                                     <button class="rd-button primary" type="button">Save</button>
@@ -182,7 +191,13 @@ include 'includes/html-head.php';
                         </div>
                     </div>
                     <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".code-sample-dialog-disableescclose" data-target-src-remove-first-space="24" data-remove-classes="rd-block-level-margin-bottom" data-inner-html="true"></pre>
+                    <pre class="preview-source"><code class="language-html"><?php 
+$sampleHTML = <<<EOT
+<div class="rd-dialog" data-esc-key-not-close="true">...</div>
+EOT;
+                    echo trim(htmlspecialchars($sampleHTML, ENT_QUOTES));
+                    unset($sampleHTML);
+                    ?></code></pre>
                     <h3>Sizes</h3>
                     <p>Dialog with different sizes by adding <code>rd-dialog-size-xxx</code> into dialog element.</p>
                     <div class="rd-block-level-margin-bottom code-sample-dialog-sizes">
@@ -216,9 +231,18 @@ include 'includes/html-head.php';
                         </div>
                     </div>
                     <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".code-sample-dialog-sizes" data-target-src-remove-first-space="24" data-remove-classes="rd-block-level-margin-bottom" data-inner-html="true"></pre>
+                    <pre class="preview-source"><code class="language-html"><?php 
+$sampleHTML = <<<EOT
+<div class="rd-dialog rd-dialog-size-large">...</div>
+<div class="rd-dialog rd-dialog-size-fullwindow">...</div>
+EOT;
+                    echo trim(htmlspecialchars($sampleHTML, ENT_QUOTES));
+                    unset($sampleHTML);
+                    ?></code></pre>
                     <h3>Manual activate dialog</h3>
-                    <p>The open dialog button below does not contain <code>data-toggle=&quot;dialog&quot;</code> but it just call the class.method (<code>(new RDTADialog).activateDialog('#dialogID')</code>) to open dialog manually.</p>
+                    <p>Use the JavaScript code below to manually activate dialog.</p>
+                    <pre class="preview-source"><code class="language-js">(new RDTADialog).activateDialog('#dialogID');</code></pre>
+                    <p>The example below, a button does not contain <code>data-toggle=&quot;dialog&quot;</code> but use HTML attribute <code>onclick</code> to call JS to open dialog manually.</p>
                     <div class="rd-block-level-margin-bottom">
                         <button type="button" onclick="rdtaOpenDialogManual();">Open modal dialog</button>
                         <div id="dialog08" class="rd-dialog-modal">

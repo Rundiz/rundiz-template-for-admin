@@ -159,8 +159,8 @@ include 'includes/html-head.php';
                         <div id="demo-custom-inputfile-events-placeholder" style="border: 1px dashed #ccc; padding: 0.625rem;"></div>
                     </form>
                     <h4>Source</h4>
-                    <pre>document.addEventListener('rdta.custominputfile.change', (event) => {console.log(event);}));
-document.addEventListener('rdta.custominputfile.addedfilesqueue', (event) => {console.log(event);}));</pre>
+                    <pre class="preview-source"><code class="language-js">document.addEventListener('rdta.custominputfile.change', (event) => {console.log(event);}));
+document.addEventListener('rdta.custominputfile.addedfilesqueue', (event) => {console.log(event);}));</code></pre>
                     <h3>Checkbox/radio</h3>
                     <form class="rd-form rd-block-level-margin-bottom code-sample-form-checkboxradio">
                         <div class="form-group">
@@ -510,9 +510,9 @@ document.addEventListener('rdta.custominputfile.addedfilesqueue', (event) => {co
                                         <div class="rd-button-group">
                                             <button class="rd-button dropdown-toggler" type="button" data-placement="bottom right">Dropdown <i class="fa-solid fa-caret-down"></i></button>
                                             <ul class="rd-dropdown">
-                                                <li><a href="#" onclick="return false;">Save</a></li>
-                                                <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
-                                                <li><a href="#" onclick="return false;">Cancel</a></li>
+                                                <li><a href="#">Save</a></li>
+                                                <li><a href="#">Save &amp; Publish</a></li>
+                                                <li><a href="#">Cancel</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -575,6 +575,15 @@ document.addEventListener('rdta.custominputfile.addedfilesqueue', (event) => {co
 
             document.addEventListener('DOMContentLoaded', function() {
                 rdtaCustomInputFileEvents();
+            });
+
+
+            document.addEventListener('click', (event) => {
+                let thisTarget = event.target;
+                if (thisTarget.closest('[href="#"]')) {
+                    // if it is demo link.
+                    event.preventDefault();// just prevent link to '#'.
+                }
             });
         </script>
     </body>

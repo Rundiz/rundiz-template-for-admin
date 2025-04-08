@@ -22,7 +22,7 @@ include 'includes/html-head.php';
 
                     <h2>Examples</h2>
                     <div class="rd-alertbox rd-alertbox-sample-1">
-                        Default alert box. Example <a href="#" onclick="return false">link</a> inside alert box.
+                        Default alert box. Example <a href="#">link</a> inside alert box.
                     </div>
                     <h3>Source</h3>
                     <pre class="preview-source" data-target-src=".rd-alertbox-sample-1" data-target-src-remove-first-space="20"></pre>
@@ -30,7 +30,7 @@ include 'includes/html-head.php';
                     $alertNames = ['info', 'danger', 'warning', 'success'];
                     foreach ($alertNames as $alertName) {
                         echo '<div class="rd-alertbox alert-' . $alertName . '">' . PHP_EOL .
-                            ucfirst($alertName) . ' alert box by add <code>.alert-' . $alertName . '</code> class into alert box element. Example <a href="#" onclick="return false">link</a> inside alert box.' . PHP_EOL .
+                            ucfirst($alertName) . ' alert box by add <code>.alert-' . $alertName . '</code> class into alert box element. Example <a href="#">link</a> inside alert box.' . PHP_EOL .
                             '</div>';
                     }// endforeach;
                     unset($alertName);
@@ -39,7 +39,7 @@ include 'includes/html-head.php';
                     <h3>Dismissable</h3>
                     <div class="rd-alertbox is-dismissable rd-alertbox-sample-dismissable">
                         <button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(this);"><span aria-hidden="true">&times;</span></button>
-                        Default alert box. Example <a href="#" onclick="return false">link</a> inside alert box.
+                        Default alert box. Example <a href="#">link</a> inside alert box.
                     </div>
                     <h4>Source</h4>
                     <pre class="preview-source" data-target-src=".rd-alertbox-sample-dismissable" data-target-src-remove-first-space="20"></pre>
@@ -47,7 +47,7 @@ include 'includes/html-head.php';
                     foreach ($alertNames as $alertName) {
                         echo '<div class="rd-alertbox alert-' . $alertName . ' is-dismissable">' . PHP_EOL .
                             '<button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(this);"><span aria-hidden="true">&times;</span></button>' . PHP_EOL .
-                            ucfirst($alertName) . ' alert box by add <code>.alert-' . $alertName . '</code> class into alert box element. Example <a href="#" onclick="return false">link</a> inside alert box.' . PHP_EOL .
+                            ucfirst($alertName) . ' alert box by add <code>.alert-' . $alertName . '</code> class into alert box element. Example <a href="#">link</a> inside alert box.' . PHP_EOL .
                             '</div>';
                     }// endforeach;
                     unset($alertName);
@@ -217,6 +217,15 @@ include 'includes/html-head.php';
 
                 return false;
             }// rdtaDemoShowAlertboxFloat
+
+
+            document.addEventListener('click', (event) => {
+                let thisTarget = event.target;
+                if (thisTarget.closest('[href="#"]')) {
+                    // if it is demo link.
+                    event.preventDefault();// just prevent link to '#'.
+                }
+            });
         </script>
     </body>
 </html>

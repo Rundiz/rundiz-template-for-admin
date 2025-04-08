@@ -30,7 +30,7 @@ include 'includes/html-head.php';
                     <hr>
 
                     <h2>Examples</h2>
-                    <div class="rd-accordion code-sample-accordion-sample1" style="margin-bottom: .625em;">
+                    <div class="rd-accordion code-sample-accordion-sample1">
                         <div class="rd-accordion-group">
                             <h3 id="accordion-heading1" class="rd-accordion-header active"><a data-toggle="accordion" data-target="#accordion1" aria-controls="accordion1" aria-expanded="true">Section 1</a></h3>
                             <div id="accordion1" class="rd-accordion-body collapse expanded" aria-labelledby="accordion-heading1">

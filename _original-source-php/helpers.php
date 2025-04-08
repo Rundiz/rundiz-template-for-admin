@@ -6,14 +6,6 @@
 $title = 'Helpers';
 include 'includes/html-head.php'; 
 ?> 
-        <style type="text/css">
-            .helper-responsive-visibility-box {
-                background-color: #52A0E5;
-                color: white;
-                padding: 0.188rem 0.313rem;
-                width: 100%;
-            }
-        </style>
     </head>
     <body>
 <?php include 'includes/partials/page-header.php'; ?> 
@@ -23,7 +15,7 @@ include 'includes/html-head.php';
                 <?php
                 echo renderBreadcrumb(['./' => 'Home', '#' => $title]);
                 ?> 
-                <div class="rd-page-content">
+                <div class="rd-page-content page-helpers">
                     <h1>Helpers</h1>
                     <p>CSS helper classes.</p>
                     <hr>
@@ -36,10 +28,12 @@ include 'includes/html-head.php';
                     <div class="helper-responsive-visibility-box rd-block-level-margin-bottom code-sample-helper-blvmb">block with margin bottom</div>
                     <p>So, you can put this class into any element you want the same bottom space as block level element.</p>
                     <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".code-sample-helper-blvmb" data-target-src-remove-first-space="20"></pre>
+                    <pre class="preview-source" data-target-src=".code-sample-helper-blvmb" data-target-src-remove-first-space="20" data-remove-classes="helper-responsive-visibility-box"></pre>
                     <h3>Margin bottom for content level</h3>
                     <p>To keep same bottom space of content level element or paragraph, use <code>.rd-content-level-margin-bottom</code> class.</p>
-                    <div class="rd-content-level-margin-bottom code-sample-helper-clvmb">The above line is paragraph, it is already has margin bottom but this line is <code>div</code>. This element add margin bottom as content level.</div>
+                    <div class="helper-responsive-visibility-box">block without margin bottom</div>
+                    <div class="helper-responsive-visibility-box rd-content-level-margin-bottom">block with margin bottom</div>
+                    <div class="helper-responsive-visibility-box rd-content-level-margin-bottom code-sample-helper-clvmb">block with margin bottom</div>
                     <h4>Source</h4>
                     <pre class="preview-source" data-target-src=".code-sample-helper-clvmb" data-target-src-remove-first-space="20"></pre>
 
@@ -69,19 +63,26 @@ include 'includes/html-head.php';
                         To fade out add the <code>.fade-out</code> class, to fade in just remove the <code>.fade-out</code> class.
                     </p>
                     <div class="code-sample-helper-fadeinout">
-                        <div id="demo-box-fadeout" class="rd-animation fade" style="border: 1px dashed #ccc; padding: 0.625rem;">Fade content box</div>
-                        <button type="button" onclick="rdtaDemoFadeOut();" style="margin-bottom: 0.625rem;">Fade out</button>
-                        <div id="demo-box-fadein" class="rd-animation fade fade-out" style="border: 1px dashed #ccc; padding: 0.625rem;">Fade content box</div>
-                        <button type="button" onclick="rdtaDemoFadeIn();" style="margin-bottom: 0.625rem;">Fade in</button>
+                        <div id="demo-box-fadeout" class="rd-animation fade">Fade content box</div>
+                        <button type="button" onclick="rdtaDemoFadeOut();">Fade out</button>
+                        <div id="demo-box-fadein" class="rd-animation fade fade-out">Fade content box</div>
+                        <button type="button" onclick="rdtaDemoFadeIn();">Fade in</button>
                     </div>
                     <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".code-sample-helper-fadeinout" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
+                    <pre class="preview-source"><code class="language-html"><?php 
+$sampleHTML = <<<EOT
+<div class="rd-animation fade">Fade in</div>
+<div class="rd-animation fade fade-out">Fade out</div>
+EOT;
+                    echo trim(htmlspecialchars($sampleHTML, ENT_QUOTES));
+                    unset($sampleHTML);
+                    ?></code></pre>
 
                     <h3>Responsive visibility</h3>
                     <p>This text -&gt;<span class="rd-hidden">was hidden</span>&lt;- hidden in all screen sizes using <code>.rd-hidden</code> class.</p>
                     <p>The text below will be hidden and visible in different screen size. Try to resize the browser to see it in action.</p>
                     <div class="rd-datatable-wrapper">
-                        <table class="rd-datatable">
+                        <table class="rd-datatable responsive-visibility-table">
                             <thead>
                                 <tr>
                                     <th>Class</th>

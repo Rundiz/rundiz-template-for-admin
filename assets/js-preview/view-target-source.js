@@ -65,6 +65,8 @@ class ViewTargetSource {
     /**
      * Remove everything that contain `.exclude-preview` HTML class attribute.
      * 
+     * Supported HTML attribute: `data-remove-classes="class1 class2"`.
+     * 
      * @returns {undefined}
      */
     removeExcludePreview() {
@@ -112,6 +114,8 @@ class ViewTargetSource {
     /**
      * Render preview source code.
      * 
+     * Supported HTML attributes: `data-inner-html="true"`, `data-target-src-remove-first-space="nn"`, `data-source-language="xx"`.
+     * 
      * @returns {undefined}
      */
     renderPreview() {
@@ -153,10 +157,20 @@ class ViewTargetSource {
     /**
      * Setup HTML doc for all target.
      * 
+     * Supported HTML attribute: `data-target-src=".class"`.
+     * 
+     * @async
      * @returns {undefined}
      */
-    setupHTMLDoc() {
-        const allPreviewSrcPlaceholders = document.querySelectorAll(this.previewSrcPlaceholderSelector);
+    async setupHTMLDoc() {
+        // previous: use `.cloneNode()` from current document may cause copy altered HTML by other JS such as Smart menus.
+        // current: use AJAX, XMLHTTP, `fetch()` to retrieve the whole current page again without altered by JS then parse to DOM. (Also change `document.` to be `ajaxDoc.`.)
+        const response = await fetch(document.location.href);
+        const data = await response.text();
+        const parser = new DOMParser();
+        const ajaxDoc = parser.parseFromString(data, 'text/html');
+        // select all preview placeholders as always.
+        const allPreviewSrcPlaceholders = ajaxDoc.querySelectorAll(this.previewSrcPlaceholderSelector);
 
         if (allPreviewSrcPlaceholders) {
             allPreviewSrcPlaceholders.forEach((item) => {
@@ -166,7 +180,7 @@ class ViewTargetSource {
                 }
 
                 this.sources[targetSrcSelector] = {};
-                const sourceObj = document.querySelector(targetSrcSelector)?.cloneNode(true);
+                const sourceObj = ajaxDoc.querySelector(targetSrcSelector)?.cloneNode(true);
                 if (sourceObj) {
                     this.sources[targetSrcSelector] = sourceObj;
                 } else {

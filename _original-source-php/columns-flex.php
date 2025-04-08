@@ -7,22 +7,6 @@ $title = 'Columns flex';
 include 'includes/html-head.php'; 
 ?> 
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta/columns/columns-flex.css'); ?>">
-        <style type="text/css">
-            .column {
-                background-color: #dee9f2;
-                border: 1px solid #52A0E5;
-                overflow: hidden;
-            }
-            .column.example-transparent {
-                background-color: transparent;
-                border: none;
-            }
-            .example-outline {
-                background-color: transparent;
-                border: 1px solid #dee9f2;
-                margin-bottom: 1.250rem;
-            }
-        </style>
     </head>
     <body>
 <?php include 'includes/partials/page-header.php'; ?> 
@@ -32,7 +16,7 @@ include 'includes/html-head.php';
                 <?php
                 echo renderBreadcrumb(['./' => 'Home', '#' => $title]);
                 ?> 
-                <div class="rd-page-content">
+                <div class="rd-page-content page-columns-flex">
                     <h1>Columns flex</h1>
                     <p>
                         Display columns inside the main page layout. Please note that this is not the elements and classes style to use for admin page layout.<br>
@@ -54,7 +38,20 @@ include 'includes/html-head.php';
                     <h3>Source</h3>
                     <pre class="preview-source" data-target-src=".code-sample-columnflex-sample1" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
                     <p>If you feels like the left and right edge is too narrower than the page layout, fix with <code>.fix-columns-container-edge</code> class.</p>
-                    <div class="rd-columns-flex-container fix-columns-container-edge rd-block-level-margin-bottom">
+                    <div class="rd-columns-flex-container fix-columns-container-edge">
+                        <div class="column example-transparent">
+                            <div class="example-outline">
+                                column
+                            </div>
+                        </div>
+                        <div class="column example-transparent">
+                            <div class="example-outline">
+                                column
+                            </div>
+                        </div>
+                    </div>
+                    <p>Compared with the normal layout below this line.</p>
+                    <div class="rd-columns-flex-container rd-block-level-margin-bottom">
                         <div class="column example-transparent">
                             <div class="example-outline">
                                 column
@@ -324,43 +321,16 @@ include 'includes/html-head.php';
                     <h3>Source</h3>
                     <pre class="preview-source" data-target-src=".code-sample-columnflex-nested" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
                     <p>You may feels that the left &amp; right edge of columns, even nested column was too narrower than page layout. This can be fixed by add <code>.fix-columns-container-edge</code> class to the container.</p>
-                    <div class="rd-columns-flex-container fix-columns-container-edge rd-block-level-margin-bottom code-sample-columnflex-fixedge">
+                    <div class="rd-columns-flex-container fix-columns-container-edge code-sample-columnflex-fixedge">
                         <div class="column col-sm-9 example-transparent">
                             <div class="example-outline">col-sm-9</div>
-                            <div class="rd-columns-flex-container fix-columns-container-edge">
-                                <div class="column col-md-6 example-transparent">
-                                    <div class="example-outline">col-md-6</div>
-                                    <div class="rd-columns-flex-container fix-columns-container-edge">
-                                        <div class="column col-xl-4 example-transparent">
-                                            <div class="example-outline">col-xl-4</div>
-                                        </div>
-                                        <div class="column col-xl-4 example-transparent">
-                                            <div class="example-outline">col-xl-4</div>
-                                        </div>
-                                        <div class="column col-xl-4 example-transparent">
-                                            <div class="example-outline">col-xl-4</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="column col-md-6 example-transparent">
-                                    <div class="example-outline">col-md-6</div>
-                                    <div class="rd-columns-flex-container fix-columns-container-edge">
-                                        <div class="column col-lg-6 example-transparent">
-                                            <div class="example-outline">col-lg-6</div>
-                                        </div>
-                                        <div class="column col-lg-6 example-transparent">
-                                            <div class="example-outline">col-lg-6</div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="rd-columns-flex-container">
+                                <div class="column col-md-6 example-transparent"><div class="example-outline">col-md-6</div></div>
+                                <div class="column col-md-6 example-transparent"><div class="example-outline">col-md-6</div></div>
                             </div>
                         </div>
-                        <div class="column col-sm-3 example-transparent">
-                            <div class="example-outline">col-sm-3</div>
-                        </div>
+                        <div class="column col-sm-3 example-transparent"><div class="example-outline">col-sm-3</div></div>
                     </div>
-                    <h3>Source</h3>
-                    <pre class="preview-source" data-target-src=".code-sample-columnflex-fixedge" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
                 </div><!--.rd-page-content-->
             </main>
 <?php include 'includes/partials/page-footer.php'; ?> 

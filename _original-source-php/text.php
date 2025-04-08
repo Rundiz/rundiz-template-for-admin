@@ -57,7 +57,7 @@ include 'includes/html-head.php';
                             if ($colorClassName === 'white') {
                                 echo ' style="background-color: #000;"';
                             }
-                            echo ' href="#" onclick="return false;">.text-color-' . $colorClassName . '</a><br>' . PHP_EOL;
+                            echo ' href="#">.text-color-' . $colorClassName . '</a><br>' . PHP_EOL;
                         }// endforeach;
                         unset($colorClassName, $colorClassNames);
                         ?> 
@@ -113,5 +113,14 @@ include 'includes/html-head.php';
         
 
 <?php include 'includes/js-end-body.php'; ?> 
+        <script>
+            document.addEventListener('click', (event) => {
+                let thisTarget = event.target;
+                if (thisTarget.closest('[href="#"]')) {
+                    // if it is demo link.
+                    event.preventDefault();// just prevent link to '#'.
+                }
+            });
+        </script>
     </body>
 </html>

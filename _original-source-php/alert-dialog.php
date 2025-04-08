@@ -34,7 +34,7 @@ include 'includes/html-head.php';
                     $alertTypes = ['info', 'danger', 'warning', 'success'];
                     foreach ($alertTypes as $alertType) {
                     ?> 
-                    <p><?php echo ucfirst($alertType); ?> alert dialog. <a href="#" onclick="rdtaAlertBoxShowAlert('<?php echo $alertType; ?>'); return false;">Show me.</a></p>
+                    <p><?php echo ucfirst($alertType); ?> alert dialog. <a href="#" onclick="return rdtaAlertBoxShowAlert('<?php echo $alertType; ?>');">Show me.</a></p>
                     <pre><code class="language-js"><?php echo htmlspecialchars(
 "RDTAAlertDialog.alert({
     'type': '$alertType',
@@ -62,7 +62,7 @@ include 'includes/html-head.php';
                                 </div>
                                 <div class="rd-dialog-body">
                                     <p>The modal dialog with backdrop.</p>
-                                    <p>Show me <a href="#" onclick="rdtaAlertBoxShowAlert('danger'); return false;">alert dialog</a>.</p>
+                                    <p>Show me <a href="#" onclick="return rdtaAlertBoxShowAlert('danger');">alert dialog</a>.</p>
                                 </div>
                                 <div class="rd-dialog-footer">
                                     <button class="rd-button primary" type="button">Save</button>

@@ -53,6 +53,8 @@ class ViewSource {
     /**
      * Check if preview source placeholder is for selected target only or not.
      * 
+     * Supported HTML attribute: `data-target-src=".class"`.
+     * 
      * @returns {Boolean} Return `true` if it is for selected target only, `false` for otherwise.
      */
     #isPreviewForTarget() {
@@ -135,7 +137,7 @@ class ViewSource {
      */
     async #setupHTMLDoc() {
         if (this.#isPreviewForTarget()) {
-            this.viewTargetSourceObj.setupHTMLDoc();
+            await this.viewTargetSourceObj.setupHTMLDoc();
         } else {
             // old method, use `document.clodeNode()` but may cause copy altered HTML by other JS such as Smart menus.
             //this.htmlDoc = document.cloneNode(true);

@@ -26,68 +26,70 @@ include 'includes/html-head.php';
                     <hr>
 
                     <h2>Examples</h2>
-                    <div class="rd-datatable-wrapper rd-datatable-wrapper-sample1 rd-block-level-margin-bottom">
-                        <form method="post" action="form.php">
-                            <table class="rd-datatable">
-                                <thead>
-                                    <tr>
-                                        <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Address</th>
-                                        <th>Email</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                    echo "\n";
-                                    if (isset($dummyData)) {
-                                        $dummyDataArray = json_decode($dummyData);
-                                        if (is_array($dummyDataArray)) {
-                                            $i = 1;
-                                            foreach ($dummyDataArray as $row) {
-                                                echo indent(8).'<tr>'."\n";
-                                                echo indent(9).'<td class="column-checkbox"><input type="checkbox" name="id[]" value="'.$row->id.'"></td>'."\n";
-                                                echo indent(9).'<td>'.$row->id.'</td>'."\n";
-                                                echo indent(9).'<td>'.$row->name.'</td>'."\n";
-                                                echo indent(9).'<td>'.$row->address.'</td>'."\n";
-                                                echo indent(9).'<td>'.$row->email.'</td>'."\n";
-                                                echo indent(9).'<td>'."\n";
-                                                echo indent(10).'<div class="rd-button-group">'."\n";
-                                                echo indent(11).'<button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>'."\n";
-                                                echo indent(11).'<button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>'."\n";
-                                                echo indent(11).'<ul class="rd-dropdown">'."\n";
-                                                echo indent(12).'<li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>'."\n";
-                                                echo indent(12).'<li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>'."\n";
-                                                echo indent(11).'</ul>'."\n";
-                                                echo indent(10).'</div>'."\n";
-                                                echo indent(9).'</td>'."\n";
-                                                echo indent(8).'</tr>'."\n";
-                                                $i++;
-                                                if ($i > 5) {
-                                                    break;
-                                                }
-                                            }// endforeach;
-                                            unset($i, $row);
-                                        }
-                                        unset($dummyDataArray);
+                    <p>You need to add base class <code>rd-datatable</code> to any <code>&lt;table&gt;</code>. 
+                        Wrap the table with class <code>rd-datatable-wrapper</code> can prevent table too wide on small screen. 
+                        Therefore, users can view all data by scrolling left and right.
+                    </p>
+                    <p>The class <code>column-checkbox</code> is for make column width best fit for the checkbox.</p>
+                    <div class="rd-datatable-wrapper rd-datatable-wrapper-sample1">
+                        <table class="rd-datatable">
+                            <thead>
+                                <tr>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Email</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                echo "\n";
+                                if (isset($dummyData)) {
+                                    $dummyDataArray = json_decode($dummyData);
+                                    if (is_array($dummyDataArray)) {
+                                        $i = 1;
+                                        foreach ($dummyDataArray as $row) {
+                                            echo indent(8).'<tr>'."\n";
+                                            echo indent(9).'<td class="column-checkbox"><input type="checkbox" name="id[]" value="'.$row->id.'"></td>'."\n";
+                                            echo indent(9).'<td>'.$row->id.'</td>'."\n";
+                                            echo indent(9).'<td>'.$row->name.'</td>'."\n";
+                                            echo indent(9).'<td>'.$row->address.'</td>'."\n";
+                                            echo indent(9).'<td>'.$row->email.'</td>'."\n";
+                                            echo indent(9).'<td>'."\n";
+                                            echo indent(10).'<div class="rd-button-group">'."\n";
+                                            echo indent(11).'<button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>'."\n";
+                                            echo indent(11).'<button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>'."\n";
+                                            echo indent(11).'<ul class="rd-dropdown">'."\n";
+                                            echo indent(12).'<li><a href="#"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>'."\n";
+                                            echo indent(12).'<li><a href="#"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>'."\n";
+                                            echo indent(11).'</ul>'."\n";
+                                            echo indent(10).'</div>'."\n";
+                                            echo indent(9).'</td>'."\n";
+                                            echo indent(8).'</tr>'."\n";
+                                            $i++;
+                                            if ($i > 3) {
+                                                break;
+                                            }
+                                        }// endforeach;
+                                        unset($i, $row);
                                     }
-                                    ?> 
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Address</th>
-                                        <th>Email</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                            <button type="submit">Submit</button>
-                        </form>
+                                    unset($dummyDataArray);
+                                }
+                                ?> 
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th class="column-checkbox"><input type="checkbox" onclick="RundizTemplateAdmin.dataTableCheckboxToggler(this);"></th>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Email</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </tfoot>
+                        </table>
                     </div><!--.rd-datatable-wrapper-->
                     <h3>Source</h3>
                     <pre class="preview-source" data-target-src=".rd-datatable-wrapper-sample1" data-target-src-remove-first-space="20"></pre>
@@ -124,8 +126,8 @@ include 'includes/html-head.php';
                                             echo indent(11).'<button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>'."\n";
                                             echo indent(11).'<button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>'."\n";
                                             echo indent(11).'<ul class="rd-dropdown">'."\n";
-                                            echo indent(12).'<li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>'."\n";
-                                            echo indent(12).'<li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>'."\n";
+                                            echo indent(12).'<li><a href="#"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>'."\n";
+                                            echo indent(12).'<li><a href="#"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>'."\n";
                                             echo indent(11).'</ul>'."\n";
                                             echo indent(10).'</div>'."\n";
                                             echo indent(9).'</td>'."\n";
@@ -154,9 +156,13 @@ include 'includes/html-head.php';
                         </table>
                     </div><!--.rd-datatable-wrapper-->
                     <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".rd-datatable-wrapper-sample-hborder" data-target-src-remove-first-space="20"></pre>
+                    <pre class="preview-source"><code class="language-html"><?php 
+                    echo htmlspecialchars('<table class="rd-datatable h-border">
+    ...
+</table>', ENT_QUOTES);
+                    ?></code></pre>
                     <h3>Sortable columns</h3>
-                    <p>Example for sortable columns</p>
+                    <p>Example for sortable columns. Add the class <code>sortable-icon</code> to any sortable icon in the link to make it appears on hover.</p>
                     <div class="rd-datatable-wrapper">
                         <table class="rd-datatable h-border">
                             <thead>
@@ -188,8 +194,8 @@ include 'includes/html-head.php';
                                             echo indent(11).'<button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>'."\n";
                                             echo indent(11).'<button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>'."\n";
                                             echo indent(11).'<ul class="rd-dropdown">'."\n";
-                                            echo indent(12).'<li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>'."\n";
-                                            echo indent(12).'<li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>'."\n";
+                                            echo indent(12).'<li><a href="#"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>'."\n";
+                                            echo indent(12).'<li><a href="#"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>'."\n";
                                             echo indent(11).'</ul>'."\n";
                                             echo indent(10).'</div>'."\n";
                                             echo indent(9).'</td>'."\n";
@@ -217,6 +223,20 @@ include 'includes/html-head.php';
                             </tfoot>
                         </table>
                     </div><!--.rd-datatable-wrapper-->
+                    <h4>Source</h4>
+                    <pre class="preview-source"><code class="language-html"><?php 
+$sampleHTML = '<table class="rd-datatable">
+    <thead>
+        <tr>
+            <th class="sorted"><a href="?sort=id">ID <i class="order-asc sortable-icon"></i></a></th>
+            <th><a href="?sort=name">Name <i class="order-asc sortable-icon"></i></a></th>
+        </tr>
+    </thead>
+    ...
+</table>';
+echo trim(htmlspecialchars($sampleHTML, ENT_QUOTES));
+unset($sampleHTML);
+                    ?></code></pre>
                     <?php
                     $rowColors = [
                         0 => ['name' => 'Default', 'class' => ''],
@@ -262,8 +282,8 @@ include 'includes/html-head.php';
                                             echo indent(11).'<button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>'."\n";
                                             echo indent(11).'<button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>'."\n";
                                             echo indent(11).'<ul class="rd-dropdown">'."\n";
-                                            echo indent(12).'<li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>'."\n";
-                                            echo indent(12).'<li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>'."\n";
+                                            echo indent(12).'<li><a href="#"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>'."\n";
+                                            echo indent(12).'<li><a href="#"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>'."\n";
                                             echo indent(11).'</ul>'."\n";
                                             echo indent(10).'</div>'."\n";
                                             echo indent(9).'</td>'."\n";
@@ -291,9 +311,19 @@ include 'includes/html-head.php';
                         </table>
                     </div><!--.rd-datatable-wrapper-->
                     <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".rd-datatable-wrapper-sample-rowcolors" data-target-src-remove-first-space="20"></pre>
+                    <pre class="preview-source"><code class="language-html"><?php
+foreach ($rowColors as $index => $rowColor) {
+    if (0 === intval($index)) {
+        continue;
+    }
+    $sampleHTML = '<tr class="table-row-' . $rowColor['class'] . '">...</tr>';
+    echo trim(htmlspecialchars($sampleHTML, ENT_QUOTES)) . PHP_EOL;
+    unset($sampleHTML);
+}// endforeach;
+unset($index, $rowcolor);
+                    ?></code></pre>
                     <h4>Cell colors</h4>
-                    <p>Add showing class to table cell (<code>&lt;td&gt;</code>).</p>
+                    <p>Add showing class to table cell (<code>&lt;td&gt;</code>, or <code>&lt;th&gt;</code>).</p>
                     <div class="rd-datatable-wrapper rd-datatable-wrapper-sample-cellcolors">
                         <table class="rd-datatable">
                             <thead>
@@ -353,12 +383,22 @@ include 'includes/html-head.php';
                             </tfoot>
                         </table>
                     </div><!--.rd-datatable-wrapper-->
-                    <?php unset($rowColors); ?> 
                     <h5>Source</h5>
-                    <pre class="preview-source" data-target-src=".rd-datatable-wrapper-sample-cellcolors" data-target-src-remove-first-space="20"></pre>
+                    <pre class="preview-source"><code class="language-html"><?php
+foreach ($rowColors as $index => $rowColor) {
+    if (0 === intval($index)) {
+        continue;
+    }
+    $sampleHTML = '<td class="table-cell-' . $rowColor['class'] . '">...</td>';
+    echo trim(htmlspecialchars($sampleHTML, ENT_QUOTES)) . PHP_EOL;
+    unset($sampleHTML);
+}// endforeach;
+unset($index, $rowcolor);
+unset($rowColors);
+                    ?></code></pre>
                     <h3>Data table with filters row</h3>
                     <p>Add <code>filter-row</code> class to <code>&lt;tr&gt;</code> of the row that contain filters input.</p>
-                    <div class="rd-datatable-wrapper rd-datatable-wrapper-sample-withfiltersrow rd-block-level-margin-bottom">
+                    <div class="rd-datatable-wrapper rd-datatable-wrapper-sample-withfiltersrow">
                         <table class="rd-datatable">
                             <thead>
                                 <tr>
@@ -404,8 +444,8 @@ include 'includes/html-head.php';
                                             echo indent(11).'<button class="rd-button small"><i class="fa-solid fa-pencil"></i> Edit</button>'."\n";
                                             echo indent(11).'<button class="rd-button small dropdown-toggler" data-placement="bottom right"><i class="fa-solid fa-caret-down"></i></button>'."\n";
                                             echo indent(11).'<ul class="rd-dropdown">'."\n";
-                                            echo indent(12).'<li><a href="#" onclick="return false;"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>'."\n";
-                                            echo indent(12).'<li><a href="#" onclick="return false;"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>'."\n";
+                                            echo indent(12).'<li><a href="#"><i class="fa-solid fa-key fa-fw"></i> Permissions</a></li>'."\n";
+                                            echo indent(12).'<li><a href="#"><i class="fa-solid fa-xmark fa-fw"></i> Delete</a></li>'."\n";
                                             echo indent(11).'</ul>'."\n";
                                             echo indent(10).'</div>'."\n";
                                             echo indent(9).'</td>'."\n";
@@ -434,10 +474,19 @@ include 'includes/html-head.php';
                         </table>
                     </div><!--.rd-datatable-wrapper-->
                     <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".rd-datatable-wrapper-sample-withfiltersrow" data-target-src-remove-first-space="20"></pre>
+                    <pre class="preview-source"><code class="language-html"><?php 
+                    echo htmlspecialchars('<tr class="filter-row">...</tr>', ENT_QUOTES);
+                    ?></code></pre>
                     <h3>Responsive</h3>
-                    <p>This style of responsive is collapsible/expandable table for small screen size.</p>
-                    <div class="rd-block-level-margin-bottom">
+                    <p>This style of responsive is collapsible/expandable table for small screen size. 
+                        To make it work, add the classes <code>responsive</code> and <code>rd-datatable</code> to the <code>&lt;table&gt;</code>.<br>
+                        With this kind of responsive, you may not need to wrap the <code>&lt;table&gt;</code> with the class <code>.rd-datatable-wrapper</code>.
+                    </p>
+                    <p>The class <code>column-primary</code> is for make that column always displayed on all screen sizes. This primary column should have only one per table. 
+                        The classes <code>row-actions</code>, and <code>action</code> are for display each table row actions and will be displayed on mouse hover.<br>
+                        The class <code>toggle-row</code> that added to the button is to make that button work as expand/collapse on small screen.
+                    </p>
+                    <div class="rd-datatable-wrapper rd-block-level-margin-bottom">
                         <table class="rd-datatable responsive rd-datatable-sample-responsive1">
                             <thead>
                                 <tr>
@@ -460,9 +509,9 @@ include 'includes/html-head.php';
                                             echo indent(8).'<td class="column-primary" data-colname="Name">'."\n";
                                             echo indent(9).$row->name."\n";
                                             echo indent(9).'<div class="row-actions">'."\n";
-                                            echo indent(10).'<span class="action"><a href="#" onclick="return false;">Edit</a></span>'."\n";
-                                            echo indent(10).'<span class="action"><a href="#" onclick="return false;">Permissions</a></span>'."\n";
-                                            echo indent(10).'<span class="action"><a href="#" onclick="return false;">Delete</a></span>'."\n";
+                                            echo indent(10).'<span class="action"><a href="#">Edit</a></span>'."\n";
+                                            echo indent(10).'<span class="action"><a href="#">Permissions</a></span>'."\n";
+                                            echo indent(10).'<span class="action"><a href="#">Delete</a></span>'."\n";
                                             echo indent(9).'</div><!--.row-actions-->'."\n";
                                             echo indent(9).'<button class="toggle-row" type="button"><i class="faicon fa-solid fa-caret-down fa-fw" data-toggle-icon="fa-caret-down fa-caret-up"></i><span class="screen-reader-only">Show more details</span></button>'."\n";
                                             echo indent(8).'</td>'."\n";
@@ -492,7 +541,7 @@ include 'includes/html-head.php';
                     </div>
                     <h4>Source</h4>
                     <pre class="preview-source" data-target-src=".rd-datatable-sample-responsive1" data-target-src-remove-first-space="24"></pre>
-                    <p>And if there is no data.</p>
+                    <p>And if there is no data in the responsive table.</p>
                     <table class="rd-datatable responsive">
                         <thead>
                             <tr>
@@ -523,5 +572,14 @@ include 'includes/html-head.php';
         
 
 <?php include 'includes/js-end-body.php'; ?> 
+        <script>
+            document.addEventListener('click', (event) => {
+                let thisTarget = event.target;
+                if (thisTarget.closest('[href="#"]')) {
+                    // if it is demo link.
+                    event.preventDefault();// just prevent link to '#'.
+                }
+            });
+        </script>
     </body>
 </html>

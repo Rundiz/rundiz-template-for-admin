@@ -26,6 +26,7 @@ include 'includes/html-head.php';
                     <hr>
 
                     <h2 id="tabs-example">Examples</h2>
+                    <p>Basic tabs HTML element.</p>
                     <div class="tabs code-sample-tabs-sample1">
                         <ul>
                             <li><a href="#tabs-1"><abbr title="Rundiz template for admin">RDTA</abbr> tabs</a></li>
@@ -92,7 +93,7 @@ include 'includes/html-head.php';
                     <div class="tabs">
                         <ul>
                             <?php for ($i = 1; $i <= 60; $i++) { ?> 
-                            <li class="text-flow-nowrap"><a href="#tabs-manytabs-<?php echo $i; ?>" onclick="return false;">Tab <?php echo $i; ?></a></li>
+                            <li class="text-flow-nowrap"><a href="#tabs-manytabs-<?php echo $i; ?>">Tab <?php echo $i; ?></a></li>
                             <?php }// endfor; ?> 
                         </ul>
                         <div id="tabs-manytabs-1" class="rd-tabs-content">
@@ -102,11 +103,11 @@ include 'includes/html-head.php';
                     <div class="tabs">
                         <ul>
                             <?php for ($i = 1; $i <= 60; $i++) { ?> 
-                            <li class="text-flow-nowrap"><a href="#tabs-manytabs2-<?php echo $i; ?>" onclick="return false;">Many Tabs2 Tab <?php echo $i; ?></a></li>
+                            <li class="text-flow-nowrap"><a href="#tabs-manytabs2-<?php echo $i; ?>">Many Tabs2 Tab <?php echo $i; ?></a></li>
                             <?php }// endfor; ?> 
                         </ul>
                         <div id="tabs-manytabs2-1" class="rd-tabs-content">
-                            Many tabs (2) content. For checking tabs horizontal scroll individually.
+                            Many tabs (2) content. For checking tabs horizontal scroll individually. (This tabs block scroll will not affect the tabs block above.)
                         </div>
                     </div>
                     <h3>Manual set active tab.</h3>
@@ -183,7 +184,7 @@ include 'includes/html-head.php';
                     </div>
                     <h4>Source</h4>
                     <pre class="preview-source" data-target-src=".code-sample-tabs-vertical" data-target-src-remove-first-space="20"></pre>
-                    <p>Please note that you can use <code>data-targettab</code> HTML attribute to specify target tab instead of link to <code>#target-tab-number</code>.</p>
+                    <p>Please note that you can use <code>data-targettab</code> HTML attribute to specify target tab instead of link to <code>#target-tab-id</code>.</p>
                     <h3>Tabs inside tabs</h3>
                     <div id="titOuterTabs" class="rd-tabs code-sample-tabs-insidetabs">
                         <ul class="rd-tabs-nav">

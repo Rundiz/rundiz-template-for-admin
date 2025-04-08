@@ -49,10 +49,10 @@ include 'includes/html-head.php';
                     <pre class="preview-source" data-target-src=".code-sample-buttons1" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
                     <p>Buttons that is link.</p>
                     <p class="code-sample-buttons-link">
-                        <a class="rd-button" href="#" onclick="return false;">Default</a>
+                        <a class="rd-button" href="#">Default</a>
                         <?php
                         foreach ($buttonNames as $buttonName) {
-                            echo '<a class="rd-button ' . $buttonName . '" href="#" onclick="return false;">' . ucfirst($buttonName) . '</a>' . PHP_EOL;
+                            echo '<a class="rd-button ' . $buttonName . '" href="#">' . ucfirst($buttonName) . '</a>' . PHP_EOL;
                         }// endforeach;
                         unset($buttonName);
                         ?> 
@@ -83,10 +83,10 @@ include 'includes/html-head.php';
                     </p>
                     <p>Disabled buttons that is link.</p>
                     <p>
-                        <a class="rd-button disabled" href="#" onclick="return false;">Default</a>
+                        <a class="rd-button disabled" href="#">Default</a>
                         <?php
                         foreach ($buttonNames as $buttonName) {
-                            echo '<a class="rd-button ' . $buttonName . ' disabled" href="#" onclick="return false;">' . ucfirst($buttonName) . '</a>' . PHP_EOL;
+                            echo '<a class="rd-button ' . $buttonName . ' disabled" href="#">' . ucfirst($buttonName) . '</a>' . PHP_EOL;
                         }// endforeach;
                         unset($buttonName);
                         ?> 
@@ -130,27 +130,27 @@ include 'includes/html-head.php';
                         <div class="rd-button-group">
                             <button class="rd-button dropdown-toggler">Dropdown <i class="fa-solid fa-caret-down"></i></button>
                             <ul class="rd-dropdown">
-                                <li><a href="#" onclick="return false;">Save A</a></li>
-                                <li><a href="#" onclick="return false;">Save &amp; Publish A</a></li>
-                                <li><a href="#" onclick="return false;">Cancel A</a></li>
+                                <li><a href="#">Save A</a></li>
+                                <li><a href="#">Save &amp; Publish A</a></li>
+                                <li><a href="#">Cancel A</a></li>
                             </ul>
                         </div>
                         <div class="rd-button-group">
                             <button class="rd-button primary">Button</button>
                             <button class="rd-button primary dropdown-toggler"><i class="fa-solid fa-caret-down"></i></button>
                             <ul class="rd-dropdown">
-                                <li><a href="#" onclick="return false;">Save B</a></li>
-                                <li><a href="#" onclick="return false;">Save &amp; Publish B</a></li>
-                                <li><a href="#" onclick="return false;">Cancel B</a></li>
+                                <li><a href="#">Save B</a></li>
+                                <li><a href="#">Save &amp; Publish B</a></li>
+                                <li><a href="#">Cancel B</a></li>
                             </ul>
                         </div>
                         <div class="rd-button-group">
                             <a class="rd-button" href="#go-somewhere">Link button</a>
                             <a class="rd-button dropdown-toggler" href="#"><i class="fa-solid fa-caret-down"></i></a>
                             <ul class="rd-dropdown">
-                                <li><a href="#" onclick="return false;">Save C</a></li>
-                                <li><a href="#" onclick="return false;">Save &amp; Publish C</a></li>
-                                <li><a href="#" onclick="return false;">Cancel C</a></li>
+                                <li><a href="#">Save C</a></li>
+                                <li><a href="#">Save &amp; Publish C</a></li>
+                                <li><a href="#">Cancel C</a></li>
                             </ul>
                         </div>
                         <div class="rd-button-group">
@@ -161,7 +161,7 @@ include 'includes/html-head.php';
                                 <li><input type="button" value="Input button"></li>
                                 <li><input type="submit" value="Input submit"></li>
                                 <li class="divider"></li>
-                                <li><a href="#" onclick="return false;">Link</a></li>
+                                <li><a href="#">Link</a></li>
                             </ul>
                         </div>
                     </div>
@@ -173,35 +173,35 @@ include 'includes/html-head.php';
                         <div class="rd-button-group">
                             <button class="rd-button danger tiny dropdown-toggler">Tiny <i class="fa-solid fa-caret-down"></i></button>
                             <ul class="rd-dropdown">
-                                <li><a href="#" onclick="return false;">Save</a></li>
-                                <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
-                                <li><a href="#" onclick="return false;">Cancel</a></li>
+                                <li><a href="#">Save</a></li>
+                                <li><a href="#">Save &amp; Publish</a></li>
+                                <li><a href="#">Cancel</a></li>
                             </ul>
                         </div>
                         <div class="rd-button-group">
                             <button class="rd-button info small">Small</button>
                             <button class="rd-button info small dropdown-toggler"><i class="fa-solid fa-caret-down"></i></button>
                             <ul class="rd-dropdown">
-                                <li><a href="#" onclick="return false;">Save 2</a></li>
-                                <li><a href="#" onclick="return false;">Save &amp; Publish 2</a></li>
-                                <li><a href="#" onclick="return false;">Cancel 2</a></li>
+                                <li><a href="#">Save 2</a></li>
+                                <li><a href="#">Save &amp; Publish 2</a></li>
+                                <li><a href="#">Cancel 2</a></li>
                             </ul>
                         </div>
                         <div class="rd-button-group">
                             <button class="rd-button warning dropdown-toggler">Normal <i class="fa-solid fa-caret-down"></i></button>
                             <ul class="rd-dropdown">
-                                <li><a href="#" onclick="return false;">Save 3</a></li>
-                                <li><a href="#" onclick="return false;">Save &amp; Publish 3</a></li>
-                                <li><a href="#" onclick="return false;">Cancel 3</a></li>
+                                <li><a href="#">Save 3</a></li>
+                                <li><a href="#">Save &amp; Publish 3</a></li>
+                                <li><a href="#">Cancel 3</a></li>
                             </ul>
                         </div>
                         <div class="rd-button-group">
                             <button class="rd-button success large">Large</button>
                             <button class="rd-button success large dropdown-toggler"><i class="fa-solid fa-caret-down"></i></button>
                             <ul class="rd-dropdown">
-                                <li><a href="#" onclick="return false;">Save 4</a></li>
-                                <li><a href="#" onclick="return false;">Save &amp; Publish 4</a></li>
-                                <li><a href="#" onclick="return false;">Cancel 4</a></li>
+                                <li><a href="#">Save 4</a></li>
+                                <li><a href="#">Save &amp; Publish 4</a></li>
+                                <li><a href="#">Cancel 4</a></li>
                             </ul>
                         </div>
                     </div>
@@ -213,98 +213,98 @@ include 'includes/html-head.php';
                         <div class="rd-button-group code-sample-buttons-dropdownplacements">
                             <button class="rd-button dropdown-toggler" data-placement="top left"><i class="fa-solid fa-caret-up"></i> Top left</button>
                             <ul class="rd-dropdown">
-                                <li><a href="#" onclick="return false;">Save</a></li>
-                                <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
-                                <li><a href="#" onclick="return false;">Cancel</a></li>
+                                <li><a href="#">Save</a></li>
+                                <li><a href="#">Save &amp; Publish</a></li>
+                                <li><a href="#">Cancel</a></li>
                             </ul>
                         </div>
                         <div class="rd-button-group">
                             <button class="rd-button dropdown-toggler" data-placement="top">Top center <i class="fa-solid fa-caret-up"></i></button>
                             <ul class="rd-dropdown">
-                                <li><a href="#" onclick="return false;">Save</a></li>
-                                <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
-                                <li><a href="#" onclick="return false;">Cancel</a></li>
+                                <li><a href="#">Save</a></li>
+                                <li><a href="#">Save &amp; Publish</a></li>
+                                <li><a href="#">Cancel</a></li>
                             </ul>
                         </div>
                         <div class="rd-button-group">
                             <button class="rd-button dropdown-toggler" data-placement="top right">Top right <i class="fa-solid fa-caret-up"></i></button>
                             <ul class="rd-dropdown">
-                                <li><a href="#" onclick="return false;">Save</a></li>
-                                <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
-                                <li><a href="#" onclick="return false;">Cancel</a></li>
+                                <li><a href="#">Save</a></li>
+                                <li><a href="#">Save &amp; Publish</a></li>
+                                <li><a href="#">Cancel</a></li>
                             </ul>
                         </div>
                         <div class="rd-button-group">
                             <button class="rd-button dropdown-toggler" data-placement="left top"><i class="fa-solid fa-caret-left"></i> Left top</button>
                             <ul class="rd-dropdown">
-                                <li><a href="#" onclick="return false;">Save</a></li>
-                                <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
-                                <li><a href="#" onclick="return false;">Cancel</a></li>
+                                <li><a href="#">Save</a></li>
+                                <li><a href="#">Save &amp; Publish</a></li>
+                                <li><a href="#">Cancel</a></li>
                             </ul>
                         </div>
                         <div class="rd-button-group">
                             <button class="rd-button dropdown-toggler" data-placement="left"><i class="fa-solid fa-caret-left"></i> Left middle</button>
                             <ul class="rd-dropdown">
-                                <li><a href="#" onclick="return false;">Save</a></li>
-                                <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
-                                <li><a href="#" onclick="return false;">Cancel</a></li>
+                                <li><a href="#">Save</a></li>
+                                <li><a href="#">Save &amp; Publish</a></li>
+                                <li><a href="#">Cancel</a></li>
                             </ul>
                         </div>
                         <div class="rd-button-group">
                             <button class="rd-button dropdown-toggler" data-placement="left bottom"><i class="fa-solid fa-caret-left"></i> Left bottom</button>
                             <ul class="rd-dropdown">
-                                <li><a href="#" onclick="return false;">Save</a></li>
-                                <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
-                                <li><a href="#" onclick="return false;">Cancel</a></li>
+                                <li><a href="#">Save</a></li>
+                                <li><a href="#">Save &amp; Publish</a></li>
+                                <li><a href="#">Cancel</a></li>
                             </ul>
                         </div>
                         <div class="rd-block-level-margin-bottom"></div>
                         <div class="rd-button-group">
                             <button class="rd-button dropdown-toggler" data-placement="bottom left"><i class="fa-solid fa-caret-down"></i> Bottom left</button>
                             <ul class="rd-dropdown">
-                                <li><a href="#" onclick="return false;">Save</a></li>
-                                <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
-                                <li><a href="#" onclick="return false;">Cancel</a></li>
+                                <li><a href="#">Save</a></li>
+                                <li><a href="#">Save &amp; Publish</a></li>
+                                <li><a href="#">Cancel</a></li>
                             </ul>
                         </div>
                         <div class="rd-button-group">
                             <button class="rd-button dropdown-toggler" data-placement="bottom">Bottom center <i class="fa-solid fa-caret-down"></i></button>
                             <ul class="rd-dropdown">
-                                <li><a href="#" onclick="return false;">Save</a></li>
-                                <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
-                                <li><a href="#" onclick="return false;">Cancel</a></li>
+                                <li><a href="#">Save</a></li>
+                                <li><a href="#">Save &amp; Publish</a></li>
+                                <li><a href="#">Cancel</a></li>
                             </ul>
                         </div>
                         <div class="rd-button-group">
                             <button class="rd-button dropdown-toggler" data-placement="bottom right">Bottom right <i class="fa-solid fa-caret-down"></i></button>
                             <ul class="rd-dropdown">
-                                <li><a href="#" onclick="return false;">Save</a></li>
-                                <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
-                                <li><a href="#" onclick="return false;">Cancel</a></li>
+                                <li><a href="#">Save</a></li>
+                                <li><a href="#">Save &amp; Publish</a></li>
+                                <li><a href="#">Cancel</a></li>
                             </ul>
                         </div>
                         <div class="rd-button-group">
                             <button class="rd-button dropdown-toggler" data-placement="right top">Right top <i class="fa-solid fa-caret-right"></i></button>
                             <ul class="rd-dropdown">
-                                <li><a href="#" onclick="return false;">Save</a></li>
-                                <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
-                                <li><a href="#" onclick="return false;">Cancel</a></li>
+                                <li><a href="#">Save</a></li>
+                                <li><a href="#">Save &amp; Publish</a></li>
+                                <li><a href="#">Cancel</a></li>
                             </ul>
                         </div>
                         <div class="rd-button-group">
                             <button class="rd-button dropdown-toggler" data-placement="right">Right middle <i class="fa-solid fa-caret-right"></i></button>
                             <ul class="rd-dropdown">
-                                <li><a href="#" onclick="return false;">Save</a></li>
-                                <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
-                                <li><a href="#" onclick="return false;">Cancel</a></li>
+                                <li><a href="#">Save</a></li>
+                                <li><a href="#">Save &amp; Publish</a></li>
+                                <li><a href="#">Cancel</a></li>
                             </ul>
                         </div>
                         <div class="rd-button-group">
                             <button class="rd-button dropdown-toggler" data-placement="right bottom">Right bottom <i class="fa-solid fa-caret-right"></i></button>
                             <ul class="rd-dropdown">
-                                <li><a href="#" onclick="return false;">Save</a></li>
-                                <li><a href="#" onclick="return false;">Save &amp; Publish</a></li>
-                                <li><a href="#" onclick="return false;">Cancel</a></li>
+                                <li><a href="#">Save</a></li>
+                                <li><a href="#">Save &amp; Publish</a></li>
+                                <li><a href="#">Cancel</a></li>
                             </ul>
                         </div>
                         <div class="rd-block-level-margin-bottom"></div>
@@ -312,9 +312,9 @@ include 'includes/html-head.php';
                             <button class="rd-button">Button</button>
                             <button class="rd-button dropdown-toggler" data-placement="right top"><i class="fa-solid fa-caret-right"></i></button>
                             <ul class="rd-dropdown">
-                                <li><a href="#" onclick="return false;">Save B</a></li>
-                                <li><a href="#" onclick="return false;">Save &amp; Publish B</a></li>
-                                <li><a href="#" onclick="return false;">Cancel B</a></li>
+                                <li><a href="#">Save B</a></li>
+                                <li><a href="#">Save &amp; Publish B</a></li>
+                                <li><a href="#">Cancel B</a></li>
                             </ul>
                         </div>
                     </div>
@@ -348,12 +348,21 @@ include 'includes/html-head.php';
                 let buttonDropdown = '<div class="rd-button-group">\
                     <button class="rd-button dropdown-toggler">Dropdown <i class="fa-solid fa-caret-down"></i></button>\
                     <ul class="rd-dropdown">\
-                        <li><a href="#" onclick="return false;">Save A</a></li>\
-                        <li><a href="#" onclick="return false;">Save &amp; Publish A</a></li>\
-                        <li><a href="#" onclick="return false;">Cancel A</a></li>\
+                        <li><a href="#">Save A</a></li>\
+                        <li><a href="#">Save &amp; Publish A</a></li>\
+                        <li><a href="#">Cancel A</a></li>\
                     </ul>\
                 </div>';
                 document.getElementById('demo-button-dropdown-placeholder').innerHTML = buttonDropdown;
+            });
+
+
+            document.addEventListener('click', (event) => {
+                let thisTarget = event.target;
+                if (thisTarget.closest('[href="#"]')) {
+                    // if it is demo link.
+                    event.preventDefault();// just prevent link to '#'.
+                }
             });
         </script>
     </body>
