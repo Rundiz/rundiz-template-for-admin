@@ -10,6 +10,7 @@ import {deleteAsync} from 'del';
 import path from 'node:path';
 // import this app's useful class.
 import FS from "../Libraries/FS.mjs";
+import TextStyles from "../Libraries/TextStyles.mjs";
 // import based class.
 import MinCSS from "../Libraries/MinCSS.mjs";
 
@@ -178,7 +179,11 @@ export default class WatchCSS {
 
         watcher.on('all', async (event, file, stats) => {
             await this.#displayFileChanged(event, file, REPO_DIR);
-            await this.#applyChanges(event, file);
+            try {
+                await this.#applyChanges(event, file);
+            } catch (err) {
+                console.error(TextStyles.txtError('Error! '), err);
+            }
             console.log('  Finish task for file changed (' + event + ').');
         });
     }// run

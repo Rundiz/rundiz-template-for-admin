@@ -10,6 +10,7 @@ import {deleteAsync} from 'del';
 import path from 'node:path';
 // import this app's useful class.
 import FS from "../Libraries/FS.mjs";
+import TextStyles from "../Libraries//TextStyles.mjs";
 // import sub class.
 import JsBundler from './inc/jsBundler.mjs';
 
@@ -128,7 +129,18 @@ export default class WatchJS {
 
         watcher.on('all', async (event, file, stats) => {
             await this.#displayFileChanged(event, file, REPO_DIR);
-            await this.#applyChanges(event, file);
+            try {
+                await this.#applyChanges(event, file);
+            } catch (err) {
+                let errorMessage = '  Error! ' + err.message;
+                if (err.filename) {
+                    errorMessage += "\n" + '  File: ' + err.filename;
+                }
+                if (err.line) {
+                    errorMessage += "\n" + '  Line: ' + err.line;
+                }
+                console.error(TextStyles.txtError(errorMessage));
+            }
             console.log('  Finish task for file changed (' + event + ').');
         });
     }// run
