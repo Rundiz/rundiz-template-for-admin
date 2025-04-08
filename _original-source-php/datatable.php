@@ -572,14 +572,5 @@ unset($rowColors);
         
 
 <?php include 'includes/js-end-body.php'; ?> 
-        <script>
-            document.addEventListener('click', (event) => {
-                let thisTarget = event.target;
-                if (thisTarget.closest('[href="#"]')) {
-                    // if it is demo link.
-                    event.preventDefault();// just prevent link to '#'.
-                }
-            });
-        </script>
     </body>
 </html>

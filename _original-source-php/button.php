@@ -355,15 +355,6 @@ include 'includes/html-head.php';
                 </div>';
                 document.getElementById('demo-button-dropdown-placeholder').innerHTML = buttonDropdown;
             });
-
-
-            document.addEventListener('click', (event) => {
-                let thisTarget = event.target;
-                if (thisTarget.closest('[href="#"]')) {
-                    // if it is demo link.
-                    event.preventDefault();// just prevent link to '#'.
-                }
-            });
         </script>
     </body>
 </html>

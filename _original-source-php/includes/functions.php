@@ -10,6 +10,15 @@ if (!defined('ROOTDIR')) {
 }
 
 
+if (!defined('RDTA_DEBUG')) {
+    if (php_sapi_name() === 'cli') {
+        define('RDTA_DEBUG', false);
+    } else {
+        define('RDTA_DEBUG', true);
+    }
+}
+
+
 /**
  * Render asset URL with version querystring append. By default it will be use file modify time as version qurey string.
  * 

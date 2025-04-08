@@ -239,6 +239,26 @@ EOT;
                     echo trim(htmlspecialchars($sampleHTML, ENT_QUOTES));
                     unset($sampleHTML);
                     ?></code></pre>
+                    <h3>Tooltips on modal dialog</h3>
+                    <p>Tooltips can be placed on modal dialog.</p>
+                    <button class="rd-block-level-margin-bottom" type="button" data-toggle="dialog" data-target="#dialog-with-tooltips">Open modal dialog</button>
+                    <div id="dialog-with-tooltips" class="rd-dialog-modal">
+                        <div class="rd-dialog">
+                            <div class="rd-dialog-header">
+                                <h4 class="rd-dialog-title">Dialog with modal</h4>
+                                <button class="rd-dialog-close" type="button" aria-label="Close" data-dismiss="dialog">
+                                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="rd-dialog-body">
+                                <p><a href="#" title="Tooltip" data-toggle="tooltip">This link</a> and <a href="#" title="Tooltip 2" data-toggle="tooltip">this link</a> have tooltips</p>
+                            </div>
+                            <div class="rd-dialog-footer">
+                                <button class="rd-button primary" type="button">Save</button>
+                                <button class="rd-button" type="button" data-dismiss="dialog">Close</button>
+                            </div>
+                        </div>
+                    </div>
                     <h3>Manual activate dialog</h3>
                     <p>Use the JavaScript code below to manually activate dialog.</p>
                     <pre class="preview-source"><code class="language-js">(new RDTADialog).activateDialog('#dialogID');</code></pre>
@@ -310,6 +330,8 @@ EOT;
 
 <?php include 'includes/js-end-body.php'; ?> 
         <script src="assets/js/rdta/components/rdta-dialog.js"></script>
+        <script src="assets/js/tippy.js/dist/tippy-bundle.umd.min.js"></script>
+        <script src="assets/js/rdta/components/rdta-tooltips.js"></script>
         <script>
             function rdtaOpenDialogManual() {
                 let rdtaDialog = new RDTADialog();
@@ -330,6 +352,9 @@ EOT;
             document.addEventListener('DOMContentLoaded', function() {
                 RDTADialog.init();
                 rdtaDebugDialogEvents();
+
+                // for demo tooltips on dialog.
+                RDTATooltips.init('[data-toggle="tooltip"]');
             });
         </script>
     </body>

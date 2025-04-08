@@ -28,7 +28,7 @@ include 'includes/html-head.php';
                     <hr>
 
                     <h2>Examples</h2>
-                    <p>Normal JS alert box. <a href="#" onclick="alert('Hello, this is normal JS alert.'); return false;">Show normal JS alert.</a></p>
+                    <p>Normal JS alert box. <a href="#" onclick="alert('Hello, this is normal JS alert.');">Show normal JS alert.</a></p>
                     <pre><code class="language-js"><?php echo htmlspecialchars("alert('Hello, this is normal JS alert.');", ENT_QUOTES); ?></code></pre>
                     <?php
                     $alertTypes = ['info', 'danger', 'warning', 'success'];
@@ -45,7 +45,7 @@ include 'includes/html-head.php';
                     }// endforeach;
                     unset($alertType, $alertTypes);
                     ?> 
-                    <p>Text alert dialog. <a href="#" onclick="RDTAAlertDialog.alert({'type': 'info', 'text': 'Alert that contain text only.'}); return false;">Show me.</a></p>
+                    <p>Text alert dialog. <a href="#" onclick="RDTAAlertDialog.alert({'type': 'info', 'text': 'Alert that contain text only.'});">Show me.</a></p>
                     <p>If both <code>text</code> &amp <code>html</code> were set, it will be use <code>text</code> by default.</p>
                     <pre><code class="language-js"><?php echo htmlspecialchars("RDTAAlertDialog.alert({'type': 'info', 'text': 'Alert that contain text only.'});", ENT_QUOTES); ?></code></pre>
 
@@ -91,7 +91,7 @@ include 'includes/html-head.php';
                             </tr>
                         </tbody>
                     </table>
-                    <p>Click on <a href="#" onclick="RDTAAlertDialog.alert({'type': 'info', 'text': 'See events log on the page.'}); return false;">this link</a> to open alert dialog and see its events.</p>
+                    <p>Click on <a href="#" onclick="RDTAAlertDialog.alert({'type': 'info', 'text': 'See events log on the page.'});">this link</a> to open alert dialog and see its events.</p>
                     <div class="rd-block-level-margin-bottom rd-alertdialog-events rdta-demopage-debugbox"></div>
                 </div><!--.rd-page-content-->
             </main>

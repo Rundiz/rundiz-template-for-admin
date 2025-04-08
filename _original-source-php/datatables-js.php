@@ -513,14 +513,6 @@ EOT;
                 });
                 // end JS for work with responsive full actions. ---------------------------------------
             });
-
-            document.addEventListener('click', (event) => {
-                let thisTarget = event.target;
-                if (thisTarget.closest('[href="#"]')) {
-                    // if it is demo link.
-                    event.preventDefault();// just prevent link to '#'.
-                }
-            });
         </script>
     </body>
 </html>

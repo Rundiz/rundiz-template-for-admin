@@ -14,10 +14,10 @@ include 'includes/html-head.php';
             <section class="rd-sidebar">
                 <div class="rd-sidebar-inner">
                     <ul class="rd-sidebar-item-list sm sm-vertical sm-rdta">
-                        <li><a href="#" onclick="return false;"><i class="sidebar-icon fa-solid fa-circle fa-fw"></i> <span class="rd-sidebar-menu-text">Menu item</span></a></li>
-                        <li><a href="#" onclick="return false;"><i class="sidebar-icon fa-solid fa-circle fa-fw"></i> <span class="rd-sidebar-menu-text">Menu item</span></a>
+                        <li><a href="#"><i class="sidebar-icon fa-solid fa-circle fa-fw"></i> <span class="rd-sidebar-menu-text">Menu item</span></a></li>
+                        <li><a href="#"><i class="sidebar-icon fa-solid fa-circle fa-fw"></i> <span class="rd-sidebar-menu-text">Menu item</span></a>
                             <ul>
-                                <li><a href="#" onclick="return false;">Sub menu item</a></li>
+                                <li><a href="#">Sub menu item</a></li>
                             </ul>
                         </li>
                     </ul>
