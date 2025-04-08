@@ -181,12 +181,4 @@ body.rd-alertdialog-modal-open {
         margin-right: auto;
     }
 }
-
-.rd-alertdialog-modal .rd-dialog-modal-backdrop {
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
 /* end alert dialog modal */

@@ -31,10 +31,10 @@ include 'includes/html-head.php';
 
                     <h2>Examples</h2>
                     <p>Below is the basic dialog element showing how it looks like. It's included dialog header, body, and footer (optional).</p>
-                    <div class="rd-dialog rd-block-level-margin-bottom code-sample-dialog-sample1" aria-labelledby="example-dialog-label">
+                    <div class="rd-dialog code-sample-dialog-sample1" aria-labelledby="example-dialog-label">
                         <div class="rd-dialog-header">
                             <h4 id="example-dialog-label" class="rd-dialog-title">Dialog header</h4>
-                            <button class="rd-dialog-close" type="button" aria-label="Close">
+                            <button class="rd-dialog-close" type="button" aria-label="Close" data-dismiss="dialog">
                                 <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                             </button>
                         </div>
@@ -43,15 +43,35 @@ include 'includes/html-head.php';
                         </div>
                         <div class="rd-dialog-footer">
                             <button class="rd-button primary" type="button">Save</button>
-                            <button class="rd-button" type="button">Cancel</button>
+                            <button class="rd-button" type="button" data-dismiss="dialog">Cancel</button>
                         </div>
                     </div>
-                    <h3>Source</h3>
-                    <pre class="preview-source" data-target-src=".code-sample-dialog-sample1" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
+                    <h5>source</h5>
+                    <pre class="preview-source" data-target-src=".code-sample-dialog-sample1" data-target-src-remove-first-space="20"></pre>
+                    <h3>Use HTML <code>&lt;dialog&gt;</code></h3>
+                    <p>Example below use HTML <code>&lt;dialog&gt;</code>. (See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog" target="_blank">reference</a>.)</p>
+                    <dialog class="rd-dialog code-sample-dialog-htmldialog" open aria-labelledby="example-dialog-label-htmldialog">
+                        <div class="rd-dialog-header">
+                            <h4 id="example-dialog-label-htmldialog" class="rd-dialog-title">Dialog header</h4>
+                            <button class="rd-dialog-close" type="button" aria-label="Close" data-dismiss="dialog">
+                                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="rd-dialog-body">
+                            <p>The basic dialog.</p>
+                        </div>
+                        <div class="rd-dialog-footer">
+                            <button class="rd-button primary" type="button">Save</button>
+                            <button class="rd-button" type="button" data-dismiss="dialog">Cancel</button>
+                        </div>
+                    </dialog>
+                    <h5>source</h5>
+                    <pre class="preview-source" data-target-src=".code-sample-dialog-htmldialog" data-target-src-remove-first-space="20"></pre>
                     <h3>Live demo</h3>
-                    <p>The example below is non-modal dialog. It use the same HTML as above.</p>
+                    <p>The example below is non-modal dialog. It use the basic dialog.</p>
                     <div class="rd-block-level-margin-bottom">
                         <button type="button" data-toggle="dialog" data-target="#dialog01">Open dialog</button>
+                        <button type="button" data-toggle="dialog" data-target="#dialog01-htmldialog">Open HTML dialog</button>
                         <div id="dialog01" class="rd-dialog hide">
                             <div class="rd-dialog-header">
                                 <h4 class="rd-dialog-title">Dialog header</h4>
@@ -67,6 +87,21 @@ include 'includes/html-head.php';
                                 <button class="rd-button" type="button" data-dismiss="dialog">Close</button>
                             </div>
                         </div>
+                        <dialog id="dialog01-htmldialog" class="rd-dialog hide">
+                            <div class="rd-dialog-header">
+                                <h4 class="rd-dialog-title">Dialog header</h4>
+                                <button class="rd-dialog-close" type="button" aria-label="Close" data-dismiss="dialog">
+                                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="rd-dialog-body">
+                                <p>This dialog use HTML <code>&lt;dialog&gt;</code> and contain no backdrop.</p>
+                            </div>
+                            <div class="rd-dialog-footer">
+                                <button class="rd-button primary" type="button">Save</button>
+                                <button class="rd-button" type="button" data-dismiss="dialog">Close</button>
+                            </div>
+                        </dialog>
                     </div>
                     <h3>Dialog with modal</h3>
                     <p>The example below is modal dialog. To open dialog with modal (backdrop), wrap the dialog with element that contain class <code>rd-dialog-modal</code>.</p>
@@ -90,8 +125,31 @@ include 'includes/html-head.php';
                             </div>
                         </div>
                     </div>
-                    <h4>Source</h4>
+                    <h5>source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-dialog-modal" data-target-src-remove-first-space="24" data-remove-classes="rd-block-level-margin-bottom" data-inner-html="true"></pre>
+                    <h3>HTML <code>&lt;dialog&gt;</code> with modal</h3>
+                    <div class="rd-block-level-margin-bottom code-sample-dialog-modal-use-htmldialog">
+                        <button type="button" data-toggle="dialog" data-target="#dialog02-htmldialog">Open modal <code>&lt;dialog&gt;</code></button>
+                        <div id="dialog02-htmldialog" class="rd-dialog-modal">
+                            <dialog class="rd-dialog">
+                                <div class="rd-dialog-header">
+                                    <h4 class="rd-dialog-title">HTML <code>&lt;dialog&gt;</code> with modal</h4>
+                                    <button class="rd-dialog-close" type="button" aria-label="Close" data-dismiss="dialog">
+                                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <div class="rd-dialog-body">
+                                    <p>The modal dialog with backdrop.</p>
+                                </div>
+                                <div class="rd-dialog-footer">
+                                    <button class="rd-button primary" type="button">Save</button>
+                                    <button class="rd-button" type="button" data-dismiss="dialog">Close</button>
+                                </div>
+                            </dialog>
+                        </div>
+                    </div>
+                    <h5>source</h5>
+                    <pre class="preview-source" data-target-src=".code-sample-dialog-modal-use-htmldialog" data-target-src-remove-first-space="24" data-remove-classes="rd-block-level-margin-bottom" data-inner-html="true"></pre>
                     <h3>Long paragraph</h3>
                     <div class="rd-block-level-margin-bottom">
                         <button type="button" data-toggle="dialog" data-target="#dialog03">Open modal dialog</button>
@@ -158,7 +216,7 @@ include 'includes/html-head.php';
                             </div>
                         </div>
                     </div>
-                    <h4>Source</h4>
+                    <h5>source</h5>
                     <pre class="preview-source"><code class="language-html"><?php 
 $sampleHTML = <<<EOT
 <div id="my-dialog" class="rd-dialog-modal" data-click-outside-not-close="true">
@@ -190,7 +248,7 @@ EOT;
                             </div>
                         </div>
                     </div>
-                    <h4>Source</h4>
+                    <h5>source</h5>
                     <pre class="preview-source"><code class="language-html"><?php 
 $sampleHTML = <<<EOT
 <div class="rd-dialog" data-esc-key-not-close="true">...</div>
@@ -200,7 +258,7 @@ EOT;
                     ?></code></pre>
                     <h3>Sizes</h3>
                     <p>Dialog with different sizes by adding <code>rd-dialog-size-xxx</code> into dialog element.</p>
-                    <div class="rd-block-level-margin-bottom code-sample-dialog-sizes">
+                    <div class="rd-block-level-margin-bottom">
                         <button type="button" data-toggle="dialog" data-target="#dialog06">Open large dialog</button>
                         <div id="dialog06" class="rd-dialog-modal">
                             <div class="rd-dialog rd-dialog-size-large">
@@ -229,8 +287,37 @@ EOT;
                                 </div>
                             </div>
                         </div>
+                        <div class="rd-content-level-margin-bottom"></div>
+                        <button type="button" data-toggle="dialog" data-target="#dialog06-htmldialog">Open large HTML <code>&lt;dialog&gt;</code></button>
+                        <div id="dialog06-htmldialog" class="rd-dialog-modal">
+                            <dialog class="rd-dialog rd-dialog-size-large">
+                                <div class="rd-dialog-header">
+                                    <h4 class="rd-dialog-title">Large HTML <code>&lt;dialog&gt;</code></h4>
+                                    <button class="rd-dialog-close" type="button" aria-label="Close" data-dismiss="dialog">
+                                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <div class="rd-dialog-body">
+                                    <p>&hellip;</p>
+                                </div>
+                            </dialog>
+                        </div>
+                        <button type="button" data-toggle="dialog" data-target="#dialog07-htmldialog">Open full window HTML <code>&lt;dialog&gt;</code></button>
+                        <div id="dialog07-htmldialog" class="rd-dialog-modal">
+                            <dialog class="rd-dialog rd-dialog-size-fullwindow">
+                                <div class="rd-dialog-header">
+                                    <h4 class="rd-dialog-title">Full window HTML <code>&lt;dialog&gt;</code></h4>
+                                    <button class="rd-dialog-close" type="button" aria-label="Close" data-dismiss="dialog">
+                                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <div class="rd-dialog-body">
+                                    <p>&hellip;</p>
+                                </div>
+                            </dialog>
+                        </div>
                     </div>
-                    <h4>Source</h4>
+                    <h5>source</h5>
                     <pre class="preview-source"><code class="language-html"><?php 
 $sampleHTML = <<<EOT
 <div class="rd-dialog rd-dialog-size-large">...</div>
@@ -239,9 +326,10 @@ EOT;
                     echo trim(htmlspecialchars($sampleHTML, ENT_QUOTES));
                     unset($sampleHTML);
                     ?></code></pre>
-                    <h3>Tooltips on modal dialog</h3>
+
+                    <h2>Tooltips on modal dialog</h2>
                     <p>Tooltips can be placed on modal dialog.</p>
-                    <button class="rd-block-level-margin-bottom" type="button" data-toggle="dialog" data-target="#dialog-with-tooltips">Open modal dialog</button>
+                    <button class="rd-content-level-margin-bottom" type="button" data-toggle="dialog" data-target="#dialog-with-tooltips">Open modal dialog</button>
                     <div id="dialog-with-tooltips" class="rd-dialog-modal">
                         <div class="rd-dialog">
                             <div class="rd-dialog-header">
@@ -259,31 +347,55 @@ EOT;
                             </div>
                         </div>
                     </div>
-                    <h3>Manual activate dialog</h3>
+                    <button class="rd-block-level-margin-bottom" type="button" data-toggle="dialog" data-target="#dialog-htmldialog-with-tooltips">Open modal <code>&lt;dialog&gt;</code></button>
+                    <div id="dialog-htmldialog-with-tooltips" class="rd-dialog-modal">
+                        <dialog class="rd-dialog">
+                            <div class="rd-dialog-header">
+                                <h4 class="rd-dialog-title">HTML <code>&lt;dialog&gt;</code> with modal</h4>
+                                <button class="rd-dialog-close" type="button" aria-label="Close" data-dismiss="dialog">
+                                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="rd-dialog-body">
+                                <p><a href="#" title="Tooltip" data-toggle="tooltip">This link</a> and <a href="#" title="Tooltip 2" data-toggle="tooltip">this link</a> have tooltips</p>
+                            </div>
+                            <div class="rd-dialog-footer">
+                                <button class="rd-button primary" type="button">Save</button>
+                                <button class="rd-button" type="button" data-dismiss="dialog">Close</button>
+                            </div>
+                        </dialog>
+                    </div>
+
+                    <h2>Manual activate dialog</h2>
                     <p>Use the JavaScript code below to manually activate dialog.</p>
                     <pre class="preview-source"><code class="language-js">(new RDTADialog).activateDialog('#dialogID');</code></pre>
+
+                    <h2>Manual close dialog</h2>
+                    <p>Use the JavaScript code below to manually close dialog.</p>
+                    <pre class="preview-source"><code class="language-js">(new RDTADialog).close('#dialogID');</code></pre>
                     <p>The example below, a button does not contain <code>data-toggle=&quot;dialog&quot;</code> but use HTML attribute <code>onclick</code> to call JS to open dialog manually.</p>
                     <div class="rd-block-level-margin-bottom">
                         <button type="button" onclick="rdtaOpenDialogManual();">Open modal dialog</button>
-                        <div id="dialog08" class="rd-dialog-modal">
-                            <div class="rd-dialog">
+                        <div id="dialog08" class="rd-dialog-modal" data-click-outside-not-close="true">
+                            <div class="rd-dialog" data-esc-key-not-close="true">
                                 <div class="rd-dialog-header">
                                     <h4 class="rd-dialog-title">Manual dialog</h4>
-                                    <button class="rd-dialog-close" type="button" aria-label="Close" data-dismiss="dialog">
+                                    <button class="rd-dialog-close" type="button" aria-label="Close" onclick="rdtaCloseDialogManual();">
                                         <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                                     </button>
                                 </div>
                                 <div class="rd-dialog-body">
-                                    <p>Manual trigger open modal dialog.</p>
+                                    <p>Manual trigger open modal dialog. The close button in this dialog also manual trigger close.</p>
                                 </div>
                                 <div class="rd-dialog-footer">
                                     <button class="rd-button primary" type="button">Save</button>
-                                    <button class="rd-button" type="button" data-dismiss="dialog">Close</button>
+                                    <button class="rd-button" type="button" onclick="rdtaCloseDialogManual();">Close</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <h3>Events</h3>
+
+                    <h2>Events</h2>
                     <p>RDTA dialog have few events for hooking.</p>
                     <table class="rd-datatable">
                         <thead>
@@ -303,7 +415,7 @@ EOT;
                             </tr>
                         </tbody>
                     </table>
-                    <button type="button" data-toggle="dialog" data-target="#dialog09">Open modal dialog</button> Click on the open dialog button to see its events below.
+                    <button type="button" data-toggle="dialog" data-target="#dialog09">Open modal dialog</button>
                     <div id="dialog09" class="rd-dialog-modal">
                         <div class="rd-dialog">
                             <div class="rd-dialog-header">
@@ -321,6 +433,25 @@ EOT;
                             </div>
                         </div>
                     </div>
+                    <button type="button" data-toggle="dialog" data-target="#dialog09-htmldialog">Open modal <code>&lt;dialog&gt;</code></button>
+                    <div id="dialog09-htmldialog" class="rd-dialog-modal">
+                        <dialog class="rd-dialog">
+                            <div class="rd-dialog-header">
+                                <h4 class="rd-dialog-title">HTML <code>&lt;dialog&gt;</code> with modal</h4>
+                                <button class="rd-dialog-close" type="button" aria-label="Close" data-dismiss="dialog">
+                                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="rd-dialog-body">
+                                <p>Open and then close to see events show up below.</p>
+                            </div>
+                            <div class="rd-dialog-footer">
+                                <button class="rd-button primary" type="button">Save</button>
+                                <button class="rd-button" type="button" data-dismiss="dialog">Close</button>
+                            </div>
+                        </dialog>
+                    </div>
+                    Click on the open dialog buttons to see their events below.
                     <div class="rd-block-level-margin-bottom rd-dialog-events rdta-demopage-debugbox"></div>
                 </div><!--.rd-page-content-->
             </main>
@@ -333,6 +464,12 @@ EOT;
         <script src="assets/js/tippy.js/dist/tippy-bundle.umd.min.js"></script>
         <script src="assets/js/rdta/components/rdta-tooltips.js"></script>
         <script>
+            function rdtaCloseDialogManual() {
+                let rdtaDialog = new RDTADialog();
+                rdtaDialog.close('#dialog08');
+            }// rdtaCloseDialogManual
+
+
             function rdtaOpenDialogManual() {
                 let rdtaDialog = new RDTADialog();
                 rdtaDialog.activateDialog('#dialog08');
@@ -345,6 +482,13 @@ EOT;
                 });
                 document.querySelector('#dialog09').addEventListener('rdta.dialog.closed', function() {
                     document.querySelector('.rd-dialog-events').insertAdjacentHTML('beforeend', 'Dialog closed<br>');
+                });
+
+                document.querySelector('#dialog09-htmldialog').addEventListener('rdta.dialog.opened', function() {
+                    document.querySelector('.rd-dialog-events').insertAdjacentHTML('beforeend', '<code>&lt;dialog&gt;</code> opened<br>');
+                });
+                document.querySelector('#dialog09-htmldialog').addEventListener('rdta.dialog.closed', function() {
+                    document.querySelector('.rd-dialog-events').insertAdjacentHTML('beforeend', '<code>&lt;dialog&gt;</code> closed<br>');
                 });
             }// rdtaDebugDialogEvents
 

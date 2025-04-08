@@ -31,6 +31,7 @@ For document (preview) only.
 
 
 /* page dialog */
+.page-dialog .code-sample-dialog-htmldialog,
 .page-dialog .code-sample-dialog-sample1 {
     margin-left: auto;
     margin-right: auto;
