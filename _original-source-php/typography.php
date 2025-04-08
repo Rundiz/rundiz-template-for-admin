@@ -109,6 +109,7 @@ $title = 'Typography & reset';
                             <li><a href="#form-meter">Meter</a></li>
                             <li><a href="#form-elements">Form elements</a>
                                 <ul>
+                                    <li><a href="#form-validation-pseudoclass">Validation</a></li>
                                     <li><a href="#form-datalist">Datalist</a></li>
                                     <li><a href="#form-output">Output</a></li>
                                 </ul>

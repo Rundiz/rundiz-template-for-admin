@@ -192,29 +192,29 @@ input[type=week][readonly] {
     cursor: not-allowed;
 }
 
-input[type=date]:invalid, 
+input[type=date]:user-invalid, 
 input[type=date].rd-input-invalid,
-input[type=datetime-local]:invalid,
+input[type=datetime-local]:user-invalid,
 input[type=datetime-local].rd-input-invalid,
-input[type=email]:invalid,
+input[type=email]:user-invalid,
 input[type=email].rd-input-invalid,
-input[type=month]:invalid,
+input[type=month]:user-invalid,
 input[type=month].rd-input-invalid,
-input[type=number]:invalid,
+input[type=number]:user-invalid,
 input[type=number].rd-input-invalid,
-input[type=password]:invalid,
+input[type=password]:user-invalid,
 input[type=password].rd-input-invalid,
-input[type=search]:invalid,
+input[type=search]:user-invalid,
 input[type=search].rd-input-invalid,
-input[type=tel]:invalid,
+input[type=tel]:user-invalid,
 input[type=tel].rd-input-invalid,
-input[type=text]:invalid,
+input[type=text]:user-invalid,
 input[type=text].rd-input-invalid,
-input[type=time]:invalid,
+input[type=time]:user-invalid,
 input[type=time].rd-input-invalid,
-input[type=url]:invalid,
+input[type=url]:user-invalid,
 input[type=url].rd-input-invalid,
-input[type=week]:invalid,
+input[type=week]:user-invalid,
 input[type=week].rd-input-invalid {
     border-color: var(--rdta-tpf-form-invalid-border-color);
 }
@@ -262,9 +262,9 @@ input[type=radio][readonly] {
     cursor: not-allowed;
 }
 
-input[type=checkbox]:invalid,
+input[type=checkbox]:user-invalid,
 input[type=checkbox].rd-input-invalid,
-input[type=radio]:invalid,
+input[type=radio]:user-invalid,
 input[type=radio].rd-input-invalid {
     border-color: var(--rdta-tpf-form-invalid-border-color);
 }
@@ -364,7 +364,7 @@ select[readonly] {
     cursor: not-allowed;
 }
 
-select:invalid, select.rd-input-invalid {
+select:user-invalid, select.rd-input-invalid {
     border-color: var(--rdta-tpf-form-invalid-border-color);
 }
 
@@ -397,7 +397,7 @@ textarea[readonly] {
     cursor: not-allowed;
 }
 
-textarea:invalid, 
+textarea:user-invalid, 
 textarea.rd-input-invalid {
     border-color: var(--rdta-tpf-form-invalid-border-color);
 }

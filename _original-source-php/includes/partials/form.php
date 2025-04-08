@@ -166,6 +166,7 @@ unset($input_type, $input_types);
             </fieldset>
 
             <h3 id="form-validation-pseudoclass">Form with validation status</h3>
+            <p>Try to press submit without any modification to the form.</p>
             <form onsubmit="return false;">
                 <fieldset>
                     <p>
@@ -201,6 +202,7 @@ unset($input_type, $input_types);
                         </select>
                     </p>
                     <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
                 </fieldset>
             </form>
 
