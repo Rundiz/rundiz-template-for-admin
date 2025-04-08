@@ -1,5 +1,5 @@
 
-        <script>
+        <script class="exclude-preview">
             const rdta_debug = <?php if (is_bool(RDTA_DEBUG)) {var_export(RDTA_DEBUG);} else {echo 'true';} ?>;
         </script>
         <script src="<?php echo assetUrl('//code.jquery.com/jquery-3.4.1.min.js'); ?>"></script>

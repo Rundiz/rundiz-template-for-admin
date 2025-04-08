@@ -37,7 +37,8 @@
 }
 
 .rd-accordion .rd-accordion-group .rd-accordion-body.collapse.expanded {
-    height: auto;
+    height: auto;/* for fallback on browser that doesn't supported `calc-size()`. */
+    height: calc-size(auto, size);
     padding-bottom: var(--rdta-block-element-padding-vertical);
     padding-top: var(--rdta-block-element-padding-vertical);
 }
@@ -45,16 +46,64 @@
 .rd-accordion .rd-accordion-group .rd-accordion-header {
     background-color: var(--rdta-tpf-block-background-color);
     border-bottom: 1px solid var(--rdta-tpf-block-border-color);
+    cursor: pointer;
+    font-weight: 400;
     margin: 0;
     padding: 0.313rem var(--rdta-block-element-padding-horizontal);
 }
 
+.rd-accordion .rd-accordion-group .rd-accordion-header > *::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f077  ";/* chevron-up */
+}
+
+.rd-accordion .rd-accordion-group .rd-accordion-header.active > *::before {
+    content: "\f078  ";/* chevron-down */
+}
+
 .rd-accordion .rd-accordion-group .rd-accordion-header > * {
     color: inherit;
+    cursor: inherit;
     display: block;
 }
+
 
 ul.rd-accordion,
 ol.rd-accordion {
     list-style: none;
 }
+
+
+/* accordion for `<details>` element. */
+.rd-accordion details.rd-accordion-group::details-content {
+    height: 0;
+    opacity: 0;
+    transition: height 0.3s, opacity .15s, content-visibility 0.3s allow-discrete;
+}
+
+.rd-accordion details.rd-accordion-group[open]::details-content {
+    height: calc-size(auto, size);
+    opacity: 1;
+    transition: height 0.15s, opacity 0.3s, content-visibility 0.3s allow-discrete;
+}
+
+.rd-accordion details.rd-accordion-group summary::marker {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f077  ";/* chevron-up */
+}
+
+.rd-accordion details.rd-accordion-group[open] summary::marker {
+    content: "\f078  ";/* chevron-down */
+}
+
+.rd-accordion details.rd-accordion-group .rd-accordion-body.collapse,
+.rd-accordion details.rd-accordion-group .rd-accordion-body.collapse.expanded {
+    /* make accordion with .collapse, .expanded have default effects because we use `::details-content` instead. */
+    height: auto;
+    padding-bottom: var(--rdta-block-element-padding-vertical);
+    padding-top: var(--rdta-block-element-padding-vertical);
+    transition: none;
+}
+/* end accordion for `<details>` element. */

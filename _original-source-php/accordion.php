@@ -79,7 +79,7 @@ include 'includes/html-head.php';
                     <p>The accordion can be show only one body while other will be collapsed. Add <code>data-accordion-one=&quot;true&quot;</code> to the element that contain <code>rd-accordion</code> class to enable this feature.</p>
                     <div class="rd-accordion code-sample-accordion-onlyone" data-accordion-one="true">
                         <div class="rd-accordion-group">
-                            <h3 id="ex3-accordion-heading1" class="rd-accordion-header"><a data-toggle="accordion" data-target="#ex3-accordion1" aria-controls="ex3-accordion1">Section 1</a></h3>
+                            <h3 id="ex3-accordion-heading1" class="rd-accordion-header active"><a data-toggle="accordion" data-target="#ex3-accordion1" aria-controls="ex3-accordion1">Section 1</a></h3>
                             <div id="ex3-accordion1" class="rd-accordion-body collapse expanded" aria-labelledby="ex3-accordion-heading1">
                                 <p>Cras in lacus posuere, pulvinar lorem a, commodo ex. Ut a vestibulum urna. Sed hendrerit et nulla eget sollicitudin. Donec vitae ultrices lorem. Ut vitae molestie ex, et finibus eros. Cras euismod libero leo, ut cursus nisi viverra eget. Integer ac lacinia felis. Sed pretium eros ac dui feugiat, et egestas purus facilisis. Pellentesque eu quam mauris. Integer hendrerit nulla at est sollicitudin, a placerat arcu pharetra.</p>
                             </div>
