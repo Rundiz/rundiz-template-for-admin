@@ -13,6 +13,19 @@ class RDTATooltips {
 
 
     /**
+     * Listen dialog closed and hide tooltips that may be showed.
+     * 
+     * @since 2.4.1
+     * @returns {undefined}
+     */
+    #listenDialogClosed() {
+        document.addEventListener('rdta.dialog.closed', () => {
+            tippy?.hideAll();
+        }, true);
+    }// #listenDialogClosed
+
+
+    /**
      * Get latest tippy.js instance.
      */
     getInstance() {
@@ -29,7 +42,7 @@ class RDTATooltips {
 
 
     /**
-     * Initialize the tooltip.
+     * Initialize the tooltips.
      * 
      * @param {string} selector
      * @param {object} options
@@ -45,7 +58,7 @@ class RDTATooltips {
             item.removeAttribute('title');
             tooltipOptions.template = '<div class="tooltip rd-tooltips" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>';
 
-            if (item.dataset.placement) {
+            if (item.dataset?.placement) {
                 tooltipOptions.placement = item.dataset.placement;
             }
 
@@ -61,6 +74,8 @@ class RDTATooltips {
             );
             thisClass.tippyInstances.push(thisClass.tippyInstance);
         });
+
+        thisClass.#listenDialogClosed();
 
         return thisClass;
     }// init
