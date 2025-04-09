@@ -41,6 +41,8 @@ class RDTADialog {
     /**
      * Do close the dialog.
      * 
+     * This method was called from `#listenOnClickButtonClose()`, `#listenOnClickOutsideClose()`, `#listenOnEscapeKeyClose()`, `close()`.
+     * 
      * @since 2.4.1
      * @param {object|undefined|null} dialogElement The dialog element.
      * @param {object|undefined|null} modalElement The modal element.
@@ -202,12 +204,25 @@ class RDTADialog {
     /**
      * Activate (open) the dialog.
      * 
-     * @param {string} selector
-     * @param {object} options Options:<br>
-     *                  'focusDialog' (bool) Set to `false` to do not focus on dialog. Default is `true`.
+     * @param {string} selector The JS selector. It can be CSS class or HTML ID.
+     * @param {object} options The options.
+     * @param {boolean} options.focusDialog Set to `false` to do not focus on dialog. Default is `true`.
      * @returns {undefined}
      */
-    activateDialog(selector, options) {
+    activateDialog(selector, options = {}) {
+        if (typeof(selector) !== 'string') {
+            throw new Error('The argument selector must be string.');
+        }
+        if (typeof(options) !== 'object') {
+            throw new Error('The argument options must be an object.');
+        }
+
+        let defaultOptions = {
+            'focusDialog': true,
+        };
+        options = Object.assign(defaultOptions, options);
+        defaultOptions = undefined;
+
         let thisClass = this;
         let dialogOrModalElement = document.querySelector(selector);
 
@@ -236,7 +251,7 @@ class RDTADialog {
             if ('basic' === htmlUse) {
                 // if use basic HTML element (maybe `<div class="rd-dialog">`).
                 dialogOrModalElement.tabIndex = '-1';
-                if (!options || (options && options.focusDialog !== false)) {
+                if (options.focusDialog === true) {
                     // focus on dialog/modal.
                     setTimeout(function() {
                         dialogOrModalElement.focus();
@@ -247,7 +262,7 @@ class RDTADialog {
                 // if use HTML `<dialog>`.
                 // the method `showModal()` can't work here because it is conflicted with sanitize.css ( https://github.com/csstools/sanitize.css/issues/253 )
                 dialogElement.show();
-                if (!options || (options && options.focusDialog !== false)) {
+                if (options.focusDialog === true) {
                     const dismissBtn = dialogElement.querySelector(thisClass.#dataDismissSelector);
                     if (dismissBtn) {
                         dismissBtn.autofocus = true;
@@ -271,7 +286,7 @@ class RDTADialog {
      * Manually close the dialog.
      * 
      * @since 2.4.1
-     * @param {string} selector The CSS selector. It can be CSS class or HTML ID.
+     * @param {string} selector The JS selector. It can be CSS class or HTML ID.
      * @throws {Error} Throw the error on invalid argument.
      */
     close(selector) {
