@@ -1,7 +1,10 @@
 /* 
  * Document utilities and functional.
  * 
+ * This JS file is for document pages only. It is no need on your project.
+ * 
  * @license http://opensource.org/licenses/MIT MIT
+ * @since 2.4.1
  */
 
 

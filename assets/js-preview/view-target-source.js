@@ -54,7 +54,7 @@ class ViewTargetSource {
             this.previewSrcPlaceholderSelector = options.previewSrcPlaceholderSelector;
         }
         if (options.excludePreviewSelector) {
-            this.excludePreviewSelector = options.excludePreviewSelector
+            this.excludePreviewSelector = options.excludePreviewSelector;
         }
         if (options.viewSourceClass) {
             this.#viewSourceClass = options.viewSourceClass;
