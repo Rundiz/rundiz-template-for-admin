@@ -7,72 +7,97 @@ class RDTAAlertDialog {
 
 
     /**
+     * @type String The body class name for use when dialog open with modal (backdrop).
+     */
+    #bodyModalClassName = 'rd-alertdialog-modal-open';
+
+
+    /**
+     * @type undefined|object Current alert dialog modal element that has been activated.
+     */
+    #currentAlertDialogModal;
+
+
+    /**
+     * @type String The CSS selector for HTML attribute that will be dismiss (close) the alert dialog.  
+     * Example HTML `data-dismiss="dialog"`.  
+     * Example CSS selector `[data-dismiss="dialog"]`.
+     */
+    #dataDismissSelector = '[data-dismiss="dialog"]';
+
+
+    /**
+     * @type String The alert dialog class name.
+     */
+    #dialogClassName = 'rd-alertdialog';
+
+
+    /**
+     * @type String The modal (backdrop) class name.
+     */
+    #modalClassName = 'rd-alertdialog-modal';
+
+
+    /**
+     * @type undefined|object The active element for return as previous focus on dialog closed.
+     */
+    #previousFocus;
+
+
+    /**
+     * The options.
+     * 
+     * @since 2.4.1
+     * @type Object The options.
+     * @see `RDTAAlertDialog::alert()`
+     */
+    #options = {};
+
+
+    /**
      * Class constructor.
      * 
      * @private Do not access this method directly, it was called from `alert()` method.
-     * @param {object} options The options for alert dialog. Available options:<br>
-     *                                         `type` The alert type. Accept info, warning, success, danger.<br>
-     *                                         `html` The alert in HTML content if you want to use HTML in the alert.<br>
-     *                                         `text` The alert in text content. If both text & html were set, it will be use text by default.<br>
-     *                                         `txtCloseButton` Text on close button. Default is 'OK'.
+     * @see `RDTAAlertDialog::alert()` for more description about available options.
+     * @param {object} options The options for alert dialog.
      * @returns {undefined}
      */
-    constructor(options) {
+    constructor(options = {}) {
+        if (typeof(options) !== 'object') {
+            throw new Error('The argument options must be an object.');
+        }
+
         let defaultOptions = {
             'type': 'danger',
             'html': '',
             'text': '',
             'txtCloseButton': 'OK'
         };
-        this.options = Object.assign(defaultOptions, options);
+        this.#options = Object.assign(defaultOptions, options);
         defaultOptions = undefined;
     }// constructor
 
 
     /**
-     * Display alert dialog.
-     * 
-     * @param {object} options The options for alert dialog. Available options:<br>
-     *                                         `type` The alert type. Accept info, warning, success, danger.<br>
-     *                                         `html` The alert in HTML content if you want to use HTML in the alert.<br>
-     *                                         `text` The alert in text content. If both text & html were set, it will be use text by default.<br>
-     *                                         `txtCloseButton` Text on close button. Default is 'OK'.
-     * @returns {undefined}
-     */
-    static alert(options) {
-        let thisClass = new this(options);
-
-        // create HTML and put to body
-        thisClass.createHtmlDialog();
-
-        setTimeout(function() {
-            // listen on click ok (close) button
-            thisClass.listenOnCloseButton();
-            // listen on key press (esc, enter) to close.
-            thisClass.listenOnKeyPressClose();
-        }, 600);
-    }// alert
-
-
-    /**
      * Create HTML and put into body.
      * 
+     * @since 2.4.1 Renamed from `createHtmlDialog()`.
      * @returns {undefined}
      */
-    createHtmlDialog() {
-        this.previousFocus = document.activeElement;
+    #createHTMLDialog() {
+        this.#previousFocus = document.activeElement;
 
         let dialogMessage = '';
-        if (this.options && this.options.text) {
-            dialogMessage = '<p>' + this.options.text + '</p>';
+        if (this.#options?.text) {
+            dialogMessage = '<p>' + this.#escapeHTML(this.#options.text) + '</p>';
         } else {
-            dialogMessage = this.options.html;
+            dialogMessage = this.#options.html;
         }
 
         let dialogIcon = '';
         let alertClass = '';
-        if (this.options && this.options.type) {
-            switch (this.options.type) {
+        if (this.#options.type) {
+            switch (this.#options.type) {
                 case 'alert-info':
                 case 'info':
                     dialogIcon = '<span class="fa-stack fa-3x"><i class="far fa-circle fa-2x"></i><i class="fas fa-info fa-stack-1x"></i></span>';
@@ -97,92 +122,187 @@ class RDTAAlertDialog {
             }
         }
 
-        let dialogHtml = '<div class="rd-alertdialog-modal show">' +
-            '<div class="rd-alertdialog ' + alertClass + '" aria-describedby="rd-alertdialog-body" aria-modal="true">' +
+        let dialogHtml = '<div class="' + this.#modalClassName + ' show">' +
+            '<div class="' + this.#dialogClassName + ' ' + alertClass + '" aria-describedby="rd-alertdialog-body" aria-modal="true">' +
                 '<div id="rd-alertdialog-body" class="rd-dialog-body">' +
                     '<div class="rd-alertdialog-icon text-center">' + dialogIcon + '</div>' +
                     dialogMessage +
                 '</div>' +
                 '<div class="rd-dialog-buttons">' + 
-                    '<button class="rd-button primary" type="button" data-dismiss="dialog" aria-label="' + (this.options ? this.options.txtCloseButton : 'OK') + '">' +
-                        (this.options ? this.options.txtCloseButton : 'OK') +
+                    '<button class="rd-button primary" type="button" data-dismiss="dialog" aria-label="' + this.#options.txtCloseButton + '">' +
+                        this.#options.txtCloseButton +
                     '</button>' +
                 '</div>' +
             '</div>' +
         '</div>';
 
+        // append alert dialog HTML to `<body>` to show the alert dialog.
         document.body.insertAdjacentHTML('beforeend', dialogHtml);
-        document.body.classList.add('rd-alertdialog-modal-open');
+        // add modal opened class to `<body>`.
+        document.body.classList.add(this.#bodyModalClassName);
 
-        if (document.querySelector('.rd-alertdialog [data-dismiss="dialog"]')) {
-            document.querySelector('.rd-alertdialog [data-dismiss="dialog"]').focus();
+        if (document.querySelector('.' + this.#dialogClassName + ' ' + this.#dataDismissSelector + '')) {
+            document.querySelector('.' + this.#dialogClassName + ' ' + this.#dataDismissSelector + '').focus();
+        }
+        if (document.querySelector('.' + this.#modalClassName)) {
+            this.#currentAlertDialogModal = document.querySelector('.' + this.#modalClassName);
         }
 
         // fire event.
         let event = new Event('rdta.alertdialog.opened');
         document.body.dispatchEvent(event);
-    }// createHtmlDialog
+    }// #createHTMLDialog
 
 
     /**
-     * Listen on click OK (close) button to close dialog.
+     * Do close the alert dialog.
      * 
+     * This method was called from `#listenOnClickButtonClose()`.
+     * 
+     * @since 2.4.1
+     * @param {object|undefined|null} modalElement The modal element.
+     * @throws {Error} Throw the error on invalid argument.
+     */
+    #doClose(modalElement) {
+        if (
+            typeof(modalElement) !== 'object' && 
+            typeof(modalElement) !== 'undefined' &&
+            modalElement !== null
+        ) {
+            throw new Error('The argument modalElement must be an object.');
+        }
+
+        modalElement?.remove();
+        document.body.classList.remove(this.#bodyModalClassName);
+
+        // fire event
+        let event = new Event('rdta.alertdialog.closed');
+        document.body.dispatchEvent(event);
+
+        // back to previous focus.
+        if (this.#previousFocus) {
+            this.#previousFocus.focus();
+        }
+
+        // reset properties.
+        this.#previousFocus = undefined;
+        this.#currentAlertDialogModal = undefined;
+    }// #doClose
+
+
+    /**
+     * Escape HTML. Also prevent double escape.
+     * 
+     * This method was called from `#createHTMLDialog()`.
+     * 
+     * @link https://stackoverflow.com/a/6234804/128761 Original source code.
+     * @since 2.4.1
+     * @param {string} text The text content wether it is HTML or not.
+     * @returns {unresolved}
+     */
+    #escapeHTML(text) {
+        const unescaped = text
+                .replace(/&amp;/g, "&")
+                .replace(/&lt;</g, "<")
+                .replace(/&gt;/g, ">")
+                .replace(/&quot;/g, "\"")
+                .replace(/&#039;/g, "''");
+
+        if (unescaped === text) {
+            return text
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#039;");
+        }
+        return text;
+    }// #escapeHTML
+
+
+    /**
+     * Listen on click dismiss button to close alert dialog (and modal or backdrop).
+     * 
+     * This method was called from `alert()`.
+     * 
+     * @since 2.4.1
      * @returns {undefined}
      */
-    listenOnCloseButton() {
-        let thisClass = this;
+    #listenOnClickButtonClose() {
+        if (!this.#currentAlertDialogModal) {
+            return ;
+        }
 
-        document.body.addEventListener('click', function handler(event) {
-            for (let target= event.target; target && target != this; target = target.parentNode) {
-                // loop parent nodes from the target to the delegation node
-                if (target.matches('[data-dismiss="dialog"]')) {
-                    if (target.closest('.rd-alertdialog-modal')) {
-                        target.closest('.rd-alertdialog-modal').remove();
-                        document.body.classList.remove('rd-alertdialog-modal-open');
-                        document.body.removeEventListener('click', handler);
+        let dismissBtn = this.#currentAlertDialogModal.querySelector(this.#dataDismissSelector);
+        if (!dismissBtn) {
+            return ;
+        }
 
-                        // fire event
-                        let event = new Event('rdta.alertdialog.closed');
-                        document.body.dispatchEvent(event);
-
-                        // back to previous focus.
-                        if (thisClass.previousFocus) {
-                            thisClass.previousFocus.focus();
-                        }
-                    }
-                    break;
-                }
-            }
+        dismissBtn.addEventListener('click', (event) => {
+            this.#doClose(this.#currentAlertDialogModal);
+            dismissBtn = null;
         });
-    }// listenOnCloseButton
+    }// #listenOnClickButtonClose
 
 
     /**
-     * Listen on key press to close if no attribute specified.
+     * Listen on hot key press to close alert dialog.
      * 
-     * @private
+     * This method was called from `alert()`.
+     * 
+     * @since 2.4.1
+     * @returns {undefined}
      */
-    listenOnKeyPressClose() {
-        document.body.addEventListener('keyup', function handler(event) {
+    #listenOnHotKeyClose() {
+        if (!this.#currentAlertDialogModal) {
+            return ;
+        }
+
+        this.#currentAlertDialogModal.addEventListener('keydown', (event) => {
             if (
-                (event.key === 'Escape' || event.code === 'NumpadEnter' || event.key === 'Enter') &&
+                (event.code === 'NumpadEnter' || event.key === 'Enter') &&
                 event.altKey === false &&
                 event.ctrlKey === false &&
                 event.metaKey === false &&
                 event.shiftKey === false
             ) {
-                // if key press (already up) for escape, numpad enter, enter
-                if (document.querySelector('.rd-alertdialog-modal.show')) {
-                    // alert dialog is showing.
-                    if (document.querySelector('.rd-alertdialog-modal.show [data-dismiss="dialog"]')) {
-                        document.querySelector('.rd-alertdialog-modal.show [data-dismiss="dialog"]').focus();
-                        document.querySelector('.rd-alertdialog-modal.show [data-dismiss="dialog"]').click();
-                        document.body.removeEventListener('keyup', handler);
-                    }
-                }
+                this.#doClose(this.#currentAlertDialogModal);
             }
         });
-    }// listenOnKeyPressClose
+
+        this.#currentAlertDialogModal.addEventListener('keyup', (event) => {
+            if (
+                event.key === 'Escape' &&
+                event.altKey === false &&
+                event.ctrlKey === false &&
+                event.metaKey === false &&
+                event.shiftKey === false
+            ) {
+                this.#doClose(this.#currentAlertDialogModal);
+            }
+        });
+    }// #listenOnHotKeyClose
+
+
+    /**
+     * Display alert dialog.
+     * 
+     * @param {object} options The options for alert dialog.
+     * @param {string} options.type The alert type. Accept info, warning, success, danger.
+     * @param {string} options.html The alert in HTML content if you want to use HTML in the alert.
+     * @param {string} options.text The alert in text content. If both text & html were set, it will be use text by default.
+     * @param {string} options.txtCloseButton Text on close button. Default is 'OK'.
+     * @returns {undefined}
+     */
+    static alert(options = {}) {
+        let thisClass = new this(options);
+
+        // create HTML and put to body
+        thisClass.#createHTMLDialog();
+
+        thisClass.#listenOnClickButtonClose();
+        thisClass.#listenOnHotKeyClose();
+    }// alert
 
 
 }// RDTAAlertDialog

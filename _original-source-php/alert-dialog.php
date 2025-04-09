@@ -45,9 +45,9 @@ include 'includes/html-head.php';
                     }// endforeach;
                     unset($alertType, $alertTypes);
                     ?> 
-                    <p>Text alert dialog. <a href="#" onclick="RDTAAlertDialog.alert({'type': 'info', 'text': 'Alert that contain text only.'});">Show me.</a></p>
+                    <p>Text alert dialog. <a href="#" onclick="RDTAAlertDialog.alert({'type': 'info', 'text': 'Alert that contain <strong>text</strong> only.'});">Show me.</a></p>
                     <p>If both <code>text</code> &amp <code>html</code> were set, it will be use <code>text</code> by default.</p>
-                    <pre><code class="language-js"><?php echo htmlspecialchars("RDTAAlertDialog.alert({'type': 'info', 'text': 'Alert that contain text only.'});", ENT_QUOTES); ?></code></pre>
+                    <pre><code class="language-js"><?php echo htmlspecialchars("RDTAAlertDialog.alert({'type': 'info', 'text': 'Alert that contain <strong>text</strong> only.'});", ENT_QUOTES); ?></code></pre>
 
                     <h3>Alert dialog on modal dialog</h3>
                     <div class="rd-block-level-margin-bottom">
