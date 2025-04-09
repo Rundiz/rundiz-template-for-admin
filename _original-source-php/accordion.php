@@ -16,7 +16,7 @@ include 'includes/html-head.php';
                 <?php
                 echo renderBreadcrumb(['./' => 'Home', '#' => $title]);
                 ?> 
-                <div class="rd-page-content">
+                <div class="rd-page-content page-accordion">
                     <h1>Accordion</h1>
                     <p>
                         In order to make accordion works, add these files.
