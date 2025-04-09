@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="assets/css/sanitize/sanitize.css?npm-v=github%3Acsstools%2Fsanitize.css%23main">
         <link rel="stylesheet" href="assets/css/sanitize/typography.css?npm-v=github%3Acsstools%2Fsanitize.css%23main">
         <link rel="stylesheet" href="assets/css/sanitize/forms.css?npm-v=github%3Acsstools%2Fsanitize.css%23main">
-        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?v=4013bdb0795c9665d66ed76037b667a2">
+        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?v=518b758b0781d12ea587ed38099297c4">
         <style>
             main {
                 margin: 0 auto; 
@@ -98,6 +98,7 @@
                             <li><a href="#form-meter">Meter</a></li>
                             <li><a href="#form-elements">Form elements</a>
                                 <ul>
+                                    <li><a href="#form-validation-pseudoclass">Validation</a></li>
                                     <li><a href="#form-datalist">Datalist</a></li>
                                     <li><a href="#form-output">Output</a></li>
                                 </ul>
@@ -427,14 +428,14 @@
             <h3 id="typography-detailssummary">Details &amp; Summary</h3>
             <details open>
                 <summary>Question 1</summary>
-                <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#" onclick="return false;">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+                <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
                 <details>
                     <summary>Related documents</summary>
                     <ul>
-                        <li><a href="#" onclick="return false;">Lorem ipsum dolor sit amet,  consectetuer adipiscing elit.</a></li>
-                        <li><a href="#" onclick="return false;">Aliquam tincidunt mauris eu  risus.</a></li>
-                        <li><a href="#" onclick="return false;">Lorem ipsum dolor sit amet,  consectetuer adipiscing elit.</a></li>
-                        <li><a href="#" onclick="return false;">Aliquam tincidunt mauris eu  risus.</a></li>
+                        <li><a href="#">Lorem ipsum dolor sit amet,  consectetuer adipiscing elit.</a></li>
+                        <li><a href="#">Aliquam tincidunt mauris eu  risus.</a></li>
+                        <li><a href="#">Lorem ipsum dolor sit amet,  consectetuer adipiscing elit.</a></li>
+                        <li><a href="#">Aliquam tincidunt mauris eu  risus.</a></li>
                     </ul>
                 </details>
             </details>
@@ -762,8 +763,8 @@
                 <legend>Button types</legend>
                 <p>
                     <button type="button">Normal button</button>
-                    <button type="submit" onclick="return false;">Submit button</button>
-                    <button type="reset" onclick="return false;">Reset button</button>
+                    <button type="submit">Submit button</button>
+                    <button type="reset">Reset button</button>
                     <button type="button" disabled="">Disabled button</button>
                 </p>
                 <p>
@@ -772,13 +773,14 @@
                 </p>
                 <p>
                     <input type="button" value="Input normal button">
-                    <input type="submit" value="Input submit button" onclick="return false;">
-                    <input type="reset" value="Input reset button" onclick="return false;">
+                    <input type="submit" value="Input submit button">
+                    <input type="reset" value="Input reset button">
                     <input type="button" value="Input disabled button" disabled="">
                 </p>
             </fieldset>
 
             <h3 id="form-validation-pseudoclass">Form with validation status</h3>
+            <p>Try to press submit without any modification to the form.</p>
             <form onsubmit="return false;">
                 <fieldset>
                     <p>
@@ -814,6 +816,7 @@
                         </select>
                     </p>
                     <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
                 </fieldset>
             </form>
 

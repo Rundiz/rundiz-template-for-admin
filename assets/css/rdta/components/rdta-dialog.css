@@ -21,6 +21,13 @@ body.rd-modal-open {
   padding: 0;
   position: relative;
 }
+dialog.rd-dialog {
+  margin: 0;
+  width: 100%;
+}
+dialog.rd-dialog:not([open]) {
+  display: none;
+}
 @media (min-width: 550px) {
   /* use `$dialog-normal-breakpoint` in media query */
   .rd-dialog {
@@ -112,13 +119,6 @@ body.rd-modal-open {
     margin-left: auto;
     margin-right: auto;
   }
-}
-.rd-dialog-modal .rd-dialog-modal-backdrop {
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
 }
 /* end dialog modal */
 

@@ -14,10 +14,17 @@ class RDTATabs {
      * Class constructor.
      * 
      * @private Do not access this method directly, it was called via `init()` method.
-     * @param {object} options
-     * @returns {RDTATabs}
+     * @param {object} options The options.
+     * @param {int} options.activeTabs The index number of active tab to be manually set.
+     * @param {boolean} options.rememberLastTab Set to `true` to remember last tab opened. Default is `false` or not remember.
+     * @param {string} options.selector The JS selector.
+     * @returns {undefined}
      */
-    constructor(options) {
+    constructor(options = {}) {
+        if (typeof(options) !== 'object') {
+            throw new Error('The argument options must be an object.');
+        }
+
         this.selector = (options.selector ? options.selector : '');
         this.options = (options.options ? options.options : {});
     }// constructor
@@ -26,12 +33,14 @@ class RDTATabs {
     /**
      * Activate tab content.
      * 
-     * @private This method was called from `addRequiredClasses()`, `listenOnTabNav()`.
+     * This method was called from `#addRequiredClasses()`, `#listenOnTabNav()`.
+     * 
+     * @since 2.4.1 Renamed from `activateTabContent()`.
      * @param {object} selector Object of each tab main element.
      * @param {string} targetTabContent
      * @returns {undefined}
      */
-    activateTabContent(selector, targetTabContent) {
+    #activateTabContent(selector, targetTabContent) {
         if (!targetTabContent || !selector) {
             return false;
         }
@@ -85,17 +94,19 @@ class RDTATabs {
             let event = new CustomEvent('rdta.tabs.activeTab', {'detail': eventDetail});
             document.querySelector(thisClass.selector).dispatchEvent(event);
         }
-    }// activateTabContent
+    }// #activateTabContent
 
 
     /**
      * Add required CSS classes.
      * 
-     * @private Do not call this, just call `init()`.
+     * This method was called from `init()`.
+     * 
+     * @since 2.4.1 Renamed from `addRequiredClasses()`.
      * @param {object} options
      * @returns {undefined}
      */
-    addRequiredClasses(options) {
+    #addRequiredClasses(options) {
         let thisClass = this;
 
         document.querySelectorAll(thisClass.selector).forEach(function(item, index) {
@@ -130,26 +141,28 @@ class RDTATabs {
                             targetTab = tabNavElement.children[i].querySelector('a').hash;
                         }
                         if (targetTab) {
-                            thisClass.activateTabContent(item, targetTab);
+                            thisClass.#activateTabContent(item, targetTab);
                         }
                         break;
                     }
                 }// endfor;
             }
         });
-    }// addRequiredClasses
+    }// #addRequiredClasses
 
 
     /**
      * Ajax and set content to target. Did not activate the tab nav.
      * 
-     * @private Do not call this, just call `init()`.
+     * This method was called from `#listenOnTabNav()`.
+     * 
+     * @since 2.4.1 Renamed from `ajaxTabContent()`.
      * @param {string} url
      * @param {object} selector Object of each tab main element.
      * @param {string} targetTabContent
      * @returns {undefined}
      */
-    ajaxTabContent(url, selector, targetTabContent) {
+    #ajaxTabContent(url, selector, targetTabContent) {
         let xhr = new XMLHttpRequest();
         let thisClass = this;
 
@@ -168,44 +181,7 @@ class RDTATabs {
 
         xhr.open('GET', url);
         xhr.send();
-    }// ajaxTabContent
-
-
-    /**
-     * Initialize RDTA tabs.
-     * 
-     * @param {string} selector
-     * @param {object} options
-     * @returns {undefined}
-     */
-    static init(selector, options) {
-        let defaultOptions = {
-            'activeTabs': 0,
-            'rememberLastTab': false,
-        };
-        if (typeof(options) === 'object') {
-            options = Object.assign(defaultOptions, options);
-        } else {
-            options = defaultOptions;
-        }
-
-        if (options.rememberLastTab === true && window.localStorage) {
-            // if option was set to remember last tab.
-            let lastTab = window.localStorage.getItem('rdtaTabsLast-' + selector);
-            if (!isNaN(lastTab) && lastTab !== '' && lastTab !== null) {
-                options.activeTabs = parseInt(lastTab);
-            }
-        }
-
-        let thisClass = new this({'selector': selector, 'options': options});
-        thisClass.addRequiredClasses(options);
-        thisClass.listenOnTabNav(options);
-
-        // set tab navbar horizontal scroll if overflow. this must run after set activate tab content.
-        thisClass.setTabNavHorizontalScroll();
-        thisClass.listenWindowResize();
-        thisClass.listenClickOnTabScroll();
-    }// init
+    }// #ajaxTabContent
 
 
     /**
@@ -214,10 +190,11 @@ class RDTATabs {
      * Tabs nav scroll will be visible on tabs size is overflow visible width.
      * 
      * @since 2.2.1
+     * @since 2.4.1 Renamed from `listenClickOnTabScroll()`.
      * @private This method was called from `init()`.
      * @returns {undefined}
      */
-    listenClickOnTabScroll() {
+    #listenClickOnTabScroll() {
         let thisClass = this;
 
         document.addEventListener('click', (event) => {
@@ -296,18 +273,19 @@ class RDTATabs {
                 }// endif user clicked on < or >.
             }// endif; user is really click on tabs nav scroll.
         });
-    }// listenClickOnTabScroll
+    }// #listenClickOnTabScroll
 
 
     /**
      * Listen on tab nav click and activate tab content.
      * 
-     * @link https://stackoverflow.com/a/25248515/128761 Method 1 for delegation selection.
-     * @private Do not call this, just call `init()`.
+     * This method was called from `init()`.
+     * 
+     * @since 2.4.1 Renamed from `listenOnTabNav()`.
      * @param {object} options
      * @returns {undefined}
      */
-    listenOnTabNav(options) {
+    #listenOnTabNav(options) {
         let thisClass = this;
         let tabElement = document.querySelector(this.selector);
 
@@ -342,38 +320,42 @@ class RDTATabs {
                 }
 
                 if (target.getAttribute('href') && target.getAttribute('href').charAt(0) !== '#' && !target.hash) {
-                    thisClass.ajaxTabContent(target.getAttribute('href'), target.closest(thisClass.selector), targetTab)
+                    thisClass.#ajaxTabContent(target.getAttribute('href'), target.closest(thisClass.selector), targetTab)
                 }
 
-                thisClass.activateTabContent(target.closest(thisClass.selector), targetTab);
+                thisClass.#activateTabContent(target.closest(thisClass.selector), targetTab);
             }
         });
-    }// listenOnTabNav
+    }// #listenOnTabNav
 
 
     /**
      * Listen on window resize and do the task.
      * 
+     * This method was called from `init()`.
+     * 
      * @since 2.2.1
-     * @private This method was called from `init()`.
+     * @since 2.4.1 Renamed from `listenWindowResize()`.
      * @returns {undefined}
      */
-    listenWindowResize() {
+    #listenWindowResize() {
         let thisClass = this;
         window.addEventListener('resize', (event) => {
-            thisClass.setTabNavHorizontalScroll();
+            thisClass.#setTabNavHorizontalScroll();
         });
-    }// listenWindowResize
+    }// #listenWindowResize
 
 
     /**
      * Set tabs nav horizontal scroll.
      * 
+     * This method was called from `init()`, `#listenWindowResize()`.
+     * 
      * @since 2.2.1
-     * @private This method was called from `init()`, `listenWindowResize()`.
+     * @since 2.4.1 Renamed from `setTabNavHorizontalScroll()`.
      * @returns {undefined}
      */
-    setTabNavHorizontalScroll() {
+    #setTabNavHorizontalScroll() {
         let thisClass = this;
         const navContainerClass = 'rd-tabs-nav-container';
         const navWrapperClass = 'rd-tabs-nav-wrapper';
@@ -475,7 +457,54 @@ class RDTATabs {
                 // if this main tab element is vertical tabs.
             }// endif .rd-tabs not contain vertical class.
         });
-    }// setTabNavHorizontalScroll
+    }// #setTabNavHorizontalScroll
+
+
+    /**
+     * Initialize RDTA tabs.
+     * 
+     * @param {string} selector The JS selector. It can be CSS class or HTML ID.
+     * @param {object} options The options.
+     * @param {int} options.activeTabs The index number of active tab to be manually set.
+     * @param {boolean} options.rememberLastTab Set to `true` to remember last tab opened. Default is `false` or not remember.
+     * @returns {undefined}
+     */
+    static init(selector, options = {}) {
+        if (typeof(selector) !== 'string') {
+            throw new Error('The argument selector must be string.');
+        }
+        if (typeof(options) !== 'object') {
+            throw new Error('The argument options must be an object.');
+        }
+
+        let defaultOptions = {
+            'activeTabs': 0,
+            'rememberLastTab': false,
+        };
+        if (typeof(options) === 'object') {
+            options = Object.assign(defaultOptions, options);
+        } else {
+            options = defaultOptions;
+        }
+        defaultOptions = undefined;
+
+        if (options.rememberLastTab === true && window.localStorage) {
+            // if option was set to remember last tab.
+            let lastTab = window.localStorage.getItem('rdtaTabsLast-' + selector);
+            if (!isNaN(lastTab) && lastTab !== '' && lastTab !== null) {
+                options.activeTabs = parseInt(lastTab);
+            }
+        }
+
+        let thisClass = new this({'selector': selector, 'options': options});
+        thisClass.#addRequiredClasses(options);
+        thisClass.#listenOnTabNav(options);
+
+        // set tab navbar horizontal scroll if overflow. this must run after set activate tab content.
+        thisClass.#setTabNavHorizontalScroll();
+        thisClass.#listenWindowResize();
+        thisClass.#listenClickOnTabScroll();
+    }// init
 
 
 }
