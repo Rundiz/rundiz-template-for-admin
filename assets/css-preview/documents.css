@@ -30,7 +30,6 @@ This CSS file is for document pages only. It is no need on your project.
 .rd-page-content > h4,
 .rd-page-content > h5, 
 .rd-page-content > h6 {
-    background-color: rgba(0, 255, 0, 0.15);/* for testing only */
     margin-bottom: var(--rdta-content-block-element-margin-vertical);
 }
 
