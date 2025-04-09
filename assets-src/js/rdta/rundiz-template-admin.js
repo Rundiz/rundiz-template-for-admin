@@ -111,7 +111,7 @@ class RundizTemplateAdmin {
         if (typeof(thisObj) !== 'undefined') {
             let alertBox = thisObj.closest('.rd-alertbox');
             if (alertBox) {
-                alertBox.classList.add('rd-animation','fade', 'fade-out');
+                alertBox.classList.add('rd-animation', 'fade', 'fade-out');
                 setTimeout(function() {
                     alertBox.parentNode.removeChild(alertBox);
                 }, 400);
@@ -127,7 +127,6 @@ class RundizTemplateAdmin {
      * 
      * This method can work on dynamically insert/update elements.
      * 
-     * @link http://demo.rundiz.com/nice-form-plugins/ Reference
      * @returns {undefined}
      */
     customInputFile() {
@@ -324,7 +323,6 @@ class RundizTemplateAdmin {
      * &lt;button type=&quot;button&quot; onclick=&quot;return RundizTemplateAdmin.resetInputFile(this);&quot;&gt;x&lt;/button&gt;
      * </pre>
      * 
-     * @link http://demo.rundiz.com/nice-form-plugins/ Reference
      * @param {object} thisObj `jQuery(this)` or `this`.
      * @returns {undefined}
      */
@@ -386,21 +384,21 @@ class RundizTemplateAdmin {
             return false;
         }
 
-        document.addEventListener('click', function(event) {
-            // match selector.
-            // @link https://stackoverflow.com/a/25248515/128761 Original source code.
-            for (let target= event.target; target && target != this; target = target.parentNode) {
-                // loop parent nodes from the target to the delegation node
-                if (target.matches('.rd-sidebar-expand-collapse-controls a')) {
-                    let toggleIcon = togglerButton.querySelector('.faicon').dataset.toggleIcon;
-                    $(togglerButton.querySelector('.faicon')).toggleClass(toggleIcon);// non jQuery cannot toggle multiple class names.
+        document.addEventListener('click', (event) => {
+            let target = event.target;
+            if (target.closest('.rd-sidebar-expand-collapse-controls a')) {
+                target = target.closest('.rd-sidebar-expand-collapse-controls a');
+                event.preventDefault();
 
-                    document.querySelector(dataTarget).classList.toggle('is-collapsed');
-                    setTimeout(function() {
-                        $('.rd-sidebar').stickySidebar('updateSticky');// require jQuery.
-                    }, 100);
-                    break;
-                }
+                // grab toggle icons and toggle the icons.
+                let toggleIcon = togglerButton.querySelector('.faicon').dataset.toggleIcon;
+                $(togglerButton.querySelector('.faicon')).toggleClass(toggleIcon);// non jQuery cannot toggle multiple class names.
+                // toggle `is-collapse` class.
+                document.querySelector(dataTarget).classList.toggle('is-collapsed');
+                // update sticky sidebar.
+                setTimeout(function() {
+                    $('.rd-sidebar').stickySidebar('updateSticky');// require jQuery.
+                }, 100);
             }
         });
 
@@ -453,17 +451,14 @@ class RundizTemplateAdmin {
             return false;
         }
 
-        document.addEventListener('click', function(event) {
-            // match selector.
-            // @link https://stackoverflow.com/a/25248515/128761 Original source code.
-            for (let target= event.target; target && target != this; target = target.parentNode) {
-                // loop parent nodes from the target to the delegation node
-                if (target.matches('.rd-sidebar-toggler')) {
-                    target.classList.toggle('is-active');
+        document.addEventListener('click', (event) => {
+            let target = event.target;
+            if (target.closest('.rd-sidebar-toggler')) {
+                target = target.closest('.rd-sidebar-toggler');
+                event.preventDefault();
 
-                    document.querySelector(dataTarget).classList.toggle('mini-screen-sidebar-visible');
-                    break;
-                }
+                target.classList.toggle('is-active');
+                document.querySelector(dataTarget).classList.toggle('mini-screen-sidebar-visible');
             }
         });
     }// sidebarToggler
