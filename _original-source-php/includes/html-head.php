@@ -21,8 +21,7 @@
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta/typo-and-form/typo-and-form.css'); ?>">
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta/rundiz-template-admin.css'); ?>">
 
-        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta-demo-pages.css'); ?>">
-
         <link class="exclude-preview" rel="stylesheet" href="<?php echo assetUrl('assets/css-preview/prism.css'); ?>">
+        <link class="exclude-preview" rel="stylesheet" href="<?php echo assetUrl('assets/css-preview/documents.css'); ?>">
         <link class="exclude-preview" rel="stylesheet" href="<?php echo assetUrl('assets/css-preview/view-source.css'); ?>">
         

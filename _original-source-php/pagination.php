@@ -62,27 +62,25 @@ include 'includes/html-head.php';
                     <hr>
 
                     <h2>Examples</h2>
-                    <nav class="rd-block-level-margin-bottom code-sample-pagination-sample1" aria-label="Pagination">
+                    <nav class="code-sample-pagination-sample1" aria-label="Pagination">
                         <?php echo renderPagination(); ?> 
                     </nav>
-                    <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".code-sample-pagination-sample1" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
+                    <h5>Source</h5>
+                    <pre class="preview-source" data-target-src=".code-sample-pagination-sample1" data-target-src-remove-first-space="20"></pre>
                     <h3>Alignment</h3>
                     <p>You can change the alignment by use <a href="./text.html">Text alignment utility</a> on the <code>&lt;nav&gt;</code> element.</p>
-                    <h4 class="text-center">Center</h4>
-                    <nav class="rd-block-level-margin-bottom text-center code-sample-pagination-alignment-center" aria-label="Pagination center alignment">
+                    <p>Align center</p>
+                    <nav class="text-center code-sample-pagination-alignment-center" aria-label="Pagination center alignment">
                         <?php echo renderPagination(); ?> 
                     </nav>
-                    <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".code-sample-pagination-alignment-center" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
-                    <h4 class="text-right">Right</h4>
-                    <nav class="rd-block-level-margin-bottom text-right code-sample-pagination-alignment-right" aria-label="Pagination right alignment">
+                    <h5>Source</h5>
+                    <pre class="preview-source" data-target-src=".code-sample-pagination-alignment-center" data-target-src-remove-first-space="20"></pre>
+                    <p>Align right</p>
+                    <nav class="text-right code-sample-pagination-alignment-right" aria-label="Pagination right alignment">
                         <?php echo renderPagination(); ?> 
                     </nav>
-                    <h4>Source</h4>
-                    <div class="rd-block-level-margin-bottom">
-                        <pre class="preview-source" data-target-src=".code-sample-pagination-alignment-right" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
-                    </div>
+                    <h5>Source</h5>
+                    <pre class="preview-source" data-target-src=".code-sample-pagination-alignment-right" data-target-src-remove-first-space="20"></pre>
                     
                     <h3>Much much many pages</h3>
                     <nav class="rd-block-level-margin-bottom" aria-label="Pagination">
@@ -93,7 +91,7 @@ include 'includes/html-head.php';
                     <nav class="rd-block-level-margin-bottom code-sample-pagination-loose" aria-label="Pagination">
                         <?php echo renderPagination(5, 1, 1, 'space-loose'); // use just 5 for small screen. ?> 
                     </nav>
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source"><code class="language-html"><?php
                     echo trim(htmlspecialchars('<ul class="rd-pagination space-loose">...</ul>', ENT_QUOTES));
                     ?></code></pre>
@@ -107,7 +105,7 @@ include 'includes/html-head.php';
                             <li><a href="#">Next</a></li>
                         </ul>
                     </nav>
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-pagination-pager" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
                     <h3>Pager loose</h3>
                     <nav class="rd-block-level-margin-bottom" aria-label="Pagination loose">
@@ -120,7 +118,7 @@ include 'includes/html-head.php';
                     <pre class="preview-source"><code class="language-html"><?php
                     echo trim(htmlspecialchars('<ul class="rd-pagination space-loose">...</ul>', ENT_QUOTES));
                     ?></code></pre>
-                    <h4>Use button</h4>
+                    <h3>Pager loose use button</h3>
                     <nav class="rd-block-level-margin-bottom code-sample-pagination-loose-button" aria-label="Pagination use buttons">
                         <ul class="rd-pagination space-loose">
                             <li><button type="button">Previous</button></li>
@@ -129,7 +127,7 @@ include 'includes/html-head.php';
                     </nav>
                     <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-pagination-loose-button" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
-                    <h3>To the edge</h3>
+                    <h3>Pager to the edge</h3>
                     <p>Horizontal align button to the left &amp; right of the page. Add the class <code>space-edge</code> to pagination element which contain class <code>rd-pagination</code>. 
                         Please note that this will be change the pagination element to <code>display: flex;</code>.
                     </p>
@@ -139,7 +137,7 @@ include 'includes/html-head.php';
                             <li><a href="#">Next</a></li>
                         </ul>
                     </nav>
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source"><code class="language-html"><?php 
                     echo trim(htmlspecialchars('<ul class="rd-pagination space-edge">...</ul>', ENT_QUOTES));
                     ?></code></pre>
@@ -164,10 +162,9 @@ include 'includes/html-head.php';
                             </li>
                         </ul>
                     </nav>
-                    <div class="rd-block-level-margin-bottom">
-                        <h4>Source</h4>
-                        <pre class="preview-source" data-target-src=".code-sample-pagination-pager-advanced" data-target-src-remove-first-space="20"></pre>
-                    </div>
+                    <h5>Source</h5>
+                    <pre class="preview-source" data-target-src=".code-sample-pagination-pager-advanced" data-target-src-remove-first-space="20"></pre>
+                    <h3>Other advanced mixed</h3>
                     <nav class="rd-content-level-margin-bottom" aria-label="Pagination advanced">
                         <ul class="rd-pagination advanced">
                             <li><a href="#">&laquo;</a></li>

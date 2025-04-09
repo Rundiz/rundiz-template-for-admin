@@ -50,7 +50,7 @@ include 'includes/html-head.php';
                             </div>
                         </div>
                     </div><!--.rd-accordion-->
-                    <h3>Source</h3>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-accordion-sample1" data-target-src-remove-first-space="20"></pre>
                     <p>The accordion maybe in <code>ul</code> element.</p>
                     <ul class="rd-accordion code-sample-accordion-ul">
@@ -73,7 +73,7 @@ include 'includes/html-head.php';
                             </div>
                         </li>
                     </ul><!--.rd-accordion-->
-                    <h3>Source</h3>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-accordion-ul" data-target-src-remove-first-space="20"></pre>
                     <h3>Show only one</h3>
                     <p>The accordion can be show only one body while other will be collapsed. Add <code>data-accordion-one=&quot;true&quot;</code> to the element that contain <code>rd-accordion</code> class to enable this feature.</p>
@@ -97,7 +97,7 @@ include 'includes/html-head.php';
                             </div>
                         </div>
                     </div><!--.rd-accordion-->
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-accordion-onlyone" data-target-src-remove-first-space="20"></pre>
                     <h3>Use <code>&lt;details&gt; &amp; &lt;summary&gt;</code></h3>
                     <p>The accordion may use <code>&lt;details&gt; &amp; &lt;summary&gt;</code> tags which the main function is handle by web browser that supported it. The attribute <code>data-accordion-one=&quot;true&quot;</code> also supported.</p>
@@ -121,7 +121,7 @@ include 'includes/html-head.php';
                             </div>
                         </details>
                     </div><!--.rd-accordion-->
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-accordion-use-details" data-target-src-remove-first-space="20"></pre>
                 </div><!--.rd-page-content-->
             </main>

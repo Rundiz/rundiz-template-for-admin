@@ -28,7 +28,7 @@ include 'includes/html-head.php';
                         <li><a href="https://github.com/abouolia/sticky-sidebar" target="sticky-sidebar">Sticky Sidebar</a></li>
                         <li><a href="https://github.com/marcj/css-element-queries/blob/master/src/ResizeSensor.js" target="resizesensor">Resize Sensor</a></li>
                     </ul>
-                    <p>And build tools.</p>
+                    <h3>Build tools.</h3>
                     <ul>
                         <li><a href="https://www.php.net" target="php">PHP</a></li>
                         <li><a href="https://sass-lang.com" target="sass">Sass</a></li>
@@ -39,6 +39,13 @@ include 'includes/html-head.php';
                         <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" target="mdnhtmlelement">MDN HTML elements</a></li>
                         <li><a href="https://www.learningcontainer.com/mp4-sample-video-files-download/" target="samplevideo">Sample video file</a></li>
                         <li><a href="https://samplelib.com/sample-mp3.html" target="sampleaudio">Sample audio file</a></li>
+                    </ul>
+                    <h3>Etc.</h3>
+                    <ul>
+                        <li><a href="https://www.lipsum.com/" target="lipsum">Lorem Ipsum generator</a></li>
+                        <li><a href="https://lorem.in.th/" target="thai-lipsum">Thai Lorem Ipsum generator</a></li>
+                        <li><a href="https://generator.lorem-ipsum.info" target="other-languages-lipsum">Lorem Ipsum generator in other languages</a></li>
+                        <li><a href="https://www.mockaroo.com/" target="mockaroo">Data generator</a></li>
                     </ul>
                 </div><!--.rd-page-content-->
             </main>

@@ -1,26 +1,8 @@
 <?php 
 require 'includes/functions.php'; 
 
-$dummyData = '[{"id":1,"name":"Gwendolyn Uphill","address":"282 Springview Street","email":"guphill0@upenn.edu"},
-{"id":2,"name":"Reinhold Keneleyside","address":"820 Old Gate Parkway","email":"rkeneleyside1@de.vu"},
-{"id":3,"name":"Leroy Orrah","address":"8 Charing Cross Avenue","email":"lorrah2@wikia.com"},
-{"id":4,"name":"Rutherford Tarney","address":"10 Valley Edge Park","email":"rtarney3@cocolog-nifty.com"},
-{"id":5,"name":"Perl Lancetter","address":"98697 Bultman Park","email":"plancetter4@fc2.com"},
-{"id":6,"name":"Georgie Ballister","address":"91 Namekagon Road","email":"gballister5@mozilla.com"},
-{"id":7,"name":"Gay Bill","address":"825 Reindahl Trail","email":"gbill6@chron.com"},
-{"id":8,"name":"Leonid Berryann","address":"693 Roxbury Road","email":"lberryann7@cbc.ca"},
-{"id":9,"name":"Robby Scotson","address":"74600 Loeprich Way","email":"rscotson8@skype.com"},
-{"id":10,"name":"Valerie Tappor","address":"5 Welch Junction","email":"vtappor9@mac.com"},
-{"id":11,"name":"Lyle Calverley","address":"6 Fieldstone Plaza","email":"lcalverleya@chron.com"},
-{"id":12,"name":"Daniele Bradfield","address":"82 Michigan Plaza","email":"dbradfieldb@drupal.org"},
-{"id":13,"name":"Bria Bodycote","address":"3612 Darwin Park","email":"bbodycotec@walmart.com"},
-{"id":14,"name":"Dimitri Dowson","address":"90 8th Hill","email":"ddowsond@ustream.tv"},
-{"id":15,"name":"Janine Chavrin","address":"40807 Roxbury Point","email":"jchavrine@hostgator.com"},
-{"id":16,"name":"Wake Caret","address":"180 Shopko Parkway","email":"wcaretf@soundcloud.com"},
-{"id":17,"name":"Kaylyn Roubeix","address":"77 Dovetail Road","email":"kroubeixg@ning.com"},
-{"id":18,"name":"Goraud Griggs","address":"32679 Doe Crossing Circle","email":"ggriggsh@stanford.edu"},
-{"id":19,"name":"Crysta MacNockater","address":"7 Oakridge Way","email":"cmacnockateri@illinois.edu"},
-{"id":20,"name":"Magnum Bernardo","address":"140 Parkside Alley","email":"mbernardoj@google.es"}]';
+// dummy data created by https://www.mockaroo.com/
+$dummyData = file_get_contents(__DIR__ . '/includes/dummy-data.json');
 ?>
 <!DOCTYPE html>
 <html class="rd-template-admin">

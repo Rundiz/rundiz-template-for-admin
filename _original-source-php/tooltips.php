@@ -39,18 +39,16 @@ include 'includes/html-head.php';
                         Duis nisi elit, aliquam sit amet gravida eget, tempus nec ante. 
                         Sed dictum lobortis libero ac placerat.
                     </p>
-                    <div class="rd-block-level-margin-bottom">
-                        <h3>Source</h3>
-                        <pre class="preview-source" data-target-src=".code-sample-tooltips-sample1" data-target-src-remove-first-space="20"></pre>
-                    </div>
+                    <h5>Source</h5>
+                    <pre class="preview-source" data-target-src=".code-sample-tooltips-sample1" data-target-src-remove-first-space="20"></pre>
                     <h3>Placement</h3>
-                    <div class="rd-block-level-margin-bottom code-sample-tooltips-placements">
+                    <div class="code-sample-tooltips-placements">
                         <button type="button" title="Tooltip on top" data-toggle="tooltip" data-placement="top">Tooltip on top</button>
                         <button type="button" title="Tooltip on right" data-toggle="tooltip" data-placement="right">Tooltip on right</button>
                         <button type="button" title="Tooltip on bottom" data-toggle="tooltip" data-placement="bottom">Tooltip on bottom</button>
                         <button type="button" title="Tooltip on left" data-toggle="tooltip" data-placement="left">Tooltip on left</button>
                     </div>
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-tooltips-placements" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
 
                     <hr>

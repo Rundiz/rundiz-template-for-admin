@@ -45,7 +45,7 @@ include 'includes/html-head.php';
                         unset($buttonName);
                         ?> 
                     </p>
-                    <h3>Source</h3>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-buttons1" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
                     <p>Buttons that is link.</p>
                     <p class="code-sample-buttons-link">
@@ -57,7 +57,7 @@ include 'includes/html-head.php';
                         unset($buttonName);
                         ?> 
                     </p>
-                    <h3>Source</h3>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-buttons-link" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
                     <h3>Active state</h3>
                     <p>Add <code>active</code> class to act as active state.</p>
@@ -126,7 +126,7 @@ include 'includes/html-head.php';
 
                     <h2>Button with dropdown</h2>
                     <p>The dropdown button uses <a href="https://popper.js.org/" target="popper-js">Popper.js</a> to position the dropdown items.</p>
-                    <div class="rd-block-level-margin-bottom code-sample-buttons-dropdown">
+                    <div class="code-sample-buttons-dropdown">
                         <div class="rd-button-group">
                             <button class="rd-button dropdown-toggler">Dropdown <i class="fa-solid fa-caret-down"></i></button>
                             <ul class="rd-dropdown">
@@ -165,11 +165,11 @@ include 'includes/html-head.php';
                             </ul>
                         </div>
                     </div>
-                    <h3>Source</h3>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-buttons-dropdown" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
                     <h3>Sizes</h3>
                     <p>Add <code>tiny</code>, <code>small</code>, <code>large</code> class to the button element that contain <code>rd-button</code> class to change its size.</p>
-                    <div class="rd-block-level-margin-bottom code-sample-buttons-dropdownsizes">
+                    <div class="code-sample-buttons-dropdownsizes">
                         <div class="rd-button-group">
                             <button class="rd-button danger tiny dropdown-toggler">Tiny <i class="fa-solid fa-caret-down"></i></button>
                             <ul class="rd-dropdown">
@@ -205,11 +205,11 @@ include 'includes/html-head.php';
                             </ul>
                         </div>
                     </div>
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-buttons-dropdownsizes" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
                     <h3>Placements</h3>
                     <p>Add <code>data-placement</code> attribute into button that contain <code>class=&quot;dropdown-toggler&quot;</code>. Accept values please see <a href="https://popper.js.org/popper-documentation.html#Popper.placements" target="popper-js-doc">this document</a>.</p>
-                    <div class="rd-block-level-margin-bottom">
+                    <div class="button-dropdown-placements-samples">
                         <div class="rd-button-group code-sample-buttons-dropdownplacements">
                             <button class="rd-button dropdown-toggler" data-placement="top left"><i class="fa-solid fa-caret-up"></i> Top left</button>
                             <ul class="rd-dropdown">
@@ -318,15 +318,15 @@ include 'includes/html-head.php';
                             </ul>
                         </div>
                     </div>
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-buttons-dropdownplacements" data-target-src-remove-first-space="24"></pre>
                     <h3>Dynamically activate button with dropdown</h3>
-                    <div id="demo-button-dropdown-placeholder" style="border: 1px dashed #ccc; padding: 0.625rem;"></div>
+                    <div id="demo-button-dropdown-placeholder" class="rdta-demopage-debugbox"></div>
                     <button id="demo-dynamically-add-button" type="button">Click here to add a button</button>
                     <hr>
 
                     <h2>Button group</h2>
-                    <div class="rd-block-level-margin-bottom">
+                    <div class="button-group-sample">
                         <div class="rd-button-group code-sample-buttons-dropdown-btngroup">
                             <button class="rd-button">Rewind</button>
                             <button class="rd-button">Play</button>
@@ -334,7 +334,7 @@ include 'includes/html-head.php';
                             <button class="rd-button">Forward</button>
                         </div>
                     </div>
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-buttons-dropdown-btngroup" data-target-src-remove-first-space="24"></pre>
                 </div><!--.rd-page-content-->
             </main>

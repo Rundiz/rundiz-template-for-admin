@@ -16,7 +16,7 @@ include 'includes/html-head.php';
                 <?php
                 echo renderBreadcrumb(['./' => 'Home', '#' => $title]);
                 ?> 
-                <div class="rd-page-content">
+                <div class="rd-page-content page-tabs">
                     <h1>Tabs</h1>
                     <p>
                         In order to make tabs works, add these files.
@@ -44,13 +44,13 @@ include 'includes/html-head.php';
                             <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
                         </div>
                     </div>
-                    <h3>Source</h3>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-tabs-sample1" data-target-src-remove-first-space="20"></pre>
                     <p>To make tabs work, it must be manually activate once document loaded.</p>
                     <pre><code class="language-js">document.addEventListener('DOMContentLoaded', function() {
     RDTATabs.init('.tabs');
 });</code></pre>
-                    <h4>Using <code>&lt;ol&gt;</code></h4>
+                    <h3>Using <code>&lt;ol&gt;</code></h3>
                     <div class="tabs">
                         <ol>
                             <li><a href="#tabs2-1">Nunc tincidunt</a></li>
@@ -86,11 +86,11 @@ include 'includes/html-head.php';
                             <p>Tab 3 content.</p>
                         </div>
                     </div>
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-tabs-predefinedclasses" data-target-src-remove-first-space="20"></pre>
                     <h3>Many tabs.</h3>
                     <p>Resize your browser to see how responsive tabs navbar work.</p>
-                    <div class="tabs">
+                    <div class="tabs rd-content-level-margin-bottom">
                         <ul>
                             <?php for ($i = 1; $i <= 60; $i++) { ?> 
                             <li class="text-flow-nowrap"><a href="#tabs-manytabs-<?php echo $i; ?>">Tab <?php echo $i; ?></a></li>
@@ -122,13 +122,14 @@ include 'includes/html-head.php';
                         </div>
                         <div id="tabs-manual1_2" class="rd-tabs-content">
                             <p>This tab is set as active via JS option <code>activeTabs: 1</code>. The tab number start from 0.</p>
-                            <pre><code class="language-js">RDTATabs.init('.my-custom-tabs1', {activeTabs: 1});</code></pre>
                         </div>
                         <div id="tabs-manual1_3" class="rd-tabs-content">
                             <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
                             <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
                         </div>
                     </div>
+                    <h5>Source</h5>
+                    <pre class="preview-source"><code class="language-js">RDTATabs.init('.my-custom-tabs1', {activeTabs: 1});</code></pre>
                     <h3>Remember last tab</h3>
                     <p>To use remember last tab, it is not recommend to use wide selector such as CSS class but recommended to use id only.<br>
                         Use <code>rememberLastTab</code> option and set it to <code>true</code> to remember last active tab.</p>
@@ -149,7 +150,8 @@ include 'includes/html-head.php';
                             <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
                         </div>
                     </div>
-                    <pre><code class="language-js">RDTATabs.init('#rdta-tabs-rememberlasttab', {rememberLastTab: true});</code></pre>
+                    <h5>Source</h5>
+                    <pre class="preview-source"><code class="language-js">RDTATabs.init('#rdta-tabs-rememberlasttab', {rememberLastTab: true});</code></pre>
                     <h3>Ajax</h3>
                     <div class="tabs code-sample-tabs-ajax">
                         <ul>
@@ -161,7 +163,7 @@ include 'includes/html-head.php';
                         </div>
                         <div id="tabs-a2"></div>
                     </div>
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-tabs-ajax" data-target-src-remove-first-space="20"></pre>
                     <h3>Vertical</h3>
                     <p>Add <code>tabs-vertical</code> class to the tabs element to display it in vertical (medium screen or larger).</p>
@@ -182,7 +184,7 @@ include 'includes/html-head.php';
                             <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
                         </div>
                     </div>
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-tabs-vertical" data-target-src-remove-first-space="20"></pre>
                     <p>Please note that you can use <code>data-targettab</code> HTML attribute to specify target tab instead of link to <code>#target-tab-id</code>.</p>
                     <h3>Tabs inside tabs</h3>
@@ -212,7 +214,7 @@ include 'includes/html-head.php';
                             </div>
                         </div>
                     </div>
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-tabs-insidetabs" data-target-src-remove-first-space="20"></pre>
                     <p>Activate tabs using specific id.</p>
                     <pre><code class="language-js">RDTATabs.init('#titOuterTabs');</code></pre>
@@ -241,7 +243,7 @@ include 'includes/html-head.php';
                         </tbody>
                     </table>
                     <p>Use the <a href="#tabs-example">first example</a> and open console to see detail.</p>
-                    <div class="rd-block-level-margin-bottom rd-tabs-events rdta-demopage-debugbox"></div>
+                    <div class="rd-tabs-events rdta-demopage-debugbox"></div>
                 </div><!--.rd-page-content-->
             </main>
 <?php include 'includes/partials/page-footer.php'; ?> 

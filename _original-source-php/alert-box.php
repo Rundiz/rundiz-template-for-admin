@@ -24,7 +24,7 @@ include 'includes/html-head.php';
                     <div class="rd-alertbox rd-alertbox-sample-1">
                         Default alert box. Example <a href="#">link</a> inside alert box.
                     </div>
-                    <h3>Source</h3>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".rd-alertbox-sample-1" data-target-src-remove-first-space="20"></pre>
                     <?php
                     $alertNames = ['info', 'danger', 'warning', 'success'];
@@ -41,7 +41,7 @@ include 'includes/html-head.php';
                         <button class="close" type="button" aria-label="Close" onclick="return RundizTemplateAdmin.closeAlertbox(this);"><span aria-hidden="true">&times;</span></button>
                         Default alert box. Example <a href="#">link</a> inside alert box.
                     </div>
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".rd-alertbox-sample-dismissable" data-target-src-remove-first-space="20"></pre>
                     <?php
                     foreach ($alertNames as $alertName) {
@@ -73,7 +73,7 @@ include 'includes/html-head.php';
                     </div>
 
                     <h3>Placement</h3>
-                    <div class="rdta-demopage-debugbox rd-block-level-margin-bottom">
+                    <div class="rdta-demopage-debugbox">
                         <p>The alert box in default position (no fixed).</p>
                         <div class="rd-alertbox alert-info">
                             Info alert box.
@@ -85,7 +85,7 @@ include 'includes/html-head.php';
                             Info alert box.
                         </div>
                     </div>
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".rd-alertbox-sample-fixedtop" data-target-src-remove-first-space="24"></pre>
                     <div class="rdta-demopage-debugbox">
                         <p>The alert box that will always stay at the bottom.</p>
@@ -93,7 +93,7 @@ include 'includes/html-head.php';
                             Info alert box.
                         </div>
                     </div>
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-fixedbottom" data-target-src-remove-first-space="24"></pre>
                     <p>To see it in action, please click on the link below.</p>
                     <p>Show alert box fixed top for: 
@@ -118,7 +118,7 @@ include 'includes/html-head.php';
                             Info alert box.
                         </div>
                     </div>
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-floatbottom" data-target-src-remove-first-space="24"></pre>
                     <p>To see it in action, please click on the link below.</p>
                     <p>Show alert box float top for: 

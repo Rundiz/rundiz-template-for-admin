@@ -3,6 +3,8 @@
  * 
  * View code based on selected target, not whole page.
  * 
+ * This JS file is for document pages only. It is no need on your project.
+ * 
  * @license http://opensource.org/licenses/MIT MIT
  */
 

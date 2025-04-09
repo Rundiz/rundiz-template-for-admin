@@ -27,14 +27,14 @@ include 'includes/html-head.php';
                     <div class="helper-responsive-visibility-box rd-block-level-margin-bottom">block with margin bottom</div>
                     <div class="helper-responsive-visibility-box rd-block-level-margin-bottom code-sample-helper-blvmb">block with margin bottom</div>
                     <p>So, you can put this class into any element you want the same bottom space as block level element.</p>
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-helper-blvmb" data-target-src-remove-first-space="20" data-remove-classes="helper-responsive-visibility-box"></pre>
                     <h3>Margin bottom for content level</h3>
                     <p>To keep same bottom space of content level element or paragraph, use <code>.rd-content-level-margin-bottom</code> class.</p>
                     <div class="helper-responsive-visibility-box">block without margin bottom</div>
                     <div class="helper-responsive-visibility-box rd-content-level-margin-bottom">block with margin bottom</div>
                     <div class="helper-responsive-visibility-box rd-content-level-margin-bottom code-sample-helper-clvmb">block with margin bottom</div>
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-helper-clvmb" data-target-src-remove-first-space="20"></pre>
 
                     <h3>Clear float</h3>
@@ -49,13 +49,13 @@ include 'includes/html-head.php';
                         <div class="clearfix"></div>
                         After float but cleared the float.
                     </div>
-                    <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".code-sample-helper-clearfloat" data-target-src-remove-first-space="20"></pre>
+                    <h5>Source</h5>
+                    <pre class="preview-source" data-target-src=".code-sample-helper-clearfloat" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
 
                     <h3>Screen reader only</h3>
                     <p>Use <code>.screen-reader-only</code> class to show for screen reader only.</p>
                     <p class="code-sample-helper-sronly">This is normal text. This is &quot;<span class="screen-reader-only">for screen reader only</span>&quot; which does not appears on screen.</p>
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-helper-sronly" data-target-src-remove-first-space="20"></pre>
 
                     <h3>Fade in/out</h3>
@@ -63,12 +63,12 @@ include 'includes/html-head.php';
                         To fade out add the <code>.fade-out</code> class, to fade in just remove the <code>.fade-out</code> class.
                     </p>
                     <div class="code-sample-helper-fadeinout">
-                        <div id="demo-box-fadeout" class="rd-animation fade">Fade content box</div>
+                        <div id="demo-box-fadeout" class="rd-animation fade rdta-demopage-debugbox">Fade content box</div>
                         <button type="button" onclick="rdtaDemoFadeOut();">Fade out</button>
-                        <div id="demo-box-fadein" class="rd-animation fade fade-out">Fade content box</div>
+                        <div id="demo-box-fadein" class="rd-animation fade fade-out rdta-demopage-debugbox">Fade content box</div>
                         <button type="button" onclick="rdtaDemoFadeIn();">Fade in</button>
                     </div>
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source"><code class="language-html"><?php 
 $sampleHTML = <<<EOT
 <div class="rd-animation fade">Fade in</div>

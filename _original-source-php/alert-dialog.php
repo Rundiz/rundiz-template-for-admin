@@ -50,24 +50,22 @@ include 'includes/html-head.php';
                     <pre><code class="language-js"><?php echo htmlspecialchars("RDTAAlertDialog.alert({'type': 'info', 'text': 'Alert that contain <strong>text</strong> only.'});", ENT_QUOTES); ?></code></pre>
 
                     <h3>Alert dialog on modal dialog</h3>
-                    <div class="rd-block-level-margin-bottom">
-                        <button type="button" data-toggle="dialog" data-target="#dialog02">Open modal dialog</button>
-                        <div id="dialog02" class="rd-dialog-modal" tabindex="-1">
-                            <div class="rd-dialog rd-dialog-size-large">
-                                <div class="rd-dialog-header">
-                                    <h4 class="rd-dialog-title">Dialog with modal</h4>
-                                    <button class="rd-dialog-close" type="button" aria-label="Close" data-dismiss="dialog">
-                                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-                                    </button>
-                                </div>
-                                <div class="rd-dialog-body">
-                                    <p>The modal dialog with backdrop.</p>
-                                    <p>Show me <a href="#" onclick="return rdtaAlertBoxShowAlert('danger');">alert dialog</a>.</p>
-                                </div>
-                                <div class="rd-dialog-footer">
-                                    <button class="rd-button primary" type="button">Save</button>
-                                    <button class="rd-button" type="button" data-dismiss="dialog">Close</button>
-                                </div>
+                    <button type="button" data-toggle="dialog" data-target="#dialog02">Open modal dialog</button>
+                    <div id="dialog02" class="rd-dialog-modal" tabindex="-1">
+                        <div class="rd-dialog rd-dialog-size-large">
+                            <div class="rd-dialog-header">
+                                <h4 class="rd-dialog-title">Dialog with modal</h4>
+                                <button class="rd-dialog-close" type="button" aria-label="Close" data-dismiss="dialog">
+                                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="rd-dialog-body">
+                                <p>The modal dialog with backdrop.</p>
+                                <p>Show me <a href="#" onclick="return rdtaAlertBoxShowAlert('danger');">alert dialog</a>.</p>
+                            </div>
+                            <div class="rd-dialog-footer">
+                                <button class="rd-button primary" type="button">Save</button>
+                                <button class="rd-button" type="button" data-dismiss="dialog">Close</button>
                             </div>
                         </div>
                     </div>
@@ -92,7 +90,7 @@ include 'includes/html-head.php';
                         </tbody>
                     </table>
                     <p>Click on <a href="#" onclick="RDTAAlertDialog.alert({'type': 'info', 'text': 'See events log on the page.'});">this link</a> to open alert dialog and see its events.</p>
-                    <div class="rd-block-level-margin-bottom rd-alertdialog-events rdta-demopage-debugbox"></div>
+                    <div class="rd-alertdialog-events rdta-demopage-debugbox"></div>
                 </div><!--.rd-page-content-->
             </main>
 <?php include 'includes/partials/page-footer.php'; ?> 

@@ -1,0 +1,122 @@
+/* 
+For document pages.
+
+This CSS file is for document pages only. It is no need on your project.
+
+@license http://opensource.org/licenses/MIT MIT
+*/
+
+
+/* demo & debug box on any pages */
+.rdta-demopage-debugbox {
+    border: 1px dashed #ccc;
+    margin-bottom: var(--rdta-content-block-element-margin-vertical);
+    padding: 10px;
+}
+
+.rdta-demopage-debugbox .fixed-bottom,
+.rdta-demopage-debugbox .fixed-top,
+.rdta-demopage-debugbox .float-bottom,
+.rdta-demopage-debugbox .float-top {
+    position: static;
+}
+/* end demo & debug box */
+
+
+/* headings for the page content */
+.rd-page-content > h1,
+.rd-page-content > h2,
+.rd-page-content > h3,
+.rd-page-content > h4,
+.rd-page-content > h5, 
+.rd-page-content > h6 {
+    background-color: rgba(0, 255, 0, 0.15);/* for testing only */
+    margin-bottom: var(--rdta-content-block-element-margin-vertical);
+}
+
+.rd-page-content > h1:not(:first-child) {
+    margin-top: 3rem;
+}
+.rd-page-content > h2:not(:first-child) {
+    margin-top: 2.5rem;
+}
+.rd-page-content > h3 {
+    margin-top: 2rem;
+}
+.rd-page-content > h4 {
+    margin-top: 1.5rem;
+}
+
+.rd-page-content > h5, 
+.rd-page-content > h6 {
+    margin-top: var(--rdta-content-block-element-margin-vertical);
+}
+/* end headings for the page content */
+
+
+/* page columns-flex */
+.page-columns-flex .column {
+    background-color: #dee9f2;
+    border: 1px solid #52A0E5;
+    overflow: hidden;
+}
+
+.page-columns-flex .column.example-transparent {
+    background-color: transparent;
+    border: none;
+}
+
+.page-columns-flex .example-outline {
+    background-color: transparent;
+    border: 1px solid #dee9f2;
+}
+/* end page columns-flex */
+
+
+/* page datatable (& datatables.js) */
+.page-datatable table {
+    margin-bottom: 0;
+}
+/* end page datatable */
+
+
+/* page dialog */
+.page-dialog .code-sample-dialog-htmldialog,
+.page-dialog .code-sample-dialog-sample1 {
+    margin-left: auto;
+    margin-right: auto;
+}
+/* end page dialog */
+
+
+/* page helper */
+.page-helpers #demo-box-fadeout ~ button,
+.page-helpers #demo-box-fadein ~ button{
+    margin-bottom: 0.625rem;
+}
+
+.page-helpers .helper-responsive-visibility-box {
+    border: 1px solid #52A0E5;
+    padding: 0.188rem 0.313rem;
+    width: 100%;
+}
+
+.page-helpers .responsive-visibility-table .helper-responsive-visibility-box {
+    background-color: #52A0E5;
+    border: none;
+    color: #fff;
+}
+/* end page helper */
+
+
+/* page tabs */
+.page-tabs .rd-tabs,
+.page-tabs .tabs {
+    border: 1px dashed #ccc;
+}
+
+.page-tabs .rd-tabs p:last-child,
+.page-tabs .tabs p:last-child {
+    margin-bottom: 0;
+}
+/* end page tabs */

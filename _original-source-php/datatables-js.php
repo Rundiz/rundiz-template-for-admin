@@ -23,7 +23,7 @@ include 'includes/html-head.php';
                 <?php
                 echo renderBreadcrumb(['./' => 'Home', '#' => $title]);
                 ?> 
-                <div class="rd-page-content">
+                <div class="rd-page-content page-datatable">
                     <h1><?php echo $title; ?></h1>
                     <p>Custom style for <a href="https://datatables.net/" target="datatables">DataTables JS</a>.</p>
                     <p>
@@ -81,7 +81,7 @@ include 'includes/html-head.php';
                         </table>
                     </div><!--.rd-datatable-wrapper-->
                     <h3>DataTables's styles</h3>
-                    <div class="select-datatables-styles rd-block-level-margin-bottom">
+                    <div class="select-datatables-styles rd-content-level-margin-bottom">
                         <label>
                             Select style:
                             <select id="datatables-styles">
@@ -153,7 +153,7 @@ include 'includes/html-head.php';
                             </tr>
                         </tfoot>
                     </table>
-                    <h4>Cell colors</h4>
+                    <h3>Cell colors</h3>
                     <p>Add showing class to table cell (<code>&lt;td&gt;</code>, or <code>&lt;th&gt;</code>).</p>
                     <div class="rd-datatable-wrapper">
                         <table id="rdta-datatables-sample-cellcolors" class="cell-border">

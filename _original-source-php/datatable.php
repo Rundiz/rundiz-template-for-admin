@@ -20,7 +20,7 @@ include 'includes/html-head.php';
                 <?php
                 echo renderBreadcrumb(['./' => 'Home', '#' => $title]);
                 ?> 
-                <div class="rd-page-content">
+                <div class="rd-page-content page-datatable">
                     <h1>Data table</h1>
                     <p>Display the data in the table.</p>
                     <hr>
@@ -91,7 +91,7 @@ include 'includes/html-head.php';
                             </tfoot>
                         </table>
                     </div><!--.rd-datatable-wrapper-->
-                    <h3>Source</h3>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".rd-datatable-wrapper-sample1" data-target-src-remove-first-space="20"></pre>
                     <h3>H Border</h3>
                     <p>This data table only use horizontal border by add <code>h-border</code> to table class.</p>
@@ -155,7 +155,7 @@ include 'includes/html-head.php';
                             </tfoot>
                         </table>
                     </div><!--.rd-datatable-wrapper-->
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source"><code class="language-html"><?php 
                     echo htmlspecialchars('<table class="rd-datatable h-border">
     ...
@@ -223,7 +223,7 @@ include 'includes/html-head.php';
                             </tfoot>
                         </table>
                     </div><!--.rd-datatable-wrapper-->
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source"><code class="language-html"><?php 
 $sampleHTML = '<table class="rd-datatable">
     <thead>
@@ -310,7 +310,7 @@ unset($sampleHTML);
                             </tfoot>
                         </table>
                     </div><!--.rd-datatable-wrapper-->
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source"><code class="language-html"><?php
 foreach ($rowColors as $index => $rowColor) {
     if (0 === intval($index)) {
@@ -322,7 +322,7 @@ foreach ($rowColors as $index => $rowColor) {
 }// endforeach;
 unset($index, $rowcolor);
                     ?></code></pre>
-                    <h4>Cell colors</h4>
+                    <h3>Cell colors</h3>
                     <p>Add showing class to table cell (<code>&lt;td&gt;</code>, or <code>&lt;th&gt;</code>).</p>
                     <div class="rd-datatable-wrapper rd-datatable-wrapper-sample-cellcolors">
                         <table class="rd-datatable">
@@ -473,7 +473,7 @@ unset($rowColors);
                             </tfoot>
                         </table>
                     </div><!--.rd-datatable-wrapper-->
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source"><code class="language-html"><?php 
                     echo htmlspecialchars('<tr class="filter-row">...</tr>', ENT_QUOTES);
                     ?></code></pre>
@@ -486,7 +486,7 @@ unset($rowColors);
                         The classes <code>row-actions</code>, and <code>action</code> are for display each table row actions and will be displayed on mouse hover.<br>
                         The class <code>toggle-row</code> that added to the button is to make that button work as expand/collapse on small screen.
                     </p>
-                    <div class="rd-datatable-wrapper rd-block-level-margin-bottom">
+                    <div class="rd-datatable-wrapper">
                         <table class="rd-datatable responsive rd-datatable-sample-responsive1">
                             <thead>
                                 <tr>
@@ -539,7 +539,7 @@ unset($rowColors);
                             </tfoot>
                         </table>
                     </div>
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".rd-datatable-sample-responsive1" data-target-src-remove-first-space="24"></pre>
                     <p>And if there is no data in the responsive table.</p>
                     <table class="rd-datatable responsive">

@@ -1,6 +1,9 @@
 /**
  * JS for document (preview) file.
+ * 
  * View whole page source code.
+ * 
+ * This JS file is for document pages only. It is no need on your project.
  * 
  * @license http://opensource.org/licenses/MIT MIT
  */
@@ -117,7 +120,7 @@ class ViewSource {
                 + (node.systemId ? ' "' + node.systemId + '"' : '')
                 + '>';
 
-            previewE.insertAdjacentHTML('beforebegin', '<h3>HTML source</h3>');
+            previewE.insertAdjacentHTML('beforebegin', '<h5>Source</h5>');
             previewE.insertAdjacentHTML('beforeend', this.escapeHTML(htmlDoctype) + "\n");
             previewE.insertAdjacentHTML('beforeend', this.escapeHTML(this.#beautifyHTML(this.htmlDoc.documentElement.outerHTML)));
 

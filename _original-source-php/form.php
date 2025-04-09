@@ -33,7 +33,7 @@ include 'includes/html-head.php';
 
                     <h2>Examples</h2>
                     <h3>Input box types</h3>
-                    <form class="rd-form code-sample-form-inputboxtypes rd-block-level-margin-bottom">
+                    <form class="rd-form code-sample-form-inputboxtypes">
                         <?php
                         echo "\n";
                         $input_types = ['color', 'date', 'datetime-local', 'email', 'file', 'month', 'number', 'password', 'range', 'search', 'tel', 'text', 'time', 'url', 'week'];
@@ -71,10 +71,10 @@ include 'includes/html-head.php';
                             </div>
                         </fieldset>
                     </form>
-                    <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".code-sample-form-inputboxtypes" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
+                    <h5>Source</h5>
+                    <pre class="preview-source" data-target-src=".code-sample-form-inputboxtypes" data-target-src-remove-first-space="20"></pre>
                     <h3>Input file</h3>
-                    <form class="rd-form code-sample-form-inputfile rd-block-level-margin-bottom" method="post" enctype="multipart/form-data">
+                    <form class="rd-form code-sample-form-inputfile" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label class="control-label" for="rd-inputfile_single">Input single file</label>
                             <div class="control-wrapper">
@@ -131,38 +131,38 @@ include 'includes/html-head.php';
                         </div>
                         <button class="rd-button primary" type="button" onclick="rdtaGetFormData(this);">Submit (see console)</button>
                     </form>
-                    <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".code-sample-form-inputfile" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
+                    <h5>Source</h5>
+                    <pre class="preview-source" data-target-src=".code-sample-form-inputfile" data-target-src-remove-first-space="20"></pre>
                     <h3>Dynamically insert/update input file</h3>
-                    <form class="rd-form rd-block-level-margin-bottom" method="post" enctype="multipart/form-data">
-                        <div id="demo-custom-inputfile-placeholder" style="border: 1px dashed #ccc; padding: 0.625rem;"></div>
+                    <form class="rd-form" method="post" enctype="multipart/form-data">
+                        <div id="demo-custom-inputfile-placeholder" class="rdta-demopage-debugbox"></div>
                         <button type="button" onclick="rdtaAddCustomInputFile('demo-custom-inputfile-placeholder');">Click here to add an input file</button>
-                        <h4>Custom input file events</h4>
-                        <table class="rd-datatable">
-                            <thead>
-                                <tr>
-                                    <th>Event type</th>
-                                    <th>Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>rdta.custominputfile.addedfilesqueue</td>
-                                    <td>This event is fired when files queue were added.</td>
-                                </tr>
-                                <tr>
-                                    <td>rdta.custominputfile.change</td>
-                                    <td>This event is fired when input file has changed.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div id="demo-custom-inputfile-events-placeholder" style="border: 1px dashed #ccc; padding: 0.625rem;"></div>
                     </form>
-                    <h4>Source</h4>
+                    <h3>Custom input file events</h3>
+                    <table class="rd-datatable">
+                        <thead>
+                            <tr>
+                                <th>Event type</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>rdta.custominputfile.addedfilesqueue</td>
+                                <td>This event is fired when files queue were added.</td>
+                            </tr>
+                            <tr>
+                                <td>rdta.custominputfile.change</td>
+                                <td>This event is fired when input file has changed.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="demo-custom-inputfile-events-placeholder" class="rdta-demopage-debugbox"></div>
+                    <h5>Source</h5>
                     <pre class="preview-source"><code class="language-js">document.addEventListener('rdta.custominputfile.change', (event) => {console.log(event);}));
 document.addEventListener('rdta.custominputfile.addedfilesqueue', (event) => {console.log(event);}));</code></pre>
                     <h3>Checkbox/radio</h3>
-                    <form class="rd-form rd-block-level-margin-bottom code-sample-form-checkboxradio">
+                    <form class="rd-form code-sample-form-checkboxradio">
                         <div class="form-group">
                             <label class="control-label">Input radio</label>
                             <div class="control-wrapper">
@@ -200,10 +200,10 @@ document.addEventListener('rdta.custominputfile.addedfilesqueue', (event) => {co
                             </div>
                         </div>
                     </form>
-                    <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".code-sample-form-checkboxradio" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
+                    <h5>Source</h5>
+                    <pre class="preview-source" data-target-src=".code-sample-form-checkboxradio" data-target-src-remove-first-space="20"></pre>
                     <h3>Select box</h3>
-                    <form class="rd-form rd-block-level-margin-bottom code-sample-form-selectbox">
+                    <form class="rd-form code-sample-form-selectbox">
                         <div class="form-group">
                             <label class="control-label" for="input-select">Select box</label>
                             <div class="control-wrapper">
@@ -262,10 +262,10 @@ document.addEventListener('rdta.custominputfile.addedfilesqueue', (event) => {co
                             <div class="form-description">Add <code>rd-input-invalid</code> class to the select box.</div>
                         </div>
                     </form>
-                    <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".code-sample-form-selectbox" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
+                    <h5>Source</h5>
+                    <pre class="preview-source" data-target-src=".code-sample-form-selectbox" data-target-src-remove-first-space="20"></pre>
                     <h3>Text area</h3>
-                    <form class="rd-form rd-block-level-margin-bottom code-sample-form-textarea">
+                    <form class="rd-form code-sample-form-textarea">
                         <div class="form-group">
                             <label class="control-label" for="input-textarea">Textarea</label>
                             <div class="control-wrapper">
@@ -285,13 +285,13 @@ document.addEventListener('rdta.custominputfile.addedfilesqueue', (event) => {co
                             </div>
                         </div>
                     </form>
-                    <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".code-sample-form-textarea" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
+                    <h5>Source</h5>
+                    <pre class="preview-source" data-target-src=".code-sample-form-textarea" data-target-src-remove-first-space="20"></pre>
                     <hr>
 
-                    <h3>Horizontal form</h3>
+                    <h2>Horizontal form</h2>
                     <p>To make form fields display horizontal, just add <code>horizontal</code> class to the <code>form</code> element.</p>
-                    <form class="rd-form horizontal rd-block-level-margin-bottom code-sample-form-horizontal">
+                    <form class="rd-form horizontal code-sample-form-horizontal">
                         <div class="form-group">
                             <label class="control-label" for="input-type-text2">Input text</label>
                             <div class="control-wrapper">
@@ -369,8 +369,8 @@ document.addEventListener('rdta.custominputfile.addedfilesqueue', (event) => {co
                             </div>
                         </div>
                     </form>
-                    <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".code-sample-form-horizontal" data-target-src-remove-first-space="20" data-remove-classes="rd-block-level-margin-bottom"></pre>
+                    <h5>Source</h5>
+                    <pre class="preview-source" data-target-src=".code-sample-form-horizontal" data-target-src-remove-first-space="20"></pre>
                     <hr>
 
                     <h3>Sizes</h3>
@@ -383,8 +383,10 @@ document.addEventListener('rdta.custominputfile.addedfilesqueue', (event) => {co
                                 <input class="input-large" type="text" placeholder="large">
                             </div>
                         </div>
-                        <h4>Source</h4>
-                        <pre class="preview-source" data-target-src=".code-sample-form-inputsizes" data-target-src-remove-first-space="32" data-remove-classes="control-wrapper" data-inner-html="true"></pre>
+                    </form>
+                    <h5>Source</h5>
+                    <pre class="preview-source" data-target-src=".code-sample-form-inputsizes" data-target-src-remove-first-space="32" data-remove-classes="control-wrapper" data-inner-html="true"></pre>
+                    <form class="rd-form">
                         <div class="form-group">
                             <label class="control-label">Select box</label>
                             <div class="control-wrapper code-sample-form-selectsizes">
@@ -399,9 +401,9 @@ document.addEventListener('rdta.custominputfile.addedfilesqueue', (event) => {co
                                 </select>
                             </div>
                         </div>
-                        <h4>Source</h4>
-                        <pre class="preview-source" data-target-src=".code-sample-form-selectsizes" data-target-src-remove-first-space="32" data-remove-classes="control-wrapper" data-inner-html="true"></pre>
                     </form>
+                    <h5>Source</h5>
+                    <pre class="preview-source" data-target-src=".code-sample-form-selectsizes" data-target-src-remove-first-space="32" data-remove-classes="control-wrapper" data-inner-html="true"></pre>
                     <form class="rd-form horizontal">
                         <div class="form-group">
                             <label class="control-label">Input</label>
@@ -428,7 +430,7 @@ document.addEventListener('rdta.custominputfile.addedfilesqueue', (event) => {co
 
                     <hr>
 
-                    <h3>Input group</h3>
+                    <h2>Input group</h2>
                     <p>The input group must be use with form class <code>rd-form</code> and elements with classes <code>form-group</code> <code>control-wrapper</code></p>
                     <form class="rd-form">
                         <div class="form-group">
@@ -468,9 +470,11 @@ document.addEventListener('rdta.custominputfile.addedfilesqueue', (event) => {co
                                 </div>
                             </div>
                         </div>
-                        <h4>Source</h4>
-                        <pre class="preview-source" data-target-src=".code-sample-form-inputgroup" data-target-src-remove-first-space="32" data-remove-classes="control-wrapper" data-inner-html="true"></pre>
-                        <h4>Sizes</h4>
+                    </form>
+                    <h5>Source</h5>
+                    <pre class="preview-source" data-target-src=".code-sample-form-inputgroup" data-target-src-remove-first-space="32" data-remove-classes="control-wrapper" data-inner-html="true"></pre>
+                    <h3>Sizes</h3>
+                    <form class="rd-form">
                         <div class="form-group">
                             <div class="control-wrapper code-sample-form-inputgroup-sizes">
                                 <div class="rd-input-group rd-content-level-margin-bottom">
@@ -493,9 +497,11 @@ document.addEventListener('rdta.custominputfile.addedfilesqueue', (event) => {co
                                 </div>
                             </div>
                         </div>
-                        <h5>Source</h5>
-                        <pre class="preview-source" data-target-src=".code-sample-form-inputgroup-sizes" data-target-src-remove-first-space="32" data-remove-classes="control-wrapper" data-inner-html="true"></pre>
-                        <h4>With button</h4>
+                    </form>
+                    <h5>Source</h5>
+                    <pre class="preview-source" data-target-src=".code-sample-form-inputgroup-sizes" data-target-src-remove-first-space="32" data-remove-classes="control-wrapper" data-inner-html="true"></pre>
+                    <h3>With button</h3>
+                    <form class="rd-form">
                         <div class="form-group">
                             <div class="control-wrapper code-sample-form-inputgroup-sizes-withbtn">
                                 <div class="rd-input-group rd-content-level-margin-bottom">
@@ -519,9 +525,9 @@ document.addEventListener('rdta.custominputfile.addedfilesqueue', (event) => {co
                                 </div>
                             </div>
                         </div>
-                        <h5>Source</h5>
-                        <pre class="preview-source" data-target-src=".code-sample-form-inputgroup-sizes-withbtn" data-target-src-remove-first-space="32" data-remove-classes="control-wrapper" data-inner-html="true"></pre>
                     </form>
+                    <h5>Source</h5>
+                    <pre class="preview-source" data-target-src=".code-sample-form-inputgroup-sizes-withbtn" data-target-src-remove-first-space="32" data-remove-classes="control-wrapper" data-inner-html="true"></pre>
                 </div><!--.rd-page-content-->
             </main>
 <?php include 'includes/partials/page-footer.php'; ?> 

@@ -1,68 +1,10 @@
 /*
 For document (preview) only.
+
+This CSS file is for document pages only. It is no need on your project.
+
+@license http://opensource.org/licenses/MIT MIT
 */
-
-
-/* page accordion  */
-.page-accordion .code-sample-accordion-sample1 {
-    margin-bottom: .625em;
-}
-/* end page accordion  */
-
-
-/* page columns-flex */
-.page-columns-flex .column {
-    background-color: #dee9f2;
-    border: 1px solid #52A0E5;
-    overflow: hidden;
-}
-
-.page-columns-flex .column.example-transparent {
-    background-color: transparent;
-    border: none;
-}
-
-.page-columns-flex .example-outline {
-    background-color: transparent;
-    border: 1px solid #dee9f2;
-    margin-bottom: 1.250rem;
-}
-/* end page columns-flex */
-
-
-/* page dialog */
-.page-dialog .code-sample-dialog-htmldialog,
-.page-dialog .code-sample-dialog-sample1 {
-    margin-left: auto;
-    margin-right: auto;
-}
-/* end page dialog */
-
-
-/* page helper */
-.page-helpers .helper-responsive-visibility-box {
-    border: 1px solid #52A0E5;
-    padding: 0.188rem 0.313rem;
-    width: 100%;
-}
-
-.page-helpers #demo-box-fadeout,
-.page-helpers #demo-box-fadein {
-    border: 1px dashed #ccc;
-    padding: 0.625rem;
-}
-
-.page-helpers #demo-box-fadeout ~ button,
-.page-helpers #demo-box-fadein ~ button{
-    margin-bottom: 0.625rem;
-}
-
-.page-helpers .responsive-visibility-table .helper-responsive-visibility-box {
-    background-color: #52A0E5;
-    border: none;
-    color: #fff;
-}
-/* end page helper */
 
 
 .preview-source {

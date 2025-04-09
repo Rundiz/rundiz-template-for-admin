@@ -28,7 +28,7 @@ include 'includes/html-head.php';
                         <p class="text-center">Align center</p>
                         <p class="text-right">Align right</p>
                     </div>
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-text-alignments" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
                     <p>To align justify, use <code>.text-justify</code> class.</p>
                     <p class="text-justify">Nam a nisl fringilla tellus varius luctus. Aliquam tristique, velit tempor ullamcorper ultricies, lacus urna lacinia massa, vel sagittis nisi tellus vel enim. Praesent vestibulum pharetra cursus. Duis sit amet nunc quis lorem ultricies rutrum. Donec consectetur commodo ligula, at condimentum dui auctor vel. Praesent pulvinar odio ipsum, ac interdum elit rutrum a. Vestibulum iaculis posuere quam, in consequat ex laoreet quis. Nulla et iaculis lectus, sed maximus felis. Curabitur faucibus ornare pharetra. Quisque dictum augue quis auctor varius. Nam euismod, enim vel vehicula faucibus, massa felis gravida odio, a accumsan nisi risus non tortor. In vel congue sem, vel facilisis orci. Nunc non dui eget urna luctus sollicitudin. Nunc tincidunt elit non quam ullamcorper pulvinar. Phasellus pharetra tellus quis mattis dictum.</p>
@@ -47,10 +47,10 @@ include 'includes/html-head.php';
                         unset($colorClassName);
                         ?> 
                     </div>
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-text-colors" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
                     <p>It can also use with link.</p>
-                    <div class="rd-block-level-margin-bottom code-sample-text-colorslink">
+                    <div class="code-sample-text-colorslink">
                         <?php
                         foreach ($colorClassNames as $colorClassName) {
                             echo '<a class="text-color-' . $colorClassName . '"';
@@ -62,40 +62,32 @@ include 'includes/html-head.php';
                         unset($colorClassName, $colorClassNames);
                         ?> 
                     </div>
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-text-colorslink" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
 
                     <h3>Text flow</h3>
                     <p>Default text flow without any class.</p>
-                    <div class="rd-block-level-margin-bottom">
-                        <div class="rdta-demopage-debugbox" style="width: 10em;">
-                            This text should be wrapped by normal.
-                        </div>
+                    <div class="rdta-demopage-debugbox" style="width: 10em;">
+                        This text should be wrapped by normal.
                     </div>
                     <p>Force wrap text with <code>.text-flow-wrap</code> class.</p>
-                    <div class="rd-block-level-margin-bottom code-sample-text-flowwrap">
-                        <div class="rdta-demopage-debugbox text-flow-wrap" style="width: 10em;">
-                            This text should be wrapped by force.
-                        </div>
+                    <div class="rdta-demopage-debugbox text-flow-wrap code-sample-text-flowwrap" style="width: 10em;">
+                        This text should be wrapped by force.
                     </div>
-                    <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".code-sample-text-flowwrap" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
+                    <h5>Source</h5>
+                    <pre class="preview-source" data-target-src=".code-sample-text-flowwrap" data-target-src-remove-first-space="20" data-inner-html="false" data-remove-classes="rdta-demopage-debugbox"></pre>
                     <p>No wrap text with <code>.text-flow-nowrap</code> class.</p>
-                    <div class="rd-block-level-margin-bottom code-sample-text-flownowrap">
-                        <div class="rdta-demopage-debugbox text-flow-nowrap" style="width: 10em;">
-                            This text should not be wrapped.
-                        </div>
+                    <div class="rdta-demopage-debugbox text-flow-nowrap code-sample-text-flownowrap" style="width: 10em;">
+                        This text should not be wrapped.
                     </div>
-                    <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".code-sample-text-flownowrap" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
+                    <h5>Source</h5>
+                    <pre class="preview-source" data-target-src=".code-sample-text-flownowrap" data-target-src-remove-first-space="20" data-inner-html="false" data-remove-classes="rdta-demopage-debugbox"></pre>
                     <p>Break the long text with <code>.text-flow-breakword</code> class</p>
-                    <div class="rd-block-level-margin-bottom code-sample-text-flowbreakword">
-                        <div class="rdta-demopage-debugbox text-flow-breakword" style="width: 10em;">
-                            <?php echo str_repeat('m', 100); ?> 
-                        </div>
+                    <div class="rdta-demopage-debugbox text-flow-breakword code-sample-text-flowbreakword" style="width: 10em;">
+                        <?php echo str_repeat('m', 100); ?> 
                     </div>
-                    <h4>Source</h4>
-                    <pre class="preview-source" data-target-src=".code-sample-text-flowbreakword" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
+                    <h5>Source</h5>
+                    <pre class="preview-source" data-target-src=".code-sample-text-flowbreakword" data-target-src-remove-first-space="20" data-inner-html="false" data-remove-classes="rdta-demopage-debugbox"></pre>
 
                     <h3>Text transform</h3>
                     <p>Transform text into lower, upper case, capitalize</p>
@@ -104,7 +96,7 @@ include 'includes/html-head.php';
                         <p class="text-transform-uppercase">upper case text</p>
                         <p class="text-transform-capitalize">capitaize text</p>
                     </div>
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-text-transform" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
                 </div><!--.rd-page-content-->
             </main>

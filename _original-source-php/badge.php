@@ -32,16 +32,18 @@ include 'includes/html-head.php';
                         unset($badgeName);
                         ?> 
                     </p>
-                    <h3>Source</h3>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-badgesamples1" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
 
                     <h3>Badge within heading text</h3>
-                    <h1>Heading 1 <span class="rd-notification-badge">Normal</span></h1>
-                    <h2>Heading 2 <span class="rd-notification-badge">Normal</span></h2>
-                    <h3>Heading 3 <span class="rd-notification-badge">Normal</span></h3>
-                    <h4>Heading 4 <span class="rd-notification-badge">Normal</span></h4>
-                    <h5>Heading 5 <span class="rd-notification-badge">Normal</span></h5>
-                    <h6>Heading 6 <span class="rd-notification-badge">Normal</span></h6>
+                    <div class="badge-with-heading-samples">
+                        <h1>Heading 1 <span class="rd-notification-badge">Normal</span></h1>
+                        <h2>Heading 2 <span class="rd-notification-badge">Normal</span></h2>
+                        <h3>Heading 3 <span class="rd-notification-badge">Normal</span></h3>
+                        <h4>Heading 4 <span class="rd-notification-badge">Normal</span></h4>
+                        <h5>Heading 5 <span class="rd-notification-badge">Normal</span></h5>
+                        <h6>Heading 6 <span class="rd-notification-badge">Normal</span></h6>
+                    </div>
 
                     <h3>Tiny badge</h3>
                     <p>Add <code>tiny</code> class into badge element to display tiny bade.</p>
@@ -54,7 +56,7 @@ include 'includes/html-head.php';
                         unset($badgeName, $badgeNames);
                         ?> 
                     </p>
-                    <h4>Source</h4>
+                    <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-badgetiny" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
                 </div><!--.rd-page-content-->
             </main>
