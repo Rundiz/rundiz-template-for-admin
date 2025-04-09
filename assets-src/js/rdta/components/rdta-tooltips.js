@@ -6,6 +6,11 @@
 class RDTATooltips {
 
 
+    /**
+     * Class constructor.
+     * 
+     * @returns {undefined}
+     */
     constructor() {
         this.tippyInstance;
         this.tippyInstances = [];
@@ -44,28 +49,36 @@ class RDTATooltips {
     /**
      * Initialize the tooltips.
      * 
-     * @param {string} selector
-     * @param {object} options
-     * @returns {object} Return this class instance.
+     * @param {string} selector The JS selector. It can be CSS class or HTML ID.
+     * @param {object} options The options.
+     * @param {string} options.content Tooltip content.
+     * @param {string} options.template Tooltip HTML template.
+     * @param {string} options.placement Tooltip placement.
+     * @returns {RDTATooltips} Return this class instance.
      */
-    static init(selector, options) {
+    static init(selector, options = {}) {
+        if (typeof(options) !== 'object') {
+            throw new Error('The argument options must be an object.');
+        }
+
         let thisClass = new this();
         let originalOptions = options;
 
         document.querySelectorAll(selector).forEach(function(item, index) {
-            let tooltipOptions = {};
-            tooltipOptions.content = item.title;
+            let defaultOptions = {
+                'content': item.title,
+                'template': '<div class="tooltip rd-tooltips" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
+            };
             item.removeAttribute('title');
-            tooltipOptions.template = '<div class="tooltip rd-tooltips" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>';
 
             if (item.dataset?.placement) {
-                tooltipOptions.placement = item.dataset.placement;
+                defaultOptions.placement = item.dataset.placement;
             }
 
             if (typeof(originalOptions) === 'object') {
-                options = Object.assign(tooltipOptions, originalOptions);
+                options = Object.assign(defaultOptions, originalOptions);
             } else {
-                options = tooltipOptions;
+                options = defaultOptions;
             }
 
             thisClass.tippyInstance = tippy(
