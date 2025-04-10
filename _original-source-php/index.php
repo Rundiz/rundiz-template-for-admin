@@ -41,6 +41,7 @@ $dummyData = file_get_contents(__DIR__ . '/includes/dummy-data.json');
                                 <p>is the HTML template and CSS, JS set for admin page layout. It also come with essential components that mostly administrator application have to use.</p>
                                 <p><abbr title="Rundiz template for admin">RDTA</abbr> support modern browsers such as Firefox, Google Chrome, Microsoft Edge, Opera, Vivaldi.</p>
                                 <p>Almost all element was reset the design to display the same way cross browsers and yes it does <a href="https://www.outlinenone.com/" target="outlinenone_com">support accessibility</a>.</p>
+                                <p><a href="example-basic-layout.html">Getting started here.</a></p>
                                 <hr>
                                 <p>Check for the last update or fork me on <a href="https://github.com/Rundiz/rundiz-template-for-admin" target="rdta_on_github">GitHub</a></p>
                             </div>
