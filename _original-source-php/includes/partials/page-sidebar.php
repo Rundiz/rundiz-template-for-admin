@@ -27,6 +27,7 @@
                                 <li><a href="embeds.html">Embeds</a></li>
                                 <li><a href="form.html">Form</a></li>
                                 <li><a href="helpers.html">Helpers</a></li>
+                                <li><a href="page-options.html">Page options</a></li>
                                 <li><a href="pagination.html">Pagination</a></li>
                                 <li><a href="tabs.html">Tabs</a></li>
                                 <li><a href="text.html">Text</a></li>
