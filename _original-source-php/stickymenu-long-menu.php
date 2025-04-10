@@ -29,9 +29,7 @@ include 'includes/html-head.php';
                 </div><!--.rd-sidebar-inner-->
             </section><!--.rd-sidebar-->
             <main>
-                <?php
-                echo renderBreadcrumb(['./' => 'Home', '#' => $title]);
-                ?> 
+<?php echo renderBreadcrumb(['./' => 'Home', '#' => $title], 4); ?> 
                 <div class="rd-page-content">
                     <h1>Sticky menu (long menu)</h1>
                     <p>

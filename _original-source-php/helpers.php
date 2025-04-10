@@ -12,9 +12,7 @@ include 'includes/html-head.php';
         <div class="rd-page-wrapper">
 <?php include 'includes/partials/page-sidebar.php'; ?> 
             <main>
-                <?php
-                echo renderBreadcrumb(['./' => 'Home', '#' => $title]);
-                ?> 
+<?php echo renderBreadcrumb(['./' => 'Home', '#' => $title], 4); ?> 
                 <div class="rd-page-content page-helpers">
                     <h1>Helpers</h1>
                     <p>CSS helper classes.</p>
@@ -69,7 +67,7 @@ include 'includes/html-head.php';
                         <button type="button" onclick="rdtaDemoFadeIn();">Fade in</button>
                     </div>
                     <h5>Source</h5>
-                    <pre class="preview-source"><code class="language-html"><?php 
+                    <pre><code class="language-html"><?php 
 $sampleHTML = <<<EOT
 <div class="rd-animation fade">Fade in</div>
 <div class="rd-animation fade fade-out">Fade out</div>

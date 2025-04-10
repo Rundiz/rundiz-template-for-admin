@@ -12,9 +12,7 @@ include 'includes/html-head.php';
         <div class="rd-page-wrapper">
 <?php include 'includes/partials/page-sidebar.php'; ?> 
             <main>
-                <?php
-                echo renderBreadcrumb(['./' => 'Home', '#' => $title]);
-                ?> 
+<?php echo renderBreadcrumb(['./' => 'Home', '#' => $title], 4); ?> 
                 <div class="rd-page-content">
                     <h1>Credits</h1>
                     <p><abbr title="Rundiz template for admin">RDTA</abbr> depend on many packages, thank you for these packages.</p>

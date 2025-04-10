@@ -17,9 +17,7 @@ include 'includes/html-head.php';
         <div class="rd-page-wrapper">
 <?php include 'includes/partials/page-sidebar.php'; ?> 
             <main>
-                <?php
-                echo renderBreadcrumb(['./' => 'Home', '#' => $title]);
-                ?> 
+<?php echo renderBreadcrumb(['./' => 'Home', '#' => $title], 4); ?> 
                 <div class="rd-page-content page-datatable">
                     <h1>Data table</h1>
                     <p>Display the data in the table.</p>
@@ -156,7 +154,7 @@ include 'includes/html-head.php';
                         </table>
                     </div><!--.rd-datatable-wrapper-->
                     <h5>Source</h5>
-                    <pre class="preview-source"><code class="language-html"><?php 
+                    <pre><code class="language-html"><?php 
                     echo htmlspecialchars('<table class="rd-datatable h-border">
     ...
 </table>', ENT_QUOTES);
@@ -224,7 +222,7 @@ include 'includes/html-head.php';
                         </table>
                     </div><!--.rd-datatable-wrapper-->
                     <h5>Source</h5>
-                    <pre class="preview-source"><code class="language-html"><?php 
+                    <pre><code class="language-html"><?php 
 $sampleHTML = '<table class="rd-datatable">
     <thead>
         <tr>
@@ -311,7 +309,7 @@ unset($sampleHTML);
                         </table>
                     </div><!--.rd-datatable-wrapper-->
                     <h5>Source</h5>
-                    <pre class="preview-source"><code class="language-html"><?php
+                    <pre><code class="language-html"><?php
 foreach ($rowColors as $index => $rowColor) {
     if (0 === intval($index)) {
         continue;
@@ -384,7 +382,7 @@ unset($index, $rowcolor);
                         </table>
                     </div><!--.rd-datatable-wrapper-->
                     <h5>Source</h5>
-                    <pre class="preview-source"><code class="language-html"><?php
+                    <pre><code class="language-html"><?php
 foreach ($rowColors as $index => $rowColor) {
     if (0 === intval($index)) {
         continue;
@@ -474,7 +472,7 @@ unset($rowColors);
                         </table>
                     </div><!--.rd-datatable-wrapper-->
                     <h5>Source</h5>
-                    <pre class="preview-source"><code class="language-html"><?php 
+                    <pre><code class="language-html"><?php 
                     echo htmlspecialchars('<tr class="filter-row">...</tr>', ENT_QUOTES);
                     ?></code></pre>
                     <h3>Responsive</h3>

@@ -32,9 +32,7 @@ $dummyData = file_get_contents(__DIR__ . '/includes/dummy-data.json');
         <div class="rd-page-wrapper">
 <?php include 'includes/partials/page-sidebar.php'; ?> 
             <main>
-                <?php
-                echo renderBreadcrumb(['./' => 'Home']);
-                ?> 
+<?php echo renderBreadcrumb(['./' => 'Home'], 4); ?> 
                 <div class="rd-page-content">
                     <div class="rd-columns-flex-container fix-columns-container-edge">
                         <div class="column">

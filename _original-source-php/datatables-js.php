@@ -20,9 +20,7 @@ include 'includes/html-head.php';
         <div class="rd-page-wrapper">
 <?php include 'includes/partials/page-sidebar.php'; ?> 
             <main>
-                <?php
-                echo renderBreadcrumb(['./' => 'Home', '#' => $title]);
-                ?> 
+<?php echo renderBreadcrumb(['./' => 'Home', '#' => $title], 4); ?> 
                 <div class="rd-page-content page-datatable">
                     <h1><?php echo $title; ?></h1>
                     <p>Custom style for <a href="https://datatables.net/" target="datatables">DataTables JS</a>.</p>
@@ -283,7 +281,7 @@ include 'includes/html-head.php';
                     <p>Source for HTML.</p>
                     <pre class="preview-source" data-target-src="#rdta-datatables-sample-responsive2" data-target-src-remove-first-space="20"></pre>
                     <p>Source for <a href="https://datatables.net/manual/options" target="_blank">DataTables options</a>.</p>
-                    <pre class="preview-source"><code class="language-js"><?php 
+                    <pre><code class="language-js"><?php 
 $sampleJS = <<<EOT
 {
     'autoWidth': false,// don't set style="width: xxx;" in the table cell.

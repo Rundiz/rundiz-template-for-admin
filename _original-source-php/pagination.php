@@ -53,9 +53,7 @@ include 'includes/html-head.php';
         <div class="rd-page-wrapper">
 <?php include 'includes/partials/page-sidebar.php'; ?> 
             <main>
-                <?php
-                echo renderBreadcrumb(['./' => 'Home', '#' => $title]);
-                ?> 
+<?php echo renderBreadcrumb(['./' => 'Home', '#' => $title], 4); ?> 
                 <div class="rd-page-content">
                     <h1>Pagination</h1>
                     <p>The pagination styles</p>
@@ -92,7 +90,7 @@ include 'includes/html-head.php';
                         <?php echo renderPagination(5, 1, 1, 'space-loose'); // use just 5 for small screen. ?> 
                     </nav>
                     <h5>Source</h5>
-                    <pre class="preview-source"><code class="language-html"><?php
+                    <pre><code class="language-html"><?php
                     echo trim(htmlspecialchars('<ul class="rd-pagination space-loose">...</ul>', ENT_QUOTES));
                     ?></code></pre>
                     <hr>
@@ -115,7 +113,7 @@ include 'includes/html-head.php';
                         </ul>
                     </nav>
                     <h5>Source</h5>
-                    <pre class="preview-source"><code class="language-html"><?php
+                    <pre><code class="language-html"><?php
                     echo trim(htmlspecialchars('<ul class="rd-pagination space-loose">...</ul>', ENT_QUOTES));
                     ?></code></pre>
                     <h3>Pager loose use button</h3>
@@ -138,7 +136,7 @@ include 'includes/html-head.php';
                         </ul>
                     </nav>
                     <h5>Source</h5>
-                    <pre class="preview-source"><code class="language-html"><?php 
+                    <pre><code class="language-html"><?php 
                     echo trim(htmlspecialchars('<ul class="rd-pagination space-edge">...</ul>', ENT_QUOTES));
                     ?></code></pre>
                     <hr>

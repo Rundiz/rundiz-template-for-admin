@@ -13,9 +13,7 @@ include 'includes/html-head.php';
         <div class="rd-page-wrapper">
 <?php include 'includes/partials/page-sidebar.php'; ?> 
             <main>
-                <?php
-                echo renderBreadcrumb(['./' => 'Home', '#' => $title]);
-                ?> 
+<?php echo renderBreadcrumb(['./' => 'Home', '#' => $title], 4); ?> 
                 <div class="rd-page-content page-dialog">
                     <h1>Dialog</h1>
                     <p>
@@ -213,7 +211,7 @@ include 'includes/html-head.php';
                         </div>
                     </div>
                     <h5>source</h5>
-                    <pre class="preview-source"><code class="language-html"><?php 
+                    <pre><code class="language-html"><?php 
 $sampleHTML = <<<EOT
 <div id="my-dialog" class="rd-dialog-modal" data-click-outside-not-close="true">
     <div class="rd-dialog">...</div>
@@ -245,7 +243,7 @@ EOT;
                         </div>
                     </div>
                     <h5>source</h5>
-                    <pre class="preview-source"><code class="language-html"><?php 
+                    <pre><code class="language-html"><?php 
 $sampleHTML = <<<EOT
 <div class="rd-dialog" data-esc-key-not-close="true">...</div>
 EOT;
@@ -312,7 +310,7 @@ EOT;
                         </dialog>
                     </div>
                     <h5>source</h5>
-                    <pre class="preview-source"><code class="language-html"><?php 
+                    <pre><code class="language-html"><?php 
 $sampleHTML = <<<EOT
 <div class="rd-dialog rd-dialog-size-large">...</div>
 <div class="rd-dialog rd-dialog-size-fullwindow">...</div>
