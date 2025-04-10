@@ -78,6 +78,18 @@ include 'includes/html-head.php';
                             </tfoot>
                         </table>
                     </div><!--.rd-datatable-wrapper-->
+                    <h5>Source</h5>
+                    <pre><code class="language-html"><?php 
+$sampleHTML = <<<EOT
+<div class="rd-datatable-wrapper">
+    <table id="my-data-table" class="display">
+        ...
+    </table>
+</div>
+EOT;
+                    echo trim(htmlspecialchars($sampleHTML, ENT_QUOTES));
+                    unset($sampleHTML);
+                    ?></code></pre>
                     <h3>DataTables's styles</h3>
                     <div class="select-datatables-styles rd-content-level-margin-bottom">
                         <label>
@@ -215,11 +227,6 @@ include 'includes/html-head.php';
                     <h3>Responsive</h3>
                     <p>Resize your browser to be small to see responsive table work.</p>
                     <div id="rdta-datatables-sample-responsive-placeholder"></div>
-                    <script>
-                        document.addEventListener('DOMContentLoaded', () => {
-                            
-                        });
-                    </script>
                     <h4>Responsive full actions</h4>
                     <p>Responsive DataTables with actions row, check box, and responsive button (expand/collapse) on custom column. The email column will be always hide to show the feature.</p>
                     <table id="rdta-datatables-sample-responsive2" class="hover row-border">

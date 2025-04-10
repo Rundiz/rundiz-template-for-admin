@@ -35,11 +35,7 @@ include 'includes/html-head.php';
                     <h1><?php echo $title; ?></h1>
                     <p>
                         Your content will be here inside <code>.rd-page-content</code> class.<br>
-                        To begins design your page content, copy this page source code, remove these two paragraphs (&lt;p&gt;) and let's start.
-                    </p>
-                    <p>The <abbr title="Rundiz template for admin">RDTA</abbr> use CSS grid by default since version 1.0.<br>
-                        To go back to use CSS flexbox as layout please modify the file <strong>assets/scss/rundiz-template-admin.scss</strong> and change the code from <code>@import 'layout/_layout-displaygrid';</code> to <code>@import 'layout/_layout';</code>
-                        and then compile the scss using this command <kbd>sass --update assets/scss:assets/css</kbd>.
+                        To begins design your page content, copy this page source code and let's start.
                     </p>
                     <pre class="preview-source"></pre>
                 </div><!--.rd-page-content-->

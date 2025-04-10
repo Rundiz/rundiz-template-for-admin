@@ -206,7 +206,7 @@ include 'includes/html-head.php';
                     <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-buttons-dropdownsizes" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
                     <h3>Placements</h3>
-                    <p>Add <code>data-placement</code> attribute into button that contain <code>class=&quot;dropdown-toggler&quot;</code>. Accept values please see <a href="https://popper.js.org/popper-documentation.html#Popper.placements" target="popper-js-doc">this document</a>.</p>
+                    <p>Add <code>data-placement</code> attribute into button that contain <code>class=&quot;dropdown-toggler&quot;</code>. Accepted values please see <a href="https://popper.js.org/docs/v2/constructors/#options" target="popper-js-doc">this document</a>.</p>
                     <div class="button-dropdown-placements-samples">
                         <div class="rd-button-group code-sample-buttons-dropdownplacements">
                             <button class="rd-button dropdown-toggler" data-placement="top left"><i class="fa-solid fa-caret-up"></i> Top left</button>

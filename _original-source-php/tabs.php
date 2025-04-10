@@ -24,7 +24,9 @@ include 'includes/html-head.php';
                     <hr>
 
                     <h2 id="tabs-example">Examples</h2>
-                    <p>Basic tabs HTML element.</p>
+                    <p>Basic tabs HTML element. 
+                        Please note that the borders with dashed line around the examples are only appears in this document just to let you know its boundary.
+                    </p>
                     <div class="tabs code-sample-tabs-sample1">
                         <ul>
                             <li><a href="#tabs-1"><abbr title="Rundiz template for admin">RDTA</abbr> tabs</a></li>

@@ -68,9 +68,9 @@ include 'includes/html-head.php';
                     <div class="rdta-demopage-debugbox" style="width: 10em;">
                         This text should be wrapped by normal.
                     </div>
-                    <p>Force wrap text with <code>.text-flow-wrap</code> class.</p>
+                    <p>Force normal wrap text with <code>.text-flow-wrap</code> class.</p>
                     <div class="rdta-demopage-debugbox text-flow-wrap code-sample-text-flowwrap" style="width: 10em;">
-                        This text should be wrapped by force.
+                        This text should be wrapped by normal.
                     </div>
                     <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-text-flowwrap" data-target-src-remove-first-space="20" data-inner-html="false" data-remove-classes="rdta-demopage-debugbox"></pre>
