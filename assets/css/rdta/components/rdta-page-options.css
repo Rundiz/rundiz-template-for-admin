@@ -1,0 +1,80 @@
+/*!
+* ----------------------------------------------------------------------------------------------
+* Rundiz template page options -- styling page options elements.
+* ----------------------------------------------------------------------------------------------
+*/
+/* page options buttons */
+.rd-page-options-button {
+  background-color: var(--rdta-tpf-page-background-color);
+  border: 1px solid var(--rdta-tpf-block-border-color);
+  box-shadow: inset 0 var(--rdta-tpf-button-3d-pressed-height) 0 color-mix(in srgb, from var(--rdta-tpf-button-3d-edge-color), transparent 100%);
+  margin: 0;
+  transition: background-color 0.15s,box-shadow 0.15s;
+}
+.rd-page-options-button:active,
+.rd-page-options-button.active {
+  background-color: var(--rdta-tpf-page-background-color);
+  border: 1px solid var(--rdta-tpf-block-border-color);
+  box-shadow: inset 0 var(--rdta-tpf-button-3d-pressed-height) 0 var(--rdta-tpf-button-3d-edge-color);
+  top: auto;
+}
+.rd-page-options-button.active {
+  border-bottom: none;
+  z-index: 2;
+}
+.rd-page-options-buttons-row {
+  column-gap: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+@media (min-width: 768px) {
+  /* use `$sm-min-width` for `min-width` */
+  .rd-page-options-buttons-row {
+    float: right;
+  }
+}
+/* end page options buttons */
+.rd-page-options-container {
+  margin-bottom: var(--rdta-block-element-margin-horizontal);
+  margin-left: var(--rdta-block-element-margin-horizontal);
+  margin-right: var(--rdta-block-element-margin-horizontal);
+  position: relative;
+}
+/* page options contents row */
+.rd-page-options-contents-row {
+  position: relative;
+  top: -1px;
+}
+.rd-page-options-contents-row.opened {
+  clear: both;
+}
+.rd-page-options-contents-row > * {
+  border: 1px solid var(--rdta-tpf-block-border-color);
+  display: none;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 0;
+  padding-left: var(--rdta-content-block-element-margin-vertical);
+  padding-right: var(--rdta-content-block-element-margin-vertical);
+  padding-top: 0;
+  transition: height 0.3s,padding-bottom 0.3s,padding-top 0.3s;
+}
+.rd-page-options-contents-row > .active {
+  display: block;
+  height: auto;
+  /* for fallback on browser that doesn't supported `calc-size()`. */
+  height: calc-size(auto, size);
+  padding-bottom: var(--rdta-content-block-element-margin-vertical);
+  padding-top: var(--rdta-content-block-element-margin-vertical);
+}
+/* end page options contents row */
+@media (min-width: 768px) {
+  /* use `$sm-min-width` for `min-width` */
+  .rd-page-content > *:first-child::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+}
+/*# sourceMappingURL=rdta-page-options.css.map */

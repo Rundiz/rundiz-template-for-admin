@@ -81,6 +81,7 @@
                                 <li><a href="embeds.html">Embeds</a></li>
                                 <li><a href="form.html">Form</a></li>
                                 <li><a href="helpers.html">Helpers</a></li>
+                                <li><a href="page-options.html">Page options</a></li>
                                 <li><a href="pagination.html">Pagination</a></li>
                                 <li><a href="tabs.html">Tabs</a></li>
                                 <li><a href="text.html">Text</a></li>
@@ -89,7 +90,7 @@
                         </li>
                         <li><a href="#" title="Examples"><i class="sidebar-icon fa-solid fa-laptop-code"></i> <span class="rd-sidebar-menu-text">Examples</span></a>
                             <ul>
-                                <li><a href="basic-layout.html">Basic layout (getting started)</a></li>
+                                <li><a href="example-basic-layout.html">Basic layout (getting started)</a></li>
                                 <li><a href="example-login.html">Login page</a></li>
                                 <li><a href="example-logout.html">Logout page</a></li>
                             </ul>
@@ -284,12 +285,12 @@
                 </div><!--.rd-sidebar-inner-->
             </section><!--.rd-sidebar--> 
             <main>
-                    <nav>
-        <ul class="rd-breadcrumb">
-            <li><a href="./">Home</a></li>
-            <li class="current"><a href="#" onclick="return false;">Dialog</a></li>
-        </ul>
-    </nav>
+                <nav>
+                    <ul class="rd-breadcrumb">
+                        <li><a href="./">Home</a></li>
+                        <li class="current"><a href="#" onclick="return false;">Dialog</a></li>
+                    </ul>
+                </nav>
  
                 <div class="rd-page-content page-dialog">
                     <h1>Dialog</h1>
@@ -488,7 +489,7 @@
                         </div>
                     </div>
                     <h5>source</h5>
-                    <pre class="preview-source"><code class="language-html">&lt;div id=&quot;my-dialog&quot; class=&quot;rd-dialog-modal&quot; data-click-outside-not-close=&quot;true&quot;&gt;
+                    <pre><code class="language-html">&lt;div id=&quot;my-dialog&quot; class=&quot;rd-dialog-modal&quot; data-click-outside-not-close=&quot;true&quot;&gt;
     &lt;div class=&quot;rd-dialog&quot;&gt;...&lt;/div&gt;
 &lt;/div&gt;</code></pre>
                     <h3>Disable close on press escape key</h3>
@@ -514,7 +515,7 @@
                         </div>
                     </div>
                     <h5>source</h5>
-                    <pre class="preview-source"><code class="language-html">&lt;div class=&quot;rd-dialog&quot; data-esc-key-not-close=&quot;true&quot;&gt;...&lt;/div&gt;</code></pre>
+                    <pre><code class="language-html">&lt;div class=&quot;rd-dialog&quot; data-esc-key-not-close=&quot;true&quot;&gt;...&lt;/div&gt;</code></pre>
                     <h3>Sizes</h3>
                     <p>Dialog with different sizes by adding <code>rd-dialog-size-xxx</code> into dialog element.</p>
                     <button type="button" data-toggle="dialog" data-target="#dialog06">Open large dialog</button>
@@ -575,7 +576,7 @@
                         </dialog>
                     </div>
                     <h5>source</h5>
-                    <pre class="preview-source"><code class="language-html">&lt;div class=&quot;rd-dialog rd-dialog-size-large&quot;&gt;...&lt;/div&gt;
+                    <pre><code class="language-html">&lt;div class=&quot;rd-dialog rd-dialog-size-large&quot;&gt;...&lt;/div&gt;
 &lt;div class=&quot;rd-dialog rd-dialog-size-fullwindow&quot;&gt;...&lt;/div&gt;</code></pre>
 
                     <h2>Tooltips on modal dialog</h2>

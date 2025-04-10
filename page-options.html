@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Embeds | Rundiz template for admin</title>
+        <title>Page options | Rundiz template for admin</title>
         <link rel="stylesheet" href="assets/css/sanitize/sanitize.css?npm-v=github%3Acsstools%2Fsanitize.css%23main">
         <link rel="stylesheet" href="assets/css/sanitize/typography.css?npm-v=github%3Acsstools%2Fsanitize.css%23main">
         <link rel="stylesheet" href="assets/css/sanitize/forms.css?npm-v=github%3Acsstools%2Fsanitize.css%23main">
@@ -20,7 +20,7 @@
         <link class="exclude-preview" rel="stylesheet" href="assets/css-preview/documents.css?v=0a1cd9a6166c1c3500e52fadcb248409">
         <link class="exclude-preview" rel="stylesheet" href="assets/css-preview/view-source.css?v=882e2b16871a0ba615594d2595727886">
          
-        <link rel="stylesheet" href="assets/css/rdta/components/rdta-embeds.css?v=aecf5a0dfde43be843de2fc9eec355a7">
+        <link rel="stylesheet" href="assets/css/rdta/components/rdta-page-options.css?v=dc6af585033e671fb7c94f0f363c2926">
     </head>
     <body>
         <header class="rd-navbar">
@@ -288,64 +288,94 @@
                 <nav>
                     <ul class="rd-breadcrumb">
                         <li><a href="./">Home</a></li>
-                        <li class="current"><a href="#" onclick="return false;">Embeds</a></li>
+                        <li class="current"><a href="#" onclick="return false;">Page options</a></li>
                     </ul>
                 </nav>
  
+                <div class="rd-page-options-container code-sample-page-options-container">
+                    <div class="rd-page-options-buttons-row">
+                        <button class="rd-button small rd-page-options-button" type="button" aria-controls="rd-page-options-wrap" aria-expanded="false">
+                            <i class="fa-solid fa-sliders"></i> Page Options
+                        </button>
+                        <button class="rd-button small rd-page-options-button" type="button" aria-controls="rd-page-options-help-wrap" aria-expanded="false">
+                            <i class="fa-solid fa-question"></i> Help
+                        </button>
+                    </div><!--.rd-page-options-buttons-row-->
+                    <div class="rd-page-options-contents-row">
+                        <div id="rd-page-options-wrap" aria-label="Page Options">
+                            <div>You can use this area to display your page&#039;s options.</div>
+                        </div>
+                        <div id="rd-page-options-help-wrap" aria-label="Help">
+                            <div>Display any help message here.</div>
+                        </div>
+                    </div><!--.rd-page-options-contents-row-->
+                </div><!--.rd-page-options-container-->
+
                 <div class="rd-page-content">
-                    <h1>Embeds</h1>
-                    <p>Responsive video, embeded elements, or iframe.</p>
-                    <p>
-                        In order to make responsive embeds works, add this file.
-                        <strong>assets/css/rdta/components/rdta-embeds.css</strong>
+                    <h1>Page options</h1>
+                    <p>In order to make page options works, add these files. 
+                        <strong>assets/css/rdta/components/rdta-page-options.css</strong>, 
+                        <strong>assets/js/rdta/components/rdta-page-options.js</strong>
                     </p>
-                    <hr>
-
-                    <h2>Examples</h2>
-                    <div class="rd-embed-responsive rd-embed-responsive16by9 code-sample-embed-sample1">
-                        <iframe class="rd-embed-responsive-item" src="https://www.youtube.com/embed/KX3OnQeETdI"></iframe>
-                    </div>
+                    <p>Start by use the HTML elements as shown below.</p>
                     <h5>Source</h5>
-                    <pre class="preview-source" data-target-src=".code-sample-embed-sample1" data-target-src-remove-first-space="20"></pre>
-
-                    <h3>Aspect ratios</h3>
-                    <pre><code class="language-html">&lt;!-- 21:9 --&gt;
-&lt;div class=&quot;rd-embed-responsive rd-embed-responsive21by9&quot;&gt;
-    &lt;iframe class=&quot;rd-embed-responsive-item&quot; src=&quot;...&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;!-- 16:9 --&gt;
-&lt;div class=&quot;rd-embed-responsive rd-embed-responsive16by9&quot;&gt;
-    &lt;iframe class=&quot;rd-embed-responsive-item&quot; src=&quot;...&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;!-- 8:5 --&gt;
-&lt;div class=&quot;rd-embed-responsive rd-embed-responsive8by5&quot;&gt;
-    &lt;iframe class=&quot;rd-embed-responsive-item&quot; src=&quot;...&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;!-- 4:3 --&gt;
-&lt;div class=&quot;rd-embed-responsive rd-embed-responsive4by3&quot;&gt;
-    &lt;iframe class=&quot;rd-embed-responsive-item&quot; src=&quot;...&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;!-- 3:2 --&gt;
-&lt;div class=&quot;rd-embed-responsive rd-embed-responsive3by2&quot;&gt;
-    &lt;iframe class=&quot;rd-embed-responsive-item&quot; src=&quot;...&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;!-- 1:1 --&gt;
-&lt;div class=&quot;rd-embed-responsive rd-embed-responsive1by1&quot;&gt;
-    &lt;iframe class=&quot;rd-embed-responsive-item&quot; src=&quot;...&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-</code></pre>
-                    <h3>Video element</h3>
-                    <div class="rd-embed-responsive rd-embed-responsive4by3 code-sample-embed-videoelement">
-                        <video class="rd-embed-responsive-item" src="assets/multimedia/sample-video.mp4" controls height="240" width="320"></video>
-                    </div>
+                    <pre><code class="language-html">&lt;div class=&quot;rd-page-options-container&quot;&gt;
+    &lt;div class=&quot;rd-page-options-buttons-row&quot;&gt;
+        &lt;button class=&quot;rd-button small rd-page-options-button&quot; type=&quot;button&quot; aria-controls=&quot;rd-page-options-wrap&quot; aria-expanded=&quot;false&quot;&gt;
+            &lt;i class=&quot;fa-solid fa-sliders&quot;&gt;&lt;/i&gt; Page Options
+        &lt;/button&gt;
+        &lt;button class=&quot;rd-button small rd-page-options-button&quot; type=&quot;button&quot; aria-controls=&quot;rd-page-options-help-wrap&quot; aria-expanded=&quot;false&quot;&gt;
+            &lt;i class=&quot;fa-solid fa-question&quot;&gt;&lt;/i&gt; Help
+        &lt;/button&gt;
+    &lt;/div&gt;&lt;!--.rd-page-options-buttons-row--&gt;
+    &lt;div class=&quot;rd-page-options-contents-row&quot;&gt;
+        &lt;div id=&quot;rd-page-options-wrap&quot; aria-label=&quot;Page Options&quot;&gt;
+            ...
+        &lt;/div&gt;
+        &lt;div id=&quot;rd-page-options-help-wrap&quot; aria-label=&quot;Help&quot;&gt;
+            ...
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;!--.rd-page-options-contents-row--&gt;
+&lt;/div&gt;</code></pre>
+                    <p>Copy the HTML above and paste them before the element that contain class <code>.rd-page-content</code>.</p>
                     <h5>Source</h5>
-                    <pre class="preview-source" data-target-src=".code-sample-embed-videoelement" data-target-src-remove-first-space="20"></pre>
+                    <pre><code class="language-html">&lt;div class=&quot;rd-page-options-container&quot;&gt;
+    ...
+&lt;/div&gt;
+&lt;div class=&quot;rd-page-content&quot;&gt;
+    &lt;!-- Yout admin page start here. --&gt;
+&lt;/div&gt;</code></pre>
+                    <p>Then enable its functional.</p>
+                    <h5>Source</h5>
+                    <pre><code class="language-js">document.addEventListener('DOMContentLoaded', function() {
+    RDTAPageOptions.init();
+});</code></pre>
+                    <h3>Events</h3>
+                    <p>RDTA page options have few events for hooking.</p>
+                    <table class="rd-datatable">
+                        <thead>
+                            <tr>
+                                <th>Event type</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>rdta.pageoptions.opened</td>
+                                <td>This event is fired when page option was completely opened. This means after other page option was closed except currently active.</td>
+                            </tr>
+                            <tr>
+                                <td>rdta.pageoptions.closed</td>
+                                <td>This event is fired when page option was closed.</td>
+                            </tr>
+                            <tr>
+                                <td>rdta.pageoptions.closed.other</td>
+                                <td>This event is fired when other page options was closed except the active one.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>The sample events will be show below this line. Open browser console to see more details.</p>
+                    <div class="rd-page-options-events rdta-demopage-debugbox"></div>
                 </div><!--.rd-page-content-->
             </main>
             <footer>
@@ -374,5 +404,28 @@
         <script class="exclude-preview" src="assets/js-preview/view-target-source.js?v=c9c8f5d72845b3693400fb9490283bfa"></script>
         <script class="exclude-preview" src="assets/js-preview/view-source.js?v=a7a9a35d448fd74928624a3f56b5bfdc"></script>
         <script class="exclude-preview" src="assets/js-preview/document-utils.js?v=73715f0a453f151dc904badc2234118e"></script> 
+        <script src="assets/js/rdta/components/rdta-page-options.js"></script>
+        <script>
+            function rdtaDebugPageOptionsEvents() {
+                document.body.addEventListener('rdta.pageoptions.opened', (event) => {
+                    document.querySelector('.rd-page-options-events').insertAdjacentHTML('beforeend', 'Page options opened<br>');
+                    console.log('rdta.pageoptions.opened', event.detail);
+                });
+                document.body.addEventListener('rdta.pageoptions.closed', (event) => {
+                    document.querySelector('.rd-page-options-events').insertAdjacentHTML('beforeend', 'Page options closed<br>');
+                    console.log('rdta.pageoptions.closed', event.detail);
+                });
+                document.body.addEventListener('rdta.pageoptions.closed.other', (event) => {
+                    document.querySelector('.rd-page-options-events').insertAdjacentHTML('beforeend', 'Other page options closed<br>');
+                    console.log('rdta.pageoptions.closed.other', event.detail);
+                });
+            }// rdtaDebugPageOptionsEvents
+
+
+            document.addEventListener('DOMContentLoaded', function() {
+                RDTAPageOptions.init();
+                rdtaDebugPageOptionsEvents();
+            });
+        </script>
     </body>
 </html>
