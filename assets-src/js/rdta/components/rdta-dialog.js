@@ -204,6 +204,8 @@ class RDTADialog {
     /**
      * Activate (open) the dialog.
      * 
+     * This method was called from `init()` and somewhere else outside the class.
+     * 
      * @param {string} selector The JS selector. It can be CSS class or HTML ID.
      * @param {object} options The options.
      * @param {boolean} options.focusDialog Set to `false` to do not focus on dialog. Default is `true`.
@@ -279,6 +281,11 @@ class RDTADialog {
                 dialogOrModalElement.dispatchEvent(event);
             }, 301);// 301 is from css transition 0.3s (300) + 1.
         }// endif; dialog is not showed.
+
+        // add listening to close dialog.
+        thisClass.#listenOnClickButtonClose();
+        thisClass.#listenOnEscapeKeyClose();
+        thisClass.#listenOnClickOutsideClose();
     }// activateDialog
 
 
@@ -331,11 +338,6 @@ class RDTADialog {
                 }
             }
         });
-
-        thisClass.#listenOnClickButtonClose();
-
-        thisClass.#listenOnEscapeKeyClose();
-        thisClass.#listenOnClickOutsideClose();
     }// init
 
 
