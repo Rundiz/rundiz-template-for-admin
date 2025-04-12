@@ -33,6 +33,13 @@ class RDTADialog {
 
 
     /**
+     * @since 2.4.3
+     * @type Boolean Mark as `true` means it is already listened events for close dialog. `false` for otherwise.
+     */
+    #listenedEventsClose = false;
+
+
+    /**
      * @type String The modal (backdrop) class name.
      */
     #modalClassName = 'rd-dialog-modal';
@@ -282,10 +289,15 @@ class RDTADialog {
             }, 301);// 301 is from css transition 0.3s (300) + 1.
         }// endif; dialog is not showed.
 
-        // add listening to close dialog.
-        thisClass.#listenOnClickButtonClose();
-        thisClass.#listenOnEscapeKeyClose();
-        thisClass.#listenOnClickOutsideClose();
+        if (true !== this.#listenedEventsClose) {
+            // if not listening events for close dialog.
+            // add listening to close dialog.
+            this.#listenOnClickButtonClose();
+            this.#listenOnEscapeKeyClose();
+            this.#listenOnClickOutsideClose();
+            // mark as listened.
+            this.#listenedEventsClose = true;
+        }
     }// activateDialog
 
 
