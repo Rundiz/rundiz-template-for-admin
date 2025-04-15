@@ -24,9 +24,8 @@ include 'includes/html-head.php';
                     <hr>
 
                     <h2 id="tabs-example">Examples</h2>
-                    <p>Basic tabs HTML element. 
-                        Please note that the borders with dashed line around the examples are only appears in this document just to let you know its boundary.
-                    </p>
+                    <p>Please note that the borders with dashed line around the examples are only appears in this document just to let you know its boundary.</p>
+                    <p>Basic tabs HTML element.</p>
                     <div class="tabs code-sample-tabs-sample1">
                         <ul>
                             <li><a href="#tabs-1"><abbr title="Rundiz template for admin">RDTA</abbr> tabs</a></li>
@@ -68,8 +67,23 @@ include 'includes/html-head.php';
                             <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
                         </div>
                     </div>
+                    <h5>Source</h5>
+                    <pre><code class="language-html"><?php 
+$sampleHTML = <<<EOT
+<div class="tabs">
+    <ol>
+        <li><a href="#tabs2-1">...</a></li>
+        ...
+    </ol>
+    <div id="tabs2-1">...</div>
+    ...
+</div>
+EOT;
+                    echo trim(htmlspecialchars($sampleHTML, ENT_QUOTES));
+                    unset($sampleHTML);
+                    ?></code></pre>
                     <h3>With pre-defined CSS classes.</h3>
-                    <p><abbr title="Rundiz template for admin">RDTA</abbr> can also use pre-defined CSS classes.</p>
+                    <p><abbr title="Rundiz template for admin">RDTA</abbr> can also use pre-defined CSS classes. Usually these classes will be automatically added by JS but pre-defined them make your page display faster.</p>
                     <div class="tabs rd-tabs code-sample-tabs-predefinedclasses">
                         <ul class="rd-tabs-nav">
                             <li class="active"><a href="#tabs-1_1">Tab 1</a></li>
@@ -88,6 +102,35 @@ include 'includes/html-head.php';
                     </div>
                     <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-tabs-predefinedclasses" data-target-src-remove-first-space="20"></pre>
+                    <h3>No padding space around tabs element</h3>
+                    <p class="rdta-version-info">(Since v.2.4.4)</p>
+                    <p>Add class <code>rd-tabs-no-padding</code> to the tabs element where tabs element may have class <code>rd-tabs</code> by pre-defined or automatic added by the JS.</p>
+                    <div class="tabs rd-tabs-no-padding">
+                        <ul class="rd-tabs-nav">
+                            <li class="active"><a href="#tabs-1_1">Tab 1</a></li>
+                            <li><a href="#tabs-1_2">Tab 2</a></li>
+                            <li><a href="#tabs-1_3">Tab 3</a></li>
+                        </ul>
+                        <div id="tabs-1_1" class="rd-tabs-content active">
+                            <p>Tab 1 content.</p>
+                        </div>
+                        <div id="tabs-1_2" class="rd-tabs-content">
+                            <p>Tab 2 content.</p>
+                        </div>
+                        <div id="tabs-1_3" class="rd-tabs-content">
+                            <p>Tab 3 content.</p>
+                        </div>
+                    </div>
+                    <h5>Source</h5>
+                    <pre><code class="language-html"><?php 
+$sampleHTML = <<<EOT
+<div class="tabs rd-tabs-no-padding">
+    ...
+</div>
+EOT;
+                    echo trim(htmlspecialchars($sampleHTML, ENT_QUOTES));
+                    unset($sampleHTML);
+                    ?></code></pre>
                     <h3>Many tabs.</h3>
                     <p>Resize your browser to see how responsive tabs navbar work.</p>
                     <div class="tabs rd-content-level-margin-bottom">
