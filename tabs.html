@@ -14,13 +14,13 @@
         <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?v=49e159bb1b8cc5ae941d93c1508e901e">
 
         <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?v=518b758b0781d12ea587ed38099297c4">
-        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?v=b2d3a66f94f31f47f437b9761335059c">
+        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?v=8f5ce2e6cdccfd76a8d54ebb27762916">
 
         <link class="exclude-preview" rel="stylesheet" href="assets/css-preview/prism.css?v=de20a76f891181fd461354e782db7a0f">
-        <link class="exclude-preview" rel="stylesheet" href="assets/css-preview/documents.css?v=0a1cd9a6166c1c3500e52fadcb248409">
+        <link class="exclude-preview" rel="stylesheet" href="assets/css-preview/documents.css?v=6e15a6ba693353f75da0d82ae4b04e8e">
         <link class="exclude-preview" rel="stylesheet" href="assets/css-preview/view-source.css?v=882e2b16871a0ba615594d2595727886">
          
-        <link rel="stylesheet" href="assets/css/rdta/components/rdta-tabs.css?v=cd8433e88ac3b67552a156625902ce97">
+        <link rel="stylesheet" href="assets/css/rdta/components/rdta-tabs.css?v=38776da5467d83f55703e2aa69b0145a">
     </head>
     <body>
         <header class="rd-navbar">
@@ -302,9 +302,8 @@
                     <hr>
 
                     <h2 id="tabs-example">Examples</h2>
-                    <p>Basic tabs HTML element. 
-                        Please note that the borders with dashed line around the examples are only appears in this document just to let you know its boundary.
-                    </p>
+                    <p>Please note that the borders with dashed line around the examples are only appears in this document just to let you know its boundary.</p>
+                    <p>Basic tabs HTML element.</p>
                     <div class="tabs code-sample-tabs-sample1">
                         <ul>
                             <li><a href="#tabs-1"><abbr title="Rundiz template for admin">RDTA</abbr> tabs</a></li>
@@ -346,8 +345,17 @@
                             <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
                         </div>
                     </div>
+                    <h5>Source</h5>
+                    <pre><code class="language-html">&lt;div class=&quot;tabs&quot;&gt;
+    &lt;ol&gt;
+        &lt;li&gt;&lt;a href=&quot;#tabs2-1&quot;&gt;...&lt;/a&gt;&lt;/li&gt;
+        ...
+    &lt;/ol&gt;
+    &lt;div id=&quot;tabs2-1&quot;&gt;...&lt;/div&gt;
+    ...
+&lt;/div&gt;</code></pre>
                     <h3>With pre-defined CSS classes.</h3>
-                    <p><abbr title="Rundiz template for admin">RDTA</abbr> can also use pre-defined CSS classes.</p>
+                    <p><abbr title="Rundiz template for admin">RDTA</abbr> can also use pre-defined CSS classes. Usually these classes will be automatically added by JS but pre-defined them make your page display faster.</p>
                     <div class="tabs rd-tabs code-sample-tabs-predefinedclasses">
                         <ul class="rd-tabs-nav">
                             <li class="active"><a href="#tabs-1_1">Tab 1</a></li>
@@ -366,6 +374,29 @@
                     </div>
                     <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-tabs-predefinedclasses" data-target-src-remove-first-space="20"></pre>
+                    <h3>No padding space around tabs element</h3>
+                    <p class="rdta-version-info">(Since v.2.4.4)</p>
+                    <p>Add class <code>rd-tabs-no-padding</code> to the tabs element where tabs element may have class <code>rd-tabs</code> by pre-defined or automatic added by the JS.</p>
+                    <div class="tabs rd-tabs-no-padding">
+                        <ul class="rd-tabs-nav">
+                            <li class="active"><a href="#tabs-1_1">Tab 1</a></li>
+                            <li><a href="#tabs-1_2">Tab 2</a></li>
+                            <li><a href="#tabs-1_3">Tab 3</a></li>
+                        </ul>
+                        <div id="tabs-1_1" class="rd-tabs-content active">
+                            <p>Tab 1 content.</p>
+                        </div>
+                        <div id="tabs-1_2" class="rd-tabs-content">
+                            <p>Tab 2 content.</p>
+                        </div>
+                        <div id="tabs-1_3" class="rd-tabs-content">
+                            <p>Tab 3 content.</p>
+                        </div>
+                    </div>
+                    <h5>Source</h5>
+                    <pre><code class="language-html">&lt;div class=&quot;tabs rd-tabs-no-padding&quot;&gt;
+    ...
+&lt;/div&gt;</code></pre>
                     <h3>Many tabs.</h3>
                     <p>Resize your browser to see how responsive tabs navbar work.</p>
                     <div class="tabs rd-content-level-margin-bottom">
@@ -762,7 +793,7 @@
             </main>
             <footer>
                 <div class="rd-page-footer-left">Visit my <a href="https://github.com/Rundiz/rundiz-template-for-admin" target="_blank">GitHub</a></div>
-                <div class="rd-page-footer-right"><a href="https://rundiz.com" target="_blank">Rundiz</a> template for admin 2.4.3</div>
+                <div class="rd-page-footer-right"><a href="https://rundiz.com" target="_blank">Rundiz</a> template for admin 2.4.4dev-20250415</div>
             </footer> 
         </div><!--.rd-page-wrapper-->
         
@@ -780,7 +811,7 @@
         <script src="assets/js/sticky-sidebar/jquery.sticky-sidebar.min.js?npm-v=3.3.1"></script>
         <script src="assets/js/resize-sensor/ResizeSensor.js?v=8652505c23e8fdc8016445c5e13bee64"></script><!-- use with sticky sidebar js. -->
 
-        <script src="assets/js/rdta/rundiz-template-admin.js?v=6f2fa7486c42162be530866484a25517"></script>
+        <script src="assets/js/rdta/rundiz-template-admin.js?v=7a66b9c3af979d512e9051ac0820ec18"></script>
 
         <script class="exclude-preview" src="assets/js-preview/prism.js?v=0718daece78cc150461b32c0ceab4fab" data-manual></script>
         <script class="exclude-preview" src="assets/js-preview/view-target-source.js?v=c9c8f5d72845b3693400fb9490283bfa"></script>

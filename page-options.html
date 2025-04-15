@@ -14,13 +14,14 @@
         <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?v=49e159bb1b8cc5ae941d93c1508e901e">
 
         <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?v=518b758b0781d12ea587ed38099297c4">
-        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?v=b2d3a66f94f31f47f437b9761335059c">
+        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?v=8f5ce2e6cdccfd76a8d54ebb27762916">
 
         <link class="exclude-preview" rel="stylesheet" href="assets/css-preview/prism.css?v=de20a76f891181fd461354e782db7a0f">
-        <link class="exclude-preview" rel="stylesheet" href="assets/css-preview/documents.css?v=0a1cd9a6166c1c3500e52fadcb248409">
+        <link class="exclude-preview" rel="stylesheet" href="assets/css-preview/documents.css?v=6e15a6ba693353f75da0d82ae4b04e8e">
         <link class="exclude-preview" rel="stylesheet" href="assets/css-preview/view-source.css?v=882e2b16871a0ba615594d2595727886">
          
         <link rel="stylesheet" href="assets/css/rdta/components/rdta-page-options.css?v=dc6af585033e671fb7c94f0f363c2926">
+        <link rel="stylesheet" href="assets/css/rdta/components/rdta-tabs.css?v=38776da5467d83f55703e2aa69b0145a">
     </head>
     <body>
         <header class="rd-navbar">
@@ -303,16 +304,62 @@
                     </div><!--.rd-page-options-buttons-row-->
                     <div class="rd-page-options-contents-row">
                         <div id="rd-page-options-wrap" aria-label="Page Options">
-                            <div>You can use this area to display your page&#039;s options.</div>
+                            <p>Sample with class <code>rd-form</code> and horizontal form.</p>
+                            <form class="rd-form horizontal">
+                                <div class="form-group">
+                                    <label class="control-label" for="input-type-text2">Input text</label>
+                                    <div class="control-wrapper">
+                                        <input id="input-type-text2" type="text">
+                                        <div class="form-description">The help message about this form input.</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Checkboxes</label>
+                                    <div class="control-wrapper">
+                                        <label><input type="checkbox"> Checkbox 1</label><br>
+                                        <label><input type="checkbox"> Checkbox 2</label><br>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Checkboxes inline</label>
+                                    <div class="control-wrapper">
+                                        <label><input type="checkbox"> Option 1</label>
+                                        <label><input type="checkbox"> Option 2</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label"></label>
+                                    <div class="control-wrapper">
+                                        <button class="rd-button primary" type="button">Save</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <form>
+                                Just checkboxes in the form without class <code>rd-form</code><br>
+                                <label><input type="checkbox"> Option 1</label>
+                                <label><input type="checkbox"> Option 2</label>
+                            </form>
                         </div>
                         <div id="rd-page-options-help-wrap" aria-label="Help">
-                            <div>Display any help message here.</div>
+                            <div class="tabs tabs-vertical rd-tabs-no-padding">
+                                <ul>
+                                    <li><a href="#" data-targettab="#tabs-v1">Overview</a></li>
+                                    <li><a href="#" data-targettab="#tabs-v2">Navigation</a></li>
+                                </ul>
+                                <div id="tabs-v1">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque venenatis dolor volutpat, cursus purus eget, tincidunt risus.</p>
+                                </div>
+                                <div id="tabs-v2">
+                                    <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis.</p>
+                                </div>
+                            </div>
                         </div>
                     </div><!--.rd-page-options-contents-row-->
                 </div><!--.rd-page-options-container-->
 
                 <div class="rd-page-content">
                     <h1>Page options</h1>
+                    <p class="rdta-version-info">(Since v.2.4.1)</p>
                     <p>In order to make page options works, add these files. 
                         <strong>assets/css/rdta/components/rdta-page-options.css</strong>, 
                         <strong>assets/js/rdta/components/rdta-page-options.js</strong>
@@ -380,7 +427,7 @@
             </main>
             <footer>
                 <div class="rd-page-footer-left">Visit my <a href="https://github.com/Rundiz/rundiz-template-for-admin" target="_blank">GitHub</a></div>
-                <div class="rd-page-footer-right"><a href="https://rundiz.com" target="_blank">Rundiz</a> template for admin 2.4.3</div>
+                <div class="rd-page-footer-right"><a href="https://rundiz.com" target="_blank">Rundiz</a> template for admin 2.4.4dev-20250415</div>
             </footer> 
         </div><!--.rd-page-wrapper-->
         
@@ -398,13 +445,14 @@
         <script src="assets/js/sticky-sidebar/jquery.sticky-sidebar.min.js?npm-v=3.3.1"></script>
         <script src="assets/js/resize-sensor/ResizeSensor.js?v=8652505c23e8fdc8016445c5e13bee64"></script><!-- use with sticky sidebar js. -->
 
-        <script src="assets/js/rdta/rundiz-template-admin.js?v=6f2fa7486c42162be530866484a25517"></script>
+        <script src="assets/js/rdta/rundiz-template-admin.js?v=7a66b9c3af979d512e9051ac0820ec18"></script>
 
         <script class="exclude-preview" src="assets/js-preview/prism.js?v=0718daece78cc150461b32c0ceab4fab" data-manual></script>
         <script class="exclude-preview" src="assets/js-preview/view-target-source.js?v=c9c8f5d72845b3693400fb9490283bfa"></script>
         <script class="exclude-preview" src="assets/js-preview/view-source.js?v=a7a9a35d448fd74928624a3f56b5bfdc"></script>
         <script class="exclude-preview" src="assets/js-preview/document-utils.js?v=73715f0a453f151dc904badc2234118e"></script> 
         <script src="assets/js/rdta/components/rdta-page-options.js"></script>
+        <script src="assets/js/rdta/components/rdta-tabs.js"></script>
         <script>
             function rdtaDebugPageOptionsEvents() {
                 document.body.addEventListener('rdta.pageoptions.opened', (event) => {
@@ -425,6 +473,8 @@
             document.addEventListener('DOMContentLoaded', function() {
                 RDTAPageOptions.init();
                 rdtaDebugPageOptionsEvents();
+
+                RDTATabs.init('.tabs');
             });
         </script>
     </body>
