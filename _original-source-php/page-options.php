@@ -7,6 +7,7 @@ $title = 'Page options';
 include 'includes/html-head.php'; 
 ?> 
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta/components/rdta-page-options.css'); ?>">
+        <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta/components/rdta-tabs.css'); ?>">
     </head>
     <body>
 <?php include 'includes/partials/page-header.php'; ?> 
@@ -25,16 +26,62 @@ include 'includes/html-head.php';
                     </div><!--.rd-page-options-buttons-row-->
                     <div class="rd-page-options-contents-row">
                         <div id="rd-page-options-wrap" aria-label="Page Options">
-                            <div>You can use this area to display your page&#039;s options.</div>
+                            <p>Sample with class <code>rd-form</code> and horizontal form.</p>
+                            <form class="rd-form horizontal">
+                                <div class="form-group">
+                                    <label class="control-label" for="input-type-text2">Input text</label>
+                                    <div class="control-wrapper">
+                                        <input id="input-type-text2" type="text">
+                                        <div class="form-description">The help message about this form input.</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Checkboxes</label>
+                                    <div class="control-wrapper">
+                                        <label><input type="checkbox"> Checkbox 1</label><br>
+                                        <label><input type="checkbox"> Checkbox 2</label><br>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Checkboxes inline</label>
+                                    <div class="control-wrapper">
+                                        <label><input type="checkbox"> Option 1</label>
+                                        <label><input type="checkbox"> Option 2</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label"></label>
+                                    <div class="control-wrapper">
+                                        <button class="rd-button primary" type="button">Save</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <form>
+                                Just checkboxes in the form without class <code>rd-form</code><br>
+                                <label><input type="checkbox"> Option 1</label>
+                                <label><input type="checkbox"> Option 2</label>
+                            </form>
                         </div>
                         <div id="rd-page-options-help-wrap" aria-label="Help">
-                            <div>Display any help message here.</div>
+                            <div class="tabs tabs-vertical rd-tabs-no-padding">
+                                <ul>
+                                    <li><a href="#" data-targettab="#tabs-v1">Overview</a></li>
+                                    <li><a href="#" data-targettab="#tabs-v2">Navigation</a></li>
+                                </ul>
+                                <div id="tabs-v1">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque venenatis dolor volutpat, cursus purus eget, tincidunt risus.</p>
+                                </div>
+                                <div id="tabs-v2">
+                                    <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis.</p>
+                                </div>
+                            </div>
                         </div>
                     </div><!--.rd-page-options-contents-row-->
                 </div><!--.rd-page-options-container-->
 
                 <div class="rd-page-content">
                     <h1><?php echo $title; ?></h1>
+                    <p class="rdta-version-info">(Since v.2.4.1)</p>
                     <p>In order to make page options works, add these files. 
                         <strong>assets/css/rdta/components/rdta-page-options.css</strong>, 
                         <strong>assets/js/rdta/components/rdta-page-options.js</strong>
@@ -118,6 +165,7 @@ EOT;
 
 <?php include 'includes/js-end-body.php'; ?> 
         <script src="assets/js/rdta/components/rdta-page-options.js"></script>
+        <script src="assets/js/rdta/components/rdta-tabs.js"></script>
         <script>
             function rdtaDebugPageOptionsEvents() {
                 document.body.addEventListener('rdta.pageoptions.opened', (event) => {
@@ -138,6 +186,8 @@ EOT;
             document.addEventListener('DOMContentLoaded', function() {
                 RDTAPageOptions.init();
                 rdtaDebugPageOptionsEvents();
+
+                RDTATabs.init('.tabs');
             });
         </script>
     </body>
