@@ -79,6 +79,10 @@ class RDTAPageOptions {
         await new Promise(r => setTimeout(r, 1));// delay to let transition work.
         pageContent.style.top = topValue;
 
+        if (typeof(rdta_debug) !== 'undefined' && true === rdta_debug) {
+            console.debug('[rdta][page options] closed content row');
+        }
+
         return new Promise((resolve) => {
             setTimeout(() => {
                 contentRow.classList.remove('opened');
@@ -118,6 +122,10 @@ class RDTAPageOptions {
             }
         });
 
+        if (typeof(rdta_debug) !== 'undefined' && true === rdta_debug) {
+            console.debug('[rdta][page options] closed other content row wrap');
+        }
+
         if (closed > 0) {
             // fire event.
             let event = new CustomEvent('rdta.pageoptions.closed.other', {
@@ -144,6 +152,10 @@ class RDTAPageOptions {
         button.classList.remove('active');
         button.setAttribute(this.#ariaExpandedName, 'false');
         contentRowWrap?.classList?.remove('active');
+
+        if (typeof(rdta_debug) !== 'undefined' && true === rdta_debug) {
+            console.debug('[rdta][page options] closed content row wrap');
+        }
         if (true === delay) {
             await new Promise(r => setTimeout(r, 240));// delay before remove style. time must related to CSS transition of `.rd-page-options-contents-row > *`.
         }
@@ -166,6 +178,10 @@ class RDTAPageOptions {
         contentRowWrap.style.display = 'block';
         await new Promise(r => setTimeout(r, 5));// delay before add class.
         contentRowWrap?.classList?.add('active');
+
+        if (typeof(rdta_debug) !== 'undefined' && true === rdta_debug) {
+            console.debug('[rdta][page options] opened content row wrap');
+        }
     }// #doOpenContentRowWrap
 
 
@@ -177,6 +193,10 @@ class RDTAPageOptions {
      * @returns {undefined}
      */
     #listenOnClickButtons() {
+        if (typeof(rdta_debug) !== 'undefined' && true === rdta_debug) {
+            console.debug('[rdta][page options] listening click buttons');
+        }
+
         const buttons = document.querySelectorAll('.' + this.#pageOptionsTogglerButtonClassName);
         if (buttons) {
             buttons.forEach((button) => {
@@ -190,6 +210,11 @@ class RDTAPageOptions {
                 }
 
                 button.addEventListener('click', async (event) => {
+                    event.preventDefault();
+                    if (typeof(rdta_debug) !== 'undefined' && true === rdta_debug) {
+                        console.debug('[rdta][page options] click on page options button');
+                    }
+
                     const isExpanded = button.getAttribute(this.#ariaExpandedName);
                     const contentRowWrap = contentRow.querySelector('#' + targetElementID);
                     if ('true' === isExpanded) {
@@ -260,6 +285,10 @@ class RDTAPageOptions {
         pageContent.style.top = 0;
         await new Promise(r => setTimeout(r, 1));// delay to let transition work.
         pageContent.style.top = topValue;
+
+        if (typeof(rdta_debug) !== 'undefined' && true === rdta_debug) {
+            console.debug('[rdta][page options] opened content row');
+        }
 
         return new Promise((resolve) => {
             setTimeout(() => {

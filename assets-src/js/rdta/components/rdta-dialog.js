@@ -91,6 +91,9 @@ class RDTADialog {
             // close with JS.
             dialogElement.close();
         }
+        if (typeof(rdta_debug) !== 'undefined' && true === rdta_debug) {
+            console.debug('[rdta][dialog] dialog closed');
+        }
 
         // fire custom event.
         const customEvent = new Event('rdta.dialog.closed');
@@ -120,6 +123,10 @@ class RDTADialog {
             if ('dialog' === thisTarget.dataset.dismiss) {
                 // if clicking on button or link that contain HTML attribute to close dialog.
                 event.preventDefault();
+
+                if (typeof(rdta_debug) !== 'undefined' && true === rdta_debug) {
+                    console.debug('[rdta][dialog] clicked button close');
+                }
 
                 const dialogElement = thisTarget.closest('.' + this.#dialogClassName);
                 const modalElement = thisTarget.closest('.' + this.#modalClassName);
@@ -153,6 +160,10 @@ class RDTADialog {
             ) {
                 // if there is no HTML attribute `data-click-outside-not-close="true"` on the modal element.
                 event.preventDefault();
+
+                if (typeof(rdta_debug) !== 'undefined' && true === rdta_debug) {
+                    console.debug('[rdta][dialog] clicked outside close');
+                }
 
                 this.#doClose(null, modalElement);
             }
@@ -282,6 +293,10 @@ class RDTADialog {
                 }
             }
 
+            if (typeof(rdta_debug) !== 'undefined' && true === rdta_debug) {
+                console.debug('[rdta][dialog] dialog activated (opened)');
+            }
+
             // fire event.
             setTimeout(function() {
                 let event = new Event('rdta.dialog.opened');
@@ -344,6 +359,11 @@ class RDTADialog {
                 'dialog' === event.currentTarget?.activeElement?.dataset?.toggle
             ) {
                 event.stopPropagation();
+
+                if (typeof(rdta_debug) !== 'undefined' && true === rdta_debug) {
+                    console.debug('[rdta][dialog] clicked to open');
+                }
+
                 let targetDialog = event.currentTarget.activeElement.dataset.target;
                 if (targetDialog) {
                     thisClass.activateDialog(targetDialog);
