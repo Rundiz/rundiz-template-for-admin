@@ -69,12 +69,5 @@
   padding-top: var(--rdta-content-block-element-margin-vertical);
 }
 /* end page options contents row */
-@media (min-width: 768px) {
-  /* use `$sm-min-width` for `min-width` */
-  .rd-page-content > *:first-child::after {
-    clear: both;
-    content: "";
-    display: block;
-  }
-}
+
 /*# sourceMappingURL=rdta-page-options.css.map */
