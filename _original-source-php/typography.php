@@ -20,6 +20,7 @@ $title = 'Typography & reset';
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/sanitize/typography.css', ['npm' => 'sanitize.css']); ?>">
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/sanitize/forms.css', ['npm' => 'sanitize.css']); ?>">
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta/typo-and-form/typo-and-form.css'); ?>">
+        <link class="exclude-preview" rel="stylesheet" href="<?php echo assetUrl('assets/css-preview/documents.css'); ?>">
         <style>
             main {
                 margin: 0 auto; 

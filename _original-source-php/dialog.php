@@ -47,8 +47,10 @@ include 'includes/html-head.php';
                     <h5>source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-dialog-sample1" data-target-src-remove-first-space="20"></pre>
                     <h3>Use HTML <code>&lt;dialog&gt;</code></h3>
-                    <p>Example below use HTML <code>&lt;dialog&gt;</code>. (See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog" target="_blank">reference</a>.)</p>
-                    <dialog class="rd-dialog code-sample-dialog-htmldialog" open aria-labelledby="example-dialog-label-htmldialog">
+                    <p>Example below use HTML <code>&lt;dialog&gt;</code>. 
+                        (See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog" target="_blank">reference</a>.)
+                    </p>
+                    <dialog id="example-dialog-htmldialog" class="rd-dialog code-sample-dialog-htmldialog" aria-labelledby="example-dialog-label-htmldialog">
                         <div class="rd-dialog-header">
                             <h4 id="example-dialog-label-htmldialog" class="rd-dialog-title">Dialog header</h4>
                             <button class="rd-dialog-close" type="button" aria-label="Close" data-dismiss="dialog">

@@ -85,6 +85,11 @@ This CSS file is for document pages only. It is no need on your project.
     margin-left: auto;
     margin-right: auto;
 }
+
+#example-dialog-htmldialog {
+    /* also work with typography page. */
+    display: block !important;
+}
 /* end page dialog */
 
 
