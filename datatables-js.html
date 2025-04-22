@@ -14,15 +14,15 @@
         <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?v=49e159bb1b8cc5ae941d93c1508e901e">
 
         <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?v=518b758b0781d12ea587ed38099297c4">
-        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?v=f08928eb178325262b9f68197ede7875">
+        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?v=825e0294084d3752128fbd42cadbbb46">
 
         <link class="exclude-preview" rel="stylesheet" href="assets/css-preview/prism.css?v=de20a76f891181fd461354e782db7a0f">
         <link class="exclude-preview" rel="stylesheet" href="assets/css-preview/documents.css?v=723a2316bd4d6e8a361b431002473a2c">
         <link class="exclude-preview" rel="stylesheet" href="assets/css-preview/view-source.css?v=882e2b16871a0ba615594d2595727886">
          
-        <link rel="stylesheet" href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
-        <link rel="stylesheet" href="//cdn.datatables.net/responsive/2.4.1/css/responsive.dataTables.min.css">
-        <link rel="stylesheet" href="assets/css/rdta/components/rdta-datatables-js.css?v=5fac3204dc82fcd995e51937cdb861f9">
+        <link class="datatables-js" rel="stylesheet" href="//cdn.datatables.net/2.2.2/css/dataTables.dataTables.min.css">
+        <link class="datatables-js" rel="stylesheet" href="//cdn.datatables.net/responsive/3.0.4/css/responsive.dataTables.min.css">
+        <link rel="stylesheet" href="assets/css/rdta/components/rdta-datatables-js.css?v=0954d9562e1b489d20cfc5ef92ad3b72">
     </head>
     <body>
         <header class="rd-navbar">
@@ -296,7 +296,8 @@
  
                 <div class="rd-page-content page-datatable">
                     <h1>DataTables JS by datatables.net</h1>
-                    <p>Custom style for <a href="https://datatables.net/" target="datatables">DataTables JS</a>.</p>
+                    <p class="rdta-version-info">(Since v.2.3.0)</p>
+                    <p>Custom style for <a href="https://datatables.net/" target="datatables">DataTables JS</a> version 1, 2.</p>
                     <p>
                         In order to make DataTables JS design works, add this file after DataTables's CSS.
                         <strong>assets/css/rdta/components/rdta-datatables.css</strong>,
@@ -956,7 +957,7 @@
                      
                     <h3>Row colors</h3>
                     <p>Add showing class to <code>&lt;tr&gt;</code>.</p>
-                    <table id="rdta-datatables-sample-rowcolors" class="display">
+                    <table id="rdta-datatables-sample-rowcolors" class="display" style="width: 100%;">
                         <thead>
                             <tr>
                                 <th>Type</th>
@@ -1371,8 +1372,7 @@
                     <pre class="preview-source" data-target-src="#rdta-datatables-sample-responsive2" data-target-src-remove-first-space="20"></pre>
                     <p>Source for <a href="https://datatables.net/manual/options" target="_blank">DataTables options</a>.</p>
                     <pre><code class="language-js">{
-    &#039;autoWidth&#039;: false,// don&#039;t set style=&quot;width: xxx;&quot; in the table cell.
-    columnDefs: [
+    &#039;columnDefs&#039;: [
         {
             &#039;orderable&#039;: false,
             &#039;searchable&#039;: false,
@@ -1394,7 +1394,7 @@
     ],
     &#039;order&#039;: [[1, &#039;desc&#039;]],
     &#039;processing&#039;: true,
-    responsive: {
+    &#039;responsive&#039;: {
         details: {
             type: &#039;column&#039;,
             target: -1,
@@ -1405,7 +1405,7 @@
             </main>
             <footer>
                 <div class="rd-page-footer-left">Visit my <a href="https://github.com/Rundiz/rundiz-template-for-admin" target="_blank">GitHub</a></div>
-                <div class="rd-page-footer-right"><a href="https://rundiz.com" target="_blank">Rundiz</a> template for admin 2.4.5</div>
+                <div class="rd-page-footer-right"><a href="https://rundiz.com" target="_blank">Rundiz</a> template for admin 2.4.6dev-20250423</div>
             </footer> 
         </div><!--.rd-page-wrapper-->
 
@@ -1423,198 +1423,14 @@
         <script src="assets/js/sticky-sidebar/jquery.sticky-sidebar.min.js?npm-v=3.3.1"></script>
         <script src="assets/js/resize-sensor/ResizeSensor.js?v=8652505c23e8fdc8016445c5e13bee64"></script><!-- use with sticky sidebar js. -->
 
-        <script src="assets/js/rdta/rundiz-template-admin.js?v=b14b466bf9c3c7e67e04726aeca7de66"></script>
+        <script src="assets/js/rdta/rundiz-template-admin.js?v=ca3accc32130a56dba40023e8d80736d"></script>
 
         <script class="exclude-preview" src="assets/js-preview/prism.js?v=0718daece78cc150461b32c0ceab4fab" data-manual></script>
         <script class="exclude-preview" src="assets/js-preview/view-target-source.js?v=c9c8f5d72845b3693400fb9490283bfa"></script>
         <script class="exclude-preview" src="assets/js-preview/view-source.js?v=a7a9a35d448fd74928624a3f56b5bfdc"></script>
         <script class="exclude-preview" src="assets/js-preview/document-utils.js?v=73715f0a453f151dc904badc2234118e"></script> 
-        <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-        <script src="//cdn.datatables.net/responsive/2.4.1/js/dataTables.responsive.min.js"></script>
-        <script>
-            const dtStylesNewTableId = 'rdta-datatables-sample-customstyles';// styles change
-            let dtStylesTable = null;
-
-
-            /**
-             * Copy and paste table from sample 1 to placeholder and rename with new ID.
-             * 
-             * @param {string} placeholderId
-             * @param {string} newTableId
-             */
-            function copyAndPasteTable(placeholderId, newTableId) {
-                if (typeof(placeholderId) !== 'string') {
-                    throw Error('The placeholderId must be string.');
-                }
-                if (typeof(newTableId) !== 'string') {
-                    throw Error('The newTableId must be string.');
-                }
-
-                // copy and paste table from above.
-                const tableSample1 = document.getElementById('rdta-datatables-sample1');
-                let placeholderE = document.getElementById(placeholderId);
-                placeholderE.innerHTML = '<div class="rd-datatable-wrapper">' + tableSample1.outerHTML + '</div>';
-
-                // modify id attribute.
-                placeholderE.querySelector('table')
-                    ?.setAttribute('id', newTableId)
-                ;
-            }// copyAndPasteTable
-
-
-            /**
-             * Listen on DataTables styles change.
-             * 
-             * @returns {undefined}
-             */
-            function listenDtStylesChange() {
-                document.getElementById('datatables-styles').addEventListener('change', (event) => {
-                    const thisValue = event.target.value;
-                    const tableE = document.getElementById(dtStylesNewTableId);
-                    tableE.className = '';
-                    if (thisValue !== '') {
-                        const selectClasses = thisValue.split(' ');
-                        for (const eachClass of selectClasses) {
-                            if (eachClass.trim() === '') {
-                                continue;
-                            }
-                            tableE.classList.add(eachClass.trim());
-                        }// endfor;
-                    }// endif; value is not empty.
-
-                    if (dtStylesTable) {
-                        dtStylesTable.destroy();
-                    }
-                    dtStylesTable = new DataTable('#' + dtStylesNewTableId);
-                });
-            }// listenDtStylesChange
-
-
-            document.addEventListener('DOMContentLoaded', () => {
-                const $ = jQuery.noConflict();
-                new DataTable('#rdta-datatables-sample1');
-
-                // JS for work with DataTables with styles selector. --------------------------------
-                listenDtStylesChange();
-                // copy and paste table from above.
-                copyAndPasteTable('rdta-datatables-sample-dt-styles-placeholder', dtStylesNewTableId);
-                // remove classes.
-                document.getElementById(dtStylesNewTableId).className = '';
-                document.getElementById('datatables-styles').dispatchEvent(new Event('change', {'bubbles': true}));
-                // end JS for work with DataTables with styles selector. ----------------------------
-
-                // JS for work with row colors. --------------------------------------------------------
-                new DataTable('#rdta-datatables-sample-rowcolors', {
-                    'ordering': false,
-                });
-                // end JS for work with row colors. ----------------------------------------------------
-
-                // JS for work with cell colors. ---------------------------------------------------------
-                const table = new DataTable('#rdta-datatables-sample-cellcolors', {
-                    'ordering': false,
-                });
-                // end JS for work with cell colors. -----------------------------------------------------
-
-                // JS for work with individual search/select. -------------------------------------------
-                // copy and paste table from above.
-                const indDtNewId = 'rdta-datatables-sample-individual-searchselect';// individual search/select
-                copyAndPasteTable('rdta-datatables-sample-individual-searchselect-placeholder', indDtNewId);
-                // add filter to tfoot.
-                document.querySelectorAll('#' + indDtNewId + ' tfoot th').forEach((item, index) => {
-                    if (index === 0) {
-                        // if first column.
-                        item.innerHTML = '<select><option value=""></option></select>';
-                        return;// skip
-                    }
-                    const title = item.innerText;
-                    item.innerHTML = '<input type="text" placeholder="Search ' + title + '" />';
-                });
-                // activate DataTables.
-                $('#' + indDtNewId).DataTable({
-                    initComplete: function() {// can't use arrow function here, otherwise it will be unable to access the same `this`.
-                        // Apply the search
-                        this.api()
-                            .columns()
-                            .every(function() {// can't use arrow function here, otherwise it will be unable to access the same `this`.
-                                const column = this;
-                                const select = $('select', this.footer());
-                                const collator = new Intl.Collator(undefined, {numeric: true, sensitivity: 'base'});
-
-                                column
-                                .data()
-                                .unique()
-                                .sort(collator.compare)
-                                .each(function (d, j) {
-                                    select.append('<option value="' + d + '">' + d + '</option>');
-                                });
-
-                                if (select.length > 0) {
-                                    select.on('change', (event) => {
-                                        const value = event.target.value;
-                                        column.search(value ? '^' + value + '$' : '', true, false).draw();
-                                    });
-                                }
-
-                                $('input', this.footer()).on('keyup change clear', function() {// can't use arrow function here, otherwise it will be unable to access the same `this`.
-                                    if (column.search() !== this.value) {
-                                        column.search(this.value).draw();
-                                    }
-                                });
-                            });
-                    },
-                });// end .DataTable()
-                // end JS for work with individual search/select. --------------------------------------
-
-                // JS for work with responsive. ---------------------------------------------------------
-                const responsiveDtNewId = 'rdta-datatables-sample-responsive1';
-                // copy and paste table from above.
-                copyAndPasteTable('rdta-datatables-sample-responsive-placeholder', responsiveDtNewId);
-                // modify id attribute.
-                document.getElementById(responsiveDtNewId)?.classList.add('nowrap');
-                document.getElementById(responsiveDtNewId).closest('.rd-datatable-wrapper').className = '';
-                $('#' + responsiveDtNewId).DataTable({
-                    responsive: true
-                });
-                // end JS for work with responsive. ----------------------------------------------------
-            });
-
-
-            document.addEventListener('rdta.viewsource.renderpreview.done', (event) => {
-                // JS for work with responsive full actions. --------------------------------------------
-                const responsive2DtId = 'rdta-datatables-sample-responsive2';
-                jQuery('#' + responsive2DtId).DataTable({
-                    'autoWidth': false,// don't set style="width: xxx;" in the table cell.
-                    columnDefs: [
-                        {
-                            'orderable': false,
-                            'searchable': false,
-                            'targets': [0, -1]
-                        },
-                        {
-                            'className': 'column-checkbox',
-                            'targets': 0,
-                        },
-                        {
-                            'className': 'none',
-                            'targets': 4,
-                        },
-                        {
-                            'className': 'dtr-control',
-                            'orderable': false,
-                            'targets': -1,
-                        },
-                    ],
-                    'order': [[1, 'desc']],
-                    'processing': true,
-                    responsive: {
-                        details: {
-                            type: 'column',
-                            target: -1,
-                        },
-                    }
-                });
-                // end JS for work with responsive full actions. ---------------------------------------
-            });
-        </script>
+        <script class="datatables-js" src="//cdn.datatables.net/2.2.2/js/dataTables.min.js"></script>
+        <script class="datatables-js" src="//cdn.datatables.net/responsive/3.0.4/js/dataTables.responsive.min.js"></script>
+        <script src="assets/js-preview/datatables-js.js"></script>
     </body>
 </html>
