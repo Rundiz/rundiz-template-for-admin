@@ -11,8 +11,8 @@ $dummyData = file_get_contents(__DIR__ . '/includes/dummy-data.json');
 $title = 'DataTables JS by datatables.net';
 include 'includes/html-head.php'; 
 ?> 
-        <link rel="stylesheet" href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
-        <link rel="stylesheet" href="//cdn.datatables.net/responsive/2.4.1/css/responsive.dataTables.min.css">
+        <link class="datatables-js" rel="stylesheet" href="//cdn.datatables.net/2.2.2/css/dataTables.dataTables.min.css">
+        <link class="datatables-js" rel="stylesheet" href="//cdn.datatables.net/responsive/3.0.4/css/responsive.dataTables.min.css">
         <link rel="stylesheet" href="<?php echo assetUrl('assets/css/rdta/components/rdta-datatables-js.css'); ?>">
     </head>
     <body>
@@ -23,7 +23,8 @@ include 'includes/html-head.php';
 <?php echo renderBreadcrumb(['./' => 'Home', '#' => $title], 4); ?> 
                 <div class="rd-page-content page-datatable">
                     <h1><?php echo $title; ?></h1>
-                    <p>Custom style for <a href="https://datatables.net/" target="datatables">DataTables JS</a>.</p>
+                    <p class="rdta-version-info">(Since v.2.3.0)</p>
+                    <p>Custom style for <a href="https://datatables.net/" target="datatables">DataTables JS</a> version 1, 2.</p>
                     <p>
                         In order to make DataTables JS design works, add this file after DataTables's CSS.
                         <strong>assets/css/rdta/components/rdta-datatables.css</strong>,
@@ -119,7 +120,7 @@ EOT;
                     ?> 
                     <h3>Row colors</h3>
                     <p>Add showing class to <code>&lt;tr&gt;</code>.</p>
-                    <table id="rdta-datatables-sample-rowcolors" class="display">
+                    <table id="rdta-datatables-sample-rowcolors" class="display" style="width: 100%;">
                         <thead>
                             <tr>
                                 <th>Type</th>
@@ -291,8 +292,7 @@ EOT;
                     <pre><code class="language-js"><?php 
 $sampleJS = <<<EOT
 {
-    'autoWidth': false,// don't set style="width: xxx;" in the table cell.
-    columnDefs: [
+    'columnDefs': [
         {
             'orderable': false,
             'searchable': false,
@@ -314,7 +314,7 @@ $sampleJS = <<<EOT
     ],
     'order': [[1, 'desc']],
     'processing': true,
-    responsive: {
+    'responsive': {
         details: {
             type: 'column',
             target: -1,
@@ -332,192 +332,8 @@ EOT;
 
 
 <?php include 'includes/js-end-body.php'; ?> 
-        <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-        <script src="//cdn.datatables.net/responsive/2.4.1/js/dataTables.responsive.min.js"></script>
-        <script>
-            const dtStylesNewTableId = 'rdta-datatables-sample-customstyles';// styles change
-            let dtStylesTable = null;
-
-
-            /**
-             * Copy and paste table from sample 1 to placeholder and rename with new ID.
-             * 
-             * @param {string} placeholderId
-             * @param {string} newTableId
-             */
-            function copyAndPasteTable(placeholderId, newTableId) {
-                if (typeof(placeholderId) !== 'string') {
-                    throw Error('The placeholderId must be string.');
-                }
-                if (typeof(newTableId) !== 'string') {
-                    throw Error('The newTableId must be string.');
-                }
-
-                // copy and paste table from above.
-                const tableSample1 = document.getElementById('rdta-datatables-sample1');
-                let placeholderE = document.getElementById(placeholderId);
-                placeholderE.innerHTML = '<div class="rd-datatable-wrapper">' + tableSample1.outerHTML + '</div>';
-
-                // modify id attribute.
-                placeholderE.querySelector('table')
-                    ?.setAttribute('id', newTableId)
-                ;
-            }// copyAndPasteTable
-
-
-            /**
-             * Listen on DataTables styles change.
-             * 
-             * @returns {undefined}
-             */
-            function listenDtStylesChange() {
-                document.getElementById('datatables-styles').addEventListener('change', (event) => {
-                    const thisValue = event.target.value;
-                    const tableE = document.getElementById(dtStylesNewTableId);
-                    tableE.className = '';
-                    if (thisValue !== '') {
-                        const selectClasses = thisValue.split(' ');
-                        for (const eachClass of selectClasses) {
-                            if (eachClass.trim() === '') {
-                                continue;
-                            }
-                            tableE.classList.add(eachClass.trim());
-                        }// endfor;
-                    }// endif; value is not empty.
-
-                    if (dtStylesTable) {
-                        dtStylesTable.destroy();
-                    }
-                    dtStylesTable = new DataTable('#' + dtStylesNewTableId);
-                });
-            }// listenDtStylesChange
-
-
-            document.addEventListener('DOMContentLoaded', () => {
-                const $ = jQuery.noConflict();
-                new DataTable('#rdta-datatables-sample1');
-
-                // JS for work with DataTables with styles selector. --------------------------------
-                listenDtStylesChange();
-                // copy and paste table from above.
-                copyAndPasteTable('rdta-datatables-sample-dt-styles-placeholder', dtStylesNewTableId);
-                // remove classes.
-                document.getElementById(dtStylesNewTableId).className = '';
-                document.getElementById('datatables-styles').dispatchEvent(new Event('change', {'bubbles': true}));
-                // end JS for work with DataTables with styles selector. ----------------------------
-
-                // JS for work with row colors. --------------------------------------------------------
-                new DataTable('#rdta-datatables-sample-rowcolors', {
-                    'ordering': false,
-                });
-                // end JS for work with row colors. ----------------------------------------------------
-
-                // JS for work with cell colors. ---------------------------------------------------------
-                const table = new DataTable('#rdta-datatables-sample-cellcolors', {
-                    'ordering': false,
-                });
-                // end JS for work with cell colors. -----------------------------------------------------
-
-                // JS for work with individual search/select. -------------------------------------------
-                // copy and paste table from above.
-                const indDtNewId = 'rdta-datatables-sample-individual-searchselect';// individual search/select
-                copyAndPasteTable('rdta-datatables-sample-individual-searchselect-placeholder', indDtNewId);
-                // add filter to tfoot.
-                document.querySelectorAll('#' + indDtNewId + ' tfoot th').forEach((item, index) => {
-                    if (index === 0) {
-                        // if first column.
-                        item.innerHTML = '<select><option value=""></option></select>';
-                        return;// skip
-                    }
-                    const title = item.innerText;
-                    item.innerHTML = '<input type="text" placeholder="Search ' + title + '" />';
-                });
-                // activate DataTables.
-                $('#' + indDtNewId).DataTable({
-                    initComplete: function() {// can't use arrow function here, otherwise it will be unable to access the same `this`.
-                        // Apply the search
-                        this.api()
-                            .columns()
-                            .every(function() {// can't use arrow function here, otherwise it will be unable to access the same `this`.
-                                const column = this;
-                                const select = $('select', this.footer());
-                                const collator = new Intl.Collator(undefined, {numeric: true, sensitivity: 'base'});
-
-                                column
-                                .data()
-                                .unique()
-                                .sort(collator.compare)
-                                .each(function (d, j) {
-                                    select.append('<option value="' + d + '">' + d + '</option>');
-                                });
-
-                                if (select.length > 0) {
-                                    select.on('change', (event) => {
-                                        const value = event.target.value;
-                                        column.search(value ? '^' + value + '$' : '', true, false).draw();
-                                    });
-                                }
-
-                                $('input', this.footer()).on('keyup change clear', function() {// can't use arrow function here, otherwise it will be unable to access the same `this`.
-                                    if (column.search() !== this.value) {
-                                        column.search(this.value).draw();
-                                    }
-                                });
-                            });
-                    },
-                });// end .DataTable()
-                // end JS for work with individual search/select. --------------------------------------
-
-                // JS for work with responsive. ---------------------------------------------------------
-                const responsiveDtNewId = 'rdta-datatables-sample-responsive1';
-                // copy and paste table from above.
-                copyAndPasteTable('rdta-datatables-sample-responsive-placeholder', responsiveDtNewId);
-                // modify id attribute.
-                document.getElementById(responsiveDtNewId)?.classList.add('nowrap');
-                document.getElementById(responsiveDtNewId).closest('.rd-datatable-wrapper').className = '';
-                $('#' + responsiveDtNewId).DataTable({
-                    responsive: true
-                });
-                // end JS for work with responsive. ----------------------------------------------------
-            });
-
-
-            document.addEventListener('rdta.viewsource.renderpreview.done', (event) => {
-                // JS for work with responsive full actions. --------------------------------------------
-                const responsive2DtId = 'rdta-datatables-sample-responsive2';
-                jQuery('#' + responsive2DtId).DataTable({
-                    'autoWidth': false,// don't set style="width: xxx;" in the table cell.
-                    columnDefs: [
-                        {
-                            'orderable': false,
-                            'searchable': false,
-                            'targets': [0, -1]
-                        },
-                        {
-                            'className': 'column-checkbox',
-                            'targets': 0,
-                        },
-                        {
-                            'className': 'none',
-                            'targets': 4,
-                        },
-                        {
-                            'className': 'dtr-control',
-                            'orderable': false,
-                            'targets': -1,
-                        },
-                    ],
-                    'order': [[1, 'desc']],
-                    'processing': true,
-                    responsive: {
-                        details: {
-                            type: 'column',
-                            target: -1,
-                        },
-                    }
-                });
-                // end JS for work with responsive full actions. ---------------------------------------
-            });
-        </script>
+        <script class="datatables-js" src="//cdn.datatables.net/2.2.2/js/dataTables.min.js"></script>
+        <script class="datatables-js" src="//cdn.datatables.net/responsive/3.0.4/js/dataTables.responsive.min.js"></script>
+        <script src="assets/js-preview/datatables-js.js"></script>
     </body>
 </html>
