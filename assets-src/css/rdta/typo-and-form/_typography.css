@@ -69,10 +69,14 @@ code,
 samp, 
 pre, 
 kbd {
-    background-color: #f1f1f1;
-    color: #555;
     font-family: "Consolas", "Lucida Console", "DejaVu Sans Mono", "Liberation Mono", "Courier New", monospace, sans-serif;
     padding: 0.125em 0.188em;
+}
+code,
+samp,
+pre {
+    background-color: var(--rdta-tpf-code-background-color);
+    color: var(--rdta-tpf-code-text-color);
 }
 
 
@@ -159,9 +163,9 @@ img.fluid {
 
 
 kbd {
-    background-color: #f1f1f1;
     border: 1px solid var(--rdta-tpf-block-border-color);
-    border-radius: 2px;
+    border-bottom-width: 2px;
+    border-radius: 4px;
 }
 
 
