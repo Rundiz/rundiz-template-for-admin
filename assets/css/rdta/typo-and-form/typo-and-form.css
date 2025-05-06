@@ -14,6 +14,8 @@
   --rdta-tpf-input-range-track-color: #ddd;
   --rdta-tpf-page-background-color: #fff;
   --rdta-tpf-page-text-color: #333;
+  --rdta-tpf-code-background-color: #f1f1f1;
+  --rdta-tpf-code-text-color: #555;
   --rdta-tpf-block-background-color: #eee;
   --rdta-tpf-block-border-color: #ddd;
   --rdta-tpf-content-block-element-margin-vertical: 0.625rem;
@@ -115,10 +117,14 @@ code,
 samp,
 pre,
 kbd {
-  background-color: #f1f1f1;
-  color: #555;
   font-family: "Consolas","Lucida Console","DejaVu Sans Mono","Liberation Mono","Courier New",monospace,sans-serif;
   padding: 0.125em 0.188em;
+}
+code,
+samp,
+pre {
+  background-color: var(--rdta-tpf-code-background-color);
+  color: var(--rdta-tpf-code-text-color);
 }
 details {
   margin: 0 0 var(--rdta-tpf-content-block-element-margin-vertical) 0;
@@ -192,9 +198,9 @@ img.fluid {
   max-width: 100%;
 }
 kbd {
-  background-color: #f1f1f1;
   border: 1px solid var(--rdta-tpf-block-border-color);
-  border-radius: 2px;
+  border-bottom-width: 2px;
+  border-radius: 4px;
 }
 label {
   cursor: pointer;
