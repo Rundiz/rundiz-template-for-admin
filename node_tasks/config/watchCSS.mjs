@@ -6,8 +6,9 @@
 'use strict';
 
 
-import {deleteAsync} from 'del';
+import { deleteAsync } from 'del';
 import path from 'node:path';
+import fs from 'node:fs/promises';
 // import this app's useful class.
 import FS from "../Libraries/FS.mjs";
 import TextStyles from "../Libraries/TextStyles.mjs";
@@ -43,14 +44,29 @@ export default class WatchCSS {
     }// constructor
 
 
+    /**
+     * Destination folder of built CSS but use relative path from root folder.
+     * 
+     * @return {String} The destination folder of built CSS.
+     */
     get destFolder() {
         return destFolder;
     }// destFolder
 
 
+    /**
+     * Relative source folder of assets-src/css
+     * 
+     * @returns {String} The source folder of CSS.
+     */
     get relativeSrc() {
         return relativeSrc;
     }// relativeSrc
+
+
+    get watchFolder() {
+        return './' + this.relativeSrc;
+    }// watchFolder
 
 
     /**
@@ -123,15 +139,62 @@ export default class WatchCSS {
 
 
     /**
+     * Detect parent file that it is `@import` current changed file. If found, then use parent file instead.
+     * 
+     * @param {string} file The changed file. Sample value: `assets-src\css\rdta\xxxx.css`
+     * @return {string} Return parent file if found, or return current file if not found the parent file.
+     */
+    async #detectParentFile(file) {
+        // read each CSS file that is not named start with underscore (_) and find out that they imported current changed file.
+        const regexFile = /^_(.*)?$/;// file name start with `_`.
+        const regexImportCode = /^@import\s*('|")(?<import_file>.+)('|");?$/;
+        if (regexFile.test(path.basename(file))) {
+            // if current changed file name is start with underscore. this means it must be imported by other file(s).
+            const cssFiles = await FS.glob(this.watchFolder + '/**/*.css', 
+                {
+                    'cwd': REPO_DIR,
+                }
+            );
+            loopCssFiles: for (const cssFile of cssFiles) {
+                if (regexFile.test(path.basename(cssFile)) === true) {
+                    // if file name start with `_`, don't work here.
+                    continue;
+                }
+                const stat = await fs.stat(cssFile);
+                if (!stat.isFile()) {
+                    continue;
+                }
+
+                const fileReader = await fs.open(cssFile);
+                loopCssLines: for await (const line of fileReader.readLines()) {
+                    const importRegex = line.match(regexImportCode);
+                    if (importRegex?.groups?.import_file) {
+                        // if found `@import`.
+                        if (path.resolve(file) === path.resolve(path.dirname(cssFile), importRegex.groups.import_file)) {
+                            // if found `@import` of current changed file.
+                            const returnFile = path.relative(REPO_DIR, cssFile);
+                            console.log('    ' + TextStyles.txtInfo('This file was found in `@import` on the file ' + cssFile + '.'));
+                            console.log('    ' + TextStyles.txtInfo('Use this file instead: ' + returnFile + '.'));
+                            return returnFile;
+                        }// endif;
+                    }// endif; found regex `@import 'file.css';`.
+                }// endfor; read file line by line.
+            }// endfor; list css files.
+        }// endif;
+
+        return file;
+    }// #detectParentFile
+
+
+    /**
      * Display file changed.
      * 
      * @private This method was called from `run()`.
      * @param {string} event The watcher events. See https://github.com/paulmillr/chokidar#methods--events
      * @param {string} file The changed file.
-     * @param {string} source The source folder full path.
      */
-    #displayFileChanged(event, file, source) {
-        console.log('  File changed (' + event + '): ' + path.resolve(source, file));
+    #displayFileChanged(event, file) {
+        console.log('  File changed (' + event + '): ' + path.resolve(REPO_DIR, file));
     }// displayFileChanged
 
 
@@ -175,11 +238,12 @@ export default class WatchCSS {
                 return stats?.isFile() && !path.endsWith('.css');
             },
         };
-        const watcher = FS.watch('./assets-src/css', options);
+        const watcher = FS.watch(this.watchFolder, options);
 
         watcher.on('all', async (event, file, stats) => {
-            await this.#displayFileChanged(event, file, REPO_DIR);
+            await this.#displayFileChanged(event, file);
             try {
+                file = await this.#detectParentFile(file);
                 await this.#applyChanges(event, file);
             } catch (err) {
                 console.error(TextStyles.txtError('Error! '), err);
