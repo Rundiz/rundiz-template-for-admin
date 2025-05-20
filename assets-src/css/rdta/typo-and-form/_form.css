@@ -7,9 +7,9 @@
 
 
 /* buttons */
-input[type=button],
-input[type=reset],
-input[type=submit], 
+input[type="button"],
+input[type="reset"],
+input[type="submit"], 
 a.rd-button,
 .rd-button,
 button {
@@ -35,49 +35,49 @@ button {
     transition: box-shadow 0.1s, top 0.1s;
 }
 
-input[type=button]:active,
-input[type=reset]:active,
-input[type=submit]:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active,
 .rd-button:active,
 button:active, 
-input[type=button]:focus,
-input[type=reset]:focus,
-input[type=submit]:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
 .rd-button:focus,
 button:focus {
     color: inherit;
 }
 
-input[type=button]:active,
-input[type=reset]:active,
-input[type=submit]:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active,
 .rd-button:active,
 button:active, 
-input.active[type=button],
-input.active[type=reset],
-input.active[type=submit],
+input.active[type="button"],
+input.active[type="reset"],
+input.active[type="submit"],
 .active.rd-button,
 button.active {
     box-shadow: 0 var(--rdta-tpf-button-3d-pressed-height) 0 var(--rdta-tpf-button-3d-edge-color);
     top: calc(var(--rdta-tpf-button-3d-height) - var(--rdta-tpf-button-3d-pressed-height));
 }
 
-input[type=button]:hover,
-input[type=reset]:hover,
-input[type=submit]:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
 .rd-button:hover,
 button:hover {
     color: inherit;
 }
 
-input[type=button]:disabled,
-input[type=reset]:disabled,
-input[type=submit]:disabled,
+input[type="button"]:disabled,
+input[type="reset"]:disabled,
+input[type="submit"]:disabled,
 .rd-button:disabled,
 button:disabled, 
-input.disabled[type=button],
-input.disabled[type=reset],
-input.disabled[type=submit],
+input.disabled[type="button"],
+input.disabled[type="reset"],
+input.disabled[type="submit"],
 .disabled.rd-button,
 button.disabled {
     background-color: hsl(from var(--rdta-tpf-block-background-color) h s calc(l + 2));
@@ -102,18 +102,18 @@ fieldset legend {
 
 
 /* inputs */
-input[type=date],
-input[type=datetime-local],
-input[type=email],
-input[type=month],
-input[type=number],
-input[type=password],
-input[type=search],
-input[type=tel],
-input[type=text],
-input[type=time],
-input[type=url],
-input[type=week] {
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"] {
     border: 1px solid var(--rdta-tpf-block-border-color);/* this also override active, focus in firefox. */
     border-radius: 0;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -124,116 +124,121 @@ input[type=week] {
     padding: 0.313em 0.188em;
 }
 
-input[type=date]:active, 
-input[type=date]:focus,
-input[type=datetime-local]:active,
-input[type=datetime-local]:focus,
-input[type=email]:active,
-input[type=email]:focus,
-input[type=month]:active,
-input[type=month]:focus,
-input[type=number]:active,
-input[type=number]:focus,
-input[type=password]:active,
-input[type=password]:focus,
-input[type=search]:active,
-input[type=search]:focus,
-input[type=tel]:active,
-input[type=tel]:focus,
-input[type=text]:active,
-input[type=text]:focus,
-input[type=time]:active,
-input[type=time]:focus,
-input[type=url]:active,
-input[type=url]:focus,
-input[type=week]:active,
-input[type=week]:focus {
+input[type="date"]:active, 
+input[type="date"]:focus,
+input[type="datetime-local"]:active,
+input[type="datetime-local"]:focus,
+input[type="email"]:active,
+input[type="email"]:focus,
+input[type="month"]:active,
+input[type="month"]:focus,
+input[type="number"]:active,
+input[type="number"]:focus,
+input[type="password"]:active,
+input[type="password"]:focus,
+input[type="search"]:active,
+input[type="search"]:focus,
+input[type="tel"]:active,
+input[type="tel"]:focus,
+input[type="text"]:active,
+input[type="text"]:focus,
+input[type="time"]:active,
+input[type="time"]:focus,
+input[type="url"]:active,
+input[type="url"]:focus,
+input[type="week"]:active,
+input[type="week"]:focus {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
 }
 
-input[type=color]:disabled {
+input[type="color"]:disabled {
     cursor: not-allowed;
 }
 
-input[type=date]:disabled, 
-input[type=date][readonly],
-input[type=datetime-local]:disabled,
-input[type=datetime-local][readonly],
-input[type=email]:disabled,
-input[type=email][readonly],
-input[type=month]:disabled,
-input[type=month][readonly],
-input[type=number]:disabled,
-input[type=number][readonly],
-input[type=password]:disabled,
-input[type=password][readonly],
-input[type=search]:disabled,
-input[type=search][readonly],
-input[type=tel]:disabled,
-input[type=tel][readonly],
-input[type=text]:disabled,
-input[type=text][readonly],
-input[type=time]:disabled,
-input[type=time][readonly],
-input[type=url]:disabled,
-input[type=url][readonly],
-input[type=week]:disabled,
-input[type=week][readonly] {
+input[type="date"]:disabled, 
+input[type="date"][readonly],
+input[type="datetime-local"]:disabled,
+input[type="datetime-local"][readonly],
+input[type="email"]:disabled,
+input[type="email"][readonly],
+input[type="month"]:disabled,
+input[type="month"][readonly],
+input[type="number"]:disabled,
+input[type="number"][readonly],
+input[type="password"]:disabled,
+input[type="password"][readonly],
+input[type="search"]:disabled,
+input[type="search"][readonly],
+input[type="tel"]:disabled,
+input[type="tel"][readonly],
+input[type="text"]:disabled,
+input[type="text"][readonly],
+input[type="time"]:disabled,
+input[type="time"][readonly],
+input[type="url"]:disabled,
+input[type="url"][readonly],
+input[type="week"]:disabled,
+input[type="week"][readonly] {
     background-color: var(--rdta-tpf-block-background-color);
     color: var(--rdta-tpf-text-disabled-color);
     cursor: not-allowed;
 }
 
-input[type=date]:user-invalid, 
-input[type=date].rd-input-invalid,
-input[type=datetime-local]:user-invalid,
-input[type=datetime-local].rd-input-invalid,
-input[type=email]:user-invalid,
-input[type=email].rd-input-invalid,
-input[type=month]:user-invalid,
-input[type=month].rd-input-invalid,
-input[type=number]:user-invalid,
-input[type=number].rd-input-invalid,
-input[type=password]:user-invalid,
-input[type=password].rd-input-invalid,
-input[type=search]:user-invalid,
-input[type=search].rd-input-invalid,
-input[type=tel]:user-invalid,
-input[type=tel].rd-input-invalid,
-input[type=text]:user-invalid,
-input[type=text].rd-input-invalid,
-input[type=time]:user-invalid,
-input[type=time].rd-input-invalid,
-input[type=url]:user-invalid,
-input[type=url].rd-input-invalid,
-input[type=week]:user-invalid,
-input[type=week].rd-input-invalid {
+input[type="date"]:user-invalid, 
+input[type="date"].rd-input-invalid,
+input[type="datetime-local"]:user-invalid,
+input[type="datetime-local"].rd-input-invalid,
+input[type="email"]:user-invalid,
+input[type="email"].rd-input-invalid,
+input[type="month"]:user-invalid,
+input[type="month"].rd-input-invalid,
+input[type="number"]:user-invalid,
+input[type="number"].rd-input-invalid,
+input[type="password"]:user-invalid,
+input[type="password"].rd-input-invalid,
+input[type="search"]:user-invalid,
+input[type="search"].rd-input-invalid,
+input[type="tel"]:user-invalid,
+input[type="tel"].rd-input-invalid,
+input[type="text"]:user-invalid,
+input[type="text"].rd-input-invalid,
+input[type="time"]:user-invalid,
+input[type="time"].rd-input-invalid,
+input[type="url"]:user-invalid,
+input[type="url"].rd-input-invalid,
+input[type="week"]:user-invalid,
+input[type="week"].rd-input-invalid {
     border-color: var(--rdta-tpf-form-invalid-border-color);
+}
+
+input[type="range"]:user-invalid,
+input[type="range"].rd-input-invalid {
+    border: 1px solid var(--rdta-tpf-form-invalid-border-color);
 }
 /* end inputs */
 
 
-input[type=color] {
+input[type="color"] {
     border: 1px solid var(--rdta-tpf-block-border-color);
     height: 2em;
     padding: 0;
 }
 
-input[type=color]::-webkit-color-swatch-wrapper {
+input[type="color"]::-webkit-color-swatch-wrapper {
     /* remove space around input type color and its border. https://stackoverflow.com/a/47971607/128761 */
     padding: 0;
 }
 
-input[type=color],
-input[type=file],
-input[type=range] {
+input[type="color"],
+input[type="file"],
+input[type="range"] {
     cursor: pointer;
 }
 
 
 /* checkbox and radio */
-input[type=checkbox],
-input[type=radio] {
+input[type="checkbox"],
+input[type="radio"] {
     appearance: none;
     background-color: #fff;
     background-position: center;
@@ -246,36 +251,36 @@ input[type=radio] {
     width: 1em;
 }
 
-input[type=checkbox]:disabled, 
-input[type=checkbox][readonly],
-input[type=radio]:disabled,
-input[type=radio][readonly] {
+input[type="checkbox"]:disabled, 
+input[type="checkbox"][readonly],
+input[type="radio"]:disabled,
+input[type="radio"][readonly] {
     background-color: var(--rdta-tpf-block-background-color);
     cursor: not-allowed;
 }
 
-input[type=checkbox]:user-invalid,
-input[type=checkbox].rd-input-invalid,
-input[type=radio]:user-invalid,
-input[type=radio].rd-input-invalid {
+input[type="checkbox"]:user-invalid,
+input[type="checkbox"].rd-input-invalid,
+input[type="radio"]:user-invalid,
+input[type="radio"].rd-input-invalid {
     border-color: var(--rdta-tpf-form-invalid-border-color);
 }
 
-input[type=checkbox]:checked {
+input[type="checkbox"]:checked {
     /* below, use checked icon from Bootstrap 5. */
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
 }
 
-input[type=radio]:checked:disabled,
-input[type=checkbox]:checked:disabled {
+input[type="radio"]:checked:disabled,
+input[type="checkbox"]:checked:disabled {
     opacity: 0.5;
 }
 
-input[type=radio] {
+input[type="radio"] {
     border-radius: 50%;
 }
 
-input[type=radio]:checked {
+input[type="radio"]:checked {
     /* below, use radio checked icon from Bootstrap 5. */
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23333333'/%3e%3c/svg%3e");
 }
@@ -283,33 +288,33 @@ input[type=radio]:checked {
 
 
 /* input type file */
-input[type=file] {
+input[type="file"] {
     max-width: 240px;
     overflow: hidden;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);/* remove white-blue background color on tap or on touch in chrome for android. */
 }
 
-input[type=file]::file-selector-button, 
-input[type=file]::-webkit-file-upload-button {
+input[type="file"]::file-selector-button, 
+input[type="file"]::-webkit-file-upload-button {
     background-color: var(--rdta-tpf-block-background-color);
     border: 1px solid var(--rdta-tpf-block-border-color);
     cursor: pointer;
     font: inherit;
 }
 
-input[type=file]:disabled {
+input[type="file"]:disabled {
     cursor: not-allowed;
 }
 
-input[type=file]:disabled::file-selector-button, 
-input[type=file]:disabled::-webkit-file-upload-button {
+input[type="file"]:disabled::file-selector-button, 
+input[type="file"]:disabled::-webkit-file-upload-button {
     cursor: not-allowed;
 }
 /* end input type file */
 
 
 /* input type image */
-input[type=image] {
+input[type="image"] {
     border: none;
     border-radius: 0;
     color: inherit;
@@ -324,7 +329,7 @@ input[type=image] {
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);/* remove white-blue background color on tap or on touch in chrome for android. */
 }
 
-input[type=image]:disabled {
+input[type="image"]:disabled {
     cursor: not-allowed;
     opacity: 0.7;
 }

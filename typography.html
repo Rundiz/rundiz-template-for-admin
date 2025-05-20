@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="assets/css/sanitize/sanitize.css?npm-v=github%3Acsstools%2Fsanitize.css%23main">
         <link rel="stylesheet" href="assets/css/sanitize/typography.css?npm-v=github%3Acsstools%2Fsanitize.css%23main">
         <link rel="stylesheet" href="assets/css/sanitize/forms.css?npm-v=github%3Acsstools%2Fsanitize.css%23main">
-        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?v=52a379fee397f2eb7dea26651210db79">
+        <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?v=67a4c4e3f1011120e7ea2e5cc64aee15">
         <link class="exclude-preview" rel="stylesheet" href="assets/css-preview/documents.css?v=723a2316bd4d6e8a361b431002473a2c">
         <style>
             main {
@@ -705,6 +705,21 @@
                         <label><input type="checkbox" disabled=""> Input checkbox 1</label><br>
                         <label><input type="checkbox" disabled=""> Input checkbox 2</label><br>
                         <label><input type="checkbox" checked="checked" disabled=""> Input checkbox 3 checked, disabled</label>
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <legend>Input range</legend>
+                    <p>
+                        <label for="sample-input-range">Range</label><br>
+                        <input id="sample-input-range" type="range">
+                    </p>
+                    <p>
+                        <label for="sample-input-range-disabled">Range disabled</label><br>
+                        <input id="sample-input-range-disabled" type="range" disabled="">
+                    </p>
+                    <p>
+                        <label for="sample-input-range-minmax">Range min &amp; max (0 - 5)</label><br>
+                        <input id="sample-input-range-minmax" type="range" min="0" max="5">
                     </p>
                 </fieldset>
                 <fieldset>

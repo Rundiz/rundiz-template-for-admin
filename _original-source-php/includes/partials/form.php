@@ -93,6 +93,21 @@ unset($input_type, $input_types);
                     </p>
                 </fieldset>
                 <fieldset>
+                    <legend>Input range</legend>
+                    <p>
+                        <label for="sample-input-range">Range</label><br>
+                        <input id="sample-input-range" type="range">
+                    </p>
+                    <p>
+                        <label for="sample-input-range-disabled">Range disabled</label><br>
+                        <input id="sample-input-range-disabled" type="range" disabled="">
+                    </p>
+                    <p>
+                        <label for="sample-input-range-minmax">Range min &amp; max (0 - 5)</label><br>
+                        <input id="sample-input-range-minmax" type="range" min="0" max="5">
+                    </p>
+                </fieldset>
+                <fieldset>
                     <legend>Textarea</legend>
                     <p>
                         <label for="input-textarea">Textarea</label><br>

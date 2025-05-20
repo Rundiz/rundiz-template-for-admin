@@ -35,9 +35,9 @@
 
 .rd-dropdown li a,
 .rd-dropdown li button,
-.rd-dropdown li input[type=button],
-.rd-dropdown li input[type=reset],
-.rd-dropdown li input[type=submit] {
+.rd-dropdown li input[type="button"],
+.rd-dropdown li input[type="reset"],
+.rd-dropdown li input[type="submit"] {
     background-color: transparent;
     color: inherit;
     display: block;
@@ -46,9 +46,9 @@
 }
 
 .rd-dropdown li button,
-.rd-dropdown li input[type=button],
-.rd-dropdown li input[type=reset],
-.rd-dropdown li input[type=submit] {
+.rd-dropdown li input[type="button"],
+.rd-dropdown li input[type="reset"],
+.rd-dropdown li input[type="submit"] {
     border: none;
     box-shadow: none;
     margin: 0;
@@ -56,9 +56,9 @@
 }
 
 .rd-dropdown li button:active,
-.rd-dropdown li input[type=button]:active,
-.rd-dropdown li input[type=reset]:active,
-.rd-dropdown li input[type=submit]:active {
+.rd-dropdown li input[type="button"]:active,
+.rd-dropdown li input[type="reset"]:active,
+.rd-dropdown li input[type="submit"]:active {
     box-shadow: none;
     top: auto;
 }

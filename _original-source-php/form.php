@@ -200,6 +200,36 @@ document.addEventListener('rdta.custominputfile.addedfilesqueue', (event) => {co
                     </form>
                     <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-form-checkboxradio" data-target-src-remove-first-space="20"></pre>
+                    <h3>Input range</h3>
+                    <form class="rd-form code-sample-form-inputrange">
+                        <div class="form-group">
+                            <label class="control-label" for="input-range">Basic input range</label>
+                            <div class="control-wrapper">
+                                <input id="input-range" type="range">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="input-range-disabled">Range disabled</label>
+                            <div class="control-wrapper">
+                                <input id="input-range-disabled" type="range" disabled="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="input-range-minmax">Range min &amp; max (0 - 5)</label>
+                            <div class="control-wrapper">
+                                <input id="input-range-minmax" type="range" min="0" max="5">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="input-range-invalid">Range invalid</label>
+                            <div class="control-wrapper">
+                                <input id="input-range-invalid" class="rd-input-invalid" type="range">
+                            </div>
+                            <div class="form-description">Add <code>rd-input-invalid</code> class to the select box.</div>
+                        </div>
+                    </form>
+                    <h5>Source</h5>
+                    <pre class="preview-source" data-target-src=".code-sample-form-inputrange" data-target-src-remove-first-space="20"></pre>
                     <h3>Select box</h3>
                     <form class="rd-form code-sample-form-selectbox">
                         <div class="form-group">

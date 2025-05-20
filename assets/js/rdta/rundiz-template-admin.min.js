@@ -1,5 +1,5 @@
 /*!
- Rundiz template for admin v 2.4.6 
+ Rundiz template for admin v 2.4.7dev-20250520 
 License: MIT
 */
 /*! Rundiz template for admin

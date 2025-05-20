@@ -10,7 +10,7 @@
 */
 
 
-input[type=range] {
+input[type="range"] {
     -webkit-appearance: none;
     appearance: none;
     height: 37px;
@@ -18,7 +18,7 @@ input[type=range] {
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);/* remove white-blue background color on tap or on touch in chrome for android. */
 }
 
-input[type=range]:disabled {
+input[type="range"]:disabled {
     /* this covered beginning part but not for thumb and track at the end. the last part of track will be covered by track selector */
     cursor: not-allowed;
     opacity: 0.5;
@@ -26,7 +26,7 @@ input[type=range]:disabled {
 
 
 /* input range thumb (can't use comma separate for ::-moz-xxx and ::-webkit-xxx) */
-input[type=range]::-moz-range-thumb {
+input[type="range"]::-moz-range-thumb {
     background: var(--rdta-tpf-block-background-color);
     border: 1px solid var(--rdta-tpf-input-range-thumb-border-color);
     border-radius: 0px;
@@ -36,11 +36,11 @@ input[type=range]::-moz-range-thumb {
     width: 15px;
 }
 
-input[type=range]:disabled::-moz-range-thumb {
+input[type="range"]:disabled::-moz-range-thumb {
     cursor: not-allowed;
 }
 
-input[type=range]::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     background: var(--rdta-tpf-block-background-color);
     border: 1px solid var(--rdta-tpf-input-range-thumb-border-color);
@@ -52,15 +52,14 @@ input[type=range]::-webkit-slider-thumb {
     width: 15px;
 }
 
-input[type=range]:disabled::-webkit-slider-thumb {
+input[type="range"]:disabled::-webkit-slider-thumb {
     cursor: not-allowed;
 }
 /* end input range thumb */
 
 
 /* input range track (can't use comma separate for ::-moz-xxx and ::-webkit-xxx) */
-input[type=range]::-moz-range-track {
-    animate: 0.2s;
+input[type="range"]::-moz-range-track {
     background: var(--rdta-tpf-input-range-track-color);
     border: 0px solid #000000;
     border-radius: 0px;
@@ -69,12 +68,11 @@ input[type=range]::-moz-range-track {
     height: 3px;
 }
 
-input[type=range]:disabled::-moz-range-track {
+input[type="range"]:disabled::-moz-range-track {
     cursor: not-allowed;
 }
 
-input[type=range]::-webkit-slider-runnable-track {
-    animate: 0.2s;
+input[type="range"]::-webkit-slider-runnable-track {
     background: var(--rdta-tpf-input-range-track-color);
     border: 0px solid #000000;
     border-radius: 0px;
@@ -83,64 +81,19 @@ input[type=range]::-webkit-slider-runnable-track {
     height: 3px;
 }
 
-input[type=range]:disabled::-webkit-slider-runnable-track {
+input[type="range"]:disabled::-webkit-slider-runnable-track {
     cursor: not-allowed;
 }
 
-input[type=range]:focus::-webkit-slider-runnable-track {
+input[type="range"]:focus::-webkit-slider-runnable-track {
     background: var(--rdta-tpf-input-range-track-color);
 }
 /* end input range track */
 
 
-/* microsoft edge styles */
-input[type=range]::-ms-track {
-    animate: 0.2s;
-    background: transparent;
-    border-color: transparent;
-    color: transparent;
-    cursor: pointer;
-    height: 3px;
-    /* track must stay before thumb. */
+/* input range progress */
+input[type="range"]::-moz-range-progress {
+    background-color: #52A0E5;
 }
-
-input[type=range]::-ms-thumb {
-    background: var(--rdta-tpf-block-background-color);
-    border: 1px solid var(--rdta-tpf-input-range-thumb-border-color);
-    border-radius: 0px;
-    box-shadow: none;
-    cursor: pointer;
-    height: 30px;
-    margin-top: 1px;
-    top: 22px;
-    width: 15px;
-}
-
-input[type=range]::-ms-thumb:disabled {
-    cursor: not-allowed;
-}
-
-input[type=range]::-ms-fill-lower {
-    background: var(--rdta-tpf-input-range-track-color);
-    border: 0px solid #000000;
-    border-radius: 0px;
-    box-shadow: none;
-}
-
-input[type=range]::-ms-fill-upper {
-    background: var(--rdta-tpf-input-range-track-color);
-    border: 0px solid #000000;
-    border-radius: 0px;
-    box-shadow: none;
-}
-
-input[type=range]:focus::-ms-fill-lower {
-    /* fill track on the left. */
-    background: var(--rdta-tpf-input-range-track-color);
-}
-
-input[type=range]:focus::-ms-fill-upper {
-    /* fill track on the right. */
-    background: var(--rdta-tpf-input-range-track-color);
-}
-/* end microsoft edge styles */
+/* currently not available for Webkit engine such as Chrome, Edge, etc. */
+/* end input range progress */

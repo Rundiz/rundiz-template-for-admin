@@ -15,7 +15,7 @@ textarea {
     padding: 0;
 }
 
-input[type=file],
-input[type=range] {
+input[type="file"],
+input[type="range"] {
     border: none;
 }

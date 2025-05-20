@@ -24,7 +24,7 @@
     border-color: var(--rdta-tpf-form-invalid-border-color) !important;
 }
 
-.rd-inputfile input[type=file] {
+.rd-inputfile input[type="file"] {
     display: block;
     filter: alpha(opacity=0);
     height: 100%;
@@ -50,7 +50,7 @@
 }
 
 .rd-input-files-queue > button,
-.rd-input-files-queue > input[type=button],
+.rd-input-files-queue > input[type="button"],
 .rd-input-files-queue > .rd-button {
     margin-top: calc(var(--rdta-tpf-button-3d-height) * -1);
     position: relative;

@@ -23,17 +23,17 @@ textarea:focus {
     outline: 3px solid var(--rdta-tpf-form-focus-color);
 }
 
-input[type=radio]:focus {
+input[type="radio"]:focus {
     border-radius: 50%;
 }
 
 button:-moz-focusring,
-[type=button]:-moz-focusring,
-[type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring {
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
     outline: 2px solid var(--rdta-tpf-form-focus-color);/* override focus on button in Firefox. this also override sanitize.css which is must begins with [type="xxx"]. */
 }
 
-input[type=color]::-moz-focus-inner {
+input[type="color"]::-moz-focus-inner {
     border: none;/* remove focus dotted in Firefox. */
 }

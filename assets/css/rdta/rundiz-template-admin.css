@@ -1,5 +1,5 @@
 /*!
- * Rundiz template for admin V.2.4.6
+ * Rundiz template for admin V.2.4.7dev-20250520
  */
 /* Auto generate by Sass. */
 :root {
@@ -633,25 +633,25 @@ a.rd-button.warning,
 .rd-button.warning {
   color: var(--rdta-button-styled-text-color);
 }
-a.rd-button.danger[disabled],
+a.rd-button.danger:disabled,
 a.rd-button.danger.disabled,
-a.rd-button.info[disabled],
+a.rd-button.info:disabled,
 a.rd-button.info.disabled,
-a.rd-button.primary[disabled],
+a.rd-button.primary:disabled,
 a.rd-button.primary.disabled,
-a.rd-button.success[disabled],
+a.rd-button.success:disabled,
 a.rd-button.success.disabled,
-a.rd-button.warning[disabled],
+a.rd-button.warning:disabled,
 a.rd-button.warning.disabled,
-.rd-button.danger[disabled],
+.rd-button.danger:disabled,
 .rd-button.danger.disabled,
-.rd-button.info[disabled],
+.rd-button.info:disabled,
 .rd-button.info.disabled,
-.rd-button.primary[disabled],
+.rd-button.primary:disabled,
 .rd-button.primary.disabled,
-.rd-button.success[disabled],
+.rd-button.success:disabled,
 .rd-button.success.disabled,
-.rd-button.warning[disabled],
+.rd-button.warning:disabled,
 .rd-button.warning.disabled {
   color: var(--rdta-button-disabled-styled-text-color);
 }
@@ -668,9 +668,9 @@ a.rd-button.danger.active,
 .rd-button.danger.active {
   box-shadow: 0 var(--rdta-tpf-button-3d-pressed-height) 0 var(--rdta-button-danger-3d-edge-color);
 }
-a.rd-button.danger[disabled],
+a.rd-button.danger:disabled,
 a.rd-button.danger.disabled,
-.rd-button.danger[disabled],
+.rd-button.danger:disabled,
 .rd-button.danger.disabled {
   background-color: var(--rdta-background-danger-disabled-color);
   border-color: var(--rdta-button-danger-disabled-border-color);
@@ -688,9 +688,9 @@ a.rd-button.info.active,
 .rd-button.info.active {
   box-shadow: 0 var(--rdta-tpf-button-3d-pressed-height) 0 var(--rdta-button-info-3d-edge-color);
 }
-a.rd-button.info[disabled],
+a.rd-button.info:disabled,
 a.rd-button.info.disabled,
-.rd-button.info[disabled],
+.rd-button.info:disabled,
 .rd-button.info.disabled {
   background-color: var(--rdta-background-info-disabled-color);
   border-color: var(--rdta-button-info-disabled-border-color);
@@ -708,9 +708,9 @@ a.rd-button.primary.active,
 .rd-button.primary.active {
   box-shadow: 0 var(--rdta-tpf-button-3d-pressed-height) 0 var(--rdta-button-primary-3d-edge-color);
 }
-a.rd-button.primary[disabled],
+a.rd-button.primary:disabled,
 a.rd-button.primary.disabled,
-.rd-button.primary[disabled],
+.rd-button.primary:disabled,
 .rd-button.primary.disabled {
   background-color: var(--rdta-background-primary-disabled-color);
   border-color: var(--rdta-button-primary-disabled-border-color);
@@ -728,9 +728,9 @@ a.rd-button.success.active,
 .rd-button.success.active {
   box-shadow: 0 var(--rdta-tpf-button-3d-pressed-height) 0 var(--rdta-button-success-3d-edge-color);
 }
-a.rd-button.success[disabled],
+a.rd-button.success:disabled,
 a.rd-button.success.disabled,
-.rd-button.success[disabled],
+.rd-button.success:disabled,
 .rd-button.success.disabled {
   background-color: var(--rdta-background-success-disabled-color);
   border-color: var(--rdta-button-success-disabled-border-color);
@@ -748,9 +748,9 @@ a.rd-button.warning.active,
 .rd-button.warning.active {
   box-shadow: 0 var(--rdta-tpf-button-3d-pressed-height) 0 var(--rdta-button-warning-3d-edge-color);
 }
-a.rd-button.warning[disabled],
+a.rd-button.warning:disabled,
 a.rd-button.warning.disabled,
-.rd-button.warning[disabled],
+.rd-button.warning:disabled,
 .rd-button.warning.disabled {
   background-color: var(--rdta-background-warning-disabled-color);
   border-color: var(--rdta-button-warning-disabled-border-color);
@@ -819,34 +819,34 @@ a.rd-button.tiny,
 }
 /* all inputs, select, textarea in filter row */
 /* below are `inputbox-like`. */
-.rd-datatable .filter-row td input[type=date],
-.rd-datatable .filter-row td input[type=datetime-local],
-.rd-datatable .filter-row td input[type=email],
-.rd-datatable .filter-row td input[type=month],
-.rd-datatable .filter-row td input[type=number],
-.rd-datatable .filter-row td input[type=password],
-.rd-datatable .filter-row td input[type=range],
-.rd-datatable .filter-row td input[type=search],
-.rd-datatable .filter-row td input[type=tel],
-.rd-datatable .filter-row td input[type=text],
-.rd-datatable .filter-row td input[type=time],
-.rd-datatable .filter-row td input[type=url],
-.rd-datatable .filter-row td input[type=week],
+.rd-datatable .filter-row td input[type="date"],
+.rd-datatable .filter-row td input[type="datetime-local"],
+.rd-datatable .filter-row td input[type="email"],
+.rd-datatable .filter-row td input[type="month"],
+.rd-datatable .filter-row td input[type="number"],
+.rd-datatable .filter-row td input[type="password"],
+.rd-datatable .filter-row td input[type="range"],
+.rd-datatable .filter-row td input[type="search"],
+.rd-datatable .filter-row td input[type="tel"],
+.rd-datatable .filter-row td input[type="text"],
+.rd-datatable .filter-row td input[type="time"],
+.rd-datatable .filter-row td input[type="url"],
+.rd-datatable .filter-row td input[type="week"],
 .rd-datatable .filter-row td select,
 .rd-datatable .filter-row td textarea,
-.rd-datatable .filter-row th input[type=date],
-.rd-datatable .filter-row th input[type=datetime-local],
-.rd-datatable .filter-row th input[type=email],
-.rd-datatable .filter-row th input[type=month],
-.rd-datatable .filter-row th input[type=number],
-.rd-datatable .filter-row th input[type=password],
-.rd-datatable .filter-row th input[type=range],
-.rd-datatable .filter-row th input[type=search],
-.rd-datatable .filter-row th input[type=tel],
-.rd-datatable .filter-row th input[type=text],
-.rd-datatable .filter-row th input[type=time],
-.rd-datatable .filter-row th input[type=url],
-.rd-datatable .filter-row th input[type=week],
+.rd-datatable .filter-row th input[type="date"],
+.rd-datatable .filter-row th input[type="datetime-local"],
+.rd-datatable .filter-row th input[type="email"],
+.rd-datatable .filter-row th input[type="month"],
+.rd-datatable .filter-row th input[type="number"],
+.rd-datatable .filter-row th input[type="password"],
+.rd-datatable .filter-row th input[type="range"],
+.rd-datatable .filter-row th input[type="search"],
+.rd-datatable .filter-row th input[type="tel"],
+.rd-datatable .filter-row th input[type="text"],
+.rd-datatable .filter-row th input[type="time"],
+.rd-datatable .filter-row th input[type="url"],
+.rd-datatable .filter-row th input[type="week"],
 .rd-datatable .filter-row th select,
 .rd-datatable .filter-row th textarea {
   background-color: #fff;
@@ -1111,9 +1111,9 @@ responsive table by using expand/collapse
 }
 .rd-dropdown li a,
 .rd-dropdown li button,
-.rd-dropdown li input[type=button],
-.rd-dropdown li input[type=reset],
-.rd-dropdown li input[type=submit] {
+.rd-dropdown li input[type="button"],
+.rd-dropdown li input[type="reset"],
+.rd-dropdown li input[type="submit"] {
   background-color: transparent;
   color: inherit;
   display: block;
@@ -1121,18 +1121,18 @@ responsive table by using expand/collapse
   width: 100%;
 }
 .rd-dropdown li button,
-.rd-dropdown li input[type=button],
-.rd-dropdown li input[type=reset],
-.rd-dropdown li input[type=submit] {
+.rd-dropdown li input[type="button"],
+.rd-dropdown li input[type="reset"],
+.rd-dropdown li input[type="submit"] {
   border: none;
   box-shadow: none;
   margin: 0;
   text-align: left;
 }
 .rd-dropdown li button:active,
-.rd-dropdown li input[type=button]:active,
-.rd-dropdown li input[type=reset]:active,
-.rd-dropdown li input[type=submit]:active {
+.rd-dropdown li input[type="button"]:active,
+.rd-dropdown li input[type="reset"]:active,
+.rd-dropdown li input[type="submit"]:active {
   box-shadow: none;
   top: auto;
 }
@@ -1143,37 +1143,37 @@ responsive table by using expand/collapse
 */
 /* input sizes */
 /* below are `inputbox-like`. */
-input[type=date].input-large,
-input[type=datetime-local].input-large,
-input[type=email].input-large,
-input[type=month].input-large,
-input[type=number].input-large,
-input[type=password].input-large,
-input[type=range].input-large,
-input[type=search].input-large,
-input[type=tel].input-large,
-input[type=text].input-large,
-input[type=time].input-large,
-input[type=url].input-large,
-input[type=week].input-large,
+input[type="date"].input-large,
+input[type="datetime-local"].input-large,
+input[type="email"].input-large,
+input[type="month"].input-large,
+input[type="number"].input-large,
+input[type="password"].input-large,
+input[type="range"].input-large,
+input[type="search"].input-large,
+input[type="tel"].input-large,
+input[type="text"].input-large,
+input[type="time"].input-large,
+input[type="url"].input-large,
+input[type="week"].input-large,
 select.input-large,
 textarea.input-large {
   font-size: var(--rdta-form-large-font-size);
 }
 /* below are `inputbox-like`. */
-input[type=date].input-small,
-input[type=datetime-local].input-small,
-input[type=email].input-small,
-input[type=month].input-small,
-input[type=number].input-small,
-input[type=password].input-small,
-input[type=range].input-small,
-input[type=search].input-small,
-input[type=tel].input-small,
-input[type=text].input-small,
-input[type=time].input-small,
-input[type=url].input-small,
-input[type=week].input-small,
+input[type="date"].input-small,
+input[type="datetime-local"].input-small,
+input[type="email"].input-small,
+input[type="month"].input-small,
+input[type="number"].input-small,
+input[type="password"].input-small,
+input[type="range"].input-small,
+input[type="search"].input-small,
+input[type="tel"].input-small,
+input[type="text"].input-small,
+input[type="time"].input-small,
+input[type="url"].input-small,
+input[type="week"].input-small,
 select.input-small,
 textarea.input-small {
   font-size: var(--rdta-form-small-font-size);
@@ -1197,19 +1197,19 @@ textarea.input-small {
   font-size: var(--rdta-form-small-font-size);
 }
 /* below are `inputbox-like`. */
-.rd-form .form-group .control-wrapper input[type=date],
-.rd-form .form-group .control-wrapper input[type=datetime-local],
-.rd-form .form-group .control-wrapper input[type=email],
-.rd-form .form-group .control-wrapper input[type=month],
-.rd-form .form-group .control-wrapper input[type=number],
-.rd-form .form-group .control-wrapper input[type=password],
-.rd-form .form-group .control-wrapper input[type=range],
-.rd-form .form-group .control-wrapper input[type=search],
-.rd-form .form-group .control-wrapper input[type=tel],
-.rd-form .form-group .control-wrapper input[type=text],
-.rd-form .form-group .control-wrapper input[type=time],
-.rd-form .form-group .control-wrapper input[type=url],
-.rd-form .form-group .control-wrapper input[type=week],
+.rd-form .form-group .control-wrapper input[type="date"],
+.rd-form .form-group .control-wrapper input[type="datetime-local"],
+.rd-form .form-group .control-wrapper input[type="email"],
+.rd-form .form-group .control-wrapper input[type="month"],
+.rd-form .form-group .control-wrapper input[type="number"],
+.rd-form .form-group .control-wrapper input[type="password"],
+.rd-form .form-group .control-wrapper input[type="range"],
+.rd-form .form-group .control-wrapper input[type="search"],
+.rd-form .form-group .control-wrapper input[type="tel"],
+.rd-form .form-group .control-wrapper input[type="text"],
+.rd-form .form-group .control-wrapper input[type="time"],
+.rd-form .form-group .control-wrapper input[type="url"],
+.rd-form .form-group .control-wrapper input[type="week"],
 .rd-form .form-group .control-wrapper select,
 .rd-form .form-group .control-wrapper textarea {
   display: block;
@@ -1255,7 +1255,7 @@ textarea.input-small {
 .rd-inputfile.rd-input-invalid {
   border-color: var(--rdta-tpf-form-invalid-border-color) !important;
 }
-.rd-inputfile input[type=file] {
+.rd-inputfile input[type="file"] {
   display: block;
   filter: alpha(opacity=0);
   height: 100%;
@@ -1277,7 +1277,7 @@ textarea.input-small {
   vertical-align: middle;
 }
 .rd-input-files-queue > button,
-.rd-input-files-queue > input[type=button],
+.rd-input-files-queue > input[type="button"],
 .rd-input-files-queue > .rd-button {
   margin-top: calc(var(--rdta-tpf-button-3d-height) * -1);
   position: relative;
