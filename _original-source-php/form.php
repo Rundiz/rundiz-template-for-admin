@@ -230,6 +230,40 @@ document.addEventListener('rdta.custominputfile.addedfilesqueue', (event) => {co
                     </form>
                     <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-form-inputrange" data-target-src-remove-first-space="20"></pre>
+                    <h4>Custom input range with <code>datalist</code></h4>
+                    <p class="rdta-version-info">(Since v.2.4.7)</p>
+                    <form class="rd-form code-sample-form-inputrange-with-datalist">
+                        <div class="form-group">
+                            <label class="control-label" for="input-range-datalist">Range with <code>datalist</code></label>
+                            <div class="control-wrapper">
+                                <div class="rd-input-range-with-datalist">
+                                    <input id="input-range-datalist" type="range" list="input-range-datalist-datalist" min="0" max="500" step="any">
+                                    <datalist id="input-range-datalist-datalist">
+                                        <option value="0"></option>
+                                        <option value="25"></option>
+                                        <option value="50"></option>
+                                        <option value="75"></option>
+                                        <option value="100"></option>
+                                    </datalist>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="input-range-datalist2">Range with <code>datalist</code> and <code>label</code></label>
+                            <div class="control-wrapper">
+                                <div class="rd-input-range-with-datalist">
+                                    <input id="input-range-datalist2" type="range" list="input-range-datalist2-datalist" min="0" max="500" step="any">
+                                    <datalist id="input-range-datalist2-datalist">
+                                        <option value="0" label="0"></option>
+                                        <option value="50" label="50"></option>
+                                        <option value="100" label="100"></option>
+                                    </datalist>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <h5>Source</h5>
+                    <pre class="preview-source" data-target-src=".code-sample-form-inputrange-with-datalist" data-target-src-remove-first-space="20"></pre>
                     <h3>Select box</h3>
                     <form class="rd-form code-sample-form-selectbox">
                         <div class="form-group">
@@ -358,6 +392,12 @@ document.addEventListener('rdta.custominputfile.addedfilesqueue', (event) => {co
                                 </div>
                             </div>
                         </fieldset>
+                        <div class="form-group">
+                            <label class="control-label" for="form-horizontal-input-range-datalist">Range</label>
+                            <div class="control-wrapper">
+                                <input id="form-horizontal-input-range-datalist" type="range">
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label class="control-label" for="input-select2">Select box</label>
                             <div class="control-wrapper">

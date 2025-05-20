@@ -1,5 +1,5 @@
 /*!
- * Rundiz template for admin V.2.4.7dev-20250520
+ * Rundiz template for admin V.2.4.7
  */
 /* Auto generate by Sass. */
 :root {
@@ -1281,6 +1281,32 @@ textarea.input-small {
 .rd-input-files-queue > .rd-button {
   margin-top: calc(var(--rdta-tpf-button-3d-height) * -1);
   position: relative;
+}
+/*!
+* ----------------------------------------------------------------------------------------------
+* _form-input-range.css
+* ----------------------------------------------------------------------------------------------
+* form > input[type="range"]
+*/
+.rd-input-range-with-datalist {
+  display: block;
+}
+.rd-input-range-with-datalist datalist {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  writing-mode: vertical-lr;
+}
+.rd-input-range-with-datalist datalist > option {
+  font-size: 0;
+  padding: 0;
+  visibility: hidden;
+}
+.rd-input-range-with-datalist datalist > option::before {
+  content: "– " attr(label);
+  font-size: 0.8rem;
+  visibility: visible;
 }
 /*!
 * ----------------------------------------------------------------------------------------------

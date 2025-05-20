@@ -8,6 +8,12 @@ class RundizTemplateAdmin {
 
 
     /**
+     * @type {Boolean} Mark that is the input range already listened for `input` event or not. Default is `false` not listened.
+     */
+    #isListenedInputRangeEvent = false;
+
+
+    /**
      * Check if jQuery is loaded or not.
      * 
      * @returns {Boolean} Return `true` if it is loaded, `false` for otherwise.
@@ -207,6 +213,58 @@ class RundizTemplateAdmin {
             }
         });
     }// customInputFile
+
+
+    /**
+     * Activate custom input range with `datalist`.
+     * 
+     * @since 2.4.7
+     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/range#validation Document reference for default `max` value.
+     * @returns {undefined}
+     */
+    customInputRangeWithDatalist() {
+        const customIRWDClass = 'rd-input-range-with-datalist';
+
+        document.querySelectorAll('.' + customIRWDClass)?.forEach((eachIR) => {
+            const eachDatalist = eachIR.querySelector('datalist');
+            // get max option value for certain `datalist`.
+            let maxOptionValue = 0;
+            for (let i = 0; i < eachDatalist.options.length; i++) {
+                const optionValue = parseFloat(eachDatalist.options[i].value);
+                if (!isNaN(optionValue) && optionValue > maxOptionValue) {
+                    maxOptionValue = optionValue;
+                }
+            }// endfor;
+            // get input `max` attribute value. default is 100.
+            let inputRangeMax = 100;
+            const inputRange = eachIR.querySelector('input[type="range"]');
+            if (inputRange.hasAttribute('max')) {
+                inputRangeMax = inputRange.getAttribute('max');
+            }
+            const datalistPercentWidth = ((100 * parseFloat(maxOptionValue)) / parseFloat(inputRangeMax));
+            // set datalist width.
+            eachDatalist.style.width = 'calc(' + datalistPercentWidth + '% + 15px)';// 15px is come from input range thumb width.
+            // do not automatically append the `output` HTML element to let dev design their style.
+        });
+
+        if (false === this.#isListenedInputRangeEvent) {
+            // if not listened the input range event yet.
+            // listen on slide the input range and show its value to `output` HTML element.
+            document.addEventListener('input', (event) => {
+                this.#isListenedInputRangeEvent = true;
+                let thisInput = event.target;
+                if (!thisInput.closest('.' + customIRWDClass)) {
+                    return ;
+                }
+                const customIRWDContainer = thisInput.closest('.' + customIRWDClass);
+                const outputHTML = customIRWDContainer.querySelector('output');
+                if (outputHTML) {
+                    // if there is `output` HTML in the custom input range.
+                    outputHTML.value = thisInput.value;
+                }
+            });
+        }
+    }// customInputRangeWithDatalist
 
 
     /**
@@ -596,5 +654,7 @@ document.addEventListener('DOMContentLoaded',function() {
 
     // activate custom input file.
     rdtaClass.customInputFile();
+    // activate custom input range WITH datalist.
+    rdtaClass.customInputRangeWithDatalist();
     //rdtaInputFile();
 });

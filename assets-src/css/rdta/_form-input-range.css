@@ -1,0 +1,31 @@
+/*!
+* ----------------------------------------------------------------------------------------------
+* _form-input-range.css
+* ----------------------------------------------------------------------------------------------
+* form > input[type="range"]
+*/
+
+
+.rd-input-range-with-datalist {
+    display: block;
+}
+
+.rd-input-range-with-datalist datalist {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    writing-mode: vertical-lr;
+}
+
+.rd-input-range-with-datalist datalist > option {
+    font-size: 0;
+    padding: 0;
+    visibility: hidden;
+}
+
+.rd-input-range-with-datalist datalist > option::before {
+    content: "– " attr(label);
+    font-size: 0.8rem;
+    visibility: visible;
+}

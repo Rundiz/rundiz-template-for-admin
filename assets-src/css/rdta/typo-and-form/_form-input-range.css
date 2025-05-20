@@ -14,7 +14,6 @@ input[type="range"] {
     -webkit-appearance: none;
     appearance: none;
     height: 37px;
-    margin: 10px 0;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);/* remove white-blue background color on tap or on touch in chrome for android. */
 }
 
@@ -95,5 +94,5 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
 input[type="range"]::-moz-range-progress {
     background-color: #52A0E5;
 }
-/* currently not available for Webkit engine such as Chrome, Edge, etc. */
+/* @todo[rdta] currently not available for Webkit engine such as Chrome, Edge, etc. */
 /* end input range progress */

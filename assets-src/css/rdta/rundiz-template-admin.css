@@ -17,6 +17,7 @@
 
 @import '_form.css';
 @import '_form-input-file.css';
+@import '_form-input-range.css';
 
 @import '_input-group.css';
 @import '_navbar.css';
