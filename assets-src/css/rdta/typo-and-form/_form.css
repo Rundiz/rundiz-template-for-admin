@@ -151,30 +151,34 @@ input[type=week]:focus {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
 }
 
+input[type=color]:disabled {
+    cursor: not-allowed;
+}
+
 input[type=date]:disabled, 
-input[type=date]:read-only,
+input[type=date][readonly],
 input[type=datetime-local]:disabled,
-input[type=datetime-local]:read-only,
+input[type=datetime-local][readonly],
 input[type=email]:disabled,
-input[type=email]:read-only,
+input[type=email][readonly],
 input[type=month]:disabled,
-input[type=month]:read-only,
+input[type=month][readonly],
 input[type=number]:disabled,
-input[type=number]:read-only,
+input[type=number][readonly],
 input[type=password]:disabled,
-input[type=password]:read-only,
+input[type=password][readonly],
 input[type=search]:disabled,
-input[type=search]:read-only,
+input[type=search][readonly],
 input[type=tel]:disabled,
-input[type=tel]:read-only,
+input[type=tel][readonly],
 input[type=text]:disabled,
-input[type=text]:read-only,
+input[type=text][readonly],
 input[type=time]:disabled,
-input[type=time]:read-only,
+input[type=time][readonly],
 input[type=url]:disabled,
-input[type=url]:read-only,
+input[type=url][readonly],
 input[type=week]:disabled,
-input[type=week]:read-only {
+input[type=week][readonly] {
     background-color: var(--rdta-tpf-block-background-color);
     color: var(--rdta-tpf-text-disabled-color);
     cursor: not-allowed;
@@ -243,9 +247,9 @@ input[type=radio] {
 }
 
 input[type=checkbox]:disabled, 
-input[type=checkbox]:read-only,
+input[type=checkbox][readonly],
 input[type=radio]:disabled,
-input[type=radio]:read-only {
+input[type=radio][readonly] {
     background-color: var(--rdta-tpf-block-background-color);
     cursor: not-allowed;
 }
@@ -342,7 +346,7 @@ select {
 }
 
 select:disabled, 
-select:read-only {
+select[readonly] {
     background-color: var(--rdta-tpf-block-background-color);
     color: var(--rdta-tpf-text-disabled-color);
     cursor: not-allowed;
@@ -375,7 +379,7 @@ textarea:focus {
 }
 
 textarea:disabled, 
-textarea:read-only {
+textarea[readonly] {
     background-color: var(--rdta-tpf-block-background-color);
     color: var(--rdta-tpf-text-disabled-color);
     cursor: not-allowed;

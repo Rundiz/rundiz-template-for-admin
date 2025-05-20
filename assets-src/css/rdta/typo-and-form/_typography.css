@@ -173,7 +173,7 @@ label {
     cursor: pointer;
 }
 label :disabled,
-label :read-only {
+label [readonly] {
     cursor: not-allowed;
 }
 

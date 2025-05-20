@@ -312,9 +312,9 @@ div.dt-container .dt-search input,/* for DT2 */
 }
 
 .dt-container .dt-search input:disabled,/* for DT2 */
-.dt-container .dt-search input:read-only,/* for DT2 */
+.dt-container .dt-search input[readonly],/* for DT2 */
 .dataTables_wrapper .dataTables_filter input:disabled, 
-.dataTables_wrapper .dataTables_filter input:read-only {
+.dataTables_wrapper .dataTables_filter input[readonly] {
     background-color: var(--rdta-tpf-block-background-color);
     color: var(--rdta-tpf-text-disabled-color);
     cursor: not-allowed;
@@ -346,9 +346,9 @@ div.dt-container .dt-length select,/* for DT2 */
 }
 
 .dt-container .dt-length select:disabled,/* for DT2 */
-.dt-container .dt-length select:read-only,/* for DT2 */
+.dt-container .dt-length select[readonly],/* for DT2 */
 .dataTables_wrapper .dataTables_length select:disabled, 
-.dataTables_wrapper .dataTables_length select:read-only {
+.dataTables_wrapper .dataTables_length select[readonly] {
     background-color: var(--rdta-tpf-block-background-color);
     color: var(--rdta-tpf-text-disabled-color);
     cursor: not-allowed;
