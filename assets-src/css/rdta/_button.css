@@ -27,25 +27,25 @@ a.rd-button.warning,
     color: var(--rdta-button-styled-text-color);
 }
 
-a.rd-button.danger[disabled], 
+a.rd-button.danger:disabled, 
 a.rd-button.danger.disabled, 
-a.rd-button.info[disabled], 
+a.rd-button.info:disabled, 
 a.rd-button.info.disabled, 
-a.rd-button.primary[disabled], 
+a.rd-button.primary:disabled, 
 a.rd-button.primary.disabled, 
-a.rd-button.success[disabled], 
+a.rd-button.success:disabled, 
 a.rd-button.success.disabled, 
-a.rd-button.warning[disabled], 
+a.rd-button.warning:disabled, 
 a.rd-button.warning.disabled,
-.rd-button.danger[disabled],
+.rd-button.danger:disabled,
 .rd-button.danger.disabled,
-.rd-button.info[disabled],
+.rd-button.info:disabled,
 .rd-button.info.disabled,
-.rd-button.primary[disabled],
+.rd-button.primary:disabled,
 .rd-button.primary.disabled,
-.rd-button.success[disabled],
+.rd-button.success:disabled,
 .rd-button.success.disabled,
-.rd-button.warning[disabled],
+.rd-button.warning:disabled,
 .rd-button.warning.disabled {
     color: var(--rdta-button-disabled-styled-text-color);
 }
@@ -64,9 +64,9 @@ a.rd-button.danger.active,
 .rd-button.danger.active {
     box-shadow: 0 var(--rdta-tpf-button-3d-pressed-height) 0 var(--rdta-button-danger-3d-edge-color);
 }
-a.rd-button.danger[disabled], 
+a.rd-button.danger:disabled, 
 a.rd-button.danger.disabled,
-.rd-button.danger[disabled],
+.rd-button.danger:disabled,
 .rd-button.danger.disabled {
     background-color: var(--rdta-background-danger-disabled-color);
     border-color: var(--rdta-button-danger-disabled-border-color);
@@ -85,9 +85,9 @@ a.rd-button.info.active,
 .rd-button.info.active {
     box-shadow: 0 var(--rdta-tpf-button-3d-pressed-height) 0 var(--rdta-button-info-3d-edge-color);
 }
-a.rd-button.info[disabled], 
+a.rd-button.info:disabled, 
 a.rd-button.info.disabled,
-.rd-button.info[disabled],
+.rd-button.info:disabled,
 .rd-button.info.disabled {
     background-color: var(--rdta-background-info-disabled-color);
     border-color: var(--rdta-button-info-disabled-border-color);
@@ -106,9 +106,9 @@ a.rd-button.primary.active,
 .rd-button.primary.active {
     box-shadow: 0 var(--rdta-tpf-button-3d-pressed-height) 0 var(--rdta-button-primary-3d-edge-color);
 }
-a.rd-button.primary[disabled], 
+a.rd-button.primary:disabled, 
 a.rd-button.primary.disabled,
-.rd-button.primary[disabled],
+.rd-button.primary:disabled,
 .rd-button.primary.disabled {
     background-color: var(--rdta-background-primary-disabled-color);
     border-color: var(--rdta-button-primary-disabled-border-color);
@@ -127,9 +127,9 @@ a.rd-button.success.active,
 .rd-button.success.active {
     box-shadow: 0 var(--rdta-tpf-button-3d-pressed-height) 0 var(--rdta-button-success-3d-edge-color);
 }
-a.rd-button.success[disabled], 
+a.rd-button.success:disabled, 
 a.rd-button.success.disabled,
-.rd-button.success[disabled],
+.rd-button.success:disabled,
 .rd-button.success.disabled {
     background-color: var(--rdta-background-success-disabled-color);
     border-color: var(--rdta-button-success-disabled-border-color);
@@ -148,9 +148,9 @@ a.rd-button.warning.active,
 .rd-button.warning.active {
     box-shadow: 0 var(--rdta-tpf-button-3d-pressed-height) 0 var(--rdta-button-warning-3d-edge-color);
 }
-a.rd-button.warning[disabled], 
+a.rd-button.warning:disabled, 
 a.rd-button.warning.disabled,
-.rd-button.warning[disabled],
+.rd-button.warning:disabled,
 .rd-button.warning.disabled {
     background-color: var(--rdta-background-warning-disabled-color);
     border-color: var(--rdta-button-warning-disabled-border-color);
