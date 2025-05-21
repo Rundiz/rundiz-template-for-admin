@@ -10,22 +10,23 @@
     display: block;
 }
 
-.rd-input-range-with-datalist datalist {
+.rd-input-range-with-datalist .rd-input-range-custom-ticks-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
-    writing-mode: vertical-lr;
+    width: calc(100% - (15px));/* 15 px is input range thumb size. refer from typo-and-form/_form-input-range.css file. */
 }
 
-.rd-input-range-with-datalist datalist > option {
-    font-size: 0;
+.rd-input-range-with-datalist .rd-input-range-custom-ticks-container > .rd-input-range-custom-tick {
     padding: 0;
-    visibility: hidden;
+    position: absolute;
 }
-
-.rd-input-range-with-datalist datalist > option::before {
-    content: "– " attr(label);
-    font-size: 0.8rem;
-    visibility: visible;
+.rd-input-range-with-datalist .rd-input-range-custom-ticks-container > .rd-input-range-custom-tick::before {
+    border-left: 1px solid var(--rdta-tpf-input-range-thumb-border-color);
+    content: "";
+    display: block;
+    min-height: 10px;
 }

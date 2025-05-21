@@ -224,28 +224,65 @@ class RundizTemplateAdmin {
      */
     customInputRangeWithDatalist() {
         const customIRWDClass = 'rd-input-range-with-datalist';
+        const customTicksContainerClass = 'rd-input-range-custom-ticks-container';
+        const customTickClass = 'rd-input-range-custom-tick';
 
-        document.querySelectorAll('.' + customIRWDClass)?.forEach((eachIR) => {
-            const eachDatalist = eachIR.querySelector('datalist');
-            // get max option value for certain `datalist`.
-            let maxOptionValue = 0;
-            for (let i = 0; i < eachDatalist.options.length; i++) {
-                const optionValue = parseFloat(eachDatalist.options[i].value);
-                if (!isNaN(optionValue) && optionValue > maxOptionValue) {
-                    maxOptionValue = optionValue;
-                }
-            }// endfor;
+        // setup tick marks.
+        document.querySelectorAll('.' + customIRWDClass)?.forEach((eachCustomRange) => {
+            const eachDatalist = eachCustomRange.querySelector('datalist');
             // get input `max` attribute value. default is 100.
             let inputRangeMax = 100;
-            const inputRange = eachIR.querySelector('input[type="range"]');
+            const inputRange = eachCustomRange.querySelector('input[type="range"]');
             if (inputRange.hasAttribute('max')) {
                 inputRangeMax = inputRange.getAttribute('max');
             }
-            const datalistPercentWidth = ((100 * parseFloat(maxOptionValue)) / parseFloat(inputRangeMax));
-            // set datalist width.
-            eachDatalist.style.width = 'calc(' + datalistPercentWidth + '% + 15px)';// 15px is come from input range thumb width.
+
+            if (eachCustomRange.querySelector('.' + customTicksContainerClass)) {
+                // if there is already generated ticks.
+                // remove because we will re-generate.
+                eachCustomRange.querySelector('.' + customTicksContainerClass).remove();
+            }
+
+            // generate custom ticks.
+            // this is for fix that `<option>` tag can't position with CSS.
+            let customTicksHTML = '<div class="' + customTicksContainerClass + '">';
+            for (let i = 0; i < eachDatalist.options.length; i++) {
+                const optionValue = parseFloat(eachDatalist?.options[i]?.value);
+                customTicksHTML += '<div class="' + customTickClass + '"';
+                customTicksHTML += ' data-value="' + (eachDatalist?.options[i]?.value ? optionValue : '') + '"';
+                customTicksHTML += ' data-label="' + (eachDatalist?.options[i]?.label ? eachDatalist.options[i].label : '') + '"';
+                customTicksHTML += ' style="';
+                if (optionValue <= inputRangeMax) {
+                    // if this option is not more than input range's max value.
+                    customTicksHTML += 'left: ' + ((100 * parseFloat(optionValue)) / parseFloat(inputRangeMax))  + '%;';
+                } else {
+                    // if this option is more than input range's max value.
+                    // hide it.
+                    customTicksHTML += 'display: none;';
+                }
+                customTicksHTML += '"';// close style attribute.
+                customTicksHTML += '>';// close opened tag.
+                if (eachDatalist?.options[i]?.label) {
+                    customTicksHTML += eachDatalist.options[i].label;
+                }
+                customTicksHTML += '</div>';// close each custom tick.
+            }// endfor; loop datalist's options.
+            customTicksHTML += '</div>';
+            eachDatalist.insertAdjacentHTML('afterend', customTicksHTML);
+
+            // get max height of each tick and set the heighest number to the container.
+            // this is for fixing position absolute cause the container has height zero.
+            let maxHeightTick = 0;
+            eachCustomRange.querySelectorAll('.' + customTickClass)?.forEach((eachTick) => {
+                const eachTickRect = eachTick.getBoundingClientRect();
+                if (eachTickRect.height > maxHeightTick) {
+                    maxHeightTick = eachTickRect.height;
+                }
+            });
+            eachCustomRange.querySelector('.' + customTicksContainerClass).style.height = maxHeightTick + 'px';
             // do not automatically append the `output` HTML element to let dev design their style.
         });
+        // end setup tick marks.
 
         if (false === this.#isListenedInputRangeEvent) {
             // if not listened the input range event yet.
