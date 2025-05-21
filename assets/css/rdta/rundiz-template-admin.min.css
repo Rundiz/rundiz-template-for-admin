@@ -42,7 +42,7 @@
 * _form-input-range.css
 * ----------------------------------------------------------------------------------------------
 * form > input[type="range"]
-*/.rd-input-range-with-datalist{display:block}.rd-input-range-with-datalist datalist{display:flex;flex-direction:column;justify-content:space-between;position:relative;writing-mode:vertical-lr}.rd-input-range-with-datalist datalist>option{font-size:0;padding:0;visibility:hidden}.rd-input-range-with-datalist datalist>option::before{content:"– " attr(label);font-size:.8rem;visibility:visible}/*!
+*/.rd-input-range-with-datalist{display:block}.rd-input-range-with-datalist .rd-input-range-custom-ticks-container{display:flex;flex-direction:column;justify-content:space-between;margin-left:auto;margin-right:auto;position:relative;width:calc(100% - (15px))}.rd-input-range-with-datalist .rd-input-range-custom-ticks-container>.rd-input-range-custom-tick{padding:0;position:absolute}.rd-input-range-with-datalist .rd-input-range-custom-ticks-container>.rd-input-range-custom-tick::before{border-left:1px solid var(--rdta-tpf-input-range-thumb-border-color);content:"";display:block;min-height:10px}/*!
 * ----------------------------------------------------------------------------------------------
 * _input-group.css
 * ----------------------------------------------------------------------------------------------
