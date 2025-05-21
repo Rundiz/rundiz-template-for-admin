@@ -243,7 +243,7 @@ document.addEventListener('rdta.custominputfile.addedfilesqueue', (event) => {co
                                         <option value="25"></option>
                                         <option value="50"></option>
                                         <option value="75"></option>
-                                        <option value="100"></option>
+                                        <option value="200"></option>
                                     </datalist>
                                 </div>
                             </div>
