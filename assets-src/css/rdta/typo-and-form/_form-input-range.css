@@ -20,13 +20,12 @@ input[type="range"] {
 input[type="range"]:disabled {
     /* this covered beginning part but not for thumb and track at the end. the last part of track will be covered by track selector */
     cursor: not-allowed;
-    opacity: 0.5;
 }
 
 
 /* input range thumb (can't use comma separate for ::-moz-xxx and ::-webkit-xxx) */
 input[type="range"]::-moz-range-thumb {
-    background: var(--rdta-tpf-block-background-color);
+    background-color: var(--rdta-tpf-block-background-color);
     border: 1px solid var(--rdta-tpf-input-range-thumb-border-color);
     border-radius: 0px;
     box-shadow: none;
@@ -36,12 +35,14 @@ input[type="range"]::-moz-range-thumb {
 }
 
 input[type="range"]:disabled::-moz-range-thumb {
+    background-color: var(--rdta-tpf-block-background-color);
+    border-color: hsl(from var(--rdta-tpf-block-background-color) h s calc(l - 15));
     cursor: not-allowed;
 }
 
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    background: var(--rdta-tpf-block-background-color);
+    background-color: var(--rdta-tpf-block-background-color);
     border: 1px solid var(--rdta-tpf-input-range-thumb-border-color);
     border-radius: 0px;
     box-shadow: none;
@@ -52,6 +53,8 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 input[type="range"]:disabled::-webkit-slider-thumb {
+    background-color: var(--rdta-tpf-block-background-color);
+    border-color: hsl(from var(--rdta-tpf-block-background-color) h s calc(l - 15));
     cursor: not-allowed;
 }
 /* end input range thumb */
@@ -59,8 +62,8 @@ input[type="range"]:disabled::-webkit-slider-thumb {
 
 /* input range track (can't use comma separate for ::-moz-xxx and ::-webkit-xxx) */
 input[type="range"]::-moz-range-track {
-    background: var(--rdta-tpf-input-range-track-color);
-    border: 0px solid #000000;
+    background-color: var(--rdta-tpf-input-range-track-color);
+    border: none;
     border-radius: 0px;
     box-shadow: none;
     cursor: pointer;
@@ -68,12 +71,13 @@ input[type="range"]::-moz-range-track {
 }
 
 input[type="range"]:disabled::-moz-range-track {
+    background-color: var(--rdta-tpf-block-background-color);
     cursor: not-allowed;
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
-    background: var(--rdta-tpf-input-range-track-color);
-    border: 0px solid #000000;
+    background-color: var(--rdta-tpf-input-range-track-color);
+    border: none;
     border-radius: 0px;
     box-shadow: none;
     cursor: pointer;
@@ -81,18 +85,23 @@ input[type="range"]::-webkit-slider-runnable-track {
 }
 
 input[type="range"]:disabled::-webkit-slider-runnable-track {
+    background-color: var(--rdta-tpf-block-background-color);
     cursor: not-allowed;
 }
 
 input[type="range"]:focus::-webkit-slider-runnable-track {
-    background: var(--rdta-tpf-input-range-track-color);
+    background-color: var(--rdta-tpf-input-range-track-color);
 }
 /* end input range track */
 
 
 /* input range progress */
 input[type="range"]::-moz-range-progress {
-    background-color: #52A0E5;
+    background-color: var(--rdta-tpf-input-range-progress-color);
 }
-/* @todo[rdta] currently not available for Webkit engine such as Chrome, Edge, etc. */
+
+input[type="range"]:disabled::-moz-range-progress {
+    background-color: hsl(from var(--rdta-tpf-block-background-color) h s calc(l - 10));
+}
+/* @todo[rdta] range progress currently is not available for Webkit engine such as Chrome, Edge, etc. */
 /* end input range progress */

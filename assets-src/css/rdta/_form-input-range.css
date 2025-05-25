@@ -21,6 +21,10 @@
 }
 
 .rd-input-range-with-datalist .rd-input-range-custom-ticks-container > .rd-input-range-custom-tick {
+    color: hsl(from var(--rdta-tpf-input-range-thumb-border-color) h s calc(l - 25));
+    font-size: small;
+    font-weight: lighter;
+    font-style: normal;
     padding: 0;
     position: absolute;
 }
