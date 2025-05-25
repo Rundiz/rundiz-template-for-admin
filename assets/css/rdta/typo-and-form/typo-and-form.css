@@ -205,8 +205,7 @@ kbd {
 label {
   cursor: pointer;
 }
-label :disabled,
-label [readonly] {
+label :disabled {
   cursor: not-allowed;
 }
 /* meter element */
@@ -490,7 +489,8 @@ button.disabled {
   color: hsl(from var(--rdta-tpf-page-text-color) h s calc(l + 40));
   cursor: not-allowed;
   opacity: 1;
-  pointer-events: none;
+  pointer-events: none;/* with this, any disabled will not be able to change `cursor` property. but this can prevent `:active` effect. */
+  
 }
 /* end buttons */
 fieldset {
@@ -555,32 +555,24 @@ input[type="color"]:disabled {
   cursor: not-allowed;
 }
 input[type="date"]:disabled,
-input[type="date"][readonly],
 input[type="datetime-local"]:disabled,
-input[type="datetime-local"][readonly],
 input[type="email"]:disabled,
-input[type="email"][readonly],
 input[type="month"]:disabled,
-input[type="month"][readonly],
 input[type="number"]:disabled,
-input[type="number"][readonly],
 input[type="password"]:disabled,
-input[type="password"][readonly],
 input[type="search"]:disabled,
-input[type="search"][readonly],
 input[type="tel"]:disabled,
-input[type="tel"][readonly],
 input[type="text"]:disabled,
-input[type="text"][readonly],
 input[type="time"]:disabled,
-input[type="time"][readonly],
 input[type="url"]:disabled,
-input[type="url"][readonly],
-input[type="week"]:disabled,
-input[type="week"][readonly] {
+input[type="week"]:disabled {
   background-color: var(--rdta-tpf-block-background-color);
   color: var(--rdta-tpf-text-disabled-color);
   cursor: not-allowed;
+}
+input[readonly],
+textarea[readonly] {
+  background-color: var(--rdta-tpf-form-readonly-background-color);
 }
 input[type="date"]:user-invalid,
 input[type="date"].rd-input-invalid,
@@ -642,9 +634,7 @@ input[type="radio"] {
   width: 1em;
 }
 input[type="checkbox"]:disabled,
-input[type="checkbox"][readonly],
-input[type="radio"]:disabled,
-input[type="radio"][readonly] {
+input[type="radio"]:disabled {
   background-color: var(--rdta-tpf-block-background-color);
   cursor: not-allowed;
 }
@@ -660,7 +650,7 @@ input[type="checkbox"]:checked {
 }
 input[type="radio"]:checked:disabled,
 input[type="checkbox"]:checked:disabled {
-  opacity: 0.5;
+  background-blend-mode: color-burn;
 }
 input[type="radio"] {
   border-radius: 50%;
@@ -689,6 +679,7 @@ input[type="file"]:disabled {
 }
 input[type="file"]:disabled::file-selector-button,
 input[type="file"]:disabled::-webkit-file-upload-button {
+  color: var(--rdta-tpf-text-disabled-color);
   cursor: not-allowed;
 }
 /* end input type file */
@@ -710,7 +701,7 @@ input[type="image"] {
 }
 input[type="image"]:disabled {
   cursor: not-allowed;
-  opacity: 0.7;
+  filter: brightness(130%) contrast(50%) saturate(60%);
 }
 /* end input type image */
 /* select box */
@@ -727,8 +718,7 @@ select {
   line-height: 1.4;
   padding: 0.313em 1.5em 0.313em 0.188em;
 }
-select:disabled,
-select[readonly] {
+select:disabled {
   background-color: var(--rdta-tpf-block-background-color);
   color: var(--rdta-tpf-text-disabled-color);
   cursor: not-allowed;
@@ -756,8 +746,7 @@ textarea:active,
 textarea:focus {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
 }
-textarea:disabled,
-textarea[readonly] {
+textarea:disabled {
   background-color: var(--rdta-tpf-block-background-color);
   color: var(--rdta-tpf-text-disabled-color);
   cursor: not-allowed;
@@ -788,11 +777,10 @@ input[type="range"] {
 input[type="range"]:disabled {
   /* this covered beginning part but not for thumb and track at the end. the last part of track will be covered by track selector */
   cursor: not-allowed;
-  opacity: 0.5;
 }
 /* input range thumb (can't use comma separate for ::-moz-xxx and ::-webkit-xxx) */
 input[type="range"]::-moz-range-thumb {
-  background: var(--rdta-tpf-block-background-color);
+  background-color: var(--rdta-tpf-block-background-color);
   border: 1px solid var(--rdta-tpf-input-range-thumb-border-color);
   border-radius: 0px;
   box-shadow: none;
@@ -801,11 +789,13 @@ input[type="range"]::-moz-range-thumb {
   width: 15px;
 }
 input[type="range"]:disabled::-moz-range-thumb {
+  background-color: var(--rdta-tpf-block-background-color);
+  border-color: hsl(from var(--rdta-tpf-block-background-color) h s calc(l - 15));
   cursor: not-allowed;
 }
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  background: var(--rdta-tpf-block-background-color);
+  background-color: var(--rdta-tpf-block-background-color);
   border: 1px solid var(--rdta-tpf-input-range-thumb-border-color);
   border-radius: 0px;
   box-shadow: none;
@@ -815,41 +805,48 @@ input[type="range"]::-webkit-slider-thumb {
   width: 15px;
 }
 input[type="range"]:disabled::-webkit-slider-thumb {
+  background-color: var(--rdta-tpf-block-background-color);
+  border-color: hsl(from var(--rdta-tpf-block-background-color) h s calc(l - 15));
   cursor: not-allowed;
 }
 /* end input range thumb */
 /* input range track (can't use comma separate for ::-moz-xxx and ::-webkit-xxx) */
 input[type="range"]::-moz-range-track {
-  background: var(--rdta-tpf-input-range-track-color);
-  border: 0px solid #000000;
+  background-color: var(--rdta-tpf-input-range-track-color);
+  border: none;
   border-radius: 0px;
   box-shadow: none;
   cursor: pointer;
   height: 3px;
 }
 input[type="range"]:disabled::-moz-range-track {
+  background-color: var(--rdta-tpf-block-background-color);
   cursor: not-allowed;
 }
 input[type="range"]::-webkit-slider-runnable-track {
-  background: var(--rdta-tpf-input-range-track-color);
-  border: 0px solid #000000;
+  background-color: var(--rdta-tpf-input-range-track-color);
+  border: none;
   border-radius: 0px;
   box-shadow: none;
   cursor: pointer;
   height: 3px;
 }
 input[type="range"]:disabled::-webkit-slider-runnable-track {
+  background-color: var(--rdta-tpf-block-background-color);
   cursor: not-allowed;
 }
 input[type="range"]:focus::-webkit-slider-runnable-track {
-  background: var(--rdta-tpf-input-range-track-color);
+  background-color: var(--rdta-tpf-input-range-track-color);
 }
 /* end input range track */
 /* input range progress */
 input[type="range"]::-moz-range-progress {
-  background-color: #52A0E5;
+  background-color: var(--rdta-tpf-input-range-progress-color);
 }
-/* @todo[rdta] currently not available for Webkit engine such as Chrome, Edge, etc. */
+input[type="range"]:disabled::-moz-range-progress {
+  background-color: hsl(from var(--rdta-tpf-block-background-color) h s calc(l - 10));
+}
+/* @todo[rdta] range progress currently is not available for Webkit engine such as Chrome, Edge, etc. */
 /* end input range progress */
 
 /*# sourceMappingURL=typo-and-form.css.map */
