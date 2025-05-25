@@ -85,7 +85,7 @@ button.disabled {
     color: hsl(from var(--rdta-tpf-page-text-color) h s calc(l + 40));
     cursor: not-allowed;
     opacity: 1;
-    pointer-events: none;
+    pointer-events: none;/* with this, any disabled will not be able to change `cursor` property. but this can prevent `:active` effect. */
 }
 /* end buttons */
 
@@ -264,7 +264,7 @@ input[type="checkbox"]:checked {
 
 input[type="radio"]:checked:disabled,
 input[type="checkbox"]:checked:disabled {
-    opacity: 0.5;
+    background-blend-mode: color-burn;
 }
 
 input[type="radio"] {
@@ -299,6 +299,7 @@ input[type="file"]:disabled {
 
 input[type="file"]:disabled::file-selector-button, 
 input[type="file"]:disabled::-webkit-file-upload-button {
+    color: var(--rdta-tpf-text-disabled-color);
     cursor: not-allowed;
 }
 /* end input type file */
@@ -322,7 +323,7 @@ input[type="image"] {
 
 input[type="image"]:disabled {
     cursor: not-allowed;
-    opacity: 0.7;
+    filter: brightness(130%) contrast(50%) saturate(60%);
 }
 /* end input type image */
 
