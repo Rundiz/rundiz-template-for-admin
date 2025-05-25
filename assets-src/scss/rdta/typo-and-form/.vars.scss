@@ -30,12 +30,15 @@ $form-focus-color: rgba(255, 182, 0, 0.35) !default;
 
 $form-invalid-border-color: #bc0000 !default;
 
-$button-3d-edge-color: rgba(0, 0, 0, 0.1);
+$form-readonly-background-color: #f9f9f9 !default;
+
+$button-3d-edge-color: rgba(0, 0, 0, 0.1) !default;
 $button-3d-height: 2px !default;
 $button-3d-pressed-height: 1px !default;
 
 // table
-$table-cell-padding: 0.313em;
+$table-cell-padding: 0.313em !default;
 
 // <input type="range">
 $input-range-thumb-border-color: #aaa !default;
+$input-range-progress-color: #52A0E5 !default;

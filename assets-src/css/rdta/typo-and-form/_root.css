@@ -3,9 +3,11 @@
   --rdta-tpf-basic-focus-color: rgba(153, 153, 153, 0.35);
   --rdta-tpf-form-focus-color: rgba(255, 182, 0, 0.35);
   --rdta-tpf-form-invalid-border-color: #bc0000;
+  --rdta-tpf-form-readonly-background-color: #f9f9f9;
   --rdta-tpf-button-3d-height: 2px;
   --rdta-tpf-button-3d-pressed-height: 1px;
   --rdta-tpf-button-3d-edge-color: rgba(0, 0, 0, 0.1);
+  --rdta-tpf-input-range-progress-color: #52A0E5;
   --rdta-tpf-input-range-thumb-border-color: #aaa;
   --rdta-tpf-input-range-track-color: #ddd;
   --rdta-tpf-page-background-color: #fff;
