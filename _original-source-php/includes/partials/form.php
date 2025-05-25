@@ -49,9 +49,35 @@ unset($input_type, $input_types);
 ?> 
                 </fieldset>
                 <fieldset>
+                    <legend>Read only</legend>
+                    <p>
+                        <label for="input-type-date-readonly">Input Date read only</label><br>
+                        <input id="input-type-date-readonly" type="date" readonly value="2025-05-25">
+                    </p>
+                    <p>
+                        <label for="input-type-datetime-local-readonly">Input Datetime-local read only</label><br>
+                        <input id="input-type-datetime-local-readonly" type="datetime-local" readonly value="2025-05-25 09:30:45">
+                    </p>
+                    <p>
+                        <label for="input-type-month-readonly">Input Month read only</label><br>
+                        <input id="input-type-month-readonly" type="month" readonly value="2025-05">
+                    </p>
+                    <p>
+                        <label for="input-type-number-readonly">Input Number read only</label><br>
+                        <input id="input-type-number-readonly" type="number" readonly value="99.12">
+                    </p>
                     <p>
                         <label for="input-type-text-readonly">Input Text read only</label><br>
-                        <input id="input-type-text-readonly" type="text" readonly="" value="Read only input text">
+                        <input id="input-type-text-readonly" type="text" readonly value="Read only input text">
+                    </p>
+                    <p>
+                        <label for="input-type-time-readonly">Input Time read only</label><br>
+                        <input id="input-type-time-readonly" type="time" readonly value="09:30:45">
+                    </p>
+                    </p>
+                    <p>
+                        <label for="input-type-week-readonly">Input Week read only</label><br>
+                        <input id="input-type-week-readonly" type="week" readonly value="2025-W21">
                     </p>
                 </fieldset>
                 <fieldset>
@@ -115,11 +141,11 @@ unset($input_type, $input_types);
                     </p>
                     <p>
                         <label for="input-textarea-disabled">Textarea disabled</label><br>
-                        <textarea id="input-textarea-disabled" disabled=""></textarea>
+                        <textarea id="input-textarea-disabled" disabled>Disabled textarea</textarea>
                     </p>
                     <p>
                         <label for="input-textarea-readonly">Textarea readonly</label><br>
-                        <textarea id="input-textarea-readonly" readonly=""></textarea>
+                        <textarea id="input-textarea-readonly" readonly>Read only textarea</textarea>
                     </p>
                 </fieldset>
                 <fieldset>

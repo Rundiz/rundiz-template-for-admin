@@ -156,32 +156,25 @@ input[type="color"]:disabled {
 }
 
 input[type="date"]:disabled, 
-input[type="date"][readonly],
 input[type="datetime-local"]:disabled,
-input[type="datetime-local"][readonly],
 input[type="email"]:disabled,
-input[type="email"][readonly],
 input[type="month"]:disabled,
-input[type="month"][readonly],
 input[type="number"]:disabled,
-input[type="number"][readonly],
 input[type="password"]:disabled,
-input[type="password"][readonly],
 input[type="search"]:disabled,
-input[type="search"][readonly],
 input[type="tel"]:disabled,
-input[type="tel"][readonly],
 input[type="text"]:disabled,
-input[type="text"][readonly],
 input[type="time"]:disabled,
-input[type="time"][readonly],
 input[type="url"]:disabled,
-input[type="url"][readonly],
-input[type="week"]:disabled,
-input[type="week"][readonly] {
+input[type="week"]:disabled {
     background-color: var(--rdta-tpf-block-background-color);
     color: var(--rdta-tpf-text-disabled-color);
     cursor: not-allowed;
+}
+
+input[readonly],
+textarea[readonly] {
+    background-color: var(--rdta-tpf-form-readonly-background-color);
 }
 
 input[type="date"]:user-invalid, 
@@ -252,9 +245,7 @@ input[type="radio"] {
 }
 
 input[type="checkbox"]:disabled, 
-input[type="checkbox"][readonly],
-input[type="radio"]:disabled,
-input[type="radio"][readonly] {
+input[type="radio"]:disabled {
     background-color: var(--rdta-tpf-block-background-color);
     cursor: not-allowed;
 }
@@ -350,8 +341,7 @@ select {
     padding: 0.313em 1.5em 0.313em 0.188em;
 }
 
-select:disabled, 
-select[readonly] {
+select:disabled {
     background-color: var(--rdta-tpf-block-background-color);
     color: var(--rdta-tpf-text-disabled-color);
     cursor: not-allowed;
@@ -383,8 +373,7 @@ textarea:focus {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
 }
 
-textarea:disabled, 
-textarea[readonly] {
+textarea:disabled {
     background-color: var(--rdta-tpf-block-background-color);
     color: var(--rdta-tpf-text-disabled-color);
     cursor: not-allowed;

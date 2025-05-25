@@ -172,8 +172,7 @@ kbd {
 label {
     cursor: pointer;
 }
-label :disabled,
-label [readonly] {
+label :disabled {
     cursor: not-allowed;
 }
 
