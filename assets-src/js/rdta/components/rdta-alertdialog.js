@@ -157,7 +157,7 @@ class RDTAAlertDialog {
     /**
      * Do close the alert dialog.
      * 
-     * This method was called from `#listenOnClickButtonClose()`.
+     * This method was called from `#listenOnClickButtonClose()`, `#listenOnHotKeyClose()`.
      * 
      * @since 2.4.1
      * @param {object|undefined|null} modalElement The modal element.
@@ -266,6 +266,11 @@ class RDTAAlertDialog {
                 event.metaKey === false &&
                 event.shiftKey === false
             ) {
+                // if hit keyboard enter (or numpad enter).
+                // it is required to prevent default otherwise, it will be close dialog 
+                // but the action that cause dialog open will be called again and alert dialog opened again. 
+                // so, this means alert dialog will never close via enter if without prevent default.
+                event.preventDefault();
                 this.#doClose(this.#currentAlertDialogModal);
             }
         });
