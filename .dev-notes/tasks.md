@@ -8,7 +8,7 @@ The node packages will be install in **node_modules** folder.
 ## Modify
 
 To start modify page, run `npm run watch` command. 
-It will be build HTML from PHP, compile JS, SCSS while editing them.
+It will be call .html URL from .php (use mod rewrite), compile JS, SCSS while editing them.
 
 ### SCSS
 
