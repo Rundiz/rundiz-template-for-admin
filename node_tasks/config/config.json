@@ -37,8 +37,7 @@
                     "assets/js/floating-ui",
                     "assets/js/rdta",
                     "assets/js/smartmenus",
-                    "assets/js/sticky-sidebar",
-                    "assets/js/popper.js"
+                    "assets/js/sticky-sidebar"
                 ]
             },
             {
@@ -73,15 +72,6 @@
         {
             "patterns": "node_modules/@fortawesome/fontawesome-free/LICENSE.txt",
             "destination": "assets/font-awesome"
-        },
-
-        {
-            "patterns": "node_modules/@popperjs/core/dist/umd/popper.*",
-            "destination": "assets/js/popper.js/umd"
-        },
-        {
-            "patterns": "node_modules/@popperjs/core/LICENSE*",
-            "destination": "assets/js/popper.js"
         },
 
         {

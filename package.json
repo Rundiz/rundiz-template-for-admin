@@ -40,7 +40,6 @@
   "dependencies": {
     "@floating-ui/dom": "^1.7.5",
     "@fortawesome/fontawesome-free": "^6.0.0",
-    "@popperjs/core": "^2.11.2",
     "sanitize.css": "github:csstools/sanitize.css#main",
     "smartmenus": "^1.1.1",
     "sticky-sidebar": "^3.3.1"

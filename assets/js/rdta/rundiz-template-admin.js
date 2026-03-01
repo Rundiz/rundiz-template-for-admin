@@ -1,5 +1,5 @@
 /*!
- Rundiz template for admin v 2.4.9 
+ Rundiz template for admin v 2.4.10 
 License: MIT
 */
 /*! Rundiz template for admin
@@ -63,35 +63,44 @@ class RundizTemplateAdmin {
                 event.preventDefault();
                 // if parent of clicking button contain `.rd-button-group` class.
                 // and the clicking button contain `.dropdown-toggler` class.
-                let popperPlacement;
+                let floatingUIPlacement;
                 if (typeof(thisTarget.dataset.placement) !== 'undefined' && thisTarget.dataset.placement) {
-                    popperPlacement = thisTarget.dataset.placement;
-                    popperPlacement = popperPlacement.replace('top left', 'top start');
-                    popperPlacement = popperPlacement.replace('top right', 'top end');
-                    popperPlacement = popperPlacement.replace('bottom left', 'bottom start');
-                    popperPlacement = popperPlacement.replace('bottom right', 'bottom end');
-                    popperPlacement = popperPlacement.replace('left top', 'left start');
-                    popperPlacement = popperPlacement.replace('left bottom', 'left end');
-                    popperPlacement = popperPlacement.replace('right top', 'right start');
-                    popperPlacement = popperPlacement.replace('right bottom', 'right end');
-                    popperPlacement = popperPlacement.replace('auto left', 'auto start');
-                    popperPlacement = popperPlacement.replace('auto right', 'auto end');
-                    popperPlacement = popperPlacement.replace(' ', '-');
+                    floatingUIPlacement = thisTarget.dataset.placement;
+                    floatingUIPlacement = floatingUIPlacement.replace('top left', 'top start');
+                    floatingUIPlacement = floatingUIPlacement.replace('top right', 'top end');
+                    floatingUIPlacement = floatingUIPlacement.replace('bottom left', 'bottom start');
+                    floatingUIPlacement = floatingUIPlacement.replace('bottom right', 'bottom end');
+                    floatingUIPlacement = floatingUIPlacement.replace('left top', 'left start');
+                    floatingUIPlacement = floatingUIPlacement.replace('left bottom', 'left end');
+                    floatingUIPlacement = floatingUIPlacement.replace('right top', 'right start');
+                    floatingUIPlacement = floatingUIPlacement.replace('right bottom', 'right end');
+                    floatingUIPlacement = floatingUIPlacement.replace('auto left', 'auto start');
+                    floatingUIPlacement = floatingUIPlacement.replace('auto right', 'auto end');
+                    floatingUIPlacement = floatingUIPlacement.replace(' ', '-');
                 } else {
-                    popperPlacement = 'bottom-start';
+                    floatingUIPlacement = 'bottom-start';
                 }
 
                 let dropdownElement = thisParent.querySelector('.rd-dropdown');
                 if (dropdownElement !== null) {
                     //console.log('activating dropdown');
                     dropdownElement.style.display = 'block';
-                    Popper.createPopper(
+                    // Floating UI requires position:absolute on the floating element.
+                    dropdownElement.style.position = 'absolute';
+                    FloatingUIDOM.computePosition(
                         thisTarget,
                         dropdownElement,
                         {
-                            'placement': popperPlacement
+                            placement: floatingUIPlacement,
+                            middleware: [
+                                FloatingUIDOM.flip(),
+                                FloatingUIDOM.shift({ padding: 8 })
+                            ]
                         }
-                    );
+                    ).then(function({ x, y }) {
+                        dropdownElement.style.left = x + 'px';
+                        dropdownElement.style.top  = y + 'px';
+                    });
                 }
             }
         });

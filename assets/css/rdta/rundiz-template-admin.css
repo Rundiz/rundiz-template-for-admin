@@ -1,5 +1,5 @@
 /*!
- * Rundiz template for admin V.2.4.9
+ * Rundiz template for admin V.2.4.10
  */
 /* Auto generate by Sass. */
 :root {
@@ -1969,7 +1969,7 @@ RDTA tooltips.
   color: white;
   display: none;
   font-size: 90%;
-  font-weight: bold;
+  font-weight: normal;
   position: absolute;
   left: 0;
   padding: 5px;
