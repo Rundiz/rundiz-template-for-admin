@@ -17,9 +17,7 @@ include 'includes/html-head.php';
                     <h1>Tooltips</h1>
                     <p>
                         Tooltips use <a href="https://floating-ui.com" target="floating-ui">Floating UI</a> since v2.4.10.
-                        In order to make tooltips works, add these files.
-                        <strong>assets/js/floating-ui/floating-ui.core.umd.min.js</strong>,
-                        <strong>assets/js/floating-ui/floating-ui.dom.umd.min.js</strong>,
+                        In order to make tooltips works, add a file.
                         <strong>assets/js/rdta/components/rdta-tooltips.js</strong>
                     </p>
                     <p>Then enable its functional.</p>
@@ -56,8 +54,6 @@ include 'includes/html-head.php';
         
 
 <?php include 'includes/js-end-body.php'; ?> 
-        <script src="assets/js/floating-ui/floating-ui.core.umd.min.js"></script>
-        <script src="assets/js/floating-ui/floating-ui.dom.umd.min.js"></script>
         <script src="assets/js/rdta/components/rdta-tooltips.js"></script>
         <script>
             let rdtaTooltips = RDTATooltips.init('[data-toggle="tooltip"]');

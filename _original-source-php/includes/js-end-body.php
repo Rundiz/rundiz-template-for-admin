@@ -6,7 +6,8 @@
 
         <script src="<?php echo assetUrl('assets/js/smartmenus/jquery.smartmenus.min.js', ['npm' => 'smartmenus']); ?>"></script>
 
-        <script src="<?php echo assetUrl('assets/js/popper.js/umd/popper.min.js', ['npm' => '@popperjs/core']); ?>"></script>
+        <script src="<?php echo assetUrl('assets/js/floating-ui/floating-ui.core.umd.min.js', ['npm' => '@floating-ui/dom']); ?>"></script>
+        <script src="<?php echo assetUrl('assets/js/floating-ui/floating-ui.dom.umd.min.js', ['npm' => '@floating-ui/dom']); ?>"></script>
 
         <script src="<?php echo assetUrl('assets/js/sticky-sidebar/jquery.sticky-sidebar.min.js', ['npm' => 'sticky-sidebar']); ?>"></script>
         <script src="<?php echo assetUrl('assets/js/resize-sensor/ResizeSensor.js'); ?>"></script><!-- use with sticky sidebar js. -->
