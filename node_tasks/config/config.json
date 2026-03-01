@@ -34,11 +34,11 @@
             },
             {
                 "patterns": [
+                    "assets/js/floating-ui",
                     "assets/js/rdta",
                     "assets/js/smartmenus",
                     "assets/js/sticky-sidebar",
-                    "assets/js/popper.js",
-                    "assets/js/tippy.js"
+                    "assets/js/popper.js"
                 ]
             },
             {
@@ -50,6 +50,18 @@
         ]
     },
     "copyNodePackages": [
+        {
+            "patterns": "node_modules/@floating-ui/dom/dist/*.js",
+            "destination": "assets/js/floating-ui"
+        },
+        {
+            "patterns": "node_modules/@floating-ui/core/dist/*.js",
+            "destination": "assets/js/floating-ui"
+        },
+        {
+            "patterns": "node_modules/@floating-ui/dom/LICENSE*",
+            "destination": "assets/js/floating-ui"
+        },
         {
             "patterns": "node_modules/@fortawesome/fontawesome-free/css/**",
             "destination": "assets/font-awesome/css"
@@ -129,11 +141,6 @@
         {
             "patterns": "node_modules/sticky-sidebar/LICENSE*",
             "destination": "assets/js/sticky-sidebar"
-        },
-
-        {
-            "patterns": "node_modules/tippy.js/**",
-            "destination": "assets/js/tippy.js"
         }
     ],
     "bundleAssets": [

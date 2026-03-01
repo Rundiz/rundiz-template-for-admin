@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="assets/css/smartmenus/sm-rdta/sm-rdta.css?v=49e159bb1b8cc5ae941d93c1508e901e">
 
         <link rel="stylesheet" href="assets/css/rdta/typo-and-form/typo-and-form.css?v=444e83144a731a0c1effb799a79f27cd">
-        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?v=38771a8d59872d54f337241f3a880eae">
+        <link rel="stylesheet" href="assets/css/rdta/rundiz-template-admin.css?v=4bb46208a35d68fd452589d799738608">
 
         <link class="exclude-preview" rel="stylesheet" href="assets/css-preview/prism.css?v=de20a76f891181fd461354e782db7a0f">
         <link class="exclude-preview" rel="stylesheet" href="assets/css-preview/documents.css?v=723a2316bd4d6e8a361b431002473a2c">
@@ -294,16 +294,17 @@
                 <div class="rd-page-content">
                     <h1>Tooltips</h1>
                     <p>
-                        Tooltips use <a href="https://atomiks.github.io/tippyjs/" target="tippy.js">tippy.js</a> powered by popper.js.<br>
+                        Tooltips use <a href="https://floating-ui.com" target="floating-ui">Floating UI</a> since v2.4.10.
                         In order to make tooltips works, add these files.
-                        <strong>assets/js/tippy.js/dist/tippy-bundle.umd.min.js</strong>,
+                        <strong>assets/js/floating-ui/floating-ui.core.umd.min.js</strong>,
+                        <strong>assets/js/floating-ui/floating-ui.dom.umd.min.js</strong>,
                         <strong>assets/js/rdta/components/rdta-tooltips.js</strong>
                     </p>
                     <p>Then enable its functional.</p>
                     <pre><code class="language-js">document.addEventListener('DOMContentLoaded', function() {
     let rdtaTooltips = RDTATooltips.init('[data-toggle="tooltip"]');
 });</code></pre>
-                    <p>And you can get latest tippy instance or all instances with <code>rdtaTooltips.getInstance()</code> or <code>rdtaTooltips.getInstances()</code> method. Open browser console to see demonstration.</p>
+                    <p>And you can get all instances with <code>rdtaTooltips.getInstances()</code> method. Open browser console to see demonstration.</p>
                     <hr>
 
                     <h2>Examples</h2>
@@ -326,9 +327,6 @@
                     </div>
                     <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-tooltips-placements" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
-
-                    <hr>
-                    <p>For more options, please read more at <a href="https://atomiks.github.io/tippyjs/creating-tooltips/" target="tippy.js-doc">tippy.js documentation</a>.</p>
                 </div><!--.rd-page-content-->
             </main>
             <footer>
@@ -357,12 +355,12 @@
         <script class="exclude-preview" src="assets/js-preview/view-target-source.js?v=c9c8f5d72845b3693400fb9490283bfa"></script>
         <script class="exclude-preview" src="assets/js-preview/view-source.js?v=a7a9a35d448fd74928624a3f56b5bfdc"></script>
         <script class="exclude-preview" src="assets/js-preview/document-utils.js?v=73715f0a453f151dc904badc2234118e"></script> 
-        <script src="assets/js/tippy.js/dist/tippy-bundle.umd.min.js"></script>
+        <script src="assets/js/floating-ui/floating-ui.core.umd.min.js"></script>
+        <script src="assets/js/floating-ui/floating-ui.dom.umd.min.js"></script>
         <script src="assets/js/rdta/components/rdta-tooltips.js"></script>
         <script>
             let rdtaTooltips = RDTATooltips.init('[data-toggle="tooltip"]');
-            console.log('latest tippy instance', rdtaTooltips.getInstance());
-            console.log('all tippy instances', rdtaTooltips.getInstances());
+            console.log('all tooltips instances', rdtaTooltips.getInstances());
         </script>
     </body>
 </html>

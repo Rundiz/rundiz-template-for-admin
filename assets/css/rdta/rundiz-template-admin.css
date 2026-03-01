@@ -1960,5 +1960,27 @@ a.text-color-white:visited {
   text-transform: capitalize;
 }
 /* end text transform */
-
+/*!
+RDTA tooltips.
+*/
+.rdta-tooltips {
+  background: #222;
+  border-radius: 4px;
+  color: white;
+  display: none;
+  font-size: 90%;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  padding: 5px;
+  top: 0;
+  width: max-content;
+}
+.rdta-tooltip-arrow {
+  background: #222;
+  height: 8px;
+  position: absolute;
+  transform: rotate(45deg);
+  width: 8px;
+}
 /*# sourceMappingURL=rundiz-template-admin.css.map */
