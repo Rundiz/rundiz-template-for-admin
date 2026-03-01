@@ -21,7 +21,6 @@ include 'includes/html-head.php';
                         <li><a href="https://github.com/csstools/sanitize.css" target="sanitize.css">Sanitize.css</a></li>
                         <li><a href="https://www.smartmenus.org" target="smartmenus">SmartMenus</a></li>
                         <li><a href="https://fontawesome.com" target="fontawesome">Font Awesome</a></li>
-                        <li><a href="https://popper.js.org" target="popper.js">Popper.js</a></li>
                         <li><a href="https://floating-ui.com/" target="floating-ui">Floating UI</a></li>
                         <li><a href="https://github.com/abouolia/sticky-sidebar" target="sticky-sidebar">Sticky Sidebar</a></li>
                         <li><a href="https://github.com/marcj/css-element-queries/blob/master/src/ResizeSensor.js" target="resizesensor">Resize Sensor</a></li>
