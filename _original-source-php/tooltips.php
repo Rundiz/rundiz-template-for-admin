@@ -16,16 +16,17 @@ include 'includes/html-head.php';
                 <div class="rd-page-content">
                     <h1>Tooltips</h1>
                     <p>
-                        Tooltips use <a href="https://atomiks.github.io/tippyjs/" target="tippy.js">tippy.js</a> powered by popper.js.<br>
+                        Tooltips use <a href="https://floating-ui.com" target="floating-ui">Floating UI</a> since v2.4.10.
                         In order to make tooltips works, add these files.
-                        <strong>assets/js/tippy.js/dist/tippy-bundle.umd.min.js</strong>,
+                        <strong>assets/js/floating-ui/floating-ui.core.umd.min.js</strong>,
+                        <strong>assets/js/floating-ui/floating-ui.dom.umd.min.js</strong>,
                         <strong>assets/js/rdta/components/rdta-tooltips.js</strong>
                     </p>
                     <p>Then enable its functional.</p>
                     <pre><code class="language-js">document.addEventListener('DOMContentLoaded', function() {
     let rdtaTooltips = RDTATooltips.init('[data-toggle="tooltip"]');
 });</code></pre>
-                    <p>And you can get latest tippy instance or all instances with <code>rdtaTooltips.getInstance()</code> or <code>rdtaTooltips.getInstances()</code> method. Open browser console to see demonstration.</p>
+                    <p>And you can get all instances with <code>rdtaTooltips.getInstances()</code> method. Open browser console to see demonstration.</p>
                     <hr>
 
                     <h2>Examples</h2>
@@ -48,9 +49,6 @@ include 'includes/html-head.php';
                     </div>
                     <h5>Source</h5>
                     <pre class="preview-source" data-target-src=".code-sample-tooltips-placements" data-target-src-remove-first-space="24" data-inner-html="true"></pre>
-
-                    <hr>
-                    <p>For more options, please read more at <a href="https://atomiks.github.io/tippyjs/creating-tooltips/" target="tippy.js-doc">tippy.js documentation</a>.</p>
                 </div><!--.rd-page-content-->
             </main>
 <?php include 'includes/partials/page-footer.php'; ?> 
@@ -58,12 +56,12 @@ include 'includes/html-head.php';
         
 
 <?php include 'includes/js-end-body.php'; ?> 
-        <script src="assets/js/tippy.js/dist/tippy-bundle.umd.min.js"></script>
+        <script src="assets/js/floating-ui/floating-ui.core.umd.min.js"></script>
+        <script src="assets/js/floating-ui/floating-ui.dom.umd.min.js"></script>
         <script src="assets/js/rdta/components/rdta-tooltips.js"></script>
         <script>
             let rdtaTooltips = RDTATooltips.init('[data-toggle="tooltip"]');
-            console.log('latest tippy instance', rdtaTooltips.getInstance());
-            console.log('all tippy instances', rdtaTooltips.getInstances());
+            console.log('all tooltips instances', rdtaTooltips.getInstances());
         </script>
     </body>
 </html>

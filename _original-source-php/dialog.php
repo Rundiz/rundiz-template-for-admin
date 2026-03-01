@@ -455,7 +455,8 @@ EOT;
 
 <?php include 'includes/js-end-body.php'; ?> 
         <script src="assets/js/rdta/components/rdta-dialog.js"></script>
-        <script src="assets/js/tippy.js/dist/tippy-bundle.umd.min.js"></script>
+        <script src="assets/js/floating-ui/floating-ui.core.umd.min.js"></script>
+        <script src="assets/js/floating-ui/floating-ui.dom.umd.min.js"></script>
         <script src="assets/js/rdta/components/rdta-tooltips.js"></script>
         <script>
             function rdtaCloseDialogManual() {
